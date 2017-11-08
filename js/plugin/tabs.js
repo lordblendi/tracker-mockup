@@ -22,7 +22,10 @@ $(function() {
       var duration = calculateDuration(ul);
       var max_width = parseInt(tab_nav.css('width'));
       var tablist = $(ul)[0];
-      var translateText = tablist.style.transform;
+      var translateText = "";
+      if (tablist !== undefined && tablist != null) {
+        translateText = tablist.style.transform;
+      }
       var scrollWidth = (calculateListSize() - max_width) * -1;
 
       if (isThereEnoughPlace()) {
