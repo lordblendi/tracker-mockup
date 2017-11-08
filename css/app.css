@@ -551,7 +551,6 @@ body {
 .document__header {
   position: relative;
   padding: 26px 10px 10px 10px;
-  margin: 0 0 20px;
   border-bottom: 2px solid #F2F2F2;
 }
 .document__header h2 {
