@@ -211,8 +211,13 @@ function isThereEnoughPlace() {
 
 // calculate duration
 function calculateDuration(tablist) {
-  var listItems = Array.from(tablist[0].children);
-  var numberOfChildren = listItems.length;
+  // have default values so we can return something when there are no children
+  var duration = 425;
+  var numberOfChildren = 1;
+  if (tablist.length > 0) {
+    var listItems = Array.from(tablist[0].children);
+    numberOfChildren = listItems.length;
+  }
 
   return numberOfChildren * 425;
 }
