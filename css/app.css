@@ -419,9 +419,9 @@ body {
     cursor: pointer;
     top: -3px;
     font-size: 10px;
-    transition: all .3s ease-in-out;
 }
 .app__header .breadcrumbs .breadcrumb .title .link:hover {
+    transition: all .3s ease-in-out;
     color: #FFF;
 }
 .app__header .breadcrumbs .breadcrumb .title .label {
