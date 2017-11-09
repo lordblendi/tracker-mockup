@@ -331,7 +331,7 @@ body {
     color: #8c8ba5;
 }
 .app__header .breadcrumbs:hover {
-    color: #FFF;
+    color: #EEE;
 }
 .app__header .breadcrumbs .breadcrumb {
   position: relative;
@@ -351,13 +351,13 @@ body {
 .app__header .breadcrumbs .breadcrumb.active .breadcrumb__selector {
   opacity: 1;
   pointer-events: auto;
-  left: 20px;
+  top: 20px;
 }
 
 .app__header .breadcrumbs .breadcrumb .breadcrumb__selector {
   position: absolute;
   top: -10px;
-  left: 0;
+  left: 7px;
   background-color: #FFF;
   z-index: 9999;
   box-shadow: 0 0 100px rgba(0,0,0,.2);
@@ -419,6 +419,10 @@ body {
     cursor: pointer;
     top: -3px;
     font-size: 10px;
+    transition: all .3s ease-in-out;
+}
+.app__header .breadcrumbs .breadcrumb .title .link:hover {
+    color: #FFF;
 }
 .app__header .breadcrumbs .breadcrumb .title .label {
     display: inline-block;
