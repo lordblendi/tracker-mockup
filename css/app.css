@@ -876,7 +876,6 @@ body {
 .document__comments .items .item .item__user {
   font-size: 14px;
   font-weight: 600;
-  margin: 5px;
   color: #000;
 }
 .document__comments .items .item--self .item__user {
