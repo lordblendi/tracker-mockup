@@ -794,6 +794,7 @@ body.fixed {
     position: relative;
     padding: 15px 20px;
     overflow: hidden;
+    background-color: #FFF;
 }
 .document__data .header .line {
     position: absolute;
