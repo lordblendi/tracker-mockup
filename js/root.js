@@ -7,6 +7,7 @@ $(document).ready(function() {
   });
   $('.top-bar__itemAccount').click(function() {
     $app.addClass('notifications--visible');
+    $('body').addClass('fixed');
   });
   $('.app__overlay').click(function() {
     if ($app.hasClass('app__nav--visible')) {
@@ -14,6 +15,7 @@ $(document).ready(function() {
     }
     if ($app.hasClass('notifications--visible')) {
       $app.removeClass('notifications--visible');
+      $('body').removeClass('fixed');
     }
     if ($app.hasClass('overlay--visible')) {
       $app.removeClass('overlay--visible');
