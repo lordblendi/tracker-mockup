@@ -29,6 +29,12 @@ $(document).ready(function() {
       $('.assistance').removeClass('visible');
     }
   });
+  $('.app__nav__wrapper').click(function() {
+    if ($app.hasClass('app__nav--visible')) {
+      $app.removeClass('app__nav--visible');
+      $('body').removeClass('fixed');
+    }
+  });
 
   // Toggle COMMENTS-ATTACHMENTS-HISTORY
   $('.media--toggle').click(function() {

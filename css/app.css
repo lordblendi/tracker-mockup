@@ -16,13 +16,14 @@ body.fixed {
   min-width: 0;
   height: 100vh;
 }
-.app.app__nav--visible .app__nav {
+.app.app__nav--visible .app__nav__wrapper {
   left: 0;
+  background-color: rgba(0,0,0,.6);
 }
 .app.app__nav--visible .app__container {
   left: 50%;
 }
-.app.app__nav--visible .app__overlay,
+
 .notifications--visible .app__overlay,
 .app.assistance--visible .app__overlay,
 .app.overlay--visible .app__overlay,
@@ -95,25 +96,35 @@ body.fixed {
   left: 0;
   background-color: rgba(0,0,0,.6);
   z-index: 2;
-
   opacity: 0;
   pointer-events: none;
 
   transition: opacity .3s ease-in-out;
 }
 
-
-.app__nav {
+.app__nav__wrapper {
   position: fixed;
   z-index: 2;
-  width: 50%;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   top: 0;
-  left: -50%;
-  transition: left .3s ease-in-out;
-  background-color: #2C5386;
-  color: #FFF;
+  left: -100%;
+  transition: all .3s ease-in-out;
+  background-color: transparent;
   overflow-y: auto;
+
+  color: #FFF;
+}
+
+.app__nav__wrapper .app__overlay {
+  z-index: 3;
+  width: 50%;
+}
+.app__nav {
+  width: 50%;
+  min-height: 100%;
+  z-index: 5;
+  background-color: #2C5386;
 }
 .app__nav .tabs__panel {
   padding: 10px;
