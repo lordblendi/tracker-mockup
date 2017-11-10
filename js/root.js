@@ -35,6 +35,9 @@ $(document).ready(function() {
       $('body').removeClass('fixed');
     }
   });
+  $('.app__nav__wrapper *').click(function() {
+    e.stopPropagation();
+  });
 
   // Toggle COMMENTS-ATTACHMENTS-HISTORY
   $('.media--toggle').click(function() {
