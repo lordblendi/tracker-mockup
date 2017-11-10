@@ -4,6 +4,7 @@ $(document).ready(function() {
   // Toggle NAVIGATION
   $('.top-bar__left').click(function() {
     $app.addClass('app__nav--visible');
+    $('body').addClass('fixed');
   });
   $('.top-bar__itemAccount').click(function() {
     $app.addClass('notifications--visible');
@@ -12,6 +13,7 @@ $(document).ready(function() {
   $('.app__overlay').click(function() {
     if ($app.hasClass('app__nav--visible')) {
       $app.removeClass('app__nav--visible');
+      $('body').removeClass('fixed');
     }
     if ($app.hasClass('notifications--visible')) {
       $app.removeClass('notifications--visible');
