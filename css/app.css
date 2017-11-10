@@ -3,6 +3,10 @@ body {
   overflow-x: hidden;
   background-color: #2C5386;
 }
+
+body.fixed {
+  overflow-y: hidden;
+}
 .app {
   position: relative;
   background-color: #F4F4F4;
@@ -814,6 +818,7 @@ body {
     position: relative;
     padding: 15px 20px;
     overflow: hidden;
+    background-color: #FFF;
 }
 .document__data .header .line {
     position: absolute;

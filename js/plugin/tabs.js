@@ -76,7 +76,7 @@ $(function() {
     var barWidth = _activeLink.parent().width();
 
     _parent.find('.tabs__panel').hide();
-    _parent.find('.tabs__panel[tabindex="' + _tabindex + '"]').fadeIn();
+    _parent.find('.tabs__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('active');
 
     $(this).find('.tab__active-link-bar').css({
       'left': barLeft + 10 + 'px',
@@ -101,8 +101,8 @@ $(function() {
     });
 
     // Change panel
-    _parent.find('.tabs__panel').hide();
-    _parent.find('.tabs__panel[tabindex="' + _tabindex + '"]').fadeIn();
+    _parent.find('.tabs__panel').hide().removeClass('active');
+    _parent.find('.tabs__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('active');
 
     _parent.find('.tab__link').removeClass('active');
     $(this).addClass('active');
