@@ -1,0 +1,24 @@
+<div class="app__nav__wrapper">
+  <div class="app__nav">
+    <div class="tabs tabs--light">
+      <div class="tabs__nav">
+        <div class="tab__less hide">
+          <span class="tab__shadow"></span>
+          <span class="tab__arrow">←</span>
+          <span class="tab__counter">1</span>
+        </div>
+        <ul>
+          <span class="tab__active-link-bar" style="left: 115.868px; width: 111.92px;"></span>
+          <li><a href="#" class="tab__link" tabindex="1"><span>Structure</span></a></li>
+          <li><a href="#" class="tab__link active" tabindex="2"><span>My smartlists</span></a></li>
+          <li><a href="#" class="tab__link" tabindex="3"><span>Shared by me</span></a></li>
+          <li><a href="#" class="tab__link" tabindex="4"><span>Favorites</span></a></li>
+          <li><a href="#" class="tab__link" tabindex="5"><span>Recently used</span></a></li>
+        </ul>
+        <div class="tab__more hide">
+          <span class="tab__shadow"></span>
+          <span class="tab__arrow">⇾</span>
+          <span class="tab__counter">9</span>
+        </div>
+      </div>
+      <!-- /.tabs__nav -->
