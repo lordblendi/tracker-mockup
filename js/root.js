@@ -29,6 +29,20 @@ $(document).ready(function() {
       $('.assistance').removeClass('visible');
     }
   });
+  $('.app__nav__wrapper').click(function(e) {
+    var pWidth = $(this).innerWidth(); //use .outerWidth() if you want borders
+    var pOffset = $(this).offset();
+    var x = e.pageX - pOffset.left;
+
+    if(pWidth/2 < x) {
+      if ($app.hasClass('app__nav--visible')) {
+        $app.removeClass('app__nav--visible');
+        $('body').removeClass('fixed');
+      }
+    }
+
+
+  });
 
   // Toggle COMMENTS-ATTACHMENTS-HISTORY
   $('.media--toggle').click(function() {

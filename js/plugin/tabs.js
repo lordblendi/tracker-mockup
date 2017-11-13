@@ -87,6 +87,7 @@ $(function() {
   // click tab link
   $('.tab__link').on('click', function(e) {
     e.preventDefault();
+    e.stopPropagation();
 
     var _parent = $(this).parent().parent().parent().parent();
     var _tabindex = $(this).attr('tabindex');
