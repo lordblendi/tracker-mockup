@@ -116,10 +116,6 @@ body.fixed {
   color: #FFF;
 }
 
-.app__nav__wrapper .app__overlay {
-  z-index: 3;
-  width: 50%;
-}
 .app__nav {
   width: 50%;
   min-height: 100%;
