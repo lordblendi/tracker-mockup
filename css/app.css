@@ -1022,8 +1022,9 @@ body.fixed {
 .document__comments .add-comment {
   position: relative;
   background-color: #FFF;
-  border-top: 1px dotted #CCC;
+  border-bottom: 1px dotted #CCC;
   font-size: 0;
+  border-radius: 5px 0 0 0;
 }
 .document__comments .add-comment .add-comment__input {
   width: 100%;
