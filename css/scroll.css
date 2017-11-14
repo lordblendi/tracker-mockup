@@ -1,0 +1,97 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  overflow-x: hidden;
+  background-color: #2C5386;
+}
+
+.app {
+
+}
+
+.app__header {
+    position: relative;
+    height: 80px;
+    background-color: #2C5386
+}
+
+.app__main {
+    position: relative;
+    height: 2000px;
+    background-color: #F2F2F2;
+    margin: 0 20px;
+}
+
+
+
+.document {
+
+}
+
+.document__header {
+    position: relative;
+    height: 70px;
+    background: #E4E4E4;
+}
+
+.document__panels {
+
+}
+
+.panel {
+    padding: 20px;
+}
+.panel--left {
+    position: relative;
+    height: 700px;
+    width: 25%;
+
+    float: left;
+}
+.panel--center {
+    position: relative;
+    height: 700px;
+    width: 50%;
+
+    float: left;
+}
+.panel--right {
+    position: relative;
+    height: 700px;
+    width: 25%;
+
+    float: right;
+}
+
+
+
+
+
+
+
+.item-details {
+    position: relative;
+    height: 700px;
+    background-color: #E4E4E4;
+}
+
+.item-details__header {
+    position: relative;
+    height: 55px;
+    background-color: #D4D4D4;
+}
+
+
+
+
+
+.item-sidebar {
+    position: relative;
+    height: 700px;
+    background-color: #E4E4E4;
+}
+
+.item-sidebar__header {
+    position: relative;
+    height: 55px;
+    background-color: #D4D4D4;
+}
