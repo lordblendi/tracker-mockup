@@ -73,6 +73,9 @@ body.fixed {
 .app.document__info--visible .panel__center {
     width: 75%;
 }
+.app.document__comments--visible .panel__center {
+    width: 75%;
+}
 .app.document__info--visible.document__comments--visible .panel__center {
     width: 50%;
 }
@@ -732,7 +735,7 @@ body.fixed {
 
     transition: all .3s ease-in-out;
 
-    padding: 10px;
+    padding: 0 10px;
 }
 .panel__right {
     position: absolute;
