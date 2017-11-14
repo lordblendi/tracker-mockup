@@ -27,7 +27,8 @@ body.fixed {
 .notifications--visible .app__overlay,
 .app.assistance--visible .app__overlay,
 .app.overlay--visible .app__overlay,
-.app.add-comment--visible .app__overlay {
+.app.add-comment--visible .app__overlay,
+.app.app__nav--visible .app__overlay {
   opacity: 1;
   pointer-events: auto;
 }
@@ -70,11 +71,6 @@ body.fixed {
 
 
 
-.app.document__info--visible .document__data {
-  width: 100%;
-  left: 0;
-}
-
 
 
 
@@ -105,10 +101,10 @@ body.fixed {
 .app__nav__wrapper {
   position: fixed;
   z-index: 2;
-  width: 100%;
+  width: 50%;
   height: 100%;
   top: 0;
-  left: -100%;
+  left: -50%;
   transition: all .3s ease-in-out;
   background-color: transparent;
   overflow-y: auto;
@@ -116,8 +112,35 @@ body.fixed {
   color: #FFF;
 }
 
+.app__nav__wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.app__nav__wrapper::-webkit-scrollbar-track {
+  overflow: hidden;
+  background-color: #ddd;
+}
+.app__nav__wrapper::-webkit-scrollbar-thumb {
+  background-color: #ff4f1f;
+  box-shadow:
+    0 -100vh 0 100vh #ff4f1f;
+}
+.app__nav__wrapper::-moz-scrollbar {
+  width: 6px;
+}
+
+.app__nav__wrapper::-moz-scrollbar-track {
+  overflow: hidden;
+  background-color: #ddd;
+}
+.app__nav__wrapper::-moz-scrollbar-thumb {
+  background-color: #ff4f1f;
+  box-shadow:
+    0 -100vh 0 100vh #ff4f1f;
+}
+
+
 .app__nav {
-  width: 50%;
   min-height: 100%;
   z-index: 5;
   background-color: #2C5386;
@@ -168,7 +191,7 @@ body.fixed {
   height: 100vh;
   top: 0;
   right: -25%;
-  transition: right .3s ease-in-out;
+  transition: all .3s ease-in-out;
   background-color: #2C5386;
   color: #FFF;
 }
@@ -261,7 +284,6 @@ body.fixed {
   display: table;
   clear: both;
 }
-
 
 
 
