@@ -965,7 +965,7 @@ body.fixed {
 }
 
 .document__comments .tabs  {
-  height: 90%;
+  height: 92%;
 }
 .document__comments .tabs .tabs__panels {
   height: inherit;
@@ -999,7 +999,7 @@ body.fixed {
     font-family: 'pmx';
 }
 .document__comments .tabs .tabs__panels {
-    height: calc(100vh - 254px);
+    /*height: calc(100vh - 254px);*/
     overflow-y: scroll;
 }
 .document__comments .items .item {
