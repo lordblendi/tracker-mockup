@@ -964,7 +964,19 @@ body.fixed {
   padding: 0;
 }
 
+.document__comments .tabs  {
+  height: 90%;
+}
+.document__comments .tabs .tabs__panels {
+  height: inherit;
+  overflow-y: auto;
+}
+
 .document__comments {
+    position: fixed;
+    bottom: 1%;
+    right: -25%;
+    width: 25%;
     background-color: #FFF;
     color: #000;
     font-size: 16px;

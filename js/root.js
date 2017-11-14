@@ -103,6 +103,13 @@ $(document).ready(function() {
     $('.assistance').addClass('visible');
   });
 
+
+  // change top of comment on body scroll
+
+  $(window).scroll(function() {
+    setCommentHeight();
+  });
+
 }); // END
 
 
@@ -111,10 +118,10 @@ function setCommentHeight() {
   const docHeaderHeight = $('.sticky__header__wrapper').outerHeight();
   const currentScroll = $(window).scrollTop();
 
-  const minimumDiff = docHeaderHeight;
-  const currentState = appHeaderHeight + minimumDiff - currentScroll;
+  const minimumDiff = docHeaderHeight + 1;
+  const currentState = appHeaderHeight - currentScroll;
   if (currentState > 0) {
-    $('.document__comments').css('top', currentState + 'px');
+    $('.document__comments').css('top', currentState + minimumDiff + 'px');
   } else {
 
     $('.document__comments').css('top', minimumDiff + 'px');
