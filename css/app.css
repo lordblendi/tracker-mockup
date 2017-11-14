@@ -981,6 +981,7 @@ body.fixed {
     color: #000;
     font-size: 16px;
     padding: 0;
+    transition: right .3s ease-in-out;
 }
 .document__comments .tabs .tabs__nav {
   width: 100%;
