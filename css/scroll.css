@@ -86,7 +86,6 @@ body {
 
 .item-sidebar {
     position: relative;
-    height: 700px;
     background-color: #E4E4E4;
 }
 
@@ -94,4 +93,13 @@ body {
     position: relative;
     height: 55px;
     background-color: #D4D4D4;
+}
+
+.item-sidebar__main {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    max-height: calc(100vh - 245px);
+    height: 100%;
+    overflow-y: auto;
 }
