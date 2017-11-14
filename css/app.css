@@ -88,6 +88,9 @@ body.fixed {
     right: 0;
 }
 
+.document__comments--visible.notifications--visible .panel__right  .document__comments {
+  right: 25%;
+}
 
 
 
