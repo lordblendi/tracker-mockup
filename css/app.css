@@ -84,6 +84,10 @@ body.fixed {
     box-shadow: 0 -10px 200px rgba(0,0,0,.3);
 }
 
+.app.document__comments--visible .panel__right .document__comments {
+    right: 0;
+}
+
 
 
 
@@ -933,14 +937,17 @@ body.fixed {
 }
 
 .document__comments {
-
+    position: fixed;
+    bottom: 1%;
+    right: -25%;
+    width: 25%;
     background-color: #FFF;
     border-radius: 5px 0 0 5px;
     color: #000;
     font-size: 16px;
     padding: 0;
     margin: 0 0 20px 0;
-
+    transition: all .3s ease-in-out;
 }
 .document__comments .tabs .tabs__nav {
   width: 100%;
