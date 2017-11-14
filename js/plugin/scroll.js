@@ -11,5 +11,6 @@ $(function() {
       zIndex: 10,
       topSpacing: $(".sticky__header__wrapper").height()
     });
+
   });
 });

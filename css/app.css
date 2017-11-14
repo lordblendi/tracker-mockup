@@ -110,6 +110,13 @@ body.fixed {
     box-shadow: 0 -10px 200px rgba(0,0,0,.3);
 }
 
+.app.document__comments--visible .panel__right .document__comments {
+    right: 0;
+}
+
+.document__comments--visible.notifications--visible .panel__right  .document__comments {
+  right: 25%;
+}
 
 
 
