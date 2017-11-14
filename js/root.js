@@ -34,7 +34,7 @@ $(document).ready(function() {
     var pOffset = $(this).offset();
     var x = e.pageX - pOffset.left;
 
-    if(pWidth/2 < x) {
+    if (pWidth / 2 < x) {
       if ($app.hasClass('app__nav--visible')) {
         $app.removeClass('app__nav--visible');
         $('body').removeClass('fixed');
@@ -46,8 +46,15 @@ $(document).ready(function() {
 
   // Toggle COMMENTS-ATTACHMENTS-HISTORY
   $('.media--toggle').click(function() {
+    if ($app.hasClass('document__comments--visible') === false) {
+      setCommentHeight();
+    }
     $app.toggleClass('document__comments--visible');
+
   });
+
+
+
 
   // Toggle INFO
   $('.process--toggle').click(function() {
@@ -73,41 +80,46 @@ $(document).ready(function() {
     //$('.assistance').addClass('visible');
   });
 
-
-
-
-
-
   // Sliders
   $('.sliders .slider .slider__header .toggle').click(function(e) {
-      e.preventDefault();
+    e.preventDefault();
 
-      if($(this).hasClass('active')) {
-        $(this).removeClass('active');
-        $(this).parent().parent().find('.slider__body').slideUp();
-      }
-      else {
-        $(this).addClass('active');
-        $(this).parent().parent().find('.slider__body').slideDown();
-      }
+    if ($(this).hasClass('active')) {
+      $(this).removeClass('active');
+      $(this).parent().parent().find('.slider__body').slideUp();
+    } else {
+      $(this).addClass('active');
+      $(this).parent().parent().find('.slider__body').slideDown();
+    }
 
 
   });
 
-
-
-
-
-
   /// TO CHECK
   // assistance
-    $('.assistance--toggle').click(function() {
-      $app.addClass('assistance--visible');
+  $('.assistance--toggle').click(function() {
+    $app.addClass('assistance--visible');
 
-      $('.assistance').addClass('visible');
-    });
+    $('.assistance').addClass('visible');
+  });
 
 }); // END
+
+
+function setCommentHeight() {
+  const appHeaderHeight = $('.app__header').outerHeight();
+  const docHeaderHeight = $('.sticky__header__wrapper').outerHeight();
+  const currentScroll = $(window).scrollTop();
+
+  const minimumDiff = docHeaderHeight;
+  const currentState = appHeaderHeight + minimumDiff - currentScroll;
+  if (currentState > 0) {
+    $('.document__comments').css('top', currentState + 'px');
+  } else {
+
+    $('.document__comments').css('top', minimumDiff + 'px');
+  }
+};
 
 
 /* Change doc types */
