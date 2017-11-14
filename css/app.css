@@ -71,11 +71,6 @@ body.fixed {
 
 
 
-
-
-
-
-
 .add-comment--visible .document__comments .add-comment {
   z-index: 999;
   box-shadow: 0 0 100px rgba(0,0,0,.5);
