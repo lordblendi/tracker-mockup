@@ -645,6 +645,18 @@ body.fixed {
   background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(242,242,242,1) 100%);
 }
 
+.sticky-wrapper {
+  height: 67px;
+}
+.sticky__header__wrapper {
+  width: 100%;
+  border-bottom: #CCC dashed 1px;
+}
+
+.is-sticky .sticky__header__wrapper {
+  border-bottom: #CCC solid 1px;
+}
+
 .document__header {
   position: relative;
   padding: 26px 10px 10px 10px;
@@ -768,7 +780,7 @@ body.fixed {
 
     transition: all .3s ease-in-out;
 
-    padding: 0 10px;
+    padding: 1px 10px 0 10px;
 }
 .panel__right {
     position: absolute;
