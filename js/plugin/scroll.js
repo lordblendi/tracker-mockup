@@ -9,7 +9,8 @@ $(function() {
 
     $(".sticky__document__header").sticky({
       zIndex: 10,
-      topSpacing: $(".sticky__header__wrapper").outerHeight()
+      topSpacing: $(".sticky__header__wrapper").outerHeight(),
+      className: 'is-sticky-docheader'
     });
 
   });

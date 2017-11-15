@@ -937,6 +937,15 @@ body.fixed {
     line-height: 0;
     font-size: 12px;
 }
+
+.document__data .is-sticky-docheader .header  {
+  border-bottom: #CCC solid 1px;
+}
+
+.is-sticky-docheader .line {
+  display: none;
+}
+
 .document__data .header h3 {
     position: relative;
     display: inline-block;
@@ -978,9 +987,6 @@ body.fixed {
 
 .document__comments .tabs  {
   height: 92%;
-}
-.document__comments .tabs .tabs__panels {
-  height: inherit;
   overflow-y: auto;
 }
 
@@ -1009,10 +1015,6 @@ body.fixed {
 }
 .document__comments .tabs .tabs__nav .tab__link.speech-bubble {
     font-family: 'pmx';
-}
-.document__comments .tabs .tabs__panels {
-    /*height: calc(100vh - 254px);*/
-    overflow-y: scroll;
 }
 .document__comments .items .item {
   margin: 10px 0;
