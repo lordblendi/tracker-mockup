@@ -1138,8 +1138,12 @@ body.fixed {
 .document__comments .add-comment {
   position: relative;
   background-color: #FFF;
-  border-bottom: 1px dotted #CCC;
+  border-bottom: 1px dashed #CCC;
   font-size: 0;
+}
+
+.document__comments.scrolled .add-comment {
+  border-bottom-style: solid;
 }
 .document__comments .add-comment .add-comment__input {
   width: 100%;
