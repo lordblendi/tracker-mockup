@@ -26,3 +26,7 @@
   overflow-y: auto;
   width: calc(100% + 16px);
 }
+
+.hide-scrollbar-inner {
+  margin-right: 16px;
+}
