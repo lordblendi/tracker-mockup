@@ -1,0 +1,35 @@
+---
+---
+
+/* Test 1 */
+
+/*
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0 !important
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar-ff-outer {
+  overflow: hidden;
+}
+.hide-scrollbar-ff-inner {
+  margin-right: -16px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+*/
+
+/* Test 2 */
+
+
+.hide-scrollbar {
+  overflow-y: auto;
+  width: calc(100% + 16px);
+}
+
+.hide-scrollbar-inner {
+  margin-right: 16px;
+}
