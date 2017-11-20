@@ -1,3 +1,6 @@
+---
+permalink: /scroll
+---
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,9 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Scroll</title>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
-        <link rel="stylesheet" href="css/font-icons.css">
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/scroll.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/sass/font-icons.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/sass/reset.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/sass/scroll.css">
     </head>
     <body>
 
@@ -81,9 +84,9 @@
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="js/plugin/jquery.stickytableheaders.min.js"></script>
-        <script src="js/plugin/jquery.sticky.js"></script>
-        <script src="js/plugin/scroll.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/jquery.stickytableheaders.min.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/jquery.sticky.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/scroll.js"></script>
         <script>
             $(function() {
               $(document).ready(function() {
