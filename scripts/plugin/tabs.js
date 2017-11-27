@@ -1,23 +1,69 @@
 var resizeTimer;
 
 $(function() {
+  setup(".app__nav .tabs__nav");
+
+  // init
+  $('.tabs__nav').each(function() {
+    var _parent = $(this).parent();
+    var _activeLink = $(this).find('.active');
+    var _tabindex = _activeLink.attr('tabindex');
+    var barLeft = _activeLink.parent().position().left;
+    var barWidth = _activeLink.parent().width();
+
+    _parent.find('.tabs__panel').hide();
+    _parent.find('.tabs__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('active');
+
+    $(this).find('.tab__active-link-bar').css({
+      'left': barLeft + 10 + 'px',
+      'width': barWidth + 'px'
+    });
+  });
+
+  // click tab link
+  $('.tab__link').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    var _parent = $(this).parent().parent().parent().parent();
+    var _tabindex = $(this).attr('tabindex');
+    var bar = _parent.find('.tab__active-link-bar');
+    var barLeft = $(this).parent().position().left;
+    var barWidth = $(this).parent().width();
+
+    // Slide bar
+    bar.css({
+      'left': barLeft + 10 + 'px',
+      'width': barWidth + 'px'
+    });
+
+    // Change panel
+    _parent.find('.tabs__panel').hide().removeClass('active');
+    _parent.find('.tabs__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('active');
+
+    _parent.find('.tab__link').removeClass('active');
+    $(this).addClass('active');
+  });
+});
+
+function setup(tabsSelector){
+  const tab_nav = $(tabsSelector);
+  const more = tab_nav.find('.tab__more');
+  const less = tab_nav.find('.tab__less');
+  const ul = tab_nav.find('ul');
+
   // init setup
   // don't show less
-  var tab_nav = $('.tabs__nav');
-  tab_nav.find('.tab__less').addClass('hide');
+  $(less).addClass('hide');
 
   //  if there is enough place, don't show more
   if (isThereEnoughPlace()) {
-    tab_nav.find('.tab__more').addClass('hide');
+    $(more).addClass('hide');
   }
 
   $(window).on('resize', function(e) {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
-      var tab_nav = $('#menu__tabs');
-      var more = tab_nav.find('.tab__more');
-      var less = tab_nav.find('.tab__less');
-      var ul = tab_nav.find('ul');
 
       var duration = calculateDuration(ul);
       var max_width = parseInt(tab_nav.css('width'));
@@ -66,57 +112,14 @@ $(function() {
     }, 250);
   })
 
-  // TABS
-  // init
-  $('.tabs__nav').each(function() {
-    var _parent = $(this).parent();
-    var _activeLink = $(this).find('.active');
-    var _tabindex = _activeLink.attr('tabindex');
-    var barLeft = _activeLink.parent().position().left;
-    var barWidth = _activeLink.parent().width();
-
-    _parent.find('.tabs__panel').hide();
-    _parent.find('.tabs__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('active');
-
-    $(this).find('.tab__active-link-bar').css({
-      'left': barLeft + 10 + 'px',
-      'width': barWidth + 'px'
-    });
-  });
-
-  // click tab link
-  $('.tab__link').on('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    var _parent = $(this).parent().parent().parent().parent();
-    var _tabindex = $(this).attr('tabindex');
-    var bar = _parent.find('.tab__active-link-bar');
-    var barLeft = $(this).parent().position().left;
-    var barWidth = $(this).parent().width();
-
-    // Slide bar
-    bar.css({
-      'left': barLeft + 10 + 'px',
-      'width': barWidth + 'px'
-    });
-
-    // Change panel
-    _parent.find('.tabs__panel').hide().removeClass('active');
-    _parent.find('.tabs__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('active');
-
-    _parent.find('.tab__link').removeClass('active');
-    $(this).addClass('active');
-  });
-
   // scroll right
-  $(".tab__more").hover(function() {
+  $(more).hover(function() {
     //  only when it's not hidden
     if (!$(this).hasClass('hide')) {
-      var tab_nav = $(this).parent();
-      var less = tab_nav.find('.tab__less');
-      var more = tab_nav.find('.tab__more');
-      var ul = tab_nav.find('ul');
+      // var tab_nav = $(this).parent();
+      // var less = tab_nav.find('.tab__less');
+      // var more = tab_nav.find('.tab__more');
+      // var ul = tab_nav.find('ul');
       // calculate scrollWidth and duration
       var max_width = parseInt(tab_nav.css('width'));
       var scrollWidth = (calculateListSize() - max_width) * -1;
@@ -135,20 +138,15 @@ $(function() {
     }
 
   }, function() {
-    var tab_nav = $(this).parent();
-    tab_nav.find('.tab__more').addClass('stop');
-    tab_nav.find('ul').velocity("stop");
+    $(more).addClass('stop');
+    $(ul).velocity("stop");
 
   });
 
   // scroll left
-  $(".tab__less").hover(function() {
+  $(less).hover(function() {
     //  only when it's not hidden
     if (!$(this).hasClass('hide')) {
-      var tab_nav = $(this).parent();
-      var less = tab_nav.find('.tab__less');
-      var more = tab_nav.find('.tab__more');
-      var ul = tab_nav.find('ul');
       var duration = calculateDuration(ul);
 
       less.removeClass('stop');
@@ -164,27 +162,36 @@ $(function() {
     }
 
   }, function() {
-    var tab_nav = $(this).parent();
-    tab_nav.find('.tab__less').addClass('stop');
-    tab_nav.find('ul').velocity("stop");
+    $(less).addClass('stop');
+    $(ul).velocity("stop");
   });
-});
 
-// calculate size of list
-function calculateListSize() {
-  var tab_nav = $('.tabs__nav');
-  var ul = tab_nav.find('ul');
-  var listItems = Array.from(ul[0].children);
-  var listWidth = listItems.map(function(item) {
-    if (item.nodeName.toLocaleLowerCase() == 'li') {
-      return parseInt(item.scrollWidth) + parseInt($(item).css('margin-left')) + parseInt($(item).css('margin-right'));
-    }
-    return 0;
-  });
-  return listWidth.reduce(function(a, b) {
-    return a + b
-  });
-}
+  // calculate size of list
+  function calculateListSize() {
+    var listItems = Array.from(ul[0].children);
+    var listWidth = listItems.map(function(item) {
+      if (item.nodeName.toLocaleLowerCase() == 'li') {
+        return parseInt(item.scrollWidth) + parseInt($(item).css('margin-left')) + parseInt($(item).css('margin-right'));
+      }
+      return 0;
+    });
+    return listWidth.reduce(function(a, b) {
+      return a + b
+    });
+  }
+
+  // check if the list is longer than the provided space
+  function isThereEnoughPlace() {
+    var tabWidth = parseInt(tab_nav.css('width'));
+    var listItems = Array.from(ul[0].children);
+    var listWidth = calculateListSize();
+    // we don't need the first margin-left and last margin-right
+    listWidth -= 5;
+    return listWidth < tabWidth;
+  }
+};
+
+
 
 // function to animate scrolling through the list
 function scrollList(item, translate, duration, callback, easing) {
@@ -201,17 +208,7 @@ function scrollList(item, translate, duration, callback, easing) {
   }, options).then(callback);
 }
 
-// check if the list is longer than the provided space
-function isThereEnoughPlace() {
-  var tab_nav = $('.tabs__nav');
-  var ul = tab_nav.find('ul');
-  var tabWidth = parseInt(tab_nav.css('width'));
-  var listItems = Array.from(ul[0].children);
-  var listWidth = calculateListSize();
-  // we don't need the first margin-left and last margin-right
-  listWidth -= 5;
-  return listWidth < tabWidth;
-}
+
 
 // calculate duration
 function calculateDuration(tablist) {
