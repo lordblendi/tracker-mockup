@@ -2,4 +2,4 @@
 
 The purpose of this mockup is to see, if the functionality is enough or not. Concept was made by Konstantin Kharlov. CSS was made by Nick De Jaeger.
 
-https://lordblendi.github.io/tracker-mockup/
+https://tenforce.github.io/tracker-mockup/
