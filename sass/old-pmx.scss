@@ -14016,9 +14016,7 @@ dd.value .toggle-button-list .selected {
 .leaflet-google-layer {
     z-index: 1 !important;
 }
-.tid-footer-wrapper {
-	border-top: 1px solid #000;
-}
+
 .map-field .map-inner img,
 #MeetingMinutesView img,
 #nostyle img {
@@ -16209,11 +16207,11 @@ dd.value .toggle-button-list .selected {
 
 input,
 textarea {
+	font-family: 'Source Sans Pro', sans-serif;
   outline: 0;
   border: 0;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i);
 @font-face {
   font-family: 'pmx-icons';
   src: url('/assets/fonts/pmx.eot');
@@ -16223,6 +16221,10 @@ textarea {
     url('/assets/fonts/pmx.svg') format("svg");
   font-weight: normal;
   font-style: normal;
+}
+
+* {
+	box-sizing: border-box;
 }
 *::before,
 *::after {
@@ -16247,6 +16249,28 @@ body {
 }
 
 
-.elastic-srch {
-  content: "\e036";
+.hdr-container {
+	position: relative;
+}
+
+.hdr-semsearch {
+	position: relative;
+	float: right;
+}
+.hdr-semsearch__icon {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	color: #FFF;
+	text-decoration: none;
+	font-size: 20px;
+	padding: 5px;
+}
+.hdr-semsearch__icon::before {
+	content: "\e036";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

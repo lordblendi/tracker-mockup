@@ -1,3 +1,4 @@
+--- permalink: /pmx ---
 <!DOCTYPE html>
 <html>
 
@@ -6,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Elastic Search</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="/sass/old-pmx.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl }}/sass/old-pmx.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/sass/multiSelector.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/sass/itemBox.css">
 </head>
 
 <body id="body" class="chrome chrome63">
@@ -23,8 +25,8 @@
             </ul>
         </div>
         <div class="hdr-user">
-          Welcome, <a href="/acc_story663626-wd/account/profile" class="hdr-username" tabindex="-1">System Administrator</a><a href="/acc_story663626-wd/logout" class="hdr-logout" tabindex="-1">Logout</a>
-          <a href="/acc_story663626-wd/config" class="hdr-settings" tabindex="-1">Settings</a>
+            Welcome, <a href="/acc_story663626-wd/account/profile" class="hdr-username" tabindex="-1">System Administrator</a><a href="/acc_story663626-wd/logout" class="hdr-logout" tabindex="-1">Logout</a>
+            <a href="/acc_story663626-wd/config" class="hdr-settings" tabindex="-1">Settings</a>
         </div>
     </div>
 
@@ -59,58 +61,52 @@
 
         <div class="hdr-menu-container">
             <div class="hdr-title">
-                <h4><span class="ph-breadcrumb-first"><a href="/acc_story663626-wd/workspace/1/summary" class="ph-breadcrumb" tabindex="-1">Ward</a></span></h4>
+                <h4>
+                    <span class="ph-breadcrumb-first"><a href="/acc_story663626-wd/workspace/1/summary" class="ph-breadcrumb" tabindex="-1">Ward</a></span>
+                </h4>
             </div>
         </div>
 
 
+        <div class="hdr-semsearch">
 
+            <a href="#" class="hdr-semsearch__icon"></a>
 
-        <div class="multiSelector" id="multiSelector-1">
-          <div class="multiSelector__box">
-            <div class="multiSelector__search">
-              <input type="search" class="multiSelector__searchInput" placeholder="filter through statuses">
-            </div>
-          </div><!-- /.multiSelector__box -->
-
-          <div class="multiSelector__box">
-            <div class="itemBox">
-              <div class="itemBoxTable">
-                <div class="itemBoxBody">
-                  <ul class="itemBoxTable__bodyRow">
-                    <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--text" style="flex-grow: 1;">
-                      <div class="itemBoxTable__bodyCellInner">Not started</div>
-                    </li>
-                    <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
-                      <div class="itemBoxTable__bodyCellInner">
-                        <i class="itemBoxTable__action itemBoxTable__action--add"></i>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul class="itemBoxTable__bodyRow">
-                    <li class="itemBoxTable__bodyCell  itemBoxTable__bodyCell--text" style="flex-grow: 1;">
-                      <div class="itemBoxTable__bodyCellInner">Ongoing</div>
-                    </li>
-                    <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
-                      <div class="itemBoxTable__bodyCellInner">
-                        <i class="itemBoxTable__action itemBoxTable__action--add"></i>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul class="itemBoxTable__bodyRow">
-                    <li class="itemBoxTable__bodyCell  itemBoxTable__bodyCell--text" style="flex-grow: 1;">
-                      <div class="itemBoxTable__bodyCellInner">Done</div>
-                    </li>
-                    <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
-                      <div class="itemBoxTable__bodyCellInner">
-                        <i class="itemBoxTable__action itemBoxTable__action--add"></i>
-                      </div>
-                    </li>
-                  </ul>
+            <div class="multiSelector multiSelector--semsearch" id="ACTION__ELASTIC-SEARCH">
+                <div class="multiSelector__box">
+                    <div class="multiSelector__search">
+                        <input type="search" class="multiSelector__searchInput" placeholder="Type to initiate semsearch">
+                    </div>
                 </div>
-              </div>
-            </div><!-- /.itemBox -->
-          </div><!-- /.multiSelector__box -->
+                <!-- /.multiSelector__box -->
+
+                <div class="multiSelector__box">
+                    <div class="itemBox">
+                        <div class="itemBoxTable">
+                            <div class="itemBoxBody">
+                                <ul class="itemBoxTable__bodyRow">
+                                    <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--text" style="flex-grow: 1;">
+                                        <div class="itemBoxTable__bodyCellInner">Title Lorem ipsum</div>
+                                    </li>
+                                </ul>
+                                <ul class="itemBoxTable__bodyRow">
+                                    <li class="itemBoxTable__bodyCell  itemBoxTable__bodyCell--text" style="flex-grow: 1;">
+                                        <div class="itemBoxTable__bodyCellInner">Assigned to Nick De Jaeger</div>
+                                    </li>
+                                </ul>
+                                <ul class="itemBoxTable__bodyRow">
+                                    <li class="itemBoxTable__bodyCell  itemBoxTable__bodyCell--text" style="flex-grow: 1;">
+                                        <div class="itemBoxTable__bodyCellInner">Priority Low</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.itemBox -->
+                </div>
+                <!-- /.multiSelector__box -->
+            </div>
+
         </div>
 
     </div>
@@ -153,10 +149,8 @@
                 <ul class="tabs">
                     <li id="element_0" class="tab tab-fixed" style=""><a class="tab" href="/acc_story663626-wd/workspace/1/summary" tabindex="-1"><span class="tab-text">Summary</span></a></li>
                     <li id="element_1" selectionfilter="1l" class="tab tab-list" style=""><a selectionfilter="1l" class="tab-hide" tabindex="-1"></a><a class="tab" href="/acc_story663626-wd/workspace/1/1l" tabindex="-1"><span class="tab-text">Actions</span></a></li>
-                    <li id="element_2" selectionfilter="2l" class="tab tab-list"
-                        style=""><a selectionfilter="2l" class="tab-hide" tabindex="-1"></a><a class="tab" href="/acc_story663626-wd/workspace/1/2l" tabindex="-1"><span class="tab-text">Meetings</span></a></li>
-                    <li id="element_3" selectionfilter="3l" class="tab tab-list tab-selected"
-                        style=""><a selectionfilter="3l" class="tab-hide" tabindex="-1"></a><a class="tab" href="/acc_story663626-wd/workspace/1/3l" tabindex="-1"><span class="tab-text">Test</span></a></li>
+                    <li id="element_2" selectionfilter="2l" class="tab tab-list" style=""><a selectionfilter="2l" class="tab-hide" tabindex="-1"></a><a class="tab" href="/acc_story663626-wd/workspace/1/2l" tabindex="-1"><span class="tab-text">Meetings</span></a></li>
+                    <li id="element_3" selectionfilter="3l" class="tab tab-list tab-selected" style=""><a selectionfilter="3l" class="tab-hide" tabindex="-1"></a><a class="tab" href="/acc_story663626-wd/workspace/1/3l" tabindex="-1"><span class="tab-text">Test</span></a></li>
                 </ul>
             </div>
         </div>
@@ -209,12 +203,10 @@
                             </ul>
                             <ul id="ctl00_PageContentPlaceHolder_ctl00_ItemTools_itemdetailtools">
                                 <li class="delete" title="Permanently delete this item. This cannot be undone"><a href="../UserControls/#Delete%20this%20item" id="ctl00_PageContentPlaceHolder_ctl00_ItemTools_ctl01" onclick="javascript:return false;" onmouseup="javascript:return false;" tabindex="-1">Delete</a></li>
-                                <li class="copy"
-                                    title="Create a new item based on the one currently displayed"><a href="../UserControls/#Copy%20this%20item" id="ctl00_PageContentPlaceHolder_ctl00_ItemTools_ctl03" onclick="javascript:return false;" onmouseup="javascript:return false;" tabindex="-1">Copy</a></li>
+                                <li class="copy" title="Create a new item based on the one currently displayed"><a href="../UserControls/#Copy%20this%20item" id="ctl00_PageContentPlaceHolder_ctl00_ItemTools_ctl03" onclick="javascript:return false;" onmouseup="javascript:return false;" tabindex="-1">Copy</a></li>
                                 <li class="move" title="Move this item from its current list to a new workspace and/or list"><a href="../UserControls/#Move" id="ctl00_PageContentPlaceHolder_ctl00_ItemTools_ctl05" onclick="javascript:return false;" onmouseup="javascript:return false;" tabindex="-1">Move</a></li>
                                 <li class="new" title="Attach this item to (another) parent item as a child"><a href="../UserControls/#Link%20parent" id="ctl00_PageContentPlaceHolder_ctl00_ItemTools_ctl07" onclick="javascript:return false;" onmouseup="javascript:return false;" tabindex="-1">Link parent</a></li>
-                                <li class="mail"
-                                    title="Mail the content of this item and its attachments to anyone"><a href="../UserControls/#Email" id="ctl00_PageContentPlaceHolder_ctl00_ItemTools_ctl09" onclick="javascript:return false;" onmouseup="javascript:return false;" tabindex="-1">Email</a></li>
+                                <li class="mail" title="Mail the content of this item and its attachments to anyone"><a href="../UserControls/#Email" id="ctl00_PageContentPlaceHolder_ctl00_ItemTools_ctl09" onclick="javascript:return false;" onmouseup="javascript:return false;" tabindex="-1">Email</a></li>
                                 <li class="print" title="Create a printable view of all tabs of this item"><a href="../UserControls/#Print" id="ctl00_PageContentPlaceHolder_ctl00_ItemTools_ctl11" onclick="javascript:return false;" onmouseup="javascript:return false;" tabindex="-1">Print</a></li>
                                 <li class="copy" title="Save all outstanding edits"><a href="../UserControls/#Save%20changes" id="ctl00_PageContentPlaceHolder_ctl00_ItemTools_ctl13" onclick="javascript:return false;" onmouseup="javascript:return false;" tabindex="-1">Save changes</a></li>
                             </ul>
@@ -257,605 +249,186 @@
                                             </dd>
                                         </dl><dt class="label double"><span class="optional">&nbsp;</span><span class="label">check</span></dt>
                                         <dd class="value double"><span id="fld_1_customfield_3" ipe_id="1" ipe_object="customfield" ipe_property="3" class="hasipe" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a><div class="checker"><span class="checked"><input type="checkbox" checked="checked" disabled="disabled" class="invisible" style="display: none;"></span></div>
-                                <div
-                                    class="clear"></div>
-                            </span>
-                            </dd>
-                            <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">toggle</span></dt>
-                            <dd class="value double"><span id="fld_1_customfield_1" ipe_id="1" ipe_object="customfield" ipe_property="1" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
-                            </dd>
-                            <dt class="label double field-empty invisible">&nbsp;</dt>
-                            <dd class="value double field-empty invisible">&nbsp;</dd>
-                            <dd class="clear"></dd><dt class="label double"><span class="required">*</span><span class="label">Assigned to</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_4" ipe_id="1" ipe_object="Item" ipe_property="4" class="hasipe" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a><span class="me">System Administrator</span></span>
-                            </dd>
-                            <dt class="label double field-empty invisible">&nbsp;</dt>
-                            <dd class="value double field-empty invisible">&nbsp;</dd>
-                            <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Due date</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_5" ipe_id="1" ipe_object="Item" ipe_property="5" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
-                            </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Due text</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_6" ipe_id="1" ipe_object="Item" ipe_property="6" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
-                            </dd>
-                            <dd class="clear"></dd><dt class="label double"><span class="required">*</span><span class="label">Status</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_7" ipe_id="1" ipe_object="Item" ipe_property="7" class="hasipe" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Not started</span>
-                            </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Priority</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_8" ipe_id="1" ipe_object="Item" ipe_property="8" class="hasipe" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Medium</span>
-                            </dd>
-                            <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Source event</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_12" ipe_id="1" ipe_object="Item" ipe_property="12" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
-                            </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Source date</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_13" ipe_id="1" ipe_object="Item" ipe_property="13" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
-                            </dd>
-                            <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Performed By</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_14" ipe_id="1" ipe_object="Item" ipe_property="14" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
-                            </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Performed For</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_15" ipe_id="1" ipe_object="Item" ipe_property="15" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
-                            </dd>
-                            <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Planned start</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_16" ipe_id="1" ipe_object="Item" ipe_property="16" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
-                            </dd>
-                            <dt class="label double field-empty invisible">&nbsp;</dt>
-                            <dd class="value double field-empty invisible">&nbsp;</dd>
-                            <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Planned effort (hours)</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_17" ipe_id="1" ipe_object="Item" ipe_property="17" class="hasipe" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>0</span>
-                            </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Actual effort (hours)</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_18" ipe_id="1" ipe_object="Item" ipe_property="18" class="hasnoipe" title="" ipe_editmodeallowed="false">0</span>
-                            </dd>
-                            <dd class="clear"></dd><dt class="label double"><span class="required">*</span><span class="label">List</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_19" ipe_id="1" ipe_object="Item" ipe_property="19" class="hasnoipe" title="" ipe_editmodeallowed="false">Ward : <a href="/acc_story663626-wd/workspace/1/3l" tabindex="-1">Test</a></span>
-                            </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">ETC (hours)</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_20" ipe_id="1" ipe_object="Item" ipe_property="20" class="hasipe" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>0</span>
-                            </dd>
-                            <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Originator</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_21" ipe_id="1" ipe_object="Item" ipe_property="21" class="hasipe" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a><span class="me">System Administrator</span></span>
-                            </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Tags</span></dt>
-                            <dd class="value double"><span id="fld_1_Item_22" ipe_id="1" ipe_object="Item" ipe_property="22" class="hasipe tagcontainer" title="Click here to add a tag" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a><span class="addcontent fixed">Click here to add a tag</span>
-                                <div
-                                    class="clear"></div><a href="#Tags" id="customizeTags" title="Customize tags" onclick="javascript: Tag.customize(this, 1, true);" tabindex="-1">Customize tags</a></span>
-                        </dd>
-                        <dd class="clear"></dd>
-                        </dl>
+                                <div class="clear"></div>
+                                </span>
+                                </dd>
+                                <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">toggle</span></dt>
+                                <dd class="value double"><span id="fld_1_customfield_1" ipe_id="1" ipe_object="customfield" ipe_property="1" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
+                                </dd>
+                                <dt class="label double field-empty invisible">&nbsp;</dt>
+                                <dd class="value double field-empty invisible">&nbsp;</dd>
+                                <dd class="clear"></dd><dt class="label double"><span class="required">*</span><span class="label">Assigned to</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_4" ipe_id="1" ipe_object="Item" ipe_property="4" class="hasipe" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a><span class="me">System Administrator</span></span>
+                                </dd>
+                                <dt class="label double field-empty invisible">&nbsp;</dt>
+                                <dd class="value double field-empty invisible">&nbsp;</dd>
+                                <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Due date</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_5" ipe_id="1" ipe_object="Item" ipe_property="5" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
+                                </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Due text</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_6" ipe_id="1" ipe_object="Item" ipe_property="6" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
+                                </dd>
+                                <dd class="clear"></dd><dt class="label double"><span class="required">*</span><span class="label">Status</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_7" ipe_id="1" ipe_object="Item" ipe_property="7" class="hasipe" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Not started</span>
+                                </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Priority</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_8" ipe_id="1" ipe_object="Item" ipe_property="8" class="hasipe" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Medium</span>
+                                </dd>
+                                <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Source event</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_12" ipe_id="1" ipe_object="Item" ipe_property="12" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
+                                </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Source date</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_13" ipe_id="1" ipe_object="Item" ipe_property="13" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
+                                </dd>
+                                <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Performed By</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_14" ipe_id="1" ipe_object="Item" ipe_property="14" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
+                                </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Performed For</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_15" ipe_id="1" ipe_object="Item" ipe_property="15" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
+                                </dd>
+                                <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Planned start</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_16" ipe_id="1" ipe_object="Item" ipe_property="16" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
+                                </dd>
+                                <dt class="label double field-empty invisible">&nbsp;</dt>
+                                <dd class="value double field-empty invisible">&nbsp;</dd>
+                                <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Planned effort (hours)</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_17" ipe_id="1" ipe_object="Item" ipe_property="17" class="hasipe" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>0</span>
+                                </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Actual effort (hours)</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_18" ipe_id="1" ipe_object="Item" ipe_property="18" class="hasnoipe" title="" ipe_editmodeallowed="false">0</span>
+                                </dd>
+                                <dd class="clear"></dd><dt class="label double"><span class="required">*</span><span class="label">List</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_19" ipe_id="1" ipe_object="Item" ipe_property="19" class="hasnoipe" title="" ipe_editmodeallowed="false">Ward : <a href="/acc_story663626-wd/workspace/1/3l" tabindex="-1">Test</a></span>
+                                </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">ETC (hours)</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_20" ipe_id="1" ipe_object="Item" ipe_property="20" class="hasipe" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>0</span>
+                                </dd>
+                                <dd class="clear"></dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Originator</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_21" ipe_id="1" ipe_object="Item" ipe_property="21" class="hasipe" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a><span class="me">System Administrator</span></span>
+                                </dd><dt class="label double"><span class="optional">&nbsp;</span><span class="label">Tags</span></dt>
+                                <dd class="value double"><span id="fld_1_Item_22" ipe_id="1" ipe_object="Item" ipe_property="22" class="hasipe tagcontainer" title="Click here to add a tag" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a><span class="addcontent fixed">Click here to add a tag</span>
+                                    <div class="clear"></div><a href="#Tags" id="customizeTags" title="Customize tags" onclick="javascript: Tag.customize(this, 1, true);" tabindex="-1">Customize tags</a></span>
+                                </dd>
+                                <dd class="clear"></dd>
+                                </dl>
+                            </div>
+                            <div id="ctl00_PageContentPlaceHolder_ctl00_m_OverviewTab_CFDetails" class="overview-cfields"></div>
+
+                            <h2 class="pagetitle">Description</h2>
+                            <div>
+                                <span id="fld_1_Item_23" ipe_id="1" ipe_object="Item" ipe_property="23" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
+
+                            </div>
+                            <p class="set-subtitle-main"></p>
+
+                            <div class="clear"></div>
+                        </div>
                     </div>
-                    <div id="ctl00_PageContentPlaceHolder_ctl00_m_OverviewTab_CFDetails" class="overview-cfields"></div>
+                    <div id="ctl00_PageContentPlaceHolder_ctl00_contentcontainer2">
+                        <div id="ChilditemsTab0_Content" class="tid-content invisible">
+                            <h2 class="pagetitle">Test</h2>
+                            <div id="childitems0_datalist-wrapper" class="content-wrapper childitems0">
+                                <div class="content">
+                                    <div id="childitems0_itemboxview" class="databox itembox" style="">
+                                        <ul class="itembox">
+                                            <li class="top">
+                                                <ul>
+                                                    <li class="header">
+                                                        <ul class="columns">
+                                                            <li id="childitems0_anonymous_element_2" class="column column0 level0 variable  sorting colname_col_sf2 titlefilter"><a id="childitems0_anonymous_element_3" class="relations collapsedall" title="Expand/Collapse all" tabindex="-1"> </a><span id="childitems0_anonymous_element_4" class="sortable" title="Title">Title</span></li>
+                                                            <li id="childitems0_anonymous_element_5" class="column column1 level0 medium  sorting colname_col_sf4"><span id="childitems0_anonymous_element_6" class="sortable" title="Assigned to">Assigned to</span></li>
+                                                            <li id="childitems0_anonymous_element_7" class="column column2 level0 medium  sortingAZ colname_col_sf5"><span id="childitems0_anonymous_element_8" class="sortable" title="Due date">Due date</span></li>
+                                                            <li id="childitems0_anonymous_element_9" class="column column3 level0 medium  sorting colname_col_sf7"><span id="childitems0_anonymous_element_10" class="sortable" title="Status">Status</span></li>
+                                                            <li id="childitems0_anonymous_element_11" class="column column4 level0 medium  sorting colname_col_cf2"><span id="childitems0_anonymous_element_12" class="sortable" title="test">test</span></li>
+                                                            <li id="childitems0_anonymous_element_13" class="column column5 level0 xs  sorting colname_col_cf3"><span id="childitems0_anonymous_element_14" class="sortable" title="check">check</span></li>
+                                                            <li id="childitems0_anonymous_element_15" class="column column6 level0 xlarge  sorting colname_col_sf23"><span id="childitems0_anonymous_element_16" class="" title="Description">Description</span></li>
+                                                            <li id="childitems0_anonymous_element_17" class="column column7 level0 medium  sorting colname_col_sf8"><span id="childitems0_anonymous_element_18" class="sortable" title="Priority">Priority</span></li>
+                                                            <li class="column column8 level0 actionCol1 action action"><a class="columns" title="Customize columns" tabindex="-1">&nbsp;</a></li>
+                                                            <li class="column column9 level0 actionCol2 action action"><a class="childrenFilter" title="Toggle filter" tabindex="-1">&nbsp;</a></li>
+                                                        </ul>
+                                                    </li>
 
-                    <h2 class="pagetitle">Description</h2>
-                    <div>
-                        <span id="fld_1_Item_23" ipe_id="1" ipe_object="Item" ipe_property="23" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
+                                                </ul>
+                                            </li>
+                                            <li class="middle">
+                                                <ul>
+                                                    <div id="anonymous_element_29" class="blank-slate">No results found</div>
+                                                </ul>
+                                            </li>
+                                            <li class="bottom">
+                                                <ul>
+                                                    <li class="actions">
+                                                        <div>
+                                                            <div class="hasbuttons"><a tabindex="-1" class="cnci button save" id="cnci3"><span>Create new item</span></a>
+                                                                <div id="cncipicker3" class="hdr-cnipicker cncipicker">
+                                                                    <div id="picker" class="solidinput haspicker">
+                                                                        <div class="newpicker" id="anonymous_element_8"><span class="newpickerbutton">&nbsp;</span>
+                                                                            <div class="newpickercontent-wrapper">
+                                                                                <div class="newpickercontent-container">
+                                                                                    <div class="newpickercontent">
+                                                                                        <p class="inlinesearch"><input type="text" value="Search..." class="text empty"></p>
 
-                    </div>
-                    <p class="set-subtitle-main"></p>
+                                                                                        <ul class="monsterlist" id="itemlist">
+                                                                                            <li id="null" class="addcontent"><label class="nonselectable"><span class="inner">no selections available</span></label></li>
+                                                                                        </ul>
 
-                    <div class="clear"></div>
-                </div>
-
-                <div id="SolutionTab_Content" class="tid-content invisible">
-                    <h2 class="pagetitle">Solution</h2>
-                    <div>
-                        <span id="fld_1_Item_29" ipe_id="1" ipe_object="Item" ipe_property="29" class="hasipe addcontent" title="Click here to edit" ipe_editmodeallowed="true"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</span>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-            <div id="ctl00_PageContentPlaceHolder_ctl00_contentcontainer2">
-                <div id="ChilditemsTab0_Content" class="tid-content invisible">
-                    <h2 class="pagetitle">Test</h2>
-                    <div id="childitems0_datalist-wrapper" class="content-wrapper childitems0">
-                        <div class="blank-slate invisible" style="display: none;"></div>
-                        <div class="content">
-                            <div id="childitems0_itemboxview" class="databox itembox" style="">
-                                <ul class="itembox">
-                                    <li class="top">
-                                        <ul>
-                                            <div class="cresizer">
-                                                <div class="cresizer-handle" data-column="0" style="height: 0px;"></div>
-                                                <div class="cresizer-handle" data-column="1" style="height: 0px;"></div>
-                                                <div class="cresizer-handle" data-column="2" style="height: 0px;"></div>
-                                                <div class="cresizer-handle" data-column="3" style="height: 0px;"></div>
-                                                <div class="cresizer-handle" data-column="4" style="height: 0px;"></div>
-                                                <div class="cresizer-handle" data-column="5" style="height: 0px;"></div>
-                                                <div class="cresizer-handle" data-column="6" style="height: 0px;"></div>
-                                            </div>
-                                            <li class="header">
-                                                <ul class="columns">
-                                                    <li id="childitems0_anonymous_element_2" class="column column0 level0 variable  sorting colname_col_sf2 titlefilter"><a id="childitems0_anonymous_element_3" class="relations collapsedall" title="Expand/Collapse all" tabindex="-1"> </a><span id="childitems0_anonymous_element_4" class="sortable" title="Title">Title</span></li>
-                                                    <li
-                                                        id="childitems0_anonymous_element_5" class="column column1 level0 medium  sorting colname_col_sf4"><span id="childitems0_anonymous_element_6" class="sortable" title="Assigned to">Assigned to</span></li>
-                                            <li id="childitems0_anonymous_element_7" class="column column2 level0 medium  sortingAZ colname_col_sf5"><span id="childitems0_anonymous_element_8" class="sortable" title="Due date">Due date</span></li>
-                                            <li id="childitems0_anonymous_element_9" class="column column3 level0 medium  sorting colname_col_sf7"><span id="childitems0_anonymous_element_10" class="sortable" title="Status">Status</span></li>
-                                            <li id="childitems0_anonymous_element_11" class="column column4 level0 medium  sorting colname_col_cf2"><span id="childitems0_anonymous_element_12" class="sortable" title="test">test</span></li>
-                                            <li id="childitems0_anonymous_element_13" class="column column5 level0 xs  sorting colname_col_cf3"><span id="childitems0_anonymous_element_14" class="sortable" title="check">check</span></li>
-                                            <li id="childitems0_anonymous_element_15" class="column column6 level0 xlarge  sorting colname_col_sf23"><span id="childitems0_anonymous_element_16" class="" title="Description">Description</span></li>
-                                            <li id="childitems0_anonymous_element_17" class="column column7 level0 medium  sorting colname_col_sf8"><span id="childitems0_anonymous_element_18" class="sortable" title="Priority">Priority</span></li>
-                                            <li class="column column8 level0 actionCol1 action action"><a class="columns" title="Customize columns" tabindex="-1">&nbsp;</a></li>
-                                            <li class="column column9 level0 actionCol2 action action"><a class="childrenFilter" title="Toggle filter" tabindex="-1">&nbsp;</a></li>
-                                            </ul>
-                                    </li>
-                                    <li class="filter  invisible">
-                                        <div class="inlinefilter">
-                                            <table class="filtermode">
-                                                <tbody>
-                                                    <tr>
-                                                        <td id="anonymous_element_19" class="column column0 level0 variable  colname_col_sf2 titlefilter longtext"><input id="anonymous_element_31" class="ipfTextField-input text full" type="text"></td>
-                                                        <td id="anonymous_element_20" class="column column1 level0 medium  colname_col_sf4 multipersonpicker"><span id="anonymous_element_32"><div id="picker" class="solidinput haspicker" style="height: auto;"><div class="newpicker" id="anonymous_element_2"><span class="newpickerbutton">&nbsp;</span>
-                                                            <div
-                                                                class="newpickercontent-wrapper">
-                                                                <div class="newpickercontent-container">
-                                                                    <div class="newpickercontent">
-                                                                        <p class="inlinesearch"><input type="text" value="Search..." class="text empty"></p>
-
-                                                                        <ul class="monsterlist" id="itemlist">
-                                                                            <li id="null" class="addcontent"><label class="nonselectable"><span class="inner">no selections available</span></label></li>
-                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="pickerinput"><span class="noinput invisible pickerfocusable" tabindex="0">&nbsp;</span><input type="text" value="" class="text invisible"></div>
 
                                                                     </div>
-                                                                </div>
-                                        </div>
-                            </div>
-                            <div class="pickerinput"><span class="noinput pickerfocusable" tabindex="0">&nbsp;</span><input type="text" value="" class="text invisible"></div>
-                        </div>
-                        </span>
-                        </td>
-                        <td id="anonymous_element_21" class="column column2 level0 medium  colname_col_sf5 combobox"><span id="anonymous_element_33"><div id="picker" class="solidinput haspicker" title=""><div class="newpicker" id="anonymous_element_3"><span class="newpickerbutton">&nbsp;</span>
-                            <div class="newpickercontent-wrapper">
-                                <div class="newpickercontent-container">
-                                    <div class="newpickercontent">
-                                        <p class="inlinesearch invisible"><input type="text" value="" class="text"></p>
-                                        <ul class="monsterlist" id="itemlist" style="height: 207px;">
-                                            <li id="p1_itemidSID1" class="inactive null "><label class="pickable"><span class="inner">&nbsp;</span></label></li>
-                                            <li id="p1_itemid120" class=""><label class="pickable"><span class="inner"><span class="pickerEmpty">[ ]</span></span></label></li>
-                                            <li id="p1_itemidSID1" class=""><label class="pickable advanced"><span class="inner">Select a date</span></label></li>
-                                            <li id="p1_itemid122" class=""><label class="pickable advanced"><span class="inner">Advanced</span></label></li>
-                                            <li id="p1_itemid123" class=""><label class="pickable"><span class="inner">Yesterday</span></label></li>
-                                            <li id="p1_itemid124" class=""><label class="pickable"><span class="inner">Today</span></label></li>
-                                            <li id="p1_itemid125" class=""><label class="pickable"><span class="inner">Tomorrow</span></label></li>
-                                            <li id="p1_itemid126" class=""><label class="pickable"><span class="inner">This Week</span></label></li>
-                                            <li id="p1_itemid127" class=""><label class="pickable"><span class="inner">This Month</span></label></li>
-                                            <li id="p1_itemid128" class=""><label class="pickable"><span class="inner">This Year</span></label></li>
-                                            <li id="p1_itemid129" class=""><label class="pickable"><span class="inner">Next Week</span></label></li>
-                                            <li id="p1_itemid130" class=""><label class="pickable"><span class="inner">Next Month</span></label></li>
-                                            <li id="p1_itemid131" class=""><label class="pickable"><span class="inner">Next Year</span></label></li>
-                                            <li id="p1_itemid132" class=""><label class="pickable"><span class="inner">Last Week</span></label></li>
-                                            <li id="p1_itemid133" class=""><label class="pickable"><span class="inner">Last Month</span></label></li>
-                                            <li id="p1_itemid134" class=""><label class="pickable"><span class="inner">Last Year</span></label></li>
-                                            <li id="p1_itemid135" class=""><label class="pickable"><span class="inner">Overdue</span></label></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="pickerinput"><span class="noinput invisible pickerfocusable" tabindex="0">&nbsp;</span><input type="text" value="" class="text"></div>
-                </div>
-                </span>
-                </td>
-                <td id="anonymous_element_22" class="column column3 level0 medium  colname_col_sf7 multipleselection"><span id="anonymous_element_34"><div id="picker" class="solidinput haspicker" style="height: auto;" title=""><div class="newpicker" id="anonymous_element_4"><span class="newpickerbutton">&nbsp;</span>
-                    <div class="newpickercontent-wrapper">
-                        <div class="newpickercontent-container">
-                            <div class="newpickercontent">
-                                <p class="inlinesearch"><input type="text" value="Search..." class="text empty"></p>
-                                <ul class="monsterlist" id="itemlist" style="height: 207px;">
-                                    <li id="groupid136" class="open "><label class="nonselectable"><div class="selector"><a class="all" tabindex="-1">Select All</a> | <a class="none" tabindex="-1">None</a></div><span class="inner">Work in progress</span></label>
-                                        <ul>
-                                            <li id="itemid138" class=""><label class="selectable"><span class="inner"><div class="checker"><span><input type="checkbox" style="opacity: 0;"></span></div>Not started</span></label></li>
-                                        </ul>
-                                    </li>
-                                    <li id="groupid137" class="open "><label class="nonselectable"><div class="selector"><a class="all" tabindex="-1">Select All</a> | <a class="none" tabindex="-1">None</a></div><span class="inner">Indicates inactive items</span></label>
-                                        <ul>
-                                            <li id="itemid139" class=""><label class="selectable"><span class="inner"><div class="checker"><span><input type="checkbox" style="opacity: 0;"></span></div>Closed</span></label></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="pickerinput"><span class="noinput pickerfocusable" tabindex="0">&nbsp;</span><input type="text" value="" class="text invisible"></div>
-        </div>
-        </span>
-        </td>
-        <td id="anonymous_element_23" class="column column4 level0 medium  colname_col_cf2 multipleselection"><span id="anonymous_element_35"><div id="picker" class="solidinput haspicker" style="height: auto;" title=""><div class="newpicker" id="anonymous_element_5"><span class="newpickerbutton">&nbsp;</span>
-            <div class="newpickercontent-wrapper">
-                <div class="newpickercontent-container">
-                    <div class="newpickercontent">
-                        <p class="inlinesearch"><input type="text" value="Search..." class="text empty"></p>
-                        <ul class="monsterlist" id="itemlist" style="height: 207px;">
-                            <li id="itemid140" class=""><label class="selectable"><span class="inner"><div class="checker"><span><input type="checkbox" style="opacity: 0;"></span></div><span class="pickerEmpty">[ ]</span></span></label></li>
-                            <li id="itemid141" class=""><label class="selectable"><span class="inner"><div class="checker"><span><input type="checkbox" style="opacity: 0;"></span></div>OK</span></label></li>
-                            <li id="itemid142" class=""><label class="selectable"><span class="inner"><div class="checker"><span><input type="checkbox" style="opacity: 0;"></span></div>NOK</span></label></li>
-                            <li id="itemid143" class=""><label class="selectable"><span class="inner"><div class="checker"><span><input type="checkbox" style="opacity: 0;"></span></div>HALF OK</span></label></li>
-                            <li id="itemid144" class=""><label class="selectable"><span class="inner"><div class="checker"><span><input type="checkbox" style="opacity: 0;"></span></div>NIKS</span></label></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <div class="pickerinput"><span class="noinput pickerfocusable" tabindex="0">&nbsp;</span><input type="text" value="" class="text invisible"></div>
-    </div>
-    </span>
-    </td>
-    <td id="anonymous_element_24" class="column column5 level0 xs  colname_col_cf3 combobox"><span id="anonymous_element_36"><div id="picker" class="solidinput haspicker" title=""><div class="newpicker" id="anonymous_element_6"><span class="newpickerbutton">&nbsp;</span>
-        <div class="newpickercontent-wrapper">
-            <div class="newpickercontent-container">
-                <div class="newpickercontent">
-                    <p class="inlinesearch invisible"><input type="text" value="" class="text"></p>
-                    <ul class="monsterlist" id="itemlist" style="height: 207px;">
-                        <li id="p2_itemidSID2" class="inactive null "><label class="pickable"><span class="inner">&nbsp;</span></label></li>
-                        <li id="p2_itemid145" class=""><label class="pickable"><span class="inner">Is set</span></label></li>
-                        <li id="p2_itemid146" class=""><label class="pickable"><span class="inner">Is not set</span></label></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="pickerinput"><span class="noinput invisible pickerfocusable" tabindex="0">&nbsp;</span><input type="text" value="" class="text"></div>
-        </div>
-        </span>
-    </td>
-    <td id="anonymous_element_25" class="column column6 level0 xlarge  colname_col_sf23 text"><span class="ipfTextField"><input id="anonymous_element_37" maxlength="40" class="ipfTextField-input text full" type="text"><a href="javascript:void(0)" class="ipfTextField-emptyButton" title="Is empty" tabindex="-1"></a></span></td>
-    <td id="anonymous_element_26"
-        class="column column7 level0 medium  colname_col_sf8 multipleselection"><span id="anonymous_element_38"><div id="picker" class="solidinput haspicker" style="height: auto;" title=""><div class="newpicker" id="anonymous_element_7"><span class="newpickerbutton">&nbsp;</span>
-        <div class="newpickercontent-wrapper">
-            <div class="newpickercontent-container">
-                <div class="newpickercontent">
-                    <p class="inlinesearch"><input type="text" value="Search..." class="text empty"></p>
-                    <ul class="monsterlist" id="itemlist" style="height: 207px;">
-                        <li id="itemid147" class=""><label class="selectable"><span class="inner"><div class="checker"><span><input type="checkbox" style="opacity: 0;"></span></div>Low</span></label></li>
-                        <li id="itemid148" class=""><label class="selectable"><span class="inner"><div class="checker"><span><input type="checkbox" style="opacity: 0;"></span></div>Medium</span></label></li>
-                        <li id="itemid149" class=""><label class="selectable"><span class="inner"><div class="checker"><span><input type="checkbox" style="opacity: 0;"></span></div>High</span></label></li>
-                        <li id="itemid150" class=""><label class="selectable"><span class="inner"><div class="checker"><span><input type="checkbox" style="opacity: 0;"></span></div>Critical</span></label></li>
-                        <li id="itemid151" class=""><label class="selectable"><span class="inner"><div class="checker"><span><input type="checkbox" style="opacity: 0;"></span></div>Blocking</span></label></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        </div>
-        <div class="pickerinput"><span class="noinput pickerfocusable" tabindex="0">&nbsp;</span><input type="text" value="" class="text invisible"></div>
-
-        </div>
-        </span>
-    </td>
-    <td id="anonymous_element_27" class="column column8 level0 actionCol1  action frozenColumn-action"><a class="search" tabindex="-1">&nbsp;</a></td>
-    <td id="anonymous_element_28" class="column column9 level0 actionCol2  action frozenColumn-action2">&nbsp;</td>
-    </tr>
-    </tbody>
-    </table>
-    </div>
-    </li>
-    </ul>
-    </li>
-    <li class="middle">
-        <ul>
-            <div id="anonymous_element_29" class="blank-slate">No results found</div>
-        </ul>
-    </li>
-    <li class="bottom">
-        <ul>
-            <li class="actions">
-                <div>
-                    <div class="hasbuttons"><a tabindex="-1" class="cnci button save" id="cnci3"><span>Create new item</span></a>
-                        <div id="cncipicker3" class="hdr-cnipicker cncipicker">
-                            <div id="picker" class="solidinput haspicker">
-                                <div class="newpicker" id="anonymous_element_8"><span class="newpickerbutton">&nbsp;</span>
-                                    <div class="newpickercontent-wrapper">
-                                        <div class="newpickercontent-container">
-                                            <div class="newpickercontent">
-                                                <p class="inlinesearch"><input type="text" value="Search..." class="text empty"></p>
-
-                                                <ul class="monsterlist" id="itemlist">
-                                                    <li id="null" class="addcontent"><label class="nonselectable"><span class="inner">no selections available</span></label></li>
-                                                </ul>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pickerinput"><span class="noinput invisible pickerfocusable" tabindex="0">&nbsp;</span><input type="text" value="" class="text invisible"></div>
-
-                            </div>
-                        </div><span class="nobutton" id="cni_first_or" style="">&nbsp;or&nbsp;</span><a tabindex="-1" class="button" id="lei3" style=""><span>Link existing</span></a></div>
-                </div>
-            </li>
-            <li class="footer">
-                <div class="itemsperpage">
-                    <div class="paging"><span>Show</span>
-                        <ul id="anonymous_element_30">
-                            <li value="20" class="selected"><a tabindex="-1"><span>20</span></a></li>
-                            <li value="50"><a tabindex="-1"><span>50</span></a></li>
-                            <li value="100"><a tabindex="-1"><span>100</span></a></li>
-                        </ul><span>items</span></div>
-                </div>
-                <div class="displayitemcount">Displaying items <strong><span id="childitems0_PagingInfoFrom">0</span></strong> to <strong><span id="childitems0_PagingInfoTo">0</span></strong> of <strong><span id="childitems0_PagingInfoTotal">0</span></strong></div>
-                <ul>
-                    <li>&nbsp;</li>
-                </ul>
-                <div class="clear"></div>
-            </li>
-        </ul>
-    </li>
-    <li class="clear"></li>
-    </ul>
-    </div>
-    <div id="childitems0_detailviewWrapper" class="itemboxNewWrapper invisible">
-        <div id="childitems0_detailview" class="itemboxNew">
-            <div class="itemboxHeader">
-                <table cellspacing="0">
-                    <thead id="childitems0_header-container">
-                    </thead>
-                </table>
-                <div class="clear">
-                </div>
-            </div>
-            <div class="itemboxBody">
-                <ul id="childitems0_itemboxBody" class="itemboxBodyList">
-                </ul>
-                <ul id="childitems0_blank-slate" class="blank-slate invisible noprint">
-                    <li>
-                        <div class="tableline">
-                            <div id="childitems0_blankSlateText" class="blank-slate">
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <ul id="childitems0_itemboxFooter" class="cni">
-                </ul>
-                <div class="clear">
-                </div>
-            </div>
-            <div id="childitems0_detail-footer" class="itemboxFooter">
-                <div id="childitems0_itemsperpage" class="itemsperpage">
-                </div>
-
-                <div id="childitems0_display" class="display">
-                </div>
-                <div id="childitems0_pagination" class="pagination">
-                    <ul>
-                    </ul>
-                </div>
-                <div class="clear">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="childitems0_calendarview" class="databox calendar invisible" style="display: none;">
-        <table class="calendar" cellspacing="0">
-            <thead id="childitems0_calendarheader-container">
-            </thead>
-            <tbody id="childitems0_calendarbody">
-            </tbody>
-        </table>
-    </div>
-    <div id="childitems0_graphview" class="databox graph invisible" style="display: none;">
-        <span id="PleaseWait">Please wait while the graph is being loaded...</span>
-    </div>
-    <div id="childitems0_groupedstatusview" class="databox groupedstatus invisible" style="display: none;">
-        <div class="newgrid">
-            <div class="itembox-columns-wrapper invisible" style="display: none;"></div>
-            <div class="too-many-columns blank-slate invisible" style="display: none;">
-                <p>Sorry, but this view is limited to 8 statuses. Try reducing the amount of statuses in your selection.</p>
-            </div>
-            <div class="no-data blank-slate">
-                <p>No results found</p>
-            </div>
-        </div>
-    </div>
-    <div id="childitems0_taskboardview" class="databox taskboard invisible" style="display: none;"></div>
-    <div id="childitems0_printableview" class="databox printing invisible" style="display: none;"><span>To print this page, use the Print-command button in the toolbar.</span></div>
-    <div id="childitems0_customview" class="databox invisible" style="display: none;">
-        <iframe id="customViewFrame" style="width: 100%;">
-            </iframe>
-    </div>
-    <div id="childitems0_pivotview" class="databox invisible" style="display: none;">
-    </div>
-    <div class="databox map invisible" id="childitems0_mapview" style="display: none;"></div>
-    </div>
-    </div>
-
-    <div class="clear"></div>
-    </div>
-
-
-    <div id="CommentsTab_Content" class="tid-content invisible">
-
-
-        <div id="ctl00_PageContentPlaceHolder_ctl00_m_CommentsTab_comments_CreateNewComment" class="noprint newgrid">
-            <h3><span>Create new comment</span></h3>
-
-            <table cellspacing="0" cellpadding="0" class="commenth-col-container">
-                <tbody>
-                    <tr>
-                        <td class="commenth-left-col">
-                            <div class="gravatar gravatar50 commenth-left-col">
-                            </div>
-                        </td>
-                        <td class="commenth-right-col">
-                            <div class="ipeblock">
-                                <textarea class="full" cols="88" rows="5" id="NewCommentDescription"></textarea>
-                                <div class="comments-notify-wrapper">
-                                    <div class="label">
-                                        <span id="ctl00_PageContentPlaceHolder_ctl00_m_CommentsTab_comments_Span5">Notify:</span>
-                                    </div>
-                                    <div class="picker">
-
-                                        <div class="solidinput haspicker" id="picker" style="height: auto;">
-                                            <div class="newpicker person" id="Picker_19749016" options="hasSearch:true,hasInput:false,multiSelect:true,showLabel:true,closeGroups:false,listItemId:1i">
-                                                <span class="newpickerbutton">&nbsp;</span>
-                                                <div class="newpickercontent-wrapper">
-                                                    <div class="newpickercontent-container">
-                                                        <div class="newpickercontent">
-                                                            <p class="inlinesearch">
-                                                                <input type="text" class="text empty" value="Search...">
-                                                            </p>
-
-                                                            <ul id="ctl00_PageContentPlaceHolder_ctl00_m_CommentsTab_comments_personpicker_itemlist" class="monsterlist">
-                                                                <li id="null" class="addcontent"><label class="nonselectable"><span class="inner">no selections available</span></label></li>
-                                                            </ul>
-
+                                                                </div><span class="nobutton" id="cni_first_or" style="">&nbsp;or&nbsp;</span><a tabindex="-1" class="button" id="lei3" style=""><span>Link existing</span></a></div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="pickerinput">
-                                                <span class="noinput">&nbsp;</span>
-                                                <input type="text" value="" class="text full invisible">
-
-                                            </div>
-
-
-                                        </div>
-
+                                                    </li>
+                                                    <li class="footer">
+                                                        <div class="itemsperpage">
+                                                            <div class="paging"><span>Show</span>
+                                                                <ul id="anonymous_element_30">
+                                                                    <li value="20" class="selected"><a tabindex="-1"><span>20</span></a></li>
+                                                                    <li value="50"><a tabindex="-1"><span>50</span></a></li>
+                                                                    <li value="100"><a tabindex="-1"><span>100</span></a></li>
+                                                                </ul><span>items</span></div>
+                                                        </div>
+                                                        <div class="displayitemcount">Displaying items <strong><span id="childitems0_PagingInfoFrom">0</span></strong> to <strong><span id="childitems0_PagingInfoTo">0</span></strong> of <strong><span id="childitems0_PagingInfoTotal">0</span></strong></div>
+                                                        <ul>
+                                                            <li>&nbsp;</li>
+                                                        </ul>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="clear"></li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="hasbuttons" style="padding-top:4px;">
-                                    <a class="button save" id="CreateNewCommentButton" tabindex="-1"><span id="ctl00_PageContentPlaceHolder_ctl00_m_CommentsTab_comments_Span1">Save</span></a>
-                                    <span id="ctl00_PageContentPlaceHolder_ctl00_m_CommentsTab_comments_Span2"> or </span>
-                                    <a class="cancel" id="CancelNewCommentButton" tabindex="-1"><span id="ctl00_PageContentPlaceHolder_ctl00_m_CommentsTab_comments_Span3">Clear</span></a>
-                                </div>
                             </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
 
-        </div>
-        <div class="comment-col-heading newgrid">
-            <div class="comment-col-heading-title">
-                <h2 class="pagetitle">Comments</h2>
-            </div>
-            <div class="comment-col-heading-button noprint"><a class="comment-expand button color-blue" tabindex="-1"><span>Expand all</span></a></div>
-        </div>
-
-        <ol id="commentList" class="comments">
-
-        </ol>
-
-        <div class="noprint newgrid">
-            <div class="comment-col-footer-button"><a class="comment-expand button color-blue" tabindex="-1"><span>Expand all</span></a></div>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div id="AttachmentsTab_Content" class="tid-content invisible">
-        <h2 class="pagetitle">Attachments</h2>
+                            <div class="clear"></div>
+                        </div>
 
 
+                    </div>
 
+                </div>
 
-        <ol id="attachmentList" class="attachments"></ol>
+                <div class="tid-footer-wrapper">
+                    <div class="tid-footer">
+                        <dl>
+                            <dt>Created on</dt>
+                            <dd><span class="time">11 December 2017 at 09:55</span> by <span class="me">System Administrator</span></dd>
+                        </dl>
+                        <dl>
+                            <dt>Last update</dt>
+                            <dd><span id="fld_1_Item_27" ipe_id="1" ipe_object="Item" ipe_property="27" class="hasnoipe" title="" ipe_editmodeallowed="false"><span class="time">12 December 2017 at 14:48</span></span>
+                                by <span id="fld_1_Item_26" ipe_id="1" ipe_object="Item" ipe_property="26" class="hasnoipe" title="" ipe_editmodeallowed="false"><span class="me">System Administrator</span></span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="tid-branching"></div>
+                </div>
 
-
-        <div id="item_upload_wrapper" class="newgrid noprint">
-            <h3 id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_newAttachmentLabel">New attachment</h3>
-            <dl>
-                <dt class="label">
-	            <div class="radio"><span class="checked"><input id="fileAttachmentRadio" type="radio" name="upload" checked="checked" style="opacity: 0;"></span></div>
-                <span id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_Span1">File</span>
-            </dt>
-                <dd class="value">
-                    <div id="upload_button" class="addcontent fixed">Click here to select a file</div>
-                </dd>
-                <dd class="clear">&nbsp;</dd>
-
-                <dt class="label">
-                <div class="radio"><span class=""><input id="urlAttachmentRadio" type="radio" name="upload" style="opacity: 0;"></span></div>
-                <span id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_Span2">URL</span>
-            </dt>
-                <dd class="value">
-                    <input id="urlAttachmentInput" type="text" class="text wide">
-                    <br><small>Urls start with <strong>http://</strong>, references to files start with <strong>\\servername\d</strong>.</small>
-                </dd>
-                <dd class="clear">&nbsp;</dd>
-
-                <dt class="label">
-		        <label id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_Label1" for="fileDescription">Description</label>
-	        </dt>
-                <dd class="value">
-                    <textarea id="fileDescription" cols="88" rows="5" class="full"></textarea>
-                </dd>
-                <dd class="clear">&nbsp;</dd>
-
-                <dt class="label">&nbsp;</dt>
-                <dd class="value">
-                    <p class="hasbuttons">
-                        <a class="button save" tabindex="-1">
-	                    <span id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_Span4">Add</span>
-	                </a>
-                    </p>
-                </dd>
-                <dd class="clear">&nbsp;</dd>
-
-            </dl>
-            <div class="dlclear">&nbsp;</div>
-        </div>
-
-
-        <div class="clear"></div>
-    </div>
-    <div id="HistoryTab_Content" class="tid-content invisible">
-        <h2 class="pagetitle">History</h2>
-
-
-        <div id="HistoryBox_container" class="gdl" loadondemand="true" datakey="audittrail.1" showactive="true">
-            <h3 class="title"></h3>
-            <p class="description"></p>
-            <div class="caution blank-slate">
-                <p></p>
             </div>
 
-            <p class="hasbuttons invisible">
-                <a class="button down" tabindex="-1"><span class="fixed">Down</span></a>
-                <a class="button up" tabindex="-1"><span class="fixed">Up</span></a>
-            </p>
-
-            <table class="simplelist" cellspacing="0">
-                <thead id="HistoryBox_header"></thead>
-                <tbody id="HistoryBox_filter"></tbody>
-                <tbody id="HistoryBox_body"></tbody>
-                <tbody>
-                    <tr id="HistoryBox_inlineaddtext">
-                        <td valign="top">
-                            <span id="HistoryBox_inlineaddlink" class="addcontent">
-                    </span>
-                        </td>
-                    </tr>
-
-                    <tr id="HistoryBox_inlineaddinput" class="invisible inlineedit">
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-            <div class="gdlfooter"></div>
-            <span class="footertext"></span>
         </div>
+
 
         <div class="clear"></div>
-    </div>
-
-    </div>
-
-    </div>
-
-    <div class="tid-footer-wrapper">
-        <div class="tid-footer">
-            <dl>
-                <dt>Created on</dt>
-                <dd><span class="time">11 December 2017 at 09:55</span> by <span class="me">System Administrator</span></dd>
-            </dl>
-            <dl>
-                <dt>Last update</dt>
-                <dd><span id="fld_1_Item_27" ipe_id="1" ipe_object="Item" ipe_property="27" class="hasnoipe" title="" ipe_editmodeallowed="false"><span class="time">12 December 2017 at 14:48</span></span>
-                    by <span id="fld_1_Item_26" ipe_id="1" ipe_object="Item" ipe_property="26" class="hasnoipe" title="" ipe_editmodeallowed="false"><span class="me">System Administrator</span></span>
-                </dd>
-            </dl>
-        </div>
-        <div class="tid-branching"></div>
-    </div>
-
-    </div>
-
-    </div>
-
-
-    <div class="clear"></div>
 
 
 
@@ -867,6 +440,40 @@
             <p><a href="http://www.tenforce.com/" title="This is a TenForce product" target="_blank" tabindex="-1"></a></p>
         </div>
     </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/jquery.stickytableheaders.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/jquery.sticky.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/scroll.js"></script>
+    <script>
+        $(function() {
+          $(document).ready(function() {
+
+            //$('table').stickyTableHeaders({fixedOffset: $(".sticky__header__wrapper").height() + $(".sticky__header__wrapper").height()});
+
+            $(".document__header").sticky({
+              zIndex: 10
+            });
+
+            $(".item-details__header, .item-sidebar__header").sticky({
+              zIndex: 10,
+              topSpacing: $(".document__header").height()
+            });
+
+            /*
+            $('.item-sidebar__header').on('sticky-start', function() {
+                $('.item-sidebar__main').css({
+                    'position': 'fixed',
+                    'top': $(".document__header").height() + $(".item-sidebar__header").height(),
+                    'width': $(".item-sidebar__header").width()
+                });
+            });
+            */
+          });
+        });
+    </script>
 
 </body>
 

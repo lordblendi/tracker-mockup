@@ -1,0 +1,78 @@
+---
+---
+
+.multiSelector {
+  min-width: 300px;
+  width: 50%;
+  z-index: 999;
+
+  &--semsearch {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &__box {
+    margin: 0 0 15px;
+    box-shadow: 0 0 80px 10px rgba(0,0,0,.7);
+  }
+
+  &__search {
+    position: relative;
+    height: 40px;
+    background-color: #FFF;
+
+    &Input {
+      width: 100%;
+      height: 100%;
+      padding: 5px 15px;
+      font-size: 16px;
+
+      &::-webkit-input-placeholder {
+        font-style: italic;
+        font-weight: 400;
+        color: rgba(0,0,0,.35);
+      }
+    }
+  }
+}
+
+
+.pmx-selector + .multiSelector {
+  position: absolute;
+  top: -6px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.pmx-selector.pmx-welector--clicked + .multiSelector {
+  z-index: 99999999;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+
+@media (min-width: 1400px) {
+  .multiSelector {
+    width: 33.333333332%;
+  }
+}
+
+
+#multiSelector-1,
+#multiSelector-2,
+#multiSelector-3 {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity .3s ease-in-out;
+}
