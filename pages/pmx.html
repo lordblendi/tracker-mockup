@@ -458,9 +458,23 @@ permalink: /pmx
             /**/
 
             $('#ACTION__ELASTIC-SEARCH').on('click', function() {
+              var $top = $(this).offset().top;
+              var $left = $(this).offset().left;
+
               var $popupid = $(this).attr('data-popup');
 
-              console.log($popupid);
+              $top = Math.round($top);
+              $left = Math.round($left);
+
+              if ( $left > ($(window).width() / 2) ) {
+                $($popupid).css({
+                  'top': $top + 'px',
+                  'right': '20px'
+                })
+              }
+              else {
+
+              }
 
               $($popupid).toggleClass('multiSelector--visible');
             });
