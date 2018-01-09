@@ -1,4 +1,6 @@
---- permalink: /pmx ---
+---
+permalink: /pmx
+---
 <!DOCTYPE html>
 <html>
 
@@ -69,44 +71,7 @@
 
 
         <div class="hdr-semsearch">
-
-            <a href="#" class="hdr-semsearch__icon"></a>
-
-            <div class="multiSelector multiSelector--semsearch" id="ACTION__ELASTIC-SEARCH">
-                <div class="multiSelector__box">
-                    <div class="multiSelector__search">
-                        <input type="search" class="multiSelector__searchInput" placeholder="Type to initiate semsearch">
-                    </div>
-                </div>
-                <!-- /.multiSelector__box -->
-
-                <div class="multiSelector__box">
-                    <div class="itemBox">
-                        <div class="itemBoxTable">
-                            <div class="itemBoxBody">
-                                <ul class="itemBoxTable__bodyRow">
-                                    <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--text" style="flex-grow: 1;">
-                                        <div class="itemBoxTable__bodyCellInner">Title Lorem ipsum</div>
-                                    </li>
-                                </ul>
-                                <ul class="itemBoxTable__bodyRow">
-                                    <li class="itemBoxTable__bodyCell  itemBoxTable__bodyCell--text" style="flex-grow: 1;">
-                                        <div class="itemBoxTable__bodyCellInner">Assigned to Nick De Jaeger</div>
-                                    </li>
-                                </ul>
-                                <ul class="itemBoxTable__bodyRow">
-                                    <li class="itemBoxTable__bodyCell  itemBoxTable__bodyCell--text" style="flex-grow: 1;">
-                                        <div class="itemBoxTable__bodyCellInner">Priority Low</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.itemBox -->
-                </div>
-                <!-- /.multiSelector__box -->
-            </div>
-
+            <a href="#" class="hdr-semsearch__icon" id="ACTION__ELASTIC-SEARCH" data-popup="#POPUP__ELASTIC-SEARCH"></a>
         </div>
 
     </div>
@@ -443,34 +408,63 @@
 
 
 
+
+
+
+    <!-- POPUPS -->
+
+    <div class="multiSelector multiSelector--semsearch" id="POPUP__ELASTIC-SEARCH">
+        <div class="multiSelector__box">
+            <div class="multiSelector__search">
+                <input type="search" class="multiSelector__searchInput" placeholder="Type to initiate semsearch">
+            </div>
+        </div>
+        <!-- /.multiSelector__box -->
+
+        <div class="multiSelector__box">
+            <div class="itemBox">
+                <div class="itemBoxTable">
+                    <div class="itemBoxBody">
+                        <ul class="itemBoxTable__bodyRow">
+                            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--text" style="flex-grow: 1;">
+                                <div class="itemBoxTable__bodyCellInner">Title Lorem ipsum</div>
+                            </li>
+                        </ul>
+                        <ul class="itemBoxTable__bodyRow">
+                            <li class="itemBoxTable__bodyCell  itemBoxTable__bodyCell--text" style="flex-grow: 1;">
+                                <div class="itemBoxTable__bodyCellInner">Assigned to Nick De Jaeger</div>
+                            </li>
+                        </ul>
+                        <ul class="itemBoxTable__bodyRow">
+                            <li class="itemBoxTable__bodyCell  itemBoxTable__bodyCell--text" style="flex-grow: 1;">
+                                <div class="itemBoxTable__bodyCellInner">Priority Low</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.itemBox -->
+        </div>
+        <!-- /.multiSelector__box -->
+    </div>
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/jquery.stickytableheaders.min.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/jquery.sticky.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/scroll.js"></script>
     <script>
         $(function() {
           $(document).ready(function() {
 
-            //$('table').stickyTableHeaders({fixedOffset: $(".sticky__header__wrapper").height() + $(".sticky__header__wrapper").height()});
+            /**/
 
-            $(".document__header").sticky({
-              zIndex: 10
+            $('#ACTION__ELASTIC-SEARCH').on('click', function() {
+              var $popupid = $(this).attr('data-popup');
+
+              console.log($popupid);
+
+              $($popupid).toggleClass('multiSelector--visible');
             });
 
-            $(".item-details__header, .item-sidebar__header").sticky({
-              zIndex: 10,
-              topSpacing: $(".document__header").height()
-            });
-
-            /*
-            $('.item-sidebar__header').on('sticky-start', function() {
-                $('.item-sidebar__main').css({
-                    'position': 'fixed',
-                    'top': $(".document__header").height() + $(".item-sidebar__header").height(),
-                    'width': $(".item-sidebar__header").width()
-                });
-            });
-            */
           });
         });
     </script>
