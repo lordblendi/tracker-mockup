@@ -14110,93 +14110,6 @@ dd.value .toggle-button-list .selected {
   100% {
     background-position: 80px 0; } }
 
-/* Fontsizes */
-/* Colors */
-/* Icon colors */
-/* Colors Toggle */
-/* ItemBox */
-/* ItemBox dimensions */
-.pmx-selector {
-  position: absolute;
-  top: 5px;
-  left: 0;
-  width: 100%;
-  padding: 0 15px; }
-  .pmx-selector__placeholder {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 16px;
-    background-color: transparent;
-    color: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    font-style: italic;
-    padding: 0 40px 0 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap; }
-    .pmx-selector__placeholder:hover {
-      color: rgba(0, 0, 0, 0.5); }
-  .pmx-selector__inner {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    white-space: nowrap;
-    height: 28px;
-    border-radius: 30px;
-    font-size: 0; }
-    .pmx-selector__inner::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 28px;
-      border-radius: 30px;
-      pointer-events: none;
-      background-color: #D7D7D7; }
-  .pmx-selector__value {
-    position: relative;
-    top: 2px;
-    display: inline-block;
-    vertical-align: top;
-    height: 24px;
-    min-width: 26px;
-    border-radius: 30px;
-    padding: 0 10px;
-    margin: 0 0 0 2px;
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
-    line-height: 1.5;
-    transition: all 0.3s ease-in-out; }
-    .pmx-selector__value:first-child {
-      margin-left: 2px; }
-    .pmx-selector__value:last-child {
-      margin-right: 2px; }
-    .pmx-selector__value:hover .pmx-selector__label {
-      color: #000; }
-    .pmx-selector__value--selected {
-      background-color: #FFF;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); }
-    .pmx-selector__value:not(.pmx-selector__value--selected):not(:hover):not(:focus) .pmx-selector__label {
-      color: #808080;
-      transition: all 0.3s ease-in-out; }
-    .pmx-selector__value:not(.pmx-selector__value--selected):not(:hover):not(:focus) .pmx-selector__icon {
-      color: darkgrey !important; }
-  .pmx-selector__icon {
-    font-family: 'tenforce';
-    margin: 0 3px; }
-  .pmx-selector__clear {
-    position: absolute;
-    right: 18px;
-    top: -3px;
-    font-size: 20px;
-    color: #999;
-    cursor: pointer;
-    transition: color .3s ease-in-out;
-    will-change: color; }
-    .pmx-selector__clear:hover {
-      color: #000; }
-
-.pmx-selector--singleSelect .pmx-selector__value.pmx-selector__value--selected.pmx-selector__value--required {
-  cursor: default; }
 .rc-calendar {
   box-sizing: border-box;
 }
@@ -16223,6 +16136,13 @@ textarea {
   font-style: normal;
 }
 
+@font-face {
+    font-family: 'tenforce';
+    src: url('../assets/fonts/tenforce.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -16232,7 +16152,7 @@ textarea {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'tenforce', sans-serif;
   min-width: 993px;
   text-align: left;
   background-color: #4692C3;
