@@ -367,6 +367,46 @@ permalink: /pmx
         <div class="multiSelector__box">
             <div class="multiSelector__search">
                 <input type="search" class="multiSelector__searchInput" placeholder="Type to initiate semsearch">
+
+                <div class="multiSelector__searchSelected">
+                  <div class="pmx-selector pmx-selector--semsearch-tag">
+                    <div class="pmx-selector__value">
+                      <div class="pmx-selector__label ">
+                        <span class="pmx-selector--semsearch-tag__type">Title ܌</span> Lorem ipsum
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pmx-selector pmx-selector--semsearch-tag">
+                    <div class="pmx-selector__value">
+                      <div class="pmx-selector__label ">
+                        <span class="pmx-selector--semsearch-tag__type">Title ܌</span> Lorem ipsum
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pmx-selector pmx-selector--semsearch-tag">
+                    <div class="pmx-selector__value">
+                      <div class="pmx-selector__label ">
+                        <span class="pmx-selector--semsearch-tag__type">Title ܌</span> Lorem ipsum
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pmx-selector pmx-selector--semsearch-tag">
+                    <div class="pmx-selector__value">
+                      <div class="pmx-selector__label ">
+                        <span class="pmx-selector--semsearch-tag__type">Title ܌</span> Lorem ipsum
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pmx-selector pmx-selector--semsearch-tag">
+                    <div class="pmx-selector__value">
+                      <div class="pmx-selector__label ">
+                        <span class="pmx-selector--semsearch-tag__type">Title ܌</span> Lorem ipsum
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <a href="#" class="multiSelector__searchIcon"></a>
             </div>
         </div>
         <!-- /.multiSelector__box -->
@@ -441,8 +481,6 @@ permalink: /pmx
               var $top = Math.round($(this).offset().top);
               var $left = Math.round($(this).offset().left);
               var $popupid = $(this).attr('data-popup');
-
-              $(this).toggleClass('hdr-semsearch__icon--active')
 
               if ( $left > ($(window).width() / 2) ) {
                 $($popupid).css({

@@ -15578,6 +15578,13 @@ textarea {
   border: 0;
 }
 
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
 @font-face {
   font-family: 'pmx-icons';
   src: url('../assets/fonts/pmx.eot');
@@ -15639,11 +15646,6 @@ body {
 	text-decoration: none;
 	font-size: 20px;
 	padding: 5px;
-
-	&--active {
-		z-index: 999999999;
-		color: #285C9E;
-	}
 }
 .hdr-semsearch__icon::before {
 	content: "\e036";
