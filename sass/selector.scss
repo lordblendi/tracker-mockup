@@ -149,7 +149,7 @@
 
     .pmx-selector {
       &__value {
-        max-width: 100%;
+        max-width: calc(100% - 4px);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;

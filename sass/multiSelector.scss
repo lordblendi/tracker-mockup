@@ -12,13 +12,14 @@
   &--visible {
     opacity: 1;
     pointer-events: auto;
-    z-index: 999;
+    z-index: 9999;
   }
 
   &--semsearch {
     position: absolute;
     top: 0;
     right: 0;
+    padding: 0 20px;
   }
 
   &__box {
@@ -48,7 +49,11 @@
       }
 
       &:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0 50px #ffffff inset;
+        -webkit-box-shadow: 0 0 0 50px #FFF inset;
+      }
+
+      &::-ms-clear {
+      	display: none;
       }
     }
 
@@ -118,11 +123,9 @@
 }
 
 
-@media (min-width: 1400px) {
+@media (max-width: 900px) {
   .multiSelector {
-    /*
-    width: 33.333333332%;
-    */
+    width: 100%;
   }
 }
 

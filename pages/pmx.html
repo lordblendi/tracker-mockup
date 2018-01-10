@@ -40,8 +40,9 @@ permalink: /pmx
         <div class="super-nav-container">
             <div id="navigatorpicker" class="navpicker" title="Click to select a workspace, list or smartlist">
                 <div id="picker" class="solidinput haspicker">
-                    <div class="newpicker bottom" id="anonymous_element_1"><span class="newpickerbutton">&nbsp;</span>
-                        <div class="newpickercontent-wrapper" style="right: -274px;">
+                    <div class="newpicker bottom" id="anonymous_element_1">
+                        <span class="newpickerbutton" id="ACTION__NEWPICKER">&nbsp;</span>
+                        <div class="newpickercontent-wrapper" style="right: -374px;">
                             <div class="newpickercontent-container">
                                 <div class="newpickercontent">
                                     <p class="inlinesearch"><input type="text" value="Search..." class="text empty"></p>
@@ -474,6 +475,9 @@ permalink: /pmx
     <script>
         $(function() {
           $(document).ready(function() {
+            $('#ACTION__NEWPICKER').on('click', function() {
+              $(this).parent().toggleClass('open');
+            });
 
             $('#ACTION__ELASTIC-SEARCH').on('mouseover', function() {
               var $top = Math.round($(this).offset().top);
@@ -482,14 +486,12 @@ permalink: /pmx
 
               if ( $left > ($(window).width() / 2) ) {
                 $($popupid).css({
-                  'top': $top + 'px',
-                  'right': '20px'
+                  'top': $top + 'px'
                 });
               }
               else {
                 $($popupid).css({
-                  'top': $top + 'px',
-                  'left': '20px'
+                  'top': $top + 'px'
                 });
               }
 
