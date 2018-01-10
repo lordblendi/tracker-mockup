@@ -64,6 +64,18 @@
       padding: 5px;
 
       &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 40px;
+        width: 30px;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 90%, white 100%);
+        pointer-events: none;
+        z-index: 99;
+      }
+
+      &::after {
         content: "\e036";
         position: absolute;
         top: 50%;
@@ -76,25 +88,14 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: calc(100% - 40px);
+      max-width: calc(100% - 40px);
       padding: 6px 0 6px 15px;
       white-space: nowrap;
       overflow: hidden;
 
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 30px;
-        height: 100%;
-        background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 90%,rgba(255,255,255,1) 100%);
-        pointer-events: none;
-        z-index: 99;
-      }
-
       .pmx-selector {
         margin-right: 2px;
+        max-width: 300px;
       }
     }
   }
