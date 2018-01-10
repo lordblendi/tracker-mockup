@@ -143,9 +143,6 @@
 
   &--semsearch-tag {
     max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 
     .pmx-selector {
       &__value {
@@ -171,7 +168,7 @@
       color: #808080;
       font-size: 12px;
       font-weight: 600;
-      letter-spacing: .5px;
+      letter-spacing: .7px;
     }
   }
 }
