@@ -9,7 +9,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font-weight: inherit;
 	font-style: inherit;
 	font-size: 100%;
-	font-family: 'Source Sans Pro', sans-serif;
 	vertical-align: baseline;
 }
 
@@ -156,7 +155,6 @@ textarea {
     background: none;
     background-color: transparent;
     padding: 0 0 1px;
-    font-family: 'Source Sans Pro', sans-serif;
 }
 input.text:hover, textarea:hover {
     border-bottom: 1px solid #285C9E;
@@ -4826,7 +4824,6 @@ li.attachment .meta .filesize {
 }
 li.attachment .inner .no-img:before {
     content: '';
-    font-family: 'Source Sans Pro', sans-serif;
 }
 li.attachment .inner ._url:before {
     content: 'URL';
@@ -11653,7 +11650,6 @@ body.ie7 .columncustomizer .lst_columns select {
     font-size: 10px;
     line-height: 1;
     padding-left: 11px;
-    font-family: 'Source Sans Pro', sans-serif;
 }
 .change-template a.change-button:hover {
     background-color: #489C2D;
@@ -15301,342 +15297,8 @@ dd.value .toggle-button-list .selected {
 .rc-calendar-fullscreen .rc-calendar-month-panel-selected-cell .rc-calendar-month-panel-month {
   border-top-color: #3FC7FA;
   color: #3FC7FA;
-}/* Mixins */
-/* Reusable elements */
-/* LOADING INDICATOR */
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 80px 0; } }
+}
 
-/* Fontsizes */
-/* Colors */
-/* Icon colors */
-/* Colors Toggle */
-/* ItemBox */
-/* ItemBox dimensions */
-.pmx-dateEdit {
-  position: relative;
-  width: 100%; }
-  .pmx-dateEdit__inputField {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden; }
-  .pmx-dateEdit__clear {
-    position: absolute;
-    right: 18px;
-    top: -3px;
-    font-size: 20px;
-    color: #999;
-    cursor: pointer;
-    transition: color .3s ease-in-out;
-    will-change: color; }
-    .pmx-dateEdit__clear:hover {
-      color: #000; }
-/* Mixins */
-/* Reusable elements */
-/* LOADING INDICATOR */
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 80px 0; } }
-
-/* Fontsizes */
-/* Colors */
-/* Icon colors */
-/* Colors Toggle */
-/* ItemBox */
-/* ItemBox dimensions */
-.pmx-tooltip__tooltip {
-  position: absolute;
-  z-index: 9;
-  top: -10px;
-  left: 5px;
-  padding: 10px 10px 6px;
-  color: rgba(0, 0, 0, 0.5);
-  word-wrap: break-word;
-  word-break: break-word;
-  box-shadow: 0 20px 100px rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 255, 0.95);
-  width: calc(100% - 10px); }
-  .pmx-tooltip__tooltip > div::first-line {
-    color: #000; }
-
-@-moz-document url-prefix() {
-  .pmx-tooltip__tooltip {
-    top: -9px; } }
-/* Mixins */
-/* Reusable elements */
-/* LOADING INDICATOR */
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 80px 0; } }
-
-/* Fontsizes */
-/* Colors */
-/* Icon colors */
-/* Colors Toggle */
-/* ItemBox */
-/* ItemBox dimensions */
-.pmx-multiLineText {
-  width: 100%;
-  /* Modifiers */
-  /* Elements */ }
-  .pmx-multiLineText--focused {
-    background-color: #FFF; }
-    .pmx-multiLineText--focused::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      box-shadow: 0 20px 100px rgba(0, 0, 0, 0.2);
-      z-index: -1; }
-    .pmx-multiLineText--focused .pmx-textEdit__inputField {
-      padding: 0 20px 0 0; }
-  .pmx-multiLineText__textarea {
-    resize: none; }
-  .pmx-multiLineText__clear {
-    position: absolute;
-    right: 18px;
-    top: -3px;
-    font-size: 20px;
-    color: #999;
-    cursor: pointer;
-    transition: color .3s ease-in-out;
-    will-change: color; }
-    .pmx-multiLineText__clear:hover {
-      color: #000; }
-/* Mixins */
-/* Reusable elements */
-/* LOADING INDICATOR */
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 80px 0; } }
-
-/* Fontsizes */
-/* Colors */
-/* Icon colors */
-/* Colors Toggle */
-/* ItemBox */
-/* ItemBox dimensions */
-.pmx-textEdit {
-  position: relative;
-  width: 100%;
-  /* Modifiers */
-  /* Elements */ }
-  .pmx-textEdit__inputField {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden; }
-  .pmx-textEdit__clear {
-    position: absolute;
-    right: 18px;
-    top: -3px;
-    font-size: 20px;
-    color: #999;
-    cursor: pointer;
-    transition: color .3s ease-in-out;
-    will-change: color; }
-    .pmx-textEdit__clear:hover {
-      color: #000; }
-/* Mixins */
-/* Reusable elements */
-/* LOADING INDICATOR */
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 80px 0; } }
-
-/* Fontsizes */
-/* Colors */
-/* Icon colors */
-/* Colors Toggle */
-/* ItemBox */
-/* ItemBox dimensions */
-.itemBoxHeaderItemEdit {
-  position: relative;
-  height: 50px;
-  border-bottom: 2px solid #006699;
-  border-top: 2px solid transparent;
-  min-width: 60px; }
-  .itemBoxHeaderItemEdit--focused {
-    border-bottom: 2px solid transparent;
-    background-color: #FFF;
-    box-shadow: 0 20px 100px rgba(0, 0, 0, 0.2); }
-    .itemBoxHeaderItemEdit--focused .itemBoxHeaderItemEdit__sorting {
-      display: none; }
-  .itemBoxHeaderItemEdit__label {
-    position: absolute;
-    top: 2px;
-    left: 0;
-    width: 100%;
-    transition: all 0.3s ease-in-out;
-    padding: 0 15px;
-    cursor: default;
-    font-size: 10px;
-    font-weight: 700;
-    font-style: normal;
-    color: rgba(0, 0, 0, 0.3);
-    letter-spacing: .7px;
-    text-transform: uppercase; }
-  .itemBoxHeaderItemEdit__labelOnly {
-    position: absolute;
-    top: 14px;
-    left: 0;
-    width: 100%;
-    transition: all 0.3s ease-in-out;
-    padding: 0 40px 0 15px;
-    cursor: default;
-    color: rgba(0, 0, 0, 0.3);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-  .itemBoxHeaderItemEdit .pmx-textEdit,
-  .itemBoxHeaderItemEdit .pmx-dateEdit,
-  .itemBoxHeaderItemEdit .pmx-multiLineText,
-  .itemBoxHeaderItemEdit .pmx-checkbox {
-    position: absolute;
-    top: 14px;
-    left: 0;
-    padding: 0 40px 0 15px; }
-    .itemBoxHeaderItemEdit .pmx-textEdit input::placeholder,
-    .itemBoxHeaderItemEdit .pmx-textEdit textarea::placeholder,
-    .itemBoxHeaderItemEdit .pmx-dateEdit input::placeholder,
-    .itemBoxHeaderItemEdit .pmx-dateEdit textarea::placeholder,
-    .itemBoxHeaderItemEdit .pmx-multiLineText input::placeholder,
-    .itemBoxHeaderItemEdit .pmx-multiLineText textarea::placeholder,
-    .itemBoxHeaderItemEdit .pmx-checkbox input::placeholder,
-    .itemBoxHeaderItemEdit .pmx-checkbox textarea::placeholder {
-      transition: color .3s ease-in-out;
-      font-style: italic;
-      color: rgba(0, 0, 0, 0.3); }
-    .itemBoxHeaderItemEdit .pmx-textEdit input:hover::placeholder,
-    .itemBoxHeaderItemEdit .pmx-textEdit textarea:hover::placeholder,
-    .itemBoxHeaderItemEdit .pmx-dateEdit input:hover::placeholder,
-    .itemBoxHeaderItemEdit .pmx-dateEdit textarea:hover::placeholder,
-    .itemBoxHeaderItemEdit .pmx-multiLineText input:hover::placeholder,
-    .itemBoxHeaderItemEdit .pmx-multiLineText textarea:hover::placeholder,
-    .itemBoxHeaderItemEdit .pmx-checkbox input:hover::placeholder,
-    .itemBoxHeaderItemEdit .pmx-checkbox textarea:hover::placeholder {
-      color: rgba(0, 0, 0, 0.5); }
-  .itemBoxHeaderItemEdit .pmx-selector {
-    position: absolute;
-    top: 14px;
-    left: 0; }
-  .itemBoxHeaderItemEdit .pmx-multiLineText textarea {
-    margin-bottom: 6px; }
-  .itemBoxHeaderItemEdit:hover .itemBoxHeaderItemEdit__sorting--unsorted {
-    opacity: 1; }
-  .itemBoxHeaderItemEdit__sorting {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40px;
-    height: 45px;
-    line-height: 50px;
-    text-align: center;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-    z-index: 1; }
-    .itemBoxHeaderItemEdit__sorting--sorted {
-      color: #006699; }
-      .itemBoxHeaderItemEdit__sorting--sorted:hover {
-        color: #003B58; }
-    .itemBoxHeaderItemEdit__sorting--unsorted {
-      color: #AFAFAF;
-      opacity: 0; }
-      .itemBoxHeaderItemEdit__sorting--unsorted:hover {
-        color: #000; }
-    .itemBoxHeaderItemEdit__sortingIcon {
-      font-style: normal;
-      font-size: 16px; }
-      .itemBoxHeaderItemEdit__sortingIcon--unsorted::before {
-        content: "\E902"; }
-      .itemBoxHeaderItemEdit__sortingIcon--descending::before {
-        content: "\E903"; }
-      .itemBoxHeaderItemEdit__sortingIcon--ascending::before {
-        content: "\E902"; }
-/* Mixins */
-/* Reusable elements */
-/* LOADING INDICATOR */
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 80px 0; } }
-
-/* Fontsizes */
-/* Colors */
-/* Icon colors */
-/* Colors Toggle */
-/* ItemBox */
-/* ItemBox dimensions */
-.itemBoxHeader {
-  position: relative;
-  z-index: 3;
-  height: 50px;
-  background: #D9D9D9;
-  background: linear-gradient(to bottom, #F2F2F2 0%, #D9D9D9 100%); }
-  .itemBoxHeader ul {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    table-layout: fixed; }
-/* Mixins */
-/* Reusable elements */
-/* LOADING INDICATOR */
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 80px 0; } }
-
-/* Fontsizes */
-/* Colors */
-/* Icon colors */
-/* Colors Toggle */
-/* ItemBox */
-/* ItemBox dimensions */
-.pmx-link {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: 100px;
-  padding: 10px 15px;
-  cursor: pointer; }
-  .pmx-link:hover {
-    box-shadow: 10px 0 10px -7px #999, -10px 0 10px -7px #999; }
-  .pmx-link div {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden; }
-/* Mixins */
-/* Reusable elements */
-/* LOADING INDICATOR */
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 80px 0; } }
-
-/* Fontsizes */
-/* Colors */
-/* Icon colors */
-/* Colors Toggle */
-/* ItemBox */
-/* ItemBox dimensions */
 @keyframes flash-yellow-background {
   0% {
     background-color: transparent;
@@ -15648,217 +15310,8 @@ dd.value .toggle-button-list .selected {
     background-color: transparent;
     opacity: 0; } }
 
-.itemBoxItemFieldContainer {
-  position: relative;
-  height: 40px;
-  min-width: 60px; }
-  .itemBoxItemFieldContainer--focused {
-    background-color: #FFF;
-    box-shadow: 0 0 100px rgba(0, 0, 0, 0.2); }
-  .itemBoxItemFieldContainer--isFlashing:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: inherit;
-    z-index: 1;
-    pointer-events: none;
-    -webkit-animation: flash-yellow-background 1s ease-in-out forwards;
-    -moz-animation: flash-yellow-background 1s ease-in-out forwards;
-    animation: flash-yellow-background 1s ease-in-out forwards; }
-  .itemBoxItemFieldContainer--isLoading::before {
-    content: '';
-    position: absolute;
-    z-index: 999999999999;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    background-size: 80px 80px;
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 25%, rgba(230, 230, 230, 0.55) 25%, rgba(230, 230, 230, 0.55) 50%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 75%, rgba(230, 230, 230, 0.55) 75%, rgba(230, 230, 230, 0.55));
-    -webkit-animation: animate-stripes 3s linear infinite;
-    -moz-animation: animate-stripes 3s linear infinite;
-    -ms-animation: animate-stripes 3s linear infinite;
-    animation: animate-stripes 3s linear infinite; }
-  .itemBoxItemFieldContainer .pmx-textEdit,
-  .itemBoxItemFieldContainer .pmx-dateEdit,
-  .itemBoxItemFieldContainer .pmx-multiLineText {
-    position: absolute;
-    top: 10px;
-    left: 0;
-    height: 20px;
-    padding: 0 15px;
-    background-color: transparent; }
-  .itemBoxItemFieldContainer .pmx-multiLineText--focused {
-    background-color: #FFF;
-    top: 0;
-    height: auto;
-    min-height: 40px;
-    z-index: 1;
-    padding: 10px 35px 5px 15px; }
-    .itemBoxItemFieldContainer .pmx-multiLineText--focused .pmx-tooltip__tooltip {
-      display: none; }
-  .itemBoxItemFieldContainer__container .pmx-textEdit--focused .pmx-textEdit__inputField {
-    text-align: left !important; }
-  .itemBoxItemFieldContainer__container .pmx-textEdit--isNumeric .pmx-textEdit__inputField {
-    text-align: right; }
-  .itemBoxItemFieldContainer__container .pmx-multiLineText__clear {
-    top: 8px; }
-/* Mixins */
-/* Reusable elements */
-/* LOADING INDICATOR */
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 80px 0; } }
 
-/* Fontsizes */
-/* Colors */
-/* Icon colors */
-/* Colors Toggle */
-/* ItemBox */
-/* ItemBox dimensions */
-.itemBoxItem {
-  position: relative;
-  height: 40px; }
-  .itemBoxItem--isLoading::before {
-    content: '';
-    position: absolute;
-    z-index: 999999999999;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    background-size: 80px 80px;
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 25%, rgba(230, 230, 230, 0.55) 25%, rgba(230, 230, 230, 0.55) 50%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 75%, rgba(230, 230, 230, 0.55) 75%, rgba(230, 230, 230, 0.55));
-    -webkit-animation: animate-stripes 3s linear infinite;
-    -moz-animation: animate-stripes 3s linear infinite;
-    -ms-animation: animate-stripes 3s linear infinite;
-    animation: animate-stripes 3s linear infinite; }
-  .itemBoxItem__row {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    table-layout: fixed;
-    padding-right: 40px;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out; }
-    .itemBoxItem__row:hover {
-      background: linear-gradient(#e1e8ed 0%, #edf1f4 100%); }
-.itemBoxMessage {
-  color: #FFF;
-  padding: 15px; }
-  .itemBoxMessage--type__success {
-    background: #36C947; }
-  .itemBoxMessage--type__error {
-    background: #D24; }
-  .itemBoxMessage__dismiss {
-    float: right;
-    opacity: .7;
-    cursor: pointer; }
-    .itemBoxMessage__dismiss::before {
-      content: '\E117'; }
-    .itemBoxMessage__dismiss:hover {
-      opacity: 1; }
-/* Mixins */
-/* Reusable elements */
-/* LOADING INDICATOR */
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0; }
-  100% {
-    background-position: 80px 0; } }
 
-.itemBox {
-  position: relative;
-  margin: 0;
-  background-color: #FFF;
-  font-size: 16px;
-  font-family: 'Source Sans Pro', sans-serif;
-  text-rendering: optimizeLegibility;
-  font-smoothing: antialiased;
-  /* Body */ }
-  .itemBox *,
-  .itemBox *::before,
-  .itemBox *::after {
-    box-sizing: border-box; }
-  .itemBox input[type=number] {
-    -moz-appearance: textfield; }
-  .itemBox input[type=number]::-webkit-inner-spin-button,
-  .itemBox input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0; }
-  .itemBox input, .itemBox textarea {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 16px;
-    border: 0;
-    outline: 0;
-    width: 100%;
-    padding: 0;
-    resize: none;
-    background-color: transparent; }
-    .itemBox input::-ms-clear, .itemBox textarea::-ms-clear {
-      display: none; }
-  .itemBox .cf::after {
-    content: '';
-    display: table;
-    clear: both; }
-  .itemBox--isLoading::before {
-    content: '';
-    position: absolute;
-    z-index: 999999999999;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    background-size: 80px 80px;
-    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 25%, rgba(230, 230, 230, 0.55) 25%, rgba(230, 230, 230, 0.55) 50%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 75%, rgba(230, 230, 230, 0.55) 75%, rgba(230, 230, 230, 0.55));
-    -webkit-animation: animate-stripes 3s linear infinite;
-    -moz-animation: animate-stripes 3s linear infinite;
-    -ms-animation: animate-stripes 3s linear infinite;
-    animation: animate-stripes 3s linear infinite; }
-  .itemBox__body {
-    position: relative;
-    z-index: 2;
-    background: repeating-linear-gradient(#FFF 0, #FFF 40px, #F5F5F5 40px, #F9F9F9 80px); }
-    .itemBox__body--isLoading::before {
-      content: '';
-      position: absolute;
-      z-index: 999999999999;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      display: inline-block;
-      width: 100%;
-      height: 100%;
-      background-size: 80px 80px;
-      background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 25%, rgba(230, 230, 230, 0.55) 25%, rgba(230, 230, 230, 0.55) 50%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 75%, rgba(230, 230, 230, 0.55) 75%, rgba(230, 230, 230, 0.55));
-      -webkit-animation: animate-stripes 3s linear infinite;
-      -moz-animation: animate-stripes 3s linear infinite;
-      -ms-animation: animate-stripes 3s linear infinite;
-      animation: animate-stripes 3s linear infinite; }
-
-@-moz-document url-prefix() {
-  .itemBox__body {
-    background-color: #FFF;
-    background-image: linear-gradient(#FFF 50%, #F9F9F9 50%);
-    background-size: 40px 80px; } }
-/* Mixins */
-/* Reusable elements */
-/* LOADING INDICATOR */
 @keyframes animate-stripes {
   0% {
     background-position: 0 0; }
@@ -16120,7 +15573,7 @@ dd.value .toggle-button-list .selected {
 
 input,
 textarea {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'tenforce', sans-serif;
   outline: 0;
   border: 0;
 }
@@ -16186,6 +15639,11 @@ body {
 	text-decoration: none;
 	font-size: 20px;
 	padding: 5px;
+
+	&--active {
+		z-index: 999999999;
+		color: #285C9E;
+	}
 }
 .hdr-semsearch__icon::before {
 	content: "\e036";

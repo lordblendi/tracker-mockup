@@ -140,6 +140,20 @@
       }
     }
   }
+
+  &--semsearch-tag {
+    .pmx-selector {
+      &__label {
+        color: #000;
+      }
+    }
+
+    &__type {
+      text-transform: uppercase;
+      color: gray;
+      font-size: 14px;
+    }
+  }
 }
 
 

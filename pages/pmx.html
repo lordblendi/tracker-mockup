@@ -379,10 +379,10 @@ permalink: /pmx
                             <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--text" style="flex-grow: 1;">
                                 <div class="itemBoxTable__bodyCellInner">
 
-                                  <div class="pmx-selector pmx-selector--expanded pmx-selector--singleSelect pmx-selector--required ">
+                                  <div class="pmx-selector pmx-selector--semsearch-tag">
                                     <div class="pmx-selector__value">
                                       <div class="pmx-selector__label ">
-                                        <span class="pmx-selector__icon " style=""></span> Title ܌ Lorem ipsum
+                                        <span class="pmx-selector--semsearch-tag__type">Title ܌</span> Lorem ipsum
                                       </div>
                                     </div>
                                   </div>
@@ -394,10 +394,10 @@ permalink: /pmx
                             <li class="itemBoxTable__bodyCell  itemBoxTable__bodyCell--text" style="flex-grow: 1;">
                                 <div class="itemBoxTable__bodyCellInner">
 
-                                  <div class="pmx-selector pmx-selector--expanded pmx-selector--singleSelect pmx-selector--required ">
+                                  <div class="pmx-selector pmx-selector--semsearch-tag">
                                     <div class="pmx-selector__value">
                                       <div class="pmx-selector__label ">
-                                        <span class="pmx-selector__icon " style=""></span> Assigned to ܌ Nick De Jaeger
+                                        <span class="pmx-selector--semsearch-tag__type">Assigned to ܌</span> Nick De Jaeger
                                       </div>
                                     </div>
                                   </div>
@@ -409,10 +409,10 @@ permalink: /pmx
                             <li class="itemBoxTable__bodyCell  itemBoxTable__bodyCell--text" style="flex-grow: 1;">
                                 <div class="itemBoxTable__bodyCellInner">
 
-                                  <div class="pmx-selector pmx-selector--expanded pmx-selector--singleSelect pmx-selector--required ">
+                                  <div class="pmx-selector pmx-selector--semsearch-tag">
                                     <div class="pmx-selector__value">
                                       <div class="pmx-selector__label ">
-                                        <span class="pmx-selector__icon " style=""></span> Priority ܌ dialog-wrapper
+                                        <span class="pmx-selector--semsearch-tag__type">Priority ܌</span> dialog-wrapper
                                       </div>
                                     </div>
                                   </div>
@@ -438,22 +438,23 @@ permalink: /pmx
             /**/
 
             $('#ACTION__ELASTIC-SEARCH').on('click', function() {
-              var $top = $(this).offset().top;
-              var $left = $(this).offset().left;
-
+              var $top = Math.round($(this).offset().top);
+              var $left = Math.round($(this).offset().left);
               var $popupid = $(this).attr('data-popup');
 
-              $top = Math.round($top);
-              $left = Math.round($left);
+              $(this).toggleClass('hdr-semsearch__icon--active')
 
               if ( $left > ($(window).width() / 2) ) {
                 $($popupid).css({
                   'top': $top + 'px',
                   'right': '20px'
-                })
+                });
               }
               else {
-
+                $($popupid).css({
+                  'top': $top + 'px',
+                  'left': '20px'
+                });
               }
 
               $($popupid).toggleClass('multiSelector--visible');
