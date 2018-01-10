@@ -475,8 +475,33 @@ permalink: /pmx
         $(function() {
           $(document).ready(function() {
 
-            /**/
+            $('#ACTION__ELASTIC-SEARCH').on('mouseover', function() {
+              var $top = Math.round($(this).offset().top);
+              var $left = Math.round($(this).offset().left);
+              var $popupid = $(this).attr('data-popup');
 
+              if ( $left > ($(window).width() / 2) ) {
+                $($popupid).css({
+                  'top': $top + 'px',
+                  'right': '20px'
+                });
+              }
+              else {
+                $($popupid).css({
+                  'top': $top + 'px',
+                  'left': '20px'
+                });
+              }
+
+              $($popupid).addClass('multiSelector--visible');
+            });
+
+/*
+            $('#POPUP__ELASTIC-SEARCH').on('mouseout', function() {
+              $(this).removeClass('multiSelector--visible');
+            });
+*/
+            /*
             $('#ACTION__ELASTIC-SEARCH').on('click', function() {
               var $top = Math.round($(this).offset().top);
               var $left = Math.round($(this).offset().left);
@@ -497,7 +522,7 @@ permalink: /pmx
 
               $($popupid).toggleClass('multiSelector--visible');
             });
-
+            */
           });
         });
     </script>
