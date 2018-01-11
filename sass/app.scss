@@ -1,8 +1,23 @@
 ---
 ---
 
+@font-face {
+  font-family: 'pmx-icons';
+  src: url('../assets/fonts/pmx.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'tenforce';
+    src: url('../assets/fonts/tenforce.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'tenforce', sans-serif;
   overflow-x: hidden;
   background-color: #2C5386;
   min-height: 100vh;
