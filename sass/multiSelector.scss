@@ -25,6 +25,10 @@
   &__box {
     margin: 0 0 15px;
     box-shadow: 0 0 80px 10px rgba(0,0,0,.7);
+
+    &:last-child {
+      margin: 0;
+    }
   }
 
   &__search {
