@@ -2,17 +2,16 @@
 ---
 
 @font-face {
-  font-family: 'pmx-icons';
-  src: url('../assets/fonts/pmx.ttf') format("truetype");
+	font-family: 'pmx';
+	src: url('../assets/fonts/pmx.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+  font-family: 'tenforce';
+  src: url('../assets/fonts/tenforce.ttf') format("truetype");
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-    font-family: 'tenforce';
-    src: url('../assets/fonts/tenforce.ttf') format("truetype");
-    font-weight: normal;
-    font-style: normal;
 }
 
 body {
@@ -21,6 +20,25 @@ body {
   overflow-x: hidden;
   background-color: #2C5386;
   min-height: 100vh;
+}
+
+.clearfix:before,
+.clearfix:after,
+.cf:before,
+.cf:after {
+	content: '';
+	display: table;
+}
+.clearfix:after,
+.cf:after {
+	clear: both;
+}
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
 }
 
 .btn {

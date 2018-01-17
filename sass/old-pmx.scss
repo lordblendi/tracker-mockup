@@ -2751,7 +2751,7 @@ body.fullscreen .listtools-container {
   font-size: 12px;
 }
 #itemdetailpage.item-detail .header .title .actions li a:before {
-  font-family: 'pmx-icons';
+  font-family: 'pmx';
   position: relative;
   top: 2px;
   padding: 0 3px 0 0;
@@ -2809,7 +2809,7 @@ body.fullscreen .listtools-container {
     color: #0d3b75;
 }
 #itemdetailpage.item-detail .header > .actions li a:before {
-    font-family: 'pmx-icons';
+    font-family: 'pmx';
     position: relative;
     top: 1px;
     margin: 0 2px 0 0;
@@ -14298,19 +14298,14 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 @font-face {
-  font-family: 'pmx-icons';
-  src: url('../assets/fonts/pmx.eot');
-  src: url('../assets/fonts/pmx.eot') format("embedded-opentype"),
-    url('../assets/fonts/pmx.ttf') format("truetype"),
-    url('../assets/fonts/pmx.woff') format("woff"),
-    url('../assets/fonts/pmx.svg') format("svg");
+  font-family: 'pmx';
+  src: url('./assets/fonts/pmx.ttf') format("truetype");
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
     font-family: 'tenforce';
-    src: url('../assets/fonts/tenforce.ttf') format("truetype");
+    src: url('./assets/fonts/tenforce.ttf') format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -14320,7 +14315,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 *::before,
 *::after {
-  font-family: 'pmx-icons';
+  font-family: 'pmx';
 }
 
 body {

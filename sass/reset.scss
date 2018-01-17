@@ -375,21 +375,3 @@ i {
 [tabindex] {
   outline: none;
 }
-.clearfix:before,
-.clearfix:after,
-.cf:before,
-.cf:after {
-	content: '';
-	display: table;
-}
-.clearfix:after,
-.cf:after {
-	clear: both;
-}
-.hidden {
-	position: absolute;
-	overflow: hidden;
-	width: 0;
-	height: 0;
-	pointer-events: none;
-}
