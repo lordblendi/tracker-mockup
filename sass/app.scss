@@ -252,6 +252,7 @@ body.fixed {
   position: fixed;
   z-index: 2;
   width: 25%;
+	min-width: 300px;
   height: 100vh;
   top: 0;
   right: -25%;
