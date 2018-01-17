@@ -250,8 +250,10 @@ body.fixed {
 }
 
 .notifications__actions {
-	margin: 0 0 15px;
-	padding: 0 15px;
+	padding: 10px;
+}
+.notifications__actions .itemBox {
+	margin: 0 0 10px;
 }
 
 .app__container {
