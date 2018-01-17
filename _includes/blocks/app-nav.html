@@ -21,15 +21,79 @@
       </div>
     </div>
     <!-- /.tabs__nav -->
-    <div class="nav__search">
-      <input class="search__input" type="search" placeholder="filter">
-      <i class="search__submit-icon" aria-hidden="true"></i>
-    </div>
 
     <div class="tabs__panels">
       <div class="tabs__panel" tabindex="1">
         <!-- tab contents -->
-        {% include multiSelector.html %}
+
+        <div class="itemBox">
+            <div class="itemBoxFilter">
+              <div class="itemBoxFilter__input">
+                <input type="text" placeholder="filter through items">
+
+              </div>
+            </div>
+
+            <div class="itemBoxTable">
+              <div class="itemBoxTable__body">
+                <ul class="itemBoxTable__bodyRow">
+                    <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--goto" style="flex-grow: 1;">
+                      <div class="itemBoxTable__bodyCellInner">Assigned to</div>
+                    </li>
+                </ul>
+                <ul class="itemBoxTable__bodyRow">
+                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                        <div class="itemBoxTable__bodyCellInner ">Attachments</div>
+                    </li>
+                </ul>
+                <ul class="itemBoxTable__bodyRow">
+                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                        <div class="itemBoxTable__bodyCellInner ">Child items</div>
+                    </li>
+                </ul>
+                <ul class="itemBoxTable__bodyRow">
+                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                        <div class="itemBoxTable__bodyCellInner ">Comments</div>
+                    </li>
+                </ul>
+                <ul class="itemBoxTable__bodyRow">
+                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                        <div class="itemBoxTable__bodyCellInner ">Description</div>
+                    </li>
+                </ul>
+                <ul class="itemBoxTable__bodyRow">
+                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                        <div class="itemBoxTable__bodyCellInner ">Due date</div>
+                    </li>
+                </ul>
+                <ul class="itemBoxTable__bodyRow">
+                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                        <div class="itemBoxTable__bodyCellInner ">Assigned to</div>
+                    </li>
+                </ul>
+                <ul class="itemBoxTable__bodyRow">
+                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                        <div class="itemBoxTable__bodyCellInner ">Child items</div>
+                    </li>
+                </ul>
+                <ul class="itemBoxTable__bodyRow">
+                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                        <div class="itemBoxTable__bodyCellInner ">Comments</div>
+                    </li>
+                </ul>
+                <ul class="itemBoxTable__bodyRow itemBoxTable__bodyRow--loadMore">
+                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                      <div class="itemBoxTable__bodyCellInner">Load <span>100</span> more</div>
+                    </li>
+                </ul>
+              </div>
+              <div class="itemBoxTable__foot">
+                <div class="itemBoxTable__footLoadedall">All <span>50</span> items loaded</div>
+              </div>
+            </div>
+        </div><!-- /.itemBox -->
+
+
       </div><!-- /.tabs__panel -->
       <div class="tabs__panel" tabindex="2">
         <!-- tab contents -->

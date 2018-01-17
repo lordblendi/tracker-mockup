@@ -22,6 +22,16 @@ body {
   min-height: 100vh;
 }
 
+input,
+textarea {
+	&::-webkit-input-placeholder {
+		font-family: 'Source Sans Pro', sans-serif;
+		color: #C1C1C1;
+		font-weight: 300;
+		font-style: italic;
+	}
+}
+
 .clearfix:before,
 .clearfix:after,
 .cf:before,
@@ -185,66 +195,15 @@ body.fixed {
     color: #FFF;
 }
 
-/*
-.app__nav__wrapper::-webkit-scrollbar {
-  width: 6px;
-}
-
-.app__nav__wrapper::-webkit-scrollbar-track {
-  overflow: hidden;
-  background-color: #ddd;
-}
-.app__nav__wrapper::-webkit-scrollbar-thumb {
-  background-color: #ff4f1f;
-  box-shadow:
-    0 -100vh 0 100vh #ff4f1f;
-}
-*/
-
 .app__nav {
-    min-height: 100%;
-    z-index: 5;
-    background-color: #2C5386;
-    width: calc(100% + 18px);
-    height: 100%;
-    overflow-y: auto;
+  min-height: 100%;
+  z-index: 5;
+  background-color: #2C5386;
+  height: 100%;
+  overflow-y: auto;
 }
 .app__nav .tabs__panel {
   padding: 10px;
-}
-.app__nav .nav__search {
-  position: relative;
-}
-.app__nav .nav__search .search__input {
-  width: 100%;
-  padding: 14px 10px 14px 40px;
-  color: #FFF;
-  transition: all .3s ease-in-out;
-}
-.app__nav .nav__search .search__input:focus {
-  background-color: #1b4275;
-}
-.app__nav .nav__search .search__input::-webkit-input-placeholder {
-  color: #ACB6C8;
-  font-style: italic;
-}
-.app__nav .nav__search .search__submit-icon {
-  position: absolute;
-  top: 15px;
-  left: 14px;
-  color: #acb6c8;
-  transition: all .3s ease-in-out;
-  cursor: pointer;
-}
-.app__nav .nav__search .search__submit-icon:before {
-  content: "\e036";
-  font-family: 'pmx';
-}
-.app__nav .nav__search .search__input:focus + .search__submit-icon {
-  color: #FFF;
-}
-.app__nav .nav__search .search__input:focus::-webkit-input-placeholder {
-  opacity: 0;
 }
 
 
@@ -252,7 +211,6 @@ body.fixed {
   position: fixed;
   z-index: 2;
   width: 25%;
-	min-width: 300px;
   height: 100vh;
   top: 0;
   right: -25%;
@@ -264,6 +222,7 @@ body.fixed {
   position: relative;
   padding: 15px;
   background-color: #284b78;
+	white-space: nowrap;
 }
 .notifications__userInfoAvatar {
   position: relative;
@@ -290,47 +249,9 @@ body.fixed {
   display: block;
 }
 
-.notifications__actionsList {
-  margin: 0 0 50px;
-}
-.notifications__actionsList li {
-  transition: all .3s ease-in-out;
-}
-.notifications__actionsList li:hover {
-  background-color: #1b3a66;
-}
-.notifications__actionsList li:hover:not(:last-child) a {
-    border-bottom: 1px solid #1b3a66;
-}
-.notifications__actionsList li a {
-  display: block;
-  padding: 8px 2px;
-  margin: 0 5px 0 15px;
-  font-size: 16px;
-  font-weight: 400;
-}
-.notifications__actionsList li a i {
-  position: relative;
-  top: 1px;
-  margin: 0 8px 0 0;
-}
-.notifications__actionsList li a i:before {
-  font-family: 'pmx';
-}
-.notifications__actionsList li a i.help::before {
-  content: '\e127';
-}
-.notifications__actionsList li a i.settings::before {
-  content: '\e023';
-}
-.notifications__actionsList li a i.logout::before {
-  content: '\e128';
-}
-.notifications__actionsList li:not(:last-child) a {
-  border-bottom: 1px solid #163A69;
-}
-.notifications__actionsList--account li a {
-  font-size: 14px;
+.notifications__actions {
+	margin: 0 0 15px;
+	padding: 0 15px;
 }
 
 .app__container {

@@ -3,16 +3,16 @@
       <div class="app__overlay"></div>
 
       <div class="app__nav__wrapper">
-        {% include app-nav.html %}
+        {% include blocks/app-nav.html %}
       </div>
 
       <div class="notifications">
-        {% include notifications.html %}
+        {% include blocks/notifications.html %}
       </div>
 
       <main class="app__container">
         <header class="app__header">
-          {% include app-header.html %}
+          {% include blocks/app-header.html %}
         </header>
 
           <div class="app__document app__document--story">
@@ -50,17 +50,17 @@
               <div class="document__content">
 
                 <div class="panel__left">
-                  {% include document-steps.html %}
+                  {% include blocks/document-steps.html %}
                 </div>
 
                 <div class="panel__center">
                   <div class="document__info-data cf">
-                    {% include document-data.html %}
+                    {% include blocks/document-data.html %}
                   </div><!-- /.document__info-data -->
                 </div>
 
                 <div class="panel__right">
-                  {% include document-comments.html %}
+                  {% include blocks/document-comments.html %}
                 </div>
 
               </div><!-- /.document__content -->
