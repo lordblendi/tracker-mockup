@@ -1,4 +1,4 @@
-document.ready(function() {
+$(document).ready(function() {
 
   var setHeightDocumentContent = function() {
     var check = 0;
