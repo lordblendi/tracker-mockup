@@ -20,6 +20,9 @@ body {
   overflow-x: hidden;
   background-color: #2C5386;
   min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 input,

@@ -1,0 +1,27 @@
+---
+---
+
+*::before,
+*::after {
+  font-family: 'pmx';
+}
+
+body {
+  min-width: 993px;
+  background-color: #4692C3;
+  font-size: 14px;
+}
+
+.tabline {
+  background-color: #2C5386;
+}
+
+.tabline .tab-scroller ul.tabs li.tab:before {
+  border-top: 15px solid #2C5386;
+}
+.tabline .tab-scroller ul.tabs li.tab.tab-fixed {
+  border-top: 2px solid #2C5386;
+}
+.tabline .tab-scroller ul.tabs li.tab {
+  background-color: #18365a;
+}
