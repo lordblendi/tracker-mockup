@@ -1,15 +1,22 @@
 $(document).ready(function() {
   var $app = $('.app');
 
+
+  
+
   // Toggle NAVIGATION
-  $('.top-bar__left').click(function() {
+  $('[data-action="open-left-panel"]').click(function() {
     $app.addClass('app__nav--visible');
     $('body').addClass('fixed');
   });
-  $('.top-bar__itemAccount').click(function() {
+  $('[data-action="open-right-panel"]').on('click', function() {
     $app.addClass('notifications--visible');
     $('body').addClass('fixed');
   });
+
+
+
+
   $('.app__overlay').click(function() {
     if ($app.hasClass('app__nav--visible')) {
       $app.removeClass('app__nav--visible');
@@ -19,16 +26,24 @@ $(document).ready(function() {
       $app.removeClass('notifications--visible');
       $('body').removeClass('fixed');
     }
-    if ($app.hasClass('overlay--visible')) {
-      $app.removeClass('overlay--visible');
-
-      $('.breadcrumb').removeClass('active');
-    }
     if ($app.hasClass('assistance--visible')) {
       $app.removeClass('assistance--visible');
       $('.assistance').removeClass('visible');
     }
+
+    if ($app.hasClass('overlay--visible')) {
+      $app.removeClass('overlay--visible');
+
+      $('.breadcrumbs__item').removeClass('breadcrumbs__item--active');
+    }
   });
+
+
+
+
+
+
+
   $('.app__nav__wrapper').click(function(e) {
     var pWidth = $(this).innerWidth(); //use .outerWidth() if you want borders
     var pOffset = $(this).offset();
@@ -72,13 +87,6 @@ $(document).ready(function() {
   });
 
 
-  // breadcrum symbol
-  $('.breadcrumb .title .link').click(function() {
-    $app.toggleClass('overlay--visible');
-
-    $(this).parent().parent('.breadcrumb').toggleClass('active');
-    //$('.assistance').addClass('visible');
-  });
 
   // Sliders
   $('.sliders .slider .slider__header .toggle').click(function(e) {

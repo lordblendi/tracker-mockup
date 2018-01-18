@@ -1,0 +1,34 @@
+---
+---
+
+.app-header {
+	position: relative;
+	padding: 5px 20px;
+	background-color: #2C5386;
+  color: #FFF;
+}
+
+.app-navigator {
+	position: relative;
+
+	&__left {
+	  float: left;
+	}
+
+	&__right {
+	  float: right;
+	}
+
+	&__item {
+	  position: relative;
+	  display: inline-block;
+	  padding: 10px;
+		font-size: 24px;
+	}
+
+	h1 {
+	  font-size: 24px;
+	  font-weight: 400;
+	  color: #FFF;
+	}
+}
