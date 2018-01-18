@@ -27,70 +27,135 @@
         <!-- tab contents -->
 
         <div class="itemBox">
-            <div class="itemBoxFilter">
-              <div class="itemBoxFilter__input">
-                <input type="text" placeholder="filter through items">
+          <div class="itemBoxFilter">
+            <div class="itemBoxFilter__input">
+              <input type="text" placeholder="filter through items">
 
-              </div>
             </div>
+          </div>
 
-            <div class="itemBoxTable">
-              <div class="itemBoxTable__body">
-                <ul class="itemBoxTable__bodyRow">
-                    <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--goto" style="flex-grow: 1;">
-                      <div class="itemBoxTable__bodyCellInner">Assigned to</div>
-                    </li>
-                </ul>
-                <ul class="itemBoxTable__bodyRow">
-                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                        <div class="itemBoxTable__bodyCellInner ">Attachments</div>
-                    </li>
-                </ul>
-                <ul class="itemBoxTable__bodyRow">
-                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                        <div class="itemBoxTable__bodyCellInner ">Child items</div>
-                    </li>
-                </ul>
-                <ul class="itemBoxTable__bodyRow">
-                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                        <div class="itemBoxTable__bodyCellInner ">Comments</div>
-                    </li>
-                </ul>
-                <ul class="itemBoxTable__bodyRow">
-                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                        <div class="itemBoxTable__bodyCellInner ">Description</div>
-                    </li>
-                </ul>
-                <ul class="itemBoxTable__bodyRow">
-                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                        <div class="itemBoxTable__bodyCellInner ">Due date</div>
-                    </li>
-                </ul>
-                <ul class="itemBoxTable__bodyRow">
-                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                        <div class="itemBoxTable__bodyCellInner ">Assigned to</div>
-                    </li>
-                </ul>
-                <ul class="itemBoxTable__bodyRow">
-                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                        <div class="itemBoxTable__bodyCellInner ">Child items</div>
-                    </li>
-                </ul>
-                <ul class="itemBoxTable__bodyRow">
-                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                        <div class="itemBoxTable__bodyCellInner ">Comments</div>
-                    </li>
-                </ul>
-                <ul class="itemBoxTable__bodyRow itemBoxTable__bodyRow--loadMore">
-                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                      <div class="itemBoxTable__bodyCellInner">Load <span>100</span> more</div>
-                    </li>
-                </ul>
+          <div class="itemBoxTable">
+            <div class="itemBoxTable__body">
+              <ul class="itemBoxTable__bodyRow">
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner"></div>
+                </li>
+                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--goto" style="flex-grow: 1;">
+                  <div class="itemBoxTable__bodyCellInner">Assigned to</div>
+                </li>
+              </ul>
+              <ul class="itemBoxTable__bodyRow">
+                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner">
+                      <i class="itemBoxTable__action">अ</i>
+                    </div>
+                </li>
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                    <div class="itemBoxTable__bodyCellInner ">Attachments</div>
+                </li>
+              </ul>
+              <ul class="itemBoxTable__bodyRow">
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner"></div>
+                </li>
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                    <div class="itemBoxTable__bodyCellInner ">Child items</div>
+                </li>
+              </ul>
+              <ul class="itemBoxTable__bodyRow">
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner"></div>
+                </li>
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                    <div class="itemBoxTable__bodyCellInner ">Comments</div>
+                </li>
+              </ul>
+              <ul class="itemBoxTable__bodyRow">
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner"></div>
+                </li>
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                    <div class="itemBoxTable__bodyCellInner ">Description</div>
+                </li>
+              </ul>
+              <ul class="itemBoxTable__bodyRow">
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner"></div>
+                </li>
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                    <div class="itemBoxTable__bodyCellInner ">Due date</div>
+                </li>
+              </ul>
+              <ul class="itemBoxTable__bodyRow">
+                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner">
+                      <i class="itemBoxTable__action">ऄ</i>
+                    </div>
+                </li>
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                    <div class="itemBoxTable__bodyCellInner ">Assigned to</div>
+                </li>
+              </ul>
+              <div class="itemBox itemBox--children">
+                <div class="itemBoxTable">
+                  <div class="itemBoxTable__body">
+                    <ul class="itemBoxTable__bodyRow">
+                        <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                          <div class="itemBoxTable__bodyCellInner">Nick De Jaeger</div>
+                        </li>
+                    </ul>
+                    <ul class="itemBoxTable__bodyRow">
+                        <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                          <div class="itemBoxTable__bodyCellInner">Konstantiv Kharlov</div>
+                        </li>
+                    </ul>
+                    <ul class="itemBoxTable__bodyRow">
+                        <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                          <div class="itemBoxTable__bodyCellInner">Jetro Wils</div>
+                        </li>
+                    </ul>
+                    <ul class="itemBoxTable__bodyRow">
+                        <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                          <div class="itemBoxTable__bodyCellInner">Nora Szepes</div>
+                        </li>
+                    </ul>
+                    <ul class="itemBoxTable__bodyRow">
+                        <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                          <div class="itemBoxTable__bodyCellInner">Ward Delabastita</div>
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="itemBoxTable__foot">
+                    <div class="itemBoxTable__footLoadedall">All <span>4</span> items loaded</div>
+                  </div>
+                </div>
               </div>
-              <div class="itemBoxTable__foot">
-                <div class="itemBoxTable__footLoadedall">All <span>50</span> items loaded</div>
-              </div>
+              <ul class="itemBoxTable__bodyRow">
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner"></div>
+                </li>
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                    <div class="itemBoxTable__bodyCellInner ">Child items</div>
+                </li>
+              </ul>
+              <ul class="itemBoxTable__bodyRow">
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner"></div>
+                </li>
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                    <div class="itemBoxTable__bodyCellInner ">Comments</div>
+                </li>
+              </ul>
+              <ul class="itemBoxTable__bodyRow itemBoxTable__bodyRow--loadMore">
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                  <div class="itemBoxTable__bodyCellInner">Load <span>18</span> more</div>
+                </li>
+              </ul>
             </div>
+            <div class="itemBoxTable__foot">
+              <div class="itemBoxTable__footLoadedall"><span>9</span> items loaded</div>
+            </div>
+          </div>
         </div><!-- /.itemBox -->
 
 

@@ -22,7 +22,7 @@ github_username:  jekyll
 
 # Build settings
 # sass:
-#     sass_dir: _sass
+#   sass_dir: _sass
 markdown: kramdown
 exclude:
   - Gemfile

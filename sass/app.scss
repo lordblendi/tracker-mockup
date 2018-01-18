@@ -87,6 +87,8 @@ body.fixed {
 .app.app__nav--visible .app__nav__wrapper {
   left: 0;
   background-color: rgba(0,0,0,.6);
+	z-index: 9;
+
 }
 .app.app__nav--visible .app__container {
   left: 50%;

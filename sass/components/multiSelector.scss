@@ -7,7 +7,7 @@
   opacity: 0;
   pointer-events: none;
   z-index: -1;
-  transition: opacity .3s ease-in-out;
+  transition: all .3s ease-in-out;
 
   &--visible {
     opacity: 1;
@@ -19,7 +19,6 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: 0 20px;
 
     .itemBoxFilter {
       box-shadow: 0 20px 100px 0 rgba(0, 0, 0, 0.7);

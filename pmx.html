@@ -1,85 +1,27 @@
 ---
-permalink: /pmx
+layout: default
+title: Old App
 ---
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Elastic Search</title>
+<div class="app cf document__info--visible">
+  <div class="app__overlay"></div>
 
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+  <div class="app__nav__wrapper">
+    {% include blocks/app-nav.html %}
+  </div>
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/sass/old-pmx.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/sass/components/multiSelector.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/sass/components/itemBox.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/sass/components/selector.css">
-</head>
+  <div class="notifications">
+    {% include blocks/notifications.html %}
+  </div>
 
-<body>
-
-    <div id="superpageheader">
-        <div class="hdr-menu">
-            <ul class="hdr-modules">
-                <li class="hdr-module"><a href="/acc_story663626-wd/dashboard/12f" class="hdr-module" tabindex="-1">Home</a></li>
-                <li class="hdr-module"><a href="/acc_story663626-wd/dashboard/mytodos" class="hdr-module" tabindex="-1">My To Do's</a></li>
-                <li class="hdr-module"><a href="/acc_story663626-wd/timesheet" class="hdr-module" tabindex="-1">Time sheet</a></li>
-                <li class="hdr-module"><a href="/acc_story663626-wd/reports" class="hdr-module" tabindex="-1">Reports</a></li>
-            </ul>
-        </div>
-        <div class="hdr-user">
-            Welcome, <a href="/acc_story663626-wd/account/profile" class="hdr-username" tabindex="-1">System Administrator</a><a href="/acc_story663626-wd/logout" class="hdr-logout" tabindex="-1">Logout</a>
-            <a href="/acc_story663626-wd/config" class="hdr-settings" tabindex="-1">Settings</a>
-        </div>
-    </div>
-
-    <div id="pageheader" class="hdr-container clearfix">
-
-        <div class="super-nav-container">
-            <div id="navigatorpicker" class="navpicker" title="Click to select a workspace, list or smartlist">
-                <div id="picker" class="solidinput haspicker">
-                    <div class="newpicker bottom" id="anonymous_element_1">
-                        <span class="newpickerbutton" id="ACTION__NEWPICKER">&nbsp;</span>
-                        <div class="newpickercontent-wrapper" style="right: -374px;">
-                            <div class="newpickercontent-container">
-                                <div class="newpickercontent">
-                                    <p class="inlinesearch"><input type="text" value="Search..." class="text empty"></p>
-                                    <ul class="monsterlist" id="itemlist" style="height: 300px;">
-                                        <li id="groupid153" class="closed "><label class="nonpickable"><span class="inner"><a href="/acc_story663626-wd/dashboard/summary" class="dashboard"><span>Dashboard</span></a></span></label></li>
-                                        <li id="groupid154" class="open "><label class="nonpickable active"><span class="inner"><a href="/acc_story663626-wd/workspace/1/summary" class="workspace"><span>Ward</span></a></span></label>
-                                            <ul>
-                                                <li id="itemid155" class=""><label class="pickable"><span class="inner"><a href="/acc_story663626-wd/workspace/1/1l" class="list"><span>Actions</span></a></span></label></li>
-                                                <li id="itemid156" class=""><label class="pickable"><span class="inner"><a href="/acc_story663626-wd/workspace/1/2l" class="list"><span>Meetings</span></a></span></label></li>
-                                                <li id="itemid157" class=""><label class="pickable"><span class="inner"><a href="/acc_story663626-wd/workspace/1/3l" class="list"><span>Test</span></a></span></label></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pickerinput"><span class="noinput invisible pickerfocusable" tabindex="0">&nbsp;</span><input type="text" value="" class="text invisible"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="hdr-menu-container">
-            <div class="hdr-title">
-                <h4>
-                    <span class="ph-breadcrumb-first"><a href="/acc_story663626-wd/workspace/1/summary" class="ph-breadcrumb" tabindex="-1">Dashboard</a></span>
-                </h4>
-            </div>
-        </div>
+  <main class="app__container">
+    <header class="app-header cf">
+      {% include blocks/app-header.html %}
+    </header>
 
 
-        <div class="hdr-semsearch">
-            <a href="#" class="hdr-semsearch__icon" id="ACTION__ELASTIC-SEARCH" data-popup="#POPUP__ELASTIC-SEARCH"></a>
-        </div>
 
-    </div>
-
+    
 
     <div class="tabline" id="tabline">
         <div class="tabs">
@@ -357,193 +299,5 @@ permalink: /pmx
         </div>
     </div>
 
-
-
-
-
-
-    <!-- POPUPS -->
-
-    <div class="multiSelector multiSelector--semsearch" id="POPUP__ELASTIC-SEARCH">
-        <div class="multiSelector__box">
-            <div class="multiSelector__search">
-                <input type="search" class="multiSelector__searchInput" placeholder="Type to initiate semsearch">
-
-                <div class="multiSelector__searchSelected">
-                  <div class="pmx-selector pmx-selector--semsearch-tag">
-                    <div class="pmx-selector__value">
-                      <div class="pmx-selector__label ">
-                        <span class="pmx-selector--semsearch-tag__type">Title •</span> Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                      </div>
-                    </div>
-                  </div>
-                  <div class="pmx-selector pmx-selector--semsearch-tag">
-                    <div class="pmx-selector__value">
-                      <div class="pmx-selector__label ">
-                        <span class="pmx-selector--semsearch-tag__type">Assigned to •</span> Nick De Jaeger
-                      </div>
-                    </div>
-                  </div>
-                  <div class="pmx-selector pmx-selector--semsearch-tag">
-                    <div class="pmx-selector__value">
-                      <div class="pmx-selector__label ">
-                        <span class="pmx-selector--semsearch-tag__type">Priority •</span> dialog-wrapper
-                      </div>
-                    </div>
-                  </div>
-                  <div class="pmx-selector pmx-selector--semsearch-tag">
-                    <div class="pmx-selector__value">
-                      <div class="pmx-selector__label ">
-                        <span class="pmx-selector--semsearch-tag__type">Title •</span> Lorem ipsum
-                      </div>
-                    </div>
-                  </div>
-                  <div class="pmx-selector pmx-selector--semsearch-tag">
-                    <div class="pmx-selector__value">
-                      <div class="pmx-selector__label ">
-                        <span class="pmx-selector--semsearch-tag__type">Title •</span> Lorem ipsum
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <a href="#" class="multiSelector__searchIcon"></a>
-            </div>
-        </div>
-        <!-- /.multiSelector__box -->
-
-        <div class="multiSelector__box">
-            <div class="itemBox">
-                <div class="itemBoxTable">
-                    <div class="itemBoxBody">
-                      <ul class="itemBoxTable__bodyRow">
-                          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--text" style="flex-grow: 1;">
-                              <div class="itemBoxTable__bodyCellInner">
-
-                                <div class="pmx-selector pmx-selector--semsearch-tag">
-                                  <div class="pmx-selector__value">
-                                    <div class="pmx-selector__label ">
-                                      <span class="pmx-selector--semsearch-tag__type">Any •</span> Typed keyword
-                                    </div>
-                                  </div>
-                                </div>
-
-                              </div>
-                          </li>
-                      </ul>
-                        <ul class="itemBoxTable__bodyRow">
-                            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--text" style="flex-grow: 1;">
-                                <div class="itemBoxTable__bodyCellInner">
-
-                                  <div class="pmx-selector pmx-selector--semsearch-tag">
-                                    <div class="pmx-selector__value">
-                                      <div class="pmx-selector__label ">
-                                        <span class="pmx-selector--semsearch-tag__type">Title •</span> Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="itemBoxTable__bodyRow">
-                            <li class="itemBoxTable__bodyCell  itemBoxTable__bodyCell--text" style="flex-grow: 1;">
-                                <div class="itemBoxTable__bodyCellInner">
-
-                                  <div class="pmx-selector pmx-selector--semsearch-tag">
-                                    <div class="pmx-selector__value">
-                                      <div class="pmx-selector__label ">
-                                        <span class="pmx-selector--semsearch-tag__type">Assigned to •</span> Nick De Jaeger
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="itemBoxTable__bodyRow">
-                            <li class="itemBoxTable__bodyCell  itemBoxTable__bodyCell--text" style="flex-grow: 1;">
-                                <div class="itemBoxTable__bodyCellInner">
-
-                                  <div class="pmx-selector pmx-selector--semsearch-tag">
-                                    <div class="pmx-selector__value">
-                                      <div class="pmx-selector__label ">
-                                        <span class="pmx-selector--semsearch-tag__type">Priority •</span> dialog-wrapper
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- /.itemBox -->
-        </div>
-        <!-- /.multiSelector__box -->
-    </div>
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        $(function() {
-          $(document).ready(function() {
-            $('#ACTION__NEWPICKER').on('click', function() {
-              $(this).parent().toggleClass('open');
-            });
-
-            $('#ACTION__ELASTIC-SEARCH').on('mouseover', function() {
-              var $top = Math.round($(this).offset().top);
-              var $left = Math.round($(this).offset().left);
-              var $popupid = $(this).attr('data-popup');
-
-              if ( $left > ($(window).width() / 2) ) {
-                $($popupid).css({
-                  'top': $top + 'px'
-                });
-              }
-              else {
-                $($popupid).css({
-                  'top': $top + 'px'
-                });
-              }
-
-              $($popupid).addClass('multiSelector--visible');
-            });
-
-/*
-            $('#POPUP__ELASTIC-SEARCH').on('mouseout', function() {
-              $(this).removeClass('multiSelector--visible');
-            });
-*/
-            /*
-            $('#ACTION__ELASTIC-SEARCH').on('click', function() {
-              var $top = Math.round($(this).offset().top);
-              var $left = Math.round($(this).offset().left);
-              var $popupid = $(this).attr('data-popup');
-
-              if ( $left > ($(window).width() / 2) ) {
-                $($popupid).css({
-                  'top': $top + 'px',
-                  'right': '20px'
-                });
-              }
-              else {
-                $($popupid).css({
-                  'top': $top + 'px',
-                  'left': '20px'
-                });
-              }
-
-              $($popupid).toggleClass('multiSelector--visible');
-            });
-            */
-          });
-        });
-    </script>
-
-</body>
-
-</html>
+  </main>
+</div>
