@@ -302,6 +302,11 @@
           text-overflow: ellipsis;
           color: #000;
 
+          &--action {
+            padding: 0;
+            text-align: center;
+          }
+
           .pmx-selector {
             top: -1px;
           }
