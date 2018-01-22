@@ -2,10 +2,10 @@
 ---
 
 @font-face {
-	font-family: 'pmx';
-	src: url('../assets/fonts/pmx.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'pmx';
+  src: url('../assets/fonts/pmx.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: 'tenforce';
@@ -20,36 +20,36 @@ body {
   overflow-x: hidden;
   background-color: #2C5386;
   min-height: 100vh;
-	-webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
 input,
 textarea {
-	&::-webkit-input-placeholder {
-		font-family: 'Source Sans Pro', sans-serif;
-		color: #C1C1C1;
-		font-weight: 300;
-		font-style: italic;
-	}
+  &::-webkit-input-placeholder {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #C1C1C1;
+    font-weight: 300;
+    font-style: italic;
+  }
 }
 
 .clearfix,
 .cf {
-	&::after {
-		content: '';
-		display: table;
-		clear: both;
-	}
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
 }
 
 .hidden {
-	position: absolute;
-	overflow: hidden;
-	width: 0;
-	height: 0;
-	pointer-events: none;
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 
 .btn {
@@ -90,7 +90,7 @@ body.fixed {
 .app.app__nav--visible .app__nav__wrapper {
   left: 0;
   background-color: rgba(0,0,0,.6);
-	z-index: 9;
+  z-index: 9;
 
 }
 .app.app__nav--visible .app__container {
@@ -225,9 +225,9 @@ body.fixed {
   position: relative;
   padding: 15px;
   background-color: #284b78;
-	white-space: nowrap;
-	text-align: right;
-	vertical-align: middle;
+  white-space: nowrap;
+  text-align: right;
+  vertical-align: middle;
 
 }
 .notifications__userInfoAvatar {
@@ -249,20 +249,20 @@ body.fixed {
   font-style: italic;
   vertical-align: middle;
   padding: 0;
-	width: 90%;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
+  width: 90%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .notifications__userInfoName span {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 .notifications__actions {
-	padding: 10px;
+  padding: 10px;
 }
 .notifications__actions .itemBox {
-	margin: 0 0 10px;
+  margin: 0 0 10px;
 }
 
 .app__container {
