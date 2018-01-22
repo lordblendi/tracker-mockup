@@ -234,7 +234,6 @@ body.fixed {
   display: inline-block;
   width: 30px;
   height: 30px;
-  margin: 0 0 0 10px;
 }
 .notifications__userInfoAvatar img {
   border-radius: 100%;
@@ -245,8 +244,10 @@ body.fixed {
   font-size: 18px;
   font-weight: 300;
   vertical-align: middle;
-  padding: 0;
-  width: 90%;
+  padding: 0 3% 0 0;
+  width: -webkit-calc(100% - 30px);
+  width: -moz-calc(100% - 30px);
+  width: calc(100% - 30px);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
