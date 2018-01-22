@@ -227,7 +227,6 @@ body.fixed {
   background-color: #284b78;
   white-space: nowrap;
   text-align: right;
-  vertical-align: middle;
 
 }
 .notifications__userInfoAvatar {
@@ -235,8 +234,7 @@ body.fixed {
   display: inline-block;
   width: 30px;
   height: 30px;
-  vertical-align: top;
-  margin: 0 0 0 8px;
+  margin: 0 0 0 10px;
 }
 .notifications__userInfoAvatar img {
   border-radius: 100%;
@@ -246,16 +244,12 @@ body.fixed {
   display: inline-block;
   font-size: 18px;
   font-weight: 300;
-  font-style: italic;
   vertical-align: middle;
   padding: 0;
   width: 90%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-}
-.notifications__userInfoName span {
-  vertical-align: middle;
 }
 
 .notifications__actions {
