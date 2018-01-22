@@ -226,6 +226,9 @@ body.fixed {
   padding: 15px;
   background-color: #284b78;
 	white-space: nowrap;
+	text-align: right;
+	vertical-align: middle;
+
 }
 .notifications__userInfoAvatar {
   position: relative;
@@ -241,15 +244,18 @@ body.fixed {
 .notifications__userInfoName {
   position: relative;
   display: inline-block;
-  width: 215px;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 300;
   font-style: italic;
   vertical-align: middle;
   padding: 0;
+	width: 90%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 .notifications__userInfoName span {
-  display: block;
+	vertical-align: middle;
 }
 
 .notifications__actions {
