@@ -2,33 +2,34 @@
 ---
 
 .app-header {
-	position: relative;
-	padding: 10px 20px 5px;
-	background-color: #2C5386;
+  position: relative;
+  padding: 10px 20px 5px;
+  background-color: #2C5386;
   color: #FFF;
 }
 
 .app-navigator {
-	position: relative;
+  position: relative;
 
-	&__left {
-	  float: left;
-	}
+  &__left {
+    float: left;
+  }
 
-	&__right {
-	  float: right;
-	}
+  &__right {
+    float: right;
+  }
 
-	&__item {
-	  position: relative;
-	  display: inline-block;
-	  padding: 5px 10px;
-		font-size: 24px;
-	}
+  &__item {
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    min-width: 40px;
+    font-size: 24px;
+  }
 
-	h1 {
-	  font-size: 24px;
-	  font-weight: 400;
-	  color: #FFF;
-	}
+  h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #FFF;
+  }
 }
