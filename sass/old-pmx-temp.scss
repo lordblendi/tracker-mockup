@@ -35,3 +35,11 @@ body {
 .tabline .tab-scroller ul.tabs li.tab.tab-selected {
   background-color: #4692C3;
 }
+
+.old-multiselect-popup {
+  display: block !important;
+}
+
+.old-multiselect-popup--hidden {
+  display: none !important;
+}
