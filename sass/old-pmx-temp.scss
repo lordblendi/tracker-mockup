@@ -36,14 +36,28 @@ body {
   background-color: #4692C3;
 }
 
-.old-multiselect-popup {
+.old-multiselect-popup, .old-multiselect-tab {
   display: block !important;
 }
 
-.old-multiselect-popup--hidden {
+.old-multiselect-popup--hidden, .old-multiselect-tab--hidden {
   display: none !important;
 }
 
 .old-pmx-filter tr {
   background-color: #E6E6E6 !important;
+}
+
+.old-multiselect-popup #tabs ul li {
+  background-color: transparent !important;
+  width: 1% !important;
+}
+
+.old-multiselect-popup #tabs {
+  margin: -10px;
+  margin-bottom: unset;
+}
+
+.old-multiselect-tab-negative span.checked:before, .old-multiselect-tab-negative span.checked:hover:before {
+  color: red;
 }
