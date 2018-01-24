@@ -17,15 +17,21 @@ body {
 }
 
 .tabline {
-  background-color: #2C5386;
+  // background-color: #2C5386;
+  background-color: #285C9E;
 }
 
-.tabline .tab-scroller ul.tabs li.tab:before {
-  border-top: 15px solid #2C5386;
-}
+// .tabline .tab-scroller ul.tabs li.tab:before {
+//   border-top: 15px solid #2C5386;
+// }
 .tabline .tab-scroller ul.tabs li.tab.tab-fixed {
-  border-top: 2px solid #2C5386;
+  // border-top: 2px solid #2C5386;
+  border-top: 2px dotted #285C9E;
 }
 .tabline .tab-scroller ul.tabs li.tab {
-  background-color: #18365a;
+  background-color: #22508A;
+}
+
+.tabline .tab-scroller ul.tabs li.tab.tab-selected {
+  background-color: #4692C3;
 }
