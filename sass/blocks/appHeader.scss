@@ -13,6 +13,24 @@
 
   &__left {
     float: left;
+    width: 50%;
+
+    .app-navigator__item {
+      position: relative;
+      display: inline-block;
+      padding: 5px;
+      min-width: 40px;
+      font-size: 24px;
+      max-width: -webkit-calc(100% - 40px);
+      max-width: -moz-calc(100% - 40px);
+      max-width: calc(100% - 40px);
+
+      h1, a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
   }
 
   &__right {
