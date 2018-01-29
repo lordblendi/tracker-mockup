@@ -64,6 +64,14 @@ function setup(tabsSelector){
     $(less).addClass('stop');
     $(ul).velocity("stop");
   });
+  $(moreArrow).click(function(){
+    $(more).addClass('stop');
+    $(ul).velocity("stop");
+  });
+  $(lessArrow).click(function(){
+    $(less).addClass('stop');
+    $(ul).velocity("stop");
+  });
 
   // init setup
   // don't show less
