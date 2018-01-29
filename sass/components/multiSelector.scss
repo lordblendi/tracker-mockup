@@ -178,6 +178,32 @@
     &--children {
       background-color: #808080;
     }
+
+    .itemBoxTable__bodyCellInner--exclude {
+      .outer {
+        text-decoration: line-through;
+        color: lightgray;
+        opacity: 0.75;
+        .inner {
+          color: black;
+        }
+      }
+    }
+  }
+
+  .pmx-selector__value {
+    &:hover, &--selected {
+      &.pmx-selector__value--include {
+        .pmx-selector__label {
+          color: #C79D54 !important;
+        }
+      }
+      &.pmx-selector__value--exclude {
+        .pmx-selector__label {
+          color: red !important;
+        }
+      }
+    }
   }
 
 }
