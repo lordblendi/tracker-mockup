@@ -100,8 +100,12 @@ $(".itemBoxBody--sortable").sortable({
 
 
 // COMPLEX
+
 $('.multiSelector__box--selection .itemBoxTable__action, .multiSelector__box--options .itemBoxTable__action').on('click', function(){
   const action = $(this);
+  const multiSelector = action.closest('.multiSelector')[0];
+  const exclude = $(multiSelector).find('.exclude').length > 0;
+
   if(action.hasClass('itemBoxTable__action--removeAll')){
     const children = action.closest('.itemBoxTable__bodyRow').next();
     if(children.hasClass('itemBox--children')) {
@@ -111,11 +115,11 @@ $('.multiSelector__box--selection .itemBoxTable__action, .multiSelector__box--op
   else if(action.hasClass('itemBoxTable__action--addAll')){
     const children = action.closest('.itemBoxTable__bodyRow').next();
     if(children.hasClass('itemBox--children')) {
-      handleComplexGroupAdd(action, children);
+      handleComplexGroupAdd(action, children, exclude);
     }
   }
   else {
-    handleComplexItemAddRemove(action);
+    handleComplexItemAddRemove(action, exclude);
   }
 });
 
@@ -181,7 +185,7 @@ function addSelectedBlock(multiSelector){
                 </li>
                 <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
                   <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--remove">ޅ</i>
+                    <i class="itemBoxTable__action itemBoxTable__action--remove itemBoxTable__action--removeAll itemBoxTable__action--removeAllSelected">ޅ</i>
                   </div>
                 </li>
             </ul>
@@ -207,8 +211,10 @@ function addSelectedBlock(multiSelector){
 }
 
 
-function handleComplexGroupAdd(action, children) {
+function handleComplexGroupAdd(action, children, exclude) {
   const multiSelector = children.closest('.multiSelector');
+  exclude = $(multiSelector[0]).find('.exclude').length > 0;
+
   var selection = multiSelector.find('.multiSelector__box--selection');
     if(selection === null || selection === undefined || selection.length === 0) {
       addSelectedBlock(multiSelector);
@@ -217,7 +223,7 @@ function handleComplexGroupAdd(action, children) {
 
     const optionItems = children.find('.itemBoxTable__bodyCellInner--text');
     const itemBoxBody = selection.find('.itemBox--children .itemBoxBody');
-    const selectedItems = selection.find('.itemBox--children .itemBoxTable__bodyCellInner--text');
+    const selectedItems = selection.find('.itemBox--children .itemBoxTable__bodyCellInner--text .inner');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html();
     });
@@ -231,7 +237,7 @@ function handleComplexGroupAdd(action, children) {
 
       const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
       if (positionOfItemInSelected < 0) {
-        itemBoxBody.append(getNewItem(textOfActionItem));
+        itemBoxBody.append(getNewItem(textOfActionItem, exclude));
         $(itemInOptionsAction).replaceWith(removeActionHTML);
       }
     });
@@ -262,7 +268,7 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
   }
   else {
     const childrenToRemove = children.find('li.itemBoxTable__bodyCell--remove').closest('.itemBoxTable__bodyRow').find('.itemBoxTable__bodyCellInner--text');
-    const selectedItems = selection.find('.itemBox--children .itemBoxTable__bodyCellInner--text');
+    const selectedItems = selection.find('.itemBox--children .itemBoxTable__bodyCellInner--text .inner');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html();
     });
@@ -289,10 +295,15 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
   reset();
 }
 
-function getNewItem(textOfActionItem) {
+function getNewItem(textOfActionItem, exclude) {
+    var excludeClass = "";
+    if (exclude === true) {
+      excludeClass = "itemBoxTable__bodyCellInner--exclude";
+    }
+
     return `<ul class="itemBoxTable__bodyRow">
       <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-        <div class="itemBoxTable__bodyCellInner itemBoxTable__bodyCellInner--text">${textOfActionItem}</div>
+        <div class="itemBoxTable__bodyCellInner itemBoxTable__bodyCellInner--text ${excludeClass}"><span class="outer"><span class="inner">${textOfActionItem}</span></span></div>
       </li>
       <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable" style="flex-grow: 0;" data-flex="0">
         <div class="itemBoxTable__bodyCellInner">
@@ -326,10 +337,12 @@ function checkCounter(selection){
 }
 
 
-function handleComplexItemAddRemove(action){
+function handleComplexItemAddRemove(action, exclude){
   const add = $(action).hasClass('itemBoxTable__action--add');
   const remove = $(action).hasClass('itemBoxTable__action--remove');
   const toggle = $(action).hasClass('itemBoxTable__action--toggle');
+  const multiSelector = action.closest('.multiSelector')[0];
+  exclude = $(multiSelector).find('.exclude').length > 0;
 
   // only continue if it's not a toggle button (expand/collapse)
   if(!toggle) {
@@ -339,7 +352,12 @@ function handleComplexItemAddRemove(action){
     }
     const itemBoxTable__bodyRow = action.closest('.itemBoxTable__bodyRow');
     const actionItem = itemBoxTable__bodyRow.find('.itemBoxTable__bodyCellInner--text')[0];
-    const textOfActionItem = $(actionItem).html();
+    var textOfActionItem = $(actionItem).html();
+    const inner = $(actionItem).find('.inner');
+    if(inner.length > 0) {
+      textOfActionItem = $(inner[0]).html();
+    }
+
 
     const multiSelector = action.closest('.multiSelector');
 
@@ -358,7 +376,7 @@ function handleComplexItemAddRemove(action){
       }
     }
 
-    const selectedItems = selection.find('.itemBox--children .itemBoxTable__bodyCellInner--text');
+    const selectedItems = selection.find('.itemBox--children .itemBoxTable__bodyCellInner--text .inner');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html();
     });
@@ -380,7 +398,7 @@ function handleComplexItemAddRemove(action){
 
     if(add && !isAlreadySelected) {
       const itemBoxBody = selection.find('.itemBox--children .itemBoxBody');
-      itemBoxBody.append(getNewItem(textOfActionItem));
+      itemBoxBody.append(getNewItem(textOfActionItem, exclude));
 
       if(positionOfItemInOptions >= 0) {
         $(itemInOptionsAction).replaceWith(removeActionHTML);
@@ -397,54 +415,71 @@ function handleComplexItemAddRemove(action){
       }
     }
 
-    // check on the current status group action, remove or add necessary actions
-    const childrenInOptions = options.find('.itemBox--children');
-    $.each(childrenInOptions, function(index, children){
-      var children = $(children);
-      const groupHeader = children.prev();
-      const groupAddAction = groupHeader.find('.itemBoxTable__bodyCell--addAll');
-      const groupRemoveAction = groupHeader.find('.itemBoxTable__bodyCell--removeAll');
-
-      const addedItems = children.find('.itemBoxTable__action--add:not(.itemBoxTable__action--addAll)');
-      const removedItems = children.find('.itemBoxTable__action--remove:not(.itemBoxTable__action--removeAll)');
-
-      // if no addedItems items, remove groupAddAction
-      if(addedItems.length === 0) {
-        groupAddAction.remove();
-      }
-      else if (groupRemoveAction.length === 0) {
-        // otherwise add it, if it doesn't exist yet
-        // if possible, before the groupAddAction
-        // otherwise just append it to the header
-        if (groupAddAction.length > 0){
-          groupAddAction.before(removeGroupActionHTML);
-        }
-        else {
-            groupHeader.append(removeGroupActionHTML);
-        }
-      }
-
-      // if no removed items, remove groupRemoveAction
-      if(removedItems.length === 0) {
-        groupRemoveAction.remove();
-      }
-      // otherwise add it, if it doesn't exist yet
-      // just append it to the header
-      else if (groupAddAction.length === 0){
-        groupHeader.append(addGroupActionHTML);
-      }
-    });
-
-
     checkCounter(selection);
     reset();
   }
 }
 
+function checkGroupActions() {
+  const multiSelector = $('.multiSelector');
+  const options = multiSelector.find('.multiSelector__box--options');
+  const selection = multiSelector.find('.multiSelector__box--selection');
+
+  // check on the current status group action, remove or add necessary actions
+  const childrenInOptions = options.find('.itemBox--children');
+  $.each(childrenInOptions, function(index, children) {
+    var children = $(children);
+    const groupHeader = children.prev();
+    const groupAddAction = groupHeader.find('.itemBoxTable__bodyCell--addAll');
+    const groupRemoveAction = groupHeader.find('.itemBoxTable__bodyCell--removeAll');
+
+    const removedItems = children.find('.itemBoxTable__action--add:not(.itemBoxTable__action--addAll)');
+    const addedItems = children.find('.itemBoxTable__action--remove:not(.itemBoxTable__action--removeAll)');
+
+    // if there are no added items
+    //  keep only groupAddAction
+    // add groupAddAction if it doesn't exist
+    if(addedItems.length === 0) {
+      groupRemoveAction.remove();
+      if(groupAddAction.length === 0) {
+        groupHeader.append(addGroupActionHTML);
+      }
+    }
+    // if there are no removed items
+    //  keep only groupRemoveAction
+    // add groupRemoveAction if it doesn't exist
+    else if(removedItems.length === 0) {
+      groupAddAction.remove();
+      if(groupRemoveAction.length === 0) {
+        groupHeader.append(removeGroupActionHTML);
+      }
+    }
+    // else have both
+    else {
+      // if no add action is not there
+      // append it to the end
+      if(groupAddAction.length === 0){
+        groupHeader.append(addGroupActionHTML);
+      }
+      // if there is no groupRemoveAction
+      //  add it before the add button
+      if(groupRemoveAction.length === 0) {
+        // make sure we know that there is an addAll button now
+        groupHeader.find('.itemBoxTable__bodyCell--addAll').before(removeGroupActionHTML);
+      }
+    }
+  });
+}
+
 function reset(){
+  checkGroupActions();
+
   // reinitiate onclick and reorder actions in selection blocks
   $('.multiSelector__box--selection .itemBoxTable__action, .multiSelector__box--options .itemBoxTable__action').on('click', function(){
     const action = $(this);
+    const multiSelector = action.closest('.multiSelector')[0];
+    const exclude = $(multiSelector).hasClass('exclude');
+
     if(action.hasClass('itemBoxTable__action--removeAll')){
       const children = action.closest('.itemBoxTable__bodyRow').next();
       if(children.hasClass('itemBox--children')) {
@@ -454,11 +489,11 @@ function reset(){
     else if(action.hasClass('itemBoxTable__action--addAll')){
       const children = action.closest('.itemBoxTable__bodyRow').next();
       if(children.hasClass('itemBox--children')) {
-        handleComplexGroupAdd(action, children);
+        handleComplexGroupAdd(action, children, exclude);
       }
     }
     else {
-      handleComplexItemAddRemove(action);
+      handleComplexItemAddRemove(action, exclude);
     }
   });
   $(".itemBoxBody--sortable").sortable({
