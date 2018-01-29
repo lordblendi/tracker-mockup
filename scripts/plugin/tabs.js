@@ -49,8 +49,21 @@ $(function() {
 function setup(tabsSelector){
   const tab_nav = $(tabsSelector);
   const more = tab_nav.find('.tab__more');
+  const moreShadow = more.find('.tab__shadow');
+  const moreArrow = more.find('.tab__arrow');
   const less = tab_nav.find('.tab__less');
+  const lessShadow = less.find('.tab__shadow');
+  const lessArrow = less.find('.tab__arrow');
   const ul = tab_nav.find('ul');
+
+  $(moreArrow).hover(function(){
+    $(more).addClass('stop');
+    $(ul).velocity("stop");
+  });
+  $(lessArrow).hover(function(){
+    $(less).addClass('stop');
+    $(ul).velocity("stop");
+  });
 
   // init setup
   // don't show less

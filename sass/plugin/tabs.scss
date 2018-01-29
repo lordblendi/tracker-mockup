@@ -90,7 +90,6 @@
 .tab__more .tab__counter {
   opacity: 0;
   transition: all 0.3s ease-in-out;
-  pointer-events: none;
 }
 .tab__more:hover .tab__arrow,
 .tab__more:hover .tab__counter {
@@ -146,7 +145,6 @@
 .tab__less .tab__counter {
   opacity: 0;
   transition: all 0.3s ease-in-out;
-  pointer-events: none;
 }
 .tab__less:hover .tab__arrow,
 .tab__less:hover .tab__counter {
