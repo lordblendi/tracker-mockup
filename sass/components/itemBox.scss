@@ -358,12 +358,14 @@
 
       }
 
-      &--add {
-        color: green;
-      }
-
-      &--remove {
+      // normal --add will be goldenrod, as the actions
+      // excluded --add will be red
+      .exclude &--add {
         color: red;
+      }
+      // --remove will be barely visible gray
+      &--remove {
+        color: lightgray;
       }
 
       &:not(.itemBoxTable__action--disabled):hover {
