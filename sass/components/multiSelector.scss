@@ -182,8 +182,7 @@
     .itemBoxTable__bodyCellInner--exclude {
       .outer {
         text-decoration: line-through;
-        color: lightgray;
-        opacity: 0.75;
+        color: red;
         .inner {
           color: black;
         }
