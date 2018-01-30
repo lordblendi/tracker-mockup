@@ -193,6 +193,115 @@ function setup(tabsSelector) {
     listWidth -= 5;
     return listWidth < tabWidth;
   }
+
+  // ARROW ACTIONS
+
+  // setup arrow actions
+  $(moreArrow).hover(function() {
+    $(more).addClass('stop');
+    $(ul).velocity("stop");
+  });
+  $(lessArrow).hover(function() {
+    $(less).addClass('stop');
+    $(ul).velocity("stop");
+  });
+
+  $(moreArrow).click(function() {
+    $(more).addClass('stop');
+    $(ul).velocity("stop");
+
+    const distance = calculateArrowJump(true) * -1;
+    const max_width = parseInt(tab_nav.css('width'));
+    const max = (calculateListSize() - max_width) * -1;
+    $(more).removeClass('stop');
+
+    scrollList(ul, distance, 500, function() {
+      if (distance === max) {
+        if (!more.hasClass('stop')) {
+          more.addClass('hide');
+        }
+        more.removeClass('stop');
+      }
+    }, 'easeInOutSine');
+
+  });
+  $(lessArrow).click(function() {
+    $(less).addClass('stop');
+    $(ul).velocity("stop");
+
+    const distance = calculateArrowJump(false) * -1;
+    $(less).removeClass('stop');
+    scrollList(ul, distance, 500, function() {
+      if (distance === 0) {
+        if (!less.hasClass('stop')) {
+          less.addClass('hide');
+        }
+        less.removeClass('stop');
+      }
+    }, 'easeInOutSine');
+  });
+
+  function calculateArrowJump(right) {
+    // calculate where are we now
+    var translateText = "";
+    var currentTranslate = 0;
+    const ulElement = ul[0];
+    // if existing item, get translate text
+    if (ulElement !== undefined && ulElement != null) {
+      translateText = ulElement.style.transform;
+
+      // if existing translateText, get value
+      if (translateText !== "" && translateText !== undefined && translateText != null) {
+        currentTranslate = parseFloat(translateText.substring(translateText.lastIndexOf("(") + 1, translateText.indexOf("px")));
+      }
+
+      // let's calculate with positive numbers
+      if (currentTranslate < 0) {
+        currentTranslate *= -1;
+      }
+    }
+
+    const scrollableElements = $(ulElement).find('li');
+
+    var currentScroll = 0;
+    var newScroll = 0;
+    // calculate next distance depending on the direction
+    $.each(scrollableElements, function(index, item) {
+      var possibleNextOne = currentScroll + parseInt($(item).outerWidth(true));
+      if (right === true) {
+        // if the next one would be bigger, we need that column
+        if (possibleNextOne > currentTranslate) {
+          newScroll = possibleNextOne;
+          return false;
+        }
+      } else {
+        // if the next one is bigger/same as current, we need a previous column
+        if (possibleNextOne >= currentTranslate) {
+          newScroll = currentScroll;
+          return false;
+        }
+      }
+      currentScroll = possibleNextOne;
+    });
+
+    // if we are going to the right
+    if (right === true) {
+      const max_width = parseInt(tab_nav.css('width'));
+      const max = (calculateListSize() - max_width);
+      if (newScroll < max) {
+        return newScroll;
+      }
+      return max;
+    }
+    // if we are going to the left
+    else {
+      if (newScroll > 0) {
+        return newScroll;
+      }
+    }
+    return 0;
+  }
+
 };
 
 
