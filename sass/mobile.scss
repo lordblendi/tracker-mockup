@@ -1,0 +1,28 @@
+---
+---
+
+.mobile {
+  background: #222;
+  &-header {
+    .app-navigator {
+      &__left {
+        width: unset;
+      }
+
+      &__center {
+        display: inline-block;
+        width: calc(100% - 81px);
+        text-align: center;
+      }
+
+      &__item {
+        &--white a {
+          color: white;
+        }
+        &--blue a {
+          color: deepskyblue;
+        }
+      }
+    }
+  }
+}
