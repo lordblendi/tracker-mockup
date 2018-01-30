@@ -46,7 +46,7 @@ $(function() {
   });
 });
 
-function setup(tabsSelector){
+function setup(tabsSelector) {
   const tab_nav = $(tabsSelector);
   const more = tab_nav.find('.tab__more');
   const moreShadow = more.find('.tab__shadow');
@@ -56,32 +56,15 @@ function setup(tabsSelector){
   const lessArrow = less.find('.tab__arrow');
   const ul = tab_nav.find('ul');
 
-  $(moreArrow).hover(function(){
-    $(more).addClass('stop');
-    $(ul).velocity("stop");
-  });
-  $(lessArrow).hover(function(){
-    $(less).addClass('stop');
-    $(ul).velocity("stop");
-  });
-  $(moreArrow).click(function(){
-    $(more).addClass('stop');
-    $(ul).velocity("stop");
-  });
-  $(lessArrow).click(function(){
-    $(less).addClass('stop');
-    $(ul).velocity("stop");
-  });
 
-  // init setup
+  // INIT
   // don't show less
   $(less).addClass('hide');
-
   //  if there is enough place, don't show more
   if (isThereEnoughPlace()) {
     $(more).addClass('hide');
   }
-
+  // calculations on RESIZE
   $(window).on('resize', function(e) {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
@@ -133,6 +116,7 @@ function setup(tabsSelector){
     }, 250);
   })
 
+  // SCROLL
   // scroll right
   $(more).hover(function() {
     //  only when it's not hidden
@@ -163,7 +147,6 @@ function setup(tabsSelector){
     $(ul).velocity("stop");
 
   });
-
   // scroll left
   $(less).hover(function() {
     //  only when it's not hidden
@@ -187,6 +170,7 @@ function setup(tabsSelector){
     $(ul).velocity("stop");
   });
 
+  // SCROLL HELPERS
   // calculate size of list
   function calculateListSize() {
     var listItems = Array.from(ul[0].children);
@@ -200,7 +184,6 @@ function setup(tabsSelector){
       return a + b
     });
   }
-
   // check if the list is longer than the provided space
   function isThereEnoughPlace() {
     var tabWidth = parseInt(tab_nav.css('width'));
