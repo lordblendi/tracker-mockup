@@ -33,9 +33,7 @@
   &__document {
     margin: 0;
     background-color: #F2F2F2;
-    padding: 0.5% 0;
-    border-bottom: 2px dashed black;
-
+    background: repeating-linear-gradient(-45deg, #e1e1e1, #e1e1e1 1px, #f2f2f2 1px, #f2f2f2 10px);
     .document {
       &__identifier {
         padding: 0 1% 0 1%;
@@ -58,6 +56,8 @@
         font-weight: 600;
         padding-top: 0;
         padding-bottom: 0;
+        padding: 0.5% 0;
+        border-bottom: 2px dashed black;
 
         .status {
           text-transform: uppercase;
