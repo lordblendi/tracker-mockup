@@ -9,10 +9,46 @@ permalink: /mobile
 
 
 <body class="mobile">
-  <header class="mobile-header">
+  <header class="mobile__header">
     {% include blocks/mobile-header.html %}
   </header>
+  <main class="mobile__container">
+    <div class="mobile__document">
+      <div class="document__identifier">
+        <span>Functieplaats</span>
+      </div>
+      <header class="document__header">
+        <h2>1605-b54-pi-61025</h2>
+        <div class="view-selector">
+          <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleSelect ">
+            <div class="pmx-selector__value">
+              <div class="pmx-selector__label ">
+                <span class="pmx-selector__icon " style=""></span> &#2343;
+              </div>
+            </div>
+            <div class="pmx-selector__value pmx-selector__value--selected">
+              <div class="pmx-selector__label ">
+                <span class="pmx-selector__icon " style=""></span> &#2342;
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="actions">
+          <li><a href="#">न</a></li>
+          <li><a href="#">ނ</a></li>
+          <li><a href="#">ރ</a></li>
+          <li><a href="#">ށ</a></li>
+        </ul>
+        <div class="status">
+          <span>active</span>
+        </div>
+      </header>
 
+
+      <!-- /.document__content -->
+    </div>
+    <!-- /.app__document -->
+  </main>
 
   {% include foot.html %}
 </body>
