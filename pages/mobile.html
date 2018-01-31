@@ -21,12 +21,12 @@ permalink: /mobile
         <h2>1605-b54-pi-61025</h2>
         <div class="view-selector">
           <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleSelect ">
-            <div class="pmx-selector__value">
+            <div class="pmx-selector__value pmx-selector__value--comments">
               <div class="pmx-selector__label ">
                 <span class="pmx-selector__icon " style=""></span> &#2343;
               </div>
             </div>
-            <div class="pmx-selector__value pmx-selector__value--selected">
+            <div class="pmx-selector__value pmx-selector__value--timeline">
               <div class="pmx-selector__label ">
                 <span class="pmx-selector__icon " style=""></span> &#2342;
               </div>
@@ -44,13 +44,43 @@ permalink: /mobile
         </div>
       </header>
 
+      <div class="mobile__content">
+        <div class="panel__left">
+          {% include blocks/document-steps.html %}
+        </div>
+        <div class="panel__center">
+          <div class="document__info-data cf">
+            {% include blocks/document-data.html %}
+          </div>
+          <!-- /.document__info-data -->
+        </div>
+        <div class="panel__right">
+          <div class="document__comment">
+              such documents
+          </div>
+        </div>
 
+      </div>
       <!-- /.document__content -->
     </div>
     <!-- /.app__document -->
   </main>
 
-  {% include foot.html %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- ALL FOR TABS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2/velocity.ui.min.js"></script>
+  <!-- END -->
+
+  <!-- ALL FOR STICKY -->
+  <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/jquery.stickytableheaders.min.js"></script>
+  <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/jquery.sticky.js"></script>
+  <!-- END -->
+
+  <script type="text/javascript" src="{{ site.baseurl }}/scripts/components/toggle.js"></script>
+  <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/tabs.js"></script>
+  <script type="text/javascript" src="{{ site.baseurl }}/scripts/mobile.js"></script>
 </body>
 
 </html>

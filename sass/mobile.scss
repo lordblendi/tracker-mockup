@@ -2,9 +2,61 @@
 ---
 
 .mobile {
-  background: #222;
+
+  // background: repeating-linear-gradient(-45deg, #e1e1e1, #e1e1e1 1px, #f2f2f2 1px, #f2f2f2 10px);
+  background-color: #F2F2F2;
+
+  &__container {
+
+    .panel__center {
+      position: relative;
+    }
+    .panel__right {
+      padding: 1px 10px 0 10px;
+    }
+
+    &.mobile_panel {
+      &--right {
+        .panel__right {
+          right: 0%;
+          box-shadow: 0 -10px 200px rgba(0,0,0,.3);
+          width: 50%;
+        }
+        .panel__center {
+            width: 50%;
+        }
+        .document__comment {
+          transition: right .3s ease-in-out;
+          background-color: #FFF;
+          color: #000;
+          font-size: 16px;
+          padding: 0;
+        }
+      }
+
+      &--left {
+        .panel__left {
+            width: 25%;
+            left: 0;
+        }
+        .panel__center {
+            width: 75%;
+            left: 25%;
+        }
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: inline-block;
+    font-size: 0;
+    width: 100%;
+  }
 
   &__header {
+    background: #222;
+
     .app-navigator {
       padding: 0 1%;
 
@@ -32,8 +84,7 @@
 
   &__document {
     margin: 0;
-    background-color: #F2F2F2;
-    background: repeating-linear-gradient(-45deg, #e1e1e1, #e1e1e1 1px, #f2f2f2 1px, #f2f2f2 10px);
+
     .document {
       &__identifier {
         padding: 0 1% 0 1%;
@@ -54,9 +105,7 @@
       &__header {
         text-transform: uppercase;
         font-weight: 600;
-        padding-top: 0;
-        padding-bottom: 0;
-        padding: 0.5% 0;
+        padding: 0.5%;
         border-bottom: 2px dashed black;
 
         .status {
@@ -92,6 +141,9 @@
         }
       }
 
+      &__content {
+        height: 100%;
+      }
     }
   }
 }
