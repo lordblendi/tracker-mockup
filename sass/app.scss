@@ -75,6 +75,14 @@ textarea {
 .btn--danger {
     color: red;
 }
+.btn--gray {
+  background-color: #D7D7D7;
+  color: black;
+}
+.btn--blue {
+  background-color: rgba(33,194,249,1);
+  color: white;
+}
 
 body.fixed {
   overflow-y: hidden;
