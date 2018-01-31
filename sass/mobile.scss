@@ -19,18 +19,11 @@
       &--right {
         .panel__right {
           right: 0%;
-          box-shadow: 0 -10px 200px rgba(0,0,0,.3);
           width: 50%;
+          box-shadow: 0 -10px 200px rgba(0,0,0,.3);
         }
         .panel__center {
             width: 50%;
-        }
-        .document__comment {
-          transition: right .3s ease-in-out;
-          background-color: #FFF;
-          color: #000;
-          font-size: 16px;
-          padding: 0;
         }
       }
 
@@ -52,6 +45,31 @@
     display: inline-block;
     font-size: 0;
     width: 100%;
+
+    .panel__left {
+      top: 15px;
+    }
+    .panel__center {
+      margin-top: 15px;
+    }
+
+    .panel__right {
+      top: 15px;
+      right: -25%;
+
+      .document__comments {
+        position: absolute;
+        right: unset;
+        bottom: unset;
+        width: 100%;
+        transition: right .3s ease-in-out;
+        background-color: #FFF;
+        color: #000;
+        font-size: 16px;
+        padding: 0;
+      }
+    }
+
   }
 
   &__header {
