@@ -44,8 +44,15 @@ $(function() {
     });
 
     // STICKY
-    $(".sticky__mobile__document__header, .sticky__mobile__comment__header").sticky({
+
+
+    $(".sticky__mobile__app__header").sticky({
       zIndex: 10
+    });
+
+    $(".sticky__mobile__document__header, .sticky__mobile__comment__header").sticky({
+      zIndex: 10,
+      topSpacing: $('.sticky__mobile__app__header').outerHeight(true)
     });
 
   });
