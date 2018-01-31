@@ -69,10 +69,10 @@ $(document).ready(function() {
 
 
   // change top of comment on body scroll
-
-  $(window).scroll(function() {
-    setCommentHeight();
-  });
+  // disabled because it's buggy
+  // $(window).scroll(function() {
+  //   setCommentHeight();
+  // });
 
 }); // END
 
