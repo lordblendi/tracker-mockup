@@ -2,7 +2,6 @@
 ---
 
 .mobile {
-
   // background: repeating-linear-gradient(-45deg, #e1e1e1, #e1e1e1 1px, #f2f2f2 1px, #f2f2f2 10px);
   background-color: #F2F2F2;
 
@@ -70,6 +69,10 @@
         color: #000;
         font-size: 16px;
         padding: 0;
+
+        .add-comment {
+          border-bottom: 1px dashed #ccc;
+        }
       }
     }
 
@@ -166,5 +169,17 @@
         height: 100%;
       }
     }
+  }
+}
+
+
+.is-sticky {
+  .sticky__mobile__document__header,
+  .sticky__mobile__comment__header {
+    border-bottom: 1px solid #ccc !important;
+  }
+
+  .sticky__mobile__app__header {
+    border-bottom: 1px solid black !important;
   }
 }
