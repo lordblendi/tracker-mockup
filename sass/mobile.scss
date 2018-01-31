@@ -50,6 +50,10 @@
     }
     .panel__center {
       margin-top: 15px;
+
+      header {
+        border-bottom: 1px dashed #ccc;
+      }
     }
 
     .panel__right {
