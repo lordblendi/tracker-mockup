@@ -26,3 +26,17 @@ $('.pmx-selector__value--comments, .pmx-selector__value--timeline').click(functi
   }
 
 });
+
+$('.sliders .slider .slider__header .toggle').click(function(e) {
+  e.preventDefault();
+
+  if ($(this).hasClass('active')) {
+    $(this).removeClass('active');
+    $(this).parent().parent().find('.slider__body').slideUp();
+  } else {
+    $(this).addClass('active');
+    $(this).parent().parent().find('.slider__body').slideDown();
+  }
+
+
+});
