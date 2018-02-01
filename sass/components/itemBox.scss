@@ -365,7 +365,7 @@
       }
       // --remove will be barely visible gray
       &--remove {
-        color: lightgray;
+        color: darkgray;
       }
 
       &:not(.itemBoxTable__action--disabled):hover {
