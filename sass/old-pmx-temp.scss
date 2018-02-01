@@ -68,3 +68,16 @@ sup {
 .selected sup {
   display: none;
 }
+
+
+/* Nick */
+
+/* Fix include/exclude jumping */
+.old-multiselect-popup #tabs.old-multiselect-tabs ul {
+    display: table;
+    width: 100%;
+}
+.old-multiselect-popup #tabs.old-multiselect-tabs ul li {
+  display: table-cell !important;
+  width: 50% !important;
+}
