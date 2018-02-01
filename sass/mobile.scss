@@ -1,9 +1,11 @@
 ---
 ---
+$goldenrod: #bf920b;
+$lightgray : #f2f2f2;
 
 .mobile {
-  // background: repeating-linear-gradient(-45deg, #e1e1e1, #e1e1e1 1px, #f2f2f2 1px, #f2f2f2 10px);
-  background-color: #F2F2F2;
+  // background: repeating-linear-gradient(-45deg, #e1e1e1, #e1e1e1 1px, $lightgray 1px, $lightgray 10px);
+  background-color: $lightgray;
 
   &__container {
 
@@ -150,7 +152,7 @@
           .pmx-selector__value {
             &:hover, &--selected {
               .pmx-selector__label {
-                color: #bf920b;
+                color: $goldenrod;
               }
             }
           }
@@ -159,7 +161,7 @@
         .actions {
           li {
             display: inline-block;
-            color: #bf920b;
+            color: $goldenrod;
             font-weight: normal;
             font-size: 20px;
             padding: 0 5px;
