@@ -48,9 +48,11 @@ $lightgray : #f2f2f2;
 
     .panel__left {
       top: 15px;
+      transition: none;
     }
     .panel__center {
       margin-top: 15px;
+      transition: none;
 
       header {
         border-bottom: 1px dashed #ccc;
@@ -61,23 +63,7 @@ $lightgray : #f2f2f2;
     .panel__right {
       top: 15px;
       right: -25%;
-
-      .document__comments {
-        position: absolute;
-        right: unset;
-        bottom: unset;
-        width: 100%;
-        transition: right .3s ease-in-out;
-        background-color: #FFF;
-        color: #000;
-        font-size: 16px;
-        padding: 0;
-
-        .add-comment {
-          border-bottom: 1px dashed #ccc;
-          min-height: 60px;
-        }
-      }
+      transition: none;
     }
 
   }
@@ -174,19 +160,36 @@ $lightgray : #f2f2f2;
       }
     }
   }
-}
 
+  .document__comments {
+    position: absolute;
+    right: unset;
+    bottom: unset;
+    width: 100%;
+    transition: right .3s ease-in-out;
+    background-color: #FFF;
+    color: #000;
+    font-size: 16px;
+    padding: 0;
 
-.is-sticky {
-  .sticky__mobile__document__header,
-  .sticky__mobile__comment__header {
-    border-bottom: 1px solid #ccc !important;
+    .add-comment {
+      border-top: 2px solid $goldenrod;
+      border-bottom: 1px dashed #ccc;
+      min-height: 60px;
+    }
   }
 
-  .sticky__mobile__app__header {
-    background-color: #F2F2F2;
-    .document__header {
-      border-bottom: 2px solid black !important;
+  .is-sticky {
+    .sticky__mobile__document__header,
+    .sticky__mobile__comment__header {
+      border-bottom: 1px solid #ccc !important;
+    }
+
+    .sticky__mobile__app__header {
+      background-color: $lightgray;
+      .document__header {
+        border-bottom: 2px solid black !important;
+      }
     }
   }
 }

@@ -28,6 +28,11 @@ $(function() {
         mobileContainer.removeClass("mobile_panel--left");
       }
 
+      // as the sticky header doesn't resize itself
+      // I have to update it manually
+      const newWidth = $('.mobile__document .panel__center .document__data').outerWidth(true);
+      $('.sticky__mobile__document__header').css('width', newWidth);
+
     });
 
     //  SLIDERS
