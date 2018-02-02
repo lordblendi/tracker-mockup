@@ -163,14 +163,18 @@
     }
 
     &__box {
-      margin: 0 0 5px;
+      margin: 0;
       box-shadow: 0 0 200px 60px rgba(0,0,0,0.2);
     }
   }
 
   .itemBox {
     &--children {
-      background-color: rgba(0, 0, 0, 0.15);
+      background-color: rgba(0,0,0,0.3);
+
+      .itemBox--children {
+        background-color: rgba(0,0,0,0);
+      }
     }
 
     .itemBoxTable__bodyCellInner--exclude {
