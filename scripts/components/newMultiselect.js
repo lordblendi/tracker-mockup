@@ -4,11 +4,6 @@ $(".itemBoxBody--sortable").sortable({
   placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder'
 });
 
-// TEMPORARY
-$('.multiSelector__box--optionsAll').css('background', "#f2f2f2");
-
-
-
 // // cell icon onclick
 // $('.MULTISELECT__POPUP').on('click', function() {
 //   const toggle = $(this);
@@ -104,7 +99,7 @@ $('.multiSelector__box--optionsAll').css('background', "#f2f2f2");
 
 
 // COMPLEX
-$('.multiSelector__box--selection .itemBoxTable__action, .multiSelector__box--options .itemBoxTable__action').on('click', function(){
+$('.multiSelector .multiSelector__box .itemBoxTable__action').on('click', function(){
   const action = $(this);
   const multiSelector = action.closest('.multiSelector')[0];
   const exclude = $(multiSelector).find('.exclude').length > 0;
@@ -176,36 +171,28 @@ function resetGroupAddActions(removeAllActions, children) {
 }
 
 function addSelectedBlock(multiSelector){
-  const selectedBlock = `<div class="multiSelector__box multiSelector__box--selection" style="margin-bottom: 0px;">
-      <div class="itemBox">
-        <div class="itemBoxTable">
-          <div class="itemBoxBody">
-            <ul class="itemBoxTable__bodyRow">
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;">
-                  <div class="itemBoxTable__bodyCellInner itemBoxTable__bodyCellInner--selectedText">
-                    <i>ऄ Selected</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--remove itemBoxTable__action--removeAll itemBoxTable__action--removeAllSelected">ޅ</i>
-                  </div>
-                </li>
-            </ul>
-            <div class="itemBox itemBox--children">
-              <div class="itemBoxTable">
-                <div class="itemBoxBody itemBoxBody--sortable">
-
-                </div>
-              </div>
-            </div><!-- /.itemBox -->
+  const selectedBlock = `
+    <ul class="itemBoxTable__bodyRow multiSelector__box--selectionTitle">
+        <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;">
+          <div class="itemBoxTable__bodyCellInner itemBoxTable__bodyCellInner--selectedText">
+            <i>ऄ Selected</i>
           </div>
-        </div>
-      </div><!-- /.itemBox -->
+        </li>
+        <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
+          <div class="itemBoxTable__bodyCellInner">
+            <i class="itemBoxTable__action itemBoxTable__action--remove itemBoxTable__action--removeAll itemBoxTable__action--removeAllSelected">ޅ</i>
+          </div>
+        </li>
+    </ul>
+    <div class="itemBox itemBox--children  multiSelector__box--selectionChildren">
+      <div class="itemBoxTable">
+        <div class="itemBoxBody itemBoxBody--sortable">
 
-  </div><!-- /.multiSelector__box -->`;
-  multiSelector.find('.multiSelector__box--options').before(selectedBlock);
-  const selection = multiSelector.find('.multiSelector__box--selection');
+        </div>
+      </div>
+    </div><!-- /.itemBox selection-->`;
+  multiSelector.find('.multiSelector__box--optionsTitle').before(selectedBlock);
+  const selection = multiSelector.find('.multiSelector__box--selectionTitle');
   // enable toggle again
   $(selection.find('.itemBoxTable__bodyCell--toggle')).on('click', function() {
     const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
@@ -218,17 +205,15 @@ function handleComplexGroupAdd(action, children, exclude) {
   const multiSelector = children.closest('.multiSelector');
   exclude = $(multiSelector[0]).find('.exclude').length > 0;
 
-  var selection = multiSelector.find('.multiSelector__box--selection');
+  var selection = multiSelector.find('.multiSelector__box--selectionChildren');
     if(selection === null || selection === undefined || selection.length === 0) {
       addSelectedBlock(multiSelector);
-      selection = multiSelector.find('.multiSelector__box--selection');
-      // TEMPORARY
-      $('.multiSelector__box--optionsAll').css('background', "#f2f2f2");
+      selection = multiSelector.find('.multiSelector__box--selectionChildren');
     }
 
     const optionItems = children.find('.itemBoxTable__bodyCellInner--text');
-    const itemBoxBody = selection.find('.itemBox--children .itemBoxBody');
-    const selectedItems = selection.find('.itemBox--children .itemBoxTable__bodyCellInner--text .inner');
+    const itemBoxBody = selection.find('.itemBoxBody');
+    const selectedItems = selection.find('.itemBoxTable__bodyCellInner--text .inner');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html();
     });
@@ -257,25 +242,25 @@ function handleComplexGroupAdd(action, children, exclude) {
 function handleComplexGroupRemove(action, children, fromSelectedAction){
   const multiSelector = children.closest('.multiSelector');
 
-  const selection = multiSelector.find('.multiSelector__box--selection');
+  const selection = multiSelector.find('.multiSelector__box--selectionChildren');
   // exit if there is no selection block
   if(selection === null || selection === undefined || selection.length === 0) {
     return;
   }
 
   if(fromSelectedAction) {
+    const selectionTitle = selection.prev();
     selection.remove();
-    // TEMPORARY
-    $('.multiSelector__box--optionsAll').css('background', "#fff");
+    selectionTitle.remove();
     // here the "children" were not part of the options block, so we have to look for them
-    const options = multiSelector.find('.multiSelector__box--options');
+    const options = multiSelector.find('.multiSelector__box--optionsChildren');
     const removeAllActions = options.find('li.itemBoxTable__bodyCell--removeAll');
     resetGroupRemoveActions(removeAllActions, options);
 
   }
   else {
     const childrenToRemove = children.find('li.itemBoxTable__bodyCell--remove').closest('.itemBoxTable__bodyRow').find('.itemBoxTable__bodyCellInner--text');
-    const selectedItems = selection.find('.itemBox--children .itemBoxTable__bodyCellInner--text .inner');
+    const selectedItems = selection.find('.itemBoxTable__bodyCellInner--text .inner');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html();
     });
@@ -325,23 +310,23 @@ function getNewItem(textOfActionItem, exclude) {
   </ul>`;
 }
 
-function checkCounter(selection){
+function checkCounter(selectionChildren){
   // if there are no more added items, then remove selected block
   // if there are more than 5 elements, refresh a counter
   // otherwise remove counter
-  const numOfSelected = selection.find('.itemBox--children .itemBoxTable__bodyCellInner--text').length;
+  const selectionTitle = selectionChildren.prev();
+  const numOfSelected = selectionChildren.find('.itemBoxTable__bodyCellInner--text').length;
   if( numOfSelected === 0) {
-    selection.remove();
-    // TEMPORARY
-    $('.multiSelector__box--optionsAll').css('background', "#fff");
+    selectionChildren.remove();
+    selectionTitle.remove();
   }
   else if (numOfSelected >= 5 ){
-    const selectedText = selection.find('.itemBoxTable__bodyCellInner--selectedText');
+    const selectedText = selectionTitle.find('.itemBoxTable__bodyCellInner--selectedText');
     selectedText.find('sup').remove();
     selectedText.append(`<sup>${numOfSelected}</sup>`);
   }
   else {
-    selection.find('.itemBoxTable__bodyCellInner--selectedText sup').remove();
+    selectionTitle.find('.itemBoxTable__bodyCellInner--selectedText sup').remove();
   }
 }
 
@@ -350,7 +335,7 @@ function handleComplexItemAddRemove(action, exclude){
   const add = $(action).hasClass('itemBoxTable__action--add');
   const remove = $(action).hasClass('itemBoxTable__action--remove');
   const toggle = $(action).hasClass('itemBoxTable__action--toggle');
-  const multiSelector = action.closest('.multiSelector')[0];
+  var multiSelector = action.closest('.multiSelector')[0];
   exclude = $(multiSelector).find('.exclude').length > 0;
 
   // only continue if it's not a toggle button (expand/collapse)
@@ -368,26 +353,24 @@ function handleComplexItemAddRemove(action, exclude){
     }
 
 
-    const multiSelector = action.closest('.multiSelector');
+    multiSelector = action.closest('.multiSelector');
 
     // get selected items
-    var selection = multiSelector.find('.multiSelector__box--selection');
+    var selection = multiSelector.find('.multiSelector__box--selectionChildren');
     // if there is no selection block
     // on remove -> nothing to do, exit function
     // on add -> readd the selected block
     if(selection === null || selection === undefined || selection.length === 0) {
       if(add) {
         addSelectedBlock(multiSelector);
-        selection = multiSelector.find('.multiSelector__box--selection');
-        // TEMPORARY
-        $('.multiSelector__box--optionsAll').css('background', "#f2f2f2");
+        selection = multiSelector.find('.multiSelector__box--selectionChildren');
       }
       else if(remove) {
         return;
       }
     }
 
-    const selectedItems = selection.find('.itemBox--children .itemBoxTable__bodyCellInner--text .inner');
+    const selectedItems = selection.find('.itemBoxTable__bodyCellInner--text .inner');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html();
     });
@@ -395,8 +378,8 @@ function handleComplexItemAddRemove(action, exclude){
     const isAlreadySelected = positionOfItemInSelected >= 0;
 
     // get option items
-    const options = multiSelector.find('.multiSelector__box--options');
-    const optionItems = options.find('.itemBox--children .itemBoxTable__bodyCellInner--text');
+    const options = multiSelector.find('.multiSelector__box--optionsChildren');
+    const optionItems = options.find('.itemBoxTable__bodyCellInner--text');
     const optionItemTexts = $.map(optionItems, function(item){
       return $(item).html();
     });
@@ -408,7 +391,7 @@ function handleComplexItemAddRemove(action, exclude){
     const itemInOptionsAction = $(itemInOptions).find('.itemBoxTable__bodyCell--add, .itemBoxTable__bodyCell--remove')[0];
 
     if(add && !isAlreadySelected) {
-      const itemBoxBody = selection.find('.itemBox--children .itemBoxBody');
+      const itemBoxBody = selection.find('.itemBoxBody');
       itemBoxBody.append(getNewItem(textOfActionItem, exclude));
 
       if(positionOfItemInOptions >= 0) {
@@ -416,8 +399,7 @@ function handleComplexItemAddRemove(action, exclude){
       }
     }
     else if(remove && isAlreadySelected) {
-      const itemBox_children = selection.find('.itemBox--children');
-      const itemBoxTable__bodyRow = itemBox_children.find('.itemBoxTable__bodyRow');
+      const itemBoxTable__bodyRow = selection.find('.itemBoxTable__bodyRow');
       const itemToRemove = itemBoxTable__bodyRow[positionOfItemInSelected];
       itemToRemove.remove();
 
@@ -433,11 +415,9 @@ function handleComplexItemAddRemove(action, exclude){
 
 function checkGroupActions() {
   const multiSelector = $('.multiSelector');
-  const options = multiSelector.find('.multiSelector__box--options');
-  const selection = multiSelector.find('.multiSelector__box--selection');
 
   // check on the current status group action, remove or add necessary actions
-  const childrenInOptions = options.find('.itemBox--children');
+  const childrenInOptions = multiSelector.find('.itemBox--children:not(.multiSelector__box--selectionChildren)');
   $.each(childrenInOptions, function(index, children) {
     var children = $(children);
     const groupHeader = children.prev();
@@ -486,10 +466,10 @@ function reset(){
   checkGroupActions();
 
   // reinitiate onclick and reorder actions in selection blocks
-  $('.multiSelector__box--selection .itemBoxTable__action, .multiSelector__box--options .itemBoxTable__action').on('click', function(){
+  $('.multiSelector .multiSelector__box .itemBoxTable__action').on('click', function(){
     const action = $(this);
     const multiSelector = action.closest('.multiSelector')[0];
-    const exclude = $(multiSelector).hasClass('exclude');
+    const exclude = $(multiSelector).find('.exclude').length > 0;
 
     if(action.hasClass('itemBoxTable__action--removeAll')){
       const children = action.closest('.itemBoxTable__bodyRow').next();

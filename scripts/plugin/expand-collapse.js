@@ -5,17 +5,12 @@ const expanded = "ऄ";
 const collapsed = "अ";
 
 // default second level collapsed
-const multiOption = '.multiSelector__box--options';
-const multiOptionChildrenFirstLevel = $(multiOption).find('.itemBox--children');
-const multiOptionChildrenSecondLevel = $(multiOptionChildrenFirstLevel).find('.itemBox--children');
-const multiOptionBodyRowSecondLevel = $(multiOptionChildrenFirstLevel).find('.itemBoxTable__bodyRow');
-const multiOptionIcon = $(multiOptionBodyRowSecondLevel).find('.itemBoxTable__bodyCell--toggle i');
-const multiOptionIconContent = $(multiOptionIcon).html();
+const multiOptionChildren = $(".multiSelector__box--optionsChildren").find('.itemBox--children');
+const multiOptionBodyRow = $(multiOptionChildren).find('.itemBoxTable__bodyRow');
 
-$.Velocity.animate(multiOptionChildrenSecondLevel, 'slideUp').then(function() {
-  $(multiOptionBodyRowSecondLevel).addClass('itemBoxTable__bodyRow--closed');
-  $(multiOptionChildrenSecondLevel).addClass('itemBoxTable__bodyRow--closed');
-  // multiOptionIcon.html(multiOptionIconContent.replace(expanded, collapsed));
+$.Velocity.animate(multiOptionChildren, 'slideUp').then(function() {
+  $(multiOptionBodyRow).addClass('itemBoxTable__bodyRow--closed');
+  $(multiOptionChildren).addClass('itemBoxTable__bodyRow--closed');
 });
 
 
