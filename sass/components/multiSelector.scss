@@ -9,6 +9,8 @@
   z-index: -1;
   transition: all .3s ease-in-out;
 
+  box-shadow: 0 0 200px 60px rgba(0,0,0,.2);
+
   &--visible {
     opacity: 1;
     pointer-events: auto;
@@ -20,14 +22,6 @@
     top: 0;
     right: 0;
     width: 50vw;
-
-    .itemBoxFilter {
-      box-shadow: 0 20px 100px 0 rgba(0, 0, 0, 0.7);
-    }
-
-    .itemBoxTable {
-      box-shadow: 0 20px 100px 0 rgba(0, 0, 0, 0.7);
-    }
   }
 
   &__box {
