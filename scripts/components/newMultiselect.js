@@ -4,10 +4,6 @@ $(".itemBoxBody--sortable").sortable({
   placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder'
 });
 
-// TEMPORARY
-$('.multiSelector__box--optionsAll').css('background', "#f2f2f2");
-
-
 
 // // cell icon onclick
 // $('.MULTISELECT__POPUP').on('click', function() {
@@ -104,6 +100,7 @@ $('.multiSelector__box--optionsAll').css('background', "#f2f2f2");
 
 
 // COMPLEX
+
 $('.multiSelector__box--selection .itemBoxTable__action, .multiSelector__box--options .itemBoxTable__action').on('click', function(){
   const action = $(this);
   const multiSelector = action.closest('.multiSelector')[0];
@@ -176,7 +173,7 @@ function resetGroupAddActions(removeAllActions, children) {
 }
 
 function addSelectedBlock(multiSelector){
-  const selectedBlock = `<div class="multiSelector__box multiSelector__box--selection" style="margin-bottom: 0px;">
+  const selectedBlock = `<div class="multiSelector__box multiSelector__box--selection">
       <div class="itemBox">
         <div class="itemBoxTable">
           <div class="itemBoxBody">
@@ -222,8 +219,6 @@ function handleComplexGroupAdd(action, children, exclude) {
     if(selection === null || selection === undefined || selection.length === 0) {
       addSelectedBlock(multiSelector);
       selection = multiSelector.find('.multiSelector__box--selection');
-      // TEMPORARY
-      $('.multiSelector__box--optionsAll').css('background', "#f2f2f2");
     }
 
     const optionItems = children.find('.itemBoxTable__bodyCellInner--text');
@@ -265,8 +260,6 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
 
   if(fromSelectedAction) {
     selection.remove();
-    // TEMPORARY
-    $('.multiSelector__box--optionsAll').css('background', "#fff");
     // here the "children" were not part of the options block, so we have to look for them
     const options = multiSelector.find('.multiSelector__box--options');
     const removeAllActions = options.find('li.itemBoxTable__bodyCell--removeAll');
@@ -332,8 +325,6 @@ function checkCounter(selection){
   const numOfSelected = selection.find('.itemBox--children .itemBoxTable__bodyCellInner--text').length;
   if( numOfSelected === 0) {
     selection.remove();
-    // TEMPORARY
-    $('.multiSelector__box--optionsAll').css('background', "#fff");
   }
   else if (numOfSelected >= 5 ){
     const selectedText = selection.find('.itemBoxTable__bodyCellInner--selectedText');
@@ -379,8 +370,6 @@ function handleComplexItemAddRemove(action, exclude){
       if(add) {
         addSelectedBlock(multiSelector);
         selection = multiSelector.find('.multiSelector__box--selection');
-        // TEMPORARY
-        $('.multiSelector__box--optionsAll').css('background', "#f2f2f2");
       }
       else if(remove) {
         return;
