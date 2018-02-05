@@ -14,10 +14,10 @@
   color: #000;
 
   &--children {
-    padding: 15px 0 15px 15px;
+    padding: 5px 0 5px 15px;
     background-color: transparent;
     opacity: 0;
-
+    background-color: rgba(0,0,0,0.17);
     animation: fadeIn .3s linear forwards;
   }
 

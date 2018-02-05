@@ -56,6 +56,11 @@ body {
 .old-multiselect-popup #tabs {
   margin: -10px;
   margin-bottom: unset;
+  padding: 10px;
+}
+
+.old-multiselect-popup #tabs * {
+  box-sizing: border-box !important;
 }
 
 .old-multiselect-tab-negative span.checked:before, .old-multiselect-tab-negative span.checked:hover:before {

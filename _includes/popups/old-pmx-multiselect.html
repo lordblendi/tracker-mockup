@@ -2,10 +2,20 @@
   <div class="newpickercontent-container">
     <div class="newpickercontent">
       <div id="tabs" class="old-multiselect-tabs">
-        <ul>
-          <li tab-name="Included" class="tab-selector selected"><a tabindex="-1"><span>Included<sup>3</sup></span></a></li>
-          <li tab-name="Excluded" class="tab-selector"><a tabindex="-1"><span>Excluded<sup>5</sup></span></a></li>
-        </ul>
+
+        <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleSelect pmx-selector--required pmx-selector---incl-excl">
+          <div class="pmx-selector__value pmx-selector__value--include pmx-selector__value--selected">
+            <div class="pmx-selector__label ">
+              <span class="" style="">Include</span>
+            </div>
+          </div>
+          <div class="pmx-selector__value pmx-selector__value--exclude">
+            <div class="pmx-selector__label">
+              <span class="">Exclude</span>
+            </div>
+          </div>
+        </div>
+
       </div>
       <div class="old-multiselect-tab old-multiselect-tab-positive">
         <p class="inlinesearch"><input type="text" value="Search..." class="text empty"></p>
