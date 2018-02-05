@@ -70,15 +70,28 @@ $('.pmx-selector__value').on('click', function() {
       }
     }
 
+
+    // TEMPORARY FOR MULTISELECT EXAMPLES IN /pmx
     if(inclExcl === true) {
-      if(selectorValue.hasClass('pmx-selector__value--exclude') && selectorValue.hasClass('pmx-selector__value--selected')) {
-        $('#multiSelector-2 .multiSelector__box').addClass('exclude');
+      // old multiselect
+      if (selector.hasClass('pmx-selector--old')) {
+        if(selectorValue.hasClass('pmx-selector__value--exclude') && selectorValue.hasClass('pmx-selector__value--selected')) {
+          $('.old-multiselect-popup .old-multiselect-tab').addClass('old-multiselect-tab-negative');
+        }
+        else {
+          $('.old-multiselect-popup .old-multiselect-tab').removeClass('old-multiselect-tab-negative');
+        }
       }
+      //  new multiselect
       else {
-        $('#multiSelector-2 .multiSelector__box').removeClass('exclude');
+        if(selectorValue.hasClass('pmx-selector__value--exclude') && selectorValue.hasClass('pmx-selector__value--selected')) {
+          $('#multiSelector-2 .multiSelector__box').addClass('exclude');
+        }
+        else {
+          $('#multiSelector-2 .multiSelector__box').removeClass('exclude');
+        }
       }
     }
-
   }
 
 });
