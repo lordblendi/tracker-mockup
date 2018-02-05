@@ -23,6 +23,20 @@
     width: 50vw;
   }
 
+  &--popup {
+    .itemBox {
+      color: #000;
+
+      &--children {
+        background-color: rgba(0,0,0,0.17);
+
+        .itemBox--children {
+          background-color: rgba(0,0,0,0);
+        }
+      }
+    }
+  }
+
   &__search {
     position: relative;
     height: 40px;
@@ -101,11 +115,7 @@
   }
 
   .itemBox {
-    &--children {
-      .itemBox--children {
-        background-color: rgba(0,0,0,0);
-      }
-    }
+
 
     .itemBoxTable__bodyCellInner--exclude {
       .outer {
