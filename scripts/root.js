@@ -24,9 +24,6 @@ $(document).ready(function() {
 
   // Toggle COMMENTS-ATTACHMENTS-HISTORY
   $('.media--toggle').click(function() {
-    if ($app.hasClass('document__comments--visible') === false) {
-      setCommentHeight();
-    }
     $app.toggleClass('document__comments--visible');
 
   });
@@ -66,31 +63,9 @@ $(document).ready(function() {
 
     $('.assistance').addClass('visible');
   });
-
-
-  // change top of comment on body scroll
-  // disabled because it's buggy
-  // $(window).scroll(function() {
-  //   setCommentHeight();
-  // });
-
 }); // END
 
 
-function setCommentHeight() {
-  const appHeaderHeight = $('.app__header').outerHeight();
-  const docHeaderHeight = $('.sticky__header__wrapper').outerHeight();
-  const currentScroll = $(window).scrollTop();
-
-  const minimumDiff = docHeaderHeight + 1;
-  const currentState = appHeaderHeight - currentScroll;
-  if (currentState > 0) {
-    $('.document__comments').css('top', currentState + minimumDiff + 'px');
-  } else {
-
-    $('.document__comments').css('top', minimumDiff + 'px');
-  }
-};
 
 
 /* Change doc types */
