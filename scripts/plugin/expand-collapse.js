@@ -4,14 +4,6 @@
 const expanded = "ऄ";
 const collapsed = "अ";
 
-// default second level collapsed
-const multiOptionChildren = $(".multiSelector__box--optionsChildren").find('.itemBox--children');
-const multiOptionBodyRow = $(multiOptionChildren).find('.itemBoxTable__bodyRow');
-
-$.Velocity.animate(multiOptionChildren, 'slideUp').then(function() {
-  $(multiOptionBodyRow).addClass('itemBoxTable__bodyRow--closed');
-  $(multiOptionChildren).addClass('itemBoxTable__bodyRow--closed');
-});
 
 
 
