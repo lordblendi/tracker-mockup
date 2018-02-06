@@ -119,4 +119,17 @@ sup {
     padding: 10px;
     text-align: center;
   }
+
+  .newpickercontent {
+    .inlinesearch {
+      &::before {
+        padding: 11px 5px;
+      }
+
+      input.text.empty {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
 }
