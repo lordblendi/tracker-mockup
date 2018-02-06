@@ -1,6 +1,64 @@
 ---
 ---
 
+.field-container {
+  margin: 20px 0;
+}
+.field {
+  position: relative;
+
+  &--focus {
+    .field__label {
+      position: absolute;
+      top: 3px;
+    }
+  }
+
+  &--placeholder {
+    .field__label {
+      font-size: 16px;
+      font-weight: normal;
+      font-style: italic;
+      text-transform: none;
+      letter-spacing: normal;
+      color: rgba(0, 0, 0, 0.4);
+      line-height: 50px;
+    }
+    .field__value {
+      display: none;
+    }
+  }
+
+  &--value {
+    .field__label {
+      display: none;
+    }
+  }
+
+  &__label {
+
+    line-height: initial;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #B1B1B1;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__value {
+    position: relative;
+
+    input {
+      width: 100%;
+    }
+  }
+}
+
+
 .pmx-selector {
   position: relative;
   display: inline-block;

@@ -89,3 +89,9 @@ sup {
   display: table-cell !important;
   width: 50% !important;
 }
+
+
+.databox.itembox ul.itembox li.header ul li,
+.databox.itembox ul.itembox li.filter ul li {
+  box-sizing: border-box;
+}
