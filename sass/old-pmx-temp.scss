@@ -48,16 +48,19 @@ body {
   background-color: #E6E6E6 !important;
 }
 
+.old-multiselect-popup #tabs {
+  margin: -10px;
+  margin-bottom: unset;
+  padding: 10px;
+  text-align: center;
+}
+
 .old-multiselect-popup #tabs ul li {
   background-color: transparent !important;
   width: 1% !important;
 }
 
-.old-multiselect-popup #tabs {
-  margin: -10px;
-  margin-bottom: unset;
-  padding: 10px;
-}
+
 
 .old-multiselect-popup #tabs * {
   box-sizing: border-box !important;
