@@ -1,26 +1,6 @@
 <div id="ctl00_pagebody_container" class="pagebody-container">
   <div class="pagebody">
-    <div id="dialogbox-wrapper" class="dialogbox-wrapper invisible">
-      <div class="dialogbox-wrapper-content">
-        <div id="dialogbox" class="dialogbox"> </div>
-      </div>
-    </div>
     <div id="datalist-wrapper" class="content-wrapper ">
-      <div class="blank-slate invisible" style="display: none;">
-        <p>No items found. Possible reasons:</p>
-        <ul>
-          <li>You are not (yet) assigned to one or more workspaces.</li>
-          <li>There are no items in your workspaces.</li>
-          <li>The criteria are too strict.</li>
-        </ul>
-        <p></p>
-        <p>This can be solved by:</p>
-        <ul>
-          <li>Assign yourself to a (new) workspace.</li>
-          <li>Create some items in your workspace(s).</li>
-          <li>Adjust the criteria in the header.</li>
-        </ul>
-      </div>
       <div class="content">
         <div id="itemboxview" class="databox itembox" style="">
           <ul class="itembox">
@@ -28,121 +8,136 @@
               <ul>
                 <div class="cresizer" style="width: 100%;">
                   <div class="cresizer-handle" data-column="0" style="height: 121px; left: 32%;"></div>
-                  <div class="cresizer-handle" data-column="1" style="height: 121px; left: 64.5%;"></div>
-                <li class="header">
-                  <ul class="columns">
-                    <li id="anonymous_element_75" class="column column0 level0 variable  sorting colname_col_sf2 titlefilter" style="width: 32%;"><span id="anonymous_element_76" class="sortable noexpandall" title="Title">Title</span></li>
-                    <li id="anonymous_element_81" class="column column3 level0 medium  sorting colname_col_sf15" style="width: 32%;"><span id="anonymous_element_82" class="sortable" title="Performed For">Performed For</span></li>
-                    <li id="anonymous_element_91" class="column column8 level0 medium  sorting colname_col_sf4" style="width: 30%;"><span id="anonymous_element_92" class="sortable" title="Assigned to">Assigned to</span></li>
-                    <li class="column column13 level0 actionCol1 action action" style="width: 1%;"><a class="columns " title="Customize columns">&nbsp;</a></li>
-                    <li class="column column14 level0 actionCol2 action action" style="width: 1%;"><a class="toggle" id="listtools_filter" title="Toggle filter">&nbsp;</a></li>
-                  </ul>
-                </li>
-                <li class="filter old-pmx-filter">
-                  <div class="inlinefilter">
-                    <table class="filtermode">
-                      <tbody>
-                        <tr>
-                          <td id="anonymous_element_101" class="column column0 level0 variable  colname_col_sf2 titlefilter longtext" style="width: 30%;"><input id="anonymous_element_126" class="ipfTextField-input text full" type="text" style="width: 95%;"></td>
-                          <td id="anonymous_element_102" class="column column1 level0 medium  colname_col_sf5 combobox" style="width: 30%;"><span id="anonymous_element_127"><div id="picker" class="solidinput haspicker" title="" style="width: 95%;"><div class="newpicker bottom" id="anonymous_element_128"><span class="newpickerbutton showFunnel new-multiselect-trigger">&nbsp;</span>
-                  </div>
-                  <div class="pickerinput"><span class="noinput invisible pickerfocusable" tabindex="0">&nbsp;</span><input type="text" value="" class="text" style="width: 95%;"></div>
-                  <!-- pickerinput -->
-        </div>
-        </span>
-        </td>
-<td id="anonymous_element_109" class="column column8 level0 medium  colname_col_sf4 multipersonpicker" style="width: 29%;"><span id="anonymous_element_138"><div id="picker" class="solidinput haspicker" style="height: auto; width: 95%; font-size:14px;" title="Arnaud S&amp;#39;Jongers, Esteban Sastre, Jonathan Langens"><div class="newpicker bottom open" id="anonymous_element_139">
+                  <div class="cresizer-handle" data-column="1" style="height: 121px; left: 64%;"></div>
 
+                  <li class="header">
+                    <ul class="columns">
+                      <li id="anonymous_element_75" class="column column0 level0 variable  sorting colname_col_sf2 titlefilter" style="width: 32%;"><span id="anonymous_element_76" class="sortable noexpandall" title="Title">Title</span></li>
+                      <li id="anonymous_element_81" class="column column3 level0 medium  sorting colname_col_sf15" style="width: 32%;"><span id="anonymous_element_82" class="sortable" title="Performed For">Performed For</span></li>
+                      <li id="anonymous_element_91" class="column column8 level0 medium  sorting colname_col_sf4" style="width: 32%;"><span id="anonymous_element_92" class="sortable" title="Assigned to">Assigned to</span></li>
+                      <li class="column column13 level0 actionCol1 action action" style="width: 2%;"><a class="columns " title="Customize columns">&nbsp;</a></li>
+                      <li class="column column14 level0 actionCol2 action action" style="width: 2%;"><a class="toggle" id="listtools_filter" title="Toggle filter">&nbsp;</a></li>
+                    </ul>
+                  </li>
 
-<span class="newpickerbutton old-pmx-multiselect-trigger">&nbsp;</span>
-{% include popups/old-pmx-multiselect.html %}
+                  <li class="filter old-pmx-filter">
+                    <div class="inlinefilter">
+                      <table class="filtermode">
+                        <tbody>
+                          <tr>
+                            <td id="anonymous_element_101" class="column column0 level0 variable  colname_col_sf2 titlefilter longtext" style="width: 32%;">
+                              <input id="anonymous_element_126" class="ipfTextField-input text full" type="text" style="width: 93%;">
+                            </td>
+                            <td id="anonymous_element_102" class="column column1 level0 medium  colname_col_sf5 combobox" style="width: 32%;">
+                              <span id="anonymous_element_127">
+                                <div id="picker" class="solidinput haspicker" title="" style="width: 95%;">
+                                  <div class="newpicker bottom" id="anonymous_element_128">
+                                    <span class="newpickerbutton showFunnel new-multiselect-trigger">&nbsp;</span>
+                                  </div>
+                                  <div class="pickerinput">
+                                    <span class="noinput invisible pickerfocusable" tabindex="0">&nbsp;</span>
+                                    <input type="text" value="" class="text" style="width: 95%;">
+                                  </div>
+                                </div>
+                              </span>
+                            </td>
+                            <td id="anonymous_element_109" class="column column8 level0 medium  colname_col_sf4 multipersonpicker" style="width: 32%;">
+                              <span id="anonymous_element_138">
+                                <div id="picker" class="solidinput haspicker" style="height: auto; width: 95%; font-size:14px;" title="Arnaud S&amp;#39;Jongers, Esteban Sastre, Jonathan Langens">
+                                  <div class="newpicker bottom open" id="anonymous_element_139">
+                                    <span class="newpickerbutton old-pmx-multiselect-trigger">&nbsp;</span>
+                                    {% include popups/old-pmx-multiselect.html %}
 
-  </div>
-  <div class="pickerinput"><span class="noinput pickerfocusable" tabindex="0" style="width: 108px;">Arnaud S'Jongers, …</span><input type="text" value="" class="text invisible"></div>
-  <!-- pickerinput -->
-  </div>
-  </span>
-</td>
-<td id="anonymous_element_114" class="column column13 level0 actionCol1  action frozenColumn-action" style="width: 4% !important; position: unset !important; right: unset !important;"><a class="search">&nbsp;</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-</ul>
-</li>
-<li class="middle">
-  <ul>
-    <li data-itemid="674444" data-indentationlevel="0" class="item hasinlineedit">
-      <ul class="columns">
-        <li id="item-674444-0-" class="column column0 level0 variable  colname_col_sf2 titlefilter" style="width: 32%;">
-          <div class="cell" title="Milestone 2018-02-06">
-            <div class="safetyNet notText " style="margin-left:0px;"><a class="relations nochildren"></a><a href="/dashboard/55754f/674444">Milestone 2018-02-06</a></div>
+                                  </div>
+                                  <div class="pickerinput">
+                                    <span class="noinput pickerfocusable" tabindex="0" style="width: 108px;">Arnaud S'Jongers, …</span>
+                                    <input type="text" value="" class="text invisible">
+                                  </div>
+                                </div>
+                              </span>
+                            </td>
+                            <td id="anonymous_element_114" class="column column13 level0 actionCol1  action frozenColumn-action" style="width: 4% !important; position: unset !important; right: unset !important;">
+                              <a class="search">&nbsp;</a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="middle">
+                <ul>
+                  <li data-itemid="674444" data-indentationlevel="0" class="item hasinlineedit">
+                    <ul class="columns">
+                      <li id="item-674444-0-" class="column column0 level0 variable  colname_col_sf2 titlefilter" style="width: 32%;">
+                        <div class="cell" title="Milestone 2018-02-06">
+                          <div class="safetyNet notText " style="margin-left:0px;"><a class="relations nochildren"></a><a href="/dashboard/55754f/674444">Milestone 2018-02-06</a></div>
+                        </div>
+                      </li>
+                      <li id="item-674444-3-" class="column column3 level0 medium  colname_col_sf15" style="width: 32%;">
+                        <div class="cell" title="Ichoosr">Ichoosr</div>
+                      </li>
+                      <li id="item-674444-8-" class="column column8 level0 medium  colname_col_sf4" style="width: 32%;">
+                        <div class="cell" title="Kasper Van Waes">Kasper Van Waes</div>
+                      </li>
+                      <li id="item-674444-13-" class="column column13 level0 actionCol1 action action"><a class="menu actionmenu">&nbsp;</a></li>
+                      <li id="item-674444-14-" class="column column14 level0 actionCol2 action action">&nbsp; </li>
+                    </ul>
+                    <ul class="children"></ul>
+                  </li>
+                  <li data-itemid="672392" data-indentationlevel="0" class="item hasinlineedit">
+                    <ul class="columns">
+                      <li id="item-672392-0-" class="column column0 level0 variable  colname_col_sf2 titlefilter" style="width: 32%;">
+                        <div class="cell" title="Milestone 2018-01-23">
+                          <div class="safetyNet notText " style="margin-left:0px;"><a class="relations nochildren"></a><a href="/dashboard/55754f/672392">Milestone 2018-01-23</a></div>
+                        </div>
+                      </li>
+                      <li id="item-672392-3-" class="column column3 level0 medium  colname_col_sf15" style="width: 32%;">
+                        <div class="cell" title="CitriqueBelge">CitriqueBelge</div>
+                      </li>
+                      <li id="item-672392-8-" class="column column8 level0 medium  colname_col_sf4" style="width: 32%;">
+                        <div class="cell" title="Tonny Schroeders">Tonny Schroeders</div>
+                      </li>
+                      <li id="item-672392-14-" class="column column14 level0 actionCol2 action action">&nbsp; </li>
+                    </ul>
+                    <ul class="children"></ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="bottom">
+                <ul>
+                  <li class="footer">
+                    <div class="hasbuttons"><a tabindex="-1" class="button save" id="cni"><span>Create new item</span></a></div>
+                    <div class="itemsperpage">
+                      <div class="paging"><span>Show</span>
+                        <ul id="anonymous_element_116">
+                          <li value="20" class="selected"><a><span>20</span></a></li>
+                          <li value="50"><a><span>50</span></a></li>
+                          <li value="100"><a><span>100</span></a></li>
+                        </ul><span>items</span></div>
+                    </div>
+                    <div class="displayitemcount">Displaying items <strong><span id="PagingInfoFrom">1</span></strong> to <strong><span id="PagingInfoTo">20</span></strong> of <strong><span id="PagingInfoTotal">756</span></strong></div>
+                    <div class="paging">
+                      <ul>
+                        <li id="anonymous_element_117" class="invisible"><a><span>‹</span></a></li>
+                        <li id="anonymous_element_118" class="selected"><a><span>1</span></a></li>
+                        <li id="anonymous_element_119" class=""><a><span>2</span></a></li>
+                        <li id="anonymous_element_120" class=""><a><span>3</span></a></li>
+                        <li id="anonymous_element_121" class=""><a><span>4</span></a></li>
+                        <li id="anonymous_element_122" class=""><a><span>5</span></a></li>
+                        <li id="anonymous_element_123" class="">...</li>
+                        <li id="anonymous_element_124" class=""><a><span>38</span></a></li>
+                        <li id="anonymous_element_125" class=""><a><span>›</span></a></li>
+                      </ul>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                </ul>
+              </li>
+              <li class="clear"></li>
+            </ul>
           </div>
-        </li>
-        <li id="item-674444-3-" class="column column3 level0 medium  colname_col_sf15" style="width: 32%;">
-          <div class="cell" title="Ichoosr">Ichoosr</div>
-        </li>
-        <li id="item-674444-8-" class="column column8 level0 medium  colname_col_sf4" style="width: 32%;">
-          <div class="cell" title="Kasper Van Waes">Kasper Van Waes</div>
-        </li>
-        <li id="item-674444-13-" class="column column13 level0 actionCol1 action action"><a class="menu actionmenu">&nbsp;</a></li>
-        <li id="item-674444-14-" class="column column14 level0 actionCol2 action action">&nbsp; </li>
-      </ul>
-      <ul class="children"></ul>
-    </li>
-    <li data-itemid="672392" data-indentationlevel="0" class="item hasinlineedit">
-      <ul class="columns">
-        <li id="item-672392-0-" class="column column0 level0 variable  colname_col_sf2 titlefilter" style="width: 32%;">
-          <div class="cell" title="Milestone 2018-01-23">
-            <div class="safetyNet notText " style="margin-left:0px;"><a class="relations nochildren"></a><a href="/dashboard/55754f/672392">Milestone 2018-01-23</a></div>
-          </div>
-        </li>
-        <li id="item-672392-3-" class="column column3 level0 medium  colname_col_sf15" style="width: 32%;">
-          <div class="cell" title="CitriqueBelge">CitriqueBelge</div>
-        </li>
-        <li id="item-672392-8-" class="column column8 level0 medium  colname_col_sf4" style="width: 32%;">
-          <div class="cell" title="Tonny Schroeders">Tonny Schroeders</div>
-        </li>
-        <li id="item-672392-14-" class="column column14 level0 actionCol2 action action">&nbsp; </li>
-      </ul>
-      <ul class="children"></ul>
-    </li>
-  </ul>
-</li>
-<li class="bottom">
-  <ul>
-    <li class="footer">
-      <div class="hasbuttons"><a tabindex="-1" class="button save" id="cni"><span>Create new item</span></a></div>
-      <div class="itemsperpage">
-        <div class="paging"><span>Show</span>
-          <ul id="anonymous_element_116">
-            <li value="20" class="selected"><a><span>20</span></a></li>
-            <li value="50"><a><span>50</span></a></li>
-            <li value="100"><a><span>100</span></a></li>
-          </ul><span>items</span></div>
-      </div>
-      <div class="displayitemcount">Displaying items <strong><span id="PagingInfoFrom">1</span></strong> to <strong><span id="PagingInfoTo">20</span></strong> of <strong><span id="PagingInfoTotal">756</span></strong></div>
-      <div class="paging">
-        <ul>
-          <li id="anonymous_element_117" class="invisible"><a><span>‹</span></a></li>
-          <li id="anonymous_element_118" class="selected"><a><span>1</span></a></li>
-          <li id="anonymous_element_119" class=""><a><span>2</span></a></li>
-          <li id="anonymous_element_120" class=""><a><span>3</span></a></li>
-          <li id="anonymous_element_121" class=""><a><span>4</span></a></li>
-          <li id="anonymous_element_122" class=""><a><span>5</span></a></li>
-          <li id="anonymous_element_123" class="">...</li>
-          <li id="anonymous_element_124" class=""><a><span>38</span></a></li>
-          <li id="anonymous_element_125" class=""><a><span>›</span></a></li>
-        </ul>
-      </div>
-      <div class="clear"></div>
-    </li>
-  </ul>
-</li>
-<li class="clear"></li>
-</ul>
-</div>
 <div id="detailviewWrapper" class="itemboxNewWrapper invisible">
   <div id="detailview" class="itemboxNew">
     <div class="itemboxHeader">

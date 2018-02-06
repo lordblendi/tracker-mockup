@@ -94,4 +94,22 @@ sup {
 .databox.itembox ul.itembox li.header ul li,
 .databox.itembox ul.itembox li.filter ul li {
   box-sizing: border-box;
+  height: 27px;
+}
+
+.databox.itembox li ul.columns li.action {
+  padding: 6px 0;
+}
+
+.databox.itembox li .inlinefilter td {
+  box-sizing: border-box;
+}
+
+.databox.itembox li .inlinefilter td.titlefilter input, .databox.itembox li .inlinefilter td.titlefilter .solidinput.haspicker {
+  height: 16px;
+  box-sizing: border-box;
+}
+
+#picker.solidinput .newpicker.bottom .newpickercontent-wrapper {
+  top: 14px;
 }
