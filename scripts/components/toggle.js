@@ -42,7 +42,7 @@ $('.pmx-selector__value').on('click', function() {
         selectedValues.removeClass('pmx-selector__value--selected');
       }
 
-      if(selector.hasClass('pmx-selector--changeIcons')) {
+      if(selector.hasClass('js_pmx-selector--changeIcons')) {
         selectedValues.find('.pmx-selector__icon').html("-");
         if(selectorValue.hasClass('pmx-selector__value--selected')) {
           selectorValue.find('.pmx-selector__icon').html("+");
