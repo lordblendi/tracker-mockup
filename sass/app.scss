@@ -41,6 +41,17 @@ textarea {
   }
 }
 
+.overlay {
+  position: fixed;
+  background: transparent;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 99999;
+  display: none;
+}
+
 .clearfix,
 .cf {
   &::after {
@@ -1049,18 +1060,6 @@ body.fixed {
 
 .fa {
   cursor: pointer;
-}
-
-@keyframes sonar {
-  0% {transform: scale(.9); opacity:1;}
-  100% {transform: scale(2);opacity: 0;}
-}
-@keyframes pulse {
-  0% {transform: scale(1);}
-  20% {transform: scale(1.4); }
-  50% {transform: scale(.9);}
-  80% {transform: scale(1.2);}
-  100% {transform: scale(1);}
 }
 
 

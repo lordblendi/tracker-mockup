@@ -4,14 +4,18 @@
 // the file extension has to be .css
 
 @import "reset.css";
+@import "keyframes.css";
 @import "app.css";
+
 
 // Blocks
 @import "blocks/appHeader.css";
 
+
 // Plugins
 @import "plugin/tabs.css";
 @import "plugin/sticky.css";
+
 
 // Components
 @import "components/breadcrumbs.css";
