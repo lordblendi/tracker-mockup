@@ -3,7 +3,7 @@
 ////
 
 // default second level collapsed
-const multiOptionChildren = $(".multiSelector__box--optionsChildren").find('.itemBox--children');
+const multiOptionChildren = $(".js_multiSelector__box--optionsChildren").find('.itemBox--children');
 const multiOptionBodyRow = $(multiOptionChildren).find('.itemBoxTable__bodyRow');
 
 $.Velocity.animate(multiOptionChildren, 'slideUp').then(function() {

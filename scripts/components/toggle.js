@@ -85,10 +85,10 @@ $('.pmx-selector__value').on('click', function() {
       //  new multiselect
       else {
         if(selectorValue.hasClass('pmx-selector__value--exclude') && selectorValue.hasClass('pmx-selector__value--selected')) {
-          $('#multiSelector-2 .multiSelector__box').addClass('exclude');
+          $('#multiSelector-2 .multiSelector__box').addClass('js_exclude');
         }
         else {
-          $('#multiSelector-2 .multiSelector__box').removeClass('exclude');
+          $('#multiSelector-2 .multiSelector__box').removeClass('js_exclude');
         }
       }
     }
