@@ -67,7 +67,7 @@
   border-radius: 0;
   font-size: 0;
   line-height: initial;
-  
+
   max-width: 100%;
 
   &::before {
@@ -135,33 +135,28 @@
   }
 
   &__label {
-    position: relative;
-    color: #808080;
-    transition: all .3s ease-in-out;
-
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: #000;
-  }
 
-  &__icon {
-    color: #808080;
-    transition: all .3s ease-in-out;
-  }
+    &Icon {
+      color: #808080;
+      transition: all .3s ease-in-out;
+    }
 
-  &__type  {
-    position: relative;
-    top: -1px;
-    text-transform: uppercase;
-    color: #808080;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .7px;
-  }
+    &Type  {
+      position: relative;
+      top: -2px;
+      text-transform: uppercase;
+      color: #808080;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .7px;
+    }
 
-  &__field {
+    &Field {
 
+    }
   }
 
   &--toggleSelect {
