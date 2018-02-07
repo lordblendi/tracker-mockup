@@ -1,4 +1,4 @@
-$('.js_colorselector-trigger .pmx-selector__labelIcon').on('click', function(){
+$('.js_colorselector-trigger').on('click', function(){
   var colorSelectorPopup =  $('.colorSelector--popup');
 
   // if visible, remove it
@@ -63,7 +63,7 @@ $('.colorSelector .js_itemBoxTable__bodyCellInner--color span').on('click', func
   const color = $(this).attr('data-color');
 
   const toggle = $("#js_changeMyColor");
-  toggle.css('color', color);
+  toggle.find('.pmx-selector__labelIcon').css('color', color);
   toggle.removeAttr('id');
 
   $('.colorSelector').removeClass('js_colorSelector--visible');
