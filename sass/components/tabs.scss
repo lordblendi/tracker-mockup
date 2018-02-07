@@ -149,7 +149,6 @@
       &Shadow {
         position: absolute;
         top: 0;
-        right: 0;
         width: 100px;
         height: 100%;
         transition: all 0.5s ease-in-out;
@@ -164,6 +163,7 @@
         left: 0;
 
         .tabs-nav__slideShadow {
+          left: 0;
           background: linear-gradient(to left, rgba(13, 53, 93, 0) 0%, rgb(13, 53, 93) 100%);
         }
 
@@ -180,6 +180,7 @@
         right: 0;
 
         .tabs-nav__slideShadow {
+          right: 0;
           background: linear-gradient(to right, rgba(13, 53, 93, 0) 0%, rgb(13, 53, 93) 100%);
         }
 
