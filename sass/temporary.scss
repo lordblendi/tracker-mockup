@@ -3,38 +3,3 @@
 
 // add only temporary css
 // and javascript related css
-
-// remove hover on bodyRow in color selector
-// add hover per cell
-.colorSelector {
-  box-shadow: 0 0 200px 60px rgba(0,0,0,.2);
-
-  .itemBoxTable__bodyRow {
-    border: 1px solid #d2d2d2;
-    &::after {
-      height: 0px;
-    }
-  }
-
-  .itemBoxTable__bodyCell {
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 0;
-      background: #B2B2B2;
-      pointer-events: none;
-      transition:
-        all .2s ease-in-out
-      ;
-    }
-
-    &:hover {
-      &::after {
-        height: 2px;
-      }
-    }
-  }
-}
