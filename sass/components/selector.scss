@@ -146,6 +146,10 @@
     &Icon {
       color: #808080;
       transition: all .3s ease-in-out;
+
+      + .pmx-selector__labelType {
+        padding: 0 2px;
+      }
     }
 
     &Type  {
