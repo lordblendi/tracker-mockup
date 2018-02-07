@@ -5,97 +5,97 @@ $(".itemBoxBody--sortable").sortable({
 });
 
 // // cell icon onclick
-// $('.MULTISELECT__POPUP').on('click', function() {
-//   const toggle = $(this);
-//   const top = toggle.offset().top;
-//   const left = toggle.offset().left;
-//   // outerWidth (including padding, border, and optionally margin)
-//   // innerWidth (including padding but not border)
-//   // width (not including anything)
-//   const width = toggle.outerWidth();
-//   const height = toggle.outerHeight();
-//
-//   const right = left + width;
-//   const bottom = top + height;
-//
-//   const windowWidth = $(window).width();
-//
-//   const isOnLeft = Math.round(windowWidth/2) >= Math.round(left);
-//   const isOnRight = Math.round(windowWidth/2) < Math.round(left);
-//
-//   var newTop = (Math.round(top) + Math.round(height)) + 'px';
-//   if($(this).hasClass('pmx-selector')) {
-//     newTop = Math.round(top) + 'px';
-//   }
-//
-//   if (isOnLeft) {
-//     $('' + $(this).attr('data-popid')).css({
-//       'z-index': '99999999',
-//       'pointer-events': 'auto',
-//       'opacity': '1',
-//       'top': newTop,
-//       'left': Math.round(left) + 'px',
-//     });
-//   }
-//   else {
-//     $('' + $(this).attr('data-popid')).css({
-//       'z-index': '99999999',
-//       'pointer-events': 'auto',
-//       'opacity': '1',
-//       'top': newTop,
-//       'right': (Math.round($(window).width()) - Math.round(right)) + 'px',
-//     });
-//   }
-//
-//   $(".overlay").css("display", 'block');
-// });
-//
-// // close overlay and popups
-// $('.overlay').on('click', function() {
-//   $(".overlay").css("display", 'none');
-//
-//   $('#multiSelector-1, #multiSelector-2, #multiSelector-3').css({
-//     'z-index': '0',
-//     'pointer-events': 'none',
-//     'opacity': '0',
-//   });
-// })
+$('.MULTISELECT__POPUP').on('click', function() {
+  const toggle = $(this);
+  const top = toggle.offset().top;
+  const left = toggle.offset().left;
+  // outerWidth (including padding, border, and optionally margin)
+  // innerWidth (including padding but not border)
+  // width (not including anything)
+  const width = toggle.outerWidth();
+  const height = toggle.outerHeight();
+
+  const right = left + width;
+  const bottom = top + height;
+
+  const windowWidth = $(window).width();
+
+  const isOnLeft = Math.round(windowWidth/2) >= Math.round(left);
+  const isOnRight = Math.round(windowWidth/2) < Math.round(left);
+
+  var newTop = (Math.round(top) + Math.round(height)) + 'px';
+  if($(this).hasClass('pmx-selector')) {
+    newTop = Math.round(top) + 'px';
+  }
+
+  if (isOnLeft) {
+    $('' + $(this).attr('data-popid')).css({
+      'z-index': '99999999',
+      'pointer-events': 'auto',
+      'opacity': '1',
+      'top': newTop,
+      'left': Math.round(left) + 'px',
+    });
+  }
+  else {
+    $('' + $(this).attr('data-popid')).css({
+      'z-index': '99999999',
+      'pointer-events': 'auto',
+      'opacity': '1',
+      'top': newTop,
+      'right': (Math.round($(window).width()) - Math.round(right)) + 'px',
+    });
+  }
+
+  $(".overlay").css("display", 'block');
+});
+
+// close overlay and popups
+$('.overlay').on('click', function() {
+  $(".overlay").css("display", 'none');
+
+  $('#multiSelector-1, #multiSelector-2, #multiSelector-3').css({
+    'z-index': '0',
+    'pointer-events': 'none',
+    'opacity': '0',
+  });
+})
 
 
 //////
 // MULTI SELECT ONCLICK
 //////
 //
-// // SIMPLE
-// // $('.MULTISELECT__POPUP[data-popid="#multiSelector-1"]')
-// $('#multiSelector-1 .itemBoxTable__bodyRow').on('click', function(){
-//   const row = $(this);
-//   const newLAbelText = row.find('.itemBoxTable__bodyCell--text .itemBoxTable__bodyCellInner').html();
-//
-//   const selectorField = $('.MULTISELECT__POPUP[data-popid="#multiSelector-1"]');
-//   const selectorLabelField = $(selectorField).find('.pmx-selector__label');
-//   const selectorLabel = $(selectorLabelField).html();
-//
-//   const splittedLabel = selectorLabel.split('</span>');
-//
-//   // if we don't have status icon
-//   var oldLabelText = splittedLabel[0];
-//   // if we have status icon
-//   if(splittedLabel.length > 0) {
-//     oldLabelText = splittedLabel[1];
-//   }
-//
-//   const newLabel = selectorLabel.replace(oldLabelText, ' ' + newLAbelText);
-//   $(selectorLabelField).html(newLabel);
-//
-//   $(".overlay").css("display", 'none');
-//   $('#multiSelector-1, #multiSelector-2, #multiSelector-3').css({
-//     'z-index': '0',
-//     'pointer-events': 'none',
-//     'opacity': '0',
-//   });
-// })
-//
+// SIMPLE
+// $('.MULTISELECT__POPUP[data-popid="#multiSelector-1"]')
+$('#multiSelector-1 .itemBoxTable__bodyRow').on('click', function(){
+  const row = $(this);
+  const newLAbelText = row.find('.itemBoxTable__bodyCell--text .itemBoxTable__bodyCellInner').html();
+
+  const selectorField = $('.MULTISELECT__POPUP[data-popid="#multiSelector-1"]');
+  const selectorLabelField = $(selectorField).find('.pmx-selector__label');
+  const selectorLabel = $(selectorLabelField).html();
+
+  const splittedLabel = selectorLabel.split('</span>');
+
+  // if we don't have status icon
+  var oldLabelText = splittedLabel[0];
+  // if we have status icon
+  if(splittedLabel.length > 0) {
+    oldLabelText = splittedLabel[1];
+  }
+
+  const newLabel = selectorLabel.replace(oldLabelText, ' ' + newLAbelText);
+  $(selectorLabelField).html(newLabel);
+
+  $(".overlay").css("display", 'none');
+  $('#multiSelector-1, #multiSelector-2, #multiSelector-3').css({
+    'z-index': '0',
+    'pointer-events': 'none',
+    'opacity': '0',
+  });
+})
+
 
 
 // COMPLEX
