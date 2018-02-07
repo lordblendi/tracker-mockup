@@ -24,11 +24,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
-body.page-Components {
-  background-color: #FFF;
-  padding: 50px;
-}
-body.page-Itembox {
+body.page-Components,
+body.page-Itembox,
+body.page-Popups {
   background-color: #FFF;
   padding: 50px;
 }
