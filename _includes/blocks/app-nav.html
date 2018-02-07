@@ -1,43 +1,45 @@
 <div class="app__nav">
+
   <div class="tabs tabs--light">
-    <div class="tabs__nav">
-      <div class="tab__less hide">
-        <span class="tab__shadow"></span>
-        <span class="tab__arrow">←</span>
-        <span class="tab__counter">1</span>
+    <div class="tabs-nav">
+      <div class="tabs-nav__slide tabs-nav__slide--left tabs-nav__slide--hidden">
+        <span class="tabs-nav__slideShadow"></span>
+        <span class="tabs-nav__slideArrow">←</span>
+        <span class="tabs-nav__slideCounter">1</span>
       </div>
       <ul>
-        <span class="tab__active-link-bar"></span>
-        <li><a href="#" class="tab__link active" tabindex="1"><span>Structure</span></a></li>
-        <li><a href="#" class="tab__link" tabindex="2"><span>Smartlists</span></a></li>
-        <li><a href="#" class="tab__link" tabindex="3"><span>Recently used</span></a></li>
-        <li><a href="#" class="tab__link" tabindex="4"><span>Favorites</span></a></li>
+        <span class="tabs-nav__linkBar"></span>
+        <li><a href="#" class="tabs-nav__link tabs-nav__link--active" tabindex="1"><span>Structure</span></a></li>
+        <li><a href="#" class="tabs-nav__link" tabindex="2"><span>Smartlists</span></a></li>
+        <li><a href="#" class="tabs-nav__link" tabindex="3"><span>Recently used</span></a></li>
+        <li><a href="#" class="tabs-nav__link" tabindex="4"><span>Favorites</span></a></li>
       </ul>
-      <div class="tab__more">
-        <span class="tab__shadow"></span>
-        <span class="tab__arrow">→</span>
-        <span class="tab__counter">9</span>
+      <div class="tabs-nav__slide tabs-nav__slide--right">
+        <span class="tabs-nav__slideShadow"></span>
+        <span class="tabs-nav__slideArrow">→</span>
+        <span class="tabs-nav__slideCounter">9</span>
       </div>
     </div>
     <!-- /.tabs__nav -->
 
-    <div class="tabs__panels">
-      <div class="tabs__panel" tabindex="1">
+    <div class="tabs-panels">
+      <div class="tabs-panels__panel" tabindex="1">
         <!-- tab contents -->
         {% include blocks/app-nav-tab1.html %}
       </div><!-- /.tabs__panel -->
-      <div class="tabs__panel" tabindex="2">
+      <div class="tabs-panels__panel" tabindex="2">
         <!-- tab contents -->
         {% include blocks/app-nav-tab2.html %}
       </div><!-- /.tabs__panel -->
-      <div class="tabs__panel" tabindex="3">
+      <div class="tabs-panels__panel" tabindex="3">
         <!-- tab contents -->
 
       </div><!-- /.tabs__panel -->
-      <div class="tabs__panel" tabindex="4">
+      <div class="tabs-panels__panel" tabindex="4">
         <!-- tab contents -->
 
       </div><!-- /.tabs__panel -->
     </div><!-- /.tabs__panels -->
   </div>
+
 </div>

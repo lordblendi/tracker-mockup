@@ -1,33 +1,33 @@
 var resizeTimer;
 
 $(function() {
-  setup(".app__nav .tabs__nav");
+  setup(".app__nav .tabs-nav");
 
   // init
-  $('.tabs__nav').each(function() {
+  $('.tabs-nav').each(function() {
     var _parent = $(this).parent();
-    var _activeLink = $(this).find('.active');
+    var _activeLink = $(this).find('.tabs-nav__link--active');
     var _tabindex = _activeLink.attr('tabindex');
     var barLeft = _activeLink.parent().position().left;
     var barWidth = _activeLink.parent().width();
 
-    _parent.find('.tabs__panel').hide();
-    _parent.find('.tabs__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('active');
+    _parent.find('.tabs-panels__panel').hide();
+    _parent.find('.tabs-panels__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('tabs-panels__panel--active');
 
-    $(this).find('.tab__active-link-bar').css({
+    $(this).find('.tabs-nav__linkBar').css({
       'left': barLeft + 10 + 'px',
       'width': barWidth + 'px'
     });
   });
 
   // click tab link
-  $('.tab__link').on('click', function(e) {
+  $('.tabs-nav__link').on('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
 
     var _parent = $(this).parent().parent().parent().parent();
     var _tabindex = $(this).attr('tabindex');
-    var bar = _parent.find('.tab__active-link-bar');
+    var bar = _parent.find('.tabs-nav__linkBar');
     var barLeft = $(this).parent().position().left;
     var barWidth = $(this).parent().width();
 
@@ -38,31 +38,34 @@ $(function() {
     });
 
     // Change panel
-    _parent.find('.tabs__panel').hide().removeClass('active');
-    _parent.find('.tabs__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('active');
+    _parent.find('.tabs-panels__panel').hide().removeClass('tabs-panels__panel--active');
+    _parent.find('.tabs-panels__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('tabs-panels__panel--active');
 
-    _parent.find('.tab__link').removeClass('active');
-    $(this).addClass('active');
+    _parent.find('.tabs-nav__link').removeClass('tabs-nav__link--active');
+    $(this).addClass('tabs-nav__link--active');
   });
 });
 
 function setup(tabsSelector) {
   const tab_nav = $(tabsSelector);
-  const more = tab_nav.find('.tab__more');
-  const moreShadow = more.find('.tab__shadow');
-  const moreArrow = more.find('.tab__arrow');
-  const less = tab_nav.find('.tab__less');
-  const lessShadow = less.find('.tab__shadow');
-  const lessArrow = less.find('.tab__arrow');
-  const ul = tab_nav.find('ul');
 
+  const less = tab_nav.find('.tabs-nav__slide--left');
+  const more = tab_nav.find('.tabs-nav__slide--right');
+
+  const lessShadow = less.find('.tabs-nav__slideShadow');
+  const lessArrow = less.find('.tabs-nav__slideArrow');
+
+  const moreShadow = more.find('.tabs-nav__slideShadow');
+  const moreArrow = more.find('.tabs-nav__slideArrow');
+
+  const ul = tab_nav.find('ul');
 
   // INIT
   // don't show less
-  $(less).addClass('hide');
+  $(less).addClass('tabs-nav__slide--hidden');
   //  if there is enough place, don't show more
   if (isThereEnoughPlace()) {
-    $(more).addClass('hide');
+    $(more).addClass('tabs-nav__slide--hidden');
   }
   // calculations on RESIZE
   $(window).on('resize', function(e) {
@@ -81,8 +84,8 @@ function setup(tabsSelector) {
       if (isThereEnoughPlace()) {
         // scroll to beginning, because we have enough space
         //  and hide less and more
-        less.addClass('hide');
-        more.addClass('hide');
+        less.addClass('tabs-nav__slide--hidden');
+        more.addClass('tabs-nav__slide--hidden');
         // if we would do it in the .then, they would fire later
         scrollList(ul, 0, 1000, function() {
 
@@ -95,7 +98,7 @@ function setup(tabsSelector) {
 
           // if it's zero, just show the more shadow
           if (currentTranslate == 0) {
-            more.removeClass('hide');
+            more.removeClass('tabs-nav__slide--hidden');
           }
 
           // if it's less than the current scrolling
@@ -103,14 +106,14 @@ function setup(tabsSelector) {
           // we move the whole thing to the right
           if (scrollWidth >= currentTranslate) {
             scrollList(ul, scrollWidth, 1000, function() {
-              more.addClass('hide');
+              more.addClass('tabs-nav__slide--hidden');
             }, 'linear');
           } else {
-            more.removeClass('hide');
+            more.removeClass('tabs-nav__slide--hidden');
           }
         } else {
           // if there is not translate text, just show the more shadow
-          more.removeClass('hide');
+          more.removeClass('tabs-nav__slide--hidden');
         }
       }
     }, 250);
@@ -120,10 +123,10 @@ function setup(tabsSelector) {
   // scroll right
   $(more).hover(function() {
     //  only when it's not hidden
-    if (!$(this).hasClass('hide')) {
+    if (!$(this).hasClass('tabs-nav__slide--hidden')) {
       // var tab_nav = $(this).parent();
-      // var less = tab_nav.find('.tab__less');
-      // var more = tab_nav.find('.tab__more');
+      // var less = tab_nav.find('.tabs-nav__slide--left');
+      // var more = tab_nav.find('.tabs-nav__slide--right');
       // var ul = tab_nav.find('ul');
       // calculate scrollWidth and duration
       var max_width = parseInt(tab_nav.css('width'));
@@ -132,11 +135,11 @@ function setup(tabsSelector) {
 
       less.removeClass('stop');
       more.removeClass('stop');
-      less.removeClass('hide');
+      less.removeClass('tabs-nav__slide--hidden');
 
       scrollList(ul, scrollWidth, duration, function() {
         if (!more.hasClass('stop')) {
-          more.addClass('hide');
+          more.addClass('tabs-nav__slide--hidden');
         }
         more.removeClass('stop');
       }, 'easeInOutSine');
@@ -150,16 +153,16 @@ function setup(tabsSelector) {
   // scroll left
   $(less).hover(function() {
     //  only when it's not hidden
-    if (!$(this).hasClass('hide')) {
+    if (!$(this).hasClass('tabs-nav__slide--hidden')) {
       var duration = calculateDuration(ul);
 
       less.removeClass('stop');
       more.removeClass('stop');
-      more.removeClass('hide');
+      more.removeClass('tabs-nav__slide--hidden');
 
       scrollList(ul, 0, duration, function() {
         if (!(less.hasClass('stop'))) {
-          less.addClass('hide');
+          less.addClass('tabs-nav__slide--hidden');
         }
         less.removeClass('stop');
       }, 'easeInOutSine');
@@ -218,7 +221,7 @@ function setup(tabsSelector) {
     scrollList(ul, distance, 500, function() {
       if (distance === max) {
         if (!more.hasClass('stop')) {
-          more.addClass('hide');
+          more.addClass('tabs-nav__slide--hidden');
         }
         more.removeClass('stop');
       }
@@ -234,7 +237,7 @@ function setup(tabsSelector) {
     scrollList(ul, distance, 500, function() {
       if (distance === 0) {
         if (!less.hasClass('stop')) {
-          less.addClass('hide');
+          less.addClass('tabs-nav__slide--hidden');
         }
         less.removeClass('stop');
       }
