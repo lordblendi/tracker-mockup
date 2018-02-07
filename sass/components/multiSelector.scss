@@ -117,20 +117,6 @@
     box-shadow: 0 0 200px 60px rgba(0,0,0,0.2);
   }
 
-  .itemBox {
-
-
-    .js_itemBoxTable__bodyCellInner--exclude {
-      .outer {
-        text-decoration: line-through;
-        color: red;
-        .inner {
-          color: black;
-        }
-      }
-    }
-  }
-
   .pmx-selector__value {
     &:hover, &--selected {
       &.js_pmx-selector__value--include {

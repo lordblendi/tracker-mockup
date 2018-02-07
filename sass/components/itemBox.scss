@@ -294,6 +294,11 @@
           text-overflow: ellipsis;
           color: #000;
 
+          &--excluded {
+            text-decoration: line-through;
+            text-decoration-color: red;
+          }
+
           .pmx-selector {
             top: -2px;
           }

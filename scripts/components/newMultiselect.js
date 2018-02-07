@@ -213,7 +213,7 @@ function handleComplexGroupAdd(action, children, exclude) {
 
     const optionItems = children.find('.js_itemBoxTable__bodyCellInner--text');
     const itemBoxBody = selection.find('.itemBoxBody');
-    const selectedItems = selection.find('.js_itemBoxTable__bodyCellInner--text .inner');
+    const selectedItems = selection.find('.itemBoxTable__bodyCellInner--excluded');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html();
     });
@@ -260,7 +260,7 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
   }
   else {
     const childrenToRemove = children.find('li.itemBoxTable__bodyCell--remove').closest('.itemBoxTable__bodyRow').find('.js_itemBoxTable__bodyCellInner--text');
-    const selectedItems = selection.find('.js_itemBoxTable__bodyCellInner--text .inner');
+    const selectedItems = selection.find('.itemBoxTable__bodyCellInner--excluded');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html();
     });
@@ -290,12 +290,12 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
 function getNewItem(textOfActionItem, exclude) {
     var excludeClass = "";
     if (exclude === true) {
-      excludeClass = "js_itemBoxTable__bodyCellInner--exclude";
+      excludeClass = "itemBoxTable__bodyCellInner--excluded";
     }
 
     return `<ul class="itemBoxTable__bodyRow">
       <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-        <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text ${excludeClass}"><span class="outer"><span class="inner">${textOfActionItem}</span></span></div>
+        <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text ${excludeClass}">${textOfActionItem}</div>
       </li>
       <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable" style="flex-grow: 0;" data-flex="0">
         <div class="itemBoxTable__bodyCellInner">
@@ -370,7 +370,7 @@ function handleComplexItemAddRemove(action, exclude){
       }
     }
 
-    const selectedItems = selection.find('.js_itemBoxTable__bodyCellInner--text .inner');
+    const selectedItems = selection.find('.itemBoxTable__bodyCellInner--excluded');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html();
     });
