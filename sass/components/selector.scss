@@ -67,6 +67,8 @@
   border-radius: 0;
   font-size: 0;
   line-height: initial;
+  
+  max-width: 100%;
 
   &::before {
     content: '';
@@ -93,6 +95,8 @@
     border: 1px solid rgba(255,255,255,0);
     border-right: 2px solid transparent;
     transition: all 0.3s ease-in-out;
+
+    max-width: calc(100% - 4px);
 
     &:first-child {
       margin-left: 2px;
@@ -134,6 +138,11 @@
     position: relative;
     color: #808080;
     transition: all .3s ease-in-out;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
   }
 
   &__icon {
@@ -142,7 +151,13 @@
   }
 
   &__type  {
-    
+    position: relative;
+    top: -1px;
+    text-transform: uppercase;
+    color: #808080;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .7px;
   }
 
   &__field {
@@ -200,37 +215,6 @@
           }
         }
       }
-    }
-  }
-
-  &--semsearch-tag {
-    max-width: 100%;
-
-    .pmx-selector {
-      &__value {
-        max-width: calc(100% - 4px);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-
-      &__label {
-        max-width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        color: #000;
-      }
-    }
-
-    &__type {
-      position: relative;
-      top: -1px;
-      text-transform: uppercase;
-      color: #808080;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .7px;
     }
   }
 }
