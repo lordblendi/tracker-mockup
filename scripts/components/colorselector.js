@@ -59,8 +59,8 @@ $('.js_colorselector-trigger').on('click', function(){
 
 });
 
-$('.colorSelector .js_itemBoxTable__bodyCellInner--color span').on('click', function(){
-  const color = $(this).attr('data-color');
+$('.colorSelector .js_itemBoxTable__bodyCellInner--color').on('click', function(){
+  const color = $(this).find('span').attr('data-color');
 
   const toggle = $("#js_changeMyColor");
   toggle.find('.pmx-selector__labelIcon').css('color', color);
