@@ -36,7 +36,6 @@
   }
 
   &__label {
-
     line-height: initial;
     font-size: 10px;
     font-weight: 600;
@@ -142,7 +141,11 @@
     transition: all .3s ease-in-out;
   }
 
-  &__title {
+  &__type  {
+    
+  }
+
+  &__field {
 
   }
 
