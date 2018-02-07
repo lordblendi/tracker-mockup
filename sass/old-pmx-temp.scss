@@ -8,7 +8,7 @@
 
 body {
   min-width: 993px;
-  background-color: #4692C3;
+  background-color: #2C5386;
   font-size: 14px;
 }
 
@@ -23,17 +23,21 @@ body {
 
 
 .tabline {
-  background-color: #285C9E;
+  background-color: #2C5386;
 
   .tab-scroller {
     ul {
       &.tabs {
         li {
           &.tab {
-            background-color: #22508A;
+            background-color: #224066;
+
+            &::before {
+              border-top: 15px solid #2C5386;
+            }
 
             &.tab-fixed {
-              border-top: 2px dotted #285C9E;
+              border-top: 2px dotted #224066;
             }
 
             &.tab-selected {
