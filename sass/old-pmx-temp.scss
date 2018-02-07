@@ -55,8 +55,8 @@ body {
 .old-multiselect-popup--hidden, .old-multiselect-tab--hidden {
   display: none !important;
 }
-.old-multiselect-tab-negative span.checked:before,
-.old-multiselect-tab-negative span.checked:hover:before {
+.js_old-multiselect-tab-negative span.checked:before,
+.js_old-multiselect-tab-negative span.checked:hover:before {
   color: red;
 }
 

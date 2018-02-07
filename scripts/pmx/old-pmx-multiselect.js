@@ -1,4 +1,4 @@
-$('.old-pmx-multiselect-trigger').click(function() {
+$('.js_old-pmx-multiselect-trigger').click(function() {
   $('.old-multiselect-popup').toggleClass('old-multiselect-popup--hidden');
 });
 
@@ -16,7 +16,7 @@ $('.old-multiselect-popup .old-multiselect-tabs ul li').click(function() {
   }
 });
 
-$('.new-multiselect-trigger').click(function() {
+$('.js_new-multiselect-trigger').click(function() {
   var trigger = $(this);
   const height = trigger.outerHeight();
   const width = trigger.outerWidth();

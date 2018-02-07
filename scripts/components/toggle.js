@@ -1,6 +1,6 @@
 // toggle simple
 $('.pmx-selector').on('click', function() {
-  $(this).toggleClass('pmx-welector--clicked');
+  $(this).toggleClass('pmx-selector--clicked');
 });
 
 
@@ -74,12 +74,12 @@ $('.pmx-selector__value').on('click', function() {
     // TEMPORARY FOR MULTISELECT EXAMPLES IN /pmx
     if(inclExcl === true) {
       // old multiselect
-      if (selector.hasClass('pmx-selector--old')) {
+      if (selector.hasClass('js_pmx-selector--old')) {
         if(selectorValue.hasClass('js_pmx-selector__value--exclude') && selectorValue.hasClass('pmx-selector__value--selected')) {
-          $('.old-multiselect-popup .old-multiselect-tab').addClass('old-multiselect-tab-negative');
+          $('.old-multiselect-popup .old-multiselect-tab').addClass('js_old-multiselect-tab-negative');
         }
         else {
-          $('.old-multiselect-popup .old-multiselect-tab').removeClass('old-multiselect-tab-negative');
+          $('.old-multiselect-popup .old-multiselect-tab').removeClass('js_old-multiselect-tab-negative');
         }
       }
       //  new multiselect

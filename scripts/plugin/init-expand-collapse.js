@@ -7,8 +7,8 @@ const multiOptionChildren = $(".js_multiSelector__box--optionsChildren").find('.
 const multiOptionBodyRow = $(multiOptionChildren).find('.itemBoxTable__bodyRow');
 
 $.Velocity.animate(multiOptionChildren, 'slideUp').then(function() {
-  $(multiOptionBodyRow).addClass('itemBoxTable__bodyRow--closed');
-  $(multiOptionChildren).addClass('itemBoxTable__bodyRow--closed');
+  $(multiOptionBodyRow).addClass('js_itemBoxTable__bodyRow--closed');
+  $(multiOptionChildren).addClass('js_itemBoxTable__bodyRow--closed');
 });
 
 //default collapse everything in  app-navigator
@@ -16,6 +16,6 @@ const appNavChildren = $(".app__nav .tabs__panels .tabs__panel[tabindex='1']").f
 const appNavBodyRow = $(appNavChildren).find('.itemBoxTable__bodyRow');
 
 $.Velocity.animate(appNavChildren, 'slideUp').then(function() {
-  $(appNavBodyRow).addClass('itemBoxTable__bodyRow--closed');
-  $(appNavChildren).addClass('itemBoxTable__bodyRow--closed');
+  $(appNavBodyRow).addClass('js_itemBoxTable__bodyRow--closed');
+  $(appNavChildren).addClass('js_itemBoxTable__bodyRow--closed');
 });
