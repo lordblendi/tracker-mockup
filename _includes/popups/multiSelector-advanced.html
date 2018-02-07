@@ -15,7 +15,7 @@
     <div class="itemBox">
       <div class="itemBoxTable">
         <div class="itemBoxBody">
-          <ul class="itemBoxTable__bodyRow js_multiSelector__box--selectionTitle">
+          <ul class="itemBoxTable__bodyRow">
             <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 0;" data-flex="0">
               <div class="itemBoxTable__bodyCellInner">
                 <i class="itemBoxTable__action itemBoxTable__action--toggle">ऄ</i>
@@ -26,25 +26,54 @@
                 <i>Selected</i>
               </div>
             </li>
-            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove js_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
+            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
               <div class="itemBoxTable__bodyCellInner">
-                <i class="itemBoxTable__action itemBoxTable__action--remove js_itemBoxTable__action--removeAll js_itemBoxTable__action--removeAllSelected">ޅ</i>
+                <i class="itemBoxTable__action itemBoxTable__action--removeSelected">ޅ</i>
               </div>
             </li>
           </ul>
 
-          <div class="itemBox itemBox--children js_multiSelector__box--selectionChildren">
+          <div class="itemBox itemBox--children">
             <div class="itemBoxTable">
               <div class="itemBoxBody itemBoxBody--sortable ui-sortable">
                 <ul class="itemBoxTable__bodyRow">
                   <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                    <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text"><span class="outer"><span class="inner">Arnaud</span></span></div>
-                  </li>
-                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable ui-sortable-handle" style="flex-grow: 0;" data-flex="0">
                     <div class="itemBoxTable__bodyCellInner">
-                      <i class="itemBoxTable__action itemBoxTable__action--drag">އ</i>
+                      <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleSelect">
+                        <div class="pmx-selector__value">
+                          <div class="pmx-selector__label ">
+                            <span class="pmx-selector__labelIcon">+</span>
+                            <span class="pmx-selector__labelType">Contain</span>
+                            <span class="pmx-selector__labelField">Field</span>
+                          </div>
+                        </div>
+                        <!-- /.pmx-selector -->
+                      </div>
                     </div>
                   </li>
+                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner">
+                      <i class="itemBoxTable__action itemBoxTable__action--remove">ޅ</i>
+                    </div>
+                  </li>
+                </ul>
+
+                <ul class="itemBoxTable__bodyRow">
+                  <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+                    <div class="itemBoxTable__bodyCellInner">
+                      <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleSelect">
+                        <div class="pmx-selector__value">
+                          <div class="pmx-selector__label ">
+                            <span class="pmx-selector__labelIcon">−</span>
+                            <span class="pmx-selector__labelType">Contain</span>
+                            <span class="pmx-selector__labelField">Field</span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.pmx-selector -->
+                    </div>
+                  </li>
+
                   <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
                     <div class="itemBoxTable__bodyCellInner">
                       <i class="itemBoxTable__action itemBoxTable__action--remove">ޅ</i>
@@ -56,69 +85,35 @@
           </div>
           <!-- /.itemBox -->
 
-          <ul class="itemBoxTable__bodyRow js_multiSelector__box--optionsTitle">
+          <ul class="itemBoxTable__bodyRow">
             <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 0;" data-flex="0">
               <div class="itemBoxTable__bodyCellInner">
                 <i class="itemBoxTable__action itemBoxTable__action--toggle">ऄ</i>
               </div>
             </li>
-            <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-              <div class="itemBoxTable__bodyCellInner">
-
-                <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleSelect pmx-selector--required js_pmx-selector--incl-excl">
-                  <div class="pmx-selector__value js_pmx-selector__value--include pmx-selector__value--selected">
-                    <div class="pmx-selector__label ">
-                      <span class="" style="">Include</span>
-                    </div>
-                  </div>
-                  <div class="pmx-selector__value js_pmx-selector__value--exclude">
-                    <div class="pmx-selector__label">
-                      <span class="">Exclude</span>
-                    </div>
-                  </div>
-                </div>
-
+            <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+              <div class="itemBoxTable__bodyCellInner itemBoxTable__bodyCellInner--selectedText">
+                <i>All</i>
               </div>
             </li>
-            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove js_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
+            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
               <div class="itemBoxTable__bodyCellInner">
-                <i class="itemBoxTable__action js_itemBoxTable__action--removeAll itemBoxTable__action--remove">ޅ</i>
+                <i class="itemBoxTable__action itemBoxTable__action--removeSelected">ޅ</i>
               </div>
             </li>
-            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add js_itemBoxTable__bodyCell--addAll" style="flex-grow: 0;" data-flex="0">
+            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
               <div class="itemBoxTable__bodyCellInner">
-                <i class="itemBoxTable__action itemBoxTable__action--add js_itemBoxTable__action--addAll">ބ</i>
+                <i class="itemBoxTable__action itemBoxTable__action--add">ބ</i>
               </div>
             </li>
           </ul>
 
-          <div class="itemBox itemBox--children js_multiSelector__box--optionsChildren">
+          <div class="itemBox itemBox--children">
             <div class="itemBoxTable">
               <div class="itemBoxBody">
-
-                <ul class="itemBoxTable__bodyRow">
-                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 0;" data-flex="0">
-                    <div class="itemBoxTable__bodyCellInner">
-                      <i class="itemBoxTable__action itemBoxTable__action--toggle">अ</i>
-                    </div>
-                  </li>
-                  <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                    <div class="itemBoxTable__bodyCellInner">Squad 5</div>
-                  </li>
-                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove js_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                    <div class="itemBoxTable__bodyCellInner">
-                      <i class="itemBoxTable__action js_itemBoxTable__action--removeAll itemBoxTable__action--remove">ޅ</i>
-                    </div>
-                  </li>
-                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add js_itemBoxTable__bodyCell--addAll" style="flex-grow: 0;" data-flex="0">
-                    <div class="itemBoxTable__bodyCellInner">
-                      <i class="itemBoxTable__action itemBoxTable__action--add js_itemBoxTable__action--addAll">ބ</i>
-                    </div>
-                  </li>
-                </ul>
                 <ul class="itemBoxTable__bodyRow">
                   <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                    <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text">Arnaud</div>
+                    <div class="itemBoxTable__bodyCellInner">Arnaud</div>
                   </li>
                   <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
                     <div class="itemBoxTable__bodyCellInner">
@@ -128,7 +123,7 @@
                 </ul>
                 <ul class="itemBoxTable__bodyRow">
                   <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                    <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text">Esteban</div>
+                    <div class="itemBoxTable__bodyCellInner">Esteban</div>
                   </li>
                   <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
                     <div class="itemBoxTable__bodyCellInner">
@@ -138,7 +133,7 @@
                 </ul>
                 <ul class="itemBoxTable__bodyRow">
                   <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                    <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text">Nóra</div>
+                    <div class="itemBoxTable__bodyCellInner">Nóra</div>
                   </li>
                   <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
                     <div class="itemBoxTable__bodyCellInner">
@@ -148,7 +143,7 @@
                 </ul>
                 <ul class="itemBoxTable__bodyRow">
                   <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                    <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text">Paul</div>
+                    <div class="itemBoxTable__bodyCellInner">Paul</div>
                   </li>
                   <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
                     <div class="itemBoxTable__bodyCellInner">
