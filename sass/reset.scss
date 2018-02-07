@@ -378,3 +378,13 @@ i {
 [tabindex] {
   outline: none;
 }
+.overlay {
+  position: fixed;
+  background: transparent;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 99999;
+  display: none;
+}
