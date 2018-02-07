@@ -290,7 +290,7 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
 function getNewItem(textOfActionItem, exclude) {
     var excludeClass = "";
     if (exclude === true) {
-      excludeClass = "itemBoxTable__bodyCellInner--exclude";
+      excludeClass = "js_itemBoxTable__bodyCellInner--exclude";
     }
 
     return `<ul class="itemBoxTable__bodyRow">

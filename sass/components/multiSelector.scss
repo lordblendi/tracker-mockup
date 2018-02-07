@@ -120,7 +120,7 @@
   .itemBox {
 
 
-    .itemBoxTable__bodyCellInner--exclude {
+    .js_itemBoxTable__bodyCellInner--exclude {
       .outer {
         text-decoration: line-through;
         color: red;
@@ -133,12 +133,12 @@
 
   .pmx-selector__value {
     &:hover, &--selected {
-      &.pmx-selector__value--include {
+      &.js_pmx-selector__value--include {
         .pmx-selector__label {
           color: #C79D54 !important;
         }
       }
-      &.pmx-selector__value--exclude {
+      &.js_pmx-selector__value--exclude {
         .pmx-selector__label {
           color: red !important;
         }

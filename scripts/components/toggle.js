@@ -23,7 +23,7 @@ $('.pmx-selector__value').on('click', function() {
     const multiSelect = selector.hasClass('pmx-selector--multiSelect');
     const singleSelect = selector.hasClass('pmx-selector--singleSelect');
     const toggleSelect = selector.hasClass('pmx-selector--toggleSelect');
-    const inclExcl = selector.hasClass('pmx-selector---incl-excl');
+    const inclExcl = selector.hasClass('js_pmx-selector--incl-excl');
 
     const selectedValues = selector.find('.pmx-selector__value--selected');
 
@@ -75,7 +75,7 @@ $('.pmx-selector__value').on('click', function() {
     if(inclExcl === true) {
       // old multiselect
       if (selector.hasClass('pmx-selector--old')) {
-        if(selectorValue.hasClass('pmx-selector__value--exclude') && selectorValue.hasClass('pmx-selector__value--selected')) {
+        if(selectorValue.hasClass('js_pmx-selector__value--exclude') && selectorValue.hasClass('pmx-selector__value--selected')) {
           $('.old-multiselect-popup .old-multiselect-tab').addClass('old-multiselect-tab-negative');
         }
         else {
@@ -84,7 +84,7 @@ $('.pmx-selector__value').on('click', function() {
       }
       //  new multiselect
       else {
-        if(selectorValue.hasClass('pmx-selector__value--exclude') && selectorValue.hasClass('pmx-selector__value--selected')) {
+        if(selectorValue.hasClass('js_pmx-selector__value--exclude') && selectorValue.hasClass('pmx-selector__value--selected')) {
           $('#multiSelector-2 .multiSelector__box').addClass('js_exclude');
         }
         else {
