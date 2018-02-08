@@ -41,6 +41,7 @@ $('.js_colorselector-trigger').on('click', function(){
       'z-index': '99999999',
       'pointer-events': 'auto',
       'opacity': '1',
+      'margin': '0',
       'top': newTop,
       'left': Math.round(left) + 'px',
     });
@@ -50,6 +51,7 @@ $('.js_colorselector-trigger').on('click', function(){
       'z-index': '99999999',
       'pointer-events': 'auto',
       'opacity': '1',
+      'margin': '0',
       'top': newTop,
       'right': (Math.round($(window).width()) - Math.round(right)) + 'px',
     });
