@@ -85,6 +85,7 @@ function triggerColorSelectorPopup(toggle, colorSelectorPopup) {
       'z-index': '99999999',
       'pointer-events': 'auto',
       'opacity': '1',
+      'margin': '0',
       'top': newTop,
       'left': Math.round(left) + 'px',
     });
@@ -93,6 +94,7 @@ function triggerColorSelectorPopup(toggle, colorSelectorPopup) {
       'z-index': '99999999',
       'pointer-events': 'auto',
       'opacity': '1',
+      'margin': '0',
       'top': newTop,
       'right': (Math.round($(window).width()) - Math.round(right)) + 'px',
     });

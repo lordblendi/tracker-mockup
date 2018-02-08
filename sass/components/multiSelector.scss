@@ -85,6 +85,29 @@
       }
     }
 
+    &IconAdv {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      color: #a8a8a8;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 5px;
+      text-align: center;
+      line-height: 34px;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        color: #000;
+      }
+
+      &--active {
+        color: #000;
+      }
+    }
+
     &Selected {
       position: absolute;
       top: 0;

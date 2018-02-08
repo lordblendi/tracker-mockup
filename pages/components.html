@@ -8,13 +8,7 @@ permalink: /components
   <div class="field">
     <div class="field__label">Due date ܐ Single Select - collapsed</div>
     <div class="field__value">
-      <div class="pmx-selector pmx-selector--collapsed">
-        <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelField">11/17/2017</span>
-          </div>
-        </div>
-      </div>
+      {% include components/selectors/collapsed/date.html %}
     </div>
   </div>
 </div>
@@ -23,14 +17,7 @@ permalink: /components
   <div class="field">
     <div class="field__label">Status ܐ Single Select - collapsed</div>
     <div class="field__value">
-      <div class="pmx-selector pmx-selector--collapsed MULTISELECT__POPUP" data-popid="#multiSelector-1">
-        <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelIcon" style="color: green;">܌</span>
-            <span class="pmx-selector__labelField">Not started</span>
-          </div>
-        </div>
-      </div>
+      {% include components/selectors/collapsed/status.html %}
     </div>
   </div>
 </div>
@@ -39,26 +26,7 @@ permalink: /components
   <div class="field">
     <div class="field__label">Teams ܐ Multi Select - collapsed</div>
     <div class="field__value">
-      <div class="pmx-selector pmx-selector--collapsed pmx-selector--multiSelect MULTISELECT__POPUP" data-popid="#multiSelector-3">
-        <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelIcon" style="color: green;">܌</span>
-            <span class="pmx-selector__labelField">Squad X</span>
-          </div>
-        </div>
-        <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelIcon" style="color: blue;">܌</span>
-            <span class="pmx-selector__labelField">Squad Y</span>
-          </div>
-        </div>
-        <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelIcon" style="color: orange;">܌</span>
-            <span class="pmx-selector__labelField">Squad Z</span>
-          </div>
-        </div>
-      </div>
+      {% include components/selectors/collapsed/teams.html %}
     </div>
   </div>
 </div>
@@ -67,18 +35,7 @@ permalink: /components
   <div class="field">
     <div class="field__label">Billable ܐ Single Select - expanded</div>
     <div class="field__value">
-      <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleSelect">
-        <div class="pmx-selector__value">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelIcon">܌</span>
-          </div>
-        </div>
-        <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label">
-            <span class="pmx-selector__labelIcon" style="color: red;">ܐ</span>
-          </div>
-        </div>
-      </div>
+      {% include components/selectors/expanded/billable.html %}
     </div>
   </div>
 </div>
@@ -87,23 +44,7 @@ permalink: /components
   <div class="field">
     <div class="field__label">Status ܐ Single Select - expanded</div>
     <div class="field__value">
-      <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleSelect">
-        <div class="pmx-selector__value">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelField">Not started</span>
-          </div>
-        </div>
-        <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelField">Ongoing</span>
-          </div>
-        </div>
-        <div class="pmx-selector__value">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelField">Done</span>
-          </div>
-        </div>
-      </div>
+      {% include components/selectors/expanded/status.html %}
     </div>
   </div>
 </div>
@@ -112,26 +53,7 @@ permalink: /components
   <div class="field">
     <div class="field__label">Tags ܐ Multi Select - expanded</div>
     <div class="field__value">
-      <div class="pmx-selector pmx-selector--expanded pmx-selector--multiSelect">
-        <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelIcon" style="color: green;">܌</span>
-            <span class="pmx-selector__labelField">dev-team</span>
-          </div>
-        </div>
-        <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelIcon" style="color: green;">܌</span>
-            <span class="pmx-selector__labelField">back-end</span>
-          </div>
-        </div>
-        <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelIcon" style="color: green;">܌</span>
-            <span class="pmx-selector__labelField">critical</span>
-          </div>
-        </div>
-      </div>
+      {% include components/selectors/expanded/tags.html %}
     </div>
   </div>
 </div>
@@ -140,28 +62,7 @@ permalink: /components
   <div class="field">
     <div class="field__label">Teams ܐ Multi Select - expanded</div>
     <div class="field__value">
-      <div class="pmx-selector pmx-selector--expanded pmx-selector--multiSelect">
-        <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelField">Squad A</span>
-          </div>
-        </div>
-        <div class="pmx-selector__value">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelField">Squad B</span>
-          </div>
-        </div>
-        <div class="pmx-selector__value">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelField">Squad C</span>
-          </div>
-        </div>
-        <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelField">Squad X</span>
-          </div>
-        </div>
-      </div>
+      {% include components/selectors/expanded/teams.html %}
     </div>
   </div>
 </div>
@@ -172,13 +73,13 @@ permalink: /components
     <div class="field__value">
       <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleSelect js_pmx-selector--changeIcons">
         <div class="pmx-selector__value">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelIcon">−</span>
+          <div class="pmx-selector__block">
+            <span class="pmx-selector__blockPrefix">−</span>
           </div>
         </div>
         <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label">
-            <span class="pmx-selector__labelIcon">+</span>
+          <div class="pmx-selector__block">
+            <span class="pmx-selector__blockPrefix">ބ</span>
           </div>
         </div>
       </div>
@@ -192,13 +93,13 @@ permalink: /components
     <div class="field__value">
       <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleSelect">
         <div class="pmx-selector__value">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelField">ध</span>
+          <div class="pmx-selector__block">
+            <span class="pmx-selector__blockField">ध</span>
           </div>
         </div>
         <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelField">द</span>
+          <div class="pmx-selector__block">
+            <span class="pmx-selector__blockField">द</span>
           </div>
         </div>
       </div>
@@ -212,19 +113,19 @@ permalink: /components
     <div class="field__value">
       <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleSelect">
         <div class="pmx-selector__value">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelField">ध</span>
+          <div class="pmx-selector__block">
+            <span class="pmx-selector__blockField">ध</span>
           </div>
         </div>
         <div class="pmx-selector__value">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelField">च</span>
+          <div class="pmx-selector__block">
+            <span class="pmx-selector__blockField">च</span>
           </div>
         </div>
 
         <div class="pmx-selector__value pmx-selector__value--selected">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelField">द</span>
+          <div class="pmx-selector__block">
+            <span class="pmx-selector__blockField">द</span>
           </div>
         </div>
       </div>
@@ -237,12 +138,12 @@ permalink: /components
     <div class="field__label">Prefix ܐ Type ܐ Field</div>
     <div class="field__value">
 
-      <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleSelect js_pmx-selector--changeIcons">
+      <div class="pmx-selector pmx-selector--readonly">
         <div class="pmx-selector__value">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelIcon">−</span>
-            <span class="pmx-selector__labelType">Contain</span>
-            <span class="pmx-selector__labelField">Field</span>
+          <div class="pmx-selector__block">
+            <span class="pmx-selector__blockPrefix">−</span>
+            <span class="pmx-selector__blockLabel">Contain</span>
+            <span class="pmx-selector__blockField">Field</span>
           </div>
         </div>
       </div>
@@ -255,11 +156,11 @@ permalink: /components
   <div class="field">
     <div class="field__value">
 
-      <div class="pmx-selector">
+      <div class="pmx-selector pmx-selector--readonly">
         <div class="pmx-selector__value">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelType">Assigned to •</span>
-            <span class="pmx-selector__labelField">Nick De Jaeger</span>
+          <div class="pmx-selector__block">
+            <span class="pmx-selector__blockLabel">Assigned to</span>
+            <span class="pmx-selector__blockField">Nick De Jaeger</span>
           </div>
         </div>
       </div>
@@ -272,11 +173,11 @@ permalink: /components
   <div class="field">
     <div class="field__value">
 
-      <div class="pmx-selector">
+      <div class="pmx-selector pmx-selector--readonly">
         <div class="pmx-selector__value">
-          <div class="pmx-selector__label ">
-            <span class="pmx-selector__labelType">Title •</span>
-            <span class="pmx-selector__labelField">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</span>
+          <div class="pmx-selector__block">
+            <span class="pmx-selector__blockLabel">Title</span>
+            <span class="pmx-selector__blockField">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</span>
           </div>
         </div>
       </div>
