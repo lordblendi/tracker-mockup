@@ -13,8 +13,19 @@ $('.itemBoxTable__bodyCell--toggle').on('click', function() {
   expandCloseRow(itemBoxTable__bodyRow);
 });
 
-function expandCloseRow(itemBoxTable__bodyRow, toClose){
-  const possibleChildren = $(itemBoxTable__bodyRow).next();
+function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
+
+  if(possibleChildren === undefined) {
+    // if the next one is color options, then get the one after it
+    // as it should be like this:
+    // itemBoxTable__bodyRow
+    //     [optional .itemBox--children.js_itemBox--colors]
+    //     .itemBox--children
+    possibleChildren = $(itemBoxTable__bodyRow).next();
+    if (possibleChildren.hasClass('js_itemBox--colors')) {
+      possibleChildren = possibleChildren.next();
+    }
+  }
   const i = itemBoxTable__bodyRow.find('.itemBoxTable__bodyCell--toggle .itemBoxTable__bodyCellInner').find('i');
   const iContent = i.html();
 
