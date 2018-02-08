@@ -64,12 +64,17 @@
   height: 28px;
   vertical-align: middle;
   white-space: nowrap;
-  border-radius: 0;
   font-size: 0;
   line-height: initial;
 
   max-width: 100%;
 
+  border-radius: 30px;
+  background-color: #D7D7D7;
+
+  padding: 2px;
+
+  /*
   &::before {
     content: '';
     position: absolute;
@@ -79,11 +84,11 @@
     pointer-events: none;
     background-color: #D7D7D7;
   }
+  */
 
   &__value {
-    display: inline-block;
     position: relative;
-    top: 2px;
+    display: inline-block;
     height: 24px;
     min-width: 26px;
     z-index: 99;
@@ -96,22 +101,22 @@
     border-right: 2px solid transparent;
     transition: all 0.3s ease-in-out;
 
-    max-width: calc(100% - 4px);
+    max-width: 100%;
 
     &:first-child {
-      margin-left: 2px;
+      /*margin-left: 2px;*/
       border-top-left-radius: 30px;
       border-bottom-left-radius: 30px;
     }
 
     &:last-child {
-      margin-right: 2px;
+      /*margin-right: 2px;*/
       border-top-right-radius: 30px;
       border-bottom-right-radius: 30px;
     }
 
     &:hover {
-      .pmx-selector__label {
+      .pmx-selector__blockField {
         color: #000000;
       }
     }
@@ -128,42 +133,75 @@
         box-shadow: 0 3px 10px rgba(0,0,0,.4);
       }
 
-      .pmx-selector__label {
+      .pmx-selector__blockField {
         color: #000000;
       }
     }
   }
 
-  &__label {
+  &__block {
+    position: relative;
+    height: 22px;
+
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 
     > span {
+      position: relative;
       display: inline-block;
+      height: 22px;
+      vertical-align: top;
+      transition: all .3s ease-in-out;
     }
 
-    &Icon {
+    &Prefix {
       color: #808080;
       transition: all .3s ease-in-out;
 
-      + .pmx-selector__labelType {
-        padding: 0 2px;
+      + .pmx-selector__blockLabel {
+        padding: 0 0 0 14px;
+
+        &:before {
+          content: '•';
+          position: absolute;
+          font-size: 12px;
+          color: #D4D4D4;
+          left: 4px;
+        }
       }
     }
 
-    &Type  {
-      position: relative;
-      top: -2px;
+    &Label  {
       text-transform: uppercase;
       color: #808080;
       font-size: 10px;
+      line-height: 24px;
       font-weight: 600;
       letter-spacing: .7px;
+
+      + .pmx-selector__blockField {
+        padding: 0 0 0 14px;
+
+        &:before {
+          content: '•';
+          position: absolute;
+          font-size: 12px;
+          color: #D4D4D4;
+          left: 3px;
+          top: 2px;
+        }
+      }
     }
 
     &Field {
+      color: #808080;
+    }
+  }
 
+  &--readonly {
+    .pmx-selector__value {
+      background-color: #FFF;
     }
   }
 
@@ -225,9 +263,9 @@
 
 /* TEMP */
 
-.pmx-selector__value:not(.pmx-selector__value--selected) .pmx-selector__label .pmx-selector__icon {
+.pmx-selector__value:not(.pmx-selector__value--selected) .pmx-selector__block .pmx-selector__blockPrefix {
   color: gray !important;
 }
-.pmx-selector__value:not(.pmx-selector__value--selected):hover .pmx-selector__label .pmx-selector__icon {
+.pmx-selector__value:not(.pmx-selector__value--selected):hover .pmx-selector__block .pmx-selector__blockPrefix {
   color: green !important;
 }
