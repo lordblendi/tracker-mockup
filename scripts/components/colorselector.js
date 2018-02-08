@@ -1,8 +1,32 @@
-$('.js_colorselector-trigger').on('click', function(){
-  var colorSelectorPopup =  $('.multiSelector--colorPicker');
+$('.js_colorselector-trigger').on('click', function() {
+  const toggle = $(this);
+  // should be only one
+  const multiselect = toggle.closest('.multiSelector')[0];
+  const dataColorPicker = $(multiselect).attr('data-colorpicker');
+  const colorSelectorPopup = $(dataColorPicker);
+  triggerColorSelectorPopup(toggle, colorSelectorPopup);
+});
 
+$('.multiSelector--colorPicker .js_itemBoxTable__bodyCellInner--color').on('click', function() {
+  const color = $(this).find('span').attr('data-color');
+  const toggle = $("#js_changeMyColor");
+  toggle.find('.pmx-selector__labelIcon').css('color', color);
+  toggle.removeAttr('id');
+
+  $('.multiSelector--colorPicker').removeClass('js_colorSelector--visible');
+
+  $('.multiSelector--colorPicker').css({
+    'z-index': '0',
+    'pointer-events': 'none',
+    'opacity': '0'
+  });
+});
+
+function triggerColorSelectorPopup(toggle, colorSelectorPopup) {
+  toggle = $(toggle);
+  colorSelectorPopup = $(colorSelectorPopup);
   // if visible, remove it
-  if(colorSelectorPopup.hasClass('js_colorSelector--visible')) {
+  if (colorSelectorPopup.hasClass('js_colorSelector--visible')) {
     colorSelectorPopup.removeClass('js_colorSelector--visible');
 
     colorSelectorPopup.css({
@@ -14,7 +38,6 @@ $('.js_colorselector-trigger').on('click', function(){
   }
 
   // apply id, so the selector will now where to change the color
-  const toggle = $(this);
   toggle.attr('id', 'js_changeMyColor');
   // calculate position of color selector
 
@@ -28,11 +51,11 @@ $('.js_colorselector-trigger').on('click', function(){
   const right = left + width;
   const bottom = top + height;
   const windowWidth = $(window).width();
-  const isOnLeft = Math.round(windowWidth/2) >= Math.round(left);
-  const isOnRight = Math.round(windowWidth/2) < Math.round(left);
+  const isOnLeft = Math.round(windowWidth / 2) >= Math.round(left);
+  const isOnRight = Math.round(windowWidth / 2) < Math.round(left);
 
   var newTop = (Math.round(top) + Math.round(height)) + 'px';
-  if($(this).hasClass('pmx-selector')) {
+  if ($(this).hasClass('pmx-selector')) {
     newTop = Math.round(top) + 'px';
   }
 
@@ -44,8 +67,7 @@ $('.js_colorselector-trigger').on('click', function(){
       'top': newTop,
       'left': Math.round(left) + 'px',
     });
-  }
-  else {
+  } else {
     colorSelectorPopup.css({
       'z-index': '99999999',
       'pointer-events': 'auto',
@@ -56,19 +78,4 @@ $('.js_colorselector-trigger').on('click', function(){
   }
 
   colorSelectorPopup.addClass('js_colorSelector--visible');
-});
-
-$('.multiSelector--colorPicker .js_itemBoxTable__bodyCellInner--color').on('click', function(){
-  const color = $(this).find('span').attr('data-color');
-  const toggle = $("#js_changeMyColor");
-  toggle.find('.pmx-selector__labelIcon').css('color', color);
-  toggle.removeAttr('id');
-
-  $('.multiSelector--colorPicker').removeClass('js_colorSelector--visible');
-
-  $('.multiSelector--colorPicker').css({
-    'z-index': '0',
-    'pointer-events': 'none',
-    'opacity': '0'
-  });
-})
+}
