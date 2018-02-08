@@ -4,11 +4,16 @@ title: Colorpicker
 permalink: /colorpicker
 ---
 
+<div class="area" style="float: left;">
+  <label>colorpicker with popup</label>
+  {% include popups/colorPicker-popup.html %}
+  {% include popups/colorSelector-popup.html %}
+</div>
+<div class="area" style="float: right;">
+  <label>colorpicker with children</label>
+  {% include popups/colorPicker-children.html %}
+</div>
 
-{% include popups/colorPicker-popup.html %}
-{% include popups/colorSelector-popup.html %}
-
-{% include popups/colorPicker-children.html %}
 
 <!-- COMPONENTS -->
 <script type="text/javascript" src="{{ site.baseurl }}/scripts/components/newMultiselect.js"></script>
