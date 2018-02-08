@@ -26,6 +26,23 @@ $('.multiSelector--colorPicker .js_itemBoxTable__bodyCellInner--color').on('clic
   });
 });
 
+
+$('.js_itemBox--colors .itemBoxTable__bodyRow').on('click', function() {
+  const color = $(this).find('.js_itemBoxTable__bodyCellInner--color span').attr('data-color');
+  const itemBox = $(this).closest('.js_itemBox--colors');
+  const bodyRow = $(itemBox).prev();
+
+  bodyRow.find('.js_colorselector-trigger .pmx-selector__labelIcon').css('color', color);
+
+
+  $.Velocity.animate(itemBox, 'slideUp').then(function() {
+    $(colorBodyRow).addClass('js_itemBoxTable__bodyRow--closed');
+    $(itemBox).addClass('js_itemBoxTable__bodyRow--closed');
+  });
+});
+
+
+
 function triggerColorSelectorPopup(toggle, colorSelectorPopup) {
   toggle = $(toggle);
   colorSelectorPopup = $(colorSelectorPopup);
