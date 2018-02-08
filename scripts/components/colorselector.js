@@ -1,3 +1,7 @@
+////
+// POPUP
+////
+
 $('.js_colorselector-trigger').on('click', function() {
   const toggle = $(this);
   // should be only one
