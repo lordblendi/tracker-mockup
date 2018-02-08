@@ -8,14 +8,17 @@ $(function() {
     var _parent = $(this).parent();
     var _activeLink = $(this).find('.tabs-nav__link--active');
     var _tabindex = _activeLink.attr('tabindex');
+
     var barLeft = _activeLink.parent().position().left;
-    var barWidth = _activeLink.width();
+    var barWidth = _activeLink.outerWidth() - 20;
+
+    console.log(barLeft, barWidth);
 
     _parent.find('.tabs-panels__panel').hide();
     _parent.find('.tabs-panels__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('tabs-panels__panel--active');
 
     $(this).find('.tabs-nav__linkBar').css({
-      'left': barLeft + 10 + 'px',
+      'left': barLeft + 'px',
       'width': barWidth + 'px'
     });
   });

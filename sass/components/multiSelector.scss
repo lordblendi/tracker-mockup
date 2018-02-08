@@ -22,22 +22,27 @@
     top: 0;
     right: 0;
     width: 50vw;
-
-    box-shadow: 0 0 200px 60px rgba(0,0,0,.2);
   }
 
   &--popup {
+    box-shadow: 0 0 200px 60px rgba(0,0,0,0.2);
+
     .itemBox {
       color: #000;
 
       &--children {
-        background-color: rgba(0,0,0,0.17);
+        background-color: transparent;
 
         .itemBox--children {
-          background-color: rgba(0,0,0,0);
+          /*background-color: rgba(0,0,0,0);*/
         }
       }
     }
+  }
+
+  &__box {
+    background-color: rgba(0, 0, 0, 0.17);
+    padding: 0 0 15px;
   }
 
   &__search {
@@ -133,11 +138,6 @@
         margin-right: 5px;
       }
     }
-  }
-
-  &__box {
-    margin: 0 0 15px;
-    box-shadow: 0 0 200px 60px rgba(0,0,0,0.2);
   }
 
   .pmx-selector__value {
