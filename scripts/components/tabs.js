@@ -29,7 +29,7 @@ $(function() {
     var _tabindex = $(this).attr('tabindex');
     var bar = _parent.find('.tabs-nav__linkBar');
     var barLeft = $(this).parent().position().left;
-    var barWidth = $(this).parent().width();
+    var barWidth = $(this).width();
 
     // Slide bar
     bar.css({
