@@ -40,7 +40,9 @@ function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
     if (toClose === true) {
       $.Velocity.animate(possibleChildren, 'slideDown').then(function() {
         $(possibleChildren).removeClass('js_itemBoxTable__bodyRow--closed');
-        i.html(iContent.replace(collapsed, expanded));
+        if(iContent !== null && iContent !== undefined){
+          i.html(iContent.replace(collapsed, expanded));
+        }
         checkTableHeaderIcon(itemBoxTable__bodyRow);
       });
     }
@@ -48,7 +50,9 @@ function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
     else {
       $.Velocity.animate(possibleChildren, 'slideUp').then(function() {
         $(possibleChildren).addClass('js_itemBoxTable__bodyRow--closed');
-        i.html(iContent.replace(expanded, collapsed));
+        if(iContent !== null && iContent !== undefined){
+          i.html(iContent.replace(expanded, collapsed));
+        }
         checkTableHeaderIcon(itemBoxTable__bodyRow);
       });
     }
@@ -101,5 +105,16 @@ $('.itemBoxTable__headCell--toggle').on('click', function(){
   }
   else {
     expandCloseRow(itemBoxTable__bodyRow, true);
+  }
+});
+
+
+// COLOR OPTIONS
+$('.js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
+  // if there is a color box, expand/collapse it
+  const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
+  const possibleChildren = itemBoxTable__bodyRow.next('.js_itemBox--colors')
+  if(possibleChildren.length > 0) {
+    expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
   }
 });
