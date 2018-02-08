@@ -9,7 +9,7 @@ $(function() {
     var _activeLink = $(this).find('.tabs-nav__link--active');
     var _tabindex = _activeLink.attr('tabindex');
     var barLeft = _activeLink.parent().position().left;
-    var barWidth = _activeLink.parent().width();
+    var barWidth = _activeLink.width();
 
     _parent.find('.tabs-panels__panel').hide();
     _parent.find('.tabs-panels__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('tabs-panels__panel--active');
