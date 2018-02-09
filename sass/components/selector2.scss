@@ -68,6 +68,7 @@
   white-space: nowrap;
   font-size: 0;
   max-width: 100%;
+  line-height: initial;
 
   &__item {
     position: relative;
@@ -85,7 +86,7 @@
 
     &:not(.pmx-selector__item--selected):hover {
       background-color: rgba(255, 255, 255, .6);
-      color: #000;
+      color: rgba(0, 0, 0, .7);
     }
 
     &--selected {
@@ -156,6 +157,10 @@
   &--readonly {
     .pmx-selector__item {
       background-color: #FFF;
+
+      &--selected {
+        box-shadow: none;
+      }
 
       .pmx-selector__blockPart--field {
         color: #000;

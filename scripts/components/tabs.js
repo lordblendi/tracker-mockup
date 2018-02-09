@@ -8,19 +8,6 @@ $(function() {
     var _parent = $(this).parent();
     var _activeLink = $(this).find('.tabs-nav__link--active');
     var _tabindex = _activeLink.attr('tabindex');
-
-    var barLeft = _activeLink.parent().position().left;
-    var barWidth = _activeLink.outerWidth() - 20;
-
-    console.log(barLeft, barWidth);
-
-    _parent.find('.tabs-panels__panel').hide();
-    _parent.find('.tabs-panels__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('tabs-panels__panel--active');
-
-    $(this).find('.tabs-nav__linkBar').css({
-      'left': barLeft + 'px',
-      'width': barWidth + 'px'
-    });
   });
 
   // click tab link
@@ -30,15 +17,6 @@ $(function() {
 
     var _parent = $(this).parent().parent().parent().parent();
     var _tabindex = $(this).attr('tabindex');
-    var bar = _parent.find('.tabs-nav__linkBar');
-    var barLeft = $(this).parent().position().left;
-    var barWidth = $(this).width();
-
-    // Slide bar
-    bar.css({
-      'left': barLeft + 10 + 'px',
-      'width': barWidth + 'px'
-    });
 
     // Change panel
     _parent.find('.tabs-panels__panel').hide().removeClass('tabs-panels__panel--active');
@@ -341,3 +319,39 @@ function calculateDuration(tablist) {
 
   return numberOfChildren * 425;
 }
+
+
+
+
+
+// Fix active link bar issue by setting delay for calculation
+
+setTimeout(function() {
+
+  $('.tabs-nav').each(function() {
+    var activeLink = $(this).find('.tabs-nav__link--active');
+    console.log( activeLink.width() );
+
+    var barWidth = activeLink.width();
+    var barLeft = Math.round((activeLink.parent().width() - barWidth) / 2);
+
+    $(this).find('.tabs-nav__linkBar').css({
+      'left': barLeft + 'px',
+      'width': barWidth + 'px'
+    });
+
+  });
+
+  $('.tabs-nav__link').on('click', function(e) {
+    var bar = $(this).parent().parent().parent().find('.tabs-nav__linkBar');
+    var barWidth = $(this).width();
+    var barLeft = $(this).parent().position().left;
+
+    // Slide bar
+    bar.css({
+      'left': barLeft + 10 + 'px',
+      'width': barWidth + 'px'
+    });
+  });
+
+}, 1000);

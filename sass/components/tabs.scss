@@ -44,7 +44,6 @@
     ul {
       position: relative;
       list-style: none;
-      padding: 0;
       margin: 0 10px;
       font-size: 0;
       left: 0;
@@ -52,15 +51,16 @@
       li {
         position: relative;
         display: inline-block;
-        margin: 0;
+        padding: 0 10px;
         text-overflow: ellipsis;
         white-space: nowrap;
       }
     }
 
     &__link {
+      outline: 0;
       display: inline-block;
-      padding: 15px 10px;
+      padding: 15px 0;
       color: #000;
       text-decoration: none;
       text-transform: uppercase;
@@ -68,9 +68,8 @@
       font-weight: 600;
       font-style: italic;
       text-align: center;
-      outline: 0;
       letter-spacing: 1px;
-      transition: all 0.3s ease-in-out;
+      transition: all .3s ease-in-out;
 
       &--active {
         color: #BF920B;
