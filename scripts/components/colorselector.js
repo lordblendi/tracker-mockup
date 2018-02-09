@@ -14,7 +14,7 @@ $('.js_colorselector-trigger').on('click', function() {
 $('.multiSelector--colorPicker .js_itemBoxTable__bodyCellInner--color').on('click', function() {
   const color = $(this).find('i').attr('data-color');
   const toggle = $("#js_changeMyColor");
-  toggle.find('.js_colorIcon').css('color', color);
+  toggle.find('i').css('color', color);
   toggle.removeAttr('id');
 
   $('.multiSelector--colorPicker').removeClass('js_colorSelector--visible');
@@ -32,7 +32,7 @@ $('.js_itemBox--colors .itemBoxTable__bodyRow').on('click', function() {
   const itemBox = $(this).closest('.js_itemBox--colors');
   const bodyRow = $(itemBox).prev();
 
-  bodyRow.find('.js_colorselector-trigger .js_colorIcon').css('color', color);
+  bodyRow.find('.js_colorselector-trigger i').css('color', color);
 
 
   $.Velocity.animate(itemBox, 'slideUp').then(function() {
