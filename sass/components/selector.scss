@@ -203,7 +203,7 @@
   }
 
   &--readonly {
-    .pmx-selector__value {
+    .pmx-selector__item {
       background-color: #FFF;
 
       .pmx-selector__blockField {
@@ -213,7 +213,7 @@
   }
 
   &--toggleSelect {
-    .pmx-selector__value {
+    .pmx-selector__item {
       border-radius: 30px;
 
       &--selected {
@@ -223,7 +223,7 @@
   }
 
   &--multiSelect {
-    .pmx-selector__value {
+    .pmx-selector__item {
       &:not(:last-child)::after {
         content: '';
         position: absolute;
@@ -241,7 +241,7 @@
     }
 
     &.pmx-selector--multiSelect {
-      .pmx-selector__value {
+      .pmx-selector__item {
         &:not(:last-child)::after {
           top: -1px;
           height: 24px;
@@ -252,7 +252,7 @@
 
   &--expanded {
     &.pmx-selector--toggleSelect {
-      .pmx-selector__value {
+      .pmx-selector__item {
         &--selected {
           &:hover {
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -270,9 +270,9 @@
 
 /* TEMP */
 
-.pmx-selector__value:not(.pmx-selector__value--selected) .pmx-selector__block .pmx-selector__blockPrefix {
+.pmx-selector__item:not(.pmx-selector__item--selected) .pmx-selector__block .pmx-selector__blockPrefix {
   color: gray !important;
 }
-.pmx-selector__value:not(.pmx-selector__value--selected):hover .pmx-selector__block .pmx-selector__blockPrefix {
+.pmx-selector__item:not(.pmx-selector__item--selected):hover .pmx-selector__block .pmx-selector__blockPrefix {
   color: green !important;
 }

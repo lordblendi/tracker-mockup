@@ -73,7 +73,7 @@ $('#multiSelector-1 .itemBoxTable__bodyRow').on('click', function(){
   const newLAbelText = row.find('.js_itemBoxTable__bodyCell--text .itemBoxTable__bodyCellInner').html();
 
   const selectorField = $('.MULTISELECT__POPUP[data-popid="#multiSelector-1"]');
-  const selectorLabelField = $(selectorField).find('.pmx-selector__label');
+  const selectorLabelField = $(selectorField).find('.pmx-selector__blockPart--label');
   const selectorLabel = $(selectorLabelField).html();
 
   const splittedLabel = selectorLabel.split('</span>');

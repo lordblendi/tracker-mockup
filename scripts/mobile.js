@@ -1,11 +1,11 @@
 $(function() {
   $(document).ready(function() {
     // PANEL TOGGLE
-    $('.pmx-selector__value--comments, .pmx-selector__value--timeline').click(function(){
+    $('.pmx-selector__item--comments, .pmx-selector__item--timeline').click(function(){
       const button = $(this);
-      const timeline = button.hasClass('pmx-selector__value--timeline');
-      const comments = button.hasClass('pmx-selector__value--comments');
-      const selected = button.hasClass('pmx-selector__value--selected');
+      const timeline = button.hasClass('pmx-selector__item--timeline');
+      const comments = button.hasClass('pmx-selector__item--comments');
+      const selected = button.hasClass('pmx-selector__item--selected');
 
       const mobileContainer = $('main.mobile__container');
 

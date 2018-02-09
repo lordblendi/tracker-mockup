@@ -43,12 +43,12 @@ $('.pmx-selector__item').on('click', function() {
       }
 
       if(selector.hasClass('js_pmx-selector--changeIcons')) {
-        selectedValues.find('.pmx-selector__icon').html("-");
+        selectedValues.find('.pmx-selector__blockPart--prefix').html("-");
         if(selectorValue.hasClass('pmx-selector__item--selected')) {
-          selectorValue.find('.pmx-selector__icon').html("+");
+          selectorValue.find('.pmx-selector__blockPart--prefix').html("+");
         }
         else {
-          selectorValue.find('.pmx-selector__icon').html("-");
+          selectorValue.find('.pmx-selector__blockPart--prefix').html("-");
         }
       }
     }

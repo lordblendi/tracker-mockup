@@ -140,15 +140,15 @@
     }
   }
 
-  .pmx-selector__value {
+  .pmx-selector__item {
     &:hover, &--selected {
-      &.js_pmx-selector__value--include {
-        .pmx-selector__label {
+      &.js_pmx-selector__item--include {
+        .pmx-selector__block {
           color: #C79D54 !important;
         }
       }
-      &.js_pmx-selector__value--exclude {
-        .pmx-selector__label {
+      &.js_pmx-selector__item--exclude {
+        .pmx-selector__block {
           color: red !important;
         }
       }
