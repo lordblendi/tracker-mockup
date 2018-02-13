@@ -19,4 +19,33 @@ $('.js_multiSelector__filterInput').keyup(function() {
                                      .replace('</ul>','</span');
     }
   }
+
+  // check all groups, see if they need to be hidden or not
+  var groups = $(multiSelector).find('.itemBoxTable__bodyRow:not(.js_filterableCell)');
+
+    for (i = 0; i < groups.length; i++) {
+      var currentGroup = $(groups[i]);
+      var possibleChild = currentGroup.next();
+      if(possibleChild.hasClass('itemBox--children')) {
+        var filterableCells = $(possibleChild).find('ul.js_filterableCell');
+        if (filterableCells.length > 0) {
+          currentGroup.css("display", "flex");
+          groups[i].outerHTML = groups[i].outerHTML.trim()
+          .replace('<span ','<ul ')
+          .replace(new RegExp('</span>' + '$'),'</ul');
+          $(possibleChild).css('padding-top', '5px');
+          $(possibleChild).css('padding-bottom', '5px');
+        } else {
+          currentGroup.css("display", "none");
+          groups[i].outerHTML = groups[i].outerHTML.trim()
+          .replace('<ul ','<span ')
+          .replace(new RegExp('</ul>'+ '$'),'</span');
+
+          $(possibleChild).css('padding-top', '0px');
+          $(possibleChild).css('padding-bottom', '0px');
+        }
+      }
+    }
+
+    reInitActions();
 });
