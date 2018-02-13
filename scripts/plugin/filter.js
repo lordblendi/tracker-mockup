@@ -49,3 +49,45 @@ $('.js_multiSelector__filterInput').keyup(function() {
 
     reInitActions();
 });
+
+// we have to reinit all actions
+function reInitActions() {
+  // normal + x actions
+  $('.multiSelector .multiSelector__box .itemBoxTable__action').on('click', function(){
+    const action = $(this);
+    const multiSelector = action.closest('.multiSelector')[0];
+    const exclude = $(multiSelector).find('.js_exclude').length > 0;
+
+    if(action.hasClass('js_itemBoxTable__action--removeAll')){
+      const children = action.closest('.itemBoxTable__bodyRow').next();
+      if(children.hasClass('itemBox--children')) {
+        handleComplexGroupRemove(action, children, action.hasClass('js_itemBoxTable__action--removeAllSelected'));
+      }
+    }
+    else if(action.hasClass('js_itemBoxTable__action--addAll')){
+      const children = action.closest('.itemBoxTable__bodyRow').next();
+      if(children.hasClass('itemBox--children')) {
+        handleComplexGroupAdd(action, children, exclude);
+      }
+    }
+    else {
+      handleComplexItemAddRemove(action, exclude);
+    }
+  });
+
+  // expand-collapse
+  $('.itemBoxTable__bodyCell--toggle').on('click', function() {
+    const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
+    expandCloseRow(itemBoxTable__bodyRow);
+  });
+
+  // color picker trigger
+  $('.js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
+    // if there is a color box, expand/collapse it
+    const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
+    const possibleChildren = itemBoxTable__bodyRow.next('.js_itemBox--colors')
+    if(possibleChildren.length > 0) {
+      expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
+    }
+  });
+}
