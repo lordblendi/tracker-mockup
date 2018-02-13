@@ -41,6 +41,10 @@ $('.js_itemBox--colors .itemBoxTable__bodyRow').on('click', function() {
 
   bodyRow.find('.js_colorselector-trigger i').css('color', color);
 
+  $('.itemBoxTable__bodyCell--active').each(function() {
+    $(this).removeClass('itemBoxTable__bodyCell--active');
+  });
+
 
   $.Velocity.animate(itemBox, 'slideUp').then(function() {
     $(colorBodyRow).addClass('js_itemBoxTable__bodyRow--closed');
