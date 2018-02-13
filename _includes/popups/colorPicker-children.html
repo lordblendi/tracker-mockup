@@ -1,10 +1,10 @@
 
-<div class="multiSelector multiSelector--popup multiSelector--visible">
+<div class="multiSelector multiSelector--popup multiSelector--visible" >
 
   <div class="multiSelector__box">
 
     <div class="multiSelector__search">
-      <input type="search" class="multiSelector__searchInput" placeholder="filter through columns">
+      <input type="search" class="multiSelector__searchInput" placeholder="filter through tags" id="tagFilter" onkeyup="tagFilter()">
     </div>
 
   </div>
@@ -36,7 +36,7 @@
           <div class="itemBox itemBox--children js_multiSelector__box--selectionChildren">
             <div class="itemBoxTable">
               <div class="itemBoxBody itemBoxBody--sortable ui-sortable">
-                <ul class="itemBoxTable__bodyRow">
+                <ul class="itemBoxTable__bodyRow js_filterableCell">
                   <li class="itemBoxTable__bodyCell js_colorselector-trigger" style="flex-grow: 0;" data-flex="0">
                     <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--colortoggle">
                       <i class="itemBoxTable__action itemBoxTable__action--toggle" style="color: green;" data-color="green">܌</i>
@@ -44,7 +44,7 @@
                   </li>
                   <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
                     <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text">
-                      My First tag
+                      xamarin
                     </div>
                   </li>
                   <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable ui-sortable-handle" style="flex-grow: 0;" data-flex="0">
@@ -90,7 +90,7 @@
           <div class="itemBox itemBox--children js_multiSelector__box--optionsChildren">
             <div class="itemBoxTable">
               <div class="itemBoxBody">
-                <ul class="itemBoxTable__bodyRow">
+                <ul class="itemBoxTable__bodyRow js_filterableCell">
                   <li class="itemBoxTable__bodyCell js_colorselector-trigger" style="flex-grow: 0;" data-flex="0">
                     <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--colortoggle">
                       <i class="itemBoxTable__action itemBoxTable__action--toggle" style="color: green;" data-color="green">܌</i>
@@ -98,7 +98,7 @@
                   </li>
                   <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
                     <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text">
-                      My First tag
+                      xamarin
                     </div>
                   </li>
                   <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
@@ -108,7 +108,7 @@
                   </li>
                 </ul>
                   {% include blocks/colorSelector-children.html %}
-                <ul class="itemBoxTable__bodyRow">
+                <ul class="itemBoxTable__bodyRow js_filterableCell">
                     <li class="itemBoxTable__bodyCell js_colorselector-trigger" style="flex-grow: 0;" data-flex="0">
                       <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--colortoggle">
                         <i class="itemBoxTable__action itemBoxTable__action--toggle" style="color: green;" data-color="green">܌</i>
@@ -116,7 +116,7 @@
                     </li>
                   <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
                     <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text">
-                      Milestone 20
+                      waitingIT
                     </div>
                   </li>
                   <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
@@ -126,7 +126,7 @@
                   </li>
                 </ul>
                   {% include blocks/colorSelector-children.html %}
-                <ul class="itemBoxTable__bodyRow">
+                <ul class="itemBoxTable__bodyRow js_filterableCell">
                     <li class="itemBoxTable__bodyCell js_colorselector-trigger" style="flex-grow: 0;" data-flex="0">
                       <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--colortoggle">
                         <i class="itemBoxTable__action itemBoxTable__action--toggle" style="color: green;" data-color="green">܌</i>
@@ -134,7 +134,7 @@
                     </li>
                   <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
                     <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text">
-                      Prior Asap
+                      2013_Maintenance
                     </div>
                   </li>
                   <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
@@ -144,7 +144,7 @@
                   </li>
                 </ul>
                   {% include blocks/colorSelector-children.html %}
-                <ul class="itemBoxTable__bodyRow">
+                <ul class="itemBoxTable__bodyRow js_filterableCell">
                     <li class="itemBoxTable__bodyCell js_colorselector-trigger" style="flex-grow: 0;" data-flex="0">
                       <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--colortoggle">
                         <i class="itemBoxTable__action itemBoxTable__action--toggle" style="color: green;" data-color="green">܌</i>
@@ -152,7 +152,7 @@
                     </li>
                   <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
                     <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text">
-                      Example tag
+                      workaround_available
                     </div>
                   </li>
                   <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
