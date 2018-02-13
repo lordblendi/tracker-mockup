@@ -9,8 +9,14 @@ $('.js_multiSelector__filterInput').keyup(function() {
     var text = $(listItems[i]).find(".js_itemBoxTable__bodyCellInner--text")[0];
     if (text.innerHTML.toUpperCase().indexOf(filter) > -1) {
       listItems[i].style.display = "";
+      listItems[i].outerHTML = listItems[i].outerHTML.trim()
+                                     .replace('<span ','<ul ')
+                                     .replace('</span>','</ul');
     } else {
       listItems[i].style.display = "none";
+      listItems[i].outerHTML = listItems[i].outerHTML.trim()
+                                     .replace('<ul ','<span ')
+                                     .replace('</ul>','</span');
     }
   }
 });
