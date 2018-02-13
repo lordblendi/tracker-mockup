@@ -126,20 +126,6 @@
         display: flex;
         cursor: pointer;
 
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 0;
-          background: #B2B2B2;
-          pointer-events: none;
-          transition:
-            all .2s ease-in-out
-          ;
-        }
-
         &:nth-of-type(odd) {
           background: #FFF;
         }
@@ -148,11 +134,11 @@
         }
 
         &:hover {
-          &::after {
-            height: 2px;
-          }
-
           .itemBoxTable__bodyCell {
+            &::after {
+              height: 2px;
+            }
+
             &--goto {
               &::after {
                 height: 2px;
@@ -175,10 +161,6 @@
         &--loadMore {
           cursor: pointer;
 
-          &::after {
-            display: none;
-          }
-
           .itemBoxTable__bodyCell {
             &Inner {
               color: #C79D54;
@@ -190,12 +172,12 @@
         }
 
         &--grouped {
-          &::after {
-            height: 2px;
-            background: #FFEF99;
-          }
-
           .itemBoxTable__bodyCell {
+            &::after {
+              height: 2px;
+              background: #FFEF99;
+            }
+            
             &Inner {
               padding: 0;
 
@@ -225,6 +207,18 @@
         height: 40px;
         min-width: 40px;
         white-space: nowrap;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0;
+          background: #B2B2B2;
+          pointer-events: none;
+          transition: all .2s ease-in-out;
+        }
 
         &[data-flex="0"] {
           & + li:not([data-flex="0"]) {
