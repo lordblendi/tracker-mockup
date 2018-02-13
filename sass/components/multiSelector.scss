@@ -30,12 +30,9 @@
     .itemBox {
       color: #000;
 
-      &--children {
-        background-color: transparent;
-
-        .itemBox--children {
-          /*background-color: rgba(0,0,0,0);*/
-        }
+      &--tagPicker {
+        padding: 10px 0 10px 10px;
+        background-color: #B2B2B2;
       }
     }
   }

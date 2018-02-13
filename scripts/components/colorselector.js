@@ -9,6 +9,13 @@ $('.js_colorselector-trigger').on('click', function() {
   const dataColorPicker = $(multiselect).attr('data-colorpicker');
   const colorSelectorPopup = $(dataColorPicker);
   triggerColorSelectorPopup(toggle, colorSelectorPopup);
+
+  if ( toggle.hasClass('itemBoxTable__bodyCell--active') ) {
+    toggle.removeClass('itemBoxTable__bodyCell--active')
+  }
+  else {
+    toggle.addClass('itemBoxTable__bodyCell--active')
+  }
 });
 
 $('.multiSelector--colorPicker .js_itemBoxTable__bodyCellInner--color').on('click', function() {

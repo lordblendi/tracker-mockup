@@ -7,7 +7,6 @@
 
   &--children {
     padding: 5px 0 5px 15px;
-    background-color: transparent;
     opacity: 0;
     animation: fadeIn .3s linear forwards;
   }
@@ -177,7 +176,7 @@
               height: 2px;
               background: #FFEF99;
             }
-            
+
             &Inner {
               padding: 0;
 
@@ -225,6 +224,12 @@
             .itemBoxTable__bodyCellInner {
               padding-left: 0;
             }
+          }
+        }
+
+        &--active {
+          &::after {
+            height: 2px;
           }
         }
 
