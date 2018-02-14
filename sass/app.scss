@@ -1,20 +1,21 @@
 ---
 ---
 
-:root {
-  --primary-color: #2C5386;
-}
-
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-family: 'tenforce', sans-serif;
+
   overflow-x: hidden;
   background-color: #2C5386;
-  background-color: var(--primary-color);
   min-height: 100vh;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+
+  &.fixed {
+    overflow-y: hidden;
+  }
 }
 body.page-Components,
 body.page-Itembox,
@@ -26,19 +27,8 @@ body.page-Popups {
 body.page-Popups .multiSelector {
   margin: 100px 0;
 }
-body.fixed {
-  overflow-y: hidden;
-}
 
-input,
-textarea {
-  &::-webkit-input-placeholder {
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #C1C1C1;
-    font-weight: 300;
-    font-style: italic;
-  }
-}
+
 
 .app {
   position: relative;
@@ -60,28 +50,6 @@ textarea {
 }
 
 
-
-
-.app.document__info--visible .panel__left {
-    width: 25%;
-    left: 0;
-}
-.app.document__info--visible .panel__center {
-    width: 75%;
-    left: 25%;
-}
-.app.document__comments--visible .panel__center {
-    width: 75%;
-}
-.app.document__info--visible.document__comments--visible .panel__center {
-    width: 50%;
-}
-.app.document__comments--visible .panel__right {
-    right: 0;
-}
-.app.document__comments--visible .panel__right .document__comments {
-    right: 0;
-}
 
 
 
@@ -345,26 +313,13 @@ textarea {
 
 
 .panel__left {
-    position: absolute;
-    width: 0;
-    left: -25%;
-    transition: all .3s ease-in-out;
+  float: left;
+  width: 25%;
+
 }
 .panel__center {
-    position: relative;
-    width: 100%;
-    left: 0;
-    transition: all .3s ease-in-out;
-    padding: 1px 10px 0 10px;
-}
-.panel__right {
-    position: absolute;
-    width: 25%;
-    top: 0;
-    right: -25%;
-    box-shadow: none;
-    transition: all .3s ease-in-out;
-    padding: 1px 10px 0 10px;
+  float: left;
+  width: 50%;
 }
 
 
@@ -454,191 +409,4 @@ textarea {
 }
 .document__data .tabs .tabs__panels .tabs__panel {
   padding: 0;
-}
-
-.document__comments .tabs  {
-  height: 92%;
-  overflow-y: auto;
-}
-
-.document__comments {
-    position: absolute;
-    bottom: unset;
-    right: -25%;
-    width: 100%;
-    background-color: #FFF;
-    color: #000;
-    font-size: 16px;
-    padding: 0;
-    transition: right .3s ease-in-out;
-}
-.document__comments .tabs .tabs__nav {
-  width: 100%;
-}
-.document__comments .tabs .tabs__nav li {
-    width: 31.3333333%;
-    margin: 0 1%;
-}
-.document__comments .tabs .tabs__nav .tab__link {
-  padding: 20px;
-  font-size: 16px;
-  font-style: normal;
-}
-.document__comments .tabs .tabs__nav .tab__link.speech-bubble {
-    font-family: 'pmx';
-}
-.document__comments .items .item {
-  margin: 10px 0;
-}
-.document__comments .items .item .item__user {
-  font-size: 14px;
-  font-weight: 600;
-  color: #000;
-}
-.document__comments .items .item--self .item__user {
-  text-align: right;
-}
-.document__comments .items .item .item__postdate {
-  position: relative;
-  font-size: 10px;
-  font-weight: 400;
-  color: #616161;
-  margin: 0 12px;
-  text-align: right;
-  opacity: 0;
-  transition: all .5s ease-in-out;
-  top: -16px;
-  z-index: 0;
-}
-.document__comments .items .item .item__postdate > span {
-  color: #393939;
-  font-weight: 700;
-  font-size: 9px;
-}
-.document__comments .items .item:hover .item__postdate {
-  opacity: 1;
-  top: 0;
-}
-.document__comments .items .item .item__inner {
-  position: relative;
-  z-index: 1;
-  background-color: #00aeef;
-  color: #FFF;
-  border-radius: 0 10px 10px 10px;
-  padding: 8px;
-  font-size: 16px;
-  font-weight: 400;
-}
-.document__comments .items .item--self .item__inner {
-  background-color: #F1F1F1;
-  color: #000;
-  border-radius: 10px 0 10px 10px;
-}
-.document__comments .items .item .item__inner .tag__user {
-  font-style: italic;
-  opacity: .92;
-  cursor: pointer;
-  transition: opacity .3s ease-in-out;
-}
-.document__comments .items .item .item__inner .tag__user:hover {
-  opacity: 1;
-}
-.document__comments .items .item .item__inner p {
-  margin: 12px 0;
-  line-height: 20px;
-}
-.document__comments .items .item .item__inner p:first-child {
-  margin-top: 0;
-}
-.document__comments .items .item .item__inner p:last-child {
-  margin-bottom: 0;
-}
-.document__comments .items .item--attachment .item__inner {
-  min-height: 100px;
-  overflow: hidden;
-  cursor: pointer;
-  background-color: #F4F4F4;
-  color: #FFF;
-}
-.document__comments .items .item--attachment .item__inner .cover {
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  transition: all 5s ease-in-out;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transform: scale(1.2);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-.document__comments .items .item--attachment .item__inner:hover .cover {
-  transform: scale(1);
-}
-.document__comments .items .item--attachment .item__inner:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.65) 100%);
-    border-radius: 0 10px 10px 10px;
-    transition: all .3s ease-in-out;
-    z-index: 0;
-}
-.document__comments .items .item--attachment .item__inner .caption {
-    position: absolute;
-    bottom: 6px;
-    transition: all .5s ease-in-out;
-    z-index: 1;
-    max-height: 60px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
-.document__comments .items .item--attachment .item__inner:hover:after,
-.document__comments .items .item--attachment .item__inner:hover .caption {
-  opacity: 0;
-}
-
-.document__comments .add-comment {
-  position: relative;
-  background-color: #FFF;
-  border-bottom: 1px dashed #CCC;
-  font-size: 0;
-}
-
-.document__comments.scrolled .add-comment {
-  border-bottom-style: solid;
-}
-.document__comments .add-comment .add-comment__input {
-  width: 100%;
-  padding: 12px 80px 12px 12px;
-  height: 48px;
-  font-size: 16px;
-  transition: all .3s ease-in-out;
-}
-.document__comments .add-comment .add-comment__actions {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 80px;
-  text-align: right;
-  font-size: 16px;
-  padding: 0 4px;
-}
-.document__comments .add-comment .add-comment__actions i {
-  display: inline-block;
-  padding: 13px 6px 13px 6px;
-  color: #bf920b;
-  cursor: pointer;
-}
-.document__comments .add-comment .add-comment__input::-webkit-input-placeholder {
-  font-style: italic;
-  opacity: .7;
 }
