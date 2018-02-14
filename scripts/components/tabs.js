@@ -330,7 +330,6 @@ setTimeout(function() {
 
   $('.tabs-nav').each(function() {
     var activeLink = $(this).find('.tabs-nav__link--active');
-    console.log( activeLink.width() );
 
     var barWidth = activeLink.width();
     var barLeft = Math.round((activeLink.parent().width() - barWidth) / 2);

@@ -50,6 +50,16 @@
   }
 }
 
+input,
+textarea {
+  &::-webkit-input-placeholder {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #C1C1C1;
+    font-weight: 300;
+    font-style: italic;
+  }
+}
+
 .overlay {
   position: fixed;
   background: transparent;
