@@ -138,7 +138,9 @@ function handleComplexGroupAdd(action, children, exclude) {
       if (positionOfItemInSelected < 0) {
         itemBoxBody.append(getNewItem(item, exclude));
         const newItem = $(itemBoxBody).find('> .itemBoxTable__bodyRow').last();
-        resetColorToggle(newItem);
+        if($(newItem).find('.js_itemBoxTable__bodyCellInner--colortoggle').length > 0 ){
+          resetColorToggle(newItem);
+        }
 
         $(itemInOptionsAction).replaceWith(removeActionHTML);
       }
@@ -325,9 +327,9 @@ function handleComplexItemAddRemove(action, exclude){
       itemBoxBody.append(getNewItem(actionItem, exclude));
 
       const newItem = $(itemBoxBody).find('> .itemBoxTable__bodyRow').last();
-      resetColorToggle(newItem);
-
-
+      if($(newItem).find('.js_itemBoxTable__bodyCellInner--colortoggle').length > 0 ){
+        resetColorToggle(newItem);
+      }
 
       if(positionOfItemInOptions >= 0) {
         $(itemInOptionsAction).replaceWith(removeActionHTML);
