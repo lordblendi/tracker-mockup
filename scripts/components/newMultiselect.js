@@ -378,7 +378,7 @@ function handleComplexItemAddRemove(action, exclude){
       }
     }
 
-    const selectedItems = selection.find('.itemBoxTable__bodyCellInner--excluded');
+    const selectedItems = selection.find('.js_itemBoxTable__bodyCellInner--text');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html();
     });
@@ -412,7 +412,7 @@ function handleComplexItemAddRemove(action, exclude){
       }
     }
     else if(remove && isAlreadySelected) {
-      const itemBoxTable__bodyRow = selection.find('.itemBoxTable__bodyRow');
+      const itemBoxTable__bodyRow = selection.find('> .itemBoxTable > .itemBoxBody > .itemBoxTable__bodyRow');
       const itemToRemove = itemBoxTable__bodyRow[positionOfItemInSelected];
       itemToRemove.remove();
 
