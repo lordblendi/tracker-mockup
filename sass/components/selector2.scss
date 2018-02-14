@@ -135,12 +135,12 @@
     }
 
     &Seperator {
-      font-size: 12px;
-      color: #808080;
+      padding: 0 3px;
+      color: #A2A2A2;
       line-height: initial;
       letter-spacing: normal;
+      font-size: 12px;
       font-weight: 400;
-      padding: 0 3px;
     }
   }
 
@@ -150,8 +150,8 @@
       box-shadow: none;
 
       &:hover {
-        background-color: rgba(255, 255, 255, 1);
-        color: rgba(0, 0, 0, 1);
+        background-color: #FFF;
+        color: #000;
       }
 
       .pmx-selector__blockPart--field {
