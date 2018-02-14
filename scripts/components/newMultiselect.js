@@ -1,3 +1,6 @@
+---
+---
+
 // set sortable in multiselect options
 $(".itemBoxBody--sortable").sortable({
   handle: '.itemBoxTable__bodyCell--draggable',
@@ -206,7 +209,6 @@ function handleComplexGroupAdd(action, children, exclude) {
       return $(item).html();
     });
 
-
     $.each(optionItems, function(index, item){
       const textOfActionItem = $(item).html();
       const bodyRow = $(item).closest('.itemBoxTable__bodyRow');
@@ -215,7 +217,7 @@ function handleComplexGroupAdd(action, children, exclude) {
 
       const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
       if (positionOfItemInSelected < 0) {
-        itemBoxBody.append(getNewItem(textOfActionItem, exclude));
+        itemBoxBody.append(getNewItem(item, exclude));
         $(itemInOptionsAction).replaceWith(removeActionHTML);
       }
     });
@@ -275,13 +277,33 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
   reset();
 }
 
-function getNewItem(textOfActionItem, exclude) {
+function getNewItem(item, exclude) {
     var excludeClass = "";
     if (exclude === true) {
       excludeClass = "itemBoxTable__bodyCellInner--excluded";
     }
 
-    return `<ul class="itemBoxTable__bodyRow">
+    var textOfActionItem = $(item).html();
+    var bodyRow = $(item).closest('.itemBoxTable__bodyRow');
+    var colorTrigger = $(bodyRow).find('.js_colorselector-trigger');
+
+    var colorHTML = '';
+    var colorChildren = '';
+    if(colorTrigger.length > 0) {
+      var colorToggle = colorTrigger.find('.js_itemBoxTable__bodyCellInner--colortoggle i');
+      var color = $(colorToggle).attr('data-color');
+
+      colorHTML = `<li class="itemBoxTable__bodyCell js_colorselector-trigger" style="flex-grow: 0;" data-flex="0">
+        <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--colortoggle">
+          <i class="itemBoxTable__action itemBoxTable__action--toggle" style="color: ${color};" data-color="${color}">ग़</i>
+        </div>
+      </li>`
+
+      colorChildren = `{% include blocks/colorSelector-children.html %}`;
+    }
+
+    return `<ul class="itemBoxTable__bodyRow js_filterableCell">
+        ${colorHTML}
       <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
         <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text ${excludeClass}">${textOfActionItem}</div>
       </li>
@@ -295,7 +317,8 @@ function getNewItem(textOfActionItem, exclude) {
           <i class="itemBoxTable__action itemBoxTable__action--remove">ޅ</i>
         </div>
       </li>
-  </ul>`;
+  </ul>
+  ${colorChildren}`;
 }
 
 function checkCounter(selectionChildren){
@@ -335,10 +358,7 @@ function handleComplexItemAddRemove(action, exclude){
     const itemBoxTable__bodyRow = action.closest('.itemBoxTable__bodyRow');
     const actionItem = itemBoxTable__bodyRow.find('.js_itemBoxTable__bodyCellInner--text')[0];
     var textOfActionItem = $(actionItem).html();
-    const inner = $(actionItem).find('.inner');
-    if(inner.length > 0) {
-      textOfActionItem = $(inner[0]).html();
-    }
+
 
 
     multiSelector = action.closest('.multiSelector');
@@ -379,8 +399,13 @@ function handleComplexItemAddRemove(action, exclude){
     const itemInOptionsAction = $(itemInOptions).find('.itemBoxTable__bodyCell--add, .itemBoxTable__bodyCell--remove')[0];
 
     if(add && !isAlreadySelected) {
-      const itemBoxBody = selection.find('.itemBoxBody');
-      itemBoxBody.append(getNewItem(textOfActionItem, exclude));
+      const itemBoxBody = selection.find('> .itemBoxTable > .itemBoxBody');
+      itemBoxBody.append(getNewItem(actionItem, exclude));
+
+      const newItem = $(itemBoxBody).find('> .itemBoxTable__bodyRow').last();
+      resetColorToggle(newItem);
+
+
 
       if(positionOfItemInOptions >= 0) {
         $(itemInOptionsAction).replaceWith(removeActionHTML);
@@ -399,6 +424,21 @@ function handleComplexItemAddRemove(action, exclude){
     checkCounter(selection);
     reset();
   }
+}
+
+function resetColorToggle(item) {
+  $(item).find('.js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
+    // if there is a color box, expand/collapse it
+    const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
+    const possibleChildren = itemBoxTable__bodyRow.next('.js_itemBox--colors');
+    if(possibleChildren.length > 0) {
+      expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
+    }
+  });
+
+  const possibleColorChildren = $(item).next('.js_itemBox--colors');
+  possibleColorChildren.css('display', 'none').addClass('js_itemBoxTable__bodyRow--closed');
+  $(item).addClass('js_itemBoxTable__bodyRow--closed');
 }
 
 function checkGroupActions() {
