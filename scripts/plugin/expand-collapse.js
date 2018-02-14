@@ -107,14 +107,3 @@ $('.itemBoxTable__headCell--toggle').on('click', function(){
     expandCloseRow(itemBoxTable__bodyRow, true);
   }
 });
-
-
-// COLOR OPTIONS
-$('.js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
-  // if there is a color box, expand/collapse it
-  const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
-  const possibleChildren = itemBoxTable__bodyRow.next('.js_itemBox--colors')
-  if(possibleChildren.length > 0) {
-    expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
-  }
-});
