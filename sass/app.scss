@@ -120,19 +120,13 @@ textarea {
   position: relative;
   background-color: #F4F4F4;
 }
-.app.app__nav--visible {
-  min-width: 0;
-  height: 100vh;
-}
 
-.app.app__nav--visible .app__container {
-  left: 50%;
-}
+
+
 
 .app.assistance--visible .app__overlay,
 .app.overlay--visible .app__overlay,
-.app.add-comment--visible .app__overlay,
-.app.app__nav--visible .app__overlay {
+.app.add-comment--visible .app__overlay {
   opacity: 1;
   pointer-events: auto;
 }
@@ -154,12 +148,6 @@ textarea {
 
 
 
-
-
-
-
-
-
 .app.document__info--visible .panel__left {
     width: 25%;
     left: 0;
@@ -177,7 +165,6 @@ textarea {
 .app.document__comments--visible .panel__right {
     right: 0;
 }
-
 .app.document__comments--visible .panel__right .document__comments {
     right: 0;
 }
