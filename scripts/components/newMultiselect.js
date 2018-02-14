@@ -1,89 +1,11 @@
+---
+---
+
 // set sortable in multiselect options
 $(".itemBoxBody--sortable").sortable({
   handle: '.itemBoxTable__bodyCell--draggable',
   placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder'
 });
-
-// // cell icon onclick
-$('.MULTISELECT__POPUP').on('click', function() {
-  const toggle = $(this);
-  const top = toggle.offset().top;
-  const left = toggle.offset().left;
-  // outerWidth (including padding, border, and optionally margin)
-  // innerWidth (including padding but not border)
-  // width (not including anything)
-  const width = toggle.outerWidth();
-  const height = toggle.outerHeight();
-
-  const right = left + width;
-  const bottom = top + height;
-
-  const windowWidth = $(window).width();
-
-  const isOnLeft = Math.round(windowWidth/2) >= Math.round(left);
-  const isOnRight = Math.round(windowWidth/2) < Math.round(left);
-
-  var newTop = (Math.round(top) + Math.round(height)) + 'px';
-  if($(this).hasClass('pmx-selector')) {
-    newTop = Math.round(top) + 'px';
-  }
-
-  if (isOnLeft) {
-    $('' + $(this).attr('data-popid')).css({
-      'z-index': '99999999',
-      'pointer-events': 'auto',
-      'opacity': '1',
-      'top': newTop,
-      'left': Math.round(left) + 'px',
-    });
-  }
-  else {
-    $('' + $(this).attr('data-popid')).css({
-      'z-index': '99999999',
-      'pointer-events': 'auto',
-      'opacity': '1',
-      'top': newTop,
-      'right': (Math.round($(window).width()) - Math.round(right)) + 'px',
-    });
-  }
-
-  $(".overlay").css("display", 'block');
-});
-
-// close overlay and popups
-$('.overlay').on('click', function() {
-  $(".overlay").css("display", 'none');
-
-  $('#multiSelector-1, #multiSelector-2, #multiSelector-3').css({
-    'z-index': '0',
-    'pointer-events': 'none',
-    'opacity': '0',
-  });
-})
-
-
-//////
-// MULTI SELECT ONCLICK
-//////
-//
-// SIMPLE
-// $('.MULTISELECT__POPUP[data-popid="#multiSelector-1"]')
-$('#multiSelector-1 .itemBoxTable__bodyRow').on('click', function(){
-  const row = $(this);
-  const newLabel = row.find('.js_itemBoxTable__bodyCell--text .itemBoxTable__bodyCellInner').html();
-
-  const selectorField = $('.MULTISELECT__POPUP[data-popid="#multiSelector-1"]');
-  const selectorLabelField = $(selectorField).find('.js_pmx-selector__blockPart--label');
-  $(selectorLabelField).html(newLabel);
-
-  $(".overlay").css("display", 'none');
-  $('#multiSelector-1, #multiSelector-2, #multiSelector-3').css({
-    'z-index': '0',
-    'pointer-events': 'none',
-    'opacity': '0',
-  });
-})
-
 
 
 // COMPLEX
@@ -200,22 +122,26 @@ function handleComplexGroupAdd(action, children, exclude) {
     }
 
     const optionItems = children.find('.js_itemBoxTable__bodyCellInner--text');
-    const itemBoxBody = selection.find('.itemBoxBody');
-    const selectedItems = selection.find('.itemBoxTable__bodyCellInner--excluded');
+    const itemBoxBody = selection.find('> .itemBoxTable > .itemBoxBody');
+    const selectedItems = selection.find('.js_itemBoxTable__bodyCellInner--text');
     const selectedItemTexts = $.map(selectedItems, function(item){
-      return $(item).html();
+      return $(item).html().trim();
     });
 
-
     $.each(optionItems, function(index, item){
-      const textOfActionItem = $(item).html();
+      const textOfActionItem = $(item).html().trim();
       const bodyRow = $(item).closest('.itemBoxTable__bodyRow');
       // there should be only ONE for an item. either add or remove
       const itemInOptionsAction = $(item).find('.itemBoxTable__bodyCell--add, .itemBoxTable__bodyCell--remove')[0];
 
       const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
       if (positionOfItemInSelected < 0) {
-        itemBoxBody.append(getNewItem(textOfActionItem, exclude));
+        itemBoxBody.append(getNewItem(item, exclude));
+        const newItem = $(itemBoxBody).find('> .itemBoxTable__bodyRow').last();
+        if($(newItem).find('.js_itemBoxTable__bodyCellInner--colortoggle').length > 0 ){
+          resetColorToggle(newItem);
+        }
+
         $(itemInOptionsAction).replaceWith(removeActionHTML);
       }
     });
@@ -248,14 +174,14 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
   }
   else {
     const childrenToRemove = children.find('li.itemBoxTable__bodyCell--remove').closest('.itemBoxTable__bodyRow').find('.js_itemBoxTable__bodyCellInner--text');
-    const selectedItems = selection.find('.itemBoxTable__bodyCellInner--excluded');
+    const selectedItems = selection.find('.js_itemBoxTable__bodyCellInner--text');
     const selectedItemTexts = $.map(selectedItems, function(item){
-      return $(item).html();
+      return $(item).html().trim();
     });
 
 
     $.each(childrenToRemove, function(index, child) {
-      const textOfActionItem = $(child).html();
+      const textOfActionItem = $(child).html().trim();
       const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
       if(positionOfItemInSelected >= 0) {
         selectedItems[positionOfItemInSelected].closest('ul.itemBoxTable__bodyRow').remove();
@@ -275,13 +201,33 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
   reset();
 }
 
-function getNewItem(textOfActionItem, exclude) {
+function getNewItem(item, exclude) {
     var excludeClass = "";
     if (exclude === true) {
       excludeClass = "itemBoxTable__bodyCellInner--excluded";
     }
 
-    return `<ul class="itemBoxTable__bodyRow">
+    var textOfActionItem = $(item).html().trim();
+    var bodyRow = $(item).closest('.itemBoxTable__bodyRow');
+    var colorTrigger = $(bodyRow).find('.js_colorselector-trigger');
+
+    var colorHTML = '';
+    var colorChildren = '';
+    if(colorTrigger.length > 0) {
+      var colorToggle = colorTrigger.find('.js_itemBoxTable__bodyCellInner--colortoggle i');
+      var color = $(colorToggle).attr('data-color');
+
+      colorHTML = `<li class="itemBoxTable__bodyCell js_colorselector-trigger" style="flex-grow: 0;" data-flex="0">
+        <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--colortoggle">
+          <i class="itemBoxTable__action itemBoxTable__action--toggle" style="color: ${color};" data-color="${color}">ग़</i>
+        </div>
+      </li>`
+
+      colorChildren = `{% include blocks/colorSelector-children.html %}`;
+    }
+
+    return `<ul class="itemBoxTable__bodyRow js_filterableCell">
+        ${colorHTML}
       <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
         <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text ${excludeClass}">${textOfActionItem}</div>
       </li>
@@ -295,7 +241,8 @@ function getNewItem(textOfActionItem, exclude) {
           <i class="itemBoxTable__action itemBoxTable__action--remove">ޅ</i>
         </div>
       </li>
-  </ul>`;
+  </ul>
+  ${colorChildren}`;
 }
 
 function checkCounter(selectionChildren){
@@ -334,11 +281,8 @@ function handleComplexItemAddRemove(action, exclude){
     }
     const itemBoxTable__bodyRow = action.closest('.itemBoxTable__bodyRow');
     const actionItem = itemBoxTable__bodyRow.find('.js_itemBoxTable__bodyCellInner--text')[0];
-    var textOfActionItem = $(actionItem).html();
-    const inner = $(actionItem).find('.inner');
-    if(inner.length > 0) {
-      textOfActionItem = $(inner[0]).html();
-    }
+    var textOfActionItem = $(actionItem).html().trim();
+
 
 
     multiSelector = action.closest('.multiSelector');
@@ -358,9 +302,9 @@ function handleComplexItemAddRemove(action, exclude){
       }
     }
 
-    const selectedItems = selection.find('.itemBoxTable__bodyCellInner--excluded');
+    const selectedItems = selection.find('.js_itemBoxTable__bodyCellInner--text');
     const selectedItemTexts = $.map(selectedItems, function(item){
-      return $(item).html();
+      return $(item).html().trim();
     });
     const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
     const isAlreadySelected = positionOfItemInSelected >= 0;
@@ -369,7 +313,7 @@ function handleComplexItemAddRemove(action, exclude){
     const options = multiSelector.find('.js_multiSelector__box--optionsChildren');
     const optionItems = options.find('.js_itemBoxTable__bodyCellInner--text');
     const optionItemTexts = $.map(optionItems, function(item){
-      return $(item).html();
+      return $(item).html().trim();
     });
 
     const positionOfItemInOptions = $.inArray(textOfActionItem, optionItemTexts);
@@ -379,15 +323,20 @@ function handleComplexItemAddRemove(action, exclude){
     const itemInOptionsAction = $(itemInOptions).find('.itemBoxTable__bodyCell--add, .itemBoxTable__bodyCell--remove')[0];
 
     if(add && !isAlreadySelected) {
-      const itemBoxBody = selection.find('.itemBoxBody');
-      itemBoxBody.append(getNewItem(textOfActionItem, exclude));
+      const itemBoxBody = selection.find('> .itemBoxTable > .itemBoxBody');
+      itemBoxBody.append(getNewItem(actionItem, exclude));
+
+      const newItem = $(itemBoxBody).find('> .itemBoxTable__bodyRow').last();
+      if($(newItem).find('.js_itemBoxTable__bodyCellInner--colortoggle').length > 0 ){
+        resetColorToggle(newItem);
+      }
 
       if(positionOfItemInOptions >= 0) {
         $(itemInOptionsAction).replaceWith(removeActionHTML);
       }
     }
     else if(remove && isAlreadySelected) {
-      const itemBoxTable__bodyRow = selection.find('.itemBoxTable__bodyRow');
+      const itemBoxTable__bodyRow = selection.find('> .itemBoxTable > .itemBoxBody > .itemBoxTable__bodyRow');
       const itemToRemove = itemBoxTable__bodyRow[positionOfItemInSelected];
       itemToRemove.remove();
 
@@ -405,7 +354,7 @@ function checkGroupActions() {
   const multiSelector = $('.multiSelector');
 
   // check on the current status group action, remove or add necessary actions
-  const childrenInOptions = multiSelector.find('.itemBox--children:not(.js_multiSelector__box--selectionChildren)');
+  const childrenInOptions = multiSelector.find('.itemBox--children:not(.js_multiSelector__box--selectionChildren):not(.js_itemBox--colors)');
   $.each(childrenInOptions, function(index, children) {
     var children = $(children);
     const groupHeader = children.prev();
