@@ -4,7 +4,7 @@
 // the file extension has to be .css
 
 @import "reset.css";
-@import "keyframes.css";
+@import "mixins.css";
 
 @import "app.css";
 
@@ -17,6 +17,7 @@
 // Components
 @import "components/breadcrumbs.css";
 @import "components/tabs.css";
+@import "components/item-steps.css";
 
 @import "components/itemBox.css";
 @import "components/selector.css";
