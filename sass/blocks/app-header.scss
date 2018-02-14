@@ -44,7 +44,7 @@
     min-width: 40px;
     font-size: 24px;
 
-    &.shown {
+    &--active {
       a {
         position: relative;
         z-index: 999999999999;
