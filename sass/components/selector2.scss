@@ -84,7 +84,7 @@
     cursor: pointer;
     transition: all .3s ease-in-out;
 
-    &:not(.pmx-selector__item--selected):hover {
+    &:hover {
       background-color: rgba(255, 255, 255, .6);
       color: rgba(0, 0, 0, .7);
     }
@@ -109,35 +109,16 @@
     &Part {
       position: relative;
       display: inline-block;
-      padding: 0 0;
-      margin: 0 14px 0 0;
+      padding: 0 3px;
       width: 100%;
       text-align: center;
 
-      &:last-child {
-        margin: 0;
+      &:first-child {
+        padding-left: 0;
       }
 
-      &--label,
-      &--prefix {
-        + .pmx-selector__blockPart--label,
-        + .pmx-selector__blockPart--field {
-          &:before {
-            content: '•';
-            font-size: 12px;
-            color: #808080;
-            line-height: initial;
-            letter-spacing: normal;
-            font-weight: 400;
-            text-transform: none;
-            margin: 0 6px 0 0;
-            position: absolute;
-            left: -9px;
-            top: 50%;
-            transform: translateY(-50%);
-            margin-top: -1px;
-          }
-        }
+      &:last-child {
+        padding-right: 0;
       }
 
       &--label  {
@@ -152,14 +133,25 @@
 
       }
     }
+
+    &Seperator {
+      font-size: 12px;
+      color: #808080;
+      line-height: initial;
+      letter-spacing: normal;
+      font-weight: 400;
+      padding: 0 3px;
+    }
   }
 
   &--readonly {
     .pmx-selector__item {
       background-color: #FFF;
+      box-shadow: none;
 
-      &--selected {
-        box-shadow: none;
+      &:hover {
+        background-color: rgba(255, 255, 255, 1);
+        color: rgba(0, 0, 0, 1);
       }
 
       .pmx-selector__blockPart--field {
@@ -176,11 +168,13 @@
       border-radius: 0;
 
       &:first-child {
-        border-radius: 30px 0 0 30px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
       }
 
       &:last-child {
-        border-radius: 0 30px 30px 0;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
       }
 
       &:not(:last-child)::after {
