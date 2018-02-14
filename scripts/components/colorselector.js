@@ -27,3 +27,14 @@ $('.js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
     expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
   }
 });
+
+
+
+// INITIAL - collapse all color options
+const colorOptions = $(".js_multiSelector__box--selectionChildren, .js_multiSelector__box--optionsChildren").find('.itemBox--children.js_itemBox--colors');
+const colorBodyRow = $(colorOptions).find('.itemBoxTable__bodyRow');
+
+$.Velocity.animate(colorOptions, 'slideUp').then(function() {
+  $(colorBodyRow).addClass('js_itemBoxTable__bodyRow--closed');
+  $(colorOptions).addClass('js_itemBoxTable__bodyRow--closed');
+});
