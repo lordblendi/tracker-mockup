@@ -1,10 +1,19 @@
 ---
 ---
 
-.app__nav--visible .app-navigator {
-  left: 0;
-  background-color: rgba(0,0,0,.6);
-  z-index: 9;
+.app-navigator--visible {
+  .app-navigator {
+    left: 0;
+  }
+
+  .app__container {
+    left: 50%;
+  }
+
+  .app__overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .app-navigator {
