@@ -203,8 +203,8 @@ function handleComplexGroupAdd(action, children, exclude) {
     }
 
     const optionItems = children.find('.js_itemBoxTable__bodyCellInner--text');
-    const itemBoxBody = selection.find('.itemBoxBody');
-    const selectedItems = selection.find('.itemBoxTable__bodyCellInner--excluded');
+    const itemBoxBody = selection.find('> .itemBoxTable > .itemBoxBody');
+    const selectedItems = selection.find('.js_itemBoxTable__bodyCellInner--text');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html();
     });
@@ -218,6 +218,9 @@ function handleComplexGroupAdd(action, children, exclude) {
       const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
       if (positionOfItemInSelected < 0) {
         itemBoxBody.append(getNewItem(item, exclude));
+        const newItem = $(itemBoxBody).find('> .itemBoxTable__bodyRow').last();
+        resetColorToggle(newItem);
+
         $(itemInOptionsAction).replaceWith(removeActionHTML);
       }
     });
