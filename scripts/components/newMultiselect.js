@@ -250,7 +250,7 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
   }
   else {
     const childrenToRemove = children.find('li.itemBoxTable__bodyCell--remove').closest('.itemBoxTable__bodyRow').find('.js_itemBoxTable__bodyCellInner--text');
-    const selectedItems = selection.find('.itemBoxTable__bodyCellInner--excluded');
+    const selectedItems = selection.find('.js_itemBoxTable__bodyCellInner--text');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html();
     });
