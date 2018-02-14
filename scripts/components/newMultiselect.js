@@ -125,11 +125,11 @@ function handleComplexGroupAdd(action, children, exclude) {
     const itemBoxBody = selection.find('> .itemBoxTable > .itemBoxBody');
     const selectedItems = selection.find('.js_itemBoxTable__bodyCellInner--text');
     const selectedItemTexts = $.map(selectedItems, function(item){
-      return $(item).html();
+      return $(item).html().trim();
     });
 
     $.each(optionItems, function(index, item){
-      const textOfActionItem = $(item).html();
+      const textOfActionItem = $(item).html().trim();
       const bodyRow = $(item).closest('.itemBoxTable__bodyRow');
       // there should be only ONE for an item. either add or remove
       const itemInOptionsAction = $(item).find('.itemBoxTable__bodyCell--add, .itemBoxTable__bodyCell--remove')[0];
@@ -176,12 +176,12 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
     const childrenToRemove = children.find('li.itemBoxTable__bodyCell--remove').closest('.itemBoxTable__bodyRow').find('.js_itemBoxTable__bodyCellInner--text');
     const selectedItems = selection.find('.js_itemBoxTable__bodyCellInner--text');
     const selectedItemTexts = $.map(selectedItems, function(item){
-      return $(item).html();
+      return $(item).html().trim();
     });
 
 
     $.each(childrenToRemove, function(index, child) {
-      const textOfActionItem = $(child).html();
+      const textOfActionItem = $(child).html().trim();
       const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
       if(positionOfItemInSelected >= 0) {
         selectedItems[positionOfItemInSelected].closest('ul.itemBoxTable__bodyRow').remove();
@@ -207,7 +207,7 @@ function getNewItem(item, exclude) {
       excludeClass = "itemBoxTable__bodyCellInner--excluded";
     }
 
-    var textOfActionItem = $(item).html();
+    var textOfActionItem = $(item).html().trim();
     var bodyRow = $(item).closest('.itemBoxTable__bodyRow');
     var colorTrigger = $(bodyRow).find('.js_colorselector-trigger');
 
@@ -281,7 +281,7 @@ function handleComplexItemAddRemove(action, exclude){
     }
     const itemBoxTable__bodyRow = action.closest('.itemBoxTable__bodyRow');
     const actionItem = itemBoxTable__bodyRow.find('.js_itemBoxTable__bodyCellInner--text')[0];
-    var textOfActionItem = $(actionItem).html();
+    var textOfActionItem = $(actionItem).html().trim();
 
 
 
@@ -304,7 +304,7 @@ function handleComplexItemAddRemove(action, exclude){
 
     const selectedItems = selection.find('.js_itemBoxTable__bodyCellInner--text');
     const selectedItemTexts = $.map(selectedItems, function(item){
-      return $(item).html();
+      return $(item).html().trim();
     });
     const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
     const isAlreadySelected = positionOfItemInSelected >= 0;
@@ -313,7 +313,7 @@ function handleComplexItemAddRemove(action, exclude){
     const options = multiSelector.find('.js_multiSelector__box--optionsChildren');
     const optionItems = options.find('.js_itemBoxTable__bodyCellInner--text');
     const optionItemTexts = $.map(optionItems, function(item){
-      return $(item).html();
+      return $(item).html().trim();
     });
 
     const positionOfItemInOptions = $.inArray(textOfActionItem, optionItemTexts);
