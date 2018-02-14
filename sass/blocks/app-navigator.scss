@@ -1,0 +1,34 @@
+---
+---
+
+.app__nav--visible .app-navigator {
+  left: 0;
+  background-color: rgba(0,0,0,.6);
+  z-index: 9;
+}
+
+.app-navigator {
+  position: fixed;
+  z-index: 2;
+  width: 50%;
+  height: 100%;
+  height: 100vh;
+  top: 0;
+  left: -50%;
+  transition: all .3s ease-in-out;
+  background-color: transparent;
+  overflow: hidden;
+  color: #FFF;
+
+  &__nav {
+    min-height: 100%;
+    z-index: 5;
+    background-color: #2C5386;
+    height: 100%;
+    overflow-y: auto;
+
+    .tabs__panel {
+      padding: 10px;
+    }
+  }
+}

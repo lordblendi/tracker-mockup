@@ -8,14 +8,14 @@
   color: #FFF;
 }
 
-.app-navigator {
+.app-header-inner {
   position: relative;
 
   &__left {
     float: left;
     width: 50%;
 
-    .app-navigator__item {
+    .app-header-inner__item {
       position: relative;
       display: inline-block;
       padding: 5px;

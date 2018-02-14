@@ -6,8 +6,8 @@ $(document).ready(function() {
       $app.removeClass('app__nav--visible');
       $('body').removeClass('fixed');
     }
-    if ($app.hasClass('notifications--visible')) {
-      $app.removeClass('notifications--visible');
+    if ($app.hasClass('user-menu--visible')) {
+      $app.removeClass('user-menu--visible');
       $('body').removeClass('fixed');
     }
     if ($app.hasClass('assistance--visible')) {

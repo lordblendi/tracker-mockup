@@ -7,7 +7,7 @@ $(document).ready(function() {
     $('body').addClass('fixed');
   });
   $('[data-action="open-right-panel"]').on('click', function() {
-    $app.addClass('notifications--visible');
+    $app.addClass('user-menu--visible');
     $('body').addClass('fixed');
   });
 
