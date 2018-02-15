@@ -3,6 +3,27 @@
     <div class="multiSelector__search">
       <input type="search" class="multiSelector__searchInput js_multiSelector__filterInput" placeholder="filter through tags">
     </div>
+    <div class="itemBox itemBox--children itemBox--suggestions">
+      <div class="itemBoxTable">
+        <div class="itemBoxBody">
+          <ul class="itemBoxTable__bodyRow">
+            <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+              <div class="itemBoxTable__bodyCellInner">Suggestion 1</div>
+            </li>
+          </ul>
+          <ul class="itemBoxTable__bodyRow">
+            <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+              <div class="itemBoxTable__bodyCellInner">Suggestion 2</div>
+            </li>
+          </ul>
+          <ul class="itemBoxTable__bodyRow itemBoxTable__bodyRow--loadMore js_createNewTag">
+            <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+              <div class="itemBoxTable__bodyCellInner">Create New Tag</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- /.multiSelector__box -->
 
@@ -163,7 +184,6 @@
             </div>
           </div>
           <!-- /.itemBox -->
-
         </div>
       </div>
     </div>
