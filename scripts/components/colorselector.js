@@ -12,7 +12,6 @@ $('.js_itemBox--colors .itemBoxTable__bodyRow').on('click', function() {
 
 
   $.Velocity.animate(itemBox, 'slideUp').then(function() {
-    $(colorBodyRow).addClass('js_itemBoxTable__bodyRow--closed');
     $(itemBox).addClass('js_itemBoxTable__bodyRow--closed');
   });
 });
@@ -22,7 +21,9 @@ $('.js_itemBox--colors .itemBoxTable__bodyRow').on('click', function() {
 $('.js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
   // if there is a color box, expand/collapse it
   const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
-  const possibleChildren = itemBoxTable__bodyRow.next('.js_itemBox--colors')
+  const possibleChildren = itemBoxTable__bodyRow.next('.js_itemBox--colors');
+
+  $(this).closest('.itemBoxTable__bodyCell').toggleClass('itemBoxTable__bodyCell--active');
   if(possibleChildren.length > 0) {
     expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
   }
@@ -47,6 +48,8 @@ function resetColorToggle(item) {
     // if there is a color box, expand/collapse it
     const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
     const possibleChildren = itemBoxTable__bodyRow.next('.js_itemBox--colors');
+
+    $(this).closest('.itemBoxTable__bodyCell').toggleClass('itemBoxTable__bodyCell--active');
     if(possibleChildren.length > 0) {
       expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
     }
@@ -69,7 +72,6 @@ function resetColorToggle(item) {
 
 
     $.Velocity.animate(itemBox, 'slideUp').then(function() {
-      $(colorBodyRow).addClass('js_itemBoxTable__bodyRow--closed');
       $(itemBox).addClass('js_itemBoxTable__bodyRow--closed');
     });
   });
