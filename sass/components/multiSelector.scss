@@ -2,14 +2,7 @@
 ---
 
 .multiSelector {
-  min-width: 300px;
-  width: 50%;
-  width: 25%;
-  opacity: 0;
-  pointer-events: none;
-  z-index: -1;
-  transition: opacity .15s ease-in-out;
-  font-size: 16px;
+
 
   &--visible {
     opacity: 1 !important;
@@ -25,7 +18,21 @@
   }
 
   &--popup {
+    min-width: 300px;
+    width: 50%;
+    width: 25%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    transition: opacity .15s ease-in-out;
+    font-size: 16px;
     box-shadow: 0 0 200px 60px rgba(0,0,0,0.2);
+
+    .multiSelector {
+      &__box {
+        background-color: rgba(0, 0, 0, 0.17);
+      }
+    }
 
     .itemBox {
       color: #000;
@@ -38,7 +45,6 @@
   }
 
   &__box {
-    background-color: rgba(0, 0, 0, 0.17);
     padding: 0 0 15px;
   }
 
