@@ -22,13 +22,15 @@ $('.js_new-multiselect-trigger').click(function() {
   const width = trigger.outerWidth();
   const top = trigger.offset().top;
   const left = trigger.offset().left;
-  const multiselectWidth = $('#new-multiselect').outerWidth();
+
+  const multiselectId = trigger.attr('data-multiselect');
+  const multiselectWidth = $(multiselectId).outerWidth();
 
   const newWidth = left + width - multiselectWidth;
   const newHeight = top + height;
-  $('#new-multiselect').css('left', newWidth);
-  $('#new-multiselect').css('top', newHeight);
-  $('#new-multiselect').toggleClass('multiSelector--visible');
+  $(multiselectId).css('left', newWidth);
+  $(multiselectId).css('top', newHeight);
+  $(multiselectId).toggleClass('multiSelector--visible');
 });
 
 // multiSelector--visible
