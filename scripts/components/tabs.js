@@ -1,7 +1,7 @@
 var resizeTimer;
 
 $(function() {
-  setup(".app__nav .tabs-nav");
+  setup(".app-navigator__nav .tabs-nav");
 
   // init
   $('.tabs-nav').each(function() {
