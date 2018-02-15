@@ -4,6 +4,13 @@ $('.js_multiSelector__filterInput').keyup(function() {
   var multiSelector = $(input).closest(".multiSelector");
   var listItems = $(multiSelector).find('.js_multiSelector__box--selectionChildren .js_filterableCell, .js_multiSelector__box--optionsChildren .js_filterableCell');
 
+  if(filter.length > 0) {
+    $(multiSelector).find('.js_itemBox--suggestions').css('display', 'block');
+  }
+  else {
+    $(multiSelector).find('.js_itemBox--suggestions').css('display', 'none');
+  }
+
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < listItems.length; i++) {
     var text = $(listItems[i]).find(".js_itemBoxTable__bodyCellInner--text")[0];
