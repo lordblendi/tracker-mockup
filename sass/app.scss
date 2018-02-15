@@ -82,9 +82,6 @@ body.page-Popups .multiSelector {
   left: 0;
   background-color: #2C5386;
   transition: all .3s ease-in-out;
-  min-height: 100vh;
-
-  overflow-x: hidden;
 }
 
 
@@ -315,11 +312,14 @@ body.page-Popups .multiSelector {
 .panel__left {
   float: left;
   width: 25%;
+  transition: all .3s ease-in-out;
 
 }
 .panel__center {
   float: left;
   width: 50%;
+  width: 75%;
+  transition: all .3s ease-in-out;
 }
 
 

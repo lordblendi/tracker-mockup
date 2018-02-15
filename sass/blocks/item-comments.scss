@@ -1,11 +1,23 @@
 ---
 ---
 
+.document__comments--visible {
+  .panel__center {
+
+  }
+  .item-comments {
+    left: 0;
+  }
+}
+
 .item-comments {
+  position: relative;
+  left: 25%;
   float: right;
   width: 24%;
   margin: 0 0 0 1%;
   background-color: #FFF;
+  transition: all .3s ease-in-out;
 
   .tabs  {
     &-nav {
