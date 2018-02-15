@@ -4,7 +4,7 @@ $('.js_itemBox--colors .itemBoxTable__bodyRow').on('click', function() {
   const itemBox = $(this).closest('.js_itemBox--colors');
   const bodyRow = $(itemBox).prev();
 
-  bodyRow.find('.js_colorselector-trigger i').css('color', color);
+  bodyRow.find('.js_colorselector-trigger i').css('color', color).attr('data-color', color);
 
   $('.itemBoxTable__bodyCell--active').each(function() {
     $(this).removeClass('itemBoxTable__bodyCell--active');
