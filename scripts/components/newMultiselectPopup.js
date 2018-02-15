@@ -48,7 +48,7 @@ $('.MULTISELECT__POPUP').on('click', function() {
 $('.overlay').on('click', function() {
   $(".overlay").css("display", 'none');
 
-  $('#multiSelector-1, #multiSelector-2, #multiSelector-3, #multiSelector-tagpicker').css({
+  $('#multiSelector-1, #multiSelector-2, #multiSelector-3, #multiSelector-tagpicker, #new-multiselect').css({
     'z-index': '0',
     'pointer-events': 'none',
     'opacity': '0',
