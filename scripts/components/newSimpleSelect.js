@@ -13,7 +13,7 @@ $('#multiSelector-1 .itemBoxTable__bodyRow').on('click', function(){
   $(selectorLabelField).html(newLabel);
 
   $(".overlay").css("display", 'none');
-  $('#multiSelector-1, #multiSelector-2, #multiSelector-3').css({
+  $('#multiSelector-1, #multiSelector-2, #multiSelector-3, #multiSelector-tagpicker').css({
     'z-index': '0',
     'pointer-events': 'none',
     'opacity': '0',
