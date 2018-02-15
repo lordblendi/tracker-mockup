@@ -28,7 +28,7 @@ $('.js_multiSelector__filterInput').keyup(function() {
   }
 
   // check all groups, see if they need to be hidden or not
-  var groups = $(multiSelector).find('.itemBoxTable__bodyRow:not(.js_filterableCell)');
+  var groups = $(multiSelector).find('.js_multiSelector__box--selectionChildren  .itemBoxTable__bodyRow:not(.js_filterableCell), .js_multiSelector__box--optionsChildren  .itemBoxTable__bodyRow:not(.js_filterableCell)');
 
     for (i = 0; i < groups.length; i++) {
       var currentGroup = $(groups[i]);
@@ -89,7 +89,7 @@ function reInitActions() {
   });
 
   // color picker trigger
-  $('.js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
+  $('.js_multiSelector__box--selectionChildren .js_itemBoxTable__bodyCellInner--colortoggle, .js_multiSelector__box--optionsChildren .js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
     // if there is a color box, expand/collapse it
     const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
     const possibleChildren = itemBoxTable__bodyRow.next('.js_itemBox--colors')
