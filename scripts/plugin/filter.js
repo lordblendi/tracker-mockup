@@ -92,7 +92,9 @@ function reInitActions() {
   $('.js_multiSelector__box--selectionChildren .js_itemBoxTable__bodyCellInner--colortoggle, .js_multiSelector__box--optionsChildren .js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
     // if there is a color box, expand/collapse it
     const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
-    const possibleChildren = itemBoxTable__bodyRow.next('.js_itemBox--colors')
+    const possibleChildren = itemBoxTable__bodyRow.next('.js_itemBox--colors');
+
+    $(this).closest('.itemBoxTable__bodyCell').toggleClass('itemBoxTable__bodyCell--active');
     if(possibleChildren.length > 0) {
       expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
     }
