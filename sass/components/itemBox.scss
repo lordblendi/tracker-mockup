@@ -104,7 +104,6 @@
       &Row {
         position: relative;
         display: flex;
-        cursor: pointer;
 
         &:nth-of-type(odd) {
           background: #FFF;
@@ -281,6 +280,10 @@
 
           .pmx-selector {
             top: 5px;
+
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
           }
         }
       }
