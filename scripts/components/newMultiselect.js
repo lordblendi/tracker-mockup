@@ -69,26 +69,7 @@ function resetGroupAddActions(removeAllActions, children) {
 }
 
 function addSelectedBlock(multiSelector){
-  const selectedBlock = `
-    <ul class="itemBoxTable__bodyRow js_multiSelector__box--selectionTitle">
-        <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;">
-          <div class="itemBoxTable__bodyCellInner itemBoxTable__bodyCellInner--selectedText">
-            <i>ऄ Selected</i>
-          </div>
-        </li>
-        <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-          <div class="itemBoxTable__bodyCellInner">
-            <i class="itemBoxTable__action itemBoxTable__action--remove js_itemBoxTable__action--removeAll js_itemBoxTable__action--removeAllSelected">ޅ</i>
-          </div>
-        </li>
-    </ul>
-    <div class="itemBox itemBox--children  js_multiSelector__box--selectionChildren">
-      <div class="itemBoxTable">
-        <div class="itemBoxBody itemBoxBody--sortable">
-
-        </div>
-      </div>
-    </div><!-- /.itemBox selection-->`;
+  const selectedBlock = `{% include javascript/selectedBlock.html %}`;
   multiSelector.find('.js_multiSelector__box--optionsTitle').before(selectedBlock);
   const selection = multiSelector.find('.js_multiSelector__box--selectionTitle');
   // enable toggle again
@@ -205,32 +186,12 @@ function getNewItem(item, exclude) {
       var colorToggle = colorTrigger.find('.js_itemBoxTable__bodyCellInner--colortoggle i');
       var color = $(colorToggle).attr('data-color');
 
-      colorHTML = `<li class="itemBoxTable__bodyCell js_colorselector-trigger" style="flex-grow: 0;" data-flex="0">
-        <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--colortoggle">
-          <i class="itemBoxTable__action itemBoxTable__action--toggle" style="color: ${color};" data-color="${color}">ग़</i>
-        </div>
-      </li>`
+      colorHTML = `{% include javascript/colorAction.html %}`
 
       colorChildren = `{% include blocks/colorSelector-children.html %}`;
     }
 
-    return `<ul class="itemBoxTable__bodyRow js_filterableCell">
-        ${colorHTML}
-      <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-        <div class="itemBoxTable__bodyCellInner js_itemBoxTable__bodyCellInner--text ${excludeClass}">${textOfActionItem}</div>
-      </li>
-      <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable" style="flex-grow: 0;" data-flex="0">
-        <div class="itemBoxTable__bodyCellInner">
-          <i class="itemBoxTable__action itemBoxTable__action--drag">އ</i>
-        </div>
-      </li>
-      <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-        <div class="itemBoxTable__bodyCellInner">
-          <i class="itemBoxTable__action itemBoxTable__action--remove">ޅ</i>
-        </div>
-      </li>
-  </ul>
-  ${colorChildren}`;
+    return `{% include javascript/newSelectedItem.html %}`;
 }
 
 function checkCounter(selectionChildren){
