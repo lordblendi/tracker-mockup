@@ -186,6 +186,7 @@
         height: 40px;
         min-width: 40px;
         white-space: nowrap;
+        list-style: none;
 
         &::after {
           content: '';

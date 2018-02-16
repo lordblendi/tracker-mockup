@@ -80,18 +80,25 @@
     border-radius: 30px;
     overflow: hidden;
     font-size: 16px;
-    color: #808080;
     cursor: pointer;
     transition: all .3s ease-in-out;
+    opacity: .5;
 
     &:hover {
-      background-color: rgba(255, 255, 255, .6);
-      color: rgba(0, 0, 0, .7);
+      background-color: rgba(255, 255, 255, .7);
+      opacity: .7;
     }
 
     &--selected {
       background-color: #FFF;
       box-shadow: 0 3px 10px rgba(0,0,0,.2);
+      opacity: 1;
+
+      &:hover {
+        background-color: #FFF;
+        box-shadow: 0 3px 10px rgba(0,0,0,.2);
+        opacity: 1;
+      }
 
       .pmx-selector__blockPart--field {
         color: #000;
