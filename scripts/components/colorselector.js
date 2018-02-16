@@ -30,6 +30,15 @@ function selectNewColor(colorItemBodyRow) {
   $.each(filteredTags, function(index, tag){
     const tagBodyRow = $(tag).closest('.itemBoxTable__bodyRow');
     tagBodyRow.find('.js_colorselector-trigger i').css('color', color).attr('data-color', color);
+
+    // reset color tick of their color selection (in case it's open)
+    const possibleChildren = tagBodyRow.next('.js_itemBox--colors');
+    $(possibleChildren).find('.js_showSelected').remove();
+    const selectedColor = possibleChildren.find(`.js_itemBoxTable__bodyCellInner--color i[data-color='${color}']`);
+    const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
+    selectedColorBodyRow.append(`{% include javascript/colorSelected.html %}`);
+
+
   });
 
   // remove active cells
@@ -56,6 +65,14 @@ function toggleColorSelector(colorToggle) {
   const actualColor = colorToggle.find('i').attr('data-color');
 
 
+  // remove other selection shower
+  $(possibleChildren).find('.js_showSelected').remove();
+
+  // add selection to new color (can be changed by other tags)
+  // only if opening
+  const selectedColor = possibleChildren.find(`.js_itemBoxTable__bodyCellInner--color i[data-color='${actualColor}']`);
+  const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
+  selectedColorBodyRow.append(`{% include javascript/colorSelected.html %}`);
 
   const bodyCell = colorToggle.closest('.itemBoxTable__bodyCell');
   if (bodyCell.hasClass('itemBoxTable__bodyCell--active')) {
@@ -64,16 +81,6 @@ function toggleColorSelector(colorToggle) {
   else {
     bodyCell.addClass('itemBoxTable__bodyCell--active');
   }
-
-  // remove other selection shower
-  $(possibleChildren).find('.js_itemBox--colors .js_showSelected').remove();
-
-  // add selection to new color (can be changed by other tags)
-  const selectedColor = possibleChildren.find(`.js_itemBoxTable__bodyCellInner--color i[data-color='${actualColor}']`);
-  const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
-  selectedColorBodyRow.append(`{% include javascript/colorSelected.html %}`);
-
-  // add Selecte
 
   if(possibleChildren.length > 0) {
     expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
