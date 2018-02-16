@@ -30,9 +30,7 @@ function selectNewColor(colorItemBodyRow) {
   });
 
   // remove active cells
-  $('.itemBoxTable__bodyCell--active').each(function() {
-    colorItemBodyRow.removeClass('itemBoxTable__bodyCell--active');
-  });
+  $('.itemBoxTable__bodyCell--active').removeClass('itemBoxTable__bodyCell--active');
 
   // close color options
   $.Velocity.animate(itemBox, 'slideUp').then(function() {
@@ -52,7 +50,14 @@ function toggleColorSelector(colorToggle) {
   const itemBoxTable__bodyRow = colorToggle.closest('.itemBoxTable__bodyRow');
   const possibleChildren = itemBoxTable__bodyRow.next('.js_itemBox--colors');
 
-  colorToggle.closest('.itemBoxTable__bodyCell').toggleClass('itemBoxTable__bodyCell--active');
+  const bodyCell = colorToggle.closest('.itemBoxTable__bodyCell');
+  if (bodyCell.hasClass('itemBoxTable__bodyCell--active')) {
+    bodyCell.removeClass('itemBoxTable__bodyCell--active');
+  }
+  else {
+    bodyCell.addClass('itemBoxTable__bodyCell--active');
+  }
+
   if(possibleChildren.length > 0) {
     expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
   }
