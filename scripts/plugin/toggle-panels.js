@@ -3,6 +3,20 @@ $(document).ready(function() {
 
   // app-navigator
   $('.JS_toggle-app-navigator').on('click', function() {
+    // making sure, that the line is positioned
+    $('.app-navigator__nav .tabs-nav').each(function() {
+      var activeLink = $(this).find('.tabs-nav__link--active');
+
+      var barWidth = activeLink.width();
+      var barLeft = $(activeLink).position().left;
+
+      $(this).find('.tabs-nav__linkBar').css({
+        'left': barLeft + 'px',
+        'width': barWidth + 'px'
+      });
+
+    });
+
     $app.addClass('app-navigator--visible');
     $('body').addClass('fixed');
   });
