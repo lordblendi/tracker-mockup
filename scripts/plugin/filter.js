@@ -76,4 +76,10 @@ function reInitActions() {
     const colorToggle = $(this);
     toggleColorSelector(colorToggle);
   });
+
+  // simple multiSelector-1
+  $('#multiSelector-1 .itemBoxTable__bodyRow').on('click', function(){
+    const row = $(this);
+    selectNewSingleItem(row);
+  })
 }
