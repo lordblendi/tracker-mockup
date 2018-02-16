@@ -1,27 +1,33 @@
-// cell icon onclick
+// toggle multiselet popup
+// calculates the position of the popup
+// depending on where is the toggle for it
 $('.MULTISELECT__POPUP').on('click', function() {
   const toggle = $(this);
-  const top = toggle.offset().top;
-  const left = toggle.offset().left;
-  // outerWidth (including padding, border, and optionally margin)
+  // outerWidth (including padding, border, and optionally margin -> true parameter)
   // innerWidth (including padding but not border)
   // width (not including anything)
-  const width = toggle.outerWidth();
-  const height = toggle.outerHeight();
+  const width = toggle.outerWidth(true);
+  const height = toggle.outerHeight(true);
 
+  // corners of toggle
+  const top = toggle.offset().top;
+  const left = toggle.offset().left;
   const right = left + width;
   const bottom = top + height;
 
+  // position of toggle, which side of the screen
   const windowWidth = $(window).width();
-
   const isOnLeft = Math.round(windowWidth/2) >= Math.round(left);
   const isOnRight = Math.round(windowWidth/2) < Math.round(left);
 
+  // top for popup is under the toggle
   var newTop = (Math.round(top) + Math.round(height)) + 'px';
   if($(this).hasClass('pmx-selector')) {
     newTop = Math.round(top) + 'px';
   }
 
+  // toggle is left
+  // left side of the popup is left side of toggle
   if (isOnLeft) {
     $('' + $(this).attr('data-popid')).css({
       'z-index': '99999999',
@@ -31,6 +37,7 @@ $('.MULTISELECT__POPUP').on('click', function() {
       'left': Math.round(left) + 'px',
     });
   }
+  // toggle is right, right side of the popup is right side of toggle
   else {
     $('' + $(this).attr('data-popid')).css({
       'z-index': '99999999',
@@ -41,11 +48,17 @@ $('.MULTISELECT__POPUP').on('click', function() {
     });
   }
 
+  // show overlay
   $(".overlay").css("display", 'block');
 });
 
-// close overlay and popups
+// onclick action on overlay to close popups
 $('.overlay').on('click', function() {
+  closeOverlay();
+});
+
+// close overlay and popups
+function closeOverlay(){
   $(".overlay").css("display", 'none');
 
   $('.multiSelector--popup').css({
@@ -53,4 +66,4 @@ $('.overlay').on('click', function() {
     'pointer-events': 'none',
     'opacity': '0',
   });
-})
+}
