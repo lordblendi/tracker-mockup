@@ -1,3 +1,6 @@
+---
+---
+
 // COLOR OPTIONS SELECTION
 $('.js_itemBox--colors .itemBoxTable__bodyRow').on('click', function() {
   const colorItemBodyRow = $(this);
@@ -50,6 +53,10 @@ function toggleColorSelector(colorToggle) {
   const itemBoxTable__bodyRow = colorToggle.closest('.itemBoxTable__bodyRow');
   const possibleChildren = itemBoxTable__bodyRow.next('.js_itemBox--colors');
 
+  const actualColor = colorToggle.find('i').attr('data-color');
+
+
+
   const bodyCell = colorToggle.closest('.itemBoxTable__bodyCell');
   if (bodyCell.hasClass('itemBoxTable__bodyCell--active')) {
     bodyCell.removeClass('itemBoxTable__bodyCell--active');
@@ -57,6 +64,16 @@ function toggleColorSelector(colorToggle) {
   else {
     bodyCell.addClass('itemBoxTable__bodyCell--active');
   }
+
+  // remove other selection shower
+  $(possibleChildren).find('.js_itemBox--colors .js_showSelected').remove();
+
+  // add selection to new color (can be changed by other tags)
+  const selectedColor = possibleChildren.find(`.js_itemBoxTable__bodyCellInner--color i[data-color='${actualColor}']`);
+  const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
+  selectedColorBodyRow.append(`{% include javascript/colorSelected.html %}`);
+
+  // add Selecte
 
   if(possibleChildren.length > 0) {
     expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);

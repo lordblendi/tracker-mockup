@@ -15,6 +15,12 @@ $('.multiSelector .multiSelector__box .itemBoxTable__action').on('click', functi
 });
 
 function handleActionOnclick(action) {
+  // if this just shows selected, don't do anything
+
+  if(action.hasClass('js_showSelected')) {
+    return;
+  }
+
   const multiSelector = action.closest('.multiSelector')[0];
   const exclude = $(multiSelector).find('.js_exclude').length > 0;
 
