@@ -10,7 +10,8 @@ $('.js_itemBox--colors .itemBoxTable__bodyRow').on('click', function() {
 // function to set a new color
 // gets old color, replaces in the bodyRow
 // the changes it everywhere for the same text tags
-// plus in their
+//      plus in their might be open color palette
+// then close the pallette
 function selectNewColor(colorItemBodyRow) {
   // get new color
   const color = colorItemBodyRow.find('.js_itemBoxTable__bodyCellInner--color i').attr('data-color');
@@ -61,6 +62,9 @@ $('.js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
   toggleColorSelector(colorToggle);
 });
 
+// open color color pallette
+// set a tick for the selected color
+// toggle active class depending on expanding/collapsing
 function toggleColorSelector(colorToggle) {
   // if there is a color box, expand/collapse it
   const itemBoxTable__bodyRow = colorToggle.closest('.itemBoxTable__bodyRow');
@@ -115,6 +119,7 @@ function resetColorToggle(item) {
   possibleColorChildren.css('display', 'none').addClass('js_itemBoxTable__bodyRow--closed');
   $(item).addClass('js_itemBoxTable__bodyRow--closed');
 
+  // color setting action
   $(possibleColorChildren).find('.itemBoxTable__bodyRow').on('click', function() {
     const colorItemBodyRow = $(this);
     selectNewColor(colorItemBodyRow);
