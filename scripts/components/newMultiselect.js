@@ -35,26 +35,10 @@ function handleActionOnclick(action) {
   }
 }
 
-const addActionHTML = `<li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
-  <div class="itemBoxTable__bodyCellInner">
-    <i class="itemBoxTable__action itemBoxTable__action--add">ބ</i>
-  </div>
-</li>`;
-const addGroupActionHTML = `<li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add js_itemBoxTable__bodyCell--addAll" style="flex-grow: 0;" data-flex="0">
-  <div class="itemBoxTable__bodyCellInner">
-    <i class="itemBoxTable__action itemBoxTable__action--add js_itemBoxTable__action--addAll">ބ</i>
-  </div>
-</li>`;
-const removeActionHTML = `<li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-  <div class="itemBoxTable__bodyCellInner">
-    <i class="itemBoxTable__action itemBoxTable__action--remove">ޅ</i>
-  </div>
-</li>`;
-const removeGroupActionHTML = `<li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove js_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-  <div class="itemBoxTable__bodyCellInner">
-    <i class="itemBoxTable__action itemBoxTable__action--remove js_itemBoxTable__action--removeAll">ޅ</i>
-  </div>
-</li>`;
+const addActionHTML = `{% include javascript/addAction.html %}`;
+const addGroupActionHTML = `{% include javascript/addGroupAction.html %}`;
+const removeActionHTML = `{% include javascript/removeAction.html %}`;
+const removeGroupActionHTML = `{% include javascript/removeGroupAction.html %}`;
 
 function resetGroupRemoveActions(removeAllActions, children) {
   $.each(removeAllActions, function(index, item){
