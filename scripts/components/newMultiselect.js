@@ -269,6 +269,9 @@ function handleComplexItemAddRemove(action, exclude){
     }
     const itemBoxTable__bodyRow = action.closest('.itemBoxTable__bodyRow');
     const actionItem = itemBoxTable__bodyRow.find('.js_itemBoxTable__bodyCellInner--text')[0];
+    if(actionItem === undefined) {
+      return;
+    }
     var textOfActionItem = $(actionItem).html().trim();
 
 
