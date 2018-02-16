@@ -16,4 +16,8 @@ function selectNewSingleItem(row) {
   $(selectorLabelField).html(newLabel);
 
   closeOverlay();
+
+  // set filter to empty, as we selected stuff
+  var multiSelector = $(row).closest(".multiSelector");
+  multiSelector.find('.js_multiSelector__filterInput').val("").keyup();
 }
