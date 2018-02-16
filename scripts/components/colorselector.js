@@ -7,6 +7,10 @@ $('.js_itemBox--colors .itemBoxTable__bodyRow').on('click', function() {
   selectNewColor(colorItemBodyRow);
 });
 
+// function to set a new color
+// gets old color, replaces in the bodyRow
+// the changes it everywhere for the same text tags
+// plus in their
 function selectNewColor(colorItemBodyRow) {
   // get new color
   const color = colorItemBodyRow.find('.js_itemBoxTable__bodyCellInner--color i').attr('data-color');
@@ -41,8 +45,8 @@ function selectNewColor(colorItemBodyRow) {
 
   });
 
-  // remove active cells
-  $('.itemBoxTable__bodyCell--active').removeClass('itemBoxTable__bodyCell--active');
+  // remove active cell from bodyRow as we are closing the selector
+  $(bodyRow).find('.itemBoxTable__bodyCell--active').removeClass('itemBoxTable__bodyCell--active');
 
   // close color options
   $.Velocity.animate(itemBox, 'slideUp').then(function() {
