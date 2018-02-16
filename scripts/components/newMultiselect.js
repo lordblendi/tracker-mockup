@@ -11,6 +11,10 @@ $(".itemBoxBody--sortable").sortable({
 // COMPLEX
 $('.multiSelector .multiSelector__box .itemBoxTable__action').on('click', function(){
   const action = $(this);
+  handleActionOnclick(action);
+});
+
+function handleActionOnclick(action) {
   const multiSelector = action.closest('.multiSelector')[0];
   const exclude = $(multiSelector).find('.js_exclude').length > 0;
 
@@ -29,7 +33,7 @@ $('.multiSelector .multiSelector__box .itemBoxTable__action').on('click', functi
   else {
     handleComplexItemAddRemove(action, exclude);
   }
-});
+}
 
 const addActionHTML = `<li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
   <div class="itemBoxTable__bodyCellInner">
@@ -405,24 +409,7 @@ function reset(){
   // reinitiate onclick and reorder actions in selection blocks
   $('.multiSelector .multiSelector__box .itemBoxTable__action').on('click', function(){
     const action = $(this);
-    const multiSelector = action.closest('.multiSelector')[0];
-    const exclude = $(multiSelector).find('.js_exclude').length > 0;
-
-    if(action.hasClass('js_itemBoxTable__action--removeAll')){
-      const children = action.closest('.itemBoxTable__bodyRow').next();
-      if(children.hasClass('itemBox--children')) {
-        handleComplexGroupRemove(action, children, action.hasClass('js_itemBoxTable__action--removeAllSelected'));
-      }
-    }
-    else if(action.hasClass('js_itemBoxTable__action--addAll')){
-      const children = action.closest('.itemBoxTable__bodyRow').next();
-      if(children.hasClass('itemBox--children')) {
-        handleComplexGroupAdd(action, children, exclude);
-      }
-    }
-    else {
-      handleComplexItemAddRemove(action, exclude);
-    }
+    handleActionOnclick(action);
   });
   $(".itemBoxBody--sortable").sortable({
     handle: '.itemBoxTable__bodyCell--draggable',
