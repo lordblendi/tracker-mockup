@@ -83,16 +83,17 @@
     cursor: pointer;
     transition: all .3s ease-in-out;
     opacity: .5;
+    filter: saturate(0);
 
     &:hover {
       background-color: rgba(255, 255, 255, .7);
-      opacity: .7;
     }
 
     &--selected {
       background-color: #FFF;
       box-shadow: 0 3px 10px rgba(0,0,0,.2);
       opacity: 1;
+      filter: saturate(1);
 
       &:hover {
         background-color: #FFF;
@@ -155,6 +156,8 @@
     .pmx-selector__item {
       background-color: #FFF;
       box-shadow: none;
+      opacity: 1;
+      filter: saturate(1);
 
       &:hover {
         background-color: #FFF;
