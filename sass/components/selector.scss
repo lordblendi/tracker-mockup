@@ -86,7 +86,8 @@
     filter: saturate(0) brightness(0);
 
     &:hover {
-      background-color: rgba(255, 255, 255, .7);
+      opacity: .7;
+      filter: saturate(1) brightness(1);
     }
 
     &--selected {
