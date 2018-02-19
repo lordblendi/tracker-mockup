@@ -12,8 +12,11 @@ $('.js_multiSelector__filterInput').keyup(function() {
 // filter for app_navigator
 
 $('.js_appNav__filterInput').keyup(function() {
-  filterResults($(this), '.js-appNavBox .js_filterableCell');
+  var input = $(this);
+  filterResults(input, '.js-appNavBox .js_filterableCell');
   var multiSelector = $(input).closest(".multiSelector");
+
+  checkGroups(multiSelector, '.js-appNavBox  .itemBoxTable__bodyRow:not(.js_filterableCell)');
 
   reInitActions(multiSelector);
 });
