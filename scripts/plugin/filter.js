@@ -4,9 +4,46 @@ $('.js_multiSelector__filterInput').keyup(function() {
   var multiSelector = $(input).closest(".multiSelector");
   filterResults(input, '.js_multiSelector__box--selectionChildren .js_filterableCell, .js_multiSelector__box--optionsChildren .js_filterableCell');
 
+  checkGroups(multiSelector, '.js_multiSelector__box--selectionChildren  .itemBoxTable__bodyRow:not(.js_filterableCell), .js_multiSelector__box--optionsChildren  .itemBoxTable__bodyRow:not(.js_filterableCell)');
 
-  // check all groups, see if they need to be hidden or not
-  var groups = $(multiSelector).find('.js_multiSelector__box--selectionChildren  .itemBoxTable__bodyRow:not(.js_filterableCell), .js_multiSelector__box--optionsChildren  .itemBoxTable__bodyRow:not(.js_filterableCell)');
+  reInitActions(multiSelector);
+});
+
+// filter for app_navigator
+
+$('.js_appNav__filterInput').keyup(function() {
+  filterResults($(this), '.js-appNavBox .js_filterableCell');
+  var multiSelector = $(input).closest(".multiSelector");
+
+  reInitActions(multiSelector);
+});
+
+// function that handles simple filter results
+function filterResults(input, listItemSelector) {
+  var filter = input[0].value.toUpperCase();
+  var multiSelector = $(input).closest(".multiSelector");
+  var listItems = $(multiSelector).find(listItemSelector);
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < listItems.length; i++) {
+    var text = $(listItems[i]).find(".js_itemBoxTable__bodyCellInner--text")[0];
+    if (text.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      listItems[i].style.display = "";
+      listItems[i].outerHTML = listItems[i].outerHTML.trim()
+                                     .replace('<span ','<ul ')
+                                     .replace('</span>','</ul');
+    } else {
+      listItems[i].style.display = "none";
+      listItems[i].outerHTML = listItems[i].outerHTML.trim()
+                                     .replace('<ul ','<span ')
+                                     .replace('</ul>','</span');
+    }
+  }
+}
+
+// check all groups, see if they need to be hidden or not
+function checkGroups(multiSelector, possibleChildren) {
+  var groups = $(multiSelector).find(possibleChildren);
 
     for (i = 0; i < groups.length; i++) {
       var currentGroup = $(groups[i]);
@@ -31,30 +68,6 @@ $('.js_multiSelector__filterInput').keyup(function() {
         }
       }
     }
-
-    reInitActions(multiSelector);
-});
-
-function filterResults(input, listItemSelector) {
-  var filter = input[0].value.toUpperCase();
-  var multiSelector = $(input).closest(".multiSelector");
-  var listItems = $(multiSelector).find(listItemSelector);
-
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < listItems.length; i++) {
-    var text = $(listItems[i]).find(".js_itemBoxTable__bodyCellInner--text")[0];
-    if (text.innerHTML.toUpperCase().indexOf(filter) > -1) {
-      listItems[i].style.display = "";
-      listItems[i].outerHTML = listItems[i].outerHTML.trim()
-                                     .replace('<span ','<ul ')
-                                     .replace('</span>','</ul');
-    } else {
-      listItems[i].style.display = "none";
-      listItems[i].outerHTML = listItems[i].outerHTML.trim()
-                                     .replace('<ul ','<span ')
-                                     .replace('</ul>','</span');
-    }
-  }
 }
 
 // we have to reinit all actions
