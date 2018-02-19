@@ -192,4 +192,9 @@
   pointer-events: none;
   z-index: 0;
   transition: opacity .3s ease-in-out;
+
+  &.multiSelector--semsearch {
+    top: 0;
+    width: 50vw;
+  }
 }
