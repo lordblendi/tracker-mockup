@@ -82,8 +82,8 @@ function reInitActions(multiSelector) {
   });
 
   // expand-collapse
-  $(multiSelector).find('.itemBoxTable__bodyCell--toggle').unbind();
-  $('.itemBoxTable__bodyCell--toggle').on('click', function() {
+  $(multiSelector).find('.itemBoxTable__bodyCell--toggle').unbind('click');
+  $(multiSelector).find('.itemBoxTable__bodyCell--toggle').on('click', function() {
     const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
     expandCloseRow(itemBoxTable__bodyRow);
   });
