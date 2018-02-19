@@ -32,7 +32,7 @@ $('.js_multiSelector__filterInput').keyup(function() {
       }
     }
 
-    reInitActions();
+    reInitActions(multiSelector);
 });
 
 function filterResults(input, listItemSelector) {
@@ -58,21 +58,22 @@ function filterResults(input, listItemSelector) {
 }
 
 // we have to reinit all actions
-function reInitActions() {
+function reInitActions(multiSelector) {
   // normal + x actions
-  $('.multiSelector .multiSelector__box .itemBoxTable__action').on('click', function(){
+  $(multiSelector).find('.multiSelector__box .itemBoxTable__action').on('click', function(){
     const action = $(this);
     handleActionOnclick(action);
   });
 
   // expand-collapse
+  $(multiSelector).find('.itemBoxTable__bodyCell--toggle').unbind();
   $('.itemBoxTable__bodyCell--toggle').on('click', function() {
     const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
     expandCloseRow(itemBoxTable__bodyRow);
   });
 
   // color picker trigger
-  $('.js_multiSelector__box--selectionChildren .js_itemBoxTable__bodyCellInner--colortoggle, .js_multiSelector__box--optionsChildren .js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
+  $(multiSelector).find('.js_multiSelector__box--selectionChildren .js_itemBoxTable__bodyCellInner--colortoggle, .js_multiSelector__box--optionsChildren .js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
     const colorToggle = $(this);
     toggleColorSelector(colorToggle);
   });
