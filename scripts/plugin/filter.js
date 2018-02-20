@@ -4,7 +4,7 @@ $('.JS_multiSelector__filterInput').keyup(function() {
   var multiSelector = $(input).closest(".multiSelector");
   filterResults(input, '.JS_multiSelector__box--selectionChildren .JS_filterableCell, .JS_multiSelector__box--optionsChildren .JS_filterableCell');
 
-  checkGroups(multiSelector, '.JS_multiSelector__box--selectionChildren  .itemBoxTable__bodyRow:not(.JS_filterableCell), .JS_multiSelector__box--optionsChildren  .itemBoxTable__bodyRow:not(.JS_filterableCell)');
+  checkGroups(multiSelector, '.multiSelector__box:not(.JS_multiSelector__box)  .itemBoxTable__bodyRow:not(.JS_filterableCell)');
 
   reInitActions(multiSelector);
 });
