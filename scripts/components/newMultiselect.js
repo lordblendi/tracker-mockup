@@ -45,6 +45,12 @@ function handleActionOnclick(action) {
   else {
     handleComplexItemAddRemove(action, exclude);
   }
+
+  // whatever happened, reset the filter
+  // in case some stuff were filtered
+  if(!$(action).hasClass('itemBoxTable__action--toggle')){
+    $(multiSelector).find('.JS_multiSelector__filterInput').val("").keyup();
+  }
 }
 
 
