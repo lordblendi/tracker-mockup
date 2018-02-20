@@ -13,10 +13,10 @@ $('.JS_multiSelector__filterInput').keyup(function() {
 
 $('.JS_appNav__filterInput').keyup(function() {
   var input = $(this);
-  filterResults(input, '.js-appNavBox .JS_filterableCell');
+  filterResults(input, '.JS_appNavBox .JS_filterableCell');
   var multiSelector = $(input).closest(".multiSelector");
 
-  checkGroups(multiSelector, '.js-appNavBox  .itemBoxTable__bodyRow:not(.JS_filterableCell)');
+  checkGroups(multiSelector, '.JS_appNavBox  .itemBoxTable__bodyRow:not(.JS_filterableCell)');
 
   reInitActions(multiSelector);
 });
