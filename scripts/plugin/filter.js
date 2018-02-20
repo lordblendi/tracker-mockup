@@ -1,5 +1,5 @@
 //  filter for multiselects
-$('.js_multiSelector__filterInput').keyup(function() {
+$('.JS_multiSelector__filterInput').keyup(function() {
   var input = $(this);
   var multiSelector = $(input).closest(".multiSelector");
   filterResults(input, '.js_multiSelector__box--selectionChildren .js_filterableCell, .js_multiSelector__box--optionsChildren .js_filterableCell');

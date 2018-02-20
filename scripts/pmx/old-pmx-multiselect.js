@@ -1,4 +1,4 @@
-$('.js_old-pmx-multiselect-trigger').click(function() {
+$('.JS_old-pmx-multiselect-trigger').click(function() {
   var oldpopup = $('.old-multiselect-popup');
   // if hidden, show it and add overlay
   if(oldpopup.hasClass('old-multiselect-popup--hidden')) {
@@ -26,7 +26,7 @@ $('.js_old-pmx-multiselect-trigger').click(function() {
 //   }
 // });
 
-$('.js_new-multiselect-trigger').click(function() {
+$('.JS_new-multiselect-trigger').click(function() {
   var trigger = $(this);
   const height = trigger.outerHeight();
   const width = trigger.outerWidth();
