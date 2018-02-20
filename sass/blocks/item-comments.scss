@@ -1,23 +1,33 @@
 ---
 ---
 
-.document__comments--visible {
-  .panel__center {
-
-  }
-  .item-comments {
-    left: 0;
-  }
-}
-
 .item-comments {
   position: relative;
-  left: 25%;
   float: right;
-  width: 24%;
-  margin: 0 0 0 1%;
-  background-color: #FFF;
-  transition: all .3s ease-in-out;
+  width: 0%;
+  display: none;
+  padding: 0 0 15px 15px;
+
+  &--visible {
+    .item-comments {
+      width: 25%;
+      display: block;
+    }
+
+    &.item-progress--visible {
+      .item-main {
+        width: 50%;
+      }
+    }
+
+    .item-main {
+      width: 75%;
+    }
+  }
+
+  &__inner {
+    background-color: #FFF;
+  }
 
   .tabs  {
     &-nav {

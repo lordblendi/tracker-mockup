@@ -5,7 +5,7 @@
 </head>
 
 <body>
-  <div class="app cf document__info--visible">
+  <div class="app cf item-progress--visible">
     <div class="app__overlay"></div>
 
     <div class="app-navigator">
@@ -22,27 +22,30 @@
       </header>
 
       <div class="item item--story">
-        {% include blocks/item-header.html %}
+        <div class="sticky-header">
+          {% include blocks/item-header.html %}
+        </div>
 
-        <div class="document__content">
-
-          <div class="panel__left">
-            {% include blocks/item-steps.html %}
+        <div class="item-body cf">
+          <div class="item-progress">
+            <div class="item-progress__inner">
+              {% include blocks/item-progress.html %}
+            </div>
           </div>
 
-          <div class="panel__center">
-            <div class="document__info-data cf">
-              {% include blocks/document-data.html %}
+          <div class="item-main">
+            <div class="item-main__inner">
+              {% include blocks/item-main.html %}
             </div>
-            <!-- /.document__info-data -->
           </div>
 
           <div class="item-comments">
-            {% include blocks/item-comments.html %}
+            <div class="item-comments__inner">
+              {% include blocks/item-comments.html %}
+            </div>
           </div>
-
         </div>
-        <!-- /.document__content -->
+        <!-- /.item-body -->
       </div>
       <!-- /.app__document -->
     </main>

@@ -81,15 +81,16 @@ $(document).ready(function() {
 
 
   // Toggle COMMENTS-ATTACHMENTS-HISTORY
-  $('.media--toggle').on('click', function() {
-    $app.toggleClass('document__comments--visible');
+  $('.JS_toggle-comments').on('click', function() {
+    $app.toggleClass('item-comments--visible');
   });
 
   // Toggle INFO
-  $('.process--toggle').on('click', function() {
-    $app.toggleClass('document__info--visible');
+  $('.JS_toggle-progress').on('click', function() {
+    $app.toggleClass('item-progress--visible');
   });
 
+/*
   $('.document__comments .add-comment .add-comment__input').focus(function() {
     $app.addClass('add-comment--visible');
   });
@@ -97,7 +98,7 @@ $(document).ready(function() {
   $('.document__comments .add-comment .add-comment__input').blur(function() {
     $app.removeClass('add-comment--visible');
   });
-
+*/
 
 
 });
