@@ -19,10 +19,10 @@ function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
     // if the next one is color options, then get the one after it
     // as it should be like this:
     // itemBoxTable__bodyRow
-    //     [optional .itemBox--children.js_itemBox--colors]
+    //     [optional .itemBox--children.JS_itemBox--colors]
     //     .itemBox--children
     possibleChildren = $(itemBoxTable__bodyRow).next();
-    if (possibleChildren.hasClass('js_itemBox--colors')) {
+    if (possibleChildren.hasClass('JS_itemBox--colors')) {
       possibleChildren = possibleChildren.next();
     }
   }
@@ -31,7 +31,7 @@ function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
 
   // if the 'toClose' is not specified, it will become the opposite state
   if(toClose === undefined) {
-    toClose = $(possibleChildren).hasClass('js_itemBoxTable__bodyRow--closed');
+    toClose = $(possibleChildren).hasClass('JS_itemBoxTable__bodyRow--closed');
   }
 
   // check if it's actually a children
@@ -39,7 +39,7 @@ function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
     // close it, if we have to
     if (toClose === true) {
       $.Velocity.animate(possibleChildren, 'slideDown').then(function() {
-        $(possibleChildren).removeClass('js_itemBoxTable__bodyRow--closed');
+        $(possibleChildren).removeClass('JS_itemBoxTable__bodyRow--closed');
         if(iContent !== null && iContent !== undefined){
           i.html(iContent.replace(collapsed, expanded));
         }
@@ -49,7 +49,7 @@ function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
   // otherwise open it
     else {
       $.Velocity.animate(possibleChildren, 'slideUp').then(function() {
-        $(possibleChildren).addClass('js_itemBoxTable__bodyRow--closed');
+        $(possibleChildren).addClass('JS_itemBoxTable__bodyRow--closed');
         if(iContent !== null && iContent !== undefined){
           i.html(iContent.replace(expanded, collapsed));
         }
@@ -69,7 +69,7 @@ function checkTableHeaderIcon(itemBoxTable__bodyRow) {
   const i = $(itemBoxTable__head).find('.itemBoxTable__headCellInner').find('i');
   const iContent = i.html();
 
-  const closedChildren = $(itemBoxTable__body).children('.js_itemBoxTable__bodyRow--closed');
+  const closedChildren = $(itemBoxTable__body).children('.JS_itemBoxTable__bodyRow--closed');
   const children = $(itemBoxTable__body).children('.itemBox--children');
 
   if(iContent !== null && iContent !== undefined) {
@@ -96,7 +96,7 @@ $('.itemBoxTable__headCell--toggle').on('click', function(){
   // so these ARE parent bodyRows
   const itemBoxTable__bodyRow = $(bodyCelltoggles).closest('.itemBoxTable__bodyRow');
 
-  const closedChildren = $(itemBoxTable__body).children('.itemBox--children.js_itemBoxTable__bodyRow--closed');
+  const closedChildren = $(itemBoxTable__body).children('.itemBox--children.JS_itemBoxTable__bodyRow--closed');
   const children = $(itemBoxTable__body).children('.itemBox--children');
 
   //if the children are all closed

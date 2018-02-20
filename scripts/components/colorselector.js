@@ -2,7 +2,7 @@
 ---
 
 // COLOR OPTIONS SELECTION
-$('.js_itemBox--colors .itemBoxTable__bodyRow').on('click', function() {
+$('.JS_itemBox--colors .itemBoxTable__bodyRow').on('click', function() {
   const colorItemBodyRow = $(this);
   selectNewColor(colorItemBodyRow);
 });
@@ -14,15 +14,15 @@ $('.js_itemBox--colors .itemBoxTable__bodyRow').on('click', function() {
 // then close the pallette
 function selectNewColor(colorItemBodyRow) {
   // get new color
-  const color = colorItemBodyRow.find('.js_itemBoxTable__bodyCellInner--color i').attr('data-color');
+  const color = colorItemBodyRow.find('.JS_itemBoxTable__bodyCellInner--color i').attr('data-color');
   // find the text of the item
-  const itemBox = colorItemBodyRow.closest('.js_itemBox--colors');
+  const itemBox = colorItemBodyRow.closest('.JS_itemBox--colors');
   const bodyRow = $(itemBox).prev();
-  const tagText = bodyRow.find('.js_itemBoxTable__bodyCellInner--text').html().trim();
+  const tagText = bodyRow.find('.JS_itemBoxTable__bodyCellInner--text').html().trim();
 
   // find all tags with the same text
   const multiSelector = bodyRow.closest('.multiSelector');
-  const possibleTags = multiSelector.find('.js_itemBoxTable__bodyCellInner--text');
+  const possibleTags = multiSelector.find('.JS_itemBoxTable__bodyCellInner--text');
   var filteredTags = [];
 
   $.each(possibleTags, function(index, tag){
@@ -34,12 +34,12 @@ function selectNewColor(colorItemBodyRow) {
   // change color for all other tags, that have the same textOfActionItem
   $.each(filteredTags, function(index, tag){
     const tagBodyRow = $(tag).closest('.itemBoxTable__bodyRow');
-    tagBodyRow.find('.js_colorselector-trigger i').css('color', color).attr('data-color', color);
+    tagBodyRow.find('.JS_colorselector-trigger i').css('color', color).attr('data-color', color);
 
     // reset color tick of their color selection (in case it's open)
-    const possibleChildren = tagBodyRow.next('.js_itemBox--colors');
-    $(possibleChildren).find('.js_showSelected').remove();
-    const selectedColor = possibleChildren.find(`.js_itemBoxTable__bodyCellInner--color i[data-color='${color}']`);
+    const possibleChildren = tagBodyRow.next('.JS_itemBox--colors');
+    $(possibleChildren).find('.JS_showSelected').remove();
+    const selectedColor = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--color i[data-color='${color}']`);
     const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
     selectedColorBodyRow.append(`{% include javascript/colorSelected.html %}`);
 
@@ -51,13 +51,13 @@ function selectNewColor(colorItemBodyRow) {
 
   // close color options
   $.Velocity.animate(itemBox, 'slideUp').then(function() {
-    $(itemBox).addClass('js_itemBoxTable__bodyRow--closed');
+    $(itemBox).addClass('JS_itemBoxTable__bodyRow--closed');
   });
 }
 
 
 // COLOR OPTIONS EXPAND-COLLAPSE
-$('.js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
+$('.JS_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
   const colorToggle = $(this);
   toggleColorSelector(colorToggle);
 });
@@ -68,17 +68,17 @@ $('.js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
 function toggleColorSelector(colorToggle) {
   // if there is a color box, expand/collapse it
   const itemBoxTable__bodyRow = colorToggle.closest('.itemBoxTable__bodyRow');
-  const possibleChildren = itemBoxTable__bodyRow.next('.js_itemBox--colors');
+  const possibleChildren = itemBoxTable__bodyRow.next('.JS_itemBox--colors');
 
   const actualColor = colorToggle.find('i').attr('data-color');
 
 
   // remove other selection shower
-  $(possibleChildren).find('.js_showSelected').remove();
+  $(possibleChildren).find('.JS_showSelected').remove();
 
   // add selection to new color (can be changed by other tags)
   // only if opening
-  const selectedColor = possibleChildren.find(`.js_itemBoxTable__bodyCellInner--color i[data-color='${actualColor}']`);
+  const selectedColor = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--color i[data-color='${actualColor}']`);
   const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
   selectedColorBodyRow.append(`{% include javascript/colorSelected.html %}`);
 
@@ -98,26 +98,26 @@ function toggleColorSelector(colorToggle) {
 
 
 // INITIAL - collapse all color options
-const colorOptions = $(".js_multiSelector__box--selectionChildren, .js_multiSelector__box--optionsChildren, .js_itemBox--suggestions").find('.itemBox--children.js_itemBox--colors');
+const colorOptions = $(".JS_multiSelector__box--selectionChildren, .JS_multiSelector__box--optionsChildren, .JS_itemBox--suggestions").find('.itemBox--children.JS_itemBox--colors');
 const colorBodyRow = $(colorOptions).find('.itemBoxTable__bodyRow');
 
 $.Velocity.animate(colorOptions, 'slideUp').then(function() {
-  $(colorOptions).addClass('js_itemBoxTable__bodyRow--closed');
+  $(colorOptions).addClass('JS_itemBoxTable__bodyRow--closed');
 });
 
 
 // MULTISELECT - RESET COLOR TOGGLES
 function resetColorToggle(item) {
   // expand/collapse for new selected item
-  $(item).find('.js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
+  $(item).find('.JS_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
     const colorToggle = $(this);
     toggleColorSelector(colorToggle);
   });
 
   // set colorselector hidden
-  const possibleColorChildren = $(item).next('.js_itemBox--colors');
-  possibleColorChildren.css('display', 'none').addClass('js_itemBoxTable__bodyRow--closed');
-  $(item).addClass('js_itemBoxTable__bodyRow--closed');
+  const possibleColorChildren = $(item).next('.JS_itemBox--colors');
+  possibleColorChildren.css('display', 'none').addClass('JS_itemBoxTable__bodyRow--closed');
+  $(item).addClass('JS_itemBoxTable__bodyRow--closed');
 
   // color setting action
   $(possibleColorChildren).find('.itemBoxTable__bodyRow').on('click', function() {

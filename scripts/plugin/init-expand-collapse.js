@@ -3,12 +3,12 @@
 ////
 
 // default second level collapsed
-const multiOptionChildren = $(".js_multiSelector__box--optionsChildren").find('.itemBox--children:not(.js_itemBox--colors)');
+const multiOptionChildren = $(".JS_multiSelector__box--optionsChildren").find('.itemBox--children:not(.JS_itemBox--colors)');
 const multiOptionBodyRow = $(multiOptionChildren).find('.itemBoxTable__bodyRow');
 
 $.Velocity.animate(multiOptionChildren, 'slideUp').then(function() {
-  $(multiOptionBodyRow).addClass('js_itemBoxTable__bodyRow--closed');
-  $(multiOptionChildren).addClass('js_itemBoxTable__bodyRow--closed');
+  $(multiOptionBodyRow).addClass('JS_itemBoxTable__bodyRow--closed');
+  $(multiOptionChildren).addClass('JS_itemBoxTable__bodyRow--closed');
 });
 
 
@@ -17,6 +17,6 @@ const appNavChildren = $(".app-navigator__nav .tabs-panels .tabs-panels__panel[t
 const appNavBodyRow = $(appNavChildren).find('.itemBoxTable__bodyRow');
 
 $.Velocity.animate(appNavChildren, 'slideUp').then(function() {
-  $(appNavBodyRow).addClass('js_itemBoxTable__bodyRow--closed');
-  $(appNavChildren).addClass('js_itemBoxTable__bodyRow--closed');
+  $(appNavBodyRow).addClass('JS_itemBoxTable__bodyRow--closed');
+  $(appNavChildren).addClass('JS_itemBoxTable__bodyRow--closed');
 });

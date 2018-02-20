@@ -2,21 +2,21 @@
 $('.JS_multiSelector__filterInput').keyup(function() {
   var input = $(this);
   var multiSelector = $(input).closest(".multiSelector");
-  filterResults(input, '.js_multiSelector__box--selectionChildren .js_filterableCell, .js_multiSelector__box--optionsChildren .js_filterableCell');
+  filterResults(input, '.JS_multiSelector__box--selectionChildren .JS_filterableCell, .JS_multiSelector__box--optionsChildren .JS_filterableCell');
 
-  checkGroups(multiSelector, '.js_multiSelector__box--selectionChildren  .itemBoxTable__bodyRow:not(.js_filterableCell), .js_multiSelector__box--optionsChildren  .itemBoxTable__bodyRow:not(.js_filterableCell)');
+  checkGroups(multiSelector, '.JS_multiSelector__box--selectionChildren  .itemBoxTable__bodyRow:not(.JS_filterableCell), .JS_multiSelector__box--optionsChildren  .itemBoxTable__bodyRow:not(.JS_filterableCell)');
 
   reInitActions(multiSelector);
 });
 
 // filter for app_navigator
 
-$('.js_appNav__filterInput').keyup(function() {
+$('.JS_appNav__filterInput').keyup(function() {
   var input = $(this);
-  filterResults(input, '.js-appNavBox .js_filterableCell');
+  filterResults(input, '.js-appNavBox .JS_filterableCell');
   var multiSelector = $(input).closest(".multiSelector");
 
-  checkGroups(multiSelector, '.js-appNavBox  .itemBoxTable__bodyRow:not(.js_filterableCell)');
+  checkGroups(multiSelector, '.js-appNavBox  .itemBoxTable__bodyRow:not(.JS_filterableCell)');
 
   reInitActions(multiSelector);
 });
@@ -29,7 +29,7 @@ function filterResults(input, listItemSelector) {
 
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < listItems.length; i++) {
-    var text = $(listItems[i]).find(".js_itemBoxTable__bodyCellInner--text")[0];
+    var text = $(listItems[i]).find(".JS_itemBoxTable__bodyCellInner--text")[0];
 
     if(text !== undefined) {
       if (text.innerHTML.toUpperCase().indexOf(filter) > -1) {
@@ -55,7 +55,7 @@ function checkGroups(multiSelector, possibleChildren) {
       var currentGroup = $(groups[i]);
       var possibleChild = currentGroup.next();
       if(possibleChild.hasClass('itemBox--children')) {
-        var filterableCells = $(possibleChild).find('ul.js_filterableCell');
+        var filterableCells = $(possibleChild).find('ul.JS_filterableCell');
         if (filterableCells.length > 0) {
           currentGroup.css("display", "flex");
           groups[i].outerHTML = groups[i].outerHTML.trim()
@@ -92,7 +92,7 @@ function reInitActions(multiSelector) {
   });
 
   // color picker trigger
-  $(multiSelector).find('.js_multiSelector__box--selectionChildren .js_itemBoxTable__bodyCellInner--colortoggle, .js_multiSelector__box--optionsChildren .js_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
+  $(multiSelector).find('.JS_multiSelector__box--selectionChildren .JS_itemBoxTable__bodyCellInner--colortoggle, .JS_multiSelector__box--optionsChildren .JS_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
     const colorToggle = $(this);
     toggleColorSelector(colorToggle);
   });
