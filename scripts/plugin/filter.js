@@ -35,13 +35,13 @@ function filterResults(input, listItemSelector) {
       if (text.innerHTML.toUpperCase().indexOf(filter) > -1) {
         listItems[i].style.display = "";
         listItems[i].outerHTML = listItems[i].outerHTML.trim()
-        .replace('^<span ','<ul ')
-        .replace('</span>$','</ul');
+        .replace('<hide ','<ul ')
+        .replace('</hide','</ul');
       } else {
         listItems[i].style.display = "none";
         listItems[i].outerHTML = listItems[i].outerHTML.trim()
-        .replace('^<ul ','<span ')
-        .replace('</ul>$','</span');
+        .replace('<ul ','<hide ')
+        .replace('</ul','</hide');
       }
     }
   }
@@ -59,15 +59,15 @@ function checkGroups(multiSelector, possibleChildren) {
         if (filterableCells.length > 0) {
           currentGroup.css("display", "flex");
           groups[i].outerHTML = groups[i].outerHTML.trim()
-          .replace('<span ','<ul ')
-          .replace(new RegExp('</span>' + '$'),'</ul');
+          .replace('<hide ','<ul ')
+          .replace(new RegExp('</hide'),'</ul');
           $(possibleChild).css('padding-top', '5px');
           $(possibleChild).css('padding-bottom', '5px');
         } else {
           currentGroup.css("display", "none");
           groups[i].outerHTML = groups[i].outerHTML.trim()
-          .replace('<ul ','<span ')
-          .replace(new RegExp('</ul>'+ '$'),'</span');
+          .replace('<ul ','<hide ')
+          .replace(new RegExp('</ul'),'</hide');
 
           $(possibleChild).css('padding-top', '0px');
           $(possibleChild).css('padding-bottom', '0px');
