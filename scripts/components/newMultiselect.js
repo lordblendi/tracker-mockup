@@ -73,7 +73,7 @@ function resetGroupRemoveActions(removeAllActions, children) {
     }
   });
   // replace all normal actions with addAction
-  children.find('li.itemBoxTable__bodyCell--remove').replaceWith(addActionHTML);
+  children.find('ul li.itemBoxTable__bodyCell--remove').replaceWith(addActionHTML);
 }
 
 // for a whole group adding removeActionHTMLs
@@ -88,7 +88,7 @@ function resetGroupAddActions(removeAllActions, children) {
     }
   });
   // replace all normal actions with removeAction
-  children.find('li.itemBoxTable__bodyCell--add').replaceWith(removeActionHTML);
+  children.find('ul li.itemBoxTable__bodyCell--add').replaceWith(removeActionHTML);
 }
 
 
@@ -119,7 +119,7 @@ function handleComplexGroupAdd(action, children, exclude) {
 
 
     // finding all the already selected items
-    const optionItems = children.find('.JS_itemBoxTable__bodyCellInner--text');
+    const optionItems = children.find('ul .JS_itemBoxTable__bodyCellInner--text');
     const itemBoxBody = selection.find('> .itemBoxTable > .itemBoxBody');
     const selectedItems = selection.find('.JS_itemBoxTable__bodyCellInner--text');
     const selectedItemTexts = $.map(selectedItems, function(item){
@@ -147,7 +147,7 @@ function handleComplexGroupAdd(action, children, exclude) {
     });
 
     // check their actions and the selected counter
-    var removeAllActions = children.find('li.JS_itemBoxTable__bodyCell--addAll');
+    var removeAllActions = children.find('ul li.JS_itemBoxTable__bodyCell--addAll');
     removeAllActions.push(action.closest('li.JS_itemBoxTable__bodyCell--addAll'));
     resetGroupAddActions(removeAllActions, children);
     checkCounter(selection);
@@ -179,7 +179,7 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
   }
   // otherwise find each selected item from a group and remove it from selected
   else {
-    const childrenToRemove = children.find('li.itemBoxTable__bodyCell--remove').closest('.itemBoxTable__bodyRow').find('.JS_itemBoxTable__bodyCellInner--text');
+    const childrenToRemove = children.find('ul li.itemBoxTable__bodyCell--remove').closest('.itemBoxTable__bodyRow').find('.JS_itemBoxTable__bodyCellInner--text');
     const selectedItems = selection.find('.JS_itemBoxTable__bodyCellInner--text');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html().trim();
@@ -196,7 +196,7 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
 
     // remove children actions
     // also adding the original action button
-    var removeAllActions = children.find('li.JS_itemBoxTable__bodyCell--removeAll');
+    var removeAllActions = children.find('ul li.JS_itemBoxTable__bodyCell--removeAll');
     removeAllActions.push(action.closest('li.JS_itemBoxTable__bodyCell--removeAll'));
     resetGroupRemoveActions(removeAllActions, children);
 
