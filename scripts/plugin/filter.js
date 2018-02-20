@@ -27,6 +27,13 @@ function filterResults(input, listItemSelector) {
   var multiSelector = $(input).closest(".multiSelector");
   var listItems = $(multiSelector).find(listItemSelector);
 
+  if(filter.length > 0) {
+    $(multiSelector).find('.JS_itemBox--suggestions').css('display', 'block');
+  }
+  else {
+    $(multiSelector).find('.JS_itemBox--suggestions').css('display', 'none');
+  }
+
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < listItems.length; i++) {
     var text = $(listItems[i]).find(".JS_itemBoxTable__bodyCellInner--text")[0];
