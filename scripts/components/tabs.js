@@ -314,12 +314,14 @@ function calculateDuration(tablist) {
 // for every tabnav set the position of the line
 $('.tabs-nav').each(function() {
     var activeLink = $(this).find('.tabs-nav__link--active');
-    var barWidth = activeLink.width();
-    var barLeft = $(activeLink).position().left;
-    $(this).find('.tabs-nav__linkBar').css({
-      'left': barLeft + 'px',
-      'width': barWidth + 'px'
-  });
+    if (activeLink.length > 0) {
+      var barWidth = activeLink.width();
+      var barLeft = $(activeLink).position().left;
+      $(this).find('.tabs-nav__linkBar').css({
+        'left': barLeft + 'px',
+        'width': barWidth + 'px'
+      });
+    }
 });
 
 // new position for bar if clicking on link
