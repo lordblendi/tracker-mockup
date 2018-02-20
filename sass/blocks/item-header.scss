@@ -9,6 +9,8 @@
 
   &-type {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     z-index: 1;
   }
@@ -127,27 +129,27 @@
         text-transform: uppercase;
         font-size: 10px;
         font-weight: 600;
-        padding: 12px 5px 3px 7px;
-        margin: 0 0 0 10px;
+        padding: 12px 5px 3px;
+        margin: 0 0 0 17px;
         letter-spacing: 1px;
 
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          border-left: 5px solid #f2f2f2;
-          border-bottom: 26px solid transparent;
-          box-shadow: 2px 0 0 0 #11cfff;
-        }
-
+        &::before,
         &::after {
           content: '';
           position: absolute;
           top: 0;
-          right: -5px;
           height: 100%;
+        }
+
+        &::before {
+          left: -5px;
+          border-right: 5px solid #11cfff;
+          border-top: 26px solid transparent;
+          box-shadow: 2px 0 0 0 #11cfff;
+        }
+
+        &::after {
+          right: -5px;
           border-left: 5px solid #11cfff;
           border-bottom: 26px solid transparent;
           box-shadow: -2px 0 0 0 #11cfff;
