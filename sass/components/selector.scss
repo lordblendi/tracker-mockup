@@ -64,6 +64,7 @@
   height: 30px;
   padding: 2px;
   background-color: #D7D7D7;
+  color: #000;
   border-radius: 30px;
   white-space: nowrap;
   font-size: 0;
@@ -84,6 +85,8 @@
     transition: all .3s ease-in-out;
     opacity: .5;
     filter: saturate(0) brightness(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 
     &:hover {
       opacity: .7;
