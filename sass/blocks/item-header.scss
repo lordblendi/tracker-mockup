@@ -5,7 +5,6 @@
   position: relative;
   margin: 0 20px;
   background-color: #F2F2F2;
-  box-shadow: 0 0 100px rgba(0,0,0,.2);
 
   &-type {
     position: absolute;
@@ -18,7 +17,8 @@
   &-header {
     position: relative;
     padding: 30px 15px 15px;
-    border-bottom: 2px solid #F2F2F2;
+    background-color: #FFF;
+    border-bottom-width: 2px;
 
     &__title {
       position: relative;
@@ -96,7 +96,8 @@
     }
 
     .item-header {
-      border-bottom: 2px dashed #2C5386;
+      border-bottom-width: 2px;
+      border-bottom-color: #2C5386;
 
       &::before,
       &::after {
@@ -159,7 +160,6 @@
 
     .item-header {
       background: repeating-linear-gradient( -65deg, #f2f2f2, #f2f2f2 10px, #fff 10px, #fff 20px );
-      border-bottom: 0;
 
       &::before {
         content: '';

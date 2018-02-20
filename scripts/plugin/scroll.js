@@ -1,7 +1,11 @@
 $(function() {
+
   $(document).ready(function() {
-    $(".sticky__header__wrapper").sticky({
+
+    $(".sticky-header").sticky({
       zIndex: 10
     });
+
   });
+
 });

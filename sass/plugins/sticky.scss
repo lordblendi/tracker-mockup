@@ -1,0 +1,26 @@
+---
+---
+
+.sticky-wrapper {
+  background-color: #FFF;
+}
+
+.sticky-header {
+  width: 100%;
+  border-bottom: #CCC dashed 1px;
+}
+
+.is-sticky .sticky-header {
+  border-bottom: #CCC solid 1px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+}
+
+
+// CHECK
+.document__data .is-sticky-docheader .header  {
+  border-bottom: #CCC solid 1px;
+}
+
+.is-sticky-docheader .line {
+  display: none;
+}
