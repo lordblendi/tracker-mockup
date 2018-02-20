@@ -16,7 +16,7 @@ $('.pmx-selector__item').on('click', function() {
     const expanded = selector.hasClass('pmx-selector--expanded');
     const multiSelect = selector.hasClass('pmx-selector--multiSelect');
     const toggleSelect = selector.hasClass('pmx-selector--toggleSelect');
-    const inclExcl = selector.hasClass('js_pmx-selector--incl-excl');
+    const inclExcl = selector.hasClass('JS_pmx-selector--incl-excl');
 
     const selectedValues = selector.find('.pmx-selector__item--selected');
 
@@ -38,7 +38,7 @@ $('.pmx-selector__item').on('click', function() {
       // if it has to change icons -> one specific toggle example
       // swap between - and +
       // TEMPORARY
-      if(selector.hasClass('js_pmx-selector--changeIcons')) {
+      if(selector.hasClass('JS_pmx-selector--changeIcons')) {
         selectedValues.find('.pmx-selector__blockPart--prefix').html("-");
         if(selectorValue.hasClass('pmx-selector__item--selected')) {
           selectorValue.find('.pmx-selector__blockPart--prefix').html("+");
@@ -71,21 +71,21 @@ $('.pmx-selector__item').on('click', function() {
     // TEMPORARY FOR MULTISELECT EXAMPLES IN /pmx
     if(inclExcl === true) {
       // old multiselect
-      if (selector.hasClass('js_pmx-selector--old')) {
-        if(selectorValue.hasClass('js_pmx-selector__item--exclude') && selectorValue.hasClass('pmx-selector__item--selected')) {
-          $('.old-multiselect-popup .old-multiselect-tab').addClass('js_old-multiselect-tab-negative');
+      if (selector.hasClass('JS_pmx-selector--old')) {
+        if(selectorValue.hasClass('JS_pmx-selector__item--exclude') && selectorValue.hasClass('pmx-selector__item--selected')) {
+          $('.old-multiselect-popup .old-multiselect-tab').addClass('JS_old-multiselect-tab-negative');
         }
         else {
-          $('.old-multiselect-popup .old-multiselect-tab').removeClass('js_old-multiselect-tab-negative');
+          $('.old-multiselect-popup .old-multiselect-tab').removeClass('JS_old-multiselect-tab-negative');
         }
       }
       //  new multiselect
       else {
-        if(selectorValue.hasClass('js_pmx-selector__item--exclude') && selectorValue.hasClass('pmx-selector__item--selected')) {
-          selectorValue.closest('.multiSelector__box').addClass('js_exclude');
+        if(selectorValue.hasClass('JS_pmx-selector__item--exclude') && selectorValue.hasClass('pmx-selector__item--selected')) {
+          selectorValue.closest('.multiSelector__box').addClass('JS_exclude');
         }
         else {
-          selectorValue.closest('.multiSelector__box').removeClass('js_exclude');
+          selectorValue.closest('.multiSelector__box').removeClass('JS_exclude');
         }
       }
     }

@@ -339,7 +339,7 @@
 
       // normal --add will be goldenrod, as the actions
       // excluded --add will be red
-      .js_exclude &--add {
+      .JS_exclude &--add {
         color: red;
       }
       // --remove will be barely visible gray
