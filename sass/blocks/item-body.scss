@@ -11,9 +11,12 @@
   float: left;
   width: 100%;
   position: relative;
-  background-color: #FFF;
-  color: #000;
-  box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
+
+  &__inner {
+    background-color: #FFF;
+    color: #000;
+    box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
+  }
 
   &__header {
     position: relative;
@@ -27,7 +30,7 @@
       font-size: 20px;
     }
 
-    .actions {
+    &Actions {
       float: right;
 
       ul li {
