@@ -1,18 +1,18 @@
 ////
 // EXPAND COLLAPSE
 ////
+
+// icons to be swapped
 const expanded = "ऄ";
 const collapsed = "अ";
 
-
-
-
-// row
+// expand/collapse action listener on toggle
 $('.itemBoxTable__bodyCell--toggle').on('click', function() {
   const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
   expandCloseRow(itemBoxTable__bodyRow);
 });
 
+// function to expand or close rows
 function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
 
   if(possibleChildren === undefined) {
@@ -46,7 +46,7 @@ function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
         checkTableHeaderIcon(itemBoxTable__bodyRow);
       });
     }
-  // otherwise open it
+    // otherwise open it
     else {
       $.Velocity.animate(possibleChildren, 'slideUp').then(function() {
         $(possibleChildren).addClass('JS_itemBoxTable__bodyRow--closed');
@@ -59,6 +59,11 @@ function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
   }
 };
 
+// check table header icon
+// change icon depending on
+// - everything is collapsed
+// - everything is expanded
+// - some collapsed, some expanded
 function checkTableHeaderIcon(itemBoxTable__bodyRow) {
   // check, if everything is closed, or not
   // and change it in the table
@@ -82,7 +87,7 @@ function checkTableHeaderIcon(itemBoxTable__bodyRow) {
   }
 }
 
-// HEADER
+// action for toggle in header to expand/collapse all
 $('.itemBoxTable__headCell--toggle').on('click', function(){
   const toggle = $(this);
 

@@ -1,12 +1,11 @@
 $(document).ready(function() {
   var $app = $('.app');
 
-  // app-navigator
+  // app-navigator toggle action
   $('.JS_toggle-app-navigator').on('click', function() {
     // making sure, that the line is positioned
     $('.app-navigator__nav .tabs-nav').each(function() {
       var activeLink = $(this).find('.tabs-nav__link--active');
-
       var barWidth = activeLink.width();
       var barLeft = $(activeLink).position().left;
 
@@ -14,28 +13,29 @@ $(document).ready(function() {
         'left': barLeft + 'px',
         'width': barWidth + 'px'
       });
-
     });
 
     $app.addClass('app-navigator--visible');
     $('body').addClass('fixed');
   });
 
-  // user-menu
+  // user-menu toggle action
   $('.JS_toggle-user-menu').on('click', function() {
     $app.addClass('user-menu--visible');
     $('body').addClass('fixed');
   });
 
-  // semsearch
+  // semsearch hover over action
   $('.JS_toggle-semsearch-1').on('mouseover', function() {
     $('.JS_semsearch-1').addClass('multiSelector--visible');
   });
+
+  // semsearch hover out action
   $('.JS_semsearch-1').on('mouseout', function() {
     $(this).removeClass('multiSelector--visible');
   });
 
-  // applicable-sliders
+  // applicable-sliders click actions
   $('.appl-slider__headerToggle').on('click', function(e) {
     e.preventDefault();
 
@@ -48,11 +48,9 @@ $(document).ready(function() {
     }
   });
 
-
-
-
-
-
+  // app overlay click action
+  // to remove app-navigator or user-menu
+  // and make the body scrollable again
   $('.app__overlay').on('click', function() {
     if ($app.hasClass('app-navigator--visible')) {
       $app.removeClass('app-navigator--visible');
@@ -76,7 +74,6 @@ $(document).ready(function() {
     }
   });
 
-
   // Toggle COMMENTS-ATTACHMENTS-HISTORY
   $('.JS_toggle-comments').on('click', function() {
     $app.toggleClass('item-comments--visible');
@@ -86,16 +83,4 @@ $(document).ready(function() {
   $('.JS_toggle-progress').on('click', function() {
     $app.toggleClass('item-progress--visible');
   });
-
-/*
-  $('.document__comments .add-comment .add-comment__input').focus(function() {
-    $app.addClass('add-comment--visible');
-  });
-
-  $('.document__comments .add-comment .add-comment__input').blur(function() {
-    $app.removeClass('add-comment--visible');
-  });
-*/
-
-
 });
