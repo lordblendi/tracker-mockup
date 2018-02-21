@@ -16,9 +16,17 @@ body {
   background-color: #2C5386;
   min-height: 100vh;
 
+  -webkit-font-feature-settings: "kern" 1,"liga" 0;
+  font-feature-settings: "kern" 1,"liga" 0;
+
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+
+  -webkit-font-variant-ligatures: no-common-ligatures;
+  font-variant-ligatures: no-common-ligatures;
 
   &.fixed {
     overflow-y: hidden;
