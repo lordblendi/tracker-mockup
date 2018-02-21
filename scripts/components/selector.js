@@ -4,7 +4,7 @@ $('.JS_selector').on('click', function() {
 });
 
 // toggle button actions
-$('.pmx-selector__item').on('click', function() {
+$('.JS_selectorItem').on('click', function() {
   const selectorValue = $(this);
   const selector = selectorValue.closest('.JS_selector');
 
