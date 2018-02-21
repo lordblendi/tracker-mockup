@@ -229,7 +229,7 @@ function getNewItem(item, exclude) {
 
     colorHTML = `{% include javascript/colorAction.html %}`
 
-    colorChildren = `{% include blocks/colorSelector-children.html %}`;
+    colorChildren = `{% include blocks/ms-tags-colors-color-sublist.html %}`;
   }
 
   return `{% include javascript/newSelectedItem.html %}`;
