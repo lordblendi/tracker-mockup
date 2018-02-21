@@ -1,3 +1,4 @@
+// action for triggering old-multiselect-popup in /pmx
 $('.JS_old-pmx-multiselect-trigger').click(function() {
   var oldpopup = $('.old-multiselect-popup');
   // if hidden, show it and add overlay
@@ -12,20 +13,9 @@ $('.JS_old-pmx-multiselect-trigger').click(function() {
   }
 });
 
-//
-// $('.old-multiselect-popup .old-multiselect-tabs ul li').click(function() {
-//   var li = $(this);
-//   if (!li.hasClass('selected')) {
-//     var ul = li.closest('ul');
-//     var tabSelector = $(ul).find('.tab-selector');
-//     tabSelector.toggleClass('selected');
-//
-//     var newpickercontent = $(ul).closest('.newpickercontent');
-//     var oldMultiselectTab = $(newpickercontent).find('.old-multiselect-tab');
-//     oldMultiselectTab.toggleClass('old-multiselect-tab--hidden');
-//   }
-// });
-
+// action for triggering new-multiselect-popup and column-picker in /pmx
+// calculate where should it be
+// and get the correct ID in the attribute data-multiselect
 $('.JS_new-multiselect-trigger').click(function() {
   var trigger = $(this);
   const height = trigger.outerHeight();
@@ -50,9 +40,10 @@ $('.JS_new-multiselect-trigger').click(function() {
   $(".overlay").css("display", 'block');
 });
 
-// multiSelector--visible
-
 // onclick action on overlay to close popups
+// - column-picker
+// - old-multiselect
+// - new-multiselect
 $('.overlay').on('click', function() {
   $('.multiSelector--popup.multiSelector--visible').removeClass('multiSelector--visible');
 
