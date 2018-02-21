@@ -1,12 +1,12 @@
 // toggle simple
-$('.pmx-selector').on('click', function() {
+$('.JS_selector').on('click', function() {
   $(this).toggleClass('pmx-selector--clicked');
 });
 
 // toggle button actions
 $('.pmx-selector__item').on('click', function() {
   const selectorValue = $(this);
-  const selector = selectorValue.closest('.pmx-selector');
+  const selector = selectorValue.closest('.JS_selector');
 
   // only if this is not a multiselect popup toggle
   if(!selector.hasClass('MULTISELECT__POPUP')) {
