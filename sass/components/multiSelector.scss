@@ -14,10 +14,11 @@
     z-index: 0;
 
     position: absolute;
+    top: 0;
+    left: 0;
+
     min-width: 300px;
-    width: 50vw;
-    top: 50px;
-    right: 0;
+    width: 50%;
 
     box-shadow: 0 0 200px 60px rgba(0,0,0,0.2);
     transition: opacity .3s ease-in-out;

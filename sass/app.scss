@@ -34,13 +34,10 @@ body {
 }
 body.page-Components,
 body.page-Itembox,
-body.page-Tag-picker,
-body.page-Popups {
+body.page-Tag-picker {
+  position: relative;
   background-color: #FFF;
-  padding: 50px;
-}
-body.page-Popups .multiSelector {
-  margin: 100px 0;
+  margin: 50px;
 }
 
 
