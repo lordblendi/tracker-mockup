@@ -23,7 +23,7 @@ $('.MULTISELECT__POPUP').on('click', function() {
   // top for popup is under the toggle
   var newTop = (Math.round(top) + Math.round(height)) + 'px';
   if($(this).hasClass('pmx-selector')) {
-    newTop = Math.round(top) + 'px';
+    newTop = (Math.round(top) - 50) + 'px';
   }
 
   // toggle is left
@@ -34,7 +34,7 @@ $('.MULTISELECT__POPUP').on('click', function() {
       'pointer-events': 'auto',
       'opacity': '1',
       'top': newTop,
-      'left': Math.round(left) + 'px',
+      'left': 0
     });
   }
   // toggle is right, right side of the popup is right side of toggle
@@ -44,7 +44,7 @@ $('.MULTISELECT__POPUP').on('click', function() {
       'pointer-events': 'auto',
       'opacity': '1',
       'top': newTop,
-      'right': (Math.round($(window).width()) - Math.round(right)) + 'px',
+      'right': 0
     });
   }
 

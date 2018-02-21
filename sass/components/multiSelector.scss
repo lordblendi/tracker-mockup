@@ -23,15 +23,21 @@
     box-shadow: 0 0 200px 60px rgba(0,0,0,0.2);
     transition: opacity .3s ease-in-out;
 
+    &#multiSelector-columnpicker {
+      left: auto;
+      right: 0;
+      margin-top: -50px;
+    }
+
     &-semsearch {
       top: 0;
+      left: inherit;
       right: 0;
       width: 50vw;
     }
 
     .itemBox {
       color: #000;
-      padding-bottom: 10px;
       background-color: rgba(0, 0, 0, 0.17);
 
       .itemBox--children {
