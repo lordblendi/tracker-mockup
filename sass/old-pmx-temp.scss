@@ -79,6 +79,12 @@ sup {
     box-sizing: border-box;
   }
 
+  ul {
+    &.itembox li {
+      background-color: inherit;
+    }
+  }
+
   li {
     ul {
       &.columns {

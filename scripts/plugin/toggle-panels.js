@@ -29,12 +29,9 @@ $(document).ready(function() {
 
   // semsearch
   $('.JS_toggle-semsearch-1').on('mouseover', function() {
-    $(this).addClass('app-header-inner__item--active');
     $('.JS_semsearch-1').addClass('multiSelector--visible');
   });
-
   $('.JS_semsearch-1').on('mouseout', function() {
-    $('.JS_toggle-semsearch-1').removeClass('app-header-inner__item--active');
     $(this).removeClass('multiSelector--visible');
   });
 

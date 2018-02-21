@@ -2,144 +2,78 @@
 ---
 
 .multiSelector {
-
-
   &--visible {
     opacity: 1 !important;
     pointer-events: auto !important;
     z-index: 9999 !important;
   }
 
-  &--semsearch {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50vw;
-  }
-
   &--popup {
-    min-width: 300px;
-    width: 50%;
-    width: 25%;
     opacity: 0;
     pointer-events: none;
-    z-index: -1;
-    transition: opacity .15s ease-in-out;
-    font-size: 16px;
-    box-shadow: 0 0 200px 60px rgba(0,0,0,0.2);
+    z-index: 0;
 
-    .multiSelector {
-      &__box {
-        background-color: rgba(0, 0, 0, 0.17);
-      }
+    position: absolute;
+    min-width: 300px;
+    width: 50vw;
+    top: 50px;
+    right: 0;
+
+    box-shadow: 0 0 200px 60px rgba(0,0,0,0.2);
+    transition: opacity .3s ease-in-out;
+
+    &-semsearch {
+      top: 0;
+      right: 0;
+      width: 50vw;
     }
 
     .itemBox {
       color: #000;
+      padding-bottom: 10px;
+      background-color: rgba(0, 0, 0, 0.17);
 
-      &--tagPicker, &--suggestions {
-        padding: 10px 0 10px 10px;
-        background-color: #B2B2B2;
+      .itemBox--children {
+        background-color: transparent;
+
+        &-sublist {
+          padding: 10px 0 10px 10px;
+          background-color: #B2B2B2;
+        }
       }
     }
   }
 
-  &__box {
-    padding: 0 0 15px;
-  }
+  &--colorPicker {
+    position: absolute;
+    min-width: auto;
+    width: auto;
 
-  &__search {
-    position: relative;
-    height: 40px;
-    background-color: #FFF;
-
-    &Input {
-      width: 100%;
-      height: 100%;
-      padding: 5px 40px 5px 15px;
-      font-size: 16px;
-      color: #000;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-      &::-webkit-input-placeholder {
-        font-style: italic;
-        font-weight: 400;
-        color: rgba(0,0,0,.35);
-      }
-
-      &:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0 50px #ffffff inset;
+    .itemBoxTable__bodyRow {
+      &::after {
+        height: 0px;
       }
     }
 
-    &Icon {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 40px;
-      height: 40px;
-      color: #285C9E;
-      text-decoration: none;
-      font-size: 20px;
-      padding: 5px;
-
-      &::before {
-        content: "\e036";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    &IconAdv {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 40px;
-      height: 40px;
-      color: #a8a8a8;
-      text-decoration: none;
-      font-size: 16px;
-      padding: 5px;
-      text-align: center;
-      line-height: 34px;
-      transition: all .3s ease-in-out;
-
-      &:hover {
-        color: #000;
-      }
-
-      &--active {
-        color: #000;
-      }
-    }
-
-    &Selected {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: calc(100% - 40px);
-      padding: 6px 0 6px 15px;
-      white-space: nowrap;
-      overflow: hidden;
-
+    .itemBoxTable__bodyCell {
       &::after {
         content: '';
         position: absolute;
-        top: 0;
-        right: 0;
-        width: 30px;
-        height: 100%;
-        background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 90%,rgba(255,255,255,1) 100%);
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: #B2B2B2;
         pointer-events: none;
-        z-index: 99;
+        transition:
+          all .2s ease-in-out
+        ;
       }
 
-      .pmx-selector {
-        margin-right: 5px;
+      &:hover {
+        &::after {
+          height: 2px;
+        }
       }
     }
   }
@@ -178,23 +112,7 @@
 
 
 @media (max-width: 900px) {
-  .multiSelector {
+  .multiSelector--popup {
     width: 100%;
-  }
-}
-
-
-.multiSelector--popup {
-  position: absolute;
-  top: 50px;
-  right: 0;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 0;
-  transition: opacity .3s ease-in-out;
-
-  &.multiSelector--semsearch {
-    top: 0;
-    width: 50vw;
   }
 }
