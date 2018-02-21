@@ -311,8 +311,10 @@ function calculateDuration(tablist) {
   return numberOfChildren * 425;
 }
 
-// for every tabnav set the position of the line
-$('.tabs-nav').each(function() {
+
+setTimeout(function(){
+  // for every tabnav set the position of the line
+  $('.tabs-nav').each(function() {
     var activeLink = $(this).find('.tabs-nav__link--active');
     if (activeLink.length > 0) {
       var barWidth = activeLink.width();
@@ -322,7 +324,8 @@ $('.tabs-nav').each(function() {
         'width': barWidth + 'px'
       });
     }
-});
+  });
+}, 400);
 
 // new position for bar if clicking on link
 $('.tabs-nav__link').on('click', function(e) {
