@@ -10,7 +10,7 @@ $(".itemBoxBody--sortable").sortable({
 
 // COMPLEX multiSelector
 // set actions for + and X
-$('.multiSelector .itemBoxTable__action').on('click', function(){
+$('.multiSelector .JS_multiSelector__box .itemBoxTable__action').on('click', function(){
   const action = $(this);
   handleActionOnclick(action);
 });
@@ -411,7 +411,7 @@ function reset(){
   checkGroupActions();
 
   // reinitiate onclick and reorder actions in selection blocks
-  $('.multiSelector .itemBoxTable__action').on('click', function(){
+  $('.multiSelector .JS_multiSelector__box .itemBoxTable__action').on('click', function(){
     const action = $(this);
     handleActionOnclick(action);
   });

@@ -82,10 +82,10 @@ $('.JS_selectorItem').on('click', function() {
       //  new multiselect
       else {
         if(selectorValue.hasClass('JS_pmx-selector__item--exclude') && selectorValue.hasClass('pmx-selector__item--selected')) {
-          selectorValue.closest('.multiSelector__box').addClass('JS_exclude');
+          selectorValue.closest('.JS_multiSelector__box').addClass('JS_exclude');
         }
         else {
-          selectorValue.closest('.multiSelector__box').removeClass('JS_exclude');
+          selectorValue.closest('.JS_multiSelector__box').removeClass('JS_exclude');
         }
       }
     }
