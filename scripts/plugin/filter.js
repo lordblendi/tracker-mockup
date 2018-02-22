@@ -125,4 +125,16 @@ function reInitActions(multiSelector) {
     const row = $(this);
     selectNewSingleItem(row);
   })
+
+  // include-exclude selectors
+
+  $(multiSelector).find('.JS_selectorItem').on('click', function() {
+    const selectorValue = $(this);
+    const selector = selectorValue.closest('.JS_selector');
+
+    // only if this is not a multiselect popup toggle
+    if(!selector.hasClass('MULTISELECT__POPUP')) {
+      handleSelector(selector, selectorValue);
+    }
+  });
 }
