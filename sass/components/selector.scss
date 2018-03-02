@@ -2,10 +2,24 @@
 ---
 
 .field-container {
+  position: relative;
   margin: 20px 0;
 }
 .field {
   position: relative;
+  overflow: hidden;
+  padding: 5px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 60%, white 100%);
+    pointer-events: none;
+  }
 
   &--focus {
     .field__label {
@@ -101,6 +115,7 @@
     &--selected {
       background-color: #FFF;
       box-shadow: 0 3px 10px rgba(0,0,0,.2);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.23);
       opacity: 1;
       filter: saturate(1) brightness(1);
 
@@ -152,6 +167,7 @@
       }
 
       &--field {
+        max-width: 300px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -161,8 +177,10 @@
 
   &--expanded {
     &.pmx-selector--toggleSelect {
+      /*
       height: auto;
       white-space: normal;
+      */
     }
   }
 
