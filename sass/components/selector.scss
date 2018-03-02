@@ -76,8 +76,8 @@
   position: relative;
   display: inline-block;
   height: 30px;
-  padding: 2px;
   background-color: #D7D7D7;
+  border: 2px solid red;
   color: #000;
   border-radius: 15px;
   font-size: 0;
@@ -94,7 +94,7 @@
     min-width: 26px;
     max-width: 100%;
     padding: 2px 3px;
-    border-radius: 30px;
+    border-radius: 15px;
     overflow: hidden;
     font-size: 16px;
     cursor: pointer;
@@ -107,9 +107,34 @@
 
     vertical-align: top;
 
+    &:first-child {
+      .pmx-selector__block  {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+    }
+
+    &:last-child {
+      .pmx-selector__block  {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+    }
+
     &:hover {
       opacity: .7;
       filter: saturate(1) brightness(1);
+    }
+
+    &Seperator {
+      position: relative;
+      display: inline-block;
+      border-right: 1px dashed #000000;
+      z-index: 0;
+      height: 30px;
+      /* background-image: linear-gradient(0deg, #7e7e7e, #7e7e7e 50%, transparent 50%, transparent 100%); */
+      /* background-size: 1px 12px; */
+      top: -2px;
     }
 
     &--selected {
@@ -138,18 +163,27 @@
     display: flex;
     align-items: center;
 
+    background-color: #ff66005e;
+
     &Part {
       position: relative;
       display: inline-block;
       padding: 0 3px;
 
+      background-color: #0080004d;
+
       &--prefix {
         border-radius: 15px;
         padding: 0 5px;
-        line-height: 20px;
         min-height: 20px;
         min-width: 20px;
         text-align: center;
+
+        + .pmx-selector__blockSeperator {
+          margin: 0 2px;
+          height: 16px;
+          border-right: 1px dotted transparent;
+        }
       }
 
       &--label  {
@@ -160,7 +194,7 @@
         letter-spacing: .7px;
 
         + .pmx-selector__blockSeperator {
-          margin: 0 3px;
+          margin: 0 2px;
           height: 16px;
           border-right: 1px dotted #D5D5D5;
         }
@@ -220,21 +254,13 @@
         border-bottom-right-radius: 30px;
         margin: 0;
       }
-
-      &:not(:last-child)::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 26px;
-        border-right: 1px dashed #A1A1A1;
-      }
     }
   }
 
   &--collapsed {
     background: none;
     background-color: transparent;
+    border: 2px solid transparent;
   }
 
   &--expanded {
