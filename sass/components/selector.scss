@@ -1,51 +1,25 @@
 ---
 ---
 
-.field-container {
+.pmx-field {
   position: relative;
   margin: 20px 0;
-}
-.field {
-  position: relative;
-  overflow: hidden;
-  padding: 5px;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30px;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 60%, white 100%);
-    pointer-events: none;
-  }
+  &__inner {
+    position: relative;
+    overflow: hidden;
+    padding: 5px;
+    line-height: initial;
 
-  &--focus {
-    .field__label {
+    &::after {
+      content: '';
       position: absolute;
-      top: 3px;
-    }
-  }
-
-  &--placeholder {
-    .field__label {
-      font-size: 16px;
-      font-weight: normal;
-      font-style: italic;
-      text-transform: none;
-      letter-spacing: normal;
-      color: rgba(0, 0, 0, 0.4);
-      line-height: 50px;
-    }
-    .field__value {
-      display: none;
-    }
-  }
-
-  &--value {
-    .field__label {
-      display: none;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 60%, white 100%);
+      pointer-events: none;
     }
   }
 
@@ -71,13 +45,14 @@
   }
 }
 
-
 .pmx-selector {
   position: relative;
   display: inline-block;
   height: 30px;
   background-color: #D7D7D7;
-  border: 2px solid red;
+
+  border: 2px solid #D7D7D7;
+
   color: #000;
   border-radius: 15px;
   font-size: 0;
@@ -100,8 +75,8 @@
     cursor: pointer;
     transition: all .3s ease-in-out;
     opacity: .5;
-    -webkit-filter: saturate(0) brightness(0);
-    filter: saturate(0) brightness(0);
+    -webkit-filter: saturate(0) brightness(0.8) contrast(1.3);
+    filter: saturate(0) brightness(0.8) contrast(1.3);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
@@ -129,7 +104,7 @@
     &Seperator {
       position: relative;
       display: inline-block;
-      border-right: 1px dashed #000000;
+      border-right: 1px dashed #979797;
       z-index: 0;
       height: 30px;
       /* background-image: linear-gradient(0deg, #7e7e7e, #7e7e7e 50%, transparent 50%, transparent 100%); */
@@ -142,7 +117,8 @@
       box-shadow: 0 3px 10px rgba(0,0,0,.2);
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.23);
       opacity: 1;
-      filter: saturate(1) brightness(1);
+      -webkit-filter: saturate(1) brightness(1) contrast(1);
+      filter: saturate(1) brightness(1) contrast(1);
 
       &:hover {
         background-color: #FFF;
@@ -163,21 +139,27 @@
     display: flex;
     align-items: center;
 
+    /*
     background-color: #ff66005e;
+    */
 
     &Part {
       position: relative;
       display: inline-block;
       padding: 0 3px;
 
+      /*
       background-color: #0080004d;
+      */
 
       &--prefix {
         border-radius: 15px;
-        padding: 0 5px;
+        padding: 1px 5px;
         min-height: 20px;
         min-width: 20px;
         text-align: center;
+
+        font-family: 'tenforce', sans-serif;
 
         + .pmx-selector__blockSeperator {
           margin: 0 2px;

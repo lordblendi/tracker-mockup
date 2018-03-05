@@ -54,6 +54,56 @@
     position: relative;
     overflow: hidden;
 
+    &__field {
+      &Label {
+        line-height: initial;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #B1B1B1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &Value {
+        position: relative;
+
+        input {
+          width: 100%;
+        }
+      }
+
+      &--focus {
+        .itemBoxTable__fieldLabel {
+          position: absolute;
+          top: 3px;
+        }
+      }
+
+      &--placeholder {
+        .itemBoxTable__fieldLabel {
+          font-size: 16px;
+          font-weight: normal;
+          font-style: italic;
+          text-transform: none;
+          letter-spacing: normal;
+          color: rgba(0, 0, 0, 0.4);
+          line-height: 50px;
+        }
+        .itemBoxTable__fieldValue {
+          display: none;
+        }
+      }
+
+      &--value {
+        .itemBoxTable__fieldLabel {
+          display: none;
+        }
+      }
+    }
+
     &__head {
       position: relative;
       background: #DEDEDE;
@@ -276,17 +326,14 @@
             text-decoration-color: red;
           }
 
-          .pmx-selector {
-            top: 5px;
-
-            top: 50%;
-            transform: translateY(-50%);
-          }
-
           input[type="text"],
           input[type="search"] {
             width: 100%;
             height: 100%;
+          }
+
+          .pmx-field__inner {
+            padding: 5px 0;
           }
         }
       }
@@ -330,6 +377,8 @@
       color: #C79D54;
       font-size: 18px;
       transition: all .3s ease-in-out;
+
+      font-family: 'tenforce', sans-serif;
 
       &--disabled {
         opacity: .3;
