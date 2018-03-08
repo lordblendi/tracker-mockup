@@ -16,11 +16,6 @@
     width: 50%;
 
     .app-header-inner__item {
-      position: relative;
-      display: inline-block;
-      padding: 5px;
-      min-width: 40px;
-      font-size: 24px;
       max-width: -webkit-calc(100% - 40px);
       max-width: -moz-calc(100% - 40px);
       max-width: calc(100% - 40px);
@@ -42,6 +37,7 @@
     display: inline-block;
     padding: 5px;
     min-width: 40px;
+    font-family: 'tenforce', sans-serif;
     font-size: 24px;
   }
 
