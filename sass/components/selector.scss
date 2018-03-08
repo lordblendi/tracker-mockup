@@ -5,6 +5,33 @@
   position: relative;
   margin: 20px 0;
 
+  &:hover {
+    .pmx-field-handlers {
+      &__tooltip {
+        z-index: 1;
+        pointer-events: auto;
+        opacity: 1;
+      }
+    }
+  }
+
+  &-handlers {
+    &__tooltip {
+      position: absolute;
+      padding: 0 10px;
+      bottom: 54px;
+      font-size: 12px;
+      box-shadow: 0 0 200px 60px rgba(0, 0, 0, 0.2);
+      background-color: #FFF;
+
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0;
+
+      transition: all .3s ease-in-out;
+    }
+  }
+
   &__inner {
     position: relative;
     overflow: hidden;
