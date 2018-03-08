@@ -332,8 +332,12 @@
             height: 100%;
           }
 
-          .pmx-field__inner {
-            padding: 5px 0;
+          .pmx-field {
+            margin: 0;
+            
+            &__inner {
+              padding: 5px 0;
+            }
           }
         }
       }

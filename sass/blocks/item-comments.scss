@@ -32,10 +32,15 @@
   .tabs  {
     &-nav {
       &__link {
+        font-family: 'tenforce', sans-serif;
         font-size: 24px;
         font-style: normal;
         font-weight: normal;
         width: 100%;
+
+        &--active {
+          color: #ccaf75;
+        }
       }
 
       li {
@@ -73,9 +78,9 @@
       width: 40px;
       height: 100%;
       padding: 13px 0;
-      color: #bf920b;
       cursor: pointer;
       text-align: center;
+      font-family: 'tenforce', sans-serif;
       font-size: 16px;
       float: left;
     }
