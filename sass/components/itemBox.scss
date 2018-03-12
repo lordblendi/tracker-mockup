@@ -332,9 +332,13 @@
             height: 100%;
           }
 
+          i {
+            font-family: 'tenforce', sans-serif;
+          }
+
           .pmx-field {
             margin: 0;
-            
+
             &__inner {
               padding: 5px 0;
             }
