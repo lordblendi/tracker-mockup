@@ -126,6 +126,12 @@
       .pmx-selector__block  {
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
+
+        &Part:last-child {
+          &.pmx-selector__blockPart--prefix {
+            border-radius: 0 15px 15px 0;
+          }
+        }
       }
     }
 

@@ -154,9 +154,31 @@
 
         &:nth-of-type(odd) {
           background: #FFF;
+
+          .pmx-field__inner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #FFF 60%, #FFF 100%);
+            pointer-events: none;
+          }
         }
         &:nth-of-type(even) {
           background-color: #F2F2F2;
+
+          .pmx-field__inner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #f2f2f2 60%, #f2f2f2 100%);
+            pointer-events: none;
+          }
         }
 
         &:hover {
