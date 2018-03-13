@@ -64,11 +64,11 @@
     position: relative;
     font-size: 16px;
     line-height: 40px;
-    margin: -5px;
+    margin: -5px -1px;
     white-space: nowrap;
 
     .pmx-selector {
-      margin: 5px;
+      margin: 5px 1px;
     }
 
     input {
@@ -134,11 +134,10 @@
     }
 
     &Seperator {
-      position: relative;
       display: inline-block;
       height: 26px;
-      vertical-align: top;
-      padding: 0 1px;
+      min-width: 2px;
+      background-color: #D7D7D7;
 
       &Label {
         text-transform: uppercase;
