@@ -162,7 +162,7 @@
             right: 0;
             width: 30px;
             height: 100%;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #FFF 60%, #FFF 100%);
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 60%, rgb(255, 255, 255) 100%);
             pointer-events: none;
           }
         }
@@ -176,7 +176,7 @@
             right: 0;
             width: 30px;
             height: 100%;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #f2f2f2 60%, #f2f2f2 100%);
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(238, 239, 240, .6) 60%, rgb(240, 240, 241) 100%);
             pointer-events: none;
           }
         }
