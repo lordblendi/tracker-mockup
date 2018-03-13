@@ -17,7 +17,7 @@ function selectNewColor(colorItemBodyRow) {
   const color = colorItemBodyRow.find('.JS_itemBoxTable__bodyCellInner--color i').attr('data-color');
   // find the text of the item
   const itemBox = colorItemBodyRow.closest('.JS_itemBox--colors');
-  const bodyRow = $(itemBox).prev();
+  const bodyRow = $(itemBox).prevAll('ul.itemBoxTable__bodyRow.JS_filterableCell:first');
   const tagText = bodyRow.find('.JS_itemBoxTable__bodyCellInner--text').html().trim();
 
   // find all tags with the same text
@@ -68,7 +68,7 @@ $('.JS_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
 function toggleColorSelector(colorToggle) {
   // if there is a color box, expand/collapse it
   const itemBoxTable__bodyRow = colorToggle.closest('.itemBoxTable__bodyRow');
-  const possibleChildren = itemBoxTable__bodyRow.next('.JS_itemBox--colors');
+  const possibleChildren = itemBoxTable__bodyRow.nextAll('.JS_itemBox--colors:first');
 
   const actualColor = colorToggle.find('i').attr('data-color');
 
