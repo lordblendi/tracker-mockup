@@ -109,6 +109,8 @@
     backface-visibility: hidden;
     vertical-align: top;
 
+    background-color: hsla(0, 0%, 100%, 0.75);
+
     &:first-child {
       .pmx-selector__block  {
         border-top-left-radius: 15px;
