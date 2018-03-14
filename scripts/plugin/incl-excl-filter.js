@@ -1,3 +1,6 @@
+---
+---
+
 // INCL-EXCL OPTIONS EXPAND-COLLAPSE
 $('.JS_itemBoxTable__bodyCellInner--inclexcltoggle').on('click', function() {
   const toggle = $(this);
@@ -10,18 +13,22 @@ function toggleInclExclSelector(toggle) {
   const itemBoxTable__bodyRow = toggle.closest('.itemBoxTable__bodyRow');
   const possibleChildren = itemBoxTable__bodyRow.nextAll('.JS_itemBox--filterInclExcl:first');
 
-  // const actualColor = toggle.find('i').attr('data-color');
+  const actualFilter = toggle.find('i').attr('data-filter');
+  // debugger;
 
 
   // remove other selection shower
-  // $(possibleChildren).find('.JS_showSelected').remove();
-  //
+  $(possibleChildren).find('.JS_showSelected').remove();
+
   // // add selection to new color (can be changed by other tags)
   // // only if opening
-  // const selectedColor = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--color i[data-color='${actualColor}']`);
-  // const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
-  // selectedColorBodyRow.append(`{% include javascript/colorSelected.html %}`);
-  //
+
+  const selectedFilter = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--inclExcl[data-filter='${actualFilter}']`);
+  const selectedFilterBodyRow = $(selectedFilter).closest('.itemBoxTable__bodyRow');
+  selectedFilterBodyRow.append(`{% include javascript/itemSelected.html %}`);
+
+
+
   const bodyCell = toggle.closest('.itemBoxTable__bodyCell');
   if (bodyCell.hasClass('itemBoxTable__bodyCell--active')) {
     bodyCell.removeClass('itemBoxTable__bodyCell--active');

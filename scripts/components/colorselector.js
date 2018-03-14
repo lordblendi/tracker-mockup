@@ -41,7 +41,7 @@ function selectNewColor(colorItemBodyRow) {
     $(possibleChildren).find('.JS_showSelected').remove();
     const selectedColor = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--color i[data-color='${color}']`);
     const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
-    selectedColorBodyRow.append(`{% include javascript/colorSelected.html %}`);
+    selectedColorBodyRow.append(`{% include javascript/itemSelected.html %}`);
 
 
   });
@@ -81,7 +81,7 @@ function toggleColorSelector(colorToggle) {
   // only if opening
   const selectedColor = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--color i[data-color='${actualColor}']`);
   const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
-  selectedColorBodyRow.append(`{% include javascript/colorSelected.html %}`);
+  selectedColorBodyRow.append(`{% include javascript/itemSelected.html %}`);
 
   const bodyCell = colorToggle.closest('.itemBoxTable__bodyCell');
   if (bodyCell.hasClass('itemBoxTable__bodyCell--active')) {
