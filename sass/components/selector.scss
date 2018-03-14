@@ -79,16 +79,40 @@
   position: relative;
   display: inline-block;
   height: 30px;
-  background-color: #D7D7D7;
-  border: 2px solid #D7D7D7;
-  color: #000;
   border-radius: 15px;
   font-size: 0;
   max-width: 100%;
   line-height: initial;
   white-space: nowrap;
-
   vertical-align: top;
+
+  background-color: transparent;
+  border: 2px solid transparent;
+
+  &--expanded {
+    background-color: #D7D7D7;
+    border: 2px solid #D7D7D7;
+
+    .pmx-selector__item {
+      &Seperator {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &--readonly {
+    overflow: hidden;
+
+    .pmx-selector__item {
+      filter: saturate(1) opacity(1);
+    }
+  }
+
+  &--multiSelect {
+    .pmx-selector__item {
+      overflow: visible;
+    }
+  }
 
   &__item {
     position: relative;
@@ -102,13 +126,10 @@
     font-size: 16px;
     cursor: pointer;
     transition: all .3s ease-in-out;
-    -webkit-filter: saturate(0.5) opacity(0.5);
-    filter: saturate(0.5) opacity(0.5);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
     vertical-align: top;
 
-    background-color: hsla(0, 0%, 100%, 0.75);
+    background-color: #FFF;
+    filter: saturate(.7) opacity(.7);
 
     &:first-child {
       .pmx-selector__block  {
@@ -138,57 +159,43 @@
       }
     }
 
-    &:hover {
-      -webkit-filter: saturate(0.8) opacity(0.8);
-      filter: saturate(0.8) opacity(0.8);
-    }
-
     &Seperator {
       position: relative;
       z-index: 0;
       display: inline-block;
       height: 26px;
       min-width: 8px;
-      background-color: #D7D7D7;
       border-radius: 3px;
       margin: 0 -3px;
 
-      &Label {
-        padding: 0 10px;
-        line-height: 28px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      line-height: 28px;
+      text-transform: uppercase;
+      color: #808080;
 
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: #808080;
+      background-color: #D7D7D7;
+
+      &--hasLabel {
+        margin: 0;
+        padding: 0 8px;
       }
     }
 
     &--selected {
-      background-color: #FFF;
-      box-shadow: 0 3px 10px rgba(0,0,0,.2);
-      -webkit-filter: saturate(1) opacity(1);
+      box-shadow: 0 2px 8px -2px rgba(0,0,0,0.7);
       filter: saturate(1) opacity(1);
-
-      &:hover {
-        -webkit-filter: saturate(1) opacity(1);
-        filter: saturate(1) opacity(1);
-      }
-
-      .pmx-selector__blockPart--field {
-        color: #000;
-      }
     }
   }
 
   &__block {
     position: relative;
-    height: 26px;
     display: flex;
-    font-family: 'tenforce', sans-serif;
-    align-items: center;
+    height: 26px;
+    line-height: 26px;
     border-radius: 3px;
+    font-family: 'tenforce', sans-serif;
 
     &Part {
       position: relative;
@@ -198,15 +205,11 @@
       height: 26px;
       padding: 0 10px;
       border-radius: 3px;
-      line-height: 27px;
-      background-color: #FFF;
-
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
 
-      &--prefix {
-      }
+      background-color: #FFF;
 
       &--label  {
         text-transform: uppercase;
@@ -218,75 +221,10 @@
         + .pmx-selector__blockSeperator {
           position: relative;
           z-index: 2;
-          margin: -3px;
-          height: 16px;
-          border-right: 1px dotted #b9b9b9;
+          margin: 7px -3px;
+          height: 12px;
+          border-right: 1px dotted #D7D7D7;
         }
-      }
-
-      &--field {
-      }
-    }
-  }
-
-  &--expanded {
-  }
-
-  &--collapsed {
-    background: none;
-    background-color: transparent;
-    border: 2px solid transparent;
-  }
-
-  &--readonly {
-    overflow: hidden;
-
-    .pmx-selector__item {
-      background-color: #FFF;
-      box-shadow: none;
-      cursor: text;
-      -webkit-filter: saturate(1) opacity(1);
-      filter: saturate(1) opacity(1);
-
-      &:hover {
-        background-color: #FFF;
-        color: #000;
-      }
-
-      .pmx-selector__blockPart--field {
-        color: #000;
-      }
-    }
-  }
-
-  &--toggleSelect {
-    .pmx-selector__blockPart {
-      background-color: rgba(255,255,255,0);
-    }
-  }
-
-  &--multiSelect {
-    .pmx-selector__item {
-      overflow: visible;
-
-      &:first-child {
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-
-        .pmx-selector__blockPart--prefix {
-          &:first-child {
-            border-radius: 15px 3px 3px 15px;
-          }
-        }
-      }
-
-      &:last-child {
-        border-top-right-radius: 30px;
-        border-bottom-right-radius: 30px;
-      }
-
-      .pmx-selector__blockPart--prefix {
-        border-radius: 3px;
       }
     }
   }
