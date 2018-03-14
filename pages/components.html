@@ -4,13 +4,106 @@ title: Components
 permalink: /components
 ---
 
+<div style="min-height: 100vh;">
+
+  <div class="pmx-field">
+    <div class="pmx-field__inner">
+      <div class="pmx-field__label">Danger level</div>
+      <div class="pmx-field__value">
+        <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleselect JS_selector">
+          <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+            <div class="pmx-selector__block ">
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #0BDA51; color: #FFF;">Low</span>
+            </div>
+          </div>
+          <div class="pmx-selector__itemSeperator"></div>
+          <div class="pmx-selector__item JS_selectorItem">
+            <div class="pmx-selector__block ">
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #F4CA16; color: #FFF;">Moderate</span>
+            </div>
+          </div>
+          <div class="pmx-selector__itemSeperator"></div>
+          <div class="pmx-selector__item JS_selectorItem">
+            <div class="pmx-selector__block ">
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #FF0000; color: #FFF;">Hight</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pmx-field">
+    <div class="pmx-field__inner">
+      <div class="pmx-field__label">Product contact</div>
+      <div class="pmx-field__value">
+        <div class="pmx-selector pmx-selector--expanded pmx-selector--multiselect JS_selector">
+          <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+            <div class="pmx-selector__block ">
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #0BDA51; color: #FFF;">च</span>
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Heet</span>
+            </div>
+          </div>
+          <div class="pmx-selector__itemSeperator"></div>
+          <div class="pmx-selector__item JS_selectorItem">
+            <div class="pmx-selector__block ">
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #F4CA16; color: #FFF;">च</span>
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Brandbaar</span>
+            </div>
+          </div>
+          <div class="pmx-selector__itemSeperator"></div>
+          <div class="pmx-selector__item JS_selectorItem">
+            <div class="pmx-selector__block ">
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #FF0000; color: #FFF;">च</span>
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Huidopname</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pmx-field">
+    <div class="pmx-field__inner">
+      <div class="pmx-field__label">Status</div>
+      <div class="pmx-field__value">
+        <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleselect JS_selector">
+          <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+            <div class="pmx-selector__block ">
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #0BDA51; color: #FFF;"></span>
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Not started</span>
+            </div>
+          </div>
+          <div class="pmx-selector__itemSeperator"></div>
+          <div class="pmx-selector__item JS_selectorItem">
+            <div class="pmx-selector__block ">
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #F4CA16; color: #FFF;"></span>
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Ongoing</span>
+            </div>
+          </div>
+          <div class="pmx-selector__itemSeperator"></div>
+          <div class="pmx-selector__item JS_selectorItem">
+            <div class="pmx-selector__block ">
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #FF0000; color: #FFF;"></span>
+              <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Finished</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<h2>With popup</h2>
+
 <div class="pmx-field">
   <div class="pmx-field__inner">
-    <div class="pmx-field__label">Due date | Single Select - collapsed</div>
+    <div class="pmx-field__label">Danger level</div>
     <div class="pmx-field__value">
 
       <div class="pmx-selector JS_selector">
-        <div class="pmx-selector__item JS_selectorItem pmx-selector__item--selected">
+        <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
           <div class="pmx-selector__block ">
             <span class="pmx-selector__blockPart pmx-selector__blockPart--field">11/17/2017</span>
           </div>
@@ -23,11 +116,11 @@ permalink: /components
 
 <div class="pmx-field">
   <div class="pmx-field__inner">
-    <div class="pmx-field__label">Status | Single Select - collapsed</div>
+    <div class="pmx-field__label">Status</div>
     <div class="pmx-field__value">
 
       <div class="pmx-selector MULTISELECT__POPUP JS_selector" data-popid="#multiSelector-1">
-        <div class="pmx-selector__item JS_selectorItem pmx-selector__item--selected">
+        <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
           <div class="pmx-selector__block ">
             <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #0BDA51; color: #FFF;">܌</span>
             <span class="pmx-selector__blockPart pmx-selector__blockPart--field JS_pmx-selector__blockPart--label">Not started</span>
@@ -69,62 +162,13 @@ permalink: /components
   </div>
 </div>
 
-
-
-<h2>NO popup</h2>
-
-<div class="pmx-field">
-  <div class="pmx-field__inner">
-    <div class="pmx-field__label">Tags | Filter</div>
-    <div class="pmx-field__value">
-
-      <div class="pmx-selector pmx-selector--expanded pmx-selector--readonly JS_selector">
-        <div class="pmx-selector__itemSeperator pmx-selector__itemSeperator--hasLabel">Include</div>
-        <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
-          <div class="pmx-selector__block ">
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #00BFFF; color: #FFF;">ग़</span>
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Design</span>
-          </div>
-        </div>
-        <div class="pmx-selector__itemSeperator pmx-selector__itemSeperator--hasLabel">And</div>
-        <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
-          <div class="pmx-selector__block ">
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #0BDA51; color: #FFF;">ग़</span>
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Marketing</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="pmx-selector pmx-selector--readonly JS_selector">
-        <div class="pmx-selector__itemSeperator pmx-selector__itemSeperator--hasLabel">Or</div>
-      </div>
-
-      <div class="pmx-selector pmx-selector--expanded pmx-selector--readonly JS_selector">
-        <div class="pmx-selector__itemSeperator pmx-selector__itemSeperator--hasLabel">Exclude</div>
-        <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
-          <div class="pmx-selector__block ">
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #0BDA51; color: #FFF;">ग़</span>
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">front-end</span>
-          </div>
-        </div>
-        <div class="pmx-selector__itemSeperator pmx-selector__itemSeperator--hasLabel">Or</div>
-        <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
-          <div class="pmx-selector__block ">
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #F4CA16; color: #FFF;">ग़</span>
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">back-end</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
+<h2>Without popup</h2>
 
 <div class="pmx-field">
   <div class="pmx-field__inner">
     <div class="pmx-field__label">Tags</div>
     <div class="pmx-field__value">
-      <div class="pmx-selector pmx-selector--expanded pmx-selector--multiSelect JS_selector">
+      <div class="pmx-selector pmx-selector--expanded pmx-selector--multiselect JS_selector">
         <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
           <div class="pmx-selector__block ">
             <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #0BDA51; color: #FFF;">ग़</span>
@@ -151,35 +195,13 @@ permalink: /components
   </div>
 </div>
 
-<div class="pmx-field">
-  <div class="pmx-field__inner">
-    <div class="pmx-field__label">Billable | Single Select - expanded</div>
-    <div class="pmx-field__value">
-
-      <div class="pmx-selector pmx-selector--expanded JS_selector">
-        <div class="pmx-selector__item JS_selectorItem">
-          <div class="pmx-selector__block ">
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix">܌</span>
-          </div>
-        </div>
-        <div class="pmx-selector__itemSeperator"></div>
-        <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
-          <div class="pmx-selector__block">
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="color: #E52C2C;">ܐ</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 <div class="pmx-field">
   <div class="pmx-field__inner">
-    <div class="pmx-field__label">Status | Single Select - expanded</div>
+    <div class="pmx-field__label">Status</div>
     <div class="pmx-field__value">
 
-      <div class="pmx-selector pmx-selector--expanded JS_selector">
+      <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleselect JS_selector">
         <div class="pmx-selector__item JS_selectorItem">
           <div class="pmx-selector__block ">
             <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #F4CA16; color: #FFF;">च</span>
@@ -208,10 +230,10 @@ permalink: /components
 
 <div class="pmx-field">
   <div class="pmx-field__inner">
-    <div class="pmx-field__label">Status | Single Select - expanded</div>
+    <div class="pmx-field__label">Status</div>
     <div class="pmx-field__value">
 
-      <div class="pmx-selector pmx-selector--expanded JS_selector">
+      <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleselect JS_selector">
         <div class="pmx-selector__item JS_selectorItem">
           <div class="pmx-selector__block ">
             <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Not started</span>
@@ -273,51 +295,9 @@ permalink: /components
 
 <div class="pmx-field">
   <div class="pmx-field__inner">
-    <div class="pmx-field__label">Unselectable Single Select - expanded</div>
+    <div class="pmx-field__label">Mobile view selector</div>
     <div class="pmx-field__value">
-      <div class="pmx-selector pmx-selector--expanded JS_selector JS_pmx-selector--changeIcons">
-        <div class="pmx-selector__item JS_selectorItem">
-          <div class="pmx-selector__block">
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">ޅ</span>
-          </div>
-        </div>
-        <div class="pmx-selector__itemSeperator"></div>
-        <div class="pmx-selector__item JS_selectorItem pmx-selector__item--selected">
-          <div class="pmx-selector__block">
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">ބ</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="pmx-field">
-  <div class="pmx-field__inner">
-    <div class="pmx-field__label">Tablet view selector | Unselectable Single Select - expanded</div>
-    <div class="pmx-field__value">
-      <div class="pmx-selector JS_selector pmx-selector--expanded">
-        <div class="pmx-selector__item JS_selectorItem">
-          <div class="pmx-selector__block">
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">ध</span>
-          </div>
-        </div>
-        <div class="pmx-selector__itemSeperator"></div>
-        <div class="pmx-selector__item JS_selectorItem pmx-selector__item--selected">
-          <div class="pmx-selector__block">
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">द</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="pmx-field">
-  <div class="pmx-field__inner">
-    <div class="pmx-field__label">Mobile view selector | Single Select - Expanded</div>
-    <div class="pmx-field__value">
-      <div class="pmx-selector pmx-selector--expanded JS_selector">
+      <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleselect JS_selector">
         <div class="pmx-selector__item JS_selectorItem">
           <div class="pmx-selector__block">
             <span class="pmx-selector__blockPart pmx-selector__blockPart--field">ध</span>
@@ -342,52 +322,88 @@ permalink: /components
 
 <div class="pmx-field">
   <div class="pmx-field__inner">
-    <div class="pmx-field__label">Prefix | Type | Field</div>
+    <div class="pmx-field__label">Billable</div>
+    <div class="pmx-field__value">
+
+      <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleselect JS_selector">
+        <div class="pmx-selector__item JS_selectorItem">
+          <div class="pmx-selector__block ">
+            <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix">܌</span>
+          </div>
+        </div>
+        <div class="pmx-selector__itemSeperator"></div>
+        <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+          <div class="pmx-selector__block">
+            <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="color: #E52C2C;">ܐ</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<h2>Fitler</h2>
+
+<div class="pmx-field">
+  <div class="pmx-field__inner">
+    <div class="pmx-field__value">
+
+      <div class="pmx-selector pmx-selector--expanded pmx-selector--readonly JS_selector">
+        <div class="pmx-selector__itemSeperator pmx-selector__itemSeperator--hasLabel">Include</div>
+        <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+          <div class="pmx-selector__block ">
+            <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #00BFFF; color: #FFF;">ग़</span>
+            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Design</span>
+          </div>
+        </div>
+        <div class="pmx-selector__itemSeperator pmx-selector__itemSeperator--hasLabel">And</div>
+        <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+          <div class="pmx-selector__block ">
+            <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #0BDA51; color: #FFF;">ग़</span>
+            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Marketing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pmx-selector pmx-selector--readonly JS_selector">
+        <div class="pmx-selector__itemSeperator pmx-selector__itemSeperator--hasLabel">Or</div>
+      </div>
+
+      <div class="pmx-selector pmx-selector--expanded pmx-selector--readonly JS_selector">
+        <div class="pmx-selector__itemSeperator pmx-selector__itemSeperator--hasLabel">Exclude</div>
+        <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+          <div class="pmx-selector__block ">
+            <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #0BDA51; color: #FFF;">ग़</span>
+            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">front-end</span>
+          </div>
+        </div>
+        <div class="pmx-selector__itemSeperator pmx-selector__itemSeperator--hasLabel">Or</div>
+        <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+          <div class="pmx-selector__block ">
+            <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #F4CA16; color: #FFF;">ग़</span>
+            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">back-end</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<h2>Read-only with ellipsis</h2>
+
+<div class="pmx-field">
+  <div class="pmx-field__inner">
     <div class="pmx-field__value">
 
       <div class="pmx-selector pmx-selector--expanded pmx-selector--readonly">
         <div class="pmx-selector__item">
           <div class="pmx-selector__block">
             <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix" style="background-color: #0BDA51; color: #FFF;">ބ</span>
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--label">Contain</span>
+            <span class="pmx-selector__blockPart pmx-selector__blockPart--label">Label</span>
             <span class="pmx-selector__blockSeperator"></span>
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Field</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="pmx-field">
-  <div class="pmx-field__inner">
-    <div class="pmx-field__value">
-
-      <div class="pmx-selector pmx-selector--expanded pmx-selector--readonly">
-        <div class="pmx-selector__item">
-          <div class="pmx-selector__block">
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--label">Assigned to</span>
-            <span class="pmx-selector__blockSeperator"></span>
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Nick De Jaeger</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="pmx-field">
-  <div class="pmx-field__inner">
-    <div class="pmx-field__value">
-
-      <div class="pmx-selector pmx-selector--expanded pmx-selector--readonly">
-        <div class="pmx-selector__item">
-          <div class="pmx-selector__block">
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--label">Title</span>
-            <span class="pmx-selector__blockSeperator"></span>
-            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</span>
+            <span class="pmx-selector__blockPart pmx-selector__blockPart--field">Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</span>
           </div>
         </div>
       </div>
