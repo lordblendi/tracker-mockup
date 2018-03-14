@@ -12,11 +12,21 @@ $(".itemBoxBody--sortable").sortable({
 // set actions for + and X
 $('.multiSelector .JS_multiSelector__box .itemBoxTable__action').on('click', function(){
   const action = $(this);
-  handleActionOnclick(action);
+  const multiSelector = action.closest('.multiSelector');
+  var selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
+  if(multiSelector.hasClass('JS_multiSelector--withFilter')){
+    const JS_filterableCell = action.closest('.JS_filterableCell');
+    const filter = $(JS_filterableCell).find('.JS_inclExl');
+    if(filter.length > 0) {
+      selectedBlockClass += filter.attr('data-filter');
+    }
+  }
+
+  handleActionOnclick(action, selectedBlockClass);
 });
 
 // handles onclick`
-function handleActionOnclick(action) {
+function handleActionOnclick(action, selectedBlockClass) {
   // if this just shows selected, don't do anything (has same design css class)
   if(action.hasClass('JS_showSelected')) {
     return;
@@ -31,19 +41,19 @@ function handleActionOnclick(action) {
   if(action.hasClass('JS_itemBoxTable__action--removeAll')){
     const children = action.closest('.itemBoxTable__bodyRow').next();
     if(children.hasClass('itemBox--children')) {
-      handleComplexGroupRemove(action, children, action.hasClass('JS_itemBoxTable__action--removeAllSelected'));
+      handleComplexGroupRemove(action, children, action.hasClass('JS_itemBoxTable__action--removeAllSelected'), selectedBlockClass);
     }
   }
   // if it's addAll, then we call the groupAdd
   else if(action.hasClass('JS_itemBoxTable__action--addAll')){
     const children = action.closest('.itemBoxTable__bodyRow').next();
     if(children.hasClass('itemBox--children')) {
-      handleComplexGroupAdd(action, children, exclude);
+      handleComplexGroupAdd(action, children, exclude, selectedBlockClass);
     }
   }
   // otherwise we call a function, that handles row action
   else {
-    handleComplexItemAddRemove(action, exclude);
+    handleComplexItemAddRemove(action, exclude, selectedBlockClass);
   }
 
   // whatever happened, reset the filter
@@ -261,7 +271,7 @@ function checkCounter(selectionChildren){
 }
 
 // function to handle add/remove for one item
-function handleComplexItemAddRemove(action, exclude){
+function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
   const add = $(action).hasClass('itemBoxTable__action--add');
   const remove = $(action).hasClass('itemBoxTable__action--remove');
   const toggle = $(action).hasClass('itemBoxTable__action--toggle');
@@ -287,14 +297,14 @@ function handleComplexItemAddRemove(action, exclude){
     multiSelector = action.closest('.multiSelector');
 
     // get selected items
-    var selection = multiSelector.find('.JS_multiSelector__box--selectionChildren');
+    var selection = multiSelector.find(selectedBlockClass);
     // if there is no selection block
     // on remove -> nothing to do, exit function
     // on add -> readd the selected block
     if(selection === null || selection === undefined || selection.length === 0) {
       if(add) {
         addSelectedBlock(multiSelector);
-        selection = multiSelector.find('.JS_multiSelector__box--selectionChildren');
+        selection = multiSelector.find(selectedBlockClass);
       }
       else if(remove) {
         return;
@@ -418,7 +428,17 @@ function reset(){
   // reinitiate onclick and reorder actions in selection blocks
   $('.multiSelector .JS_multiSelector__box .itemBoxTable__action').on('click', function(){
     const action = $(this);
-    handleActionOnclick(action);
+    const multiSelector = action.closest('.multiSelector');
+    var selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
+    if(multiSelector.hasClass('JS_multiSelector--withFilter')){
+      const JS_filterableCell = action.closest('.JS_filterableCell');
+      const filter = $(JS_filterableCell).find('.JS_inclExl');
+      if(filter.length > 0) {
+        selectedBlockClass += filter.attr('data-filter');
+      }
+    }
+
+    handleActionOnclick(action, selectedBlockClass);
   });
   $(".itemBoxBody--sortable").sortable({
     handle: '.itemBoxTable__bodyCell--draggable',
