@@ -105,6 +105,7 @@
 
     .pmx-selector__item,
     .pmx-selector__item:hover {
+      cursor: text;
       filter: saturate(1) opacity(1);
     }
   }
@@ -112,6 +113,17 @@
   &--multiselect {
     .pmx-selector__item {
       overflow: visible;
+      border-radius: 3px;
+
+      &:first-child {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
     }
   }
 
@@ -206,7 +218,6 @@
       position: relative;
       z-index: 1;
       display: inline-block;
-      min-width: 36px;
       max-width: 300px;
       height: 26px;
       padding: 0 10px;
@@ -214,7 +225,6 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-
       background-color: #FFF;
 
       &--prefix {
