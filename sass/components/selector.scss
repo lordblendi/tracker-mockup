@@ -103,7 +103,8 @@
   &--readonly {
     overflow: hidden;
 
-    .pmx-selector__item {
+    .pmx-selector__item,
+    .pmx-selector__item:hover {
       filter: saturate(1) opacity(1);
     }
   }
@@ -131,7 +132,8 @@
     background-color: #FFF;
     filter: saturate(0.4) opacity(0.4);
 
-    &--selected {
+    &--selected,
+    &--selected:hover {
       box-shadow: 0 2px 8px -2px rgba(0,0,0,0.7);
       filter: saturate(1) opacity(1);
     }
