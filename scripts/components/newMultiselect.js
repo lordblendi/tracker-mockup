@@ -2,9 +2,15 @@
 ---
 
 // set sortable in multiselect options
-$(".itemBoxBody--sortable").sortable({
+$(".multiSelector:not(.JS_multiSelector--withFilter) .itemBoxBody--sortable").sortable({
   handle: '.itemBoxTable__bodyCell--draggable',
   placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder'
+});
+
+$(".multiSelector.JS_multiSelector--withFilter .itemBoxBody--sortableInclude, .multiSelector.JS_multiSelector--withFilter .itemBoxBody--sortableExclude").sortable({
+  handle: '.itemBoxTable__bodyCell--draggable',
+  placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder',
+  connectWith: ".itemBoxBody--sortableConnected"
 });
 
 
@@ -450,8 +456,14 @@ function reset(){
 
     handleActionOnclick(action, selectedBlockClass);
   });
-  $(".itemBoxBody--sortable").sortable({
+  $(".multiSelector:not(.JS_multiSelector--withFilter) .itemBoxBody--sortable").sortable({
     handle: '.itemBoxTable__bodyCell--draggable',
     placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder'
+  });
+
+  $(".multiSelector.JS_multiSelector--withFilter .itemBoxBody--sortableInclude, .multiSelector.JS_multiSelector--withFilter .itemBoxBody--sortableExclude").sortable({
+    handle: '.itemBoxTable__bodyCell--draggable',
+    placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder',
+    connectWith: ".itemBoxBody--sortableConnected"
   });
 }
