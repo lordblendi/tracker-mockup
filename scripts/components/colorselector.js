@@ -14,7 +14,7 @@ $('.JS_itemBox--colors .itemBoxTable__bodyRow').on('click', function() {
 // then close the pallette
 function selectNewColor(colorItemBodyRow) {
   // get new color
-  const color = colorItemBodyRow.find('.JS_itemBoxTable__bodyCellInner--color i').attr('data-color');
+  const color = colorItemBodyRow.find('.JS_itemBoxTable__bodyCellInner--color .JS_Color').attr('data-color');
   // find the text of the item
   const itemBox = colorItemBodyRow.closest('.JS_itemBox--colors');
   const bodyRow = $(itemBox).prevAll('ul.itemBoxTable__bodyRow.JS_filterableCell:first');
@@ -34,12 +34,12 @@ function selectNewColor(colorItemBodyRow) {
   // change color for all other tags, that have the same textOfActionItem
   $.each(filteredTags, function(index, tag){
     const tagBodyRow = $(tag).closest('.itemBoxTable__bodyRow');
-    tagBodyRow.find('.JS_colorselector-trigger i').css('color', color).attr('data-color', color);
+    tagBodyRow.find('.JS_colorselector-trigger .JS_Color').css('color', color).attr('data-color', color);
 
     // reset color tick of their color selection (in case it's open)
     const possibleChildren = tagBodyRow.next('.JS_itemBox--colors');
     $(possibleChildren).find('.JS_showSelected').remove();
-    const selectedColor = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--color i[data-color='${color}']`);
+    const selectedColor = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--color .JS_Color[data-color='${color}']`);
     const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
     selectedColorBodyRow.append(`{% include javascript/itemSelected.html %}`);
 
@@ -71,7 +71,7 @@ function toggleColorSelector(colorToggle) {
   const itemBoxTable__bodyRow = colorToggle.closest('.itemBoxTable__bodyRow');
   const possibleChildren = itemBoxTable__bodyRow.nextAll('.JS_itemBox--colors:first');
 
-  const actualColor = colorToggle.find('i').attr('data-color');
+  const actualColor = colorToggle.find('.JS_Color').attr('data-color');
 
 
   // remove other selection shower
@@ -79,7 +79,7 @@ function toggleColorSelector(colorToggle) {
 
   // add selection to new color (can be changed by other tags)
   // only if opening
-  const selectedColor = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--color i[data-color='${actualColor}']`);
+  const selectedColor = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--color .JS_Color[data-color='${actualColor}']`);
   const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
   selectedColorBodyRow.append(`{% include javascript/itemSelected.html %}`);
 
