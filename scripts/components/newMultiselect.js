@@ -41,14 +41,14 @@ function handleActionOnclick(action, selectedBlockClass) {
   if(action.hasClass('JS_itemBoxTable__action--removeAll')){
     const children = action.closest('.itemBoxTable__bodyRow').next();
     if(children.hasClass('itemBox--children')) {
-      handleComplexGroupRemove(action, children, action.hasClass('JS_itemBoxTable__action--removeAllSelected'), selectedBlockClass);
+      handleComplexGroupRemove(action, children, action.hasClass('JS_itemBoxTable__action--removeAllSelected'));
     }
   }
   // if it's addAll, then we call the groupAdd
   else if(action.hasClass('JS_itemBoxTable__action--addAll')){
     const children = action.closest('.itemBoxTable__bodyRow').next();
     if(children.hasClass('itemBox--children')) {
-      handleComplexGroupAdd(action, children, exclude, selectedBlockClass);
+      handleComplexGroupAdd(action, children, exclude);
     }
   }
   // otherwise we call a function, that handles row action
@@ -122,14 +122,15 @@ function addSelectedBlock(multiSelector){
 
 // action to handle ADD for a whole group
 function handleComplexGroupAdd(action, children, exclude) {
+  var selectedBlockClass = '.JS_multiSelector__box--selectionChildren';
   const multiSelector = children.closest('.multiSelector');
   exclude = $(multiSelector[0]).find('.JS_exclude').length > 0;
 
   // check if there is a selected block. if not, add it
-  var selection = multiSelector.find('.JS_multiSelector__box--selectionChildren');
+  var selection = multiSelector.find(selectedBlockClass);
     if(selection === null || selection === undefined || selection.length === 0) {
       addSelectedBlock(multiSelector);
-      selection = multiSelector.find('.JS_multiSelector__box--selectionChildren');
+      selection = multiSelector.find(selectedBlockClass);
     }
 
 
@@ -151,8 +152,17 @@ function handleComplexGroupAdd(action, children, exclude) {
 
       const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
       if (positionOfItemInSelected < 0) {
-        itemBoxBody.append(getNewItem(item, exclude));
-        const newItem = $(itemBoxBody).find('> .itemBoxTable__bodyRow').last();
+        var neededSelectedBlock = itemBoxBody;
+        // if there is a filter, choose the good selected Block
+        const JS_filterableCell = $(item).closest('.JS_filterableCell');
+        const filter = $(JS_filterableCell).find('.JS_inclExl');
+        if(filter.length > 0) {
+          const filteredSelectedBlockSelector = selectedBlockClass + filter.attr('data-filter') + " > .itemBoxTable > .itemBoxBody";
+          neededSelectedBlock = $(itemBoxBody).find(filteredSelectedBlockSelector);
+        }
+
+        neededSelectedBlock.append(getNewItem(item, exclude));
+        const newItem = $(neededSelectedBlock).find('> .itemBoxTable__bodyRow').last();
         if($(newItem).find('.JS_itemBoxTable__bodyCellInner--colortoggle').length > 0 ){
           resetColorToggle(newItem);
         }
