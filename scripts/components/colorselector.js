@@ -17,7 +17,7 @@ function selectNewColor(colorItemBodyRow) {
   const color = colorItemBodyRow.find('.JS_itemBoxTable__bodyCellInner--color i').attr('data-color');
   // find the text of the item
   const itemBox = colorItemBodyRow.closest('.JS_itemBox--colors');
-  const bodyRow = $(itemBox).prev();
+  const bodyRow = $(itemBox).prevAll('ul.itemBoxTable__bodyRow.JS_filterableCell:first');
   const tagText = bodyRow.find('.JS_itemBoxTable__bodyCellInner--text').html().trim();
 
   // find all tags with the same text
@@ -41,7 +41,7 @@ function selectNewColor(colorItemBodyRow) {
     $(possibleChildren).find('.JS_showSelected').remove();
     const selectedColor = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--color i[data-color='${color}']`);
     const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
-    selectedColorBodyRow.append(`{% include javascript/colorSelected.html %}`);
+    selectedColorBodyRow.append(`{% include javascript/itemSelected.html %}`);
 
 
   });
@@ -59,6 +59,7 @@ function selectNewColor(colorItemBodyRow) {
 // COLOR OPTIONS EXPAND-COLLAPSE
 $('.JS_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
   const colorToggle = $(this);
+  closeInclExclOptions(colorToggle);
   toggleColorSelector(colorToggle);
 });
 
@@ -68,7 +69,7 @@ $('.JS_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
 function toggleColorSelector(colorToggle) {
   // if there is a color box, expand/collapse it
   const itemBoxTable__bodyRow = colorToggle.closest('.itemBoxTable__bodyRow');
-  const possibleChildren = itemBoxTable__bodyRow.next('.JS_itemBox--colors');
+  const possibleChildren = itemBoxTable__bodyRow.nextAll('.JS_itemBox--colors:first');
 
   const actualColor = colorToggle.find('i').attr('data-color');
 
@@ -80,7 +81,7 @@ function toggleColorSelector(colorToggle) {
   // only if opening
   const selectedColor = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--color i[data-color='${actualColor}']`);
   const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
-  selectedColorBodyRow.append(`{% include javascript/colorSelected.html %}`);
+  selectedColorBodyRow.append(`{% include javascript/itemSelected.html %}`);
 
   const bodyCell = colorToggle.closest('.itemBoxTable__bodyCell');
   if (bodyCell.hasClass('itemBoxTable__bodyCell--active')) {
@@ -95,6 +96,20 @@ function toggleColorSelector(colorToggle) {
   }
 }
 
+
+// close colorToggle if open
+// used by incl-exlToggle
+function closeColorOptions(inclExlToggle) {
+  const itemBoxTable__bodyRow = inclExlToggle.closest('.itemBoxTable__bodyRow');
+  const activeColorTrigger = $(itemBoxTable__bodyRow).find('.JS_colorselector-trigger.itemBoxTable__bodyCell--active');
+
+  // if there is an active color trigger in this bodyRow
+  if(activeColorTrigger.length > 0) {
+    const colorToggle = $(activeColorTrigger).find('.JS_itemBoxTable__bodyCellInner--colortoggle');
+    toggleColorSelector($(colorToggle));
+  }
+
+}
 
 
 // INITIAL - collapse all color options
