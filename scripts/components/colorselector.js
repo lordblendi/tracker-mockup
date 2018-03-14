@@ -34,7 +34,13 @@ function selectNewColor(colorItemBodyRow) {
   // change color for all other tags, that have the same textOfActionItem
   $.each(filteredTags, function(index, tag){
     const tagBodyRow = $(tag).closest('.itemBoxTable__bodyRow');
-    tagBodyRow.find('.JS_colorselector-trigger .JS_Color').css('color', color).attr('data-color', color);
+    const colorItem = tagBodyRow.find('.JS_colorselector-trigger .JS_Color');
+    if($(colorItem).hasClass('JS_Color--prefix')) {
+      colorItem.css('background-color', color).attr('data-color', color);
+    }
+    else {
+      colorItem.css('color', color).attr('data-color', color);
+    }
 
     // reset color tick of their color selection (in case it's open)
     const possibleChildren = tagBodyRow.next('.JS_itemBox--colors');
