@@ -224,7 +224,7 @@ function getNewItem(item, exclude) {
   var colorChildren = '';
   // if so, adds both color toggle and color pallette
   if(colorTrigger.length > 0) {
-    var colorToggle = colorTrigger.find('.JS_itemBoxTable__bodyCellInner--colortoggle i');
+    var colorToggle = colorTrigger.find('.JS_itemBoxTable__bodyCellInner--colortoggle .JS_Color');
     var color = $(colorToggle).attr('data-color');
 
     colorHTML = `{% include javascript/colorAction.html %}`
