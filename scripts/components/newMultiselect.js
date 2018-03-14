@@ -95,6 +95,11 @@ function resetGroupAddActions(removeAllActions, children) {
 // if the selected block is not present, we add it to the multiSelector
 // also reinit the toggle action, if we want to close it
 function addSelectedBlock(multiSelector){
+
+  var selectedFilters = '';
+  if(multiSelector.hasClass('JS_multiSelector--withFilter')) {
+    selectedFilters = `{% include javascript/selectedBlock-Include.html %}{% include javascript/selectedBlock-Exclude.html %}`;
+  }
   const selectedBlock = `{% include javascript/selectedBlock.html %}`;
   multiSelector.find('.JS_multiSelector__box--optionsTitle').before(selectedBlock);
   const selection = multiSelector.find('.JS_multiSelector__box--selectionTitle');
