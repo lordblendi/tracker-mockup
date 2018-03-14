@@ -19,7 +19,7 @@ function selectNewFilterOption(incleExclBodyRow) {
   const bodyRow = $(itemBox).prevAll('ul.itemBoxTable__bodyRow.JS_filterableCell:first');
 
   // find toggle and replace text and data-filter
-  const toggle = $(bodyRow).find('.JS_itemBoxTable__bodyCellInner--inclexcltoggle i');
+  const toggle = $(bodyRow).find('.JS_inclExl');
   toggle.html(newOption).attr('data-filter', newOption);
 
   // remove active cell from bodyRow as we are closing the selector
@@ -46,7 +46,7 @@ function toggleInclExclSelector(toggle) {
   const itemBoxTable__bodyRow = toggle.closest('.itemBoxTable__bodyRow');
   const possibleChildren = itemBoxTable__bodyRow.nextAll('.JS_itemBox--filterInclExcl:first');
 
-  const actualFilter = toggle.find('i').attr('data-filter');
+  const actualFilter = toggle.find('.JS_inclExl').attr('data-filter');
   // debugger;
 
 
