@@ -122,20 +122,34 @@ function resetGroupAddActions(removeAllActions, children) {
 
 // if the selected block is not present, we add it to the multiSelector
 // also reinit the toggle action, if we want to close it
-function addSelectedBlock(multiSelector){
-
-  var selectedFilters = '';
-  if(multiSelector.hasClass('JS_multiSelector--withFilter')) {
-    selectedFilters = `{% include javascript/selectedBlock-Include.html %}{% include javascript/selectedBlock-Exclude.html %}`;
+function addSelectedBlock(multiSelector, selectedBlockClass){
+  // if we already have selectionChildrenExclude
+  if (multiSelector.find('.JS_multiSelector__box--selectionChildren').length > 0) {
+    // if we are only missing JS_multiSelector__box--selectionChildrenInclude
+    if(selectedBlockClass === '.JS_multiSelector__box--selectionChildrenInclude') {
+      multiSelector.find('.JS_multiSelector__box--selectionChildren > .itemBoxTable > .itemBoxBody').prepend(`{% include javascript/selectedBlock-Include.html %}`);
+    }
+    // if we are only missing JS_multiSelector__box--selectionChildrenExclude
+    else if(selectedBlockClass === '.JS_multiSelector__box--selectionChildrenExclude') {
+      multiSelector.find('.JS_multiSelector__box--selectionChildren > .itemBoxTable > .itemBoxBody').append(`{% include javascript/selectedBlock-Exclude.html %}`);
+    }
   }
-  const selectedBlock = `{% include javascript/selectedBlock.html %}`;
-  multiSelector.find('.JS_multiSelector__box--optionsTitle').before(selectedBlock);
-  const selection = multiSelector.find('.JS_multiSelector__box--selectionTitle');
-  // enable toggle again
-  $(selection.find('.itemBoxTable__bodyCell--toggle')).on('click', function() {
-    const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
-    expandCloseRow(itemBoxTable__bodyRow);
-  });
+  // otherwise we have to add the whole block
+  else {
+    var selectedFilters = '';
+    if(multiSelector.hasClass('JS_multiSelector--withFilter')) {
+      selectedFilters = `{% include javascript/selectedBlock-Include.html %}{% include javascript/selectedBlock-Exclude.html %}`;
+    }
+    const selectedBlock = `{% include javascript/selectedBlock.html %}`;
+    multiSelector.find('.JS_multiSelector__box--optionsTitle').before(selectedBlock);
+    const selection = multiSelector.find('.JS_multiSelector__box--selectionTitle');
+    // enable toggle again
+    $(selection.find('.itemBoxTable__bodyCell--toggle')).on('click', function() {
+      const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
+      expandCloseRow(itemBoxTable__bodyRow);
+    });
+  }
+
 }
 
 // action to handle ADD for a whole group
@@ -147,7 +161,7 @@ function handleComplexGroupAdd(action, children, exclude) {
   // check if there is a selected block. if not, add it
   var selection = multiSelector.find(selectedBlockClass);
     if(selection === null || selection === undefined || selection.length === 0) {
-      addSelectedBlock(multiSelector);
+      addSelectedBlock(multiSelector, selectedBlockClass);
       selection = multiSelector.find(selectedBlockClass);
     }
 
@@ -331,7 +345,7 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
     // on add -> readd the selected block
     if(selection === null || selection === undefined || selection.length === 0) {
       if(add) {
-        addSelectedBlock(multiSelector);
+        addSelectedBlock(multiSelector, selectedBlockClass);
         selection = multiSelector.find(selectedBlockClass);
       }
       else if(remove) {
@@ -452,6 +466,20 @@ function checkGroupActions() {
 // checking group actions
 function reset(){
   checkGroupActions();
+
+  // probably doesn't belong here, but making sure, we don't have empty selection subgroups
+  const selectionExcludedTitle = $('.JS_multiSelector__box--selectionTitleExclude');
+  const selectionExcluded = $('.JS_multiSelector__box--selectionChildrenExclude');
+  if(selectionExcluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
+    selectionExcludedTitle.remove();
+    selectionExcluded.remove();
+  }
+  const selectionIncludedTitle = $('.JS_multiSelector__box--selectionTitleInclude');
+  const selectionIncluded = $('.JS_multiSelector__box--selectionChildrenInclude');
+  if(selectionIncluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
+    selectionIncludedTitle.remove();
+    selectionIncluded.remove();
+  }
 
   // reinitiate onclick and reorder actions in selection blocks
   $('.multiSelector .JS_multiSelector__box .itemBoxTable__action').on('click', function(){
