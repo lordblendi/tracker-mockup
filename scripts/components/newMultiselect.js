@@ -391,7 +391,7 @@ function checkGroupActions() {
   const multiSelector = $('.multiSelector');
 
   // check on the current status group action, remove or add necessary actions
-  const childrenInOptions = multiSelector.find('.itemBox--children:not(.JS_multiSelector__box--selectionChildren):not(.JS_itemBox--colors):not(.JS_itemBox--suggestions)');
+  const childrenInOptions = multiSelector.find('.itemBox--children:not(.JS_multiSelector__box--selectionChildren):not(.itemBox--children-sublist):not(.JS_itemBox--suggestions)');
   $.each(childrenInOptions, function(index, children) {
     var children = $(children);
     const groupHeader = children.prev();
