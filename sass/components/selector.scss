@@ -33,17 +33,6 @@
   &__inner {
     position: relative;
     padding: 5px;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 30px;
-      height: 100%;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 60%, rgb(255, 255, 255) 100%);
-      pointer-events: none;
-    }
   }
 
   &__label {
@@ -64,6 +53,19 @@
     line-height: 40px;
     margin: -5px -1px;
     white-space: nowrap;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      right: 0;
+      width: 30px;
+      height: 38px;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .6) 60%, rgba(255, 255, 255, 1) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
 
     .pmx-selector {
       margin: 5px 1px;
@@ -76,8 +78,10 @@
 
   &__note {
     margin: 3px 0px;
-    padding: 3px 10px;
+    padding: 1px 10px;
     background-color: #F7F7F7;
+    border: 1px solid #E7E7E7;
+    border-radius: 3px;
 
     p {
       font-size: 14px;
