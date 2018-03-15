@@ -18,26 +18,38 @@ $(".multiSelector.JS_multiSelector--withFilter .itemBoxBody--sortableInclude, .m
 // set actions for + and X
 $('.multiSelector .JS_multiSelector__box .itemBoxTable__action').on('click', function(){
   const action = $(this);
-  const multiSelector = action.closest('.multiSelector');
-  var selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
-  if(multiSelector.hasClass('JS_multiSelector--withFilter')){
-    const JS_filterableCell = action.closest('.JS_filterableCell');
-    const filter = $(JS_filterableCell).find('.JS_inclExl');
-    if(filter.length > 0) {
-      selectedBlockClass += filter.attr('data-filter');
-    }
-  }
-
-  handleActionOnclick(action, selectedBlockClass);
+  handleActionOnclick(action);
 });
 
 // handles onclick`
-function handleActionOnclick(action, selectedBlockClass) {
+function handleActionOnclick(action) {
   // if this just shows selected, don't do anything (has same design css class)
   if(action.hasClass('JS_showSelected')) {
     return;
   }
 
+  // FOR FILTER INCL/EXCL
+  var selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
+  // check if it's from selectedInclude or selectedExclude
+  if(action.closest('.JS_multiSelector__box--selectionChildrenInclude').length > 0 ) {
+    selectedBlockClass = ".JS_multiSelector__box--selectionChildrenInclude";
+  }
+  else if(action.closest('.JS_multiSelector__box--selectionChildrenExclude').length > 0 ) {
+    selectedBlockClass = ".JS_multiSelector__box--selectionChildrenExclude";
+  }
+  // otherwise it's from the option. check if it has filter or not
+  else {
+    const multiSelector = action.closest('.multiSelector');
+    if(multiSelector.hasClass('JS_multiSelector--withFilter')){
+      const JS_filterableCell = action.closest('.JS_filterableCell');
+      const filter = $(JS_filterableCell).find('.JS_inclExl');
+      if(filter.length > 0) {
+        selectedBlockClass += filter.attr('data-filter');
+      }
+    }
+  }
+
+  // FOR OLD INCL/EXCL
   // check if it's an include or exclude action
   const multiSelector = action.closest('.multiSelector')[0];
   const exclude = $(multiSelector).find('.JS_exclude').length > 0;
@@ -444,17 +456,7 @@ function reset(){
   // reinitiate onclick and reorder actions in selection blocks
   $('.multiSelector .JS_multiSelector__box .itemBoxTable__action').on('click', function(){
     const action = $(this);
-    const multiSelector = action.closest('.multiSelector');
-    var selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
-    if(multiSelector.hasClass('JS_multiSelector--withFilter')){
-      const JS_filterableCell = action.closest('.JS_filterableCell');
-      const filter = $(JS_filterableCell).find('.JS_inclExl');
-      if(filter.length > 0) {
-        selectedBlockClass += filter.attr('data-filter');
-      }
-    }
-
-    handleActionOnclick(action, selectedBlockClass);
+    handleActionOnclick(action);
   });
   $(".multiSelector:not(.JS_multiSelector--withFilter) .itemBoxBody--sortable").sortable({
     handle: '.itemBoxTable__bodyCell--draggable',
