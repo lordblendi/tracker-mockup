@@ -18,26 +18,38 @@ $(".multiSelector.JS_multiSelector--withFilter .itemBoxBody--sortableInclude, .m
 // set actions for + and X
 $('.multiSelector .JS_multiSelector__box .itemBoxTable__action').on('click', function(){
   const action = $(this);
-  const multiSelector = action.closest('.multiSelector');
-  var selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
-  if(multiSelector.hasClass('JS_multiSelector--withFilter')){
-    const JS_filterableCell = action.closest('.JS_filterableCell');
-    const filter = $(JS_filterableCell).find('.JS_inclExl');
-    if(filter.length > 0) {
-      selectedBlockClass += filter.attr('data-filter');
-    }
-  }
-
-  handleActionOnclick(action, selectedBlockClass);
+  handleActionOnclick(action);
 });
 
 // handles onclick`
-function handleActionOnclick(action, selectedBlockClass) {
+function handleActionOnclick(action) {
   // if this just shows selected, don't do anything (has same design css class)
   if(action.hasClass('JS_showSelected')) {
     return;
   }
 
+  // FOR FILTER INCL/EXCL
+  var selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
+  // check if it's from selectedInclude or selectedExclude
+  if(action.closest('.JS_multiSelector__box--selectionChildrenInclude').length > 0 ) {
+    selectedBlockClass = ".JS_multiSelector__box--selectionChildrenInclude";
+  }
+  else if(action.closest('.JS_multiSelector__box--selectionChildrenExclude').length > 0 ) {
+    selectedBlockClass = ".JS_multiSelector__box--selectionChildrenExclude";
+  }
+  // otherwise it's from the option. check if it has filter or not
+  else {
+    const multiSelector = action.closest('.multiSelector');
+    if(multiSelector.hasClass('JS_multiSelector--withFilter')){
+      const JS_filterableCell = action.closest('.JS_filterableCell');
+      const filter = $(JS_filterableCell).find('.JS_inclExl');
+      if(filter.length > 0) {
+        selectedBlockClass += filter.attr('data-filter');
+      }
+    }
+  }
+
+  // FOR OLD INCL/EXCL
   // check if it's an include or exclude action
   const multiSelector = action.closest('.multiSelector')[0];
   const exclude = $(multiSelector).find('.JS_exclude').length > 0;
@@ -110,20 +122,36 @@ function resetGroupAddActions(removeAllActions, children) {
 
 // if the selected block is not present, we add it to the multiSelector
 // also reinit the toggle action, if we want to close it
-function addSelectedBlock(multiSelector){
-
-  var selectedFilters = '';
-  if(multiSelector.hasClass('JS_multiSelector--withFilter')) {
-    selectedFilters = `{% include javascript/selectedBlock-Include.html %}{% include javascript/selectedBlock-Exclude.html %}`;
+function addSelectedBlock(multiSelector, selectedBlockClass){
+  // if we already have selectionChildrenExclude
+  if (multiSelector.find('.JS_multiSelector__box--selectionChildren').length > 0) {
+    // if we are only missing JS_multiSelector__box--selectionChildrenInclude
+    if(selectedBlockClass === '.JS_multiSelector__box--selectionChildrenInclude') {
+      multiSelector.find('.JS_multiSelector__box--selectionChildren > .itemBoxTable > .itemBoxBody').prepend(`{% include javascript/selectedBlock-Include.html %}`);
+    }
+    // if we are only missing JS_multiSelector__box--selectionChildrenExclude
+    else if(selectedBlockClass === '.JS_multiSelector__box--selectionChildrenExclude') {
+      multiSelector.find('.JS_multiSelector__box--selectionChildren > .itemBoxTable > .itemBoxBody').append(`{% include javascript/selectedBlock-Exclude.html %}`);
+    }
   }
-  const selectedBlock = `{% include javascript/selectedBlock.html %}`;
-  multiSelector.find('.JS_multiSelector__box--optionsTitle').before(selectedBlock);
-  const selection = multiSelector.find('.JS_multiSelector__box--selectionTitle');
-  // enable toggle again
-  $(selection.find('.itemBoxTable__bodyCell--toggle')).on('click', function() {
-    const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
-    expandCloseRow(itemBoxTable__bodyRow);
-  });
+  // otherwise we have to add the whole block
+  else {
+    var selectedFilters = '';
+    var andOrSelector = '';
+    if(multiSelector.hasClass('JS_multiSelector--withFilter')) {
+      selectedFilters = `{% include javascript/selectedBlock-Include.html %}{% include javascript/selectedBlock-Exclude.html %}`;
+      andOrSelector = `{% include javascript/and-or-selector.html %}`;
+    }
+    const selectedBlock = `{% include javascript/selectedBlock.html %}`;
+    multiSelector.find('.JS_multiSelector__box--optionsTitle').before(selectedBlock);
+    const selection = multiSelector.find('.JS_multiSelector__box--selectionTitle');
+    // enable toggle again
+    $(selection.find('.itemBoxTable__bodyCell--toggle')).on('click', function() {
+      const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
+      expandCloseRow(itemBoxTable__bodyRow);
+    });
+  }
+
 }
 
 // action to handle ADD for a whole group
@@ -135,7 +163,7 @@ function handleComplexGroupAdd(action, children, exclude) {
   // check if there is a selected block. if not, add it
   var selection = multiSelector.find(selectedBlockClass);
     if(selection === null || selection === undefined || selection.length === 0) {
-      addSelectedBlock(multiSelector);
+      addSelectedBlock(multiSelector, selectedBlockClass);
       selection = multiSelector.find(selectedBlockClass);
     }
 
@@ -319,7 +347,7 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
     // on add -> readd the selected block
     if(selection === null || selection === undefined || selection.length === 0) {
       if(add) {
-        addSelectedBlock(multiSelector);
+        addSelectedBlock(multiSelector, selectedBlockClass);
         selection = multiSelector.find(selectedBlockClass);
       }
       else if(remove) {
@@ -391,7 +419,7 @@ function checkGroupActions() {
   const multiSelector = $('.multiSelector');
 
   // check on the current status group action, remove or add necessary actions
-  const childrenInOptions = multiSelector.find('.itemBox--children:not(.JS_multiSelector__box--selectionChildren):not(.JS_itemBox--colors):not(.JS_itemBox--suggestions)');
+  const childrenInOptions = multiSelector.find('.itemBox--children:not(.JS_multiSelector__box--selectionChildren):not(.itemBox--children-sublist):not(.JS_itemBox--suggestions)');
   $.each(childrenInOptions, function(index, children) {
     var children = $(children);
     const groupHeader = children.prev();
@@ -441,20 +469,24 @@ function checkGroupActions() {
 function reset(){
   checkGroupActions();
 
+  // probably doesn't belong here, but making sure, we don't have empty selection subgroups
+  const selectionExcludedTitle = $('.JS_multiSelector__box--selectionTitleExclude');
+  const selectionExcluded = $('.JS_multiSelector__box--selectionChildrenExclude');
+  if(selectionExcluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
+    selectionExcludedTitle.remove();
+    selectionExcluded.remove();
+  }
+  const selectionIncludedTitle = $('.JS_multiSelector__box--selectionTitleInclude');
+  const selectionIncluded = $('.JS_multiSelector__box--selectionChildrenInclude');
+  if(selectionIncluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
+    selectionIncludedTitle.remove();
+    selectionIncluded.remove();
+  }
+
   // reinitiate onclick and reorder actions in selection blocks
   $('.multiSelector .JS_multiSelector__box .itemBoxTable__action').on('click', function(){
     const action = $(this);
-    const multiSelector = action.closest('.multiSelector');
-    var selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
-    if(multiSelector.hasClass('JS_multiSelector--withFilter')){
-      const JS_filterableCell = action.closest('.JS_filterableCell');
-      const filter = $(JS_filterableCell).find('.JS_inclExl');
-      if(filter.length > 0) {
-        selectedBlockClass += filter.attr('data-filter');
-      }
-    }
-
-    handleActionOnclick(action, selectedBlockClass);
+    handleActionOnclick(action);
   });
   $(".multiSelector:not(.JS_multiSelector--withFilter) .itemBoxBody--sortable").sortable({
     handle: '.itemBoxTable__bodyCell--draggable',
@@ -465,5 +497,16 @@ function reset(){
     handle: '.itemBoxTable__bodyCell--draggable',
     placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder',
     connectWith: ".itemBoxBody--sortableConnected"
+  });
+
+  $('.JS_selectorItem').on('click', function() {
+    const selectorValue = $(this);
+    const selector = selectorValue.closest('.JS_selector');
+
+    // only if this is not a multiselect popup toggle
+    if(!selector.hasClass('MULTISELECT__POPUP')) {
+      handleSelector(selector, selectorValue);
+    }
+
   });
 }
