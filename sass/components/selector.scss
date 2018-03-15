@@ -73,6 +73,18 @@
       width: 100%;
     }
   }
+
+  &__note {
+    margin: 3px 0px;
+    padding: 3px 10px;
+    background-color: #F7F7F7;
+
+    p {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #666;
+    }
+  }
 }
 
 .pmx-selector {
