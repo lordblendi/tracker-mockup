@@ -137,8 +137,10 @@ function addSelectedBlock(multiSelector, selectedBlockClass){
   // otherwise we have to add the whole block
   else {
     var selectedFilters = '';
+    var andOrSelector = '';
     if(multiSelector.hasClass('JS_multiSelector--withFilter')) {
       selectedFilters = `{% include javascript/selectedBlock-Include.html %}{% include javascript/selectedBlock-Exclude.html %}`;
+      andOrSelector = `{% include javascript/and-or-selector.html %}`;
     }
     const selectedBlock = `{% include javascript/selectedBlock.html %}`;
     multiSelector.find('.JS_multiSelector__box--optionsTitle').before(selectedBlock);
