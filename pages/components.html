@@ -10,6 +10,11 @@ permalink: /components
     <div class="pmx-field__inner">
       <div class="pmx-field__label">Danger level</div>
       <div class="pmx-field__value">
+
+        <div class="pmx-field__input pmx-field__input--hidden">
+          <input type="text" value="test" class="pmx-field__inputEl">
+        </div>
+
         <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleselect JS_selector">
           <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
             <div class="pmx-selector__block ">
@@ -29,6 +34,7 @@ permalink: /components
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   </div>
@@ -37,6 +43,11 @@ permalink: /components
     <div class="pmx-field__inner">
       <div class="pmx-field__label">Product contact</div>
       <div class="pmx-field__value">
+
+        <div class="pmx-field__input pmx-field__input--hidden">
+          <input type="text" value="test" class="pmx-field__inputEl">
+        </div>
+
         <div class="pmx-selector pmx-selector--expanded pmx-selector--multiselect JS_selector">
           <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
             <div class="pmx-selector__block ">
@@ -59,6 +70,7 @@ permalink: /components
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -67,6 +79,11 @@ permalink: /components
     <div class="pmx-field__inner">
       <div class="pmx-field__label">Status</div>
       <div class="pmx-field__value">
+
+        <div class="pmx-field__input pmx-field__input--hidden">
+          <input type="text" value="test" class="pmx-field__inputEl">
+        </div>
+
         <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleselect JS_selector">
           <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
             <div class="pmx-selector__block ">
@@ -89,11 +106,89 @@ permalink: /components
             </div>
           </div>
         </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="pmx-field">
+    <div class="pmx-field__inner">
+      <div class="pmx-field__label">Assigned to</div>
+      <div class="pmx-field__value">
+
+        <div class="pmx-field__input">
+          <input type="text" value="Nick De Jaeger" class="pmx-field__inputEl">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="pmx-field">
+    <div class="pmx-field__inner">
+      <div class="pmx-field__label">Assigned to</div>
+      <div class="pmx-field__value">
+
+        <div class="pmx-field__input">
+          <input type="text" class="pmx-field__inputEl">
+        </div>
+
       </div>
     </div>
   </div>
 
 </div>
+
+<script>
+
+  pmxFieldEmpty();
+  pmxFieldFocus();
+  pmxFieldFocusOut();
+
+  $('.pmx-field__inputEl').on('keyup focus focusout', function() {
+    pmxFieldEmpty();
+  });
+
+  function pmxFieldEmpty() {
+    $('.pmx-field__inputEl').each(function() {
+      var _this = $(this);
+      var _parent = $(this).parent().parent().parent().parent();
+      if(_this.val().length < 1) {
+        if(!_parent.hasClass('pmx-field--empty')) {
+          _parent.addClass('pmx-field--empty');
+        }
+      }
+      else {
+        if(_parent.hasClass('pmx-field--empty')) {
+          _parent.removeClass('pmx-field--empty');
+        }
+      }
+    });
+  }
+
+  function pmxFieldFocus() {
+    $('.pmx-field__inputEl').each(function() {
+      var _this = $(this);
+      var _parent = $(this).parent().parent().parent().parent();
+
+      _this.on('focus', function() {
+        _parent.addClass('pmx-field--focus');
+      });
+    });
+  }
+
+  function pmxFieldFocusOut() {
+    $('.pmx-field__inputEl').each(function() {
+      var _this = $(this);
+      var _parent = $(this).parent().parent().parent().parent();
+
+      _this.on('focusout', function() {
+        _parent.removeClass('pmx-field--focus');
+      });
+    });
+  }
+
+</script>
 
 <h2>With popup</h2>
 
@@ -110,6 +205,10 @@ permalink: /components
         </div>
       </div>
 
+    </div>
+    <div class="pmx-field__note">
+      <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
   </div>
 </div>

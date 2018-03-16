@@ -3,30 +3,33 @@
 
 .pmx-field {
   position: relative;
-  margin: 20px 0;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid transparent;
 
-  &:hover {
-    .pmx-field-handlers {
-      &__tooltip {
-        z-index: 1;
-        pointer-events: auto;
-        opacity: 1;
-      }
+  transition: all .3s ease-in-out;
+
+  &--empty {
+    .pmx-field__label {
+      top: 25px;
+      font-size: 18px;
+      font-style: italic;
+      font-weight: 400;
+      text-transform: none;
     }
   }
 
-  &-handlers {
-    &__tooltip {
-      position: absolute;
-      padding: 0 10px;
-      bottom: 54px;
+  &--focus {
+    border: 1px solid #F7F7F7;
+    border-radius: 3px;
+    box-shadow: 0 0 200px rgba(0,0,0,.1);
+
+    .pmx-field__label {
+      top: 0;
       font-size: 12px;
-      box-shadow: 0 0 200px 60px rgba(0, 0, 0, 0.2);
-      background-color: #FFF;
-      z-index: -1;
-      pointer-events: none;
-      opacity: 0;
-      transition: all .3s ease-in-out;
+      font-style: normal;
+      font-weight: 600;
+      text-transform: uppercase;
     }
   }
 
@@ -36,15 +39,21 @@
   }
 
   &__label {
+    position: relative;
+    top: 0;
+
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 
     font-size: 12px;
+    font-style: normal;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #808080;
+
+    transition: all .15s ease-in-out;
   }
 
   &__value {
@@ -76,17 +85,33 @@
     }
   }
 
+  &__input {
+    height: 35px;
+
+    &--hidden {
+      font-size: 0;
+      height: 0;
+      position: absolute;
+      left: -1000px;
+    }
+
+    &El {
+
+    }
+  }
+
   &__note {
-    margin: 3px 0px;
-    padding: 1px 10px;
+    display: inline-block;
+    margin: 3px 0;
+    padding: 2px 8px;
     background-color: #F7F7F7;
     border: 1px solid #E7E7E7;
     border-radius: 3px;
 
     p {
-      font-size: 14px;
-      margin: 5px 0;
-      color: #666;
+      font-size: 13px;
+      margin: 3px 0;
+      color: #919191;
     }
   }
 }
