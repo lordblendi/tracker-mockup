@@ -34,7 +34,7 @@ permalink: /components
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -139,56 +139,7 @@ permalink: /components
 
 </div>
 
-<script>
 
-  pmxFieldEmpty();
-  pmxFieldFocus();
-  pmxFieldFocusOut();
-
-  $('.pmx-field__inputEl').on('keyup focus focusout', function() {
-    pmxFieldEmpty();
-  });
-
-  function pmxFieldEmpty() {
-    $('.pmx-field__inputEl').each(function() {
-      var _this = $(this);
-      var _parent = $(this).parent().parent().parent().parent();
-      if(_this.val().length < 1) {
-        if(!_parent.hasClass('pmx-field--empty')) {
-          _parent.addClass('pmx-field--empty');
-        }
-      }
-      else {
-        if(_parent.hasClass('pmx-field--empty')) {
-          _parent.removeClass('pmx-field--empty');
-        }
-      }
-    });
-  }
-
-  function pmxFieldFocus() {
-    $('.pmx-field__inputEl').each(function() {
-      var _this = $(this);
-      var _parent = $(this).parent().parent().parent().parent();
-
-      _this.on('focus', function() {
-        _parent.addClass('pmx-field--focus');
-      });
-    });
-  }
-
-  function pmxFieldFocusOut() {
-    $('.pmx-field__inputEl').each(function() {
-      var _this = $(this);
-      var _parent = $(this).parent().parent().parent().parent();
-
-      _this.on('focusout', function() {
-        _parent.removeClass('pmx-field--focus');
-      });
-    });
-  }
-
-</script>
 
 <h2>With popup</h2>
 
@@ -196,6 +147,10 @@ permalink: /components
   <div class="pmx-field__inner">
     <div class="pmx-field__label">Due date</div>
     <div class="pmx-field__value">
+
+      <div class="pmx-field__input pmx-field__input--hidden">
+        <input type="text" value="test" class="pmx-field__inputEl">
+      </div>
 
       <div class="pmx-selector JS_selector">
         <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
@@ -218,6 +173,10 @@ permalink: /components
     <div class="pmx-field__label">Status</div>
     <div class="pmx-field__value">
 
+      <div class="pmx-field__input pmx-field__input--hidden">
+        <input type="text" value="test" class="pmx-field__inputEl">
+      </div>
+
       <div class="pmx-selector MULTISELECT__POPUP JS_selector" data-popid="#multiSelector-1">
         <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
           <div class="pmx-selector__block ">
@@ -235,6 +194,10 @@ permalink: /components
   <div class="pmx-field__inner">
     <div class="pmx-field__label">Tags</div>
     <div class="pmx-field__value">
+
+      <div class="pmx-field__input pmx-field__input--hidden">
+        <input type="text" value="test" class="pmx-field__inputEl">
+      </div>
 
       <div class="pmx-selector MULTISELECT__POPUP JS_selector" data-popid="#multiSelector-tagpicker">
         <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
@@ -261,6 +224,11 @@ permalink: /components
   <div class="pmx-field__inner">
     <div class="pmx-field__label">Tags</div>
     <div class="pmx-field__value">
+
+      <div class="pmx-field__input pmx-field__input--hidden">
+        <input type="text" value="test" class="pmx-field__inputEl">
+      </div>
+
       <div class="pmx-selector pmx-selector--expanded pmx-selector--multiselect JS_selector">
         <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
           <div class="pmx-selector__block ">
@@ -293,6 +261,10 @@ permalink: /components
     <div class="pmx-field__label">Status</div>
     <div class="pmx-field__value">
 
+      <div class="pmx-field__input pmx-field__input--hidden">
+        <input type="text" value="test" class="pmx-field__inputEl">
+      </div>
+
       <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleselect JS_selector">
         <div class="pmx-selector__item JS_selectorItem">
           <div class="pmx-selector__block ">
@@ -324,6 +296,10 @@ permalink: /components
   <div class="pmx-field__inner">
     <div class="pmx-field__label">Status</div>
     <div class="pmx-field__value">
+
+      <div class="pmx-field__input pmx-field__input--hidden">
+        <input type="text" value="test" class="pmx-field__inputEl">
+      </div>
 
       <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleselect JS_selector">
         <div class="pmx-selector__item JS_selectorItem">
@@ -389,6 +365,11 @@ permalink: /components
   <div class="pmx-field__inner">
     <div class="pmx-field__label">Mobile view selector</div>
     <div class="pmx-field__value">
+
+      <div class="pmx-field__input pmx-field__input--hidden">
+        <input type="text" value="test" class="pmx-field__inputEl">
+      </div>
+
       <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleselect JS_selector">
         <div class="pmx-selector__item JS_selectorItem">
           <div class="pmx-selector__block">
@@ -408,6 +389,7 @@ permalink: /components
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
@@ -416,6 +398,10 @@ permalink: /components
   <div class="pmx-field__inner">
     <div class="pmx-field__label">Billable</div>
     <div class="pmx-field__value">
+
+      <div class="pmx-field__input pmx-field__input--hidden">
+        <input type="text" value="test" class="pmx-field__inputEl">
+      </div>
 
       <div class="pmx-selector pmx-selector--expanded pmx-selector--toggleselect JS_selector">
         <div class="pmx-selector__item JS_selectorItem">
@@ -440,6 +426,10 @@ permalink: /components
 <div class="pmx-field">
   <div class="pmx-field__inner">
     <div class="pmx-field__value">
+
+      <div class="pmx-field__input pmx-field__input--hidden">
+        <input type="text" value="test" class="pmx-field__inputEl">
+      </div>
 
       <div class="pmx-selector pmx-selector--expanded pmx-selector--readonly JS_selector">
         <div class="pmx-selector__itemSeperator pmx-selector__itemSeperator--hasLabel">Include</div>
@@ -489,6 +479,10 @@ permalink: /components
   <div class="pmx-field__inner">
     <div class="pmx-field__value">
 
+      <div class="pmx-field__input pmx-field__input--hidden">
+        <input type="text" value="test" class="pmx-field__inputEl">
+      </div>
+
       <div class="pmx-selector pmx-selector--expanded pmx-selector--readonly">
         <div class="pmx-selector__item">
           <div class="pmx-selector__block">
@@ -506,3 +500,65 @@ permalink: /components
 
 {% include popups/multiSelector-status.html %}
 {% include popups/multiSelector-tags-colors.html %}
+
+
+
+
+
+
+
+
+<script>
+
+  /*****************************************************/
+  /**  Set --FOCUS or --EMPTY classes for pmx-fields  **/
+  /*****************************************************/
+
+  pmxFieldEmpty();
+  pmxFieldFocus();
+  pmxFieldFocusOut();
+
+  $('.pmx-field__inputEl').on('keyup focus focusout', function() {
+    pmxFieldEmpty();
+  });
+
+  function pmxFieldEmpty() {
+    $('.pmx-field__inputEl').each(function() {
+      var _this = $(this);
+      var _parent = $(this).parent().parent().parent().parent();
+      if(_this.val().length < 1) {
+        if(!_parent.hasClass('pmx-field--empty')) {
+          _parent.addClass('pmx-field--empty');
+        }
+      }
+      else {
+        if(_parent.hasClass('pmx-field--empty')) {
+          _parent.removeClass('pmx-field--empty');
+        }
+      }
+    });
+  }
+
+  function pmxFieldFocus() {
+    $('.pmx-field__inputEl').each(function() {
+      var _this = $(this);
+      var _parent = $(this).parent().parent().parent().parent();
+
+      _this.on('focus', function() {
+        _parent.addClass('pmx-field--focus');
+      });
+    });
+  }
+
+  function pmxFieldFocusOut() {
+    $('.pmx-field__inputEl').each(function() {
+      var _this = $(this);
+      var _parent = $(this).parent().parent().parent().parent();
+
+      _this.on('focusout', function() {
+        _parent.removeClass('pmx-field--focus');
+      });
+    });
+  }
+
+</script>
