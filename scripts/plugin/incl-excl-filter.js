@@ -20,7 +20,38 @@ function selectNewFilterOption(incleExclBodyRow) {
 
   // find toggle and replace text and data-filter
   const toggle = $(bodyRow).find('.JS_inclExl');
+  const oldOption = toggle.html().trim();
   toggle.html(newOption).attr('data-filter', newOption);
+
+  // update it in the selected section if it wasn't the same as before
+  if(oldOption !== newOption) {
+    // get the good classes
+    const selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
+    const oldClass = selectedBlockClass + oldOption;
+    const newClass = selectedBlockClass + newOption;
+
+    // find the blocks
+    const multiSelector = $(bodyRow).closest('.multiSelector');
+    const oldSelection = $(multiSelector).find(oldClass);
+    const newSelection = $(multiSelector).find(newClass);
+    // find the text in bodyRow - this should be only one
+    const textOfActionItem = $(bodyRow).find('.JS_itemBoxTable__bodyCellInner--text').html().trim();
+
+    // find the position of the old item, what should be removed
+    const selectedItems = oldSelection.find('.JS_itemBoxTable__bodyCellInner--text');
+    const selectedItemTexts = $.map(selectedItems, function(item){
+      return $(item).html().trim();
+    });
+    const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
+
+    const oldItemTextBlock = selectedItems[positionOfItemInSelected];
+    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.itemBoxTable__bodyRow.JS_filterableCell');
+    // append to newSelectedBlock
+    // cloning includes eventhandlers too and children
+    // remove from oldSelectedBlock
+    newSelection.append(oldItemBodyRow.clone(true, true));
+    oldItemBodyRow.remove();
+  }
 
   // remove active cell from bodyRow as we are closing the selector
   $(bodyRow).find('.itemBoxTable__bodyCell--active').removeClass('itemBoxTable__bodyCell--active');
