@@ -511,4 +511,14 @@ function reset(){
     }
 
   });
+
+  // INCL-EXCL OPTIONS EXPAND-COLLAPSE
+  window.setTimeout( function() {
+    console.log('incl excl toggle');
+    $('.JS_itemBoxTable__bodyCellInner--inclexcltoggle').on('click', function() {
+      const toggle = $(this);
+      closeColorOptions(toggle);
+      toggleInclExclSelector(toggle);
+    });
+  }, 250);
 }

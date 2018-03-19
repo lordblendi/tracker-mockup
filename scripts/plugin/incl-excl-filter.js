@@ -56,8 +56,9 @@ function selectNewFilterOption(incleExclBodyRow) {
     // append to newSelectedBlock
     // cloning includes eventhandlers too
     // remove from oldSelectedBlock
-    newSelection.append(oldItemBodyRow.clone(true));
+    newSelection.append(oldItemBodyRow.clone());
     oldItemBodyRow.remove();
+    reset();
   }
 
   // remove active cell from bodyRow as we are closing the selector
