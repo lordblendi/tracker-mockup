@@ -279,6 +279,10 @@
           }
         }
 
+        &--align-right {
+          text-align: right;
+        }
+
         &--active {
           &::after {
             height: 2px;
