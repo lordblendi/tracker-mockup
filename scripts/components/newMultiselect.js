@@ -487,6 +487,8 @@ function reset(){
     const action = $(this);
     handleActionOnclick(action);
   });
+
+  // reinitiate reorder functionality
   $(".multiSelector:not(.JS_multiSelector--withFilter) .itemBoxBody--sortable").sortable({
     handle: '.itemBoxTable__bodyCell--draggable',
     placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder'
@@ -498,6 +500,7 @@ function reset(){
     connectWith: ".itemBoxBody--sortableConnected"
   });
 
+  // reinitiate selectorItem inside multiselector
   $('.JS_selectorItem').on('click', function() {
     const selectorValue = $(this);
     const selector = selectorValue.closest('.JS_selector');
