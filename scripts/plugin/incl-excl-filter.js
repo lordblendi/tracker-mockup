@@ -84,8 +84,9 @@ function toggleInclExclSelector(toggle) {
   const itemBoxTable__bodyRow = toggle.closest('.itemBoxTable__bodyRow');
   const possibleChildren = itemBoxTable__bodyRow.nextAll('.JS_itemBox--filterInclExcl:first');
 
-  const actualFilter = toggle.find('.JS_inclExl').attr('data-filter');
-  // debugger;
+  // only toggle, if they actually exists;
+  if(possibleChildren.length > 0) {
+    const actualFilter = toggle.find('.JS_inclExl').attr('data-filter');
 
 
   // remove other selection shower
@@ -108,7 +109,6 @@ function toggleInclExclSelector(toggle) {
     bodyCell.addClass('itemBoxTable__bodyCell--active');
   }
 
-  if(possibleChildren.length > 0) {
     expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
   }
 }

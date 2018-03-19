@@ -77,27 +77,27 @@ function toggleColorSelector(colorToggle) {
   const itemBoxTable__bodyRow = colorToggle.closest('.itemBoxTable__bodyRow');
   const possibleChildren = itemBoxTable__bodyRow.nextAll('.JS_itemBox--colors:first');
 
-  const actualColor = colorToggle.find('.JS_Color').attr('data-color');
-
-
-  // remove other selection shower
-  $(possibleChildren).find('.JS_showSelected').remove();
-
-  // add selection to new color (can be changed by other tags)
-  // only if opening
-  const selectedColor = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--color .JS_Color[data-color='${actualColor}']`);
-  const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
-  selectedColorBodyRow.append(`{% include javascript/itemSelected.html %}`);
-
-  const bodyCell = colorToggle.closest('.itemBoxTable__bodyCell');
-  if (bodyCell.hasClass('itemBoxTable__bodyCell--active')) {
-    bodyCell.removeClass('itemBoxTable__bodyCell--active');
-  }
-  else {
-    bodyCell.addClass('itemBoxTable__bodyCell--active');
-  }
-
+  // only do the action, if the colorChildren exists
   if(possibleChildren.length > 0) {
+    const actualColor = colorToggle.find('.JS_Color').attr('data-color');
+
+    // remove other selection shower
+    $(possibleChildren).find('.JS_showSelected').remove();
+
+    // add selection to new color (can be changed by other tags)
+    // only if opening
+    const selectedColor = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--color .JS_Color[data-color='${actualColor}']`);
+    const selectedColorBodyRow = $(selectedColor).closest('.itemBoxTable__bodyRow');
+    selectedColorBodyRow.append(`{% include javascript/itemSelected.html %}`);
+
+    const bodyCell = colorToggle.closest('.itemBoxTable__bodyCell');
+    if (bodyCell.hasClass('itemBoxTable__bodyCell--active')) {
+      bodyCell.removeClass('itemBoxTable__bodyCell--active');
+    }
+    else {
+      bodyCell.addClass('itemBoxTable__bodyCell--active');
+    }
+
     expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
   }
 }
