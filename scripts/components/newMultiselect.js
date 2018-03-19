@@ -277,18 +277,18 @@ function getNewItem(item, exclude) {
   // check if there should be a color trigger or not.
   var textOfActionItem = $(item).html().trim();
   var bodyRow = $(item).closest('.itemBoxTable__bodyRow');
-  var colorTrigger = $(bodyRow).find('.JS_colorselector-trigger');
+  var colorToggle = $(bodyRow).find('.JS_Color');
 
   var colorHTML = '';
   var colorChildren = '';
   // if so, adds both color toggle and color pallette
-  if(colorTrigger.length > 0) {
-    var colorToggle = colorTrigger.find('.JS_itemBoxTable__bodyCellInner--colortoggle .JS_Color');
+  if(colorToggle.length > 0) {
     var color = $(colorToggle).attr('data-color');
 
     colorHTML = `{% include javascript/colorAction.html %}`
-
-    colorChildren = `{% include blocks/ms-tags-colors-color-sublist.html %}`;
+    if($(item).closest('.multiSelector.JS_multiSelector--withColors').length > 0) {
+      colorChildren = `{% include blocks/ms-tags-colors-color-sublist.html %}`;
+    }
   }
 
   return `{% include javascript/newSelectedItem.html %}`;
