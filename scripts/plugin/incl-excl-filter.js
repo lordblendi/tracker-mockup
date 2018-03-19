@@ -20,7 +20,7 @@ function selectNewFilterOption(incleExclBodyRow) {
 
   // find toggle and replace text and data-filter
   const toggle = $(bodyRow).find('.JS_inclExl');
-  const oldOption = toggle.html().trim();
+  const oldOption = toggle.attr('data-filter');
   toggle.html(newOption).attr('data-filter', newOption);
 
   // update it in the selected section if it wasn't the same as before
