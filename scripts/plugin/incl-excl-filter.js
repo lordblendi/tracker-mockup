@@ -33,7 +33,14 @@ function selectNewFilterOption(incleExclBodyRow) {
     // find the blocks
     const multiSelector = $(bodyRow).closest('.multiSelector');
     const oldSelection = $(multiSelector).find(oldClass);
-    const newSelection = $(multiSelector).find(newClass);
+    var newSelection = $(multiSelector).find(newClass);
+
+    // if newSelectionBlock is not there, add it
+    if(newSelection === null || newSelection === undefined || newSelection.length === 0) {
+      addSelectedBlock(multiSelector, newClass);
+      newSelection = multiSelector.find(newClass);
+    }
+
     // find the text in bodyRow - this should be only one
     const textOfActionItem = $(bodyRow).find('.JS_itemBoxTable__bodyCellInner--text').html().trim();
 
@@ -47,9 +54,9 @@ function selectNewFilterOption(incleExclBodyRow) {
     const oldItemTextBlock = selectedItems[positionOfItemInSelected];
     const oldItemBodyRow = $(oldItemTextBlock).closest('ul.itemBoxTable__bodyRow.JS_filterableCell');
     // append to newSelectedBlock
-    // cloning includes eventhandlers too and children
+    // cloning includes eventhandlers too
     // remove from oldSelectedBlock
-    newSelection.append(oldItemBodyRow.clone(true, true));
+    newSelection.append(oldItemBodyRow.clone(true));
     oldItemBodyRow.remove();
   }
 
