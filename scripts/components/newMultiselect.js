@@ -396,8 +396,7 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
     // if removing something that is already selected
     // remove it from selected, replace action in options
     else if(remove && isAlreadySelected) {
-      const itemBoxTable__bodyRow = selection.find('> .itemBoxTable > .itemBoxBody > .itemBoxTable__bodyRow');
-      const itemToRemove = itemBoxTable__bodyRow[positionOfItemInSelected];
+      const itemToRemove = $(selectedItems[positionOfItemInSelected]).closest('.JS_filterableCell');
       itemToRemove.remove();
 
       if(positionOfItemInOptions >= 0) {
