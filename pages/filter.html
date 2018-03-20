@@ -5,6 +5,7 @@ permalink: /filter
 ---
 
 {% include popups/filter-tags.html%}
+{% include popups/filter-date.html%}
 
 <div class="pmx-field">
   <div class="pmx-field__inner">
@@ -58,7 +59,7 @@ permalink: /filter
     <div class="pmx-field__label">Date | Filter</div>
     <div class="pmx-field__value">
 
-      <div class="pmx-selector pmx-selector--expanded pmx-selector--readonly JS_selector">
+      <div class="pmx-selector pmx-selector--expanded pmx-selector--readonly MULTISELECT__POPUP JS_selector" data-popid="#filter-datepicker">
         <div class="pmx-selector__itemSeperator pmx-selector__itemSeperator--hasLabel">Include</div>
         <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
           <div class="pmx-selector__block ">
