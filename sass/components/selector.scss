@@ -101,19 +101,19 @@
 
   &__note {
     display: inline-block;
-    margin: 3px 0;
+    margin: 10px 0 0;
     padding: 2px 8px;
     background-color: #F7F7F7;
-    border: 1px solid #E7E7E7;
+    border: 2px solid #FFF;
     border-radius: 3px;
 
     p {
-      font-size: 13px;
-      margin: 3px 0;
-      color: #919191;
+      font-size: 14px;
+      margin: 5px 0;
+      color: #666;
 
       a {
-        color: #2468b6;
+        color: #01ADFF;
         text-decoration: underline;
         transition: all .3s ease-in-out;
 
@@ -276,6 +276,8 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       background-color: #FFF;
+      -webkit-backface-visibilty: hidden;
+      backface-visibility: hidden;
 
       &--prefix {
         text-align: center;
