@@ -20,3 +20,14 @@ $.Velocity.animate(appNavChildren, 'slideUp').then(function() {
   $(appNavBodyRow).addClass('JS_itemBoxTable__bodyRow--closed');
   $(appNavChildren).addClass('JS_itemBoxTable__bodyRow--closed');
 });
+
+
+
+// default collapse for filter-tagpicker / options block
+const filterTagPopupChildren = $("#filter-tagpicker .JS_multiSelector__box--optionsChildren");
+const filterTagPopupBodyRow = $(filterTagPopupChildren).find('.itemBoxTable__bodyRow');
+
+$.Velocity.animate(filterTagPopupChildren, 'slideUp').then(function() {
+  $(filterTagPopupBodyRow).addClass('JS_itemBoxTable__bodyRow--closed');
+  $(filterTagPopupChildren).addClass('JS_itemBoxTable__bodyRow--closed');
+});
