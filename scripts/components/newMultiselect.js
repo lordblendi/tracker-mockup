@@ -31,10 +31,10 @@ function handleActionOnclick(action) {
   // FOR FILTER INCL/EXCL
   var selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
   // check if it's from selectedInclude or selectedExclude
-  if(action.closest('.JS_multiSelector__box--selectionChildrenInclude').length > 0 ) {
+  if((action.closest('.JS_multiSelector__box--selectionChildrenInclude, .JS_multiSelector__box--selectionTitleInclude').length > 0) || action.closest('.JS_multiSelector__box--selectionChildrenIncludeTitle').length > 0) {
     selectedBlockClass = ".JS_multiSelector__box--selectionChildrenInclude";
   }
-  else if(action.closest('.JS_multiSelector__box--selectionChildrenExclude').length > 0 ) {
+  else if(action.closest('.JS_multiSelector__box--selectionChildrenExclude, .JS_multiSelector__box--selectionTitleExclude').length > 0 ) {
     selectedBlockClass = ".JS_multiSelector__box--selectionChildrenExclude";
   }
   // otherwise it's from the option. check if it has filter or not
@@ -59,7 +59,7 @@ function handleActionOnclick(action) {
   if(action.hasClass('JS_itemBoxTable__action--removeAll')){
     const children = action.closest('.itemBoxTable__bodyRow').next();
     if(children.hasClass('itemBox--children')) {
-      handleComplexGroupRemove(action, children, action.hasClass('JS_itemBoxTable__action--removeAllSelected'));
+      handleComplexGroupRemove(action, children, action.hasClass('JS_itemBoxTable__action--removeAllSelected'), selectedBlockClass);
     }
   }
   // if it's addAll, then we call the groupAdd
@@ -101,7 +101,10 @@ function resetGroupRemoveActions(removeAllActions, children) {
     }
   });
   // replace all normal actions with addAction
-  children.find('ul li.itemBoxTable__bodyCell--remove').replaceWith(addActionHTML);
+  $.each(children, function(index, child) {
+    child.find('li.itemBoxTable__bodyCell--remove:not(.itemBoxTable__bodyCell--removeAll)').replaceWith(addActionHTML);
+  });
+
 }
 
 // for a whole group adding removeActionHTMLs
@@ -215,10 +218,10 @@ function handleComplexGroupAdd(action, children, exclude) {
 
 
 // action to handle REMOVE for a whole group
-function handleComplexGroupRemove(action, children, fromSelectedAction){
+function handleComplexGroupRemove(action, children, fromSelectedAction, selectedBlockClass){
   const multiSelector = children.closest('.multiSelector');
 
-  const selection = multiSelector.find('.JS_multiSelector__box--selectionChildren');
+  const selection = multiSelector.find(selectedBlockClass);
   // exit if there is no selection block
   if(selection === null || selection === undefined || selection.length === 0) {
     return;
@@ -227,13 +230,36 @@ function handleComplexGroupRemove(action, children, fromSelectedAction){
   // if it's triggered from the selected group
   // remove selected block, set everything to add
   if(fromSelectedAction) {
+    // here the "children" were not part of the options block, so we have to look for them
+    const options = multiSelector.find('.JS_multiSelector__box--optionsChildren');
+    var removeAllActions = options.find('li.JS_itemBoxTable__bodyCell--removeAll');
+    var childrenToRemove = [];
+    const selectedItems = selection.find('.JS_itemBoxTable__bodyCellInner--text');
+    const selectedItemTexts = $.map(selectedItems, function(item){
+      return $(item).html().trim();
+    });
+    const optionChildren = options.find('.JS_itemBoxTable__bodyCellInner--text');
+    if(selectedBlockClass !== '.JS_multiSelector__box--selectionChildren') {
+      $.each(optionChildren, function(index, child){
+        if($.inArray($(child).html().trim(), selectedItemTexts) > -1){
+          childrenToRemove = childrenToRemove.concat($(child).closest('ul.itemBoxTable__bodyRow'));
+        }
+      });
+    }
+    else {
+      $.each(optionChildren, function(index, child){
+        // if($.inArray($(child).html().trim(), selectedItemTexts) > -1){
+          childrenToRemove = childrenToRemove.concat($(child).closest('ul.itemBoxTable__bodyRow'));
+        // }
+      });
+    }
+
+    resetGroupRemoveActions(removeAllActions, childrenToRemove);
+
+
     const selectionTitle = selection.prev();
     selection.remove();
     selectionTitle.remove();
-    // here the "children" were not part of the options block, so we have to look for them
-    const options = multiSelector.find('.JS_multiSelector__box--optionsChildren');
-    const removeAllActions = options.find('li.JS_itemBoxTable__bodyCell--removeAll');
-    resetGroupRemoveActions(removeAllActions, options);
 
   }
   // otherwise find each selected item from a group and remove it from selected
@@ -469,17 +495,26 @@ function reset(){
   checkGroupActions();
 
   // probably doesn't belong here, but making sure, we don't have empty selection subgroups
-  const selectionExcludedTitle = $('.JS_multiSelector__box--selectionTitleExclude');
-  const selectionExcluded = $('.JS_multiSelector__box--selectionChildrenExclude');
-  if(selectionExcluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
-    selectionExcludedTitle.remove();
-    selectionExcluded.remove();
+
+  const selectionMainTitle = $('.JS_multiSelector__box--selectionTitle');
+  const selectionMain = $('.JS_multiSelector__box--selectionChildren');
+  if(selectionMain.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
+    selectionMainTitle.remove();
+    selectionMain.remove();
   }
-  const selectionIncludedTitle = $('.JS_multiSelector__box--selectionTitleInclude');
-  const selectionIncluded = $('.JS_multiSelector__box--selectionChildrenInclude');
-  if(selectionIncluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
-    selectionIncludedTitle.remove();
-    selectionIncluded.remove();
+  else {
+    const selectionExcludedTitle = $('.JS_multiSelector__box--selectionTitleExclude');
+    const selectionExcluded = $('.JS_multiSelector__box--selectionChildrenExclude');
+    if(selectionExcluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
+      selectionExcludedTitle.remove();
+      selectionExcluded.remove();
+    }
+    const selectionIncludedTitle = $('.JS_multiSelector__box--selectionTitleInclude');
+    const selectionIncluded = $('.JS_multiSelector__box--selectionChildrenInclude');
+    if(selectionIncluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
+      selectionIncludedTitle.remove();
+      selectionIncluded.remove();
+    }
   }
 
   // reinitiate onclick and reorder actions in selection blocks
@@ -514,7 +549,6 @@ function reset(){
 
   // INCL-EXCL OPTIONS EXPAND-COLLAPSE
   window.setTimeout( function() {
-    console.log('incl excl toggle');
     $('.JS_itemBoxTable__bodyCellInner--inclexcltoggle').on('click', function() {
       const toggle = $(this);
       closeColorOptions(toggle);
