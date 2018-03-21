@@ -24,7 +24,7 @@ $.Velocity.animate(appNavChildren, 'slideUp').then(function() {
 
 
 // default collapse for filter-tagpicker / options block
-const filterTagPopupChildren = $("#filter-tagpicker .JS_multiSelector__box--optionsChildren");
+const filterTagPopupChildren = $("#filter-tagpicker .JS_multiSelector__box--optionsChildren, #filter-datepicker .JS_multiSelector__box--optionsChildren");
 const filterTagPopupBodyRow = $(filterTagPopupChildren).find('.itemBoxTable__bodyRow');
 
 $.Velocity.animate(filterTagPopupChildren, 'slideUp').then(function() {
