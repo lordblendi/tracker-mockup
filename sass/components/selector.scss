@@ -99,6 +99,31 @@
     }
   }
 
+  &__handlers {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    background-color: #FFF;
+    border-bottom: 1px dashed #CCCC;
+    box-shadow: 0 0 200px 60px rgba(0, 0, 0, 0.2);
+  }
+
+  &__handler {
+    padding: 10px 15px;
+
+    &--error {
+      background-color: #ffdfdf;
+    }
+
+    &--action {
+      background-color: #e0f0ff;
+    }
+
+    &--tooltip {
+      background-color: #efefef;
+    }
+  }
+
   &__note {
     display: inline-block;
     margin: 10px 0 0;
@@ -282,6 +307,7 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       background-color: #FFF;
+      color: #000;
 
       &--prefix {
         text-align: center;
