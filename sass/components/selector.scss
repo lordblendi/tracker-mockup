@@ -177,6 +177,12 @@
     }
   }
 
+  &--toggleselect {
+    .pmx-selector__blockPart {
+      border-radius: 15px;
+    }
+  }
+
   &__item {
     position: relative;
     z-index: 1;
@@ -276,8 +282,6 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       background-color: #FFF;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
 
       &--prefix {
         text-align: center;
