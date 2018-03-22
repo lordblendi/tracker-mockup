@@ -65,35 +65,34 @@ function filterResults(input, listItemSelector) {
 // check all groups, see if they need to be hidden or not
 function checkGroups(multiSelector, possibleChildren) {
   var groups = $(multiSelector).find(possibleChildren);
-
-    for (i = 0; i < groups.length; i++) {
-      var currentGroup = $(groups[i]);
-      var possibleChild = currentGroup.next();
-      if(possibleChild.hasClass('itemBox--children:not(.JS_itemBox--suggestions)')) {
-        // find all not hidden children
-        var filterableCells = $(possibleChild).find('ul.JS_filterableCell');
-        // if there are some, don't hide the group
-        if (filterableCells.length > 0) {
-          currentGroup.css("display", "flex");
-          groups[i].outerHTML = groups[i].outerHTML.trim()
-          .replace('<hide ','<ul ')
-          .replace(new RegExp('</hide'),'</ul');
-          $(possibleChild).css('padding-top', '5px');
-          $(possibleChild).css('padding-bottom', '5px');
-        }
-        // otherwise hide the group
-        else {
-          currentGroup.css("display", "none");
-          groups[i].outerHTML = groups[i].outerHTML.trim()
-          .replace('<ul ','<hide ')
-          .replace(new RegExp('</ul'),'</hide');
-          // make sure to remove the padding around the children
-          // in case they were open with all of them hidden, there would be a gap
-          $(possibleChild).css('padding-top', '0px');
-          $(possibleChild).css('padding-bottom', '0px');
-        }
+  for (i = 0; i < groups.length; i++) {
+    var currentGroup = $(groups[i]);
+    var possibleChild = currentGroup.next();
+    if(possibleChild.hasClass('itemBox--children')) {
+      // find all not hidden children
+      var filterableCells = $(possibleChild).find('ul.JS_filterableCell');
+      // if there are some, don't hide the group
+      if (filterableCells.length > 0) {
+        currentGroup.css("display", "flex");
+        groups[i].outerHTML = groups[i].outerHTML.trim()
+        .replace('<hide ','<ul ')
+        .replace(new RegExp('</hide'),'</ul');
+        $(possibleChild).css('padding-top', '5px');
+        $(possibleChild).css('padding-bottom', '5px');
+      }
+      // otherwise hide the group
+      else {
+        currentGroup.css("display", "none");
+        groups[i].outerHTML = groups[i].outerHTML.trim()
+        .replace('<ul ','<hide ')
+        .replace(new RegExp('</ul'),'</hide');
+        // make sure to remove the padding around the children
+        // in case they were open with all of them hidden, there would be a gap
+        $(possibleChild).css('padding-top', '0px');
+        $(possibleChild).css('padding-bottom', '0px');
       }
     }
+  }
 }
 
 // we have to reinit all actions
