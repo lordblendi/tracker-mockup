@@ -364,14 +364,8 @@
             font-family: 'tenforce', sans-serif;
           }
 
-          .pmx-field {
-            margin: 0;
-            padding: 0;
-
-            &__inner {
-              padding: 5px 0;
-              height: 40px;
-            }
+          .pmx-selector {
+            margin: 5px 2px;
           }
         }
       }
