@@ -177,7 +177,10 @@
   &--readonly {
     background-color: #D7D7D7;
     border: 2px solid #D7D7D7;
-    overflow: hidden;
+
+    .pmx-selector__itemSeperator {
+      border-radius: 15px;
+    }
 
     .pmx-selector__item,
     .pmx-selector__item:hover {
