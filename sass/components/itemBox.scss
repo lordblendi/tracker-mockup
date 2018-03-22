@@ -155,32 +155,32 @@
         &:nth-of-type(odd) {
           background: #FFF;
 
-          .pmx-field__value::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            right: 0;
-            width: 30px;
-            height: 38px;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .6) 60%, rgba(255, 255, 255, 1) 100%);
-            pointer-events: none;
-            z-index: 1;
-          }
+          // .pmx-field__value::after {
+          //   content: '';
+          //   position: absolute;
+          //   bottom: 2px;
+          //   right: 0;
+          //   width: 30px;
+          //   height: 38px;
+          //   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .6) 60%, rgba(255, 255, 255, 1) 100%);
+          //   pointer-events: none;
+          //   z-index: 1;
+          // }
         }
         &:nth-of-type(even) {
           background-color: #F2F2F2;
 
-          .pmx-field__value::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            right: 0;
-            width: 30px;
-            height: 38px;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(238, 239, 240, .6) 60%, rgb(240, 240, 241) 100%);
-            pointer-events: none;
-            z-index: 1;
-          }
+          // .pmx-field__value::after {
+          //   content: '';
+          //   position: absolute;
+          //   bottom: 2px;
+          //   right: 0;
+          //   width: 30px;
+          //   height: 38px;
+          //   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(238, 239, 240, .6) 60%, rgb(240, 240, 241) 100%);
+          //   pointer-events: none;
+          //   z-index: 1;
+          // }
         }
 
         &:hover {
