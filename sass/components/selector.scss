@@ -153,16 +153,15 @@
 .pmx-selector {
   position: relative;
   display: inline-block;
-  height: 30px;
-  border-radius: 15px;
-  font-size: 0;
   max-width: 100%;
-  line-height: initial;
-  white-space: nowrap;
-  vertical-align: top;
+  height: 30px;
 
+  white-space: nowrap;
+  border-radius: 15px;
   background-color: transparent;
   border: 2px solid transparent;
+
+  font-size: 0;
 
   &--expanded {
     background-color: #D7D7D7;
@@ -176,6 +175,8 @@
   }
 
   &--readonly {
+    background-color: #D7D7D7;
+    border: 2px solid #D7D7D7;
     overflow: hidden;
 
     .pmx-selector__item,
@@ -210,19 +211,22 @@
 
   &__item {
     position: relative;
-    z-index: 1;
     display: inline-block;
+    vertical-align: top;
     height: 26px;
+    line-height: 26px;
+
     min-width: 26px;
     max-width: 100%;
-    border-radius: 15px;
+
     overflow: hidden;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-    vertical-align: top;
+
+    border-radius: 15px;
     background-color: #FFF;
+
+    transition: all .3s ease-in-out;
     filter: saturate(0.4) opacity(0.4);
+    cursor: pointer;
 
     &:hover {
       filter: saturate(0.7) opacity(0.7);
@@ -263,50 +267,70 @@
     }
 
     &Seperator {
-      position: relative;
       z-index: 0;
+      position: relative;
       display: inline-block;
+      vertical-align: top;
       height: 26px;
-      min-width: 8px;
-      border-radius: 3px;
-      margin: 0 -3px;
-
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1px;
       line-height: 28px;
-      text-transform: uppercase;
-      color: #808080;
 
+      min-width: 8px;
+      margin: 0 -3px;
+      border-radius: 3px;
       background-color: #D7D7D7;
 
       &--hasLabel {
         margin: 0;
-        padding: 0 8px;
+        padding: 0 10px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #808080;
       }
     }
   }
 
   &__block {
+    z-index: 1;
     position: relative;
-    display: flex;
+    display: inline-block;
     height: 26px;
-    line-height: 28px;
     border-radius: 3px;
-    font-family: 'tenforce', sans-serif;
+    font-size: 0;
+
+    &Seperator {
+      z-index: 2;
+      position: relative;
+      display: inline-block;
+      height: 12px;
+
+      margin: 7px -3px;
+      border-right: 1px dotted #D7D7D7;
+    }
 
     &Part {
-      position: relative;
       z-index: 1;
+      position: relative;
       display: inline-block;
-      max-width: 300px;
       height: 26px;
+      line-height: 26px;
+
+      max-width: 300px;
       padding: 0 10px;
+
       border-radius: 3px;
+      background-color: #FFF;
+
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      background-color: #FFF;
+
+      font-family: 'tenforce', sans-serif;
+      font-size: 16px;
+      font-weight: normal;
+      letter-spacing: normal;
+      text-transform: none;
       color: #000;
 
       &--prefix {
@@ -314,19 +338,12 @@
       }
 
       &--label  {
-        text-transform: uppercase;
-        color: #808080;
         font-size: 12px;
         font-weight: 600;
         letter-spacing: 1px;
-
-        + .pmx-selector__blockSeperator {
-          position: relative;
-          z-index: 2;
-          margin: 7px -3px;
-          height: 12px;
-          border-right: 1px dotted #D7D7D7;
-        }
+        text-transform: uppercase;
+        color: #808080;
+        line-height: 28px;
       }
     }
   }
