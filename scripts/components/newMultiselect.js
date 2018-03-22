@@ -313,7 +313,7 @@ function getNewItem(item, exclude) {
 
     colorHTML = `{% include javascript/colorAction.html %}`
     if($(item).closest('.multiSelector.JS_multiSelector--withColors').length > 0) {
-      colorChildren = `{% include blocks/ms-tags-colors-color-sublist.html %}`;
+      colorChildren = `{% include blocks/popup/ms-tags-colors-color-sublist.html %}`;
     }
   }
 
