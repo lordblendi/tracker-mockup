@@ -47,7 +47,7 @@ function filterResults(input, listItemSelector) {
     var text = $(listItems[i]).find(".JS_itemBoxTable__bodyCellInner--text")[0];
 
     if(text !== undefined) {
-      if (text.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      if (text.textContent.toUpperCase().indexOf(filter) > -1) {
         listItems[i].style.display = "";
         listItems[i].outerHTML = listItems[i].outerHTML.trim()
           .replace('<hide ','<ul ')
