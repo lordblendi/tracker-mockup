@@ -507,65 +507,70 @@ function checkGroupActions() {
 function reset(){
   checkGroupActions();
 
-  // probably doesn't belong here, but making sure, we don't have empty selection subgroups
-
-  const selectionMainTitle = $('.JS_multiSelector__box--selectionTitle');
-  const selectionMain = $('.JS_multiSelector__box--selectionChildren');
-  if(selectionMain.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
-    selectionMainTitle.remove();
-    selectionMain.remove();
-  }
-  else {
-    const selectionExcludedTitle = $('.JS_multiSelector__box--selectionTitleExclude');
-    const selectionExcluded = $('.JS_multiSelector__box--selectionChildrenExclude');
-    if(selectionExcluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
-      selectionExcludedTitle.remove();
-      selectionExcluded.remove();
+  $('.multiSelector').each(function(index, multiSelector){
+    // probably doesn't belong here, but making sure, we don't have empty selection subgroups
+    const selectionMainTitle = $(multiSelector).find('.JS_multiSelector__box--selectionTitle');
+    const selectionMain = $(multiSelector).find('.JS_multiSelector__box--selectionChildren');
+    if(selectionMain.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
+      selectionMainTitle.remove();
+      selectionMain.remove();
     }
-    const selectionIncludedTitle = $('.JS_multiSelector__box--selectionTitleInclude');
-    const selectionIncluded = $('.JS_multiSelector__box--selectionChildrenInclude');
-    if(selectionIncluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
-      selectionIncludedTitle.remove();
-      selectionIncluded.remove();
-    }
-  }
-
-  // reinitiate onclick and reorder actions in selection blocks
-  $('.multiSelector .JS_multiSelector__box .itemBoxTable__action').on('click', function(){
-    const action = $(this);
-    handleActionOnclick(action);
-  });
-
-  // reinitiate reorder functionality
-  $(".multiSelector:not(.JS_multiSelector--withFilter) .itemBoxBody--sortable").sortable({
-    handle: '.itemBoxTable__bodyCell--draggable',
-    placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder'
-  });
-
-  $(".multiSelector.JS_multiSelector--withFilter .itemBoxBody--sortableInclude, .multiSelector.JS_multiSelector--withFilter .itemBoxBody--sortableExclude").sortable({
-    handle: '.itemBoxTable__bodyCell--draggable',
-    placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder',
-    connectWith: ".itemBoxBody--sortableConnected"
-  });
-
-  // reinitiate selectorItem inside multiselector
-  $('.JS_selectorItem').on('click', function() {
-    const selectorValue = $(this);
-    const selector = selectorValue.closest('.JS_selector');
-
-    // only if this is not a multiselect popup toggle
-    if(!selector.hasClass('MULTISELECT__POPUP')) {
-      handleSelector(selector, selectorValue);
+    else {
+      const selectionExcludedTitle = $(multiSelector).find('.JS_multiSelector__box--selectionTitleExclude');
+      const selectionExcluded = $(multiSelector).find('.JS_multiSelector__box--selectionChildrenExclude');
+      if(selectionExcluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
+        selectionExcludedTitle.remove();
+        selectionExcluded.remove();
+      }
+      const selectionIncludedTitle = $(multiSelector).find('.JS_multiSelector__box--selectionTitleInclude');
+      const selectionIncluded = $(multiSelector).find('.JS_multiSelector__box--selectionChildrenInclude');
+      if(selectionIncluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
+        selectionIncludedTitle.remove();
+        selectionIncluded.remove();
+      }
     }
 
-  });
-
-  // INCL-EXCL OPTIONS EXPAND-COLLAPSE
-  window.setTimeout( function() {
-    $('.JS_itemBoxTable__bodyCellInner--inclexcltoggle').off('click').on('click', function() {
-      const toggle = $(this);
-      closeColorOptions(toggle);
-      toggleInclExclSelector(toggle);
+    // reinitiate onclick and reorder actions in selection blocks
+    $(multiSelector).find('.JS_multiSelector__box .itemBoxTable__action').on('click', function(){
+      const action = $(this);
+      handleActionOnclick(action);
     });
-  }, 250);
+
+    // reinitiate reorder functionality
+    if ($(multiSelector).hasClass('JS_multiSelector--withFilter')){
+      $(multiSelector).find(".itemBoxBody--sortableInclude, .itemBoxBody--sortableExclude").sortable({
+        handle: '.itemBoxTable__bodyCell--draggable',
+        placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder',
+        connectWith: ".itemBoxBody--sortableConnected"
+      });
+    }
+    else {
+      $(multiSelector).find(".itemBoxBody--sortable").sortable({
+        handle: '.itemBoxTable__bodyCell--draggable',
+        placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder'
+      });
+    }
+
+
+    // reinitiate selectorItem inside multiselector
+    $(multiSelector).find('.JS_selectorItem').on('click', function() {
+      const selectorValue = $(this);
+      const selector = selectorValue.closest('.JS_selector');
+
+      // only if this is not a multiselect popup toggle
+      if(!selector.hasClass('MULTISELECT__POPUP')) {
+        handleSelector(selector, selectorValue);
+      }
+
+    });
+
+    // INCL-EXCL OPTIONS EXPAND-COLLAPSE
+    window.setTimeout( function() {
+      $(multiSelector).find('.JS_itemBoxTable__bodyCellInner--inclexcltoggle').off('click').on('click', function() {
+        const toggle = $(this);
+        closeColorOptions(toggle);
+        toggleInclExclSelector(toggle);
+      });
+    }, 250);
+  });
 }
