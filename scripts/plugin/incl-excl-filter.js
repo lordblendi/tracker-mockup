@@ -16,7 +16,7 @@ function selectNewFilterOption(incleExclBodyRow) {
 
   // find the bodyRow related to this toggle
   const itemBox = incleExclBodyRow.closest('.JS_itemBox--filterInclExcl');
-  const bodyRow = $(itemBox).prevAll('ul.itemBoxTable__bodyRow.JS_filterableCell:first');
+  const bodyRow = $(itemBox).prevAll('ul.itemBoxTable__bodyRow.JS_filterableCell:first:not(".JS_createNewTag")');
 
   // find toggle and replace text and data-filter
   const toggle = $(bodyRow).find('.JS_inclExl');
