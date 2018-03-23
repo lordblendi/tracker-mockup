@@ -143,13 +143,17 @@ function addSelectedBlock(multiSelector, selectedBlockClass){
     var andOrSelector = '';
     if(multiSelector.hasClass('JS_multiSelector--withFilter')) {
       selectedFilters = `{% include javascript/selectedBlock-Include.html %}{% include javascript/selectedBlock-Exclude.html %}`;
-      andOrSelector = `{% include javascript/and-or-selector.html %}`;
+      andOrSelector = `<li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--align-right" style="flex-grow: 1;" data-flex="1">
+        <div class="itemBoxTable__bodyCellInner">
+          {% include javascript/and-or-selector.html %}
+        </div>
+      </li>`;
     }
     const selectedBlock = `{% include javascript/selectedBlock.html %}`;
     multiSelector.find('.JS_multiSelector__box--optionsTitle').before(selectedBlock);
-    const selection = multiSelector.find('.JS_multiSelector__box--selectionTitle');
+    const selectionTitle = multiSelector.find('.JS_multiSelector__box--selectionTitle');
     // enable toggle again
-    $(selection.find('.itemBoxTable__bodyCell--toggle')).on('click', function() {
+    $(selectionTitle.find('.itemBoxTable__bodyCell--toggle')).on('click', function() {
       const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
       expandCloseRow(itemBoxTable__bodyRow);
     });
@@ -169,7 +173,6 @@ function handleComplexGroupAdd(action, children, exclude) {
       addSelectedBlock(multiSelector, selectedBlockClass);
       selection = multiSelector.find(selectedBlockClass);
     }
-
 
     // finding all the already selected items
     const optionItems = children.find('ul .JS_itemBoxTable__bodyCellInner--text');
@@ -197,7 +200,6 @@ function handleComplexGroupAdd(action, children, exclude) {
           const filteredSelectedBlockSelector = selectedBlockClass + filter.attr('data-filter') + " > .itemBoxTable > .itemBoxBody";
           neededSelectedBlock = $(itemBoxBody).find(filteredSelectedBlockSelector);
         }
-
         neededSelectedBlock.append(getNewItem(item, exclude));
         const newItem = $(neededSelectedBlock).find('> .itemBoxTable__bodyRow').last();
         if($(newItem).find('.JS_itemBoxTable__bodyCellInner--colortoggle').length > 0 ){

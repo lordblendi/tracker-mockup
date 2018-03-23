@@ -1,15 +1,14 @@
 <ul class="itemBoxTable__bodyRow  JS_multiSelector__box--selectionTitleExclude">
-  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 0;" data-flex="0">
+  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
     <div class="itemBoxTable__bodyCellInner">
-      <i class="itemBoxTable__action itemBoxTable__action--toggle">ऄ</i>
+      <i class="itemBoxTable__action--toggle">ऄ Exclude</i>
     </div>
   </li>
-  <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-    <div class="itemBoxTable__bodyCellInner itemBoxTable__bodyCellInner--selectedText">
-      <i>Exclude</i>
+  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--align-right " style="flex-grow: 1;" data-flex="1">
+    <div class="itemBoxTable__bodyCellInner">
+      {% include javascript/and-or-selector.html %}
     </div>
   </li>
-  {% include javascript/and-or-selector.html %}
   <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
     <div class="itemBoxTable__bodyCellInner">
       <i class="itemBoxTable__action itemBoxTable__action--remove JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--removeAllSelected">—</i>
