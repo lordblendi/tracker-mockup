@@ -309,12 +309,16 @@ function getNewItem(item, exclude) {
   var colorPrefixHTML = '';
   var colorChildren = '';
   var colorToggleHTML = '';
+  var colorToggleTriggerClass = '';
+  var colorToggleTriggerInnerClass = '';
 
   // if so, adds both color toggle and color pallette
   if(colorSelectorToggle.length > 0) {
     var color = $(colorPrefix).attr('data-color');
     colorToggleHTML = `{% include javascript/colorToggle.html color="${color}" %}`;
     if($(item).closest('.multiSelector.JS_multiSelector--withColors').length > 0) {
+      colorToggleTriggerClass = ' JS_colorselector-trigger';
+      colorToggleTriggerInnerClass = ' JS_itemBoxTable__bodyCellInner--colortoggle';
       colorChildren = `{% include blocks/popup/ms-tags-colors-color-sublist.html %}`;
     }
   }
