@@ -303,18 +303,25 @@ function getNewItem(item, exclude) {
   // check if there should be a color trigger or not.
   var textOfActionItem = $(item).html().trim();
   var bodyRow = $(item).closest('.itemBoxTable__bodyRow');
-  var colorToggle = $(bodyRow).find('.JS_Color');
+  var colorPrefix = $(bodyRow).find('.JS_Color--prefix');
+  var colorSelectorToggle = $(bodyRow).find('.JS_colorselector-trigger');
 
-  var colorHTML = '';
+  var colorPrefixHTML = '';
   var colorChildren = '';
-  // if so, adds both color toggle and color pallette
-  if(colorToggle.length > 0) {
-    var color = $(colorToggle).attr('data-color');
+  var colorToggleHTML = '';
 
-    colorHTML = `{% include javascript/colorAction.html %}`
+  // if so, adds both color toggle and color pallette
+  if(colorSelectorToggle.length > 0) {
+    var color = $(colorPrefix).attr('data-color');
+    colorToggleHTML = `{% include javascript/colorToggle.html color="${color}" %}`;
     if($(item).closest('.multiSelector.JS_multiSelector--withColors').length > 0) {
       colorChildren = `{% include blocks/popup/ms-tags-colors-color-sublist.html %}`;
     }
+  }
+  // otherwise only check if the prefix is there or not
+  else if(colorPrefix.length > 0) {
+    var color = $(colorPrefix).attr('data-color');
+    colorPrefixHTML = `{% include javascript/colorAction.html %}`
   }
 
   return `{% include javascript/newSelectedItem.html %}`;
