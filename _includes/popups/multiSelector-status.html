@@ -1,151 +1,126 @@
 <div class="multiSelector multiSelector--popup" id="multiSelector-1">
 
-    <div class="pmx-field__handlers">
-      <div class="pmx-field__handler pmx-field__handler--error">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-      <div class="pmx-field__handler pmx-field__handler--action">
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      </div>
-      <div class="pmx-field__handler pmx-field__handler--tooltip">
-        <p>Actual invoice amount</p>
-        <p>For fixed price projects and service requests (no timesheets): when you change the status to 'to be invoiced', please insert the exact amount that needs to be invoiced.</p>
+  <div class="pmx-field__handlers">
+    <div class="pmx-field__handler pmx-field__handler--error">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="pmx-field__handler pmx-field__handler--action">
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+    <div class="pmx-field__handler pmx-field__handler--tooltip">
+      <p>Actual invoice amount</p>
+      <p>For fixed price projects and service requests (no timesheets): when you change the status to 'to be invoiced', please insert the exact amount that needs to be invoiced.</p>
+    </div>
+  </div>
+
+  <div class="itemBox JS_multiSelector__box">
+    <div class="itemBoxTable">
+      <div class="itemBoxBody">
+        <ul class="itemBoxTable__bodyRow">
+          <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+            <div class="itemBoxTable__bodyCellInner">
+
+              <input type="search" class="JS_multiSelector__filterInput" placeholder="filter through items">
+
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
+  </div>
 
-    <div class="itemBox JS_multiSelector__box">
-      <div class="itemBoxTable">
-        <div class="itemBoxBody">
-          <ul class="itemBoxTable__bodyRow">
-              <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
+  <div class="itemBox JS_multiSelector__box--optionsChildren">
+    <div class="itemBoxTable">
+      <div class="itemBoxBody">
+        <ul class="itemBoxTable__bodyRow JS_filterableCell">
+          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--text" style="flex-grow: 1;" data-flex="1">
+            <div class="itemBoxTable__bodyCellInner">
 
-                    <input type="search" class="JS_multiSelector__filterInput" placeholder="filter through items">
-
+              <div class="pmx-selector pmx-selector--readonly">
+                <div class="pmx-selector__item">
+                  <div class="pmx-selector__block">
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_color--prefix" style="background-color: #ff9b9b">ध</div>
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">Not started</div>
                   </div>
-              </li>
-          </ul>
-        </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
+            <div class="itemBoxTable__bodyCellInner">
+              <i class="itemBoxTable__action itemBoxTable__action--add">✓</i>
+            </div>
+          </li>
+        </ul>
+        <ul class="itemBoxTable__bodyRow JS_filterableCell">
+          <li class="itemBoxTable__bodyCell  JS_itemBoxTable__bodyCell--text" style="flex-grow: 1;" data-flex="1">
+            <div class="itemBoxTable__bodyCellInner">
+
+              <div class="pmx-selector pmx-selector--readonly">
+                <div class="pmx-selector__item">
+                  <div class="pmx-selector__block">
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_color--prefix" style="background-color: #00BFFF">ध</div>
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">Ongoing</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </li>
+
+          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
+            <div class="itemBoxTable__bodyCellInner">
+              <i class="itemBoxTable__action itemBoxTable__action--add">ބ</i>
+            </div>
+          </li>
+        </ul>
+        <ul class="itemBoxTable__bodyRow JS_filterableCell">
+          <li class="itemBoxTable__bodyCell  JS_itemBoxTable__bodyCell--text" style="flex-grow: 1;" data-flex="1">
+            <div class="itemBoxTable__bodyCellInner">
+
+              <div class="pmx-selector pmx-selector--readonly">
+                <div class="pmx-selector__item">
+                  <div class="pmx-selector__block">
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_color--prefix" style="background-color: #F4CA16">ध</div>
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">On hold</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
+            <div class="itemBoxTable__bodyCellInner">
+              <i class="itemBoxTable__action itemBoxTable__action--add">ބ</i>
+            </div>
+          </li>
+        </ul>
+        <ul class="itemBoxTable__bodyRow JS_filterableCell">
+          <li class="itemBoxTable__bodyCell  JS_itemBoxTable__bodyCell--text" style="flex-grow: 1;" data-flex="1">
+            <div class="itemBoxTable__bodyCellInner">
+
+              <div class="pmx-selector pmx-selector--readonly">
+                <div class="pmx-selector__item">
+                  <div class="pmx-selector__block">
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_color--prefix" style="background-color: #0BDA51">ध</div>
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">Finished</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
+            <div class="itemBoxTable__bodyCellInner">
+              <i class="itemBoxTable__action itemBoxTable__action--add">ބ</i>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
-
-    <div class="itemBox JS_multiSelector__box--optionsChildren">
-      <div class="itemBoxTable">
-        <div class="itemBoxBody">
-          <ul class="itemBoxTable__bodyRow JS_filterableCell">
-            <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--text" style="flex-grow: 1;" data-flex="1">
-              <div class="itemBoxTable__bodyCellInner">
-
-                <div class="pmx-field">
-                  <div class="pmx-field__inner">
-                    <div class="pmx-field__value">
-                      <div class="pmx-selector pmx-selector--readonly">
-                        <div class="pmx-selector__item">
-                          <div class="pmx-selector__block">
-                            <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_color--prefix" style="background-color: #ff9b9b">ध</div>
-                            <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">Not started</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
-              <div class="itemBoxTable__bodyCellInner">
-                <i class="itemBoxTable__action itemBoxTable__action--add">✓</i>
-              </div>
-            </li>
-          </ul>
-          <ul class="itemBoxTable__bodyRow JS_filterableCell">
-            <li class="itemBoxTable__bodyCell  JS_itemBoxTable__bodyCell--text" style="flex-grow: 1;" data-flex="1">
-              <div class="itemBoxTable__bodyCellInner">
-
-                <div class="pmx-field">
-                  <div class="pmx-field__inner">
-                    <div class="pmx-field__value">
-                      <div class="pmx-selector pmx-selector--readonly">
-                        <div class="pmx-selector__item">
-                          <div class="pmx-selector__block">
-                            <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_color--prefix" style="background-color: #00BFFF">ध</div>
-                            <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">Ongoing</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
-              <div class="itemBoxTable__bodyCellInner">
-                <i class="itemBoxTable__action itemBoxTable__action--add">ބ</i>
-              </div>
-            </li>
-          </ul>
-          <ul class="itemBoxTable__bodyRow JS_filterableCell">
-            <li class="itemBoxTable__bodyCell  JS_itemBoxTable__bodyCell--text" style="flex-grow: 1;" data-flex="1">
-              <div class="itemBoxTable__bodyCellInner">
-
-                <div class="pmx-field">
-                  <div class="pmx-field__inner">
-                    <div class="pmx-field__value">
-                      <div class="pmx-selector pmx-selector--readonly">
-                        <div class="pmx-selector__item">
-                          <div class="pmx-selector__block">
-                            <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_color--prefix" style="background-color: #F4CA16">ध</div>
-                            <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">On hold</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
-              <div class="itemBoxTable__bodyCellInner">
-                <i class="itemBoxTable__action itemBoxTable__action--add">ބ</i>
-              </div>
-            </li>
-          </ul>
-          <ul class="itemBoxTable__bodyRow JS_filterableCell">
-            <li class="itemBoxTable__bodyCell  JS_itemBoxTable__bodyCell--text" style="flex-grow: 1;" data-flex="1">
-              <div class="itemBoxTable__bodyCellInner">
-
-                <div class="pmx-field">
-                  <div class="pmx-field__inner">
-                    <div class="pmx-field__value">
-                      <div class="pmx-selector pmx-selector--readonly">
-                        <div class="pmx-selector__item">
-                          <div class="pmx-selector__block">
-                            <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_color--prefix" style="background-color: #0BDA51">ध</div>
-                            <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">Finished</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
-              <div class="itemBoxTable__bodyCellInner">
-                <i class="itemBoxTable__action itemBoxTable__action--add">ބ</i>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- /.itemBox -->
+  </div>
+  <!-- /.itemBox -->
 
 </div>
 <!-- /.multiSelector -->
