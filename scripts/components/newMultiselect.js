@@ -321,7 +321,7 @@ function getNewItem(item, exclude) {
   // otherwise only check if the prefix is there or not
   else if(colorPrefix.length > 0) {
     var color = $(colorPrefix).attr('data-color');
-    colorPrefixHTML = `{% include javascript/colorAction.html %}`
+    colorPrefixHTML = `{% include javascript/colorPrefix.html %}`
   }
 
   return `{% include javascript/newSelectedItem.html %}`;
