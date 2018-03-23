@@ -562,7 +562,7 @@ function reset(){
 
   // INCL-EXCL OPTIONS EXPAND-COLLAPSE
   window.setTimeout( function() {
-    $('.JS_itemBoxTable__bodyCellInner--inclexcltoggle').on('click', function() {
+    $('.JS_itemBoxTable__bodyCellInner--inclexcltoggle').off('click').on('click', function() {
       const toggle = $(this);
       closeColorOptions(toggle);
       toggleInclExclSelector(toggle);

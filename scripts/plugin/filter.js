@@ -136,4 +136,12 @@ function reInitActions(multiSelector) {
       handleSelector(selector, selectorValue);
     }
   });
+  // INCL-EXCL OPTIONS EXPAND-COLLAPSE
+  window.setTimeout( () => {
+    $(multiSelector).find('.JS_itemBoxTable__bodyCellInner--inclexcltoggle').off('click').on('click', function() {
+      const toggle = $(this);
+      closeColorOptions(toggle);
+      toggleInclExclSelector(toggle);
+    });
+  }, 250);
 }
