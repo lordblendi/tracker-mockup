@@ -67,7 +67,7 @@
                       <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
                         <div class="itemBoxTable__bodyCellInner">
                           <div class="pmx-selector pmx-selector--readonly">
-                            <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+                            <div class="pmx-selector__item pmx-selector__item--selected">
                               <div class="pmx-selector__block ">
                                 <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">next 2 weeks (12/03/18-25/03/18)</div>
                               </div>
@@ -85,7 +85,7 @@
                       <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
                         <div class="itemBoxTable__bodyCellInner">
                           <div class="pmx-selector pmx-selector--readonly">
-                            <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+                            <div class="pmx-selector__item pmx-selector__item--selected">
                               <div class="pmx-selector__block ">
                                 <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">19/03/18-20/03/18</div>
                               </div>
@@ -127,7 +127,7 @@
                       <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
                         <div class="itemBoxTable__bodyCellInner">
                           <div class="pmx-selector pmx-selector--readonly">
-                            <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+                            <div class="pmx-selector__item pmx-selector__item--selected">
                               <div class="pmx-selector__block ">
                                 <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">today</div>
                               </div>
@@ -145,7 +145,7 @@
                       <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
                         <div class="itemBoxTable__bodyCellInner">
                           <div class="pmx-selector pmx-selector--readonly">
-                            <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+                            <div class="pmx-selector__item pmx-selector__item--selected">
                               <div class="pmx-selector__block ">
                                 <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">18/03/18</div>
                               </div>
@@ -199,11 +199,11 @@
                 <div class="itemBoxTable">
                   <div class="itemBoxBody">
                     <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell JS_incl-excl-trigger" style="flex-grow: 1;" data-flex="1">
+                      <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
                         <div class="itemBoxTable__bodyCellInner ">
                           {% include blocks/popup/ms-excluded-toggle.html %}
                           <div class="pmx-selector">
-                            <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+                            <div class="pmx-selector__item pmx-selector__item--selected">
                               <div class="pmx-selector__block ">
                                 <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">today</div>
                               </div>
@@ -241,11 +241,11 @@
                 <div class="itemBoxTable">
                   <div class="itemBoxBody">
                     <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell JS_incl-excl-trigger" style="flex-grow: 1;" data-flex="1">
+                      <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
                         <div class="itemBoxTable__bodyCellInner ">
                           {% include blocks/popup/ms-excluded-toggle.html %}
-                          <div class="pmx-selector">
-                            <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+                          <div class="pmx-selector  JS_calendar--toggle">
+                            <div class="pmx-selector__item pmx-selector__item--selected">
                               <div class="pmx-selector__block ">
                                 <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">18/03/18</div>
                               </div>
@@ -260,6 +260,7 @@
                       </li>
                     </ul>
                     {% include blocks/popup/ms-incl-excl-filter-sublist.html %}
+                    {% include blocks/popup/calendar/ms-calendar-sublist.html %}
                     {% include blocks/popup/ms-create-new.html %}
                   </div>
                 </div>
@@ -282,11 +283,11 @@
                 <div class="itemBoxTable">
                   <div class="itemBoxBody">
                     <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell JS_incl-excl-trigger" style="flex-grow: 1;" data-flex="1">
+                      <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
                         <div class="itemBoxTable__bodyCellInner ">
                           {% include blocks/popup/ms-included-toggle.html %}
                           <div class="pmx-selector">
-                            <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+                            <div class="pmx-selector__item pmx-selector__item--selected">
                               <div class="pmx-selector__block ">
                                 <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">19/03/18-20/03/18</div>
                               </div>
@@ -324,11 +325,11 @@
                 <div class="itemBoxTable">
                   <div class="itemBoxBody">
                     <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell JS_incl-excl-trigger" style="flex-grow: 1;" data-flex="1">
+                      <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
                         <div class="itemBoxTable__bodyCellInner ">
                           {% include blocks/popup/ms-included-toggle.html %}
                           <div class="pmx-selector">
-                            <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+                            <div class="pmx-selector__item pmx-selector__item--selected">
                               <div class="pmx-selector__block ">
                                 <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">next 2 weeks (12/03/18-25/03/18)</div>
                               </div>
