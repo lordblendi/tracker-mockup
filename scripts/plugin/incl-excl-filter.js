@@ -71,17 +71,17 @@ function selectNewFilterOption(incleExclBodyRow) {
 }
 
 // INCL-EXCL OPTIONS EXPAND-COLLAPSE
-$('.JS_itemBoxTable__bodyCellInner--inclexcltoggle').on('click', function() {
+$('.JS_toggle--InclExcl').on('click', function() {
   const toggle = $(this);
-  closeColorOptions(toggle);
+  closeAllOtherSublists(toggle);
   toggleInclExclSelector(toggle);
 });
 
-// open color incl/excl pallette
+// open incl/excl pallette
 // set a tick for the selected option
 // toggle active class depending on expanding/collapsing
 function toggleInclExclSelector(toggle) {
-  // if there is a color box, expand/collapse it
+  // if there is a  box, expand/collapse it
   const itemBoxTable__bodyRow = toggle.closest('.itemBoxTable__bodyRow');
   const possibleChildren = itemBoxTable__bodyRow.nextAll('.JS_itemBox--filterInclExcl:first');
 
@@ -93,7 +93,7 @@ function toggleInclExclSelector(toggle) {
   // remove other selection shower
   $(possibleChildren).find('.JS_showSelected').remove();
 
-  // // add selection to new color (can be changed by other tags)
+  // // add selection to new incl-excl (can be changed by other tags)
   // // only if opening
 
   const selectedFilter = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--inclExcl[data-filter='${actualFilter}']`);

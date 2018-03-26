@@ -566,7 +566,7 @@ function reset(){
 
     // INCL-EXCL OPTIONS EXPAND-COLLAPSE
     window.setTimeout( function() {
-      $(multiSelector).find('.JS_itemBoxTable__bodyCellInner--inclexcltoggle').off('click').on('click', function() {
+      $(multiSelector).find('.JS_toggle--InclExcl').off('click').on('click', function() {
         const toggle = $(this);
         closeColorOptions(toggle);
         toggleInclExclSelector(toggle);

@@ -138,7 +138,7 @@ function reInitActions(multiSelector) {
   });
   // INCL-EXCL OPTIONS EXPAND-COLLAPSE
   window.setTimeout( () => {
-    $(multiSelector).find('.JS_itemBoxTable__bodyCellInner--inclexcltoggle').off('click').on('click', function() {
+    $(multiSelector).find('.JS_toggle--InclExcl').off('click').on('click', function() {
       const toggle = $(this);
       closeColorOptions(toggle);
       toggleInclExclSelector(toggle);
