@@ -114,7 +114,7 @@ function reInitActions(multiSelector) {
   });
 
   // color picker trigger
-  $(multiSelector).find('.JS_multiSelector__box--selectionChildren .JS_itemBoxTable__bodyCellInner--colortoggle, .JS_multiSelector__box--optionsChildren .JS_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
+  $(multiSelector).find('.JS_multiSelector__box--selectionChildren .JS_toggle--color, .JS_multiSelector__box--optionsChildren .JS_toggle--color').on('click', function() {
     const colorToggle = $(this);
     toggleColorSelector(colorToggle);
   });

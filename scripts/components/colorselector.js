@@ -34,7 +34,7 @@ function selectNewColor(colorItemBodyRow) {
   // change color for all other tags, that have the same textOfActionItem
   $.each(filteredTags, function(index, tag){
     const tagBodyRow = $(tag).closest('.itemBoxTable__bodyRow');
-    const colorItem = tagBodyRow.find('.JS_colorselector-trigger .JS_Color');
+    const colorItem = tagBodyRow.find('.JS_toggle--color .JS_Color');
     if($(colorItem).hasClass('JS_Color--prefix')) {
       colorItem.css('background-color', color).attr('data-color', color);
     }
@@ -63,13 +63,13 @@ function selectNewColor(colorItemBodyRow) {
 
 
 // COLOR OPTIONS EXPAND-COLLAPSE
-$('.JS_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
+$('.JS_toggle--color').on('click', function() {
   const colorToggle = $(this);
-  closeInclExclOptions(colorToggle);
+  closeAllOtherSublists(colorToggle);
   toggleColorSelector(colorToggle);
 });
 
-// open color color pallette
+// open color pallette
 // set a tick for the selected color
 // toggle active class depending on expanding/collapsing
 function toggleColorSelector(colorToggle) {
@@ -130,7 +130,7 @@ $.Velocity.animate(colorOptions, 'slideUp').then(function() {
 // MULTISELECT - RESET COLOR TOGGLES
 function resetColorToggle(item) {
   // expand/collapse for new selected item
-  $(item).find('.JS_itemBoxTable__bodyCellInner--colortoggle').on('click', function() {
+  $(item).find('.JS_toggle--color').on('click', function() {
     const colorToggle = $(this);
     toggleColorSelector(colorToggle);
   });

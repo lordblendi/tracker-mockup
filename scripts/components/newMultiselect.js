@@ -202,7 +202,7 @@ function handleComplexGroupAdd(action, children, exclude) {
         }
         neededSelectedBlock.append(getNewItem(item, exclude));
         const newItem = $(neededSelectedBlock).find('> .itemBoxTable__bodyRow').last();
-        if($(newItem).find('.JS_itemBoxTable__bodyCellInner--colortoggle').length > 0 ){
+        if($(newItem).find('.JS_toggle--color').length > 0 ){
           resetColorToggle(newItem);
         }
 
@@ -306,12 +306,11 @@ function getNewItem(item, exclude) {
   var textOfActionItem = $(item).html().trim();
   var bodyRow = $(item).closest('.itemBoxTable__bodyRow');
   var colorPrefix = $(bodyRow).find('.JS_Color--prefix');
-  var colorSelectorToggle = $(bodyRow).find('.JS_colorselector-trigger');
+  var colorSelectorToggle = $(bodyRow).find('.JS_toggle--color');
 
   var colorPrefixHTML = '';
   var colorChildren = '';
   var colorToggleHTML = '';
-  var colorToggleTriggerClass = '';
   var colorToggleTriggerInnerClass = '';
 
   // if so, adds both color toggle and color pallette
@@ -319,8 +318,7 @@ function getNewItem(item, exclude) {
     var color = $(colorPrefix).attr('data-color');
     colorToggleHTML = `{% include javascript/colorToggle.html color="${color}" %}`;
     if($(item).closest('.multiSelector.JS_multiSelector--withColors').length > 0) {
-      colorToggleTriggerClass = ' JS_colorselector-trigger';
-      colorToggleTriggerInnerClass = ' JS_itemBoxTable__bodyCellInner--colortoggle';
+      colorToggleTriggerInnerClass = ' JS_toggle--color';
       colorChildren = `{% include blocks/popup/ms-tags-colors-color-sublist.html %}`;
     }
   }
@@ -424,7 +422,7 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
       itemBoxBody.append(getNewItem(actionItem, exclude));
 
       const newItem = $(itemBoxBody).find('> .itemBoxTable__bodyRow').last();
-      if($(newItem).find('.JS_itemBoxTable__bodyCellInner--colortoggle').length > 0 ){
+      if($(newItem).find('.JS_toggle--color').length > 0 ){
         resetColorToggle(newItem);
       }
 
