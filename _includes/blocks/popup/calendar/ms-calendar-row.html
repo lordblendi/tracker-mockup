@@ -1,0 +1,39 @@
+<!-- The list of days should look something like this: 1,2,3,4,5,6,7 -->
+<!-- or: Mon,Tue,Wed,Thu,Fri,Sat,Sun -->
+<!-- or: Mon,Tue,Wed,Thu,Fri,Sat,Sun -->
+
+<!-- we make an array of it -->
+{% assign splittedDays = {include.days} | split: "," %}
+
+<ul class="itemBoxTable__bodyRow">
+
+<!-- and loop through the array -->
+{% for splittedDay in splittedDays %}
+  <!-- if the element contains a suffix '-' -->
+  <!-- then it is from another month -->
+  <!-- like -prev or -next -->
+  <!-- make the day simply the part before the '-' -->
+  <!-- and the second part into the class -->
+  {% if splittedDay contains "-" %}
+    {% assign splittedDayArray = {splittedDay} | split: "-" %}
+    {% assign day = {splittedDayArray.first} %}
+    {% assign dayClass = "pmx-selector_date--" | concat {splittedDayArray.last} %}
+  {% else %}
+    <!-- otherwise class is empty, and day is untouched -->
+    {% assign day = {splittedDay} %}
+    {% assign dayClass = "" %}
+  {% endif %}
+
+  <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+    <div class="itemBoxTable__bodyCellInner">
+      <div class="pmx-selector pmx-selector--readonly {{ dayClass }}">
+        <div class="pmx-selector__item">
+          <div class="pmx-selector__block ">
+            <div class="pmx-selector__blockPart pmx-selector__blockPart--field ">{{ day }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+{% endfor %}
+</ul>
