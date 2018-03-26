@@ -113,19 +113,3 @@ function toggleInclExclSelector(toggle) {
     expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
   }
 }
-
-
-
-// close incl-exlToggle if open
-// used by colorToggle
-function closeInclExclOptions(colorToggle) {
-  const itemBoxTable__bodyRow = colorToggle.closest('.itemBoxTable__bodyRow');
-  const activeInclExclTrigger = $(itemBoxTable__bodyRow).find('.JS_incl-excl-trigger.itemBoxTable__bodyCell--active');
-
-  // if there is an active color trigger in this bodyRow
-  if(activeInclExclTrigger.length > 0) {
-    const inclExlToggle = $(activeInclExclTrigger).find('.JS_itemBoxTable__bodyCellInner--inclexcltoggle');
-    toggleInclExclSelector($(inclExlToggle));
-  }
-
-}

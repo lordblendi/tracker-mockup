@@ -103,19 +103,7 @@ function toggleColorSelector(colorToggle) {
 }
 
 
-// close colorToggle if open
-// used by incl-exlToggle
-function closeColorOptions(inclExlToggle) {
-  const itemBoxTable__bodyRow = inclExlToggle.closest('.itemBoxTable__bodyRow');
-  const activeColorTrigger = $(itemBoxTable__bodyRow).find('.JS_colorselector-trigger.itemBoxTable__bodyCell--active');
 
-  // if there is an active color trigger in this bodyRow
-  if(activeColorTrigger.length > 0) {
-    const colorToggle = $(activeColorTrigger).find('.JS_itemBoxTable__bodyCellInner--colortoggle');
-    toggleColorSelector($(colorToggle));
-  }
-
-}
 
 
 // INITIAL - collapse all color options
