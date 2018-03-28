@@ -14,14 +14,14 @@
   <!-- like -prev or -next -->
   <!-- make the day simply the part before the '-' -->
   <!-- and the second part into the class -->
+  <!-- otherwise class is empty, and day is untouched -->
+  {% assign day = {splittedDay} %}
+  {% assign dayClass = "" %}
+
   {% if splittedDay contains "-" %}
     {% assign splittedDayArray = {splittedDay} | split: "-" %}
     {% assign day = {splittedDayArray.first} %}
-    {% assign dayClass = "pmx-selector_date--" | concat {splittedDayArray.last} %}
-  {% else %}
-    <!-- otherwise class is empty, and day is untouched -->
-    {% assign day = {splittedDay} %}
-    {% assign dayClass = "" %}
+    {% assign dayClass = {splittedDayArray.last} | prepend: "pmx-selector_date--" %}
   {% endif %}
 
   <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
