@@ -1,0 +1,140 @@
+{
+  "selected": ["Title", "Performed For", "Assigned to"],
+  "options": {
+    "groups": [{
+        "name": "अ Main attributes",
+        "items": [{
+            "name": "Assigned to",
+            "selected": "true"
+          },
+          {
+            "name": "Attachments",
+            "selected": "false"
+          },
+          {
+            "name": "Child items",
+            "selected": "false"
+          },
+          {
+            "name": "Comments",
+            "selected": "false"
+          },
+          {
+            "name": "Description",
+            "selected": "false"
+          },
+          {
+            "name": "Due date",
+            "selected": "false"
+          },
+          {
+            "name": "Due text",
+            "selected": "false"
+          },
+          {
+            "name": "List",
+            "selected": "false"
+          },
+          {
+            "name": "Nr",
+            "selected": "false"
+          },
+          {
+            "name": "Priority",
+            "selected": "false"
+          },
+          {
+            "name": "Solution",
+            "selected": "false"
+          },
+          {
+            "name": "Status",
+            "selected": "false"
+          },
+          {
+            "name": "Title",
+            "selected": "false"
+          }
+        ]
+      }, {
+        "name": "अ Who is involved",
+        "items": [{
+            "name": "Creator",
+            "selected": "false"
+          },
+          {
+            "name": "Last updated by",
+            "selected": "false"
+          },
+          {
+            "name": "Originator",
+            "selected": "false"
+          },
+          {
+            "name": "Performed by",
+            "selected": "false"
+          },
+          {
+            "name": "Performed for",
+            "selected": "true"
+          }
+        ]
+      },
+      {
+        "name": "अ Tracking and tracing",
+        "items": [{
+            "name": "Created on",
+            "selected": "false"
+          },
+          {
+            "name": "Last updated",
+            "selected": "false"
+          },
+          {
+            "name": "Planned start",
+            "selected": "false"
+          },
+          {
+            "name": "Source date",
+            "selected": "false"
+          },
+          {
+            "name": "Source event",
+            "selected": "false"
+          },
+          {
+            "name": "Tag",
+            "selected": "false"
+          }
+        ]
+      }, {
+        "name": "अ Time and effort",
+        "items": [{
+            "name": "Actual effort (hours)",
+            "selected": "false"
+          },
+          {
+            "name": "Effort",
+            "selected": "false"
+          },
+          {
+            "name": "ETC",
+            "selected": "false"
+          },
+          {
+            "name": "
+            Planned effort(hours)
+            ",
+            "selected": "false"
+          }
+        ]
+      }, {
+        "name": "अ Other",
+        "items": [{
+          "name": "Design status",
+          "selected": "false"
+        }]
+      }
+    ]
+  }
+}
