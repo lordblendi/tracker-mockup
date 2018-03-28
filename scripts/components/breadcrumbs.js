@@ -7,4 +7,10 @@ $(document).ready(function() {
     $(this).parent().toggleClass('breadcrumbs--active');
     $(this).toggleClass('breadcrumbs__item--active');
   });
+
+  $app.on('click', function() {
+    if( $(this).hasClass('overlay--visible') ) {
+      $('.breadcrumbs').removeClass('breadcrumbs--active');
+    }
+  });
 });
