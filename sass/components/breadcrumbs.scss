@@ -3,47 +3,44 @@
 
 .breadcrumbs {
   position: relative;
-	width: 100%;
-  display: inline-block;
-  margin: 0 10px;
-  clear: both;
-  float: left;
+  padding: 10px 20px;
   transition: all .3s ease-in-out;
-  color: #8c8ba5;
+  color: #FFF;
+  opacity: .35;
 
 	&:hover {
-	   color: #EEE;
+	   opacity: 1;
+
+     .pmx-link {
+       opacity: .75;
+
+       &:hover {
+         opacity: 1;
+       }
+     }
 	}
 
 	&__item {
 	  position: relative;
 	  display: inline-block;
+    line-height: 35px;
+    margin: 0 20px 0 0;
 
-		&:not(:first-child) {
-		  margin: 0 0 0 14px;
-
-			&::before {
-		    content: '/';
-		    position: absolute;
-		    top: -2px;
-		    left: -12px;
-		    line-height: 20px;
-		    font-size: 16px;
-			}
-		}
+    &::after {
+      content: 'ܐ';
+      font-family: 'tenforce', sans-serif;
+      font-size: 30px;
+      transform: rotate(15deg);
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: -17px;
+    }
 
 		&--active {
 		  z-index: 99999999;
 		  color: #FFF;
 		  opacity: 1;
-
-			&::before {
-			  color: #8c8ba5;
-			}
-
-			.breadcrumbs__link {
-				opacity: 1;
-			}
 
 			.breadcrumbs__selector {
 			  opacity: 1;
@@ -53,40 +50,19 @@
 		}
 	}
 
-	&__link {
-		font-size: 14px;
-    font-weight: 400;
+  .pmx-link {
+    transition: all .3s ease-in-out;
+    
+    a {
+      display: inline-block;
+      max-width: 300px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      vertical-align: middle;
+    }
+  }
 
-		&:hover {
-		   opacity: 1;
-		}
-	}
-
-	&__type {
-		position: relative;
-    display: inline-block;
-    border: 1px solid;
-    border-radius: 10px;
-    padding: 0px 6px;
-    text-transform: uppercase;
-    cursor: pointer;
-    top: -3px;
-    font-size: 10px;
-
-		&:hover {
-	    transition: all .3s ease-in-out;
-	    color: #FFF;
-		}
-	}
-
-	&__label {
-		display: inline-block;
-    white-space: nowrap;
-    max-width: 200px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    line-height: 16px;
-	}
 
 	&__selector {
 	  position: absolute;
