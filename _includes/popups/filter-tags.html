@@ -232,7 +232,7 @@
               <ul class="itemBoxTable__bodyRow JS_filterableCell">
                 <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
                   <div class="itemBoxTable__bodyCellInner ">
-                        {% include blocks/popup/ms-included-toggle.html %}
+                        {% include blocks/popup/include-exclude-selector.html selected="include"%}
                         <div class="pmx-selector pmx-selector--readonly">
                           <div class="pmx-selector__item">
                             <div class="pmx-selector__block">
@@ -249,12 +249,11 @@
                   </div>
                 </li>
               </ul>
-              {% include blocks/popup/ms-incl-excl-filter-sublist.html %}
 
               <ul class="itemBoxTable__bodyRow JS_filterableCell">
                 <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
                   <div class="itemBoxTable__bodyCellInner ">
-                        {% include blocks/popup/ms-included-toggle.html %}
+                        {% include blocks/popup/include-exclude-selector.html selected="include"%}
                         <div class="pmx-selector pmx-selector--readonly">
                           <div class="pmx-selector__item">
                             <div class="pmx-selector__block">
@@ -274,12 +273,10 @@
                 </li>
               </ul>
 
-              {% include blocks/popup/ms-incl-excl-filter-sublist.html %}
-
               <ul class="itemBoxTable__bodyRow JS_filterableCell">
                 <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
                   <div class="itemBoxTable__bodyCellInner ">
-                        {% include blocks/popup/ms-excluded-toggle.html %}
+                        {% include blocks/popup/include-exclude-selector.html selected="exclude"%}
                         <div class="pmx-selector pmx-selector--readonly">
                           <div class="pmx-selector__item">
                             <div class="pmx-selector__block">
@@ -299,12 +296,10 @@
                 </li>
               </ul>
 
-              {% include blocks/popup/ms-incl-excl-filter-sublist.html %}
-
               <ul class="itemBoxTable__bodyRow JS_filterableCell">
                 <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
                   <div class="itemBoxTable__bodyCellInner ">
-                    {% include blocks/popup/ms-excluded-toggle.html %}
+                    {% include blocks/popup/include-exclude-selector.html selected="exclude"%}
                     <div class="pmx-selector pmx-selector--readonly">
                       <div class="pmx-selector__item">
                         <div class="pmx-selector__block">
@@ -321,8 +316,6 @@
                   </div>
                 </li>
               </ul>
-              {% include blocks/popup/ms-incl-excl-filter-sublist.html %}
-
             </div>
           </div>
         </div>

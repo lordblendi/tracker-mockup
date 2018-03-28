@@ -1,0 +1,27 @@
+{% assign selectedClass = "pmx-selector__item--selected" %}
+
+
+{% assign includeSelectedClass = {selectedClass} %}
+{% assign excludeSelectedClass = "" %}
+
+{% if include.selected == 'exclude' %}
+  {% assign includeSelectedClass = "" %}
+  {% assign excludeSelectedClass = {selectedClass} %}
+
+{% endif %}
+
+
+
+<div class="pmx-selector pmx-selector--expanded pmx-selector--required pmx-selector--toggleselect JS_selector">
+  <div class="pmx-selector__item JS_selectorItem  {{includeSelectedClass}}">
+    <div class="pmx-selector__block">
+      <span class="pmx-selector__blockPart pmx-selector__blockPart--label">Include</span>
+    </div>
+  </div>
+  <div class="pmx-selector__itemSeperator"></div>
+  <div class="pmx-selector__item JS_selectorItem {{excludeSelectedClass}}">
+    <div class="pmx-selector__block">
+      <span class="pmx-selector__blockPart pmx-selector__blockPart--label">Exclude</span>
+    </div>
+  </div>
+</div>
