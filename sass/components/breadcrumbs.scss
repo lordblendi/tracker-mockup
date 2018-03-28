@@ -20,6 +20,10 @@
      }
 	}
 
+  &--active {
+    opacity: 1;
+  }
+
 
 	&__item {
 	  position: relative;
@@ -46,7 +50,8 @@
 			.breadcrumbs__selector {
 			  opacity: 1;
 			  pointer-events: auto;
-			  top: 20px;
+        top: -2px;
+        left: 0px;
 			}
 		}
 	}
@@ -68,7 +73,7 @@
 	&__selector {
 	  position: absolute;
 	  top: -10px;
-	  left: 7px;
+	  left: 0;
 	  background-color: #FFF;
 	  z-index: 9999;
 	  box-shadow: 0 0 100px rgba(0,0,0,.2);

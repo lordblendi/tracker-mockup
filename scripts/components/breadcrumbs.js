@@ -4,6 +4,7 @@ $(document).ready(function() {
   $('.breadcrumbs__item').on('click', function() {
     $app.toggleClass('overlay--visible');
 
+    $(this).parent().toggleClass('breadcrumbs--active');
     $(this).toggleClass('breadcrumbs__item--active');
   });
 });
