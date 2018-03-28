@@ -99,16 +99,20 @@
                     <i class="itemBoxTable__action--toggle">{{group.name}}</i>
                   </div>
                 </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--removeAll itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add JS_itemBoxTable__bodyCell--addAll" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--add JS_itemBoxTable__action--addAll">ބ</i>
-                  </div>
-                </li>
+                {% if group.noneSelected == "false" %}
+                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner">
+                      <i class="itemBoxTable__action JS_itemBoxTable__action--removeAll itemBoxTable__action--remove">—</i>
+                    </div>
+                  </li>
+                {% endif %}
+                {% if group.allSelected == "false" %}
+                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add JS_itemBoxTable__bodyCell--addAll" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner">
+                      <i class="itemBoxTable__action itemBoxTable__action--add JS_itemBoxTable__action--addAll">ބ</i>
+                    </div>
+                  </li>
+                {% endif %}
               </ul>
               <div class="itemBox itemBox--children">
                 <div class="itemBoxTable">
