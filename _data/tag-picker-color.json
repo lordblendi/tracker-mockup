@@ -1,0 +1,45 @@
+{
+  "selected": [{
+      "name": "dev-team",
+      "color": "#f4ca16"
+    },
+    {
+      "name": "back-end",
+      "color": "#e30022"
+    },
+    {
+      "name": "282",
+      "color": "#0bda51"
+    }
+  ],
+  "options": [{
+      "name": "dev-team",
+      "color": "#f4ca16",
+      "selected": "true"
+    },
+    {
+      "name": "back-end",
+      "color": "#e30022",
+      "selected": "true"
+    },
+    {
+      "name": "282",
+      "color": "#0bda51",
+      "selected": "true"
+    },
+    {
+      "name": "297",
+      "color": "#00bfff",
+      "selected": "false"
+    }
+  ],
+  "suggestions": [{
+      "name": "282",
+      "color": "#0bda51"
+    },
+    {
+      "name": "297",
+      "color": "#00bfff"
+    }
+  ]
+}

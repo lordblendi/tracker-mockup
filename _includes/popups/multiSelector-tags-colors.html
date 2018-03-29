@@ -36,87 +36,33 @@
         <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildren">
           <div class="itemBoxTable">
             <div class="itemBoxBody itemBoxBody--sortable ui-sortable">
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner JS_toggle--color ">
-                    {% include javascript/colorToggle.html color="#f4ca16" %}
-                    <div class="pmx-selector pmx-selector--readonly">
-                      <div class="pmx-selector__item">
-                        <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">dev-team
+              {% for item in site.data.tag-picker-color.selected %}
+                <ul class="itemBoxTable__bodyRow JS_filterableCell">
+                  <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
+                    <div class="itemBoxTable__bodyCellInner JS_toggle--color ">
+                      {% include javascript/colorToggle.html color=item.color %}
+                      <div class="pmx-selector pmx-selector--readonly">
+                        <div class="pmx-selector__item">
+                          <div class="pmx-selector__block">
+                            <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">{{item.name}}</div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable ui-sortable-handle" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--drag">އ</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
-              {% include blocks/popup/ms-tags-colors-color-sublist.html %}
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner JS_toggle--color">
-                    {% include javascript/colorToggle.html color="#e30022" %}
-                    <div class="pmx-selector pmx-selector--readonly">
-                      <div class="pmx-selector__item">
-                        <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">back-end
-                          </div>
-                        </div>
-                      </div>
+                  </li>
+                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable ui-sortable-handle" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner">
+                      <i class="itemBoxTable__action itemBoxTable__action--drag">އ</i>
                     </div>
-
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable ui-sortable-handle" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--drag">އ</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
-              {% include blocks/popup/ms-tags-colors-color-sublist.html %}
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner JS_toggle--color">
-                    {% include javascript/colorToggle.html color="#0bda51" %}
-
-                    <div class="pmx-selector pmx-selector--readonly">
-                      <div class="pmx-selector__item">
-                        <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">282
-                          </div>
-                        </div>
-                      </div>
+                  </li>
+                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner">
+                      <i class="itemBoxTable__action itemBoxTable__action--remove">—</i>
                     </div>
-                  </div>
-
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable ui-sortable-handle" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--drag">އ</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
-              {% include blocks/popup/ms-tags-colors-color-sublist.html %}
+                  </li>
+                </ul>
+                {% include blocks/popup/ms-tags-colors-color-sublist.html %}
+              {% endfor %}
             </div>
           </div>
         </div>
@@ -143,106 +89,47 @@
         <div class="itemBox itemBox--children JS_multiSelector__box--optionsChildren">
           <div class="itemBoxTable">
             <div class="itemBoxBody">
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner JS_toggle--color">
-                    {% include javascript/colorToggle.html color="#0bda51" %}
+              {% for item in site.data.tag-picker-color.options %}
+                <ul class="itemBoxTable__bodyRow JS_filterableCell">
+                  <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
+                    <div class="itemBoxTable__bodyCellInner JS_toggle--color">
 
-                    <div class="pmx-selector pmx-selector--readonly">
-                      <div class="pmx-selector__item">
-                        <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">282
+                      {% include javascript/colorToggle.html color=item.color %}
+                      <div class="pmx-selector pmx-selector--readonly">
+                        <div class="pmx-selector__item">
+                          <div class="pmx-selector__block">
+                            <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">{{item.name}}</div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
-              {% include blocks/popup/ms-tags-colors-color-sublist.html %}
-
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner JS_toggle--color">
-                    {% include javascript/colorToggle.html color="#00bfff" %}
-
-                    <div class="pmx-selector pmx-selector--readonly">
-                      <div class="pmx-selector__item">
-                        <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">297
-                          </div>
-                        </div>
+                  </li>
+                  {% if item.selected == "true" %}
+                    <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
+                      <div class="itemBoxTable__bodyCellInner">
+                        <div class="itemBoxTable__action itemBoxTable__action--remove">—</div>
                       </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--add">ބ</i>
-                  </div>
-                </li>
-              </ul>
-              {% include blocks/popup/ms-tags-colors-color-sublist.html %}
-
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner JS_toggle--color">
-                    {% include javascript/colorToggle.html color="#f4ca16" %}
-
-                    <div class="pmx-selector pmx-selector--readonly">
-                      <div class="pmx-selector__item">
-                        <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">dev-team
-                          </div>
-                        </div>
+                    </li>
+                  {% else %}
+                    <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
+                      <div class="itemBoxTable__bodyCellInner">
+                        <div class="itemBoxTable__action itemBoxTable__action--add">ބ</div>
                       </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
+                    </li>
+                  {% endif %}
+                </ul>
               {% include blocks/popup/ms-tags-colors-color-sublist.html %}
+              {% endfor %}
 
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner JS_toggle--color">
-                    {% include javascript/colorToggle.html color="#e30022" %}
-
-                    <div class="pmx-selector pmx-selector--readonly">
-                      <div class="pmx-selector__item">
-                        <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">back-end
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
-              {% include blocks/popup/ms-tags-colors-color-sublist.html %}
+            </div>
           </div>
         </div>
+        <!-- /.itemBox -->
       </div>
-      <!-- /.itemBox -->
     </div>
   </div>
-</div>
-<!-- /.itemBox -->
+  <!-- /.itemBox -->
 
 </div>
 <!-- /.multiSelector -->
