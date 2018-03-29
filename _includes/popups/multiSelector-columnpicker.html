@@ -44,16 +44,7 @@
               {% for selected in site.data.columnpicker.selected %}
                 <ul class="itemBoxTable__bodyRow JS_filterableCell">
                   <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                    <div class="itemBoxTable__bodyCellInner ">
-                      <div class="pmx-selector pmx-selector--readonly">
-                        <div class="pmx-selector__item">
-                          <div class="pmx-selector__block">
-                            <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">{{selected}}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">{{selected}}</div>
                   </li>
                   <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable" style="flex-grow: 0;" data-flex="0">
                     <div class="itemBoxTable__bodyCellInner">
@@ -120,15 +111,7 @@
                     {% for item in group.items %}
                       <ul class="itemBoxTable__bodyRow JS_filterableCell">
                         <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                          <div class="itemBoxTable__bodyCellInner ">
-                            <div class="pmx-selector pmx-selector--readonly">
-                              <div class="pmx-selector__item">
-                                <div class="pmx-selector__block">
-                                  <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">{{item.name}}</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                          <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">{{item.name}}</div>
                         </li>
                         {% if item.selected == "true" %}
                           <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
