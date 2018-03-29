@@ -1,0 +1,23 @@
+{
+  "items": [{
+      "name": "Not started",
+      "icon": "ध",
+      "color": "#ff9b9b"
+    },
+    {
+      "name": "Ongoing",
+      "icon": "ध",
+      "color": "#00BFFF"
+    },
+    {
+      "name": "On hold",
+      "icon": "ध",
+      "color": "#F4CA16"
+    },
+    {
+      "name": "Finished",
+      "icon": "ध",
+      "color": "#0BDA51"
+    }
+  ]
+}

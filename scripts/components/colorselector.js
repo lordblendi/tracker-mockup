@@ -18,11 +18,11 @@ function selectNewColor(colorItemBodyRow) {
   // find the text of the item
   const itemBox = colorItemBodyRow.closest('.JS_itemBox--colors');
   const bodyRow = $(itemBox).prevAll('ul.itemBoxTable__bodyRow.JS_filterableCell:first:not(".JS_createNewTag"), ul.itemBoxTable__bodyRow.JS_bodyRow--suggestion:first');
-  const tagText = bodyRow.find('.JS_itemBoxTable__bodyCellInner--text').html().trim();
+  const tagText = bodyRow.find('.JS_text').html().trim();
 
   // find all tags with the same text
   const multiSelector = bodyRow.closest('.multiSelector');
-  const possibleTags = multiSelector.find('.JS_itemBoxTable__bodyCellInner--text');
+  const possibleTags = multiSelector.find('.JS_text');
   var filteredTags = [];
 
   $.each(possibleTags, function(index, tag){

@@ -42,10 +42,10 @@ function selectNewFilterOption(incleExclBodyRow) {
     }
 
     // find the text in bodyRow - this should be only one
-    const textOfActionItem = $(bodyRow).find('.JS_itemBoxTable__bodyCellInner--text').html().trim();
+    const textOfActionItem = $(bodyRow).find('.JS_text').html().trim();
 
     // find the position of the old item, what should be removed
-    const selectedItems = oldSelection.find('.JS_itemBoxTable__bodyCellInner--text');
+    const selectedItems = oldSelection.find('.JS_text');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html().trim();
     });

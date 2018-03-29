@@ -1,0 +1,32 @@
+{
+  "items":[
+    {
+      "name":"Silver",
+      "color":"#dcdcdc"
+    },
+    {
+      "name":"Deep Blue Sky",
+      "color":"#00bfff"
+    },
+    {
+      "name":"Malachite",
+      "color":"#0bda51"
+    },
+    {
+      "name":"Saffron",
+      "color":"#f4ca16"
+    },
+    {
+      "name":"Dark Goldenrod",
+      "color":"#b8860b"
+    },
+    {
+      "name":"Cadmium Red",
+      "color":"#e30022"
+    },
+    {
+      "name":"Jet",
+      "color":"#343434"
+    }
+  ]
+}

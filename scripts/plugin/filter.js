@@ -44,7 +44,7 @@ function filterResults(input, listItemSelector) {
   // to keep the alternating colors, we gonna replace the `ul` with `hide`
   // for the hidden items
   for (i = 0; i < listItems.length; i++) {
-    var text = $(listItems[i]).find(".JS_itemBoxTable__bodyCellInner--text")[0];
+    var text = $(listItems[i]).find(".JS_text")[0];
 
     if(text !== undefined) {
       if (text.textContent.toUpperCase().indexOf(filter) > -1) {

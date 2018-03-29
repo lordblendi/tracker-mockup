@@ -33,11 +33,12 @@
 
             </div>
           </li>
+
           <li class="
             itemBoxTable__bodyCell
             itemBoxTable__bodyCell--flex0
 
-            itemBoxTable__bodyCell--remove
+            JS_itemBoxTable__bodyCell--remove
             JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0"
           >
             <div class="itemBoxTable__bodyCellInner">
@@ -62,7 +63,7 @@
                   <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
                     <div class="itemBoxTable__bodyCellInner ">
 
-                      <div class="fnt JS_itemBoxTable__bodyCellInner--text">{{selected}}</div>
+                      <div class="fnt JS_text">{{selected}}</div>
 
                     </div>
                   </li>
@@ -71,9 +72,9 @@
                       <div class="itemBoxTable__action itemBoxTable__action--drag">އ</div>
                     </div>
                   </li>
-                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--action itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
+                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--action JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
                     <div class="itemBoxTable__bodyCellInner itemBoxTable__bodyCellInner--action">
-                      <div class="itemBoxTable__action itemBoxTable__action--remove">—</div>
+                      <div class="itemBoxTable__action JS_itemBoxTable__action--remove">—</div>
                     </div>
                   </li>
                 </ul>
@@ -89,14 +90,14 @@
               <div class="itemBoxTable__action itemBoxTable__action--toggle">ऄ All</div>
             </div>
           </li>
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
+          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
             <div class="itemBoxTable__bodyCellInner">
-              <div class="itemBoxTable__action JS_itemBoxTable__action--removeAll itemBoxTable__action--remove">—</div>
+              <div class="itemBoxTable__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--remove">—</div>
             </div>
           </li>
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add JS_itemBoxTable__bodyCell--addAll" style="flex-grow: 0;" data-flex="0">
+          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--add JS_itemBoxTable__bodyCell--addAll" style="flex-grow: 0;" data-flex="0">
             <div class="itemBoxTable__bodyCellInner">
-              <div class="itemBoxTable__action itemBoxTable__action--add JS_itemBoxTable__action--addAll">ބ</div>
+              <div class="itemBoxTable__action JS_itemBoxTable__action--add JS_itemBoxTable__action--addAll">ބ</div>
             </div>
           </li>
         </ul>
@@ -111,16 +112,16 @@
                   </div>
                 </li>
                 {% if group.noneSelected == "false" %}
-                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
+                  <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
                     <div class="itemBoxTable__bodyCellInner">
-                      <div class="itemBoxTable__action JS_itemBoxTable__action--removeAll itemBoxTable__action--remove">—</div>
+                      <div class="itemBoxTable__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--remove">—</div>
                     </div>
                   </li>
                 {% endif %}
                 {% if group.allSelected == "false" %}
-                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add JS_itemBoxTable__bodyCell--addAll" style="flex-grow: 0;" data-flex="0">
+                  <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--add JS_itemBoxTable__bodyCell--addAll" style="flex-grow: 0;" data-flex="0">
                     <div class="itemBoxTable__bodyCellInner">
-                      <div class="itemBoxTable__action itemBoxTable__action--add JS_itemBoxTable__action--addAll">ބ</div>
+                      <div class="itemBoxTable__action JS_itemBoxTable__action--add JS_itemBoxTable__action--addAll">ބ</div>
                     </div>
                   </li>
                 {% endif %}
@@ -131,20 +132,20 @@
                     {% for item in group.items %}
                       <ul class="itemBoxTable__bodyRow itemBoxTable__bodyRow--action JS_filterableCell">
                         <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                          <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-                            <div class="fnt">{{item.name}}</div>
+                          <div class="itemBoxTable__bodyCellInner">
+                            <div class="fnt JS_text">{{item.name}}</div>
                           </div>
                         </li>
                         {% if item.selected == "true" %}
-                          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
+                          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
                             <div class="itemBoxTable__bodyCellInner">
-                              <div class="itemBoxTable__action itemBoxTable__action--remove">—</div>
+                              <div class="itemBoxTable__action JS_itemBoxTable__action--remove">—</div>
                             </div>
                           </li>
                         {% else %}
-                          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
+                          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
                             <div class="itemBoxTable__bodyCellInner">
-                              <div class="itemBoxTable__action itemBoxTable__action--add">ބ</div>
+                              <div class="itemBoxTable__action JS_itemBoxTable__action--add">ބ</div>
                             </div>
                           </li>
                         {% endif %}
