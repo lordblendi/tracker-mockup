@@ -1,104 +1,22 @@
 <div class="itemBox itemBox--children itemBox--children-sublist JS_itemBox--colors"  style="display: none;">
   <div class="itemBoxTable">
     <div class="itemBoxBody">
-      <ul class="itemBoxTable__bodyRow">
-        <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-          <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--color">
-            <div class="pmx-selector pmx-selector--readonly">
-              <div class="pmx-selector__item">
-                <div class="pmx-selector__block">
-                  <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #dcdcdc;" data-color="#dcdcdc">ग़</span>
+      {% for item in site.data.color-sublist.items %}
+        <ul class="itemBoxTable__bodyRow">
+          <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+            <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--color">
+              <div class="pmx-selector pmx-selector--readonly">
+                <div class="pmx-selector__item">
+                  <div class="pmx-selector__block">
+                    <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: {{item.color}};" data-color="{{item.color}}">ग़</span>
+                  </div>
                 </div>
               </div>
+              {{item.name}}
             </div>
-            Silver
-          </div>
-        </li>
-      </ul>
-      <ul class="itemBoxTable__bodyRow">
-        <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-          <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--color">
-            <div class="pmx-selector pmx-selector--readonly">
-              <div class="pmx-selector__item">
-                <div class="pmx-selector__block">
-                  <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #00bfff;" data-color="#00bfff">ग़</span>
-                </div>
-              </div>
-            </div>
-            Deep Blue Sky
-          </div>
-        </li>
-      </ul>
-      <ul class="itemBoxTable__bodyRow">
-        <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-          <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--color">
-            <div class="pmx-selector pmx-selector--readonly">
-              <div class="pmx-selector__item">
-                <div class="pmx-selector__block">
-                  <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #0bda51;" data-color="#0bda51">ग़</span>
-                </div>
-              </div>
-            </div>
-            Malachite
-          </div>
-        </li>
-      </ul>
-      <ul class="itemBoxTable__bodyRow">
-        <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-          <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--color">
-            <div class="pmx-selector pmx-selector--readonly">
-              <div class="pmx-selector__item">
-                <div class="pmx-selector__block">
-                  <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #f4ca16;" data-color="#f4ca16">ग़</span>
-                </div>
-              </div>
-            </div>
-            Saffron
-          </div>
-        </li>
-      </ul>
-      <ul class="itemBoxTable__bodyRow">
-        <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-          <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--color">
-            <div class="pmx-selector pmx-selector--readonly">
-              <div class="pmx-selector__item">
-                <div class="pmx-selector__block">
-                  <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #b8860b;" data-color="#b8860b">ग़</span>
-                </div>
-              </div>
-            </div>
-            Dark Goldenrod
-          </div>
-        </li>
-      </ul>
-      <ul class="itemBoxTable__bodyRow">
-        <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-          <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--color">
-            <div class="pmx-selector pmx-selector--readonly">
-              <div class="pmx-selector__item">
-                <div class="pmx-selector__block">
-                  <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #e30022;" data-color="#e30022">ग़</span>
-                </div>
-              </div>
-            </div>
-            Cadmium Red
-          </div>
-        </li>
-      </ul>
-      <ul class="itemBoxTable__bodyRow">
-        <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-          <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--color">
-            <div class="pmx-selector pmx-selector--readonly">
-              <div class="pmx-selector__item">
-                <div class="pmx-selector__block">
-                  <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #343434;" data-color="#343434">ग़</span>
-                </div>
-              </div>
-            </div>
-            Jet
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      {% endfor %}
     </div>
   </div>
 </div>
