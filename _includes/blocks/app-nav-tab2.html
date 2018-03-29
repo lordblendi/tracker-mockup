@@ -26,335 +26,38 @@
   <div class="itemBox JS_appNavBox">
     <div class="itemBoxTable">
       <div class="itemBoxTable__body">
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-            <div class= "itemBoxTable__bodyCellInner">
-              <i class="">ऄ My private smartlists</i>
+        {% for group in site.data.app-nav-tab2.groups %}
+          <ul class="itemBoxTable__bodyRow">
+            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
+              <div class= "itemBoxTable__bodyCellInner">
+                <i class="">{{group.name}}</i>
+              </div>
+            </li>
+          </ul>
+          <div class="itemBox itemBox--children">
+            <div class="itemBoxTable">
+              <div class="itemBoxTable__body">
+                {%  for item in group.items %}
+                  <ul class="itemBoxTable__bodyRow JS_filterableCell">
+                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+                      <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
+                        <div class="pmx-selector pmx-selector--readonly">
+                          <div class="pmx-selector__item">
+                            <div class="pmx-selector__block">
+                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">{{item.label}}</div>
+                              <div class="pmx-selector__blockSeperator"></div>
+                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">{{item.name}}</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                {% endfor %}
+              </div>
             </div>
-          </li>
-        </ul>
-        <div class="itemBox itemBox--children">
-          <div class="itemBoxTable">
-            <div class="itemBoxTable__body">
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Product Development</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">BI Bugs Stats</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Product Development</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">BI product sprints</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Product Development</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">BI strategic goals</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Product Development</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">bugs created last month</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Product Development</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">Closed Last month with rootcause</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Product Development</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">Milestone Spaghetti by WorkType</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div><!-- /.itemBox--children -->
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-            <div class= "itemBoxTable__bodyCellInner">
-              <i class="">ऄ My shared smartlists</i>
-            </div>
-          </li>
-        </ul>
-        <div class="itemBox itemBox--children">
-          <div class="itemBoxTable">
-            <div class="itemBoxTable__body">
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Product Development</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">DEVCENTER_Cooking</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Product Development</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">DEVCENTER_Served</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">pmX Projects and Support</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">All remaining projects &amp; SRs (MSProject)</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">pmX Projects and Support</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">Budget Overrun Projects And Services</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Product Development</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">Backlog Health</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div><!-- /.itemBox--children -->
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-            <div class= "itemBoxTable__bodyCellInner">
-              <i class="">ऄ Smartlists shared with me</i>
-            </div>
-          </li>
-        </ul>
-        <div class="itemBox itemBox--children">
-          <div class="itemBoxTable">
-            <div class="itemBoxTable__body">
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Operations</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">IT Requests</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Operations</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">IT Tasks</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Operations</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">Open IT Tickets (Sys-admin)</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Prof. Serv.</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">Financial Milestones</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Prof. Serv.</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">OOO Requests</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                  <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Prof. Serv.</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">Work Orders</div>
-                            </div>
-                          </div>
-                        </div>
-
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div><!-- /.itemBox--children -->
+          </div><!-- /.itemBox--children -->
+        {% endfor %}
       </div>
     </div>
   </div><!-- /.itemBox -->

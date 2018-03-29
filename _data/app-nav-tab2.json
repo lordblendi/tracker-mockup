@@ -1,0 +1,86 @@
+{
+  "groups": [{
+      "name": "ऄ My private smartlists",
+      "items": [
+        {
+          "label": "PRODUCT DEVELOPMENT",
+          "name": "BI Bugs Stats"
+        },
+        {
+          "label": "PRODUCT DEVELOPMENT",
+          "name": "BI product sprints"
+        },
+        {
+          "label": "PRODUCT DEVELOPMENT",
+          "name": "BI strategic goals"
+        },
+        {
+          "label": "PRODUCT DEVELOPMENT",
+          "name": "bugs created last month"
+        },
+        {
+          "label": "PRODUCT DEVELOPMENT",
+          "name": "Closed Last month with rootcause"
+        },
+        {
+          "label": "PRODUCT DEVELOPMENT",
+          "name": "Milestone Spaghetti by WorkType"
+        }
+      ]
+    },
+    {
+      "name": "ऄ My shared smartlists",
+      "items": [
+        {
+          "label": "PRODUCT DEVELOPMENT",
+          "name": "DEVCENTER_Cooking"
+        },
+        {
+          "label": "PRODUCT DEVELOPMENT",
+          "name": "DEVCENTER_Served"
+        },
+        {
+          "label": "PMX PROJECTS AND SUPPORT",
+          "name": "All remaining projects & SRs (MSProject)"
+        },
+        {
+          "label": "PMX PROJECTS AND SUPPORT",
+          "name": "Budget Overrun Projects And Services"
+        },
+        {
+          "label": "PRODUCT DEVELOPMENT",
+          "name": "Backlog Health"
+        }
+      ]
+    },
+    {
+      "name": "ऄ Smartlists shared with me",
+      "items": [
+        {
+          "label": "OPERATIONS",
+          "name": "IT Requests"
+        },
+        {
+          "label": "OPERATIONS",
+          "name": "IT Tasks"
+        },
+        {
+          "label": "OPERATIONS",
+          "name": "Open IT Tickets (Sys-admin)"
+        },
+        {
+          "label": "PROF. SERV.",
+          "name": "Financial Milestones"
+        },
+        {
+          "label": "PROF. SERV.",
+          "name": "OOO Requests"
+        },
+        {
+          "label": "PROF. SERV.",
+          "name": "Work Orders"
+        }
+      ]
+    }
+  ]
+}
