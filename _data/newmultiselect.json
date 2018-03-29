@@ -1,0 +1,23 @@
+{
+  "selected": {
+    "included": ["Arnaud"]
+  },
+  "options": [
+    {
+      "name": "Esteban",
+      "selected": "false"
+    },
+    {
+      "name": "Arnaud",
+      "selected": "true"
+    },
+    {
+      "name": "Ward",
+      "selected": "false"
+    },
+    {
+      "name": "Nora",
+      "selected": "false"
+    },
+  ]
+}

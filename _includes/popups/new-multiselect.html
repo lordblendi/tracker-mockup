@@ -56,13 +56,14 @@
               <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildrenInclude">
                 <div class="itemBoxTable">
                   <div class="itemBoxBody itemBoxBody--sortableConnected itemBoxBody--sortableInclude ui-sortable">
-                    <ul class="itemBoxTable__bodyRow JS_filterableCell">
+                    {% for item in site.data.newmultiselect.selected.included %}
+                      <ul class="itemBoxTable__bodyRow JS_filterableCell">
                       <li class="itemBoxTable__bodyCell " style="flex-grow: 6;" data-flex="6">
                         <div class="itemBoxTable__bodyCellInner ">
                           <div class="pmx-selector pmx-selector--readonly">
                             <div class="pmx-selector__item">
                               <div class="pmx-selector__block">
-                                <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">Arnaud</div>
+                                <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">{{item}}</div>
                               </div>
                             </div>
                           </div>
@@ -79,6 +80,7 @@
                         </div>
                       </li>
                     </ul>
+                    {% endfor %}
                   </div>
                 </div>
               </div>
@@ -101,89 +103,36 @@
         <div class="itemBox itemBox--children JS_multiSelector__box--optionsChildren" style="display: block;">
           <div class="itemBoxTable">
             <div class="itemBoxBody">
+              {% for item in site.data.newmultiselect.options %}
               <ul class="itemBoxTable__bodyRow JS_filterableCell JS_itemBoxTable__bodyRow--closed">
                 <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
                   <div class="itemBoxTable__bodyCellInner ">
-                    {% include blocks/popup/ms-included-toggle.html %}
+                    {% include blocks/popup/include-exclude-selector.html selected="include"%}
                     <div class="pmx-selector pmx-selector--readonly">
                       <div class="pmx-selector__item">
                         <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">Esteban</div>
+                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">{{item.name}}</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--add">ބ</i>
-                  </div>
-                </li>
+                {% if item.selected == "true" %}
+                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner">
+                      <i class="itemBoxTable__action itemBoxTable__action--remove">—</i>
+                    </div>
+                  </li>
+                {% else %}
+                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
+                    <div class="itemBoxTable__bodyCellInner">
+                      <i class="itemBoxTable__action itemBoxTable__action--add">ބ</i>
+                    </div>
+                  </li>
+                {% endif %}
               </ul>
-              {% include blocks/popup/ms-incl-excl-filter-sublist.html %}
+              {% endfor %}
 
-              <ul class="itemBoxTable__bodyRow JS_filterableCell JS_itemBoxTable__bodyRow--closed">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner ">
-                    {% include blocks/popup/ms-included-toggle.html %}
-                    <div class="pmx-selector pmx-selector--readonly">
-                      <div class="pmx-selector__item">
-                        <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">Arnaud</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
-              {% include blocks/popup/ms-incl-excl-filter-sublist.html %}
-
-              <ul class="itemBoxTable__bodyRow JS_filterableCell JS_itemBoxTable__bodyRow--closed">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner ">
-                    {% include blocks/popup/ms-excluded-toggle.html %}
-                    <div class="pmx-selector pmx-selector--readonly">
-                      <div class="pmx-selector__item">
-                        <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">Nora</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--add">ބ</i>
-                  </div>
-                </li>
-              </ul>
-              {% include blocks/popup/ms-incl-excl-filter-sublist.html %}
-
-              <ul class="itemBoxTable__bodyRow JS_filterableCell JS_itemBoxTable__bodyRow--closed">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner ">
-                    {% include blocks/popup/ms-excluded-toggle.html %}
-                    <div class="pmx-selector pmx-selector--readonly">
-                      <div class="pmx-selector__item">
-                        <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_itemBoxTable__bodyCellInner--text">Ward</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action itemBoxTable__action--add">ބ</i>
-                  </div>
-                </li>
-              </ul>
-              {% include blocks/popup/ms-incl-excl-filter-sublist.html %}
             </div>
           </div>
         </div>
