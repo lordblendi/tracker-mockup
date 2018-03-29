@@ -1,5 +1,5 @@
 {
-  "selected": ["Title", "Performed For", "Assigned to"],
+  "selected": ["Title", "Performed for", "Assigned to"],
   "options": {
     "groups": [{
         "name": "अ Main attributes",

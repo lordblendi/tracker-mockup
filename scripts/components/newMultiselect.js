@@ -102,7 +102,7 @@ function resetGroupRemoveActions(removeAllActions, children) {
   });
   // replace all normal actions with addAction
   $.each(children, function(index, child) {
-    child.find('li.JS_itemBoxTable__bodyCell--remove:not(.JS_itemBoxTable__bodyCell--removeAll)').replaceWith(addActionHTML);
+    $(child).find('li.JS_itemBoxTable__bodyCell--remove:not(.JS_itemBoxTable__bodyCell--removeAll)').replaceWith(addActionHTML);
   });
 
 }

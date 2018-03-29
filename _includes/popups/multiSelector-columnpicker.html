@@ -110,8 +110,8 @@
                     {% for item in group.items %}
                       <ul class="itemBoxTable__bodyRow itemBoxTable__bodyRow--action JS_filterableCell">
                         <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
-                          <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-                            <div class="fnt">{{item.name}}</div>
+                          <div class="itemBoxTable__bodyCellInner">
+                            <div class="fnt JS_itemBoxTable__bodyCellInner--text">{{item.name}}</div>
                           </div>
                         </li>
                         {% if item.selected == "true" %}
