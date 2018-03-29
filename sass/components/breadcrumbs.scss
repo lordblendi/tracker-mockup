@@ -5,7 +5,8 @@
   position: relative;
   padding: 10px;
   margin: 0 20px;
-  background-color: #D9D9D9;
+  background: rgb(193,193,193);
+  background: linear-gradient(0deg, rgba(193,193,193,1) 0%, rgba(211,211,211,1) 20%, rgba(217,217,217,1) 100%);
 
 	&:hover {
     .breadcrumbs__item {
@@ -22,14 +23,11 @@
     opacity: .5;
 
     &::after {
-      content: 'ܐ';
-      font-family: 'tenforce', sans-serif;
-      font-size: 30px;
-      transform: rotate(15deg);
-      display: inline-block;
+      content: '/';
+      font-size: 22px;
       position: absolute;
       top: 0;
-      right: -17px;
+      right: -13px;
     }
 
 		&--active {
@@ -48,6 +46,7 @@
 
   .pmx-link {
     transition: all .3s ease-in-out;
+    font-size: 16px;
 
     a {
       display: inline-block;
