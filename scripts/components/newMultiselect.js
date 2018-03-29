@@ -175,9 +175,9 @@ function handleComplexGroupAdd(action, children, exclude) {
     }
 
     // finding all the already selected items
-    const optionItems = children.find('ul .JS_itemBoxTable__bodyCellInner--text');
+    const optionItems = children.find('ul .JS_text');
     const itemBoxBody = selection.find('> .itemBoxTable > .itemBoxBody');
-    const selectedItems = selection.find('.JS_itemBoxTable__bodyCellInner--text');
+    const selectedItems = selection.find('.JS_text');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html().trim();
     });
@@ -236,11 +236,11 @@ function handleComplexGroupRemove(action, children, fromSelectedAction, selected
     const options = multiSelector.find('.JS_multiSelector__box--optionsChildren');
     var removeAllActions = options.find('li.JS_itemBoxTable__bodyCell--removeAll');
     var childrenToRemove = [];
-    const selectedItems = selection.find('.JS_itemBoxTable__bodyCellInner--text');
+    const selectedItems = selection.find('.JS_text');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html().trim();
     });
-    const optionChildren = options.find('.JS_itemBoxTable__bodyCellInner--text');
+    const optionChildren = options.find('.JS_text');
     if(selectedBlockClass !== '.JS_multiSelector__box--selectionChildren') {
       $.each(optionChildren, function(index, child){
         if($.inArray($(child).html().trim(), selectedItemTexts) > -1){
@@ -266,8 +266,8 @@ function handleComplexGroupRemove(action, children, fromSelectedAction, selected
   }
   // otherwise find each selected item from a group and remove it from selected
   else {
-    const childrenToRemove = children.find('ul li.JS_itemBoxTable__bodyCell--remove').closest('.itemBoxTable__bodyRow').find('.JS_itemBoxTable__bodyCellInner--text');
-    const selectedItems = selection.find('.JS_itemBoxTable__bodyCellInner--text');
+    const childrenToRemove = children.find('ul li.JS_itemBoxTable__bodyCell--remove').closest('.itemBoxTable__bodyRow').find('.JS_text');
+    const selectedItems = selection.find('.JS_text');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html().trim();
     });
@@ -345,7 +345,7 @@ function getNewItem(item, exclude) {
 // otherwise remove counter
 function checkCounter(selectionChildren){
   const selectionTitle = selectionChildren.prev();
-  const numOfSelected = selectionChildren.find('.JS_itemBoxTable__bodyCellInner--text').length;
+  const numOfSelected = selectionChildren.find('.JS_text').length;
   if( numOfSelected === 0) {
     selectionChildren.remove();
     selectionTitle.remove();
@@ -378,7 +378,7 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
     // check if the action item exists or not
     // if so, get the text of it
     const itemBoxTable__bodyRow = action.closest('.itemBoxTable__bodyRow');
-    const actionItem = itemBoxTable__bodyRow.find('.JS_itemBoxTable__bodyCellInner--text')[0];
+    const actionItem = itemBoxTable__bodyRow.find('.JS_text')[0];
     if(actionItem === undefined) {
       return;
     }
@@ -403,7 +403,7 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
 
     // find the selected Items
     // check if this item is already selected or not
-    const selectedItems = selection.find('.JS_itemBoxTable__bodyCellInner--text');
+    const selectedItems = selection.find('.JS_text');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html().trim();
     });
@@ -412,7 +412,7 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
 
     // get option items
     const options = multiSelector.find('.JS_multiSelector__box--optionsChildren');
-    const optionItems = options.find('.JS_itemBoxTable__bodyCellInner--text');
+    const optionItems = options.find('.JS_text');
     const optionItemTexts = $.map(optionItems, function(item){
       return $(item).html().trim();
     });
@@ -518,20 +518,20 @@ function reset(){
     // probably doesn't belong here, but making sure, we don't have empty selection subgroups
     const selectionMainTitle = $(multiSelector).find('.JS_multiSelector__box--selectionTitle');
     const selectionMain = $(multiSelector).find('.JS_multiSelector__box--selectionChildren');
-    if(selectionMain.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
+    if(selectionMain.find('.JS_text').length === 0) {
       selectionMainTitle.remove();
       selectionMain.remove();
     }
     else {
       const selectionExcludedTitle = $(multiSelector).find('.JS_multiSelector__box--selectionTitleExclude');
       const selectionExcluded = $(multiSelector).find('.JS_multiSelector__box--selectionChildrenExclude');
-      if(selectionExcluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
+      if(selectionExcluded.find('.JS_text').length === 0) {
         selectionExcludedTitle.remove();
         selectionExcluded.remove();
       }
       const selectionIncludedTitle = $(multiSelector).find('.JS_multiSelector__box--selectionTitleInclude');
       const selectionIncluded = $(multiSelector).find('.JS_multiSelector__box--selectionChildrenInclude');
-      if(selectionIncluded.find('.JS_itemBoxTable__bodyCellInner--text').length === 0) {
+      if(selectionIncluded.find('.JS_text').length === 0) {
         selectionIncludedTitle.remove();
         selectionIncluded.remove();
       }
