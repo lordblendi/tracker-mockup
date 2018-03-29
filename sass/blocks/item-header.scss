@@ -36,20 +36,14 @@
     &__type {
       display: inline-block;
       background-color: #E6E6E6;
-      padding: 5px 10px 5px 15px;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #808080;
+      padding: 7px 10px 7px 15px;
       line-height: 1;
 
       &--meeting {
       }
 
       &--bug {
-        border-radius: 0 10px 10px 0;
+        border-radius: 0 15px 15px 0;
       }
 
       &--story {

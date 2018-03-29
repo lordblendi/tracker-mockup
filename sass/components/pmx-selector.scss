@@ -220,13 +220,13 @@
       }
     }
   }
-
+/*
   &--toggleselect {
     .pmx-selector__blockPart {
       border-radius: 15px;
     }
   }
-
+*/
   &__item {
     position: relative;
     display: inline-block;
@@ -292,8 +292,8 @@
       height: 26px;
       line-height: 28px;
 
-      min-width: 8px;
-      margin: 0 -3px;
+      min-width: 10px;
+      margin: 0 -4px;
       border-radius: 3px;
       background-color: #D7D7D7;
 
