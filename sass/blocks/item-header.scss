@@ -8,37 +8,65 @@
 
   &-header {
     position: relative;
-    padding: 30px 15px 15px;
     background-color: #FFF;
     border-bottom: 2px dashed #CCC;
 
+    &__meta {
+      position: relative;
+      padding: 10px 0;
+    }
+
     &__type {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1;
+      &--meeting {
+        position: relative;
+        display: inline-block;
+        background-color: #bf920b;
+        color: #FFF;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 1px 5px 1px 15px;
+        margin: 8px 0 0;
+      }
+
+      &--bug {
+        background-color: #e6e6e6;
+        padding: 3px 10px 3px 15px;
+        border-radius: 0 10px 10px 0;
+        margin: 8px 0 0 0;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #808080;
+      }
+
+      &--story {
+        position: relative;
+        display: inline-block;
+        background-color: #11cfff;
+        color: #FFF;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 12px 5px 3px;
+        margin: 0 0 0 17px;
+        letter-spacing: 1px;
+      }
+    }
+
+    &__id {
+      margin: 0 5px;
     }
 
     &__title {
       position: relative;
       display: inline-block;
-      font-weight: 400;
+      font-weight: 600;
       font-size: 24px;
       color: #000;
-    }
-
-    &__id {
-      position: relative;
-      display: inline-block;
-      font-size: 12px;
-      border-radius: 15px;
-      top: -12px;
-      left: 1px;
-      letter-spacing: 1px;
-      line-height: 1;
-      font-weight: 600;
-      padding: 0 2px;
+      padding: 0 15px 10px 15px;
     }
 
     &__actions {
@@ -47,129 +75,6 @@
 
       .pmx-selector {
         margin: 0 0 0 10px;
-      }
-    }
-  }
-
-  &--meeting {
-    .item-header {
-      &__type {
-        border-top: 2px dashed #2C5386;
-
-        span {
-          position: relative;
-          display: inline-block;
-          background-color: #bf920b;
-          color: #FFF;
-          text-transform: uppercase;
-          font-size: 10px;
-          font-weight: 700;
-          padding: 1px 5px 1px 15px;
-          margin: 8px 0 0;
-
-          &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -6px;
-            border-top: 7px solid #bf920b;
-            border-right: 6px solid transparent;
-            border-bottom: 8px solid #bf920b;
-          }
-        }
-      }
-    }
-  }
-
-  &--bug {
-    .item-header {
-      border-bottom: 2px dashed #2C5386;
-
-      &::before,
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -6px;
-        width: 10px;
-        height: 10px;
-        border-radius: 100%;
-        background-color: #2C5386;
-      }
-
-      &::before {
-        left: -5px;
-      }
-
-      &::after {
-        right: -5px;
-      }
-
-      &__type {
-        span {
-          position: relative;
-          display: inline-block;
-          background-color: #bf920b;
-          color: #FFF;
-          text-transform: uppercase;
-          font-size: 10px;
-          font-weight: 700;
-          padding: 1px 10px 1px 15px;
-          border-radius: 0 10px 10px 0;
-          margin: 8px 0 0 0;
-        }
-      }
-    }
-  }
-
-  &--story {
-    .item-header {
-      background: repeating-linear-gradient( -65deg, #f2f2f2, #f2f2f2 10px, #fff 10px, #fff 20px );
-
-      &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(242,242,242,1) 100%);
-      }
-
-      &__type {
-        span {
-          position: relative;
-          display: inline-block;
-          background-color: #11cfff;
-          color: #FFF;
-          text-transform: uppercase;
-          font-size: 10px;
-          font-weight: 600;
-          padding: 12px 5px 3px;
-          margin: 0 0 0 17px;
-          letter-spacing: 1px;
-
-          &::before,
-          &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            height: 100%;
-          }
-
-          &::before {
-            left: -5px;
-            border-right: 5px solid #11cfff;
-            border-top: 26px solid transparent;
-            box-shadow: 2px 0 0 0 #11cfff;
-          }
-
-          &::after {
-            right: -5px;
-            border-left: 5px solid #11cfff;
-            border-bottom: 26px solid transparent;
-            box-shadow: -2px 0 0 0 #11cfff;
-          }
-        }
       }
     }
   }

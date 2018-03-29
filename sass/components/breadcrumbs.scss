@@ -3,33 +3,23 @@
 
 .breadcrumbs {
   position: relative;
-  padding: 10px 20px;
-  transition: all .3s ease-in-out;
-  color: #FFF;
-  opacity: .35;
+  padding: 10px;
+  margin: 0 20px;
+  background-color: #D9D9D9;
 
 	&:hover {
-	   opacity: 1;
-
-     .pmx-link {
-       opacity: .75;
-
-       &:hover {
-         opacity: 1;
-       }
-     }
+    .breadcrumbs__item {
+	    opacity: 1;
+    }
 	}
-
-  &--active {
-    opacity: 1;
-  }
-
 
 	&__item {
 	  position: relative;
 	  display: inline-block;
     line-height: 35px;
     margin: 0 20px 0 0;
+    transition: all .3s ease-in-out;
+    opacity: .5;
 
     &::after {
       content: 'ܐ';
