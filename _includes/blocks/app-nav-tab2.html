@@ -21,7 +21,7 @@
         <ul class="itemBoxTable__bodyRow">
           <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
             <div class="itemBoxTable__bodyCellInner">
-              <i class="">{{group.name}}</i>
+              <i class="">{{group.name}}{% if group.loadmore == "true"%}<sup>{{group.counter}}</sup>{% endif %}</i>
             </div>
           </li>
         </ul>
@@ -45,6 +45,14 @@
                 </li>
               </ul>
               {% endfor %}
+
+              {% if group.loadmore == "true"%}
+                <ul class="itemBoxTable__bodyRow itemBoxTable__bodyRow--loadMore">
+                  <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+                    <div class="itemBoxTable__bodyCellInner">Load <span>10</span> more</div>
+                  </li>
+                </ul>
+              {% endif %}
             </div>
           </div>
         </div>

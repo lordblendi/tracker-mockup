@@ -1,6 +1,8 @@
 {
   "groups": [{
       "name": "ऄ My private smartlists",
+      "loadmore": "false",
+      "counter":"",
       "items": [
         {
           "label": "PRODUCT DEVELOPMENT",
@@ -30,6 +32,8 @@
     },
     {
       "name": "ऄ My shared smartlists",
+      "loadmore": "true",
+      "counter":"1k+",
       "items": [
         {
           "label": "PRODUCT DEVELOPMENT",
@@ -55,6 +59,8 @@
     },
     {
       "name": "ऄ Smartlists shared with me",
+      "loadmore": "false",
+      "counter":"",
       "items": [
         {
           "label": "OPERATIONS",
