@@ -102,7 +102,7 @@ function resetGroupRemoveActions(removeAllActions, children) {
   });
   // replace all normal actions with addAction
   $.each(children, function(index, child) {
-    child.find('li.itemBoxTable__bodyCell--remove:not(.itemBoxTable__bodyCell--removeAll)').replaceWith(addActionHTML);
+    child.find('li.JS_itemBoxTable__bodyCell--remove:not(.JS_itemBoxTable__bodyCell--removeAll)').replaceWith(addActionHTML);
   });
 
 }
@@ -119,7 +119,7 @@ function resetGroupAddActions(removeAllActions, children) {
     }
   });
   // replace all normal actions with removeAction
-  children.find('ul li.itemBoxTable__bodyCell--add').replaceWith(removeActionHTML);
+  children.find('ul li.JS_itemBoxTable__bodyCell--add').replaceWith(removeActionHTML);
 }
 
 
@@ -188,7 +188,7 @@ function handleComplexGroupAdd(action, children, exclude) {
       const textOfActionItem = $(item).html().trim();
       const bodyRow = $(item).closest('.itemBoxTable__bodyRow');
       // there should be only ONE for an item. either add or remove
-      const itemInOptionsAction = $(item).find('.itemBoxTable__bodyCell--add, .itemBoxTable__bodyCell--remove')[0];
+      const itemInOptionsAction = $(item).find('.JS_itemBoxTable__bodyCell--add, .JS_itemBoxTable__bodyCell--remove')[0];
 
       const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
       if (positionOfItemInSelected < 0) {
@@ -266,7 +266,7 @@ function handleComplexGroupRemove(action, children, fromSelectedAction, selected
   }
   // otherwise find each selected item from a group and remove it from selected
   else {
-    const childrenToRemove = children.find('ul li.itemBoxTable__bodyCell--remove').closest('.itemBoxTable__bodyRow').find('.JS_itemBoxTable__bodyCellInner--text');
+    const childrenToRemove = children.find('ul li.JS_itemBoxTable__bodyCell--remove').closest('.itemBoxTable__bodyRow').find('.JS_itemBoxTable__bodyCellInner--text');
     const selectedItems = selection.find('.JS_itemBoxTable__bodyCellInner--text');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html().trim();
@@ -422,7 +422,7 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
     // we need this item separate, in case the action is made from the selected block
     const itemInOptions = $(optionItems[positionOfItemInOptions]).closest('.itemBoxTable__bodyRow');
     // there should be only ONE for an item. either add or remove
-    const itemInOptionsAction = $(itemInOptions).find('.itemBoxTable__bodyCell--add, .itemBoxTable__bodyCell--remove')[0];
+    const itemInOptionsAction = $(itemInOptions).find('.JS_itemBoxTable__bodyCell--add, .JS_itemBoxTable__bodyCell--remove')[0];
 
     // if selecting and it's not selected yet
     // create a new item, add it to selected and replace action in options
