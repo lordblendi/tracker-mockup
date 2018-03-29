@@ -307,25 +307,34 @@ function getNewItem(item, exclude) {
   var bodyRow = $(item).closest('.itemBoxTable__bodyRow');
   var colorPrefix = $(bodyRow).find('.JS_Color--prefix');
   var colorSelectorToggle = $(bodyRow).find('.JS_toggle--color');
+  var simpleText = $(item).closest('.JS_multiSelector--simpleText');
 
+
+  var newSelectedItemHTML = "";
   var colorPrefixHTML = '';
   var colorChildren = '';
   var colorToggleHTML = '';
   var colorToggleTriggerInnerClass = '';
 
-  // if so, adds both color toggle and color pallette
-  if(colorSelectorToggle.length > 0) {
-    var color = $(colorPrefix).attr('data-color');
-    colorToggleHTML = `{% include javascript/colorToggle.html color="${color}" %}`;
-    if($(item).closest('.multiSelector.JS_multiSelector--withColors').length > 0) {
-      colorToggleTriggerInnerClass = ' JS_toggle--color';
-      colorChildren = `{% include blocks/popup/ms-tags-colors-color-sublist.html %}`;
-    }
+  if(simpleText.length > 0) {
+    newSelectedItemHTML = `{% include javascript/newSelectedItem--text.html %}`;
   }
-  // otherwise only check if the prefix is there or not
-  else if(colorPrefix.length > 0) {
-    var color = $(colorPrefix).attr('data-color');
-    colorPrefixHTML = `{% include javascript/colorPrefix.html %}`
+  else {
+    newSelectedItemHTML = `{% include javascript/newSelectedItem--unit.html %}`;
+    // if so, adds both color toggle and color pallette
+    if(colorSelectorToggle.length > 0) {
+      var color = $(colorPrefix).attr('data-color');
+      colorToggleHTML = `{% include javascript/colorToggle.html color="${color}" %}`;
+      if($(item).closest('.multiSelector.JS_multiSelector--withColors').length > 0) {
+        colorToggleTriggerInnerClass = ' JS_toggle--color';
+        colorChildren = `{% include blocks/popup/ms-tags-colors-color-sublist.html %}`;
+      }
+    }
+    // otherwise only check if the prefix is there or not
+    else if(colorPrefix.length > 0) {
+      var color = $(colorPrefix).attr('data-color');
+      colorPrefixHTML = `{% include javascript/colorPrefix.html %}`
+    }
   }
 
   return `{% include javascript/newSelectedItem.html %}`;
