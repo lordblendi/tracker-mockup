@@ -70,6 +70,58 @@ function selectNewFilterOption(incleExclBodyRow) {
   });
 }
 
+// SELECT INCL/EXCL - TOGGLE
+// ONLY IF IT'S NOT SELECTED YET
+$('.JS_itemBoxTable__bodyCellInner--inclExcl.JS_selectorItem').on('click', function() {
+  // get new option
+  const newOption = $(this).attr('data-filter');
+
+  // find the bodyRow related to this toggle
+  const bodyRow = $(this).closest('.JS_filterableCell');
+
+  var oldOption = "Include";
+  if(newOption === "Include") {
+    oldOption = "Exclude";
+  }
+
+  // update it in the selected section if it wasn't the same as before
+  if(oldOption !== newOption) {
+    // get the good classes
+    const selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
+    const oldClass = selectedBlockClass + oldOption;
+    const newClass = selectedBlockClass + newOption;
+
+    // find the blocks
+    const multiSelector = $(bodyRow).closest('.multiSelector');
+    const oldSelection = $(multiSelector).find(oldClass);
+    var newSelection = $(multiSelector).find(newClass);
+
+    // if newSelectionBlock is not there, add it
+    if(newSelection === null || newSelection === undefined || newSelection.length === 0) {
+      addSelectedBlock(multiSelector, newClass);
+      newSelection = multiSelector.find(newClass);
+    }
+
+    // find the text in bodyRow - this should be only one
+    const textOfActionItem = $(bodyRow).find('.JS_text').html().trim();
+
+    // find the position of the old item, what should be removed
+    const selectedItems = oldSelection.find('.JS_text');
+    const selectedItemTexts = $.map(selectedItems, function(item){
+      return $(item).html().trim();
+    });
+    const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
+
+    const oldItemTextBlock = selectedItems[positionOfItemInSelected];
+    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.itemBoxTable__bodyRow.JS_filterableCell');
+    // append to newSelectedBlock
+    // cloning includes eventhandlers too
+    // remove from oldSelectedBlock
+    newSelection.append(oldItemBodyRow.clone());
+    oldItemBodyRow.remove();
+    reset();
+  }
+});
 // INCL-EXCL OPTIONS EXPAND-COLLAPSE
 $('.JS_toggle--InclExcl').on('click', function() {
   const toggle = $(this);
