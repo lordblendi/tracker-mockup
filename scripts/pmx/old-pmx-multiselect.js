@@ -24,14 +24,7 @@ $('.JS_new-multiselect-trigger').click(function() {
   const left = trigger.offset().left;
 
   const multiselectId = trigger.attr('data-multiselect');
-  var multiselectWidth = $(multiselectId).outerWidth();
-
-  // otherwise it would be out of the page
-  // make it 25%
-  const windowWidthQuater = $(window).width()/4;
-  if(multiselectWidth > windowWidthQuater) {
-    multiselectWidth = windowWidthQuater;
-  }
+  const multiselectWidth = $(multiselectId).outerWidth();
 
   const newWidth = left + width - multiselectWidth;
   const newHeight = top + height;
@@ -41,7 +34,6 @@ $('.JS_new-multiselect-trigger').click(function() {
     'opacity': '1',
     'top': newHeight,
     'left': newWidth,
-    'max-width': multiselectWidth
   });
   $(multiselectId).toggleClass('multiSelector--visible');
   // show overlay

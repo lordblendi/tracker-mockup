@@ -1,0 +1,31 @@
+{
+  "groups": [{
+      "name": "अ .TenForceWiki",
+      "items": ["Approve", "CPBW", "CPBW Actions", "Process Documentation", "Task"]
+    },
+    {
+      "name": "अ Marketing & Design",
+      "items": ["Bugs", "Tasks"]
+    },
+    {
+      "name": "अ Operations",
+      "items": ["Equipment assigment", "Hosted Virtual", "IT Meetings", "IT Projects", "IT Requests", "IT Tasks", "Logistics", "Maintanance Tasks", "Move to production", "Virtual Machines", "WIKI"]
+    },
+    {
+      "name": "अ pmX Projects and Support",
+      "items": ["Addins - Presets", "Code Reviews", "Coding Standards", "Customer", "Financial milestones", "Holidays", "Knowledge Base", "Meetings", "On demand", "Project Deliverables", "Projects", "Review Tasks", "Service Requests", "Tasks", "Tickets", "Trainings", "WIKI"]
+    },
+    {
+      "name": "अ Product Development",
+      "items": ["Actions", "Bugs", "Epics", "Installation notes", "Meetings", "Product sprints", "Release", "SRB Meetings (new)", "SRB Topics", "Stabilize test", "Stories", "Strategic Goals", "Technical topics", "Translations"]
+    },
+    {
+      "name": "अ Prof. Serv.",
+      "items": ["Actions", "Contacts", "Financial milestones", "Meetings", "Tickets", "Work Orders"]
+    },
+    {
+      "name": "अ Semantic Technology",
+      "items": ["Actions", "Innovation", "Meetings", "SemTech Backlog", "Wiki"]
+    }
+  ]
+}
