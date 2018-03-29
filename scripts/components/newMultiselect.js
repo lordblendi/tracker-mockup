@@ -362,8 +362,8 @@ function checkCounter(selectionChildren){
 
 // function to handle add/remove for one item
 function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
-  const add = $(action).hasClass('itemBoxTable__action--add');
-  const remove = $(action).hasClass('itemBoxTable__action--remove');
+  const add = $(action).hasClass('JS_itemBoxTable__action--add');
+  const remove = $(action).hasClass('JS_itemBoxTable__action--remove');
   const toggle = $(action).hasClass('itemBoxTable__action--toggle');
   var multiSelector = action.closest('.multiSelector')[0];
   exclude = $(multiSelector).find('.JS_exclude').length > 0;
@@ -471,8 +471,8 @@ function checkGroupActions() {
     const groupAddAction = groupHeader.find('.JS_itemBoxTable__bodyCell--addAll');
     const groupRemoveAction = groupHeader.find('.JS_itemBoxTable__bodyCell--removeAll');
 
-    const removedItems = children.find('.itemBoxTable__action--add:not(.JS_itemBoxTable__action--addAll)');
-    const addedItems = children.find('.itemBoxTable__action--remove:not(.JS_itemBoxTable__action--removeAll)');
+    const removedItems = children.find('.JS_itemBoxTable__action--add:not(.JS_itemBoxTable__action--addAll)');
+    const addedItems = children.find('.JS_itemBoxTable__action--remove:not(.JS_itemBoxTable__action--removeAll)');
 
     // if there are no added items
     //  keep only groupAddAction
