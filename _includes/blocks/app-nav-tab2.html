@@ -4,20 +4,11 @@
     <div class="itemBoxTable">
       <div class="itemBoxBody">
         <ul class="itemBoxTable__bodyRow">
-            <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-
-                  <input type="search" class="JS_appNav__filterInput" placeholder="filter through smarlists">
-
-                </div>
-            </li>
-            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--action" style="flex-grow: 0;" data-flex="0">
-                <div class= "itemBoxTable__bodyCellInner">
-
-                  <i class="">ञ</i>
-
-                </div>
-            </li>
+          <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+            <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
+              <input type="search" class="JS_appNav__filterInput" placeholder="filter through smarlists">
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -27,39 +18,41 @@
     <div class="itemBoxTable">
       <div class="itemBoxTable__body">
         {% for group in site.data.app-nav-tab2.groups %}
-          <ul class="itemBoxTable__bodyRow">
-            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-              <div class= "itemBoxTable__bodyCellInner">
-                <i class="">{{group.name}}</i>
-              </div>
-            </li>
-          </ul>
-          <div class="itemBox itemBox--children">
-            <div class="itemBoxTable">
-              <div class="itemBoxTable__body">
-                {%  for item in group.items %}
-                  <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                      <div class= "itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--label">{{item.label}}</div>
-                              <div class="pmx-selector__blockSeperator"></div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field">{{item.name}}</div>
-                            </div>
-                          </div>
+        <ul class="itemBoxTable__bodyRow">
+          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
+            <div class="itemBoxTable__bodyCellInner">
+              <i class="">{{group.name}}</i>
+            </div>
+          </li>
+        </ul>
+        <div class="itemBox itemBox--children">
+          <div class="itemBoxTable">
+            <div class="itemBoxTable__body">
+              {% for item in group.items %}
+              <ul class="itemBoxTable__bodyRow JS_filterableCell">
+                <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+                  <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--text">
+                    <div class="pmx-selector pmx-selector--readonly">
+                      <div class="pmx-selector__item">
+                        <div class="pmx-selector__block">
+                          <div class="pmx-selector__blockPart pmx-selector__blockPart--label">{{item.label}}</div>
+                          <div class="pmx-selector__blockSeperator"></div>
+                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field">{{item.name}}</div>
                         </div>
                       </div>
-                    </li>
-                  </ul>
-                {% endfor %}
-              </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              {% endfor %}
             </div>
-          </div><!-- /.itemBox--children -->
+          </div>
+        </div>
+        <!-- /.itemBox--children -->
         {% endfor %}
       </div>
     </div>
-  </div><!-- /.itemBox -->
+  </div>
+  <!-- /.itemBox -->
 
 </div>
