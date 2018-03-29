@@ -22,12 +22,9 @@
         font-size: 24px;
         margin: 5px 0;
 
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        max-height: 90px;
       }
     }
 
@@ -38,19 +35,17 @@
 
     &__type {
       display: inline-block;
-      background-color: #e6e6e6;
-      padding: 3px 10px 3px 15px;
+      background-color: #E6E6E6;
+      padding: 5px 10px 5px 15px;
       font-size: 12px;
       font-style: normal;
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
       color: #808080;
+      line-height: 1;
 
       &--meeting {
-        background-color: #11ceff;
-        color: #FFF;
-        border-radius: 0 5px 5px 0;
       }
 
       &--bug {
@@ -58,9 +53,6 @@
       }
 
       &--story {
-        background-color: #BF920B;
-        color: #FFF;
-        border-radius: 0 5px 5px 0;
       }
     }
 
