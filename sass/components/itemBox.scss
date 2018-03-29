@@ -239,6 +239,8 @@
         white-space: nowrap;
         list-style: none;
 
+        flex-grow: 1;
+
         &::after {
           content: '';
           position: absolute;
@@ -250,6 +252,35 @@
           pointer-events: none;
           transition: all .2s ease-in-out;
         }
+
+        &--flex {
+          &0 {
+            flex-grow: 0;
+
+            .itemBoxTable__bodyCellInner {
+              padding: 0;
+              text-align: center;
+            }
+          }
+          &1 {
+            flex-grow: 1;
+          }
+          &2 {
+            flex-grow: 2;
+          }
+          &3 {
+            flex-grow: 3;
+          }
+          &4 {
+            flex-grow: 4;
+          }
+          &5 {
+            flex-grow: 5;
+          }
+        }
+
+
+
 
         &--align-right {
           text-align: right;
@@ -372,18 +403,24 @@
     &__action {
       cursor: pointer;
       transition: all .3s ease-in-out;
-
       font-family: 'tenforce', sans-serif;
       color: #C79D54;
+
+      &:hover {
+      }
+
+      &--secondary {
+        color: #A8A8A8;
+      }
 
       &--disabled {
         opacity: .3;
         cursor: default;
       }
 
-      &--drag {
 
-      }
+
+
 
       // normal --add will be goldenrod, as the actions
       // excluded --add will be red
@@ -393,10 +430,6 @@
       // --remove will be barely visible gray
       &--remove {
         color: darkgray;
-      }
-
-      &:not(.itemBoxTable__action--disabled):hover {
-        top: 45%;
       }
     }
   }
