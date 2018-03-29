@@ -12,6 +12,20 @@
   text-transform: none;
   color: #000;
 
+  &--h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: normal;
+    text-transform: none;
+    color: #000;
+  }
+
+  &--placeholder {
+    
+  }
+
   &--label {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 12px;
@@ -20,5 +34,15 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #808080;
+  }
+
+  &--action {
+    font-family: 'tenforce', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: normal;
+    text-transform: none;
+    color: #C79D54;
   }
 }

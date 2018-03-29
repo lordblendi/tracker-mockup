@@ -4,7 +4,7 @@
 .itemBox {
   color: #000;
   font-size: 16px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 
   &--children {
     padding: 5px 0 5px 15px;
@@ -119,14 +119,6 @@
         min-width: 40px;
         white-space: nowrap;
 
-        &[data-flex="0"] {
-          & + li:not([data-flex="0"]) {
-            .itemBoxTable__headCellInner {
-              padding-left: 0;
-            }
-          }
-        }
-
         &--focus {
           background-color: #FFF;
           box-shadow: 0 0 50px rgba(24,74,103,.4);
@@ -154,33 +146,9 @@
 
         &:nth-of-type(odd) {
           background: #FFF;
-
-          // .pmx-field__value::after {
-          //   content: '';
-          //   position: absolute;
-          //   bottom: 2px;
-          //   right: 0;
-          //   width: 30px;
-          //   height: 38px;
-          //   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .6) 60%, rgba(255, 255, 255, 1) 100%);
-          //   pointer-events: none;
-          //   z-index: 1;
-          // }
         }
         &:nth-of-type(even) {
           background-color: #F2F2F2;
-
-          // .pmx-field__value::after {
-          //   content: '';
-          //   position: absolute;
-          //   bottom: 2px;
-          //   right: 0;
-          //   width: 30px;
-          //   height: 38px;
-          //   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(238, 239, 240, .6) 60%, rgb(240, 240, 241) 100%);
-          //   pointer-events: none;
-          //   z-index: 1;
-          // }
         }
 
         &:hover {
@@ -205,6 +173,18 @@
                 opacity: 1;
               }
             }
+          }
+        }
+
+        &--action {
+          cursor: pointer;
+
+          .pmx-selector--readonly .pmx-selector__item {
+            cursor: pointer;
+          }
+
+          .itemBoxTable__action {
+            top: 45%;
           }
         }
 
@@ -269,14 +249,6 @@
           background: #B2B2B2;
           pointer-events: none;
           transition: all .2s ease-in-out;
-        }
-
-        &[data-flex="0"] {
-          & + li:not([data-flex="0"]) {
-            .itemBoxTable__bodyCellInner {
-              padding-left: 0;
-            }
-          }
         }
 
         &--align-right {
@@ -398,19 +370,11 @@
     }
 
     &__action {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: inline-block;
-      width: 100%;
-      text-align: center;
       cursor: pointer;
-      color: #C79D54;
-      font-size: 18px;
       transition: all .3s ease-in-out;
 
       font-family: 'tenforce', sans-serif;
+      color: #C79D54;
 
       &--disabled {
         opacity: .3;
