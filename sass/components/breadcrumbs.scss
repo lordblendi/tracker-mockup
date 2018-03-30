@@ -7,6 +7,28 @@
   margin: 0 20px;
   background: rgb(193,193,193);
   background: linear-gradient(0deg, rgba(193,193,193,1) 0%, rgba(211,211,211,1) 20%, rgba(217,217,217,1) 100%);
+  white-space: nowrap;
+  overflow: hidden;
+
+  &--overflow {
+    direction: rtl;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(193, 193, 193, .9) 0%, rgba(211, 211, 211, .5) 30%, rgba(255, 255, 255, 0) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .breadcrumbs__item {
+      direction: ltr;
+    }
+  }
 
 	&:hover {
     .breadcrumbs__item {
