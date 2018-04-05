@@ -6,8 +6,9 @@ $(document).ready(function() {
     // making sure, that the line is positioned
     $('.app-navigator__nav .tabs-nav').each(function() {
       var activeLink = $(this).find('.tabs-nav__link--active');
+      var li = $(activeLink).closest('li');
       var barWidth = activeLink.width();
-      var barLeft = $(activeLink).position().left;
+      var barLeft = $(activeLink).position().left + $(li).position().left;
 
       $(this).find('.tabs-nav__linkBar').css({
         'left': barLeft + 'px',
