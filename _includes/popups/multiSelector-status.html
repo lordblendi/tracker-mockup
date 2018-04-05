@@ -46,11 +46,9 @@
                 </div>
               </div>
             </li>
-            <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
-              <div class="itemBoxTable__bodyCellInner">
-                <i class="itemBoxTable__action JS_itemBoxTable__action--add">✓</i>
-              </div>
-            </li>
+            {% if item.selected == "true" %}
+              {% include javascript/itemSelected.html %}
+            {% endif %}
           </ul>
         {% endfor %}
       </div>

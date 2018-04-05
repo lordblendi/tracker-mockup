@@ -1,3 +1,6 @@
+---
+---
+
 // SIMPLE MULTISELECT
 // in our case multiSelector-1
 $('#multiSelector-1 .itemBoxTable__bodyRow.JS_filterableCell').on('click', function(){
@@ -16,6 +19,12 @@ function selectNewSingleItem(row) {
   }
   const newLabel = row.find('.JS_text').html().trim();
   const newColor = row.find('.JS_color--prefix').css('background-color');
+
+  // remove old selected
+  const optionsChildren = row.closest('.JS_multiSelector__box--optionsChildren');
+  $(optionsChildren).find('.JS_showSelected').remove();
+  // add selected to new one
+  $(row).append(`{% include javascript/itemSelected.html %}`);
 
   const selectorField = $('.MULTISELECT__POPUP[data-popid="#multiSelector-1"]');
   $(selectorField).find('.JS_singleSelect--label').html(newLabel);
