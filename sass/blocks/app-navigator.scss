@@ -40,8 +40,16 @@
       display: none;
     }
 
-    .tabs__panel {
-      padding: 10px;
+    .tabs {
+
+      &__panel {
+        padding: 10px;
+      }
+      &-nav__link {
+        color: #FFF;
+      }
     }
+
+
   }
 }
