@@ -14,8 +14,8 @@ function selectNewSingleItem(row) {
   if(row.find('.JS_multiSelector__filterInput').length > 0) {
     return;
   }
-  const newLabel = row.find('.JS_itemBoxTable__bodyCell--text .itemBoxTable__bodyCellInner .JS_text').html().trim();
-  const newColor = row.find('.JS_itemBoxTable__bodyCell--text .itemBoxTable__bodyCellInner .JS_color--prefix').css('background-color');
+  const newLabel = row.find('.JS_text').html().trim();
+  const newColor = row.find('.JS_color--prefix').css('background-color');
 
   const selectorField = $('.MULTISELECT__POPUP[data-popid="#multiSelector-1"]');
   $(selectorField).find('.JS_singleSelect--label').html(newLabel);
