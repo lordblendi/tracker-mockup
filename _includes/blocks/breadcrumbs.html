@@ -1,66 +1,16 @@
 <div class="breadcrumbs breadcrumbs--overflow">
-  <div class="breadcrumbs__item JS_breadcrumbs__item">
-    <div class="pmx-selector">
-      <div class="pmx-selector__item pmx-selector__item--selected">
-        <div class="pmx-selector__block">
-          <div class="pmx-selector__blockPart pmx-selector__blockPart--label MULTISELECT__POPUP JS_breadcrumbPopup" data-popid="#multiSelector-breadcrumb">Doelstelling</div>
+  {% for item in site.data.breadcrumbs.items %}
+    <div class="breadcrumbs__item JS_breadcrumbs__item">
+      <div class="pmx-selector">
+        <div class="pmx-selector__item pmx-selector__item--selected">
+          <div class="pmx-selector__block">
+            <div class="pmx-selector__blockPart pmx-selector__blockPart--label MULTISELECT__POPUP JS_breadcrumbPopup" data-popid="#multiSelector-breadcrumb">{{item.label}}</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="pmx-link">
-      <a href="#">De aanbevelingen van Audit Vlaanderen m.b.t. organisatiebeheersing uitvoeren</a>
-    </div>
-  </div>
-
-  <div class="breadcrumbs__item JS_breadcrumbs__item">
-    <div class="pmx-selector">
-      <div class="pmx-selector__item pmx-selector__item--selected">
-        <div class="pmx-selector__block">
-          <div class="pmx-selector__blockPart pmx-selector__blockPart--label MULTISELECT__POPUP JS_breadcrumbPopup" data-popid="#multiSelector-breadcrumb">Mijlpaal</div>
-        </div>
+      <div class="pmx-link">
+        <a href="#">{{item.name}}</a>
       </div>
     </div>
-    <div class="pmx-link">
-      <a href="#">M01 - Processen varend erfgoed</a>
-    </div>
-  </div>
-
-  <div class="breadcrumbs__item JS_breadcrumbs__item">
-    <div class="pmx-selector">
-      <div class="pmx-selector__item pmx-selector__item--selected">
-        <div class="pmx-selector__block">
-          <div class="pmx-selector__blockPart pmx-selector__blockPart--label MULTISELECT__POPUP JS_breadcrumbPopup" data-popid="#multiSelector-breadcrumb">Doelstelling</div>
-        </div>
-      </div>
-    </div>
-    <div class="pmx-link">
-      <a href="#">De aanbevelingen van Audit Vlaanderen m.b.t. organisatiebeheersing uitvoeren</a>
-    </div>
-  </div>
-
-  <div class="breadcrumbs__item JS_breadcrumbs__item">
-    <div class="pmx-selector">
-      <div class="pmx-selector__item pmx-selector__item--selected">
-        <div class="pmx-selector__block">
-          <div class="pmx-selector__blockPart pmx-selector__blockPart--label MULTISELECT__POPUP JS_breadcrumbPopup" data-popid="#multiSelector-breadcrumb">Mijlpaal</div>
-        </div>
-      </div>
-    </div>
-    <div class="pmx-link">
-      <a href="#">M01 - Processen varend erfgoed</a>
-    </div>
-  </div>
-
-  <div class="breadcrumbs__item JS_breadcrumbs__item">
-    <div class="pmx-selector">
-      <div class="pmx-selector__item pmx-selector__item--selected">
-        <div class="pmx-selector__block">
-          <div class="pmx-selector__blockPart pmx-selector__blockPart--label MULTISELECT__POPUP JS_breadcrumbPopup" data-popid="#multiSelector-breadcrumb">Mijlpaal</div>
-        </div>
-      </div>
-    </div>
-    <div class="pmx-link">
-      <a href="#">M01 - Processen varend erfgoed</a>
-    </div>
-  </div>
+  {% endfor %}
 </div>
