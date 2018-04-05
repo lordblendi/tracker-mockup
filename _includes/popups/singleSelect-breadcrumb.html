@@ -1,0 +1,37 @@
+<div class="multiSelector multiSelector--popup multiSelector--popup-breadcrumb " id="multiSelector-breadcrumb">
+
+  <div class="itemBox JS_multiSelector__box">
+    <div class="itemBoxTable">
+      <div class="itemBoxBody">
+        <ul class="itemBoxTable__bodyRow">
+          <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+            <div class="itemBoxTable__bodyCellInner">
+
+              <input type="search" class="JS_multiSelector__filterInput" placeholder="filter through items">
+
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="itemBox JS_multiSelector__box--optionsChildren">
+    <div class="itemBoxTable">
+      <div class="itemBoxBody">
+        {% for item in site.data.breadcrumb-popup.items %}
+          <ul class="itemBoxTable__bodyRow JS_filterableCell">
+            <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+              <div class="itemBoxTable__bodyCellInner">
+                <div class="fnt JS_text">{{item}}</div>
+              </div>
+            </li>
+          </ul>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!-- /.itemBox -->
+
+</div>
+<!-- /.multiSelector -->

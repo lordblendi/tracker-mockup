@@ -22,8 +22,11 @@ $('.MULTISELECT__POPUP').on('click', function() {
 
   // top for popup is under the toggle
   var newTop = (Math.round(top) + Math.round(height)) + 'px';
-  if($(this).hasClass('pmx-selector')) {
+  if($(this).hasClass('pmx-selector') ) {
     newTop = (Math.round(top) - 50) + 'px';
+  }
+  else if ($(this).hasClass('JS_breadcrumbPopup') ) {
+    newTop = (Math.round(top) - 6) + 'px';
   }
 
   // toggle is left
