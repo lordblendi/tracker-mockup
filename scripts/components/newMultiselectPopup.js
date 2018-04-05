@@ -6,14 +6,14 @@ $('.MULTISELECT__POPUP').on('click', function() {
   // outerWidth (including padding, border, and optionally margin -> true parameter)
   // innerWidth (including padding but not border)
   // width (not including anything)
-  const width = toggle.outerWidth(true);
-  const height = toggle.outerHeight(true);
+  var width = toggle.outerWidth(true);
+  var height = toggle.outerHeight(true);
 
   // corners of toggle
-  const top = toggle.offset().top;
-  const left = toggle.offset().left;
-  const right = left + width;
-  const bottom = top + height;
+  var top = toggle.offset().top;
+  var left = toggle.offset().left;
+  var right = left + width;
+  var bottom = top + height;
 
   // position of toggle, which side of the screen
   const windowWidth = $(window).width();
@@ -27,6 +27,24 @@ $('.MULTISELECT__POPUP').on('click', function() {
   }
   else if ($(this).hasClass('JS_breadcrumbPopup') ) {
     newTop = (Math.round(top) - 6) + 'px';
+
+    var selector = $(this).closest('.pmx-selector');
+    width = selector.outerWidth(true);
+    height = selector.outerHeight(true);
+
+    top = selector.offset().top;
+    left = selector.offset().left;
+
+    if(left < 0) {
+      left = 0;
+    }
+
+    right = left + width;
+    bottom = top + height;
+
+    $('' + $(this).attr('data-popid')).css({
+      'left': right-300 + "px"
+    });
   }
 
   // toggle is left
@@ -37,7 +55,7 @@ $('.MULTISELECT__POPUP').on('click', function() {
       'pointer-events': 'auto',
       'opacity': '1',
       'top': newTop,
-      'left': 0
+      'left': left
     });
   }
   // toggle is right, right side of the popup is right side of toggle
@@ -47,7 +65,7 @@ $('.MULTISELECT__POPUP').on('click', function() {
       'pointer-events': 'auto',
       'opacity': '1',
       'top': newTop,
-      'right': 0
+      'right': right
     });
   }
 
