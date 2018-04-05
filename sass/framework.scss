@@ -11,6 +11,9 @@
   letter-spacing: normal;
   text-transform: none;
   color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &--h2 {
     font-family: 'Source Sans Pro', sans-serif;
@@ -23,7 +26,7 @@
   }
 
   &--placeholder {
-    
+
   }
 
   &--label {
