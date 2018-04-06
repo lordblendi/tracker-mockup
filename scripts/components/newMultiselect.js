@@ -19,7 +19,17 @@ $(".multiSelector.JS_multiSelector--withFilter .itemBoxBody--sortableInclude, .m
 $('.multiSelector .JS_multiSelector__box .itemBoxTable__action').on('click', function(){
   const action = $(this);
   handleActionOnclick(action);
+});+
+$('.multiSelector .JS_multiSelector__box .JS_textAction').on('click', function(){
+  handleTextAction($(this));
 });
+
+function handleTextAction(text) {
+  const bodyRow = text.closest('.itemBoxTable__bodyRow');
+  // find the first add/remove action close to the text
+  $(bodyRow).find('.itemBoxTable__action:not(.itemBoxTable__action--drag)').trigger('click');
+
+}
 
 // handles onclick`
 function handleActionOnclick(action) {
@@ -308,14 +318,17 @@ function getNewItem(item, exclude) {
   var colorPrefix = $(bodyRow).find('.JS_Color--prefix');
   var colorSelectorToggle = $(bodyRow).find('.JS_toggle--color');
   var simpleText = $(item).closest('.JS_multiSelector--simpleText');
+  var textAction = $(item).closest('.JS_multiSelector--textAction');
 
-
+  var textActionClass = ""
   var newSelectedItemHTML = "";
   var colorPrefixHTML = '';
   var colorChildren = '';
   var colorToggleHTML = '';
   var colorToggleTriggerInnerClass = '';
-
+  if(textAction.length > 0){
+    textActionClass = 'JS_textAction';
+  }
   if(simpleText.length > 0) {
     newSelectedItemHTML = `{% include javascript/newSelectedItem--text.html %}`;
   }
@@ -538,11 +551,15 @@ function reset(){
     }
 
     // reinitiate onclick and reorder actions in selection blocks
-    $(multiSelector).find('.JS_multiSelector__box .itemBoxTable__action').on('click', function(){
+    $(multiSelector).find('.JS_multiSelector__box .itemBoxTable__action').off('click').on('click', function(){
       const action = $(this);
       handleActionOnclick(action);
     });
-
+    window.setTimeout( function() {
+        $(multiSelector).find('.JS_multiSelector__box .JS_textAction').off('click').on('click', function(){
+          handleTextAction($(this));
+        });
+    }, 250);
     // reinitiate reorder functionality
     if ($(multiSelector).hasClass('JS_multiSelector--withFilter')){
       $(multiSelector).find(".itemBoxBody--sortableInclude, .itemBoxBody--sortableExclude").sortable({
@@ -560,7 +577,7 @@ function reset(){
 
 
     // reinitiate selectorItem inside multiselector
-    $(multiSelector).find('.JS_selectorItem').on('click', function() {
+    $(multiSelector).find('.JS_selectorItem').off('click').on('click', function() {
       const selectorValue = $(this);
       const selector = selectorValue.closest('.JS_selector');
 

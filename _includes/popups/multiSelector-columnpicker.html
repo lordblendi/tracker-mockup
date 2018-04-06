@@ -1,4 +1,4 @@
-<div class="multiSelector multiSelector--popup JS_multiSelector--simpleText" id="multiSelector-columnpicker">
+<div class="multiSelector multiSelector--popup JS_multiSelector--simpleText JS_multiSelector--textAction" id="multiSelector-columnpicker">
 
   <div class="itemBox JS_multiSelector__box">
     <div class="itemBoxTable">
@@ -60,7 +60,7 @@
             <div class="itemBoxBody itemBoxBody--sortable">
               {% for selected in site.data.columnpicker.selected %}
                 <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                  <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                  <li class="itemBoxTable__bodyCell JS_textAction" style="flex-grow: 1;">
                     <div class="itemBoxTable__bodyCellInner ">
 
                       <div class="fnt JS_text">{{selected}}</div>
@@ -131,7 +131,7 @@
                   <div class="itemBoxBody">
                     {% for item in group.items %}
                       <ul class="itemBoxTable__bodyRow itemBoxTable__bodyRow--action JS_filterableCell">
-                        <li class="itemBoxTable__bodyCell" style="flex-grow: 1;">
+                        <li class="itemBoxTable__bodyCell JS_textAction" style="flex-grow: 1;">
                           <div class="itemBoxTable__bodyCellInner">
                             <div class="fnt JS_text">{{item.name}}</div>
                           </div>
