@@ -17,7 +17,7 @@ $('.MULTISELECT__POPUP').on('click', function() {
 
   // position of toggle, which side of the screen
   const windowWidth = $(window).width();
-  const isOnLeft = Math.round(windowWidth/2) >= Math.round(toggle.offset().left);
+  var isOnLeft = Math.round(windowWidth/2) >= Math.round(toggle.offset().left);
   const isOnRight = Math.round(windowWidth/2) < Math.round(toggle.offset().left);
 
   if(width < 300) {
@@ -50,6 +50,11 @@ $('.MULTISELECT__POPUP').on('click', function() {
       width = 300;
     }
     newLeft = right - width + "px";
+  }
+
+  // check if it would fit on the screen or not, even if the toggle is on the is on the right
+  if ((right + width) < windowWidth) {
+    isOnLeft = true;
   }
 
   // toggle is left

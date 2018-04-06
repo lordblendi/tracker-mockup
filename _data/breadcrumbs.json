@@ -2,6 +2,10 @@
   "items": [
     {
       "label": "Doelstelling",
+      "name": "Test"
+    },
+    {
+      "label": "Doelstelling",
       "name": "De aanbevelingen van Audit Vlaanderen m.b.t. organisatiebeheersing uitvoeren"
     },
     {
