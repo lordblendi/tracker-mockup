@@ -11,17 +11,22 @@ $('.MULTISELECT__POPUP').on('click', function() {
 
   // corners of toggle
   var top = toggle.offset().top;
-  var left = toggle.offset().left;
+  var left = toggle.position().left;
   var right = left + width;
   var bottom = top + height;
 
   // position of toggle, which side of the screen
   const windowWidth = $(window).width();
-  const isOnLeft = Math.round(windowWidth/2) >= Math.round(left);
-  const isOnRight = Math.round(windowWidth/2) < Math.round(left);
+  const isOnLeft = Math.round(windowWidth/2) >= Math.round(toggle.offset().left);
+  const isOnRight = Math.round(windowWidth/2) < Math.round(toggle.offset().left);
 
+  if(width < 300) {
+    width = 300;
+  }
   // top for popup is under the toggle
   var newTop = (Math.round(top) + Math.round(height)) + 'px';
+  var newLeft = right - width + "px";
+
   if($(this).hasClass('pmx-selector') ) {
     newTop = (Math.round(top) - 50) + 'px';
   }
@@ -41,10 +46,10 @@ $('.MULTISELECT__POPUP').on('click', function() {
 
     right = left + width;
     bottom = top + height;
-
-    $('' + $(this).attr('data-popid')).css({
-      'left': right-300 + "px"
-    });
+    if(width < 300) {
+      width = 300;
+    }
+    newLeft = right - width + "px";
   }
 
   // toggle is left
@@ -55,7 +60,8 @@ $('.MULTISELECT__POPUP').on('click', function() {
       'pointer-events': 'auto',
       'opacity': '1',
       'top': newTop,
-      'left': left
+      'left': left,
+      'width': width
     });
   }
   // toggle is right, right side of the popup is right side of toggle
@@ -65,7 +71,9 @@ $('.MULTISELECT__POPUP').on('click', function() {
       'pointer-events': 'auto',
       'opacity': '1',
       'top': newTop,
-      'right': right
+      'right': right,
+      'left': newLeft,
+      'width': width
     });
   }
 
