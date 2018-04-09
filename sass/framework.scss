@@ -49,3 +49,44 @@
     color: #C79D54;
   }
 }
+
+
+h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #000;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.font--sm {
+  color: #808080;
+  font-size: 10px;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.font--label {
+  font-size: 10px;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #B1B1B1;
+}
+
+.font--placeholder {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: normal;
+  color: rgba(0, 0, 0, 0.4);
+}

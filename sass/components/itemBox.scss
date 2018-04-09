@@ -4,7 +4,7 @@
 .itemBox {
   color: #000;
   font-size: 16px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 
   &--children {
     padding: 5px 0 5px 15px;
@@ -444,6 +444,238 @@
       &--remove {
         color: darkgray;
       }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.itemBox {
+  .itemBox {
+    padding: 5px 0 5px 15px;
+  }
+
+  &__row {
+    position: relative;
+    display: flex;
+    background-color: #FFF;
+    height: 40px;
+
+    &:nth-of-type(even) {
+      background-color: #F2F2F2;
+    }
+
+    &--h1 {
+      background-color: #FFF;
+      border-bottom: 2px dashed #BFBFBF;
+      height: 60px;
+
+      .itemBox {
+        &__cell {
+          min-width: 60px;
+
+          &--action {
+            .itemBox {
+              &__action {
+                font-size: 24px;
+              }
+            }
+          }
+
+          &Inner {
+            line-height: 60px;
+          }
+        }
+      }
+    }
+
+    &--h2 {
+      background: #DEDEDE;
+      background: linear-gradient(to bottom, #FFF 0%, #CCC 100%);
+      height: 50px;
+
+      .itemBox {
+        &__cell {
+          min-width: 40px;
+
+          &Inner {
+            line-height: 50px;
+          }
+        }
+      }
+    }
+
+    &--h3 {
+      .itemBox {
+        &__cell {
+          &::after {
+            height: 2px;
+            background: #FFEF99;
+          }
+
+          &Inner {
+            position: relative;
+            display: inline-block;
+            width: auto;
+            overflow: visible;
+            padding: 0 0 0 15px;
+            background-color: #FFEF99;
+            color: #857209;
+
+            &::after {
+              content: '';
+              border-left: 60px solid #FFEF99;
+              border-top: 40px solid transparent;
+              position: absolute;
+              right: -60px;
+              top: 0;
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+
+    &--item {
+      &:hover {
+        .itemBox {
+          &__cell {
+            &::after {
+              height: 2px;
+            }
+          }
+        }
+      }
+    }
+
+    &--custom {
+      height: auto;
+
+      .itemBox__cellInner {
+        position: relative;
+        line-height: normal;
+        height: auto;
+        width: auto;
+        white-space: normal;
+        padding: 0;
+      }
+    }
+
+
+    &--foot {
+      overflow: hidden;
+      height: 22px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -15%;
+        width: 130%;
+        height: 130%;
+        box-shadow: inset 0px 5px 22px 0px rgba(0, 0, 0, 0.2);
+        pointer-events: none;
+      }
+
+      .itemBox {
+        &__cell {
+          &Inner {
+            line-height: 22px;
+            color: #808080;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+
+  &__cell {
+    position: relative;
+    flex-grow: 1;
+    min-width: 40px;
+    white-space: nowrap;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: #B2B2B2;
+      pointer-events: none;
+      transition: all .2s ease-in-out;
+    }
+
+    &--flex0 {
+      flex-grow: 0;
+    }
+
+    &--flex3 {
+      flex-grow: 3;
+    }
+
+    &--action {
+      text-align: center;
+
+      .itemBox {
+        &__cell {
+          &Inner {
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    &--focus {
+      background-color: #FFF;
+      box-shadow: 0 0 50px rgba(24, 74, 103, 0.4);
+      z-index: 9;
+    }
+
+    &--goto {
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: -10%;
+        width: 120%;
+        background: #B2B2B2;
+        background: linear-gradient(to right, #b2b2b2 0%, #00baff 20%, #00baff 50%, #00baff 80%, #b2b2b2 100%);
+        pointer-events: none;
+        transition: all .3s ease-in-out;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__cellInner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    line-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #000;
+  }
+
+  &__action {
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    font-family: 'tenforce', sans-serif;
+    color: #C79D54;
+
+    &--disabled {
+      opacity: .3;
+      cursor: default;
+      pointer-events: none;
     }
   }
 }

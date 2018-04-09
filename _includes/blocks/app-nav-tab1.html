@@ -4,7 +4,7 @@
     <div class="itemBoxTable">
       <div class="itemBoxBody">
         <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex1">
             <div class="itemBoxTable__bodyCellInner">
               <input type="search" class="JS_appNav__filterInput" placeholder="filter through items">
             </div>
@@ -19,7 +19,7 @@
       <div class="itemBoxTable__body">
         {% for group in site.data.app-nav-tab1.groups %}
           <ul class="itemBoxTable__bodyRow">
-            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
+            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex1 itemBoxTable__bodyCell--toggle">
               <div class="itemBoxTable__bodyCellInner">
                 <i class="JS_text">{{group.name}}</i>
               </div>
@@ -30,7 +30,7 @@
               <div class="itemBoxTable__body">
                 {% for item in group.items %}
                   <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                    <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
+                    <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex1">
                       <div class="itemBoxTable__bodyCellInner ">
                         <div class="pmx-selector pmx-selector--readonly">
                           <div class="pmx-selector__item">

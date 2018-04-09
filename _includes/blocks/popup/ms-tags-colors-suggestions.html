@@ -3,7 +3,7 @@
     <div class="itemBoxBody">
       {% for item in site.data.tag-picker-color.suggestions %}
         <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
+          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex1">
             <div class="itemBoxTable__bodyCellInner JS_toggle--color ">
               {% include javascript/colorToggle.html color=item.color %}
               <div class="pmx-selector pmx-selector--readonly">
@@ -15,12 +15,12 @@
               </div>
             </div>
           </li>
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable ui-sortable-handle" style="flex-grow: 0;" data-flex="0">
+          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex0 itemBoxTable__bodyCell--draggable ui-sortable-handle">
             <div class="itemBoxTable__bodyCellInner">
               <i class="itemBoxTable__action itemBoxTable__action--drag">އ</i>
             </div>
           </li>
-          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
+          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex0 JS_itemBoxTable__bodyCell--remove">
             <div class="itemBoxTable__bodyCellInner">
               <i class="itemBoxTable__action JS_itemBoxTable__action--remove">—</i>
             </div>

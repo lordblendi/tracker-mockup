@@ -1,76 +1,68 @@
 <div class="multiSelector multiSelector--popup" id="multiSelector-1">
 
+
+
   <div class="itemBox JS_multiSelector__box">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
+    <ul class="itemBox__row">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner">
 
-              <input type="search" class="JS_multiSelector__filterInput" placeholder="filter through items">
+          <input type="search" class="JS_multiSelector__filterInput" placeholder="filter through items">
 
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
+        </div>
+      </li>
+    </ul>
   </div>
 
   <div class="itemBox">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--custom">
-            <div class="itemBoxTable__bodyCellInner">
+    <ul class="itemBox__row itemBox__row--custom">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner">
 
-              <div class="pmx-note pmx-note--error">
-                <p>Item could not be selected. <a href="#">Read more</a></p>
-              </div>
+          <div class="pmx-note pmx-note--error">
+            <p>Item could not be selected. <a href="#">Read more</a></p>
+          </div>
 
-            </div>
-          </li>
-        </ul>
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--custom">
-            <div class="itemBoxTable__bodyCellInner">
+        </div>
+      </li>
+    </ul>
+    <ul class="itemBox__row itemBox__row--custom">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner">
 
-              <div class="pmx-note pmx-note--info">
-                <p>Actual invoice amount</p>
-                <p>For fixed price projects and service requests (no timesheets): when you change the status to 'to be invoiced', please insert the exact amount that needs to be invoiced.</p>
-              </div>
+          <div class="pmx-note pmx-note--info">
+            <p>Actual invoice amount</p>
+            <p>For fixed price projects and service requests (no timesheets): when you change the status to 'to be invoiced', please insert the exact amount that needs to be invoiced.</p>
+          </div>
 
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
+        </div>
+      </li>
+    </ul>
   </div>
   <!-- /.itemBox -->
 
   <div class="itemBox JS_multiSelector__box--optionsChildren">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        {% for item in site.data.multiselector-status.items %}
-          <ul class="itemBoxTable__bodyRow JS_filterableCell">
-            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex1">
-              <div class="itemBoxTable__bodyCellInner">
-                <div class="pmx-selector pmx-selector--readonly">
-                  <div class="pmx-selector__item">
-                    <div class="pmx-selector__block">
-                      <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
-                      <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
-                    </div>
-                  </div>
+    {% for item in site.data.multiselector-status.items %}
+      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+
+            <div class="pmx-selector pmx-selector--readonly">
+              <div class="pmx-selector__item">
+                <div class="pmx-selector__block">
+                  <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
+                  <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
                 </div>
               </div>
-            </li>
-            {% if item.selected == "true" %}
-              {% include javascript/itemSelected.html %}
-            {% endif %}
-          </ul>
-        {% endfor %}
-      </div>
-    </div>
+            </div>
+
+          </div>
+        </li>
+        {% if item.selected == "true" %}
+          {% include javascript/itemSelected.html %}
+        {% endif %}
+      </ul>
+    {% endfor %}
   </div>
   <!-- /.itemBox -->
 

@@ -18,6 +18,14 @@
     }
   }
 
+  &--error {
+    .pmx-field {
+      &__label {
+        color: red; 
+      }
+    }
+  }
+
   &:focus-within:focus-within:focus-within:focus-within {
     border: 1px solid #F7F7F7;
     border-radius: 3px;
