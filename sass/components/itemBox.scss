@@ -253,6 +253,19 @@
           transition: all .2s ease-in-out;
         }
 
+        &--custom {
+          height: auto;
+
+          .itemBoxTable__bodyCellInner {
+            position: relative;
+            line-height: normal;
+            height: auto;
+            width: auto;
+            white-space: normal;
+            padding: 0;
+          }
+        }
+
         &--flex {
           &0 {
             flex-grow: 0;

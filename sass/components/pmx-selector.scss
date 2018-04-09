@@ -113,56 +113,6 @@
 
     }
   }
-
-  &__handlers {
-    position: absolute;
-    bottom: 100%;
-    width: 100%;
-    background-color: #FFF;
-    border-bottom: 1px dashed #CCCC;
-    box-shadow: 0 0 200px 60px rgba(0, 0, 0, 0.2);
-  }
-
-  &__handler {
-    padding: 10px 15px;
-
-    &--error {
-      background-color: #ffdfdf;
-    }
-
-    &--action {
-      background-color: #e0f0ff;
-    }
-
-    &--tooltip {
-      background-color: #efefef;
-    }
-  }
-
-  &__note {
-    display: inline-block;
-    margin: 10px 0 0;
-    padding: 2px 8px;
-    background-color: #F7F7F7;
-    border: 2px solid #FFF;
-    border-radius: 3px;
-
-    p {
-      font-size: 14px;
-      margin: 5px 0;
-      color: #666;
-
-      a {
-        color: #01ADFF;
-        text-decoration: underline;
-        transition: all .3s ease-in-out;
-
-        &:focus {
-          box-shadow: 0 0 30px -5px rgba(36, 104, 182, .5);
-        }
-      }
-    }
-  }
 }
 
 .pmx-selector {
