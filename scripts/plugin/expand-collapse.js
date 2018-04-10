@@ -8,30 +8,30 @@ const collapsed = "अ";
 
 // expand/collapse action listener on toggle
 $('.JS_toggle').on('click', function() {
-  const itemBoxTable__bodyRow = $(this).closest('.itemBox');
-  expandCloseRow(itemBoxTable__bodyRow);
+  const itemBox__row = $(this).closest('.itemBox');
+  expandCloseRow(itemBox__row);
 });
 
 // function to expand or close rows
-function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
+function expandCloseRow(itemBox__row, toClose, possibleChildren){
 
   if(possibleChildren === undefined) {
     // if the next one is color options, then get the one after it
     // as it should be like this:
-    // itemBoxTable__bodyRow
+    // itemBox__row
     //     [optional .itemBox--children.JS_itemBox--colors]
     //     .itemBox--children
-    possibleChildren = $(itemBoxTable__bodyRow).next();
+    possibleChildren = $(itemBox__row).next();
     if (possibleChildren.hasClass('JS_itemBox--colors')) {
       possibleChildren = possibleChildren.next();
     }
   }
-  const i = itemBoxTable__bodyRow.find('.JS_toggle .itemBox__cellInner');
+  const i = itemBox__row.find('.JS_toggle .itemBox__cellInner');
   const iContent = i.html();
 
   // if the 'toClose' is not specified, it will become the opposite state
   if(toClose === undefined) {
-    toClose = $(possibleChildren).hasClass('JS_itemBoxTable__bodyRow--closed');
+    toClose = $(possibleChildren).hasClass('itemBox__row--closed');
   }
 
   // check if it's actually a children
@@ -39,21 +39,21 @@ function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
     // close it, if we have to
     if (toClose === true) {
       $.Velocity.animate(possibleChildren, 'slideDown').then(function() {
-        $(possibleChildren).removeClass('JS_itemBoxTable__bodyRow--closed');
+        $(possibleChildren).removeClass('itemBox__row--closed');
         if(iContent !== null && iContent !== undefined){
           i.html(iContent.replace(collapsed, expanded));
         }
-        checkTableHeaderIcon(itemBoxTable__bodyRow);
+        checkTableHeaderIcon(itemBox__row);
       });
     }
     // otherwise open it
     else {
       $.Velocity.animate(possibleChildren, 'slideUp').then(function() {
-        $(possibleChildren).addClass('JS_itemBoxTable__bodyRow--closed');
+        $(possibleChildren).addClass('itemBox__row--closed');
         if(iContent !== null && iContent !== undefined){
           i.html(iContent.replace(expanded, collapsed));
         }
-        checkTableHeaderIcon(itemBoxTable__bodyRow);
+        checkTableHeaderIcon(itemBox__row);
       });
     }
   }
@@ -64,17 +64,17 @@ function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
 // - everything is collapsed
 // - everything is expanded
 // - some collapsed, some expanded
-function checkTableHeaderIcon(itemBoxTable__bodyRow) {
+function checkTableHeaderIcon(itemBox__row) {
   // check, if everything is closed, or not
   // and change it in the table
-  const itemBoxTable = $(itemBoxTable__bodyRow).closest('.itemBoxTable');
+  const itemBoxTable = $(itemBox__row).closest('.itemBoxTable');
   const itemBoxTable__head = $(itemBoxTable).children('.itemBoxTable__head');
   const itemBoxTable__body = $(itemBoxTable).children('.itemBoxTable__body');
 
-  const i = $(itemBoxTable__head).find('.itemBoxTable__headCellInner').find('i');
+  const i = $(itemBoxTable__head).find('.itemBox__cellInner').find('i');
   const iContent = i.html();
 
-  const closedChildren = $(itemBoxTable__body).children('.JS_itemBoxTable__bodyRow--closed');
+  const closedChildren = $(itemBoxTable__body).children('.itemBox__row--closed');
   const children = $(itemBoxTable__body).children('.itemBox--children');
 
   if(iContent !== null && iContent !== undefined) {
@@ -88,27 +88,27 @@ function checkTableHeaderIcon(itemBoxTable__bodyRow) {
 }
 
 // action for toggle in header to expand/collapse all
-$('.itemBoxTable__headCell--toggle').on('click', function(){
+$('.itemBox__cell--toggle').on('click', function(){
   const toggle = $(this);
 
   const itemBoxTable = $(toggle).closest('.itemBoxTable');
   const itemBoxTable__body = $(itemBoxTable).children('.itemBoxTable__body');
 
   // finding all toggles
-  const bodyCelltoggles = $(itemBoxTable__body).children('.itemBoxTable__bodyRow').children(' .JS_toggle');
+  const bodyCelltoggles = $(itemBoxTable__body).children('.itemBox__row').children(' .JS_toggle');
 
   // finding the bodyRows from toggles
   // so these ARE parent bodyRows
-  const itemBoxTable__bodyRow = $(bodyCelltoggles).closest('.itemBoxTable__bodyRow');
+  const itemBox__row = $(bodyCelltoggles).closest('.itemBox__row');
 
-  const closedChildren = $(itemBoxTable__body).children('.itemBox--children.JS_itemBoxTable__bodyRow--closed');
+  const closedChildren = $(itemBoxTable__body).children('.itemBox--children.itemBox__row--closed');
   const children = $(itemBoxTable__body).children('.itemBox--children');
 
   //if the children are all closed
   if(closedChildren.length !== children.length) {
-    expandCloseRow(itemBoxTable__bodyRow, false);
+    expandCloseRow(itemBox__row, false);
   }
   else {
-    expandCloseRow(itemBoxTable__bodyRow, true);
+    expandCloseRow(itemBox__row, true);
   }
 });

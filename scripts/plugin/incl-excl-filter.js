@@ -2,7 +2,7 @@
 ---
 
 // SELECT INCL/EXCL
-$('.JS_itemBox--filterInclExcl .itemBoxTable__bodyRow').on('click', function() {
+$('.JS_itemBox--filterInclExcl .itemBox__row').on('click', function() {
   const incleExclBodyRow = $(this);
   selectNewFilterOption(incleExclBodyRow);
 });
@@ -12,11 +12,11 @@ $('.JS_itemBox--filterInclExcl .itemBoxTable__bodyRow').on('click', function() {
 // then close the pallette
 function selectNewFilterOption(incleExclBodyRow) {
   // get new option
-  const newOption = incleExclBodyRow.find('.JS_itemBoxTable__bodyCellInner--inclExcl').attr('data-filter');
+  const newOption = incleExclBodyRow.find('.JS_itemBox__cellInner--inclExcl').attr('data-filter');
 
   // find the bodyRow related to this toggle
   const itemBox = incleExclBodyRow.closest('.JS_itemBox--filterInclExcl');
-  const bodyRow = $(itemBox).prevAll('ul.itemBoxTable__bodyRow.JS_filterableCell:first:not(".JS_createNewTag")');
+  const bodyRow = $(itemBox).prevAll('ul.itemBox__row.JS_filterableCell:first:not(".JS_createNewTag")');
 
   // find toggle and replace text and data-filter
   const toggle = $(bodyRow).find('.JS_inclExl');
@@ -52,7 +52,7 @@ function selectNewFilterOption(incleExclBodyRow) {
     const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
 
     const oldItemTextBlock = selectedItems[positionOfItemInSelected];
-    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.itemBoxTable__bodyRow.JS_filterableCell');
+    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.itemBox__row.JS_filterableCell');
     // append to newSelectedBlock
     // cloning includes eventhandlers too
     // remove from oldSelectedBlock
@@ -62,17 +62,17 @@ function selectNewFilterOption(incleExclBodyRow) {
   }
 
   // remove active cell from bodyRow as we are closing the selector
-  $(bodyRow).find('.itemBoxTable__bodyCell--active').removeClass('itemBoxTable__bodyCell--active');
+  $(bodyRow).find('.itemBox__cell--active').removeClass('itemBox__cell--active');
 
   // close options
   $.Velocity.animate(itemBox, 'slideUp').then(function() {
-    $(itemBox).addClass('JS_itemBoxTable__bodyRow--closed');
+    $(itemBox).addClass('JS_itemBox__row--closed');
   });
 }
 
 // SELECT INCL/EXCL - TOGGLE
 // ONLY IF IT'S NOT SELECTED YET
-$('.JS_itemBoxTable__bodyCellInner--inclExcl.JS_selectorItem').on('click', function() {
+$('.JS_itemBox__cellInner--inclExcl.JS_selectorItem').on('click', function() {
   // get new option
   const newOption = $(this).attr('data-filter');
 
@@ -113,7 +113,7 @@ $('.JS_itemBoxTable__bodyCellInner--inclExcl.JS_selectorItem').on('click', funct
     const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
 
     const oldItemTextBlock = selectedItems[positionOfItemInSelected];
-    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.itemBoxTable__bodyRow.JS_filterableCell');
+    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.itemBox__row.JS_filterableCell');
     // append to newSelectedBlock
     // cloning includes eventhandlers too
     // remove from oldSelectedBlock
@@ -134,8 +134,8 @@ $('.JS_toggle--InclExcl').on('click', function() {
 // toggle active class depending on expanding/collapsing
 function toggleInclExclSelector(toggle) {
   // if there is a  box, expand/collapse it
-  const itemBoxTable__bodyRow = toggle.closest('.itemBoxTable__bodyRow');
-  const possibleChildren = itemBoxTable__bodyRow.nextAll('.JS_itemBox--filterInclExcl:first');
+  const itemBox__row = toggle.closest('.itemBox__row');
+  const possibleChildren = itemBox__row.nextAll('.JS_itemBox--filterInclExcl:first');
 
   // only toggle, if they actually exists;
   if(possibleChildren.length > 0) {
@@ -148,20 +148,20 @@ function toggleInclExclSelector(toggle) {
   // // add selection to new incl-excl (can be changed by other tags)
   // // only if opening
 
-  const selectedFilter = possibleChildren.find(`.JS_itemBoxTable__bodyCellInner--inclExcl[data-filter='${actualFilter}']`);
-  const selectedFilterBodyRow = $(selectedFilter).closest('.itemBoxTable__bodyRow');
+  const selectedFilter = possibleChildren.find(`.JS_itemBox__cellInner--inclExcl[data-filter='${actualFilter}']`);
+  const selectedFilterBodyRow = $(selectedFilter).closest('.itemBox__row');
   selectedFilterBodyRow.append(`{% include javascript/itemSelected.html %}`);
 
 
 
-  const bodyCell = toggle.closest('.itemBoxTable__bodyCell');
-  if (bodyCell.hasClass('itemBoxTable__bodyCell--active')) {
-    bodyCell.removeClass('itemBoxTable__bodyCell--active');
+  const bodyCell = toggle.closest('.itemBox__cell');
+  if (bodyCell.hasClass('itemBox__cell--active')) {
+    bodyCell.removeClass('itemBox__cell--active');
   }
   else {
-    bodyCell.addClass('itemBoxTable__bodyCell--active');
+    bodyCell.addClass('itemBox__cell--active');
   }
 
-    expandCloseRow(itemBoxTable__bodyRow, undefined, possibleChildren);
+    expandCloseRow(itemBox__row, undefined, possibleChildren);
   }
 }

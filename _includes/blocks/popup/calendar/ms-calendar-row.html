@@ -5,7 +5,7 @@
 <!-- we make an array of it -->
 {% assign splittedDays = {include.days} | split: "," %}
 
-<ul class="itemBoxTable__bodyRow">
+<ul class="itemBox__row itemBox__row--item">
 
 <!-- and loop through the array -->
 {% for splittedDay in splittedDays %}
@@ -24,8 +24,9 @@
     {% assign dayClass = {splittedDayArray.last} | prepend: "pmx-selector_date--" %}
   {% endif %}
 
-  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex1">
-    <div class="itemBoxTable__bodyCellInner">
+  <li class="itemBox__cell">
+    <div class="itemBox__cellInner">
+
       <div class="pmx-selector pmx-selector--readonly {{ dayClass }}">
         <div class="pmx-selector__item">
           <div class="pmx-selector__block ">
@@ -33,6 +34,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </li>
 {% endfor %}

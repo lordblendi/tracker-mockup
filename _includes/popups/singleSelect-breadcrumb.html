@@ -1,36 +1,26 @@
 <div class="multiSelector multiSelector--popup multiSelector--popup-breadcrumb " id="multiSelector-breadcrumb">
 
   <div class="itemBox JS_multiSelector__box">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
+    <ul class="itemBox__row">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner">
 
-              <input type="search" class="JS_multiSelector__filterInput" placeholder="filter through items">
+          <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="filter through items">
 
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
+        </div>
+      </li>
+    </ul>
   </div>
 
   <div class="itemBox JS_multiSelector__box--optionsChildren">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        {% for item in site.data.breadcrumb-popup.items %}
-          <ul class="itemBoxTable__bodyRow JS_filterableCell">
-            <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-              <div class="itemBoxTable__bodyCellInner">
-                <div class="fnt JS_text">{{item}}</div>
-              </div>
-            </li>
-          </ul>
-        {% endfor %}
-        {% include blocks/popup/ms-load-more.html %}
-      </div>
-    </div>
+    {% for item in site.data.breadcrumb-popup.items %}
+      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner JS_text">{{item}}</div>
+        </li>
+      </ul>
+    {% endfor %}
+    {% include blocks/popup/ms-load-more.html %}
   </div>
   <!-- /.itemBox -->
 

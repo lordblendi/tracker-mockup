@@ -1,62 +1,54 @@
 <div class="multiSelector">
 
   <div class="itemBox">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        <ul class="itemBoxTable__bodyRow">
-            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex1">
-                <div class= "itemBoxTable__bodyCellInner JS_text">
-                  <input type="search" class="JS_appNav__filterInput" placeholder="filter through smarlists">
-                </div>
-            </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    <ul class="itemBox__row">
+      <li class="itemBox__cell">
+          <div class= "itemBox__cellInner JS_text">
+            <input type="search" class="itemBox__input itemBox__input--fluid JS_appNav__filterInput" placeholder="filter through smarlists">
+          </div>
+      </li>
+    </ul>
+  </div><!-- /.itemBox -->
 
   <div class="itemBox JS_appNavBox">
-    <div class="itemBoxTable">
-      <div class="itemBoxTable__body">
-        {% for group in site.data.app-nav-tab2.groups %}
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex1 itemBoxTable__bodyCell--toggle">
-            <div class="itemBoxTable__bodyCellInner">
-              <i class="">{{group.name}}{% if group.loadmore == "true"%}<sup>{{group.counter}}</sup>{% endif %}</i>
-            </div>
-          </li>
-        </ul>
-        <div class="itemBox itemBox--children">
-          <div class="itemBoxTable">
-            <div class="itemBoxTable__body">
-              {% for item in group.items %}
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex1">
-                  <div class="itemBoxTable__bodyCellInner JS_text">
-                    <div class="pmx-selector pmx-selector--readonly">
-                      <div class="pmx-selector__item">
-                        <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--label">{{item.label}}</div>
-                          <div class="pmx-selector__blockSeperator"></div>
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field">{{item.name}}</div>
-                        </div>
+    {% for group in site.data.app-nav-tab2.groups %}
+      <ul class="itemBox__row itemBox__row--item">
+        <li class="itemBox__cell itemBox__cell--action">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action">{{group.name}}{% if group.loadmore == "true"%}<sup>{{group.counter}}</sup>{% endif %}</div>
+          </div>
+        </li>
+      </ul>
+      <div class="itemBox itemBox--children">
+        <div class="itemBoxTable">
+          <div class="itemBoxTable__body">
+            {% for item in group.items %}
+            <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+              <li class="itemBox__cell">
+                <div class="itemBox__cellInner JS_text">
+
+                  <div class="pmx-selector pmx-selector--readonly">
+                    <div class="pmx-selector__item">
+                      <div class="pmx-selector__block">
+                        <div class="pmx-selector__blockPart pmx-selector__blockPart--label">{{item.label}}</div>
+                        <div class="pmx-selector__blockSeperator"></div>
+                        <div class="pmx-selector__blockPart pmx-selector__blockPart--field">{{item.name}}</div>
                       </div>
                     </div>
                   </div>
-                </li>
-              </ul>
-              {% endfor %}
 
-              {% if group.loadmore == "true"%}
-                {% include blocks/popup/ms-load-more.html %}
-              {% endif %}
-            </div>
+                </div>
+              </li>
+            </ul>
+            {% endfor %}
+
+            {% if group.loadmore == "true"%}
+              {% include blocks/popup/ms-load-more.html %}
+            {% endif %}
           </div>
         </div>
-        <!-- /.itemBox--children -->
-        {% endfor %}
       </div>
-    </div>
-  </div>
-  <!-- /.itemBox -->
+    {% endfor %}
+  </div><!-- /.itemBox -->
 
-</div>
+</div><!-- /.multiSelector -->

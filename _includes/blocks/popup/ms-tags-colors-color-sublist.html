@@ -1,22 +1,21 @@
-<div class="itemBox itemBox--children itemBox--children-sublist JS_itemBox--colors"  style="display: none;">
-  <div class="itemBoxTable">
-    <div class="itemBoxBody">
-      {% for item in site.data.color-sublist.items %}
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex1">
-            <div class="itemBoxTable__bodyCellInner JS_itemBoxTable__bodyCellInner--color">
-              <div class="pmx-selector pmx-selector--readonly">
-                <div class="pmx-selector__item">
-                  <div class="pmx-selector__block">
-                    <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: {{item.color}};" data-color="{{item.color}}">ग़</span>
-                  </div>
-                </div>
+<div class="itemBox itemBox--children-sublist JS_itemBox--colors"  style="display: none;">
+  {% for item in site.data.color-sublist.items %}
+    <ul class="itemBox__row">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner JS_itemBox__cellInner--color">
+
+          <div class="pmx-selector pmx-selector--readonly">
+            <div class="pmx-selector__item">
+              <div class="pmx-selector__block">
+                <span class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: {{item.color}};" data-color="{{item.color}}">ग़</span>
               </div>
-              {{item.name}}
             </div>
-          </li>
-        </ul>
-      {% endfor %}
-    </div>
-  </div>
+          </div>
+
+          {{item.name}}
+
+        </div>
+      </li>
+    </ul>
+  {% endfor %}
 </div>

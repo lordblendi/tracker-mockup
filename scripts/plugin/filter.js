@@ -4,7 +4,7 @@ $('.JS_multiSelector__filterInput').keyup(function() {
   var multiSelector = $(input).closest(".multiSelector");
   filterResults(input, '.JS_multiSelector__box--selectionChildren .JS_filterableCell, .JS_multiSelector__box--optionsChildren .JS_filterableCell');
 
-  checkGroups(multiSelector, '.JS_multiSelector__box  .itemBoxTable__bodyRow:not(.JS_filterableCell)');
+  checkGroups(multiSelector, '.JS_multiSelector__box  .itemBox__row:not(.JS_filterableCell)');
 
   reInitActions(multiSelector);
 });
@@ -15,7 +15,7 @@ $('.JS_appNav__filterInput').keyup(function() {
   filterResults(input, '.JS_appNavBox .JS_filterableCell');
   var multiSelector = $(input).closest(".multiSelector");
 
-  checkGroups(multiSelector, '.JS_appNavBox  .itemBoxTable__bodyRow:not(.JS_filterableCell)');
+  checkGroups(multiSelector, '.JS_appNavBox  .itemBox__row:not(.JS_filterableCell)');
 
   reInitActions(multiSelector);
 });
@@ -101,16 +101,16 @@ function checkGroups(multiSelector, possibleChildren) {
 // where the input field is
 function reInitActions(multiSelector) {
   // normal + x actions
-  $(multiSelector).find('.JS_multiSelector__box .itemBoxTable__action').on('click', function(){
+  $(multiSelector).find('.JS_multiSelector__box .itemBox__action').on('click', function(){
     const action = $(this);
     handleActionOnclick(action);
   });
 
   // expand-collapse
-  $(multiSelector).find('.itemBoxTable__bodyCell--toggle').unbind('click');
-  $(multiSelector).find('.itemBoxTable__bodyCell--toggle').on('click', function() {
-    const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
-    expandCloseRow(itemBoxTable__bodyRow);
+  $(multiSelector).find('.itemBox__cell--toggle').unbind('click');
+  $(multiSelector).find('.itemBox__cell--toggle').on('click', function() {
+    const itemBox__row = $(this).closest('.itemBox__row');
+    expandCloseRow(itemBox__row);
   });
 
   // color picker trigger
@@ -120,7 +120,7 @@ function reInitActions(multiSelector) {
   });
 
   // simple multiSelector-1
-  $('#multiSelector-1 .itemBoxTable__bodyRow').on('click', function(){
+  $('#multiSelector-1 .itemBox__row').on('click', function(){
     const row = $(this);
     selectNewSingleItem(row);
   })

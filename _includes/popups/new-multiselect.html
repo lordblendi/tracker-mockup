@@ -1,144 +1,131 @@
 <div class="multiSelector multiSelector--popup JS_multiSelector--withFilter" id="new-multiselect" style="width: 50%;">
+
   <div class="itemBox">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
-              <input type="search" class="JS_multiSelector__filterInput" placeholder="search through items">
-            </div>
-          </li>
-        </ul>
-        <!-- /.itemBoxTable__bodyRow -->
-      </div>
-    </div>
+    <ul class="itemBox__row">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner">
+          <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="search through items">
+        </div>
+      </li>
+    </ul><!-- /.itemBox__row -->
   </div>
+
   <div class="itemBox JS_multiSelector__box">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        <ul class="itemBoxTable__bodyRow JS_multiSelector__box--selectionTitle">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
-              <i class="itemBoxTable__action--toggle">ऄ Selected</i>
+    <ul class="itemBox__row JS_multiSelector__box--selectionTitle">
+      <li class="itemBox__cell itemBox__cell--action">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action">ऄ Selected</div>
+        </div>
+      </li>
+      <li class="itemBox__cell align-right">
+        <div class="itemBox__cellInner">
+          {% include javascript/and-or-selector.html %}
+        </div>
+      </li>
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected">—</div>
+        </div>
+      </li>
+    </ul>
+    <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildren">
+      <div class="itemBoxBody--sortable ui-sortable">
+        <ul class="itemBox__row JS_multiSelector__box--selectionTitleInclude">
+          <li class="itemBox__cell itemBox__cell--action">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action">ऄ Include</div>
             </div>
           </li>
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--align-right" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
+          <li class="itemBox__cell align-right">
+            <div class="itemBox__cellInner">
               {% include javascript/and-or-selector.html %}
             </div>
           </li>
-          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-            <div class="itemBoxTable__bodyCellInner">
-              <i class="itemBoxTable__action JS_itemBoxTable__action--remove JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--removeAllSelected">—</i>
+          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected">—</div>
             </div>
           </li>
         </ul>
-        <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildren">
-          <div class="itemBoxTable">
-            <div class="itemBoxBody itemBoxBody--sortable ui-sortable">
-              <ul class="itemBoxTable__bodyRow JS_multiSelector__box--selectionTitleInclude">
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action--toggle">ऄ Include</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--align-right" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    {% include javascript/and-or-selector.html %}
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--remove JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--removeAllSelected">—</i>
-                  </div>
-                </li>
-              </ul>
-              <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildrenInclude">
-                <div class="itemBoxTable">
-                  <div class="itemBoxBody itemBoxBody--sortableConnected itemBoxBody--sortableInclude ui-sortable">
-                    {% for item in site.data.newmultiselect.selected.included %}
-                      <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell " style="flex-grow: 6;" data-flex="6">
-                        <div class="itemBoxTable__bodyCellInner ">
-                          <div class="pmx-selector pmx-selector--readonly">
-                            <div class="pmx-selector__item">
-                              <div class="pmx-selector__block">
-                                <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item}}</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable ui-sortable-handle" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action itemBoxTable__action--drag">އ</i>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action JS_itemBoxTable__action--remove">—</i>
-                        </div>
-                      </li>
-                    </ul>
-                    {% endfor %}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /.itemBox -->
-        <ul class="itemBoxTable__bodyRow JS_multiSelector__box--optionsTitle">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
-              <i class="itemBoxTable__action--toggle">ऄ All</i>
-            </div>
-          </li>
-          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-            <div class="itemBoxTable__bodyCellInner">
-              <i class="itemBoxTable__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--remove">—</i>
-            </div>
-          </li>
-        </ul>
-        <div class="itemBox itemBox--children JS_multiSelector__box--optionsChildren" style="display: block;">
-          <div class="itemBoxTable">
-            <div class="itemBoxBody">
-              {% for item in site.data.newmultiselect.options %}
-              <ul class="itemBoxTable__bodyRow JS_filterableCell JS_itemBoxTable__bodyRow--closed">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner ">
-                    {% include blocks/popup/include-exclude-selector.html selected="include"%}
-                    <div class="pmx-selector pmx-selector--readonly">
-                      <div class="pmx-selector__item">
-                        <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
-                        </div>
+        <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildrenInclude">
+          <div class="itemBoxBody--sortableConnected itemBoxBody--sortableInclude ui-sortable">
+            {% for item in site.data.newmultiselect.selected.included %}
+              <ul class="itemBox__row JS_filterableCell">
+              <li class="itemBox__cell " style="flex-grow: 6;" data-flex="6">
+                <div class="itemBox__cellInner ">
+                  <div class="pmx-selector pmx-selector--readonly">
+                    <div class="pmx-selector__item">
+                      <div class="pmx-selector__block">
+                        <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item}}</div>
                       </div>
                     </div>
                   </div>
-                </li>
-                {% if item.selected == "true" %}
-                  <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                    <div class="itemBoxTable__bodyCellInner">
-                      <i class="itemBoxTable__action JS_itemBoxTable__action--remove">—</i>
-                    </div>
-                  </li>
-                {% else %}
-                  <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
-                    <div class="itemBoxTable__bodyCellInner">
-                      <i class="itemBoxTable__action JS_itemBoxTable__action--add">ބ</i>
-                    </div>
-                  </li>
-                {% endif %}
-              </ul>
-              {% endfor %}
-
-            </div>
+                </div>
+              </li>
+              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action itemBox__cell--draggable ui-sortable-handle">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action itemBox__action--drag">އ</div>
+                </div>
+              </li>
+              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action JS_itemBox__action--remove">—</div>
+                </div>
+              </li>
+            </ul>
+            {% endfor %}
           </div>
         </div>
-        <!-- /.itemBox -->
       </div>
     </div>
-  </div>
-  <!-- /.itemBox -->
+    <!-- /.itemBox -->
+    <ul class="itemBox__row JS_multiSelector__box--optionsTitle">
+      <li class="itemBox__cell itemBox__cell--action">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action">ऄ All</div>
+        </div>
+      </li>
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action JS_itemBox__action--removeAll JS_itemBox__action--remove">—</div>
+        </div>
+      </li>
+    </ul>
+    <div class="itemBox itemBox--children JS_multiSelector__box--optionsChildren" style="display: block;">
+      <div class="itemBoxTable">
+        <div class="itemBoxBody">
+          {% for item in site.data.newmultiselect.options %}
+          <ul class="itemBox__row JS_filterableCell JS_itemBox__row--closed">
+            <li class="itemBox__cell ">
+              <div class="itemBox__cellInner ">
+                {% include blocks/popup/include-exclude-selector.html selected="include"%}
+                <div class="pmx-selector pmx-selector--readonly">
+                  <div class="pmx-selector__item">
+                    <div class="pmx-selector__block">
+                      <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            {% if item.selected == "true" %}
+              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action JS_itemBox__action--remove">—</div>
+                </div>
+              </li>
+            {% else %}
+              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--add">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action JS_itemBox__action--add">ބ</div>
+                </div>
+              </li>
+            {% endif %}
+          </ul>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div><!-- /.itemBox -->
+  </div><!-- /.itemBox -->
 </div>

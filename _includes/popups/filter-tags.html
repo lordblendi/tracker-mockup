@@ -1,322 +1,299 @@
 <div class="multiSelector multiSelector--popup JS_multiSelector--withFilter" id="filter-tagpicker">
 
   <div class="itemBox">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
+    <ul class="itemBox__row">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner">
 
-              <input type="search" class="JS_multiSelector__filterInput" placeholder="search through items">
+          <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="search through tags">
 
-            </div>
-          </li>
-        </ul>
-        <!-- /.itemBoxTable__bodyRow -->
-      </div>
-    </div>
+        </div>
+      </li>
+    </ul>
+    <!-- /.itemBox__row -->
   </div>
 
   <div class="itemBox JS_multiSelector__box">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        <ul class="itemBoxTable__bodyRow JS_multiSelector__box--selectionTitle">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
-              <i class="itemBoxTable__action--toggle">ऄ Selected</i>
-            </div>
-          </li>
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--align-right" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
-              {% include javascript/and-or-selector.html %}
-            </div>
-          </li>
-          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-            <div class="itemBoxTable__bodyCellInner">
-              <i class="itemBoxTable__action JS_itemBoxTable__action--remove JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--removeAllSelected">—</i>
-            </div>
-          </li>
-        </ul>
-
-        <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildren">
-          <div class="itemBoxTable">
-            <div class="itemBoxBody itemBoxBody--sortable ui-sortable">
-              <ul class="itemBoxTable__bodyRow JS_multiSelector__box--selectionTitleInclude">
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action--toggle">ऄ Include</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--align-right" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    {% include javascript/and-or-selector.html %}
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--remove JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--removeAllSelected">—</i>
-                  </div>
-                </li>
-              </ul>
-
-              <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildrenInclude">
-                <div class="itemBoxTable">
-                  <div class="itemBoxBody itemBoxBody--sortableConnected itemBoxBody--sortableInclude ui-sortable">
-                    <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell " style="flex-grow: 6;" data-flex="6">
-                        <div class="itemBoxTable__bodyCellInner ">
-
-
-                              <div class="pmx-selector pmx-selector--readonly">
-                                <div class="pmx-selector__item">
-                                  <div class="pmx-selector__block">
-                                    <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #00bfff;" data-color="#00bfff">ग़</div>
-                                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Design</div>
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable ui-sortable-handle" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action itemBoxTable__action--drag">އ</i>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action JS_itemBoxTable__action--remove">—</i>
-                        </div>
-                      </li>
-                    </ul>
-                    <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell " style="flex-grow: 6;" data-flex="6">
-                        <div class="itemBoxTable__bodyCellInner ">
-
-
-                              <div class="pmx-selector pmx-selector--readonly">
-                                <div class="pmx-selector__item">
-                                  <div class="pmx-selector__block">
-                                    <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #0bda51;" data-color="#0bda51">ग़</div>
-                                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Marketing</div>
-                                  </div>
-                                </div>
-                              </div>
-
-
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable ui-sortable-handle" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action itemBoxTable__action--drag">އ</i>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action JS_itemBoxTable__action--remove">—</i>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <ul class="itemBoxTable__bodyRow JS_multiSelector__box--selectionTitleExclude">
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action--toggle">ऄ Exclude</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--align-right" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    {% include javascript/and-or-selector.html %}
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--remove JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--removeAllSelected">—</i>
-                  </div>
-                </li>
-              </ul>
-
-              <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildrenExclude">
-                <div class="itemBoxTable">
-                  <div class="itemBoxBody itemBoxBody--sortableConnected itemBoxBody--sortableExclude ui-sortable">
-                    <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell " style="flex-grow: 6;" data-flex="6">
-                        <div class="itemBoxTable__bodyCellInner ">
-
-
-                              <div class="pmx-selector pmx-selector--readonly">
-                                <div class="pmx-selector__item">
-                                  <div class="pmx-selector__block">
-                                    <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #f4ca16;" data-color="#f4ca16">ग़</div>
-                                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Front-end</div>
-                                  </div>
-                                </div>
-                              </div>
-
-
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable ui-sortable-handle" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action itemBoxTable__action--drag">އ</i>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action JS_itemBoxTable__action--remove">—</i>
-                        </div>
-                      </li>
-                    </ul>
-
-
-                    <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell " style="flex-grow: 6;" data-flex="6">
-                        <div class="itemBoxTable__bodyCellInner ">
-
-                              <div class="pmx-selector pmx-selector--readonly">
-                                <div class="pmx-selector__item">
-                                  <div class="pmx-selector__block">
-                                    <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #e30022;" data-color="#e30022">ग़</div>
-                                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Back-end</div>
-                                  </div>
-                                </div>
-                              </div>
-
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--draggable ui-sortable-handle" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action itemBoxTable__action--drag">އ</i>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action JS_itemBoxTable__action--remove">—</i>
-                        </div>
-                      </li>
-                    </ul>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <ul class="itemBox__row itemBox__row--item JS_multiSelector__box--selectionTitle">
+      <li class="itemBox__cell itemBox__cell--action">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action">ऄ Selected</div>
         </div>
-        <!-- /.itemBox -->
+      </li>
+      <li class="itemBox__cell align-right">
+        <div class="itemBox__cellInner">
+          {% include javascript/and-or-selector.html %}
+        </div>
+      </li>
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected">—</div>
+        </div>
+      </li>
+    </ul>
 
-        <ul class="itemBoxTable__bodyRow JS_multiSelector__box--optionsTitle">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
-              <i class="itemBoxTable__action--toggle">अ All</i>
+    <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildren">
+      <ul class="itemBox__row itemBox__row--item JS_multiSelector__box--selectionTitleInclude">
+        <li class="itemBox__cell itemBox__cell--action">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action">ऄ Include</div>
+          </div>
+        </li>
+        <li class="itemBox__cell align-right">
+          <div class="itemBox__cellInner">
+            {% include javascript/and-or-selector.html %}
+          </div>
+        </li>
+        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected">—</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildrenInclude">
+        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">
+
+              <div class="pmx-selector pmx-selector--readonly">
+                <div class="pmx-selector__item">
+                  <div class="pmx-selector__block">
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #00bfff;" data-color="#00bfff">ग़</div>
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Design</div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </li>
-          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-            <div class="itemBoxTable__bodyCellInner">
-              <i class="itemBoxTable__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--remove">—</i>
+          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action ui-sortable-handle">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action itemBox__action--hidden">އ</div>
+            </div>
+          </li>
+          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
             </div>
           </li>
         </ul>
+        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">
 
-        <div class="itemBox itemBox--children JS_multiSelector__box--optionsChildren">
-          <div class="itemBoxTable">
-            <div class="itemBoxBody">
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner ">
-                        {% include blocks/popup/include-exclude-selector.html selected="include"%}
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #00bfff;" data-color="#00bfff">ग़</div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Design</div>
-                            </div>
-                          </div>
-                        </div>
+              <div class="pmx-selector pmx-selector--readonly">
+                <div class="pmx-selector__item">
+                  <div class="pmx-selector__block">
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #0bda51;" data-color="#0bda51">ग़</div>
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Marketing</div>
                   </div>
-                </li>
-                <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
+                </div>
+              </div>
 
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner ">
-                        {% include blocks/popup/include-exclude-selector.html selected="include"%}
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #0bda51;" data-color="#0bda51">ग़</div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Marketing</div>
-                            </div>
-                          </div>
-                        </div>
+            </div>
+          </li>
+          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action ui-sortable-handle">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action itemBox__action--hidden">އ</div>
+            </div>
+          </li>
+          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
+            </div>
+          </li>
+        </ul>
+      </div>
 
+      <ul class="itemBox__row itemBox__row--item JS_multiSelector__box--selectionTitleExclude">
+        <li class="itemBox__cell itemBox__cell--action">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action">ऄ Exclude</div>
+          </div>
+        </li>
+        <li class="itemBox__cell align-right">
+          <div class="itemBox__cellInner">
+            {% include javascript/and-or-selector.html %}
+          </div>
+        </li>
+        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected">—</div>
+          </div>
+        </li>
+      </ul>
 
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
+      <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildrenExclude">
+        <div class="itemBoxTable">
+          <div class="itemBoxBody itemBoxBody--sortableConnected itemBoxBody--sortableExclude ui-sortable">
+            <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+              <li class="itemBox__cell ">
+                <div class="itemBox__cellInner">
 
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner ">
-                        {% include blocks/popup/include-exclude-selector.html selected="exclude"%}
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #f4ca16;" data-color="#f4ca16">ग़</div>
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Front-end</div>
-                            </div>
-                          </div>
-                        </div>
-
-
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
-
-              <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner ">
-                    {% include blocks/popup/include-exclude-selector.html selected="exclude"%}
-                    <div class="pmx-selector pmx-selector--readonly">
-                      <div class="pmx-selector__item">
-                        <div class="pmx-selector__block">
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #E30022;" data-color="#E30022">ग़</div>
-                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Back-end</div>
-                        </div>
+                  <div class="pmx-selector pmx-selector--readonly">
+                    <div class="pmx-selector__item">
+                      <div class="pmx-selector__block">
+                        <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #f4ca16;" data-color="#f4ca16">ग़</div>
+                        <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Front-end</div>
                       </div>
                     </div>
                   </div>
-                </li>
-                <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--remove">—</i>
+
+                </div>
+              </li>
+              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action ui-sortable-handle">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action itemBox__action--hidden">އ</div>
+                </div>
+              </li>
+              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+              <li class="itemBox__cell">
+                <div class="itemBox__cellInner">
+
+                  <div class="pmx-selector pmx-selector--readonly">
+                    <div class="pmx-selector__item">
+                      <div class="pmx-selector__block">
+                        <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #e30022;" data-color="#e30022">ग़</div>
+                        <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Back-end</div>
+                      </div>
+                    </div>
                   </div>
-                </li>
-              </ul>
-            </div>
+
+                </div>
+              </li>
+              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action ui-sortable-handle">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action itemBox__action--hidden">އ</div>
+                </div>
+              </li>
+              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
+                </div>
+              </li>
+            </ul>
+
           </div>
         </div>
-        <!-- /.itemBox -->
       </div>
     </div>
-  </div>
-  <!-- /.itemBox -->
+    <!-- /.itemBox -->
+
+    <ul class="itemBox__row itemBox__row--item JS_multiSelector__box--optionsTitle">
+      <li class="itemBox__cell itemBox__cell--action">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action">अ All</div>
+        </div>
+      </li>
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove">—</div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="itemBox itemBox--children JS_multiSelector__box--optionsChildren">
+      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+        <li class="itemBox__cell ">
+          <div class="itemBox__cellInner">
+
+            {% include blocks/popup/include-exclude-selector.html selected="include"%}
+            <div class="pmx-selector pmx-selector--readonly">
+              <div class="pmx-selector__item">
+                <div class="pmx-selector__block">
+                  <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #00bfff;" data-color="#00bfff">ग़</div>
+                  <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Design</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </li>
+        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+        <li class="itemBox__cell ">
+          <div class="itemBox__cellInner">
+
+            {% include blocks/popup/include-exclude-selector.html selected="include"%}
+            <div class="pmx-selector pmx-selector--readonly">
+              <div class="pmx-selector__item">
+                <div class="pmx-selector__block">
+                  <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #0bda51;" data-color="#0bda51">ग़</div>
+                  <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Marketing</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </li>
+        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+        <li class="itemBox__cell ">
+          <div class="itemBox__cellInner">
+
+            {% include blocks/popup/include-exclude-selector.html selected="exclude"%}
+            <div class="pmx-selector pmx-selector--readonly">
+              <div class="pmx-selector__item">
+                <div class="pmx-selector__block">
+                  <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #f4ca16;" data-color="#f4ca16">ग़</div>
+                  <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Front-end</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </li>
+        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+        <li class="itemBox__cell ">
+          <div class="itemBox__cellInner">
+
+            {% include blocks/popup/include-exclude-selector.html selected="exclude"%}
+            <div class="pmx-selector pmx-selector--readonly">
+              <div class="pmx-selector__item">
+                <div class="pmx-selector__block">
+                  <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #E30022;" data-color="#E30022">ग़</div>
+                  <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">Back-end</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </li>
+        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
+          </div>
+        </li>
+      </ul>
+    </div><!-- /.itemBox -->
+  </div><!-- /.itemBox -->
 
 </div>
 <!-- /.multiSelector -->

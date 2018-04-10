@@ -3,7 +3,7 @@
 
 // SIMPLE MULTISELECT
 // in our case multiSelector-1
-$('#multiSelector-1 .itemBoxTable__bodyRow.JS_filterableCell').on('click', function(){
+$('#multiSelector-1 .itemBox__row.JS_filterableCell').on('click', function(){
   const row = $(this);
   selectNewSingleItem(row);
 })

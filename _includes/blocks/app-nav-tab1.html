@@ -1,56 +1,49 @@
 <div class="multiSelector">
 
   <div class="itemBox">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex1">
-            <div class="itemBoxTable__bodyCellInner">
-              <input type="search" class="JS_appNav__filterInput" placeholder="filter through items">
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    <ul class="itemBox__row">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner">
+          <input type="search" class="itemBox__input itemBox__input--fluid JS_appNav__filterInput" placeholder="filter through items">
+        </div>
+      </li>
+    </ul>
+  </div><!-- /.itemBox -->
 
   <div class="itemBox JS_appNavBox">
-    <div class="itemBoxTable">
-      <div class="itemBoxTable__body">
-        {% for group in site.data.app-nav-tab1.groups %}
-          <ul class="itemBoxTable__bodyRow">
-            <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex1 itemBoxTable__bodyCell--toggle">
-              <div class="itemBoxTable__bodyCellInner">
-                <i class="JS_text">{{group.name}}</i>
-              </div>
-            </li>
-          </ul>
-          <div class="itemBox itemBox--children">
-            <div class="itemBoxTable">
-              <div class="itemBoxTable__body">
-                {% for item in group.items %}
-                  <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                    <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--flex1">
-                      <div class="itemBoxTable__bodyCellInner ">
-                        <div class="pmx-selector pmx-selector--readonly">
-                          <div class="pmx-selector__item">
-                            <div class="pmx-selector__block">
-                              <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item}}</div>
-                            </div>
-                          </div>
+    {% for group in site.data.app-nav-tab1.groups %}
+      <ul class="itemBox__row itemBox__row--item">
+        <li class="itemBox__cell itemBox__cell--action">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action JS_text">{{group.name}}</div>
+          </div>
+        </li>
+      </ul>
+      <div class="itemBox itemBox--children">
+        <div class="itemBoxTable">
+          <div class="itemBoxTable__body">
+            {% for item in group.items %}
+              <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+                <li class="itemBox__cell">
+                  <div class="itemBox__cellInner ">
+
+                    <div class="pmx-selector pmx-selector--readonly">
+                      <div class="pmx-selector__item">
+                        <div class="pmx-selector__block">
+                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item}}</div>
                         </div>
                       </div>
-                    </li>
-                  </ul>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-        {% include blocks/popup/ms-load-more.html %}
-      </div>
-    </div>
-  </div>
-  <!-- /.itemBox -->
+                    </div>
 
-</div>
+                  </div>
+                </li>
+              </ul>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    {% include blocks/popup/ms-load-more.html %}
+  </div><!-- /.itemBox -->
+
+</div><!-- /.multiSelector -->

@@ -1,20 +1,18 @@
-<ul class="itemBoxTable__bodyRow JS_multiSelector__box--selectionTitle">
-    <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;">
-      <div class="itemBoxTable__bodyCellInner itemBoxTable__bodyCellInner--selectedText">
-        <i>ऄ Selected</i>
+<ul class="itemBox__row JS_multiSelector__box--selectionTitle">
+    <li class="itemBox__cell itemBox__cell--action">
+      <div class="itemBox__cellInner">
+        <div class="itemBox__action">ऄ Selected</div>
       </div>
     </li>
     ${andOrSelector}
-    <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-      <div class="itemBoxTable__bodyCellInner">
-        <i class="itemBoxTable__action JS_itemBoxTable__action--remove JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--removeAllSelected">—</i>
+    <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove">
+      <div class="itemBox__cellInner">
+        <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected">—</div>
       </div>
     </li>
 </ul>
 <div class="itemBox itemBox--children  JS_multiSelector__box--selectionChildren">
-  <div class="itemBoxTable">
-    <div class="itemBoxBody itemBoxBody--sortable">
-      ${selectedFilters}
-    </div>
+  <div class="JS_sortable">
+    ${selectedFilters}
   </div>
 </div><!-- /.itemBox selection-->

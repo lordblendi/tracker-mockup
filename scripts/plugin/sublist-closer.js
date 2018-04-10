@@ -1,22 +1,22 @@
 function closeAllOtherSublists(toggle) {
 
-  const itemBoxTable__bodyRow = toggle.closest('.itemBoxTable__bodyRow');
+  const itemBox__row = toggle.closest('.itemBox__row');
 
   if(!toggle.hasClass('JS_toggle--InclExcl')) {
-    closeInclExclOptions(itemBoxTable__bodyRow);
+    closeInclExclOptions(itemBox__row);
   }
   if(!toggle.hasClass('JS_toggle--color')) {
-    closeColorOptions(itemBoxTable__bodyRow);
+    closeColorOptions(itemBox__row);
   }
   if(!toggle.hasClass('JS_toggle--calendar')) {
-    closeCalendarOptions(itemBoxTable__bodyRow);
+    closeCalendarOptions(itemBox__row);
   }
 }
 
 // close incl-exlToggle if open
 // used by Toggle
-function closeInclExclOptions(itemBoxTable__bodyRow) {
-  const activeTrigger = $(itemBoxTable__bodyRow).find('.itemBoxTable__bodyCell--active .JS_toggle--InclExcl');
+function closeInclExclOptions(itemBox__row) {
+  const activeTrigger = $(itemBox__row).find('.itemBox__cell--active .JS_toggle--InclExcl');
 
   // if there is an active color trigger in this bodyRow
   if(activeTrigger.length > 0) {
@@ -26,8 +26,8 @@ function closeInclExclOptions(itemBoxTable__bodyRow) {
 
 // close colorToggle if open
 // used by incl-exlToggle
-function closeColorOptions(itemBoxTable__bodyRow) {
-  const activeTrigger = $(itemBoxTable__bodyRow).find('.itemBoxTable__bodyCell--active .JS_toggle--color');
+function closeColorOptions(itemBox__row) {
+  const activeTrigger = $(itemBox__row).find('.itemBox__cell--active .JS_toggle--color');
 
   // if there is an active color trigger in this bodyRow
   if(activeTrigger.length > 0) {
@@ -36,8 +36,8 @@ function closeColorOptions(itemBoxTable__bodyRow) {
 }
 
 // close calendar if open
-function closeCalendarOptions(itemBoxTable__bodyRow) {
-  const activeTrigger = $(itemBoxTable__bodyRow).find('.itemBoxTable__bodyCell--active .JS_toggle--calendar');
+function closeCalendarOptions(itemBox__row) {
+  const activeTrigger = $(itemBox__row).find('.itemBox__cell--active .JS_toggle--calendar');
 
   // if there is an active color trigger in this bodyRow
   if(activeTrigger.length > 0) {

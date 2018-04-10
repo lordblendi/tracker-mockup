@@ -1,354 +1,340 @@
 <div class="multiSelector multiSelector--popup JS_multiSelector--withFilter" id="filter-datepicker">
 
   <div class="itemBox">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
-              <input type="search" class="JS_multiSelector__filterInput" placeholder="search through items">
-            </div>
-          </li>
-        <!-- /.itemBoxTable__bodyRow -->
-      </div>
-    </div>
+    <ul class="itemBox__row">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner">
+          <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="search through dates">
+        </div>
+      </li>
+    </ul><!-- /.itemBox__row -->
   </div>
 
   <div class="itemBox JS_multiSelector__box">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        <ul class="itemBoxTable__bodyRow JS_multiSelector__box--selectionTitle">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
-              <i class="itemBoxTable__action--toggle">ऄ Selected</i>
+    <ul class="itemBox__row itemBox__row--item JS_multiSelector__box--selectionTitle">
+      <li class="itemBox__cell itemBox__cell--action">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action">ऄ Selected</div>
+        </div>
+      </li>
+      <li class="itemBox__cell align-right">
+        <div class="itemBox__cellInner">
+          {% include javascript/and-or-selector.html %}
+        </div>
+      </li>
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected">—</div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildren">
+      <div class="itemBoxBody--sortable ui-sortable">
+        <ul class="itemBox__row itemBox__row--item JS_multiSelector__box--selectionTitleInclude">
+          <li class="itemBox__cell itemBox__cell--action">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action">ऄ Include</div>
             </div>
           </li>
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--align-right" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
+          <li class="itemBox__cell align-right">
+            <div class="itemBox__cellInner">
               {% include javascript/and-or-selector.html %}
             </div>
           </li>
-          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-            <div class="itemBoxTable__bodyCellInner">
-              <i class="itemBoxTable__action JS_itemBoxTable__action--remove JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--removeAllSelected">—</i>
-            </div>
-          </li>
-        </ul>
-        <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildren">
-          <div class="itemBoxTable">
-            <div class="itemBoxBody itemBoxBody--sortable ui-sortable">
-              <ul class="itemBoxTable__bodyRow JS_multiSelector__box--selectionTitleInclude">
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action--toggle">ऄ Include</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--align-right" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    {% include javascript/and-or-selector.html %}
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--remove JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--removeAllSelected">—</i>
-                  </div>
-                </li>
-              </ul>
-              <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildrenInclude">
-                <div class="itemBoxTable">
-                  <div class="itemBoxBody itemBoxBody--sortableConnected itemBoxBody--sortableInclude ui-sortable">
-                    <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <div class="pmx-selector pmx-selector--readonly">
-                            <div class="pmx-selector__item pmx-selector__item--selected">
-                              <div class="pmx-selector__block ">
-                                <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">next 2 weeks (12/03/18-25/03/18)</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action  JS_itemBoxTable__action--remove">—</i>
-                        </div>
-                      </li>
-                    </ul>
-                    <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <div class="pmx-selector pmx-selector--readonly">
-                            <div class="pmx-selector__item pmx-selector__item--selected">
-                              <div class="pmx-selector__block ">
-                                <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">19/03/18-20/03/18</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action  JS_itemBoxTable__action--remove">—</i>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <ul class="itemBoxTable__bodyRow JS_multiSelector__box--selectionTitleExclude">
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action--toggle">ऄ Exclude</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--align-right" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    {% include javascript/and-or-selector.html %}
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--remove JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--removeAllSelected">—</i>
-                  </div>
-                </li>
-              </ul>
-              <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildrenExclude">
-                <div class="itemBoxTable">
-                  <div class="itemBoxBody itemBoxBody--sortableConnected itemBoxBody--sortableExclude ui-sortable">
-                    <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <div class="pmx-selector pmx-selector--readonly">
-                            <div class="pmx-selector__item pmx-selector__item--selected">
-                              <div class="pmx-selector__block ">
-                                <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">today</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action  JS_itemBoxTable__action--remove">—</i>
-                        </div>
-                      </li>
-                    </ul>
-                    <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <div class="pmx-selector pmx-selector--readonly">
-                            <div class="pmx-selector__item pmx-selector__item--selected">
-                              <div class="pmx-selector__block ">
-                                <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">18/04/18</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action  JS_itemBoxTable__action--remove">—</i>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /.itemBox -->
-
-        <ul class="itemBoxTable__bodyRow JS_multiSelector__box--optionsTitle">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
-              <i class="itemBoxTable__action--toggle">अ All</i>
-            </div>
-          </li>
-          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-            <div class="itemBoxTable__bodyCellInner">
-              <i class="itemBoxTable__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--remove">—</i>
+          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected">—</div>
             </div>
           </li>
         </ul>
 
-        <div class="itemBox itemBox--children JS_multiSelector__box--optionsChildren">
-          <div class="itemBoxTable">
-            <div class="itemBoxBody">
-              <ul class="itemBoxTable__bodyRow">
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action--toggle">अ Smart Dates</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
-              <div class="itemBox itemBox--children">
-                <div class="itemBoxTable">
-                  <div class="itemBoxBody">
-                    <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                        <div class="itemBoxTable__bodyCellInner ">
-                          {% include blocks/popup/include-exclude-selector.html selected="exclude"%}
-                          <div class="pmx-selector">
-                            <div class="pmx-selector__item pmx-selector__item--selected">
-                              <div class="pmx-selector__block ">
-                                <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">today</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action  JS_itemBoxTable__action--remove">—</i>
-                        </div>
-                      </li>
-                    </ul>
+        <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildrenInclude">
+          <div class="itemBoxBody--sortableConnected itemBoxBody--sortableInclude ui-sortable">
+            <ul class="itemBox__row itemBox__row--item JS_filterableCell JS_sortable">
+              <li class="itemBox__cell">
+                <div class="itemBox__cellInner">
 
-                    {% include blocks/popup/ms-create-new.html %}
-
+                  <div class="pmx-selector pmx-selector--readonly">
+                    <div class="pmx-selector__item pmx-selector__item--selected">
+                      <div class="pmx-selector__block ">
+                        <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">next 2 weeks (12/03/18-25/03/18)</div>
+                      </div>
+                    </div>
                   </div>
+
                 </div>
-              </div>
-              <!-- smart dates -->
-
-              <ul class="itemBoxTable__bodyRow">
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action--toggle">अ Simple Dates</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
-              <div class="itemBox itemBox--children">
-                <div class="itemBoxTable">
-                  <div class="itemBoxBody">
-                    <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                        <div class="itemBoxTable__bodyCellInner ">
-                          {% include blocks/popup/include-exclude-selector.html selected="exclude"%}
-                          <div class="pmx-selector  JS_toggle--calendar">
-                            <div class="pmx-selector__item pmx-selector__item--selected">
-                              <div class="pmx-selector__block ">
-                                <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">18/04/18</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action  JS_itemBoxTable__action--remove">—</i>
-                        </div>
-                      </li>
-                    </ul>
-
-                    {% include blocks/popup/calendar/ms-calendar-sublist.html %}
-                    {% include blocks/popup/ms-create-new.html %}
-                  </div>
+              </li>
+              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
                 </div>
-              </div>
-              <!-- simple dates -->
+              </li>
+            </ul>
 
-              <ul class="itemBoxTable__bodyRow">
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action--toggle">अ Ranges</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
-              <div class="itemBox itemBox--children">
-                <div class="itemBoxTable">
-                  <div class="itemBoxBody">
-                    <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                        <div class="itemBoxTable__bodyCellInner ">
-                          {% include blocks/popup/include-exclude-selector.html selected="include"%}
-                          <div class="pmx-selector">
-                            <div class="pmx-selector__item pmx-selector__item--selected">
-                              <div class="pmx-selector__block ">
-                                <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">19/03/18-20/03/18</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action  JS_itemBoxTable__action--remove">—</i>
-                        </div>
-                      </li>
-                    </ul>
+            <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+              <li class="itemBox__cell">
+                <div class="itemBox__cellInner">
 
-                    {% include blocks/popup/ms-create-new.html %}
-
+                  <div class="pmx-selector pmx-selector--readonly">
+                    <div class="pmx-selector__item pmx-selector__item--selected">
+                      <div class="pmx-selector__block ">
+                        <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">19/03/18-20/03/18</div>
+                      </div>
+                    </div>
                   </div>
+
                 </div>
-              </div>
-              <!-- ranges -->
-
-              <ul class="itemBoxTable__bodyRow">
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action--toggle">अ Next/Last</i>
-                  </div>
-                </li>
-                <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <i class="itemBoxTable__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--remove">—</i>
-                  </div>
-                </li>
-              </ul>
-              <div class="itemBox itemBox--children">
-                <div class="itemBoxTable">
-                  <div class="itemBoxBody">
-                    <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                      <li class="itemBoxTable__bodyCell " style="flex-grow: 1;" data-flex="1">
-                        <div class="itemBoxTable__bodyCellInner ">
-                          {% include blocks/popup/include-exclude-selector.html selected="include"%}
-                          <div class="pmx-selector">
-                            <div class="pmx-selector__item pmx-selector__item--selected">
-                              <div class="pmx-selector__block ">
-                                <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">next 2 weeks (12/03/18-25/03/18)</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                        <div class="itemBoxTable__bodyCellInner">
-                          <i class="itemBoxTable__action  JS_itemBoxTable__action--remove">—</i>
-                        </div>
-                      </li>
-                    </ul>
-
-                    {% include blocks/popup/ms-create-new.html %}
-                  </div>
+              </li>
+              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
                 </div>
-              </div>
-              <!-- next last dates -->
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
-        <!-- /.itemBox -->
+
+        <ul class="itemBox__row itemBox__row--item JS_multiSelector__box--selectionTitleExclude">
+          <li class="itemBox__cell itemBox__cell--action">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action">ऄ Exclude</div>
+            </div>
+          </li>
+          <li class="itemBox__cell align-right">
+            <div class="itemBox__cellInner">
+              {% include javascript/and-or-selector.html %}
+            </div>
+          </li>
+          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected">—</div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildrenExclude">
+          <div class="itemBoxBody--sortableConnected itemBoxBody--sortableExclude ui-sortable">
+            <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+              <li class="itemBox__cell">
+                <div class="itemBox__cellInner">
+
+                  <div class="pmx-selector pmx-selector--readonly">
+                    <div class="pmx-selector__item pmx-selector__item--selected">
+                      <div class="pmx-selector__block ">
+                        <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">today</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </li>
+              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+              <li class="itemBox__cell">
+                <div class="itemBox__cellInner">
+
+                  <div class="pmx-selector pmx-selector--readonly">
+                    <div class="pmx-selector__item pmx-selector__item--selected">
+                      <div class="pmx-selector__block ">
+                        <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">18/04/18</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </li>
+              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- /.itemBox -->
+
+    <ul class="itemBox__row itemBox__row--item JS_multiSelector__box--optionsTitle">
+      <li class="itemBox__cell itemBox__cell--action JS_toggle">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action">अ All</div>
+        </div>
+      </li>
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove">—</div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="itemBox itemBox--children JS_multiSelector__box--optionsChildren">
+      <ul class="itemBox__row">
+        <li class="itemBox__cell itemBox__cell--action">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action">अ Smart Dates</div>
+          </div>
+        </li>
+        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove">—</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="itemBox itemBox--children">
+        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+          <li class="itemBox__cell ">
+            <div class="itemBox__cellInner ">
+
+              {% include blocks/popup/include-exclude-selector.html selected="exclude"%}
+              <div class="pmx-selector">
+                <div class="pmx-selector__item pmx-selector__item--selected">
+                  <div class="pmx-selector__block ">
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">today</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
+            </div>
+          </li>
+        </ul>
+        {% include blocks/popup/ms-create-new.html %}
+      </div>
+      <!-- smart dates -->
+
+      <ul class="itemBox__row">
+        <li class="itemBox__cell itemBox__cell--action">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action">अ Simple Dates</div>
+          </div>
+        </li>
+        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove">—</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="itemBox itemBox--children">
+        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+          <li class="itemBox__cell ">
+            <div class="itemBox__cellInner ">
+
+              {% include blocks/popup/include-exclude-selector.html selected="exclude"%}
+              <div class="pmx-selector  JS_toggle--calendar">
+                <div class="pmx-selector__item pmx-selector__item--selected">
+                  <div class="pmx-selector__block ">
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">18/04/18</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
+            </div>
+          </li>
+        </ul>
+        {% include blocks/popup/calendar/ms-calendar-sublist.html %}
+        {% include blocks/popup/ms-create-new.html %}
+      </div>
+      <!-- simple dates -->
+
+      <ul class="itemBox__row">
+        <li class="itemBox__cell itemBox__cell--action">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action">अ Ranges</div>
+          </div>
+        </li>
+        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove">—</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="itemBox itemBox--children">
+        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">
+
+              {% include blocks/popup/include-exclude-selector.html selected="include"%}
+              <div class="pmx-selector">
+                <div class="pmx-selector__item pmx-selector__item--selected">
+                  <div class="pmx-selector__block ">
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">19/03/18-20/03/18</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
+            </div>
+          </li>
+        </ul>
+        {% include blocks/popup/ms-create-new.html %}
+      </div>
+      <!-- ranges -->
+
+      <ul class="itemBox__row">
+        <li class="itemBox__cell itemBox__cell--action">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action">अ Next/Last</div>
+          </div>
+        </li>
+        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove">—</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="itemBox itemBox--children">
+        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+          <li class="itemBox__cell ">
+            <div class="itemBox__cellInner ">
+
+              {% include blocks/popup/include-exclude-selector.html selected="include"%}
+              <div class="pmx-selector">
+                <div class="pmx-selector__item pmx-selector__item--selected">
+                  <div class="pmx-selector__block ">
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">next 2 weeks (12/03/18-25/03/18)</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </li>
+          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
+            </div>
+          </li>
+        </ul>
+
+        {% include blocks/popup/ms-create-new.html %}
+      </div>
+      <!-- next last dates -->
+    </div>
+    <!-- /.itemBox -->
   </div>
   <!-- /.itemBox -->
 
