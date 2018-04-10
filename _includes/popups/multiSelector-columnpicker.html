@@ -1,169 +1,118 @@
 <div class="multiSelector multiSelector--popup JS_multiSelector--simpleText JS_multiSelector--textAction" id="multiSelector-columnpicker">
 
   <div class="itemBox JS_multiSelector__box">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        <ul class="itemBoxTable__bodyRow">
-          <li class="itemBoxTable__bodyCell" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
-              <input type="search" class="JS_multiSelector__filterInput" placeholder="filter through items">
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <ul class="itemBox__row">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner">
+          <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="filter through items">
+        </div>
+      </li>
+    </ul>
   </div>
 
   <div class="itemBox JS_multiSelector__box">
-    <div class="itemBoxTable">
-      <div class="itemBoxBody">
-        <ul class="itemBoxTable__bodyRow JS_multiSelector__box--selectionTitle">
-          <li class="
-            itemBoxTable__bodyCell
-            itemBoxTable__bodyCell--action
-
-            itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1"
-          >
-            <div class="itemBoxTable__bodyCellInner">
-
-              <div class="
-                itemBoxTable__action
-                itemBoxTable__action--toggle"
-              >ऄ Selected</div>
-
-            </div>
-          </li>
-
-          <li class="
-            itemBoxTable__bodyCell
-            itemBoxTable__bodyCell--flex0
-
-            JS_itemBoxTable__bodyCell--remove
-            JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0"
-          >
-            <div class="itemBoxTable__bodyCellInner">
-
-              <div class="
-                itemBoxTable__action
-                itemBoxTable__action--secondary
-
-                itemBoxTable__action--remove
-                JS_itemBoxTable__action--removeAll
-                JS_itemBoxTable__action--removeAllSelected"
-              >—</div>
-
-            </div>
-          </li>
-        </ul>
-        <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildren">
-          <div class="itemBoxTable">
-            <div class="itemBoxBody itemBoxBody--sortable">
-              {% for selected in site.data.columnpicker.selected %}
-                <ul class="itemBoxTable__bodyRow JS_filterableCell">
-                  <li class="itemBoxTable__bodyCell JS_textAction" style="flex-grow: 1;">
-                    <div class="itemBoxTable__bodyCellInner ">
-
-                      <div class="fnt JS_text">{{selected}}</div>
-
-                    </div>
-                  </li>
-                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--action itemBoxTable__bodyCell--draggable" style="flex-grow: 0;" data-flex="0">
-                    <div class="itemBoxTable__bodyCellInner">
-                      <div class="itemBoxTable__action itemBoxTable__action--drag">އ</div>
-                    </div>
-                  </li>
-                  <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--action JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                    <div class="itemBoxTable__bodyCellInner itemBoxTable__bodyCellInner--action">
-                      <div class="itemBoxTable__action JS_itemBoxTable__action--remove">—</div>
-                    </div>
-                  </li>
-                </ul>
-              {% endfor%}
-            </div>
-          </div>
+    <ul class="itemBox__row JS_multiSelector__box--selectionTitle">
+      <li class="itemBox__cell itemBox__cell--action JS_toggle">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action">ऄ Selected</div>
         </div>
-        <!-- /.itemBox selection-->
+      </li>
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--removeAllSelected">—</div>
+        </div>
+      </li>
+    </ul>
 
-        <ul class="itemBoxTable__bodyRow JS_multiSelector__box--optionsTitle">
-          <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-            <div class="itemBoxTable__bodyCellInner">
-              <div class="itemBoxTable__action itemBoxTable__action--toggle">ऄ All</div>
+    <div class="itemBox JS_multiSelector__box--selectionChildren">
+      <div class="JS_sortable">
+        {% for selected in site.data.columnpicker.selected %}
+          <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+            <li class="itemBox__cell itemBox__cell--actionToggle JS_textAction">
+              <div class="itemBox__cellInner JS_text">{{selected}}</div>
+            </li>
+            <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action  itemBoxTable__bodyCell--draggable">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action itemBox__action--drag">އ</div>
+              </div>
+            </li>
+            <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action  JS_itemBoxTable__bodyCell--remove">
+              <div class="itemBox__cellInner itemBoxTable__bodyCellInner--action">
+                <div class="itemBox__action JS_itemBoxTable__action--remove">—</div>
+              </div>
+            </li>
+          </ul>
+        {% endfor%}
+      </div>
+    </div><!-- /.itemBox -->
+
+    <ul class="itemBox__row JS_multiSelector__box--optionsTitle">
+      <li class="itemBox__cell itemBox__cell--action">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action">ऄ All</div>
+        </div>
+      </li>
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--remove">—</div>
+        </div>
+      </li>
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBoxTable__bodyCell--add JS_itemBoxTable__bodyCell--addAll">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action JS_itemBoxTable__action--add JS_itemBoxTable__action--addAll">ބ</div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="itemBox JS_multiSelector__box--optionsChildren">
+      {% for group in site.data.columnpicker.options.groups %}
+        <ul class="itemBox__row">
+          <li class="itemBox__cell itemBox__cell--action">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action">{{group.name}}</div>
             </div>
           </li>
-          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-            <div class="itemBoxTable__bodyCellInner">
-              <div class="itemBoxTable__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--remove">—</div>
-            </div>
-          </li>
-          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--add JS_itemBoxTable__bodyCell--addAll" style="flex-grow: 0;" data-flex="0">
-            <div class="itemBoxTable__bodyCellInner">
-              <div class="itemBoxTable__action JS_itemBoxTable__action--add JS_itemBoxTable__action--addAll">ބ</div>
-            </div>
-          </li>
+          {% if group.noneSelected == "false" %}
+            <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--remove">—</div>
+              </div>
+            </li>
+          {% endif %}
+          {% if group.allSelected == "false" %}
+            <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBoxTable__bodyCell--add JS_itemBoxTable__bodyCell--addAll">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action JS_itemBoxTable__action--add JS_itemBoxTable__action--addAll">ބ</div>
+              </div>
+            </li>
+          {% endif %}
         </ul>
-        <div class="itemBox itemBox--children JS_multiSelector__box--optionsChildren">
-          <div class="itemBoxTable">
-            <div class="itemBoxBody">
-              {% for group in site.data.columnpicker.options.groups %}
-              <ul class="itemBoxTable__bodyRow">
-                <li class="itemBoxTable__bodyCell itemBoxTable__bodyCell--toggle" style="flex-grow: 1;" data-flex="1">
-                  <div class="itemBoxTable__bodyCellInner">
-                    <div class="itemBoxTable__action itemBoxTable__action--toggle">{{group.name}}</div>
+
+        <div class="itemBox">
+          {% for item in group.items %}
+            <ul class="itemBox__row itemBox__row--item itemBoxTable__bodyRow--action JS_filterableCell">
+              <li class="itemBox__cell JS_textAction">
+                <div class="itemBox__cellInner JS_text">{{item.name}}</div>
+              </li>
+              {% if item.selected == "true" %}
+                <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBoxTable__bodyCell--remove">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__action JS_itemBoxTable__action--remove">—</div>
                   </div>
                 </li>
-                {% if group.noneSelected == "false" %}
-                  <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove JS_itemBoxTable__bodyCell--removeAll" style="flex-grow: 0;" data-flex="0">
-                    <div class="itemBoxTable__bodyCellInner">
-                      <div class="itemBoxTable__action JS_itemBoxTable__action--removeAll JS_itemBoxTable__action--remove">—</div>
-                    </div>
-                  </li>
-                {% endif %}
-                {% if group.allSelected == "false" %}
-                  <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--add JS_itemBoxTable__bodyCell--addAll" style="flex-grow: 0;" data-flex="0">
-                    <div class="itemBoxTable__bodyCellInner">
-                      <div class="itemBoxTable__action JS_itemBoxTable__action--add JS_itemBoxTable__action--addAll">ބ</div>
-                    </div>
-                  </li>
-                {% endif %}
-              </ul>
-              <div class="itemBox itemBox--children">
-                <div class="itemBoxTable">
-                  <div class="itemBoxBody">
-                    {% for item in group.items %}
-                      <ul class="itemBoxTable__bodyRow itemBoxTable__bodyRow--action JS_filterableCell">
-                        <li class="itemBoxTable__bodyCell JS_textAction" style="flex-grow: 1;">
-                          <div class="itemBoxTable__bodyCellInner">
-                            <div class="fnt JS_text">{{item.name}}</div>
-                          </div>
-                        </li>
-                        {% if item.selected == "true" %}
-                          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--remove" style="flex-grow: 0;" data-flex="0">
-                            <div class="itemBoxTable__bodyCellInner">
-                              <div class="itemBoxTable__action JS_itemBoxTable__action--remove">—</div>
-                            </div>
-                          </li>
-                        {% else %}
-                          <li class="itemBoxTable__bodyCell JS_itemBoxTable__bodyCell--add" style="flex-grow: 0;" data-flex="0">
-                            <div class="itemBoxTable__bodyCellInner">
-                              <div class="itemBoxTable__action JS_itemBoxTable__action--add">ބ</div>
-                            </div>
-                          </li>
-                        {% endif %}
-                      </ul>
-                    {% endfor %}
+              {% else %}
+                <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBoxTable__bodyCell--add">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__action JS_itemBoxTable__action--add">ބ</div>
                   </div>
-                </div>
-              </div>
-              <!-- /.itemBox -->
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-        <!-- /.itemBox options -->
-      </div>
-    </div>
-  </div>
-  <!-- /.itemBox -->
+                </li>
+              {% endif %}
+            </ul>
+          {% endfor %}
+        </div><!-- /.itemBox -->
+      {% endfor %}
+    </div><!-- /.itemBox -->
 
-</div>
-<!-- /.multiSelector -->
+  </div><!-- /.itemBox -->
+
+</div><!-- /.multiSelector -->

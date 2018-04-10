@@ -468,10 +468,6 @@
     background-color: #FFF;
     height: 40px;
 
-    &:nth-of-type(even) {
-      background-color: #F2F2F2;
-    }
-
     &--h1 {
       background-color: #FFF;
       border-bottom: 2px dashed #BFBFBF;
@@ -498,7 +494,7 @@
 
     &--h2 {
       background: #DEDEDE;
-      background: linear-gradient(to bottom, #FFF 0%, #CCC 100%);
+      background: linear-gradient(to bottom, #F2F2F2 0%, #CCC 100%);
       height: 50px;
 
       .itemBox {
@@ -513,13 +509,10 @@
     }
 
     &--h3 {
+      border-bottom: 2px solid #FFEF99;
+
       .itemBox {
         &__cell {
-          &::after {
-            height: 2px;
-            background: #FFEF99;
-          }
-
           &Inner {
             position: relative;
             display: inline-block;
@@ -544,11 +537,54 @@
     }
 
     &--item {
+      &:nth-of-type(even) {
+        background-color: #FFFFFF;
+      }
+
+      &:nth-of-type(even) {
+        background-color: #F2F2F2;
+      }
+
+      .itemBox {
+        &__cell:not(.itemBox__cell--flex0) {
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+          }
+        }
+      }
+
+      &:nth-of-type(odd) {
+        .itemBox {
+          &__cell:not(.itemBox__cell--flex0) {
+            &::after {
+              background: linear-gradient(to right, rgba(255,255,255,0) 0%, #FFFFFF 90%, #FFFFFF 100%);
+            }
+          }
+        }
+      }
+
+      &:nth-of-type(even) {
+        .itemBox {
+          &__cell:not(.itemBox__cell--flex0) {
+            &::after {
+              background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #F2F2F2 90%, #F2F2F2 100%);
+            }
+          }
+        }
+      }
+
       &:hover {
         .itemBox {
-          &__cell {
-            &::after {
-              height: 2px;
+          &__action {
+            &--drag {
+              opacity: 1;
             }
           }
         }
@@ -568,21 +604,10 @@
       }
     }
 
-
     &--foot {
       overflow: hidden;
       height: 22px;
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -15%;
-        width: 130%;
-        height: 130%;
-        box-shadow: inset 0px 5px 22px 0px rgba(0, 0, 0, 0.2);
-        pointer-events: none;
-      }
+      background: linear-gradient(to bottom, rgba(208,208,208,1) 0%,rgba(242,242,242,1) 50%,rgba(242,242,242,1) 100%);
 
       .itemBox {
         &__cell {
@@ -602,36 +627,20 @@
     min-width: 40px;
     white-space: nowrap;
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 0;
-      background: #B2B2B2;
-      pointer-events: none;
-      transition: all .2s ease-in-out;
-    }
-
     &--flex0 {
       flex-grow: 0;
-    }
-
-    &--flex3 {
-      flex-grow: 3;
-    }
-
-    &--action {
       text-align: center;
 
-      .itemBox {
-        &__cell {
-          &Inner {
-            padding: 0;
-          }
-        }
+      .itemBox__cellInner {
+        padding: 0;
       }
+    }
+    &--flex1 { flex-grow: 1; }
+    &--flex2 { flex-grow: 2; }
+    &--flex3 { flex-grow: 3; }
+
+    &--action {
+      color: #C79D54;
     }
 
     &--focus {
@@ -639,7 +648,7 @@
       box-shadow: 0 0 50px rgba(24, 74, 103, 0.4);
       z-index: 9;
     }
-
+/*
     &--goto {
       &::after {
         position: absolute;
@@ -653,6 +662,7 @@
         z-index: 1;
       }
     }
+*/
   }
 
   &__cellInner {
@@ -663,7 +673,13 @@
     line-height: 40px;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #000;
+  }
+
+  &__input {
+    &--fluid {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__action {
@@ -676,6 +692,10 @@
       opacity: .3;
       cursor: default;
       pointer-events: none;
+    }
+
+    &--drag {
+      opacity: 0;
     }
   }
 }

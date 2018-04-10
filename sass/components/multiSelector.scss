@@ -43,8 +43,6 @@
     }
 
     .itemBox {
-      color: #000;
-      background-color: rgba(0, 0, 0, 0.17);
 
       .itemBox--children {
         background-color: transparent;
@@ -127,5 +125,32 @@
 @media (max-width: 900px) {
   .multiSelector--popup {
     width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.multiSelector {
+  &--popup {
+    .itemBox {
+      background-color: rgba(0, 0, 0, 0.17);
+
+      .itemBox,
+      .itemBox .itemBox,
+      .itemBox .itemBox .itemBox {
+        background-color: transparent;
+      }
+    }
   }
 }

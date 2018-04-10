@@ -2,7 +2,7 @@
 ---
 
 // set sortable in multiselect options
-$(".multiSelector:not(.JS_multiSelector--withFilter) .itemBoxBody--sortable").sortable({
+$(".multiSelector:not(.JS_multiSelector--withFilter) .JS_sortable").sortable({
   handle: '.itemBoxTable__bodyCell--draggable',
   placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder'
 });
@@ -569,7 +569,7 @@ function reset(){
       });
     }
     else {
-      $(multiSelector).find(".itemBoxBody--sortable").sortable({
+      $(multiSelector).find(".JS_sortable").sortable({
         handle: '.itemBoxTable__bodyCell--draggable',
         placeholder: 'itemBoxTable__bodyCell--draggablePlaceholder'
       });

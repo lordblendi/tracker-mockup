@@ -7,8 +7,8 @@ const expanded = "ऄ";
 const collapsed = "अ";
 
 // expand/collapse action listener on toggle
-$('.itemBoxTable__bodyCell--toggle').on('click', function() {
-  const itemBoxTable__bodyRow = $(this).closest('.itemBoxTable__bodyRow');
+$('.JS_toggle').on('click', function() {
+  const itemBoxTable__bodyRow = $(this).closest('.itemBox');
   expandCloseRow(itemBoxTable__bodyRow);
 });
 
@@ -26,7 +26,7 @@ function expandCloseRow(itemBoxTable__bodyRow, toClose, possibleChildren){
       possibleChildren = possibleChildren.next();
     }
   }
-  const i = itemBoxTable__bodyRow.find('.itemBoxTable__bodyCell--toggle .itemBoxTable__bodyCellInner').find('i');
+  const i = itemBoxTable__bodyRow.find('.JS_toggle .itemBox__cellInner');
   const iContent = i.html();
 
   // if the 'toClose' is not specified, it will become the opposite state
@@ -95,7 +95,7 @@ $('.itemBoxTable__headCell--toggle').on('click', function(){
   const itemBoxTable__body = $(itemBoxTable).children('.itemBoxTable__body');
 
   // finding all toggles
-  const bodyCelltoggles = $(itemBoxTable__body).children('.itemBoxTable__bodyRow').children(' .itemBoxTable__bodyCell--toggle');
+  const bodyCelltoggles = $(itemBoxTable__body).children('.itemBoxTable__bodyRow').children(' .JS_toggle');
 
   // finding the bodyRows from toggles
   // so these ARE parent bodyRows
