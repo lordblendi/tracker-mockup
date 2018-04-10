@@ -193,7 +193,7 @@
 
           .itemBoxTable__bodyCell {
             &Inner {
-              color: #C79D54;
+              color: #CCAF75;
               text-align: left;
               font-size: 18px;
               font-style: italic;
@@ -335,13 +335,13 @@
           cursor: pointer;
 
           .itemBoxTable__bodyCellInner {
-            color: #C79D54;
+            color: #CCAF75;
           }
         }
 
         &--draggable {
           .itemBoxTable__bodyCellInner {
-            color: #C79D54;
+            color: #CCAF75;
             opacity: 0;
             transition: all .3s ease-in-out;
           }
@@ -367,7 +367,7 @@
 
           &--excluded {
             text-decoration: line-through;
-            text-decoration-color: red;
+            text-decoration-color: #E61616;
           }
 
           input[type="text"],
@@ -417,7 +417,7 @@
       cursor: pointer;
       transition: all .3s ease-in-out;
       font-family: 'tenforce', sans-serif;
-      color: #C79D54;
+      color: #CCAF75;
 
       &:hover {
       }
@@ -436,9 +436,9 @@
 
 
       // normal --add will be goldenrod, as the actions
-      // excluded --add will be red
+      // excluded --add will be #E61616
       .JS_exclude &--add {
-        color: red;
+        color: #E61616;
       }
       // --remove will be barely visible gray
       &--remove {
@@ -537,7 +537,29 @@
     }
 
     &--item {
-      &:nth-of-type(even) {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        display: block;
+        background-color: #CCAF75;
+        z-index: 2;
+        pointer-events: none;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+      }
+
+      &:hover {
+        &::after {
+          height: 2px;
+          opacity: 1;
+        }
+      }
+
+      &:nth-of-type(odd) {
         background-color: #FFFFFF;
       }
 
@@ -583,7 +605,6 @@
       &:hover {
         .itemBox {
           &__action {
-            &--drag,
             &--hidden {
               opacity: 1;
             }
@@ -644,7 +665,7 @@
     &--flex6 { flex-grow: 6; }
 
     &--action {
-      color: #C79D54;
+      color: #CCAF75;
     }
 
     &--focus {
@@ -690,7 +711,7 @@
     cursor: pointer;
     transition: all .3s ease-in-out;
     font-family: 'tenforce', sans-serif;
-    color: #C79D54;
+    color: #CCAF75;
 
     &--disabled {
       opacity: .3;
@@ -698,13 +719,12 @@
       pointer-events: none;
     }
 
-    &--drag,
     &--hidden {
       opacity: 0;
     }
 
     &--secondary {
-      color: red;
+      color: #E61616;
     }
   }
 }
