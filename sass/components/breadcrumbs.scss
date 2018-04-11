@@ -51,13 +51,12 @@
         &::before {
           content: '';
           position: absolute;
-          top: 0;
-          right: -50px;
-          width: 50px;
-          height: 100%;
-          background: linear-gradient(90deg, rgb(193, 193, 193) 0%, rgba(217, 217, 217, .7) 30%, rgba(255,255,255,0) 100%);
-          z-index: 1;
+          top: -5px;
+          bottom: -5px;
+          right: -30px;
+          width: 30px;
           pointer-events: none;
+          box-shadow: inset 5px 0 10px 0 #A9A9A9;
         }
       }
     }
