@@ -67,8 +67,8 @@ function expandCloseRow(itemBox__row, toClose, possibleChildren){
 function checkTableHeaderIcon(itemBox__row) {
   // check, if everything is closed, or not
   // and change it in the table
-  const itemBoxTable = $(itemBox__row).closest('.itemBoxTable');
-  const itemBoxTable__head = $(itemBoxTable).children('.itemBoxTable__head');
+  const itemBoxTable = $(itemBox__row).closest('.itemBox');
+  const itemBoxTable__head = $(itemBoxTable).children('.itemBox__row--h2');
   const itemBoxTable__body = $(itemBoxTable).children('.itemBoxTable__body');
 
   const i = $(itemBoxTable__head).find('.itemBox__cellInner').find('i');
@@ -88,10 +88,10 @@ function checkTableHeaderIcon(itemBox__row) {
 }
 
 // action for toggle in header to expand/collapse all
-$('.itemBox__cell--toggle').on('click', function(){
+$('.JS_expand').on('click', function(){
   const toggle = $(this);
 
-  const itemBoxTable = $(toggle).closest('.itemBoxTable');
+  const itemBox = $(toggle).closest('.itemBox');
   const itemBoxTable__body = $(itemBoxTable).children('.itemBoxTable__body');
 
   // finding all toggles

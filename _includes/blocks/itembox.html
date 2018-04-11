@@ -31,7 +31,7 @@
   <ul class="itemBox__row itemBox__row--h2">
     <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action itemBoxTable__headCell--toggle">
       <div class="itemBox__cellInner">
-        <i class="itemBox__action">ऄ</i>
+        <i class="itemBox__action JS_expand">ऄ</i>
       </div>
     </li>
     <li class="itemBox__cell">
@@ -49,8 +49,10 @@
     <li class="itemBox__cell itemBox__cell--flex0">
       <div class="itemBox__cellInner"></div>
     </li>
-    <li class="itemBox__cell itemBox__cell--goto">
-      <div class="itemBox__cellInner">GOTO link</div>
+    <li class="itemBox__cell itemBox__cell--permalink">
+      <div class="itemBox__cellInner">
+        <div class="itemBox__action">GOTO link</div>
+      </div>
     </li>
     <li class="itemBox__cell">
       <div class="itemBox__cellInner">34342-34252345-342543523-343213124</div>
@@ -97,7 +99,7 @@
     </li>
   </ul>
 
-  <div class="itemBox">
+  <div class="itemBox itemBox--children">
     <ul class="itemBox__row itemBox__row--h1">
       <li class="itemBox__cell">
         <div class="itemBox__cellInner">
@@ -247,22 +249,9 @@
       </li>
     </ul>
 
-    <ul class="itemBox__row itemBox__row--item">
-      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action">
-        <div class="itemBox__cellInner"></div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-      </li>
-      <li class="itemBox__cell itemBox__cell--flex3">
-        <div class="itemBox__cellInner">34342-34252345-342543523-343213124</div>
-      </li>
-    </ul>
+    {% include blocks/itembox-row.html %}
 
-    <div class="itemBox">
+    <div class="itemBox itemBox--children">
       <ul class="itemBox__row itemBox__row--h1">
         <li class="itemBox__cell">
           <div class="itemBox__cellInner">
@@ -308,67 +297,18 @@
         </li>
       </ul>
 
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action">
-          <div class="itemBox__cellInner"></div>
-        </li>
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-        </li>
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-        </li>
-        <li class="itemBox__cell itemBox__cell--flex3">
-          <div class="itemBox__cellInner">34342-34252345-342543523-343213124</div>
-        </li>
-      </ul>
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action">
-          <div class="itemBox__cellInner"></div>
-        </li>
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-        </li>
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-        </li>
-        <li class="itemBox__cell itemBox__cell--flex3">
-          <div class="itemBox__cellInner">34342-34252345-342543523-343213124</div>
-        </li>
-      </ul>
+      {% include blocks/itembox-row.html %}
+      {% include blocks/itembox-row.html %}
+
       <ul class="itemBox__row itemBox__row--h3">
         <li class="itemBox__cell">
           <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
         </li>
       </ul>
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action">
-          <div class="itemBox__cellInner"></div>
-        </li>
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-        </li>
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-        </li>
-        <li class="itemBox__cell itemBox__cell--flex3">
-          <div class="itemBox__cellInner">34342-34252345-342543523-343213124</div>
-        </li>
-      </ul>
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action">
-          <div class="itemBox__cellInner"></div>
-        </li>
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-        </li>
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-        </li>
-        <li class="itemBox__cell itemBox__cell--flex3">
-          <div class="itemBox__cellInner">34342-34252345-342543523-343213124</div>
-        </li>
-      </ul>
+
+      {% include blocks/itembox-row.html %}
+      {% include blocks/itembox-row.html %}
+
       <ul class="itemBox__row itemBox__row--foot">
         <li class="itemBox__cell">
           <div class="itemBox__cellInner font--sm">All <span>4</span> items loaded</div>
@@ -376,28 +316,10 @@
       </ul>
     </div><!-- /.itemBox -->
 
-    <ul class="itemBox__row itemBox__row--item">
-      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action">
-        <div class="itemBox__cellInner"></div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-      </li>
-      <li class="itemBox__cell itemBox__cell--flex3">
-        <div class="itemBox__cellInner">34342-34252345-342543523-343213124</div>
-      </li>
-    </ul>
+    {% include blocks/itembox-row.html %}
+    {% include blocks/itembox-row.html %}
 
-    <ul class="itemBox__row itemBox__row--item">
-      <li class="itemBox__cell itemBox__cell--action">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action">Load 347 more</div>
-        </div>
-      </li>
-    </ul>
+    {% include blocks/popup/ms-load-more.html %}
 
     <ul class="itemBox__row itemBox__row--foot">
       <li class="itemBox__cell">
@@ -406,29 +328,15 @@
     </ul>
   </div><!-- /.itemBox -->
 
-  <ul class="itemBox__row itemBox__row--item">
-    <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action">
-      <div class="itemBox__cellInner"></div>
-    </li>
-    <li class="itemBox__cell">
-      <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-    </li>
-    <li class="itemBox__cell">
-      <div class="itemBox__cellInner">lorem ipsum dolor sit amet</div>
-    </li>
-    <li class="itemBox__cell itemBox__cell--flex3">
-      <div class="itemBox__cellInner">34342-34252345-342543523-343213124</div>
-    </li>
-  </ul>
+  {% include blocks/itembox-row.html %}
+  {% include blocks/itembox-row.html %}
+  {% include blocks/itembox-row.html %}
+  {% include blocks/itembox-row.html %}
+  {% include blocks/itembox-row.html %}
+  {% include blocks/itembox-row.html %}
 
-  <ul class="itemBox__row itemBox__row--item">
-    <li class="itemBox__cell itemBox__cell--action">
-      <div class="itemBox__cellInner">
-        <div class="itemBox__action">Load 347 more</div>
-      </div>
-    </li>
-  </ul>
-  
+  {% include blocks/popup/ms-load-more.html %}
+
   <ul class="itemBox__row itemBox__row--foot">
     <li class="itemBox__cell">
       <div class="itemBox__cellInner font--sm">All <span>423</span> items loaded</div>
