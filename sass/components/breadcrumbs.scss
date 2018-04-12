@@ -12,18 +12,6 @@
   &--overflow {
     direction: rtl;
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 50px;
-      height: 100%;
-      background: linear-gradient(90deg, rgba(193, 193, 193, .9) 0%, rgba(211, 211, 211, .5) 30%, rgba(255, 255, 255, 0) 100%);
-      z-index: 1;
-      pointer-events: none;
-    }
-
     &::after {
       content: '';
       position: absolute;
@@ -43,20 +31,20 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 2;
+        z-index: 1;
         opacity: 1;
         padding: 0 20px 0 10px;
-        background-color: #c1c1c1;
+        background-color: #C1C1C1;
 
         &::before {
           content: '';
           position: absolute;
-          top: -5px;
-          bottom: -5px;
-          right: -30px;
-          width: 30px;
+          top: 0;
+          bottom: 0;
+          right: -100px;
+          width: 100px;
           pointer-events: none;
-          box-shadow: inset 5px 0 10px 0 #A9A9A9;
+          background: linear-gradient(to right, rgba(192,192,192,1) 0%,rgba(255,255,255,0) 100%);
         }
       }
     }

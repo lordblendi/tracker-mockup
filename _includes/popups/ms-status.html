@@ -1,0 +1,58 @@
+<div class="multiSelector multiSelector--popup" id="multiSelector-1">
+
+
+
+  <div class="itemBox JS_multiSelector__box">
+    <ul class="itemBox__row">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner">
+
+          <input type="search" class="JS_multiSelector__filterInput" placeholder="filter through items">
+
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="itemBox">
+    <ul class="itemBox__row itemBox__row--custom">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner">
+
+          <div class="pmx-note pmx-note--error">
+            <p>Item could not be selected. <a href="#">Read more</a></p>
+          </div>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- /.itemBox -->
+
+  <div class="itemBox JS_multiSelector__box--optionsChildren">
+    {% for item in site.data.multiselector-status.items %}
+      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+
+            <div class="pmx-selector pmx-selector--readonly">
+              <div class="pmx-selector__item">
+                <div class="pmx-selector__block">
+                  <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
+                  <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </li>
+        {% if item.selected == "true" %}
+          {% include javascript/itemSelected.html %}
+        {% endif %}
+      </ul>
+    {% endfor %}
+  </div>
+  <!-- /.itemBox -->
+
+</div>
+<!-- /.multiSelector -->

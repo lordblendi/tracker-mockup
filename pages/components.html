@@ -209,6 +209,28 @@ permalink: /components
   </div>
 </div>
 
+<div class="pmx-field pmx-field--error">
+  <div class="pmx-field__inner">
+    <div class="pmx-field__label">Status</div>
+    <div class="pmx-field__value">
+
+      <div class="pmx-field__input pmx-field__input--hidden">
+        <input type="text" value="test" class="pmx-field__inputEl">
+      </div>
+
+      <div class="pmx-selector MULTISELECT__POPUP JS_selector" data-popid="#multiSelector-2">
+        <div class="pmx-selector__item pmx-selector__item--selected JS_selectorItem">
+          <div class="pmx-selector__block ">
+            <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: #ff9b9b;">ध</div>
+            <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_singleSelect--label">Not started</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <div class="pmx-field">
   <div class="pmx-field__inner">
     <div class="pmx-field__label">Tags</div>
@@ -517,7 +539,8 @@ permalink: /components
   </div>
 </div>
 
-{% include popups/multiSelector-status.html %}
+{% include popups/ms-status.html %}
+{% include popups/ms-status2.html %}
 {% include popups/multiSelector-tags-colors.html %}
 
 
