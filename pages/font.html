@@ -6,26 +6,36 @@ permalink: /font
 
 <style>
   table td {
-    padding: 20px;
+    padding: 30px;
     vertical-align: text-top;
   }
   table thead td {
-    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px 30px;
   }
   .label {
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
     color: #838383;
+    background-color: #f4f4f4;
   }
   .ff-ssp {
-    font-family: 'Source Sans Pro', 'tenforce', Arial, sans-serif;
-    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
   }
-  .ff-tf {
+  .ff-ssp-ar {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 20px;
+  }
+  .ff-ssp-tf {
+    font-family: 'Source Sans Pro', 'tenforce', Arial, sans-serif;
+    font-size: 20px;
+  }
+  .ff-tf-ssp {
     font-family: 'tenforce', 'Source Sans Pro', Arial, sans-serif;
-    font-size: 24px;
+    font-size: 20px;
   }
   .regular {
     font-weight: normal;
@@ -42,41 +52,67 @@ permalink: /font
   .w700 {
     font-weight: 700;
   }
+
+  .highlight {
+    border-left: 2px solid #cccc63;
+    border-right: 2px solid #cccc63;
+  }
+  .label.highlight {
+    border: 2px solid #cccc63;
+    border-bottom: 0;
+  }
+  .last.highlight {
+    border-bottom: 2px solid #cccc63;
+  }
 </style>
 
 <table>
   <thead>
     <tr>
       <td></td>
-      <td class="label">Source Sans Pro</td>
-      <td class="label">TenForce</td>
+      <td class="label">source sans pro</td>
+      <td class="label">source sans pro,<br>arial</td>
+      <td class="label highlight">source sans pro,<br>tenforce,<br>arial</td>
+      <td class="label">tenforce,<br>source sans pro,<br>arial</td>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td class="label">Regular</td>
-      <td class="ff-ssp regular">ܒ TenForce क</td>
-      <td class="ff-tf regular">ܒ TenForce क</td>
+      <td class="ff-ssp regular">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="ff-ssp-ar regular">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="ff-ssp-tf regular highlight">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="ff-tf-ssp regular">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
     </tr>
     <tr>
       <td class="label">Bold</td>
-      <td class="ff-ssp bold">ܒ TenForce क</td>
-      <td class="ff-tf bold">ܒ TenForce क</td>
+      <td class="ff-ssp bold">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="ff-ssp-ar bold">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="ff-ssp-tf bold highlight">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="ff-tf-ssp bold">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
     </tr>
+    <!--
     <tr>
       <td class="label">italic</td>
-      <td class="ff-ssp italic">ܒ TenForce क</td>
-      <td class="ff-tf italic">ܒ TenForce क</td>
+      <td class="ff-ssp italic">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="ff-ssp-ar italic">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="ff-ssp-tf italic highlight">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="ff-tf-ssp italic">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
     </tr>
+    -->
     <tr>
       <td class="label">600</td>
-      <td class="ff-ssp w600">ܒ TenForce क</td>
-      <td class="ff-tf w600">ܒ TenForce क</td>
+      <td class="ff-ssp w600">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="ff-ssp-ar w600">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="ff-ssp-tf w600 highlight">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="ff-tf-ssp w600">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
     </tr>
     <tr>
-      <td class="label">700</td>
-      <td class="ff-ssp w700">ܒ TenForce क</td>
-      <td class="ff-tf w700">ܒ TenForce क</td>
+      <td class="last label">700</td>
+      <td class="last ff-ssp w700">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="last ff-ssp-ar w700">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="last ff-ssp-tf w700 highlight">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
+      <td class="last ff-tf-ssp w700">ܒ TenForce क<br>我要約<br>Энэ хэрхэн харагддаг<br>ဘယ်လိုဒီကိုကြည့်ပါဘ</td>
     </tr>
   </tbody>
 </table>
