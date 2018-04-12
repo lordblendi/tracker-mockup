@@ -73,7 +73,7 @@
       transition: all .3s ease-in-out;
 
       &--active {
-        color: #BF920B;
+        color: var(--color-primary);
         font-style: normal;
 
         span {

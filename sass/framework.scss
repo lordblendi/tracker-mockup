@@ -14,7 +14,6 @@
 /* Fonts */
 
 .fnt {
-  font-family: 'tenforce', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -26,7 +25,6 @@
   text-overflow: ellipsis;
 
   &--h2 {
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
@@ -40,7 +38,6 @@
   }
 
   &--label {
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
@@ -50,7 +47,6 @@
   }
 
   &--action {
-    font-family: 'tenforce', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -62,14 +58,12 @@
 
 
 h2 {
-  font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
   font-weight: 600;
   font-style: normal;
   text-transform: none;
   letter-spacing: normal;
   color: #000;
-
   text-overflow: ellipsis;
   overflow: hidden;
 }

@@ -1,10 +1,10 @@
 ---
 ---
 
+/*
 .itemBox {
   color: #000;
   font-size: 16px;
-  padding-bottom: 10px;
 
   &--children {
     padding: 5px 0 5px 15px;
@@ -447,7 +447,7 @@
     }
   }
 }
-
+*/
 
 
 
@@ -458,6 +458,8 @@
 
 
 .itemBox {
+  padding-bottom: 10px;
+
   .itemBox {
     padding: 5px 0 5px 15px;
   }
@@ -467,6 +469,7 @@
     display: flex;
     background-color: #FFF;
     height: 40px;
+    overflow: hidden;
 
     &--h1 {
       background-color: #FFF;
@@ -688,21 +691,6 @@
       box-shadow: 0 0 50px rgba(24, 74, 103, 0.4);
       z-index: 9;
     }
-/*
-    &--goto {
-      &::after {
-        position: absolute;
-        bottom: 0;
-        left: -10%;
-        width: 120%;
-        background: #B2B2B2;
-        background: linear-gradient(to right, #b2b2b2 0%, #00baff 20%, #00baff 50%, #00baff 80%, #b2b2b2 100%);
-        pointer-events: none;
-        transition: all .3s ease-in-out;
-        z-index: 1;
-      }
-    }
-*/
   }
 
   &__cellInner {
