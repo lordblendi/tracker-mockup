@@ -703,6 +703,10 @@
     line-height: 40px;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    .pmx-selector {
+      top: 2px;
+    }
   }
 
   &__input {
