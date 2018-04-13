@@ -1,64 +1,66 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-  {% include head.html %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+
+  <title>{{ page.title }}</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/favicon-16x16.png">
+  <link rel="manifest" href="{{ site.baseurl }}/site.webmanifest">
+  <link rel="mask-icon" href="{{ site.baseurl }}/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #2C5386;
+    }
+    section {
+      text-align: center;
+      margin: 50px 10%;
+    }
+    section a {
+      padding: 50px;
+      background-color: #FFF;
+      box-shadow: 0 0 100px rgba(0,0,0,.2);
+      border-radius: 4px;
+      display: inline-block;
+      vertical-align: top;
+      margin: 10px;
+      text-decoration: none;
+      color: #000;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      transition: all .3s ease-in-out;
+    }
+    section a:hover {
+      box-shadow: 0 0 30px rgba(0,0,0,.5);
+      transform: translateY(2px);
+    }
+  </style>
 </head>
 
 <body>
-  <div class="app cf item-progress--visible">
-    <div class="app__overlay"></div>
 
-    <div class="app-navigator">
-      {% include blocks/app-nav.html %}
-    </div>
+  <section>
+    <a href="/present" target="_blank">Current<br>Layout</a>
+    <a href="/future" target="_blank">Future<br>Layout</a>
+  </section>
 
-    <div class="user-menu">
-      {% include blocks/user-menu.html %}
-    </div>
+  <section>
+    <a href="/components" target="_blank">PMX<br>Components</a>
+    <a href="/itembox" target="_blank">PMX<br>ItemBox</a>
+    <a href="/font" target="_blank">Font<br>Configuration</a>
+    <a href="/tutorial" target="_blank">Tutorial<br>Example</a>
+  </section>
 
-    <main class="app__container">
-      <header class="app-header cf">
-        {% include blocks/app-header.html %}
-      </header>
-
-      {% include blocks/breadcrumbs.html %}
-
-      <div class="item">
-        <div class="sticky-header">
-          {% include blocks/item-header.html %}
-        </div>
-
-        <div class="item-body cf">
-          <div class="item-progress ms-fixed">
-            <div class="item-progress__inner">
-              {% include blocks/item-progress.html %}
-            </div>
-          </div>
-
-          <div class="item-main ms-fixed">
-            <div class="item-main__inner">
-              {% include blocks/item-main.html %}
-            </div>
-          </div>
-
-          <div class="item-comments">
-            <div class="item-comments__inner">
-              {% include blocks/item-comments.html %}
-            </div>
-          </div>
-        </div>
-        <!-- /.item-body -->
-      </div>
-      <!-- /.app__document -->
-    </main>
-    <!-- //app__container -->
-
-  </div>
-  <!-- /.app -->
-
-  {% include popups/singleSelect-breadcrumb.html %}
-
-  {% include foot.html %}
 </body>
-
 </html>

@@ -1,0 +1,56 @@
+---
+layout: future
+title: PMX Future
+permalink: /future
+---
+
+<div class="app cf item-progress--visible">
+  <div class="app__overlay"></div>
+
+  <div class="app-navigator">
+    {% include blocks/app-nav.html %}
+  </div>
+
+  <div class="user-menu">
+    {% include blocks/user-menu.html %}
+  </div>
+
+  <main class="app__container">
+    <header class="app-header cf">
+      {% include blocks/app-header.html %}
+    </header>
+
+    {% include blocks/breadcrumbs.html %}
+
+    <div class="item">
+      <div class="sticky-header">
+        {% include blocks/item-header.html %}
+      </div>
+
+      <div class="item-body cf">
+        <div class="item-progress ms-fixed">
+          <div class="item-progress__inner">
+            {% include blocks/item-progress.html %}
+          </div>
+        </div>
+
+        <div class="item-main ms-fixed">
+          <div class="item-main__inner">
+            {% include blocks/item-main.html %}
+          </div>
+        </div>
+
+        <div class="item-comments">
+          <div class="item-comments__inner">
+            {% include blocks/item-comments.html %}
+          </div>
+        </div>
+      </div>
+      <!-- /.item-body -->
+    </div>
+    <!-- /.app__document -->
+  </main>
+  <!-- //app__container -->
+</div>
+
+{% include popups/singleSelect-breadcrumb.html %}
