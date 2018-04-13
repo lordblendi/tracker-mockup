@@ -1,6 +1,19 @@
 ---
 ---
 
+@font-face {
+  font-family: 'pmx';
+  src: url('../assets/fonts/pmx.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'tenforce';
+  src: url('../assets/fonts/tenforce.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --color-primary: #BF920B;
   --color-secondary: #E61616;
@@ -9,8 +22,6 @@
 // the file extension has to be .css
 
 @import "reset.css";
-@import "mixins.css";
-
 @import "framework.css";
 @import "app.css";
 
@@ -21,7 +32,6 @@
 @import "blocks/app-navigator.css";
 @import "blocks/user-menu.css";
 @import "blocks/app-header.css";
-
 @import "blocks/item-header.css";
 @import "blocks/item-body.css";
 @import "blocks/item-progress.css";
@@ -31,7 +41,6 @@
 // Components
 @import "components/breadcrumbs.css";
 @import "components/tabs.css";
-
 @import "components/itemBox.css";
 @import "components/pmx-selector.css";
 @import "components/pmx-link.css";

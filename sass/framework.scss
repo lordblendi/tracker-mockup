@@ -1,6 +1,17 @@
 ---
 ---
 
+/* Global */
+
+.clearfix,
+.cf {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
 /* grid */
 
 .row {

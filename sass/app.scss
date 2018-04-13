@@ -65,3 +65,14 @@ body {
   z-index: 999;
   box-shadow: 0 0 100px rgba(0,0,0,.5);
 }
+
+
+input,
+textarea {
+  &::-webkit-input-placeholder {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #C1C1C1;
+    font-weight: 300;
+    font-style: italic;
+  }
+}
