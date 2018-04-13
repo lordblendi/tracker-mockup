@@ -19,23 +19,18 @@ body {
   &.fixed {
     overflow-y: hidden;
   }
+  &.page-Selectors {
+    background-color: #FFF;
+    margin: 50px 25%;
+  }
+  &.page-Itembox {
+    background-color: #FFF;
+    margin: 50px 15%;
+  }
+  &.page-Font {
+    background-color: #FFF;
+  }
 }
-body.page-Components,
-body.page-Itembox {
-  position: relative;
-  background-color: #FFF;
-  margin: 50px 25%;
-}
-body.page-Itembox {
-  margin: 50px 15%;
-}
-body.page-Font {
-  position: relative;
-  background-color: #FFF;
-  margin: 0;
-}
-
-
 
 .app {
   position: relative;
@@ -60,17 +55,11 @@ body.page-Font {
   }
 }
 
-
-
-
-
 .app.overlay--visible .app__overlay,
 .app.add-comment--visible .app__overlay {
   opacity: 1;
   pointer-events: auto;
 }
-
-
 
 .add-comment--visible .document__comments .add-comment {
   z-index: 999;
