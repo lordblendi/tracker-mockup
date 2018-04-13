@@ -689,6 +689,14 @@
 
     &--action {
       color: #CCAF75;
+
+      &:first-child {
+        + .itemBox__cell {
+          .itemBox__cellInner {
+            padding-left: 0;
+          }
+        }
+      }
     }
 
     &--focus {
