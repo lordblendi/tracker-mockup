@@ -490,7 +490,7 @@
           }
 
           &Inner {
-            line-height: 60px;
+            line-height: 50px;
           }
         }
       }
@@ -506,20 +506,21 @@
           min-width: 40px;
 
           &Inner {
-            line-height: 50px;
+            line-height: 40px;
           }
         }
       }
     }
 
     &--h3 {
-      border-bottom: 2px solid #FFEF99;
-
       .itemBox {
         &__cell {
+          border-bottom: 2px solid #FFEF99;
+
           &Inner {
             position: relative;
             display: inline-block;
+            line-height: 40px;
             width: auto;
             overflow: visible;
             padding: 0 0 0 15px;
