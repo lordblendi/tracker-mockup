@@ -3,7 +3,7 @@
 
 .breadcrumbs {
   position: relative;
-  padding: 0 0 0 10px;
+  padding: 5px 10px;
   margin: 0 20px;
   background: rgb(193,193,193);
   white-space: nowrap;
@@ -29,7 +29,7 @@
 
       &:last-child {
         position: absolute;
-        top: 0;
+        top: 5px;
         left: 0;
         z-index: 1;
         opacity: 1;
@@ -61,13 +61,12 @@
 	&__item {
 	  position: relative;
 	  display: inline-block;
-    line-height: 35px;
     padding: 0 20px 0 0;
 
     &::after {
       content: '/';
       position: absolute;
-      top: 0;
+      top: 5px;
       right: 8px;
     }
 
@@ -88,19 +87,23 @@
         left: 0px;
 			}
 		}
-	}
 
-  .pmx-link {
-    transition: all .3s ease-in-out;
-    font-size: 16px;
-
-    a {
-      display: inline-block;
-      max-width: 300px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      vertical-align: middle;
+    .pmx-selector {
+      top: -1px;
     }
-  }
+
+    .pmx-link {
+      transition: all .3s ease-in-out;
+      font-size: 16px;
+
+      a {
+        display: inline-block;
+        max-width: 300px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        vertical-align: middle;
+      }
+    }
+	}
 }

@@ -1,6 +1,26 @@
 ---
 ---
 
+/* grid */
+
+.row {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .col {
+    float: left;
+
+    &-6 {
+      width: 50%;
+    }
+  }
+}
+
+/* Positioning */
+
 .align-left {
   text-align: left;
 }
@@ -13,84 +33,67 @@
 
 /* Fonts */
 
-.fnt {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: normal;
-  text-transform: none;
-  color: #000;
-  white-space: nowrap;
+.ellipsis, .ellipsis * {
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.font {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
 
   &--h2 {
     font-size: 24px;
-    font-style: normal;
     font-weight: 600;
+    font-style: normal;
     letter-spacing: normal;
     text-transform: none;
-    color: #000;
   }
 
-  &--placeholder {
-
+  &--action {
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
   }
 
   &--label {
     font-size: 12px;
-    font-style: normal;
     font-weight: 600;
+    font-style: normal;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #808080;
   }
 
-  &--action {
+  &--placeholder {
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
+    font-style: italic;
     letter-spacing: normal;
     text-transform: none;
-    color: #C79D54;
+    opacity: .4;
+  }
+
+  &--small {
+    font-size: 10px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 }
 
+/* Actions */
 
-h2 {
-  font-size: 24px;
-  font-weight: 600;
-  font-style: normal;
-  text-transform: none;
-  letter-spacing: normal;
-  color: #000;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.font--sm {
-  color: #808080;
-  font-size: 10px;
-  font-weight: 600;
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.font--label {
-  font-size: 10px;
-  font-weight: 600;
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #B1B1B1;
-}
-
-.font--placeholder {
-  font-size: 16px;
-  font-weight: normal;
-  font-style: italic;
-  text-transform: none;
-  letter-spacing: normal;
-  color: rgba(0, 0, 0, 0.4);
+.action-icon {
+  display: inline-block;
+  padding: 5px;
+  min-width: 40px;
+  text-align: center;
 }

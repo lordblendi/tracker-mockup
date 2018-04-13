@@ -5,8 +5,14 @@
   position: relative;
   padding: 10px 20px;
   background-color: #2C5386;
-  color: #FFF;
+
+  .action-icon {
+    color: #FFF;
+  }
 }
+
+
+
 
 .app-header-inner {
   position: relative;
@@ -14,22 +20,12 @@
   &__left {
     float: left;
     width: 50%;
-
-    .app-header-inner__item {
-      max-width: -webkit-calc(100% - 40px);
-      max-width: -moz-calc(100% - 40px);
-      max-width: calc(100% - 40px);
-
-      h1, a {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-    }
   }
 
   &__right {
     float: right;
+    width: 50%;
+    text-align: right;
   }
 
   &__item {
@@ -39,11 +35,9 @@
     min-width: 40px;
     font-family: 'tenforce', sans-serif;
     font-size: 24px;
-  }
 
-  h1 {
-    font-size: 24px;
-    font-weight: 400;
-    color: #FFF;
+    > a {
+      color: #FFF;
+    }
   }
 }

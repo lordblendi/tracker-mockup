@@ -5,7 +5,6 @@
   position: relative;
   padding: 10px;
   border: 1px solid transparent;
-
   transition: all .3s ease-in-out;
 
   &--empty {
@@ -21,7 +20,7 @@
   &--error {
     .pmx-field {
       &__label {
-        color: red; 
+        color: red;
       }
     }
   }
@@ -126,13 +125,12 @@
 .pmx-selector {
   position: relative;
   display: inline-block;
+  vertical-align: middle;
   height: 30px;
-
   white-space: nowrap;
   border-radius: 15px;
   background-color: transparent;
   border: 2px solid transparent;
-
   font-size: 0;
 
   &--expanded {
