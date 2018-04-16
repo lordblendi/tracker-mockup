@@ -83,17 +83,25 @@ $('.MULTISELECT__POPUP').on('click', function() {
   }
 
   // show overlay
-  $(".overlay").css("display", 'block');
+  $(".app__overlay").css({
+    'pointer-events': 'auto',
+    'opacity': '1'
+  });
 });
 
 // onclick action on overlay to close popups
-$('.overlay').on('click', function() {
-  closeOverlay();
+$('.app__overlay').on('click', function() {
+  if($(this).closest('.app.app-navigator--visible, .app.user-menu--visible').length === 0){
+    closeOverlay();
+  }
 });
 
 // close overlay and popups
 function closeOverlay(){
-  $(".overlay").css("display", 'none');
+  $(".app__overlay").css({
+    'pointer-events': '',
+    'opacity': ''
+  });
 
   $('.multiSelector--popup').css({
     'z-index': '0',
