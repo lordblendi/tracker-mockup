@@ -13,7 +13,7 @@ $('.JS_toggle').on('click', function() {
 });
 
 // function to expand or close rows
-function expandCloseRow(itemBox__row, toClose, possibleChildren){
+function expandCloseRow(itemBox__row, rowClosed, possibleChildren){
 
   if(possibleChildren === undefined) {
     // if the next one is color options, then get the one after it
@@ -36,8 +36,18 @@ function expandCloseRow(itemBox__row, toClose, possibleChildren){
 
   // check if it's actually a children
   if ($(possibleChildren).hasClass('itemBox--children')) {
-    // close it, if we have to
-    if (toClose === true) {
+    var i = itemBox__row.find('.JS_toggle .itemBox__cellInner');
+    if( i.find('.itemBox__action').length === 1) {
+      i = i.find('.itemBox__action');
+    }
+    const iContent = i.html();
+
+    // if the 'rowClosed' is not specified, it will become the opposite state
+    if(rowClosed === undefined) {
+      rowClosed = $(possibleChildren).hasClass('JS_children-closed');
+    }
+    // open it, if we have to
+    if (rowClosed === true) {
       $.Velocity.animate(possibleChildren, 'slideDown').then(function() {
         $(possibleChildren).removeClass('JS_children-closed');
         if(iContent !== null && iContent !== undefined){
@@ -46,7 +56,7 @@ function expandCloseRow(itemBox__row, toClose, possibleChildren){
         checkTableHeaderIcon(itemBox__row);
       });
     }
-    // otherwise open it
+    // otherwise close it
     else {
       $.Velocity.animate(possibleChildren, 'slideUp').then(function() {
         $(possibleChildren).addClass('JS_children-closed');
