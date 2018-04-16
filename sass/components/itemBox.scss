@@ -515,13 +515,14 @@
     &--h3 {
       .itemBox {
         &__cell {
-          border-bottom: 2px solid #FFEF99;
+          border-bottom: 3px solid #FFEF99;
 
           &Inner {
             position: relative;
             display: inline-block;
             line-height: 40px;
             width: auto;
+            height: 40px;
             overflow: visible;
             padding: 0 0 0 15px;
             background-color: #FFEF99;

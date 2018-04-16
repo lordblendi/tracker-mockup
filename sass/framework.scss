@@ -3,13 +3,10 @@
 
 /* Global */
 
-.clearfix,
-.cf {
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 /* grid */
@@ -24,8 +21,32 @@
   .col {
     float: left;
 
+    &-1 {
+      width: 8,333332%;
+    }
+    &-2 {
+      width: 16,666667%;
+    }
+    &-3 {
+      width: 25%;
+    }
+    &-4 {
+      width: 33,333332%
+    }
+    &-5 {
+      width: auto;
+    }
     &-6 {
       width: 50%;
+    }
+    &-7 {
+      width: 58,333332%;
+    }
+    &-8 {
+      width: 66,666667%
+    }
+    &-9 {
+      width: 85
     }
   }
 }
