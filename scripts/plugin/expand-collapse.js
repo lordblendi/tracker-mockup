@@ -26,20 +26,9 @@ function expandCloseRow(itemBox__row, rowClosed, possibleChildren){
       possibleChildren = possibleChildren.next();
     }
   }
-  const i = itemBox__row.find('.JS_toggle .itemBox__cellInner');
-  var iContent = i.html();
-
-  // if the 'toClose' is not specified, it will become the opposite state
-  if(toClose === undefined) {
-    toClose = $(possibleChildren).hasClass('JS_children-closed');
-  }
-
   // check if it's actually a children
   if ($(possibleChildren).hasClass('itemBox--children')) {
-    var i = itemBox__row.find('.JS_toggle .itemBox__cellInner');
-    if( i.find('.itemBox__action').length === 1) {
-      i = i.find('.itemBox__action');
-    }
+    const i = itemBox__row.find('.JS_toggle .itemBox__cellInner, .JS_toggle .itemBox__action');
     const iContent = i.html();
 
     // if the 'rowClosed' is not specified, it will become the opposite state
