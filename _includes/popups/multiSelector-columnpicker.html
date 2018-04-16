@@ -12,8 +12,8 @@
 
   <div class="itemBox JS_multiSelector__box">
     <ul class="itemBox__row JS_multiSelector__box--selectionTitle">
-      <li class="itemBox__cell itemBox__cell--action JS_toggle">
-        <div class="itemBox__cellInner">
+      <li class="itemBox__cell itemBox__cell--action">
+        <div class="itemBox__cellInner JS_missing_parent">
           <div class="itemBox__action">ऄ Selected</div>
         </div>
       </li>
@@ -23,7 +23,6 @@
         </div>
       </li>
     </ul>
-
     <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildren">
       <div class="JS_sortable">
         {% for selected in site.data.columnpicker.selected %}
@@ -45,9 +44,8 @@
         {% endfor%}
       </div>
     </div><!-- /.itemBox -->
-
     <ul class="itemBox__row JS_multiSelector__box--optionsTitle">
-      <li class="itemBox__cell itemBox__cell--action JS_toggle">
+      <li class="itemBox__cell itemBox__cell--action JS_missing_parent">
         <div class="itemBox__cellInner">
           <div class="itemBox__action">ऄ All</div>
         </div>
@@ -63,56 +61,6 @@
         </div>
       </li>
     </ul>
-
-    <div class="itemBox itemBox--children JS_multiSelector__box--optionsChildren">
-      {% for group in site.data.columnpicker.options.groups %}
-        <ul class="itemBox__row">
-          <li class="itemBox__cell itemBox__cell--action JS_toggle">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__action">{{group.name}}</div>
-            </div>
-          </li>
-          {% if group.noneSelected == "false" %}
-            <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
-              <div class="itemBox__cellInner">
-                <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove">—</div>
-              </div>
-            </li>
-          {% endif %}
-          {% if group.allSelected == "false" %}
-            <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__cell--addAll">
-              <div class="itemBox__cellInner">
-                <div class="itemBox__action JS_itemBox__action--add JS_itemBox__action--addAll">ބ</div>
-              </div>
-            </li>
-          {% endif %}
-        </ul>
-
-        <div class="itemBox itemBox--children">
-          {% for item in group.items %}
-            <ul class="itemBox__row itemBox__row--item itemBox__row--action JS_filterableCell">
-              <li class="itemBox__cell JS_textAction">
-                <div class="itemBox__cellInner JS_text">{{item.name}}</div>
-              </li>
-              {% if item.selected == "true" %}
-                <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove">
-                  <div class="itemBox__cellInner">
-                    <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
-                  </div>
-                </li>
-              {% else %}
-                <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--add">
-                  <div class="itemBox__cellInner">
-                    <div class="itemBox__action JS_itemBox__action--add">ބ</div>
-                  </div>
-                </li>
-              {% endif %}
-            </ul>
-          {% endfor %}
-        </div><!-- /.itemBox -->
-      {% endfor %}
-    </div><!-- /.itemBox -->
-
-  </div><!-- /.itemBox -->
+  </div> <!-- /.itemBox -->
 
 </div><!-- /.multiSelector -->

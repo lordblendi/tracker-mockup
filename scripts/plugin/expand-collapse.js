@@ -7,7 +7,16 @@ const expanded = "ऄ";
 const collapsed = "अ";
 
 // expand/collapse action listener on toggle
-$('.JS_toggle').on('click', function() {
+$('.JS_missing_parent').click(function(){
+  console.log(this);
+  console.log(this.parentNode);
+  console.log(this.parentNode.parentNode);
+  console.log(this.parentNode.parentNode.parentNode);
+  console.log($(this));
+  console.log($(this).parents());
+  debugger;
+});
+$('.JS_toggle').on('click', function () {
   const itemBox__row = $(this).closest('.itemBox__row');
   expandCloseRow(itemBox__row);
 });
