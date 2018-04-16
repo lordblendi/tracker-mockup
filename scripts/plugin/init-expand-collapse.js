@@ -7,8 +7,8 @@ const multiOptionChildren = $(".JS_multiSelector__box--optionsChildren").find('.
 const multiOptionBodyRow = $(multiOptionChildren).find('.itemBox__row');
 
 $.Velocity.animate(multiOptionChildren, 'slideUp').then(function() {
-  $(multiOptionBodyRow).addClass('JS_itemBox__row--closed');
-  $(multiOptionChildren).addClass('JS_itemBox__row--closed');
+  $(multiOptionBodyRow).addClass('JS_children-closed');
+  $(multiOptionChildren).addClass('JS_children-closed');
 });
 
 
@@ -17,8 +17,8 @@ const appNavChildren = $(".app-navigator__nav .tabs-panels .tabs-panels__panel[t
 const appNavBodyRow = $(appNavChildren).find('.itemBox__row');
 
 $.Velocity.animate(appNavChildren, 'slideUp').then(function() {
-  $(appNavBodyRow).addClass('JS_itemBox__row--closed');
-  $(appNavChildren).addClass('JS_itemBox__row--closed');
+  $(appNavBodyRow).addClass('JS_children-closed');
+  $(appNavChildren).addClass('JS_children-closed');
 });
 
 
@@ -28,6 +28,6 @@ const filterTagPopupChildren = $("#filter-tagpicker .JS_multiSelector__box--opti
 const filterTagPopupBodyRow = $(filterTagPopupChildren).find('.itemBox__row');
 
 $.Velocity.animate(filterTagPopupChildren, 'slideUp').then(function() {
-  $(filterTagPopupBodyRow).addClass('JS_itemBox__row--closed');
-  $(filterTagPopupChildren).addClass('JS_itemBox__row--closed');
+  $(filterTagPopupBodyRow).addClass('JS_children-closed');
+  $(filterTagPopupChildren).addClass('JS_children-closed');
 });

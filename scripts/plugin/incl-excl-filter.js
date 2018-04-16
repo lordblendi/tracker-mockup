@@ -66,7 +66,7 @@ function selectNewFilterOption(incleExclBodyRow) {
 
   // close options
   $.Velocity.animate(itemBox, 'slideUp').then(function() {
-    $(itemBox).addClass('JS_itemBox__row--closed');
+    $(itemBox).addClass('JS_children-closed');
   });
 }
 
