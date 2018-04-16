@@ -658,7 +658,7 @@
       .itemBox {
         &__cell {
           &Inner {
-            line-height: 22px;
+            line-height: 12px;
             color: #808080;
             text-align: right;
           }
@@ -729,6 +729,10 @@
     transition: all .3s ease-in-out;
     font-family: 'tenforce', sans-serif;
     color: #CCAF75;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
 
     &--disabled {
       opacity: .3;

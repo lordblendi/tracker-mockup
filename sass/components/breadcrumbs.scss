@@ -29,12 +29,16 @@
 
       &:last-child {
         position: absolute;
-        top: 5px;
+        top: 0;
         left: 0;
         z-index: 1;
         opacity: 1;
-        padding: 0 20px 0 10px;
+        padding: 5px 20px 5px 10px;
         background-color: #C1C1C1;
+
+        &::after {
+          top: 12px;
+        }
 
         &::before {
           content: '';
@@ -66,8 +70,9 @@
     &::after {
       content: '/';
       position: absolute;
-      top: 3px;
+      top: 8px;
       right: 8px;
+      font-size: 16px;
     }
 
     * {
@@ -87,7 +92,7 @@
         left: 0px;
 			}
 		}
-    
+
     .pmx-link {
       transition: all .3s ease-in-out;
       font-size: 16px;

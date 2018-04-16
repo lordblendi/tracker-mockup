@@ -8,14 +8,11 @@
     opacity: 0;
     pointer-events: none;
     z-index: 0;
-
     position: absolute;
     top: 0;
     left: 0;
-
     min-width: 300px;
     width: 100%;
-
     box-shadow: 0 0 200px 60px rgba(0,0,0,0.2);
     transition: opacity .3s ease-in-out;
 
@@ -27,9 +24,9 @@
     }
 
     &-semsearch {
-      top: 0;
+      top: 10px;
       left: inherit;
-      right: 0;
+      right: 60px;
       width: 50vw;
     }
 
@@ -107,40 +104,11 @@
   }
 }
 
-/*
-.pmx-selector + .multiSelector {
-  position: absolute;
-  top: -6px;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 0;
-  transition: opacity .3s ease-in-out;
-}
-
-.pmx-selector.pmx-selector--clicked + .multiSelector {
-  z-index: 99999999;
-  pointer-events: auto;
-  opacity: 1;
-}
-*/
-
 @media (max-width: 900px) {
   .multiSelector--popup {
     width: 100%;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .multiSelector {
