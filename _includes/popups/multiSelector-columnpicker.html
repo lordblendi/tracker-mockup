@@ -47,7 +47,7 @@
     </div><!-- /.itemBox -->
 
     <ul class="itemBox__row JS_multiSelector__box--optionsTitle">
-      <li class="itemBox__cell itemBox__cell--action">
+      <li class="itemBox__cell itemBox__cell--action JS_toggle">
         <div class="itemBox__cellInner">
           <div class="itemBox__action">ऄ All</div>
         </div>
@@ -67,7 +67,7 @@
     <div class="itemBox JS_multiSelector__box--optionsChildren">
       {% for group in site.data.columnpicker.options.groups %}
         <ul class="itemBox__row">
-          <li class="itemBox__cell itemBox__cell--action">
+          <li class="itemBox__cell itemBox__cell--action JS_toggle">
             <div class="itemBox__cellInner">
               <div class="itemBox__action">{{group.name}}</div>
             </div>
