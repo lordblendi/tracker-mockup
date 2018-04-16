@@ -57,7 +57,7 @@ function selectNewColor(colorItemBodyRow) {
 
   // close color options
   $.Velocity.animate(itemBox, 'slideUp').then(function() {
-    $(itemBox).addClass('JS_itemBox__row--closed');
+    $(itemBox).addClass('JS_children-closed');
   });
 }
 
@@ -111,7 +111,7 @@ const colorOptions = $(".JS_multiSelector__box--selectionChildren, .JS_multiSele
 const colorBodyRow = $(colorOptions).find('.itemBox__row');
 
 $.Velocity.animate(colorOptions, 'slideUp').then(function() {
-  $(colorOptions).addClass('JS_itemBox__row--closed');
+  $(colorOptions).addClass('JS_children-closed');
 });
 
 
@@ -125,8 +125,8 @@ function resetColorToggle(item) {
 
   // set colorselector hidden
   const possibleColorChildren = $(item).next('.JS_itemBox--colors');
-  possibleColorChildren.css('display', 'none').addClass('JS_itemBox__row--closed');
-  $(item).addClass('JS_itemBox__row--closed');
+  possibleColorChildren.css('display', 'none').addClass('JS_children-closed');
+  $(item).addClass('JS_children-closed');
 
   // color setting action
   $(possibleColorChildren).find('.itemBox__row').on('click', function() {

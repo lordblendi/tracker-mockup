@@ -13,7 +13,7 @@
   <div class="itemBox JS_appNavBox">
     {% for group in site.data.app-nav-tab2.groups %}
       <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--action">
+        <li class="itemBox__cell itemBox__cell--action JS_toggle">
           <div class="itemBox__cellInner">
             <div class="itemBox__action">{{group.name}}{% if group.loadmore == "true"%}<sup>{{group.counter}}</sup>{% endif %}</div>
           </div>

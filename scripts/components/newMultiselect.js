@@ -74,7 +74,7 @@ function handleActionOnclick(action) {
 
   // whatever happened, reset the filter
   // in case some stuff were filtered
-  if(!$(action).hasClass('itemBox__action--toggle')){
+  if(!$(action).hasClass('JS_toggle')){
     $(multiSelector).find('.JS_multiSelector__filterInput').val("").keyup();
   }
 }
@@ -365,7 +365,7 @@ function checkCounter(selectionChildren){
 function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
   const add = $(action).hasClass('JS_itemBox__action--add');
   const remove = $(action).hasClass('JS_itemBox__action--remove');
-  const toggle = $(action).hasClass('itemBox__action--toggle');
+  const toggle = $(action).hasClass('JS_toggle');
   var multiSelector = action.closest('.multiSelector')[0];
   exclude = $(multiSelector).find('.JS_exclude').length > 0;
 

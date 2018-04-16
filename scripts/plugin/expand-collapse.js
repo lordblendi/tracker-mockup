@@ -8,7 +8,7 @@ const collapsed = "अ";
 
 // expand/collapse action listener on toggle
 $('.JS_toggle').on('click', function() {
-  const itemBox__row = $(this).closest('.itemBox');
+  const itemBox__row = $(this).closest('.itemBox__row');
   expandCloseRow(itemBox__row);
 });
 
@@ -27,11 +27,11 @@ function expandCloseRow(itemBox__row, toClose, possibleChildren){
     }
   }
   const i = itemBox__row.find('.JS_toggle .itemBox__cellInner');
-  const iContent = i.html();
+  var iContent = i.html();
 
   // if the 'toClose' is not specified, it will become the opposite state
   if(toClose === undefined) {
-    toClose = $(possibleChildren).hasClass('itemBox__row--closed');
+    toClose = $(possibleChildren).hasClass('JS_children-closed');
   }
 
   // check if it's actually a children
@@ -39,7 +39,7 @@ function expandCloseRow(itemBox__row, toClose, possibleChildren){
     // close it, if we have to
     if (toClose === true) {
       $.Velocity.animate(possibleChildren, 'slideDown').then(function() {
-        $(possibleChildren).removeClass('itemBox__row--closed');
+        $(possibleChildren).removeClass('JS_children-closed');
         if(iContent !== null && iContent !== undefined){
           i.html(iContent.replace(collapsed, expanded));
         }
@@ -49,7 +49,7 @@ function expandCloseRow(itemBox__row, toClose, possibleChildren){
     // otherwise open it
     else {
       $.Velocity.animate(possibleChildren, 'slideUp').then(function() {
-        $(possibleChildren).addClass('itemBox__row--closed');
+        $(possibleChildren).addClass('JS_children-closed');
         if(iContent !== null && iContent !== undefined){
           i.html(iContent.replace(expanded, collapsed));
         }
@@ -74,7 +74,7 @@ function checkTableHeaderIcon(itemBox__row) {
   const i = $(itemBoxTable__head).find('.itemBox__cellInner').find('i');
   const iContent = i.html();
 
-  const closedChildren = $(itemBoxTable__body).children('.itemBox__row--closed');
+  const closedChildren = $(itemBoxTable__body).children('.JS_children-closed');
   const children = $(itemBoxTable__body).children('.itemBox--children');
 
   if(iContent !== null && iContent !== undefined) {
@@ -101,7 +101,7 @@ $('.JS_expand').on('click', function(){
   // so these ARE parent bodyRows
   const itemBox__row = $(bodyCelltoggles).closest('.itemBox__row');
 
-  const closedChildren = $(itemBoxTable__body).children('.itemBox--children.itemBox__row--closed');
+  const closedChildren = $(itemBoxTable__body).children('.itemBox--children.JS_children-closed');
   const children = $(itemBoxTable__body).children('.itemBox--children');
 
   //if the children are all closed
