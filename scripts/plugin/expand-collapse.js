@@ -28,7 +28,7 @@ function expandCloseRow(itemBox__row, rowClosed, possibleChildren){
   }
   // check if it's actually a children
   if ($(possibleChildren).hasClass('JS_itemBox--children')) {
-    const i = itemBox__row.find('.JS_toggle .itemBox__cellInner, .JS_toggle .itemBox__action');
+    const i = itemBox__row.find('.JS_toggle .itemBox__cellInner, .JS_toggle .itemBox__action, .JS_expand .itemBox__cellInner, .JS_expand .itemBox__action');
     const iContent = i.html();
 
     // if the 'rowClosed' is not specified, it will become the opposite state
@@ -66,15 +66,17 @@ function expandCloseRow(itemBox__row, rowClosed, possibleChildren){
 function checkTableHeaderIcon(itemBox__row) {
   // check, if everything is closed, or not
   // and change it in the table
-  const itemBoxTable = $(itemBox__row).closest('.itemBox');
-  const itemBoxTable__head = $(itemBoxTable).children('.itemBox__row--h2');
-  const itemBoxTable__body = $(itemBoxTable).children('.itemBoxTable__body');
+  const itemBox = $(itemBox__row).closest('.itemBox');
+  const itemBoxHead = $(itemBox).children('.itemBox__row--h2');
+  const closedChildren = $(itemBox).children('.JS_itemBox--children.JS_children-closed');
+  const children = $(itemBox).children('.JS_itemBox--children');
 
-  const i = $(itemBoxTable__head).find('.itemBox__cellInner').find('i');
+  var i = $(itemBoxHead).find('.JS_expand .itemBox__cellInner');
+  if ($(i).find('.itemBox__action') > 0) {
+    i = $(i).find('.itemBox__action');
+  }
   const iContent = i.html();
 
-  const closedChildren = $(itemBoxTable__body).children('.JS_children-closed');
-  const children = $(itemBoxTable__body).children('.JS_itemBox--children');
 
   if(iContent !== null && iContent !== undefined) {
     if(closedChildren.length !== children.length) {
