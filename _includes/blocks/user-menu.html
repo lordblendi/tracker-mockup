@@ -1,65 +1,25 @@
-  <div class="user-menu__userInfo">
-    <div class="user-menu__userInfoName">
-      <a href="#" class="user-menu__userInfoLongName">Nick De Jaeger</a>
-    </div>
-    <div class="user-menu__userInfoAvatar">
-      <img src="assets/images/profile.jpg" alt="profile picture">
-    </div>
+<div class="user-menu__userInfo">
+  <div class="user-menu__userInfoName">
+    <a href="#" class="user-menu__userInfoLongName">{{site.data.user-menu.name}}</a>
   </div>
-
-  <div class="user-menu__actions">
-
-    <div class="itemBox">
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--action itemBox__cell--permalink">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action">ढ Home</div>
-          </div>
-        </li>
-      </ul>
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--action itemBox__cell--permalink">
-          <div class="itemBox__cellInner">ण My To Do's</div>
-        </li>
-      </ul>
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--action itemBox__cell--permalink">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action">झ Time sheets</div>
-          </div>
-        </li>
-      </ul>
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--action itemBox__cell--permalink">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action">ऌ Reports</div>
-          </div>
-        </li>
-      </ul>
-    </div><!-- /.itemBox -->
-
-    <div class="itemBox">
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--action itemBox__cell--permalink">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action">ट Help</div>
-          </div>
-        </li>
-      </ul>
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--action itemBox__cell--permalink">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action">ड Settings</div>
-          </div>
-        </li>
-      </ul>
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--action itemBox__cell--permalink">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action">त Logout</div>
-          </div>
-        </li>
-      </ul>
-    </div><!-- /.itemBox -->
-
+  <div class="user-menu__userInfoAvatar">
+    <img src="assets/images/profile.jpg" alt="profile picture">
   </div>
+</div>
+
+<div class="user-menu__actions">
+  {% for itemgroup in site.data.user-menu.itemgroups %}
+    <div class="itemBox">
+      {% for item in itemgroup %}
+      <ul class="itemBox__row itemBox__row--item">
+        <li class="itemBox__cell itemBox__cell--action itemBox__cell--permalink">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action">{{item.icon}} {{item.name}}</div>
+          </div>
+        </li>
+      </ul>
+      {% endfor %}
+    </div>
+    <!-- /.itemBox -->
+  {% endfor %}
+</div>

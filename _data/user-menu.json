@@ -1,0 +1,35 @@
+{
+  "name": "Nick De Jaeger",
+  "itemgroups": [
+    [{
+        "icon": "ढ",
+        "name": "Home"
+      },
+      {
+        "icon": "ण",
+        "name": "My To Do's"
+      },
+      {
+        "icon": "झ",
+        "name": "Time sheets"
+      },
+      {
+        "icon": "ऌ",
+        "name": "Reports"
+      }
+    ],
+     [{
+        "icon": "ट",
+        "name": "Help"
+      },
+      {
+        "icon": "ड",
+        "name": "Settings"
+      },
+      {
+        "icon": "त",
+        "name": "Logout"
+      }
+    ]
+  ]
+}
