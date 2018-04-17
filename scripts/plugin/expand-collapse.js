@@ -114,3 +114,14 @@ $('.itemBox__row--h2 .JS_expand').on('click', function(){
     expandCloseRow(itemBox__row, true);
   }
 });
+
+// action for table row expand/collapse
+$('.JS_expand').on('click', function() {
+  // if it's in the header, return
+  if ( $(this).closest('.itemBox__row--h2') > 0) {
+    return;
+  }
+
+  const itemBox__row = $(this).closest('.itemBox__row');
+  expandCloseRow(itemBox__row);
+});
