@@ -4,8 +4,10 @@
 .tabs {
   position: relative;
 
-  &--invert .tabs-nav {
-    filter: invert(1) hue-rotate(185deg) brightness(130%);
+  &--invert {
+    .tabs-nav {
+      filter: invert(1) hue-rotate(185deg) brightness(130%);
+    }
   }
 
   &-panels {
