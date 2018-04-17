@@ -28,7 +28,7 @@
         </div>
       </li>
     </ul>
-    <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildren">
+    <div class="itemBox JS_itemBox--children itemBox--children JS_multiSelector__box--selectionChildren">
       <div class="itemBoxBody--sortable ui-sortable">
         <ul class="itemBox__row JS_multiSelector__box--selectionTitleInclude">
           <li class="itemBox__cell itemBox__cell--action JS_toggle">
@@ -47,7 +47,7 @@
             </div>
           </li>
         </ul>
-        <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildrenInclude">
+        <div class="itemBox JS_itemBox--children itemBox--children JS_multiSelector__box--selectionChildrenInclude">
           <div class="itemBoxBody--sortableConnected itemBoxBody--sortableInclude ui-sortable">
             {% for item in site.data.newmultiselect.selected.included %}
               <ul class="itemBox__row JS_filterableCell">
@@ -91,7 +91,7 @@
         </div>
       </li>
     </ul>
-    <div class="itemBox itemBox--children JS_multiSelector__box--optionsChildren" style="display: block;">
+    <div class="itemBox JS_itemBox--children itemBox--children JS_multiSelector__box--optionsChildren" style="display: block;">
       <div class="itemBoxTable">
         <div class="itemBoxBody">
           {% for item in site.data.newmultiselect.options %}

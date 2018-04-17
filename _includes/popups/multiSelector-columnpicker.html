@@ -24,7 +24,7 @@
       </li>
     </ul>
 
-    <div class="itemBox itemBox--children JS_multiSelector__box--selectionChildren">
+    <div class="itemBox JS_itemBox--children itemBox--children JS_multiSelector__box--selectionChildren">
       <div class="JS_sortable">
         {% for selected in site.data.columnpicker.selected %}
           <ul class="itemBox__row itemBox__row--item JS_filterableCell">
@@ -64,7 +64,7 @@
       </li>
     </ul>
 
-    <div class="itemBox itemBox--children JS_multiSelector__box--optionsChildren">
+    <div class="itemBox JS_itemBox--children itemBox--children JS_multiSelector__box--optionsChildren">
       {% for group in site.data.columnpicker.options.groups %}
         <ul class="itemBox__row">
           <li class="itemBox__cell itemBox__cell--action JS_toggle">
@@ -88,7 +88,7 @@
           {% endif %}
         </ul>
 
-        <div class="itemBox itemBox--children">
+        <div class="itemBox JS_itemBox--children itemBox--children">
           {% for item in group.items %}
             <ul class="itemBox__row itemBox__row--item itemBox__row--action JS_filterableCell">
               <li class="itemBox__cell JS_textAction">

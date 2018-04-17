@@ -3,7 +3,7 @@
 ////
 
 // default second level collapsed
-const multiOptionChildren = $(".JS_multiSelector__box--optionsChildren").find('.itemBox--children:not(.JS_itemBox--colors)');
+const multiOptionChildren = $(".JS_multiSelector__box--optionsChildren").find('.JS_itemBox--children:not(.JS_itemBox--colors)');
 const multiOptionBodyRow = $(multiOptionChildren).find('.itemBox__row');
 
 $.Velocity.animate(multiOptionChildren, 'slideUp').then(function() {
@@ -13,7 +13,7 @@ $.Velocity.animate(multiOptionChildren, 'slideUp').then(function() {
 
 
 //default collapse everything in  app-navigator
-const appNavChildren = $(".app-navigator__nav .tabs-panels .tabs-panels__panel[tabindex='1']").find('.itemBox--children');
+const appNavChildren = $(".app-navigator__nav .tabs-panels .tabs-panels__panel[tabindex='1']").find('.JS_itemBox--children');
 const appNavBodyRow = $(appNavChildren).find('.itemBox__row');
 
 $.Velocity.animate(appNavChildren, 'slideUp').then(function() {

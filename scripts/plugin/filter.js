@@ -68,7 +68,7 @@ function checkGroups(multiSelector, possibleChildren) {
   for (i = 0; i < groups.length; i++) {
     var currentGroup = $(groups[i]);
     var possibleChild = currentGroup.next();
-    if(possibleChild.hasClass('itemBox--children') && !possibleChild.hasClass('JS_itemBox--suggestions') && !possibleChild.hasClass('itemBox--children-sublist')) {
+    if(possibleChild.hasClass('JS_itemBox--children') && !possibleChild.hasClass('JS_itemBox--suggestions') && !possibleChild.hasClass('JS_itemBox--children-sublist')) {
       // find all not hidden children
       var filterableCells = $(possibleChild).find('ul.JS_filterableCell');
       // if there are some, don't hide the group

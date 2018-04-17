@@ -62,14 +62,14 @@ function handleActionOnclick(action) {
   // with a parameter depending if it's removing all from selected or not
   if(action.hasClass('JS_itemBox__action--removeAll')){
     const children = action.closest('.itemBox__row').next();
-    if(children.hasClass('itemBox--children')) {
+    if(children.hasClass('JS_itemBox--children')) {
       handleComplexGroupRemove(action, children, action.hasClass('JS_itemBox__action--removeAllSelected'), selectedBlockClass);
     }
   }
   // if it's addAll, then we call the groupAdd
   else if(action.hasClass('JS_itemBox__action--addAll')){
     const children = action.closest('.itemBox__row').next();
-    if(children.hasClass('itemBox--children')) {
+    if(children.hasClass('JS_itemBox--children')) {
       handleComplexGroupAdd(action, children, exclude);
     }
   }
@@ -473,7 +473,7 @@ function checkGroupActions() {
   const multiSelector = $('.multiSelector');
 
   // check on the current status group action, remove or add necessary actions
-  const childrenInOptions = multiSelector.find('.itemBox--children:not(.JS_multiSelector__box--selectionChildren):not(.itemBox--children-sublist):not(.JS_itemBox--suggestions)');
+  const childrenInOptions = multiSelector.find('.JS_itemBox--children:not(.JS_multiSelector__box--selectionChildren):not(.JS_itemBox--children-sublist):not(.JS_itemBox--suggestions)');
   $.each(childrenInOptions, function(index, children) {
     var children = $(children);
     const groupHeader = children.prev();

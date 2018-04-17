@@ -19,15 +19,15 @@ function expandCloseRow(itemBox__row, rowClosed, possibleChildren){
     // if the next one is color options, then get the one after it
     // as it should be like this:
     // itemBox__row
-    //     [optional .itemBox--children.JS_itemBox--colors]
-    //     .itemBox--children
+    //     [optional .JS_itemBox--children.JS_itemBox--colors]
+    //     .JS_itemBox--children
     possibleChildren = $(itemBox__row).next();
     if (possibleChildren.hasClass('JS_itemBox--colors')) {
       possibleChildren = possibleChildren.next();
     }
   }
   // check if it's actually a children
-  if ($(possibleChildren).hasClass('itemBox--children')) {
+  if ($(possibleChildren).hasClass('JS_itemBox--children')) {
     const i = itemBox__row.find('.JS_toggle .itemBox__cellInner, .JS_toggle .itemBox__action');
     const iContent = i.html();
 
@@ -74,7 +74,7 @@ function checkTableHeaderIcon(itemBox__row) {
   const iContent = i.html();
 
   const closedChildren = $(itemBoxTable__body).children('.JS_children-closed');
-  const children = $(itemBoxTable__body).children('.itemBox--children');
+  const children = $(itemBoxTable__body).children('.JS_itemBox--children');
 
   if(iContent !== null && iContent !== undefined) {
     if(closedChildren.length !== children.length) {
@@ -100,8 +100,8 @@ $('.JS_expand').on('click', function(){
   // so these ARE parent bodyRows
   const itemBox__row = $(bodyCelltoggles).closest('.itemBox__row');
 
-  const closedChildren = $(itemBoxTable__body).children('.itemBox--children.JS_children-closed');
-  const children = $(itemBoxTable__body).children('.itemBox--children');
+  const closedChildren = $(itemBoxTable__body).children('.JS_itemBox--children.JS_children-closed');
+  const children = $(itemBoxTable__body).children('.JS_itemBox--children');
 
   //if the children are all closed
   if(closedChildren.length !== children.length) {
