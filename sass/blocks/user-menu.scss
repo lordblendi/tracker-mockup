@@ -21,13 +21,14 @@
   right: -25%;
   transition: all .3s ease-in-out;
   background-color: #2C5386;
-  
+
   &__userInfo {
     position: relative;
     padding: 15px;
     background-color: #284b78;
     white-space: nowrap;
     text-align: right;
+    color: #FFF;
   }
 
   &__userInfoAvatar {
