@@ -27,7 +27,7 @@ $(document).ready(function() {
   });
 
   // semsearch hover over action
-  $('.JS_toggle-semsearch-1').on('mouseover', function() {
+  $('.JS_toggle-semsearch-1, .JS_semsearch-1').on('mouseover', function() {
     $('.JS_semsearch-1').addClass('multiSelector--visible');
   });
 
