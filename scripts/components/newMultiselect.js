@@ -27,8 +27,9 @@ function handleActionOnclick(action) {
   }
 
   if(action.hasClass('JS_toggle') ||
-     $(action).find('.JS_toggle') > 0 ||
-     $(action).closest('.JS_toggle') > 0) {
+     action.hasClass('JS_expand') ||
+     $(action).find('.JS_toggle, .JS_expand') > 0 ||
+     $(action).closest('.JS_toggle, .JS_expand') > 0) {
        return;
      }
 
@@ -81,8 +82,9 @@ function handleActionOnclick(action) {
   // whatever happened, reset the filter
   // in case some stuff were filtered
   if(!$(action).hasClass('JS_toggle') &&
-       $(action).find('.JS_toggle') === 0 &&
-       $(action).closest('.JS_toggle') === 0){
+     !$(action).hasClass('JS_expand') &&
+      $(action).find('.JS_toggle, .JS_expand') === 0 &&
+      $(action).closest('.JS_toggle, .JS_expand') === 0){
     $(multiSelector).find('.JS_multiSelector__filterInput').val("").keyup();
   }
 }

@@ -87,21 +87,22 @@ function checkTableHeaderIcon(itemBox__row) {
 }
 
 // action for toggle in header to expand/collapse all
-$('.JS_expand').on('click', function(){
+$('.itemBox__row--h2 .JS_expand').on('click', function(){
   const toggle = $(this);
-
   const itemBox = $(toggle).closest('.itemBox');
-  const itemBoxTable__body = $(itemBoxTable).children('.itemBoxTable__body');
+  const siblingRowItems = $(itemBox).children('.itemBox__row--item');
+
+  const closedChildren = $(itemBox).children('.JS_itemBox--children.JS_children-closed');
+  const children = $(itemBox).children('.JS_itemBox--children');
+
 
   // finding all toggles
-  const bodyCelltoggles = $(itemBoxTable__body).children('.itemBox__row').children(' .JS_toggle');
+  const bodyCelltoggles = $(siblingRowItems).children('.JS_expand');
 
   // finding the bodyRows from toggles
   // so these ARE parent bodyRows
-  const itemBox__row = $(bodyCelltoggles).closest('.itemBox__row');
+  const itemBox__row = $(bodyCelltoggles).closest('.itemBox__row--item');
 
-  const closedChildren = $(itemBoxTable__body).children('.JS_itemBox--children.JS_children-closed');
-  const children = $(itemBoxTable__body).children('.JS_itemBox--children');
 
   //if the children are all closed
   if(closedChildren.length !== children.length) {
