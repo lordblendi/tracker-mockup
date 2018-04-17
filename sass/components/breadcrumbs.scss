@@ -33,7 +33,7 @@
         left: -1px;
         z-index: 1;
         opacity: 1;
-        padding: 5px 20px 5px 10px;
+        padding: 5px 10px;
         background-color: #C1C1C1;
 
         &::after {
@@ -65,15 +65,6 @@
 	&__item {
 	  position: relative;
 	  display: inline-block;
-    padding: 0 20px 0 0;
-
-    &::after {
-      content: '/';
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      font-size: 16px;
-    }
 
     * {
       transition: all .3s ease-in-out;
@@ -107,4 +98,11 @@
       }
     }
 	}
+
+  &__seperator {
+    display: inline;
+    font-size: 16px;
+    vertical-align: middle;
+    padding: 0 2px;
+  }
 }

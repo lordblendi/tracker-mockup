@@ -1,6 +1,7 @@
 <div class="breadcrumbs breadcrumbs--overflow">
   {% for item in site.data.breadcrumbs.items %}
     <div class="breadcrumbs__item JS_breadcrumbs__item">
+
       <div class="pmx-selector">
         <div class="pmx-selector__item pmx-selector__item--selected">
           <div class="pmx-selector__block">
@@ -8,9 +9,12 @@
           </div>
         </div>
       </div>
+      
       <div class="pmx-link">
         <a href="#">{{item.name}}</a>
       </div>
+
+      <div class="breadcrumbs__seperator">/</div>
     </div>
   {% endfor %}
 </div>
