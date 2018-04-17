@@ -26,6 +26,12 @@ function handleActionOnclick(action) {
     return;
   }
 
+  if(action.hasClass('JS_toggle') ||
+     $(action).find('.JS_toggle') > 0 ||
+     $(action).closest('.JS_toggle') > 0) {
+       return;
+     }
+
   // FOR FILTER INCL/EXCL
   var selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
   // check if it's from selectedInclude or selectedExclude
@@ -74,7 +80,9 @@ function handleActionOnclick(action) {
 
   // whatever happened, reset the filter
   // in case some stuff were filtered
-  if(!$(action).hasClass('JS_toggle')){
+  if(!$(action).hasClass('JS_toggle') &&
+       $(action).find('.JS_toggle') === 0 &&
+       $(action).closest('.JS_toggle') === 0){
     $(multiSelector).find('.JS_multiSelector__filterInput').val("").keyup();
   }
 }
