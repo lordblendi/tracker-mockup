@@ -10,11 +10,36 @@
     position: relative;
     background-color: #FFF;
     border-bottom: 2px dashed #CCC;
-    padding: 10px;
+    padding: 0 10px 5px 10px;
+
+    &__input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 45px 15px 15px 15px;
+      background-color: #FFF;
+      z-index: 0;
+      opacity: 0;
+      transition: all .3s ease-in-out;
+
+      &:focus {
+        z-index: 1;
+        opacity: 1;
+
+        .item-header__aside {
+          z-index: 0;
+        }
+      }
+    }
+
+    &__head {
+    }
 
     &__meta {
-      position: relative;
-      margin: 5px 0 5px -10px;
+      display: inline-block;
+      margin: 10px 0 0 -10px;
     }
 
     &__type {
@@ -40,8 +65,7 @@
 
     &__title {
       position: relative;
-      margin: 5px 0;
-      padding: 5px;
+      padding: 3px 5px;
 
       h2 {
         opacity: 1;
@@ -70,8 +94,32 @@
       }
     }
 
+    &__aside {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-width: 50%;
+      height: 100%;
+      background-color: #FFF;
+      padding: 10px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50px;
+        width: 50px;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+      }
+    }
+
     &__actions {
-      padding: 20px 0;
+
     }
 
     &__action {
