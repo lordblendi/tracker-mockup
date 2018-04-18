@@ -12,6 +12,8 @@
 /* grid */
 
 .row {
+  position: relative;
+  
   &::after {
     content: '';
     display: table;
@@ -22,16 +24,16 @@
     float: left;
 
     &-1 {
-      width: 8,333332%;
+      width: 8.333332%;
     }
     &-2 {
-      width: 16,666667%;
+      width: 16.666667%;
     }
     &-3 {
       width: 25%;
     }
     &-4 {
-      width: 33,333332%
+      width: 33.333332%
     }
     &-5 {
       width: auto;
@@ -40,13 +42,22 @@
       width: 50%;
     }
     &-7 {
-      width: 58,333332%;
+      width: 58.333332%;
     }
     &-8 {
-      width: 66,666667%
+      width: 66.666667%
     }
     &-9 {
-      width: 85
+      width: 75%
+    }
+    &-10 {
+      width: 83.333332%;
+    }
+    &-11 {
+      width: 91.666667%;
+    }
+    &-12 {
+      width: 100%;
     }
   }
 }

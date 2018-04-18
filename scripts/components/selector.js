@@ -21,7 +21,7 @@ function handleSelector(selector, selectorValue) {
   const required = selector.hasClass('pmx-selector--required');
   const expanded = selector.hasClass('pmx-selector--expanded');
   const multiSelect = selector.hasClass('pmx-selector--multiselect');
-  const toggleSelect = selector.hasClass('pmx-selector--toggleselect');
+  const toggleSelect = !selector.hasClass('pmx-selector--multiselect');
   const inclExcl = selector.hasClass('JS_pmx-selector--incl-excl');
 
   const selectedValues = selector.find('.pmx-selector__item--selected');
