@@ -175,22 +175,18 @@
       }
     }
   }
-  
+
   &__item {
     position: relative;
     display: inline-block;
     vertical-align: top;
     height: 26px;
     line-height: 26px;
-
     min-width: 26px;
     max-width: 100%;
-
     overflow: hidden;
-
     border-radius: 15px;
     background-color: #FFF;
-
     transition: all .3s ease-in-out;
     filter: saturate(0.4) opacity(0.4);
     cursor: pointer;
