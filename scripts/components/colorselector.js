@@ -107,7 +107,7 @@ function toggleColorSelector(colorToggle) {
 
 
 // INITIAL - collapse all color options
-const colorOptions = $(".JS_multiSelector__box--selectionChildren, .JS_multiSelector__box--optionsChildren, .JS_itemBox--suggestions").find('.JS_itemBox--children.JS_itemBox--colors');
+const colorOptions = $(".JS_selectionChildren, .JS_optionsChildren, .JS_itemBox--suggestions").find('.JS_itemBox--children.JS_itemBox--colors');
 const colorBodyRow = $(colorOptions).find('.itemBox__row');
 
 $.Velocity.animate(colorOptions, 'slideUp').then(function() {

@@ -11,7 +11,7 @@
   </div>
 
   <div class="itemBox JS_multiSelector__box">
-    <ul class="itemBox__row JS_multiSelector__box--selectionTitle">
+    <ul class="itemBox__row JS_selectionTitle">
       <li class="itemBox__cell itemBox__cell--action JS_toggle">
         <div class="itemBox__cellInner">
           <div class="itemBox__action">ऄ Selected</div>
@@ -24,7 +24,7 @@
       </li>
     </ul>
 
-    <div class="itemBox JS_itemBox--children itemBox--children JS_multiSelector__box--selectionChildren">
+    <div class="itemBox JS_itemBox--children itemBox--children JS_selectionChildren">
       <div class="JS_sortable">
         {% for selected in site.data.columnpicker.selected %}
           <ul class="itemBox__row itemBox__row--item JS_filterableCell">
@@ -46,25 +46,25 @@
       </div>
     </div><!-- /.itemBox -->
 
-    <ul class="itemBox__row JS_multiSelector__box--optionsTitle">
+    <ul class="itemBox__row JS_optionsTitle">
       <li class="itemBox__cell itemBox__cell--action JS_toggle">
         <div class="itemBox__cellInner">
           <div class="itemBox__action">ऄ All</div>
         </div>
       </li>
-      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
         <div class="itemBox__cellInner">
           <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove">—</div>
         </div>
       </li>
-      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__cell--addAll">
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__cell--addAll JS_itemBox__action">
         <div class="itemBox__cellInner">
           <div class="itemBox__action JS_itemBox__action--add JS_itemBox__action--addAll">ބ</div>
         </div>
       </li>
     </ul>
 
-    <div class="itemBox JS_itemBox--children itemBox--children JS_multiSelector__box--optionsChildren">
+    <div class="itemBox JS_itemBox--children itemBox--children JS_optionsChildren">
       {% for group in site.data.columnpicker.options.groups %}
         <ul class="itemBox__row">
           <li class="itemBox__cell itemBox__cell--action JS_toggle">

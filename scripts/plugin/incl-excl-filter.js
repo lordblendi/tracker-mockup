@@ -26,7 +26,7 @@ function selectNewFilterOption(incleExclBodyRow) {
   // update it in the selected section if it wasn't the same as before
   if(oldOption !== newOption) {
     // get the good classes
-    const selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
+    const selectedBlockClass = ".JS_selectionChildren";
     const oldClass = selectedBlockClass + oldOption;
     const newClass = selectedBlockClass + newOption;
 
@@ -87,7 +87,7 @@ $('.JS_itemBox__cellInner--inclExcl.JS_selectorItem').on('click', function() {
   // update it in the selected section if it wasn't the same as before
   if(oldOption !== newOption) {
     // get the good classes
-    const selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
+    const selectedBlockClass = ".JS_selectionChildren";
     const oldClass = selectedBlockClass + oldOption;
     const newClass = selectedBlockClass + newOption;
 

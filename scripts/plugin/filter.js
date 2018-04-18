@@ -2,7 +2,7 @@
 $('.JS_multiSelector__filterInput').keyup(function() {
   var input = $(this);
   var multiSelector = $(input).closest(".multiSelector");
-  filterResults(input, '.JS_multiSelector__box--selectionChildren .JS_filterableCell, .JS_multiSelector__box--optionsChildren .JS_filterableCell');
+  filterResults(input, '.JS_selectionChildren .JS_filterableCell, .JS_optionsChildren .JS_filterableCell');
 
   checkGroups(multiSelector, '.JS_multiSelector__box  .itemBox__row:not(.JS_filterableCell)');
 
@@ -114,7 +114,7 @@ function reInitActions(multiSelector) {
   });
 
   // color picker trigger
-  $(multiSelector).find('.JS_multiSelector__box--selectionChildren .JS_toggle--color, .JS_multiSelector__box--optionsChildren .JS_toggle--color').on('click', function() {
+  $(multiSelector).find('.JS_selectionChildren .JS_toggle--color, .JS_optionsChildren .JS_toggle--color').on('click', function() {
     const colorToggle = $(this);
     toggleColorSelector(colorToggle);
   });

@@ -11,7 +11,7 @@
   </div>
 
   <div class="itemBox JS_multiSelector__box">
-    <ul class="itemBox__row JS_multiSelector__box--selectionTitle">
+    <ul class="itemBox__row JS_selectionTitle">
       <li class="itemBox__cell itemBox__cell--action JS_toggle">
         <div class="itemBox__cellInner">
           <div class="itemBox__action">ऄ Selected</div>
@@ -28,9 +28,9 @@
         </div>
       </li>
     </ul>
-    <div class="itemBox JS_itemBox--children itemBox--children JS_multiSelector__box--selectionChildren">
+    <div class="itemBox JS_itemBox--children itemBox--children JS_selectionChildren">
       <div class="itemBoxBody--sortable ui-sortable">
-        <ul class="itemBox__row JS_multiSelector__box--selectionTitleInclude">
+        <ul class="itemBox__row JS_selectionTitleInclude">
           <li class="itemBox__cell itemBox__cell--action JS_toggle">
             <div class="itemBox__cellInner">
               <div class="itemBox__action">ऄ Include</div>
@@ -47,7 +47,7 @@
             </div>
           </li>
         </ul>
-        <div class="itemBox JS_itemBox--children itemBox--children JS_multiSelector__box--selectionChildrenInclude">
+        <div class="itemBox JS_itemBox--children itemBox--children JS_selectionChildrenInclude">
           <div class="itemBoxBody--sortableConnected itemBoxBody--sortableInclude ui-sortable">
             {% for item in site.data.newmultiselect.selected.included %}
               <ul class="itemBox__row JS_filterableCell">
@@ -79,7 +79,7 @@
       </div>
     </div>
     <!-- /.itemBox -->
-    <ul class="itemBox__row JS_multiSelector__box--optionsTitle">
+    <ul class="itemBox__row JS_optionsTitle">
       <li class="itemBox__cell itemBox__cell--action JS_toggle">
         <div class="itemBox__cellInner">
           <div class="itemBox__action">ऄ All</div>
@@ -91,7 +91,7 @@
         </div>
       </li>
     </ul>
-    <div class="itemBox JS_itemBox--children itemBox--children JS_multiSelector__box--optionsChildren" style="display: block;">
+    <div class="itemBox JS_itemBox--children itemBox--children JS_optionsChildren" style="display: block;">
       <div class="itemBoxTable">
         <div class="itemBoxBody">
           {% for item in site.data.newmultiselect.options %}

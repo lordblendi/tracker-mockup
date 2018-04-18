@@ -34,13 +34,13 @@ function handleActionOnclick(action) {
      }
 
   // FOR FILTER INCL/EXCL
-  var selectedBlockClass = ".JS_multiSelector__box--selectionChildren";
+  var selectedBlockClass = ".JS_selectionChildren";
   // check if it's from selectedInclude or selectedExclude
-  if((action.closest('.JS_multiSelector__box--selectionChildrenInclude, .JS_multiSelector__box--selectionTitleInclude').length > 0) || action.closest('.JS_multiSelector__box--selectionChildrenIncludeTitle').length > 0) {
-    selectedBlockClass = ".JS_multiSelector__box--selectionChildrenInclude";
+  if((action.closest('.JS_selectionChildrenInclude, .JS_selectionTitleInclude').length > 0) || action.closest('.JS_selectionChildrenIncludeTitle').length > 0) {
+    selectedBlockClass = ".JS_selectionChildrenInclude";
   }
-  else if(action.closest('.JS_multiSelector__box--selectionChildrenExclude, .JS_multiSelector__box--selectionTitleExclude').length > 0 ) {
-    selectedBlockClass = ".JS_multiSelector__box--selectionChildrenExclude";
+  else if(action.closest('.JS_selectionChildrenExclude, .JS_selectionTitleExclude').length > 0 ) {
+    selectedBlockClass = ".JS_selectionChildrenExclude";
   }
   // otherwise it's from the option. check if it has filter or not
   else {
@@ -135,14 +135,14 @@ function resetGroupAddActions(removeAllActions, children) {
 // also reinit the toggle action, if we want to close it
 function addSelectedBlock(multiSelector, selectedBlockClass){
   // if we already have selectionChildrenExclude
-  if (multiSelector.find('.JS_multiSelector__box--selectionChildren').length > 0) {
-    // if we are only missing JS_multiSelector__box--selectionChildrenInclude
-    if(selectedBlockClass === '.JS_multiSelector__box--selectionChildrenInclude') {
-      multiSelector.find('.JS_multiSelector__box--selectionChildren > .itemBoxTable > .itemBoxBody').prepend(`{% include javascript/selectedBlock-Include.html %}`);
+  if (multiSelector.find('.JS_selectionChildren').length > 0) {
+    // if we are only missing JS_selectionChildrenInclude
+    if(selectedBlockClass === '.JS_selectionChildrenInclude') {
+      multiSelector.find('.JS_selectionChildren > .itemBoxTable > .itemBoxBody').prepend(`{% include javascript/selectedBlock-Include.html %}`);
     }
-    // if we are only missing JS_multiSelector__box--selectionChildrenExclude
-    else if(selectedBlockClass === '.JS_multiSelector__box--selectionChildrenExclude') {
-      multiSelector.find('.JS_multiSelector__box--selectionChildren > .itemBoxTable > .itemBoxBody').append(`{% include javascript/selectedBlock-Exclude.html %}`);
+    // if we are only missing JS_selectionChildrenExclude
+    else if(selectedBlockClass === '.JS_selectionChildrenExclude') {
+      multiSelector.find('.JS_selectionChildren > .itemBoxTable > .itemBoxBody').append(`{% include javascript/selectedBlock-Exclude.html %}`);
     }
   }
   // otherwise we have to add the whole block
@@ -158,8 +158,8 @@ function addSelectedBlock(multiSelector, selectedBlockClass){
       </li>`;
     }
     const selectedBlock = `{% include javascript/selectedBlock.html %}`;
-    multiSelector.find('.JS_multiSelector__box--optionsTitle').before(selectedBlock);
-    const selectionTitle = multiSelector.find('.JS_multiSelector__box--selectionTitle');
+    multiSelector.find('.JS_optionsTitle').before(selectedBlock);
+    const selectionTitle = multiSelector.find('.JS_selectionTitle');
     // enable toggle again
     $(selectionTitle.find('.itemBox__cell--toggle')).on('click', function() {
       const itemBox__row = $(this).closest('.itemBox__row');
@@ -171,7 +171,7 @@ function addSelectedBlock(multiSelector, selectedBlockClass){
 
 // action to handle ADD for a whole group
 function handleComplexGroupAdd(action, children, exclude) {
-  var selectedBlockClass = '.JS_multiSelector__box--selectionChildren';
+  var selectedBlockClass = '.JS_selectionChildren';
   const multiSelector = children.closest('.multiSelector');
   exclude = $(multiSelector[0]).find('.JS_exclude').length > 0;
 
@@ -241,7 +241,7 @@ function handleComplexGroupRemove(action, children, fromSelectedAction, selected
   // remove selected block, set everything to add
   if(fromSelectedAction) {
     // here the "children" were not part of the options block, so we have to look for them
-    const options = multiSelector.find('.JS_multiSelector__box--optionsChildren');
+    const options = multiSelector.find('.JS_optionsChildren');
     var removeAllActions = options.find('li.JS_itemBox__cell--removeAll');
     var childrenToRemove = [];
     const selectedItems = selection.find('.JS_text');
@@ -249,7 +249,7 @@ function handleComplexGroupRemove(action, children, fromSelectedAction, selected
       return $(item).html().trim();
     });
     const optionChildren = options.find('.JS_text');
-    if(selectedBlockClass !== '.JS_multiSelector__box--selectionChildren') {
+    if(selectedBlockClass !== '.JS_selectionChildren') {
       $.each(optionChildren, function(index, child){
         if($.inArray($(child).html().trim(), selectedItemTexts) > -1){
           childrenToRemove = childrenToRemove.concat($(child).closest('ul.itemBox__row'));
@@ -422,7 +422,7 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
     const isAlreadySelected = positionOfItemInSelected >= 0;
 
     // get option items
-    const options = multiSelector.find('.JS_multiSelector__box--optionsChildren');
+    const options = multiSelector.find('.JS_optionsChildren');
     const optionItems = options.find('.JS_text');
     const optionItemTexts = $.map(optionItems, function(item){
       return $(item).html().trim();
@@ -475,7 +475,7 @@ function checkGroupActions() {
   const multiSelector = $('.multiSelector');
 
   // check on the current status group action, remove or add necessary actions
-  const childrenInOptions = multiSelector.find('.JS_itemBox--children:not(.JS_multiSelector__box--selectionChildren):not(.JS_itemBox--children-sublist):not(.JS_itemBox--suggestions)');
+  const childrenInOptions = multiSelector.find('.JS_itemBox--children:not(.JS_selectionChildren):not(.JS_itemBox--children-sublist):not(.JS_itemBox--suggestions)');
   $.each(childrenInOptions, function(index, children) {
     var children = $(children);
     const groupHeader = children.prev();
@@ -527,21 +527,21 @@ function reset(){
 
   $('.multiSelector').each(function(index, multiSelector){
     // probably doesn't belong here, but making sure, we don't have empty selection subgroups
-    const selectionMainTitle = $(multiSelector).find('.JS_multiSelector__box--selectionTitle');
-    const selectionMain = $(multiSelector).find('.JS_multiSelector__box--selectionChildren');
+    const selectionMainTitle = $(multiSelector).find('.JS_selectionTitle');
+    const selectionMain = $(multiSelector).find('.JS_selectionChildren');
     if(selectionMain.find('.JS_text').length === 0) {
       selectionMainTitle.remove();
       selectionMain.remove();
     }
     else {
-      const selectionExcludedTitle = $(multiSelector).find('.JS_multiSelector__box--selectionTitleExclude');
-      const selectionExcluded = $(multiSelector).find('.JS_multiSelector__box--selectionChildrenExclude');
+      const selectionExcludedTitle = $(multiSelector).find('.JS_selectionTitleExclude');
+      const selectionExcluded = $(multiSelector).find('.JS_selectionChildrenExclude');
       if(selectionExcluded.find('.JS_text').length === 0) {
         selectionExcludedTitle.remove();
         selectionExcluded.remove();
       }
-      const selectionIncludedTitle = $(multiSelector).find('.JS_multiSelector__box--selectionTitleInclude');
-      const selectionIncluded = $(multiSelector).find('.JS_multiSelector__box--selectionChildrenInclude');
+      const selectionIncludedTitle = $(multiSelector).find('.JS_selectionTitleInclude');
+      const selectionIncluded = $(multiSelector).find('.JS_selectionChildrenInclude');
       if(selectionIncluded.find('.JS_text').length === 0) {
         selectionIncludedTitle.remove();
         selectionIncluded.remove();

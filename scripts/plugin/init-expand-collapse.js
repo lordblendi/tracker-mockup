@@ -3,7 +3,7 @@
 ////
 
 // default second level collapsed
-const multiOptionChildren = $(".JS_multiSelector__box--optionsChildren").find('.JS_itemBox--children:not(.JS_itemBox--colors)');
+const multiOptionChildren = $(".JS_optionsChildren").find('.JS_itemBox--children:not(.JS_itemBox--colors)');
 const multiOptionBodyRow = $(multiOptionChildren).find('.itemBox__row');
 
 $.Velocity.animate(multiOptionChildren, 'slideUp').then(function() {
@@ -24,7 +24,7 @@ $.Velocity.animate(appNavChildren, 'slideUp').then(function() {
 
 
 // default collapse for filter-tagpicker / options block
-const filterTagPopupChildren = $("#filter-tagpicker .JS_multiSelector__box--optionsChildren, #filter-datepicker .JS_multiSelector__box--optionsChildren");
+const filterTagPopupChildren = $("#filter-tagpicker .JS_optionsChildren, #filter-datepicker .JS_optionsChildren");
 const filterTagPopupBodyRow = $(filterTagPopupChildren).find('.itemBox__row');
 
 $.Velocity.animate(filterTagPopupChildren, 'slideUp').then(function() {

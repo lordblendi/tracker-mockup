@@ -21,7 +21,7 @@ function selectNewSingleItem(row) {
   const newColor = row.find('.JS_color--prefix').css('background-color');
 
   // remove old selected
-  const optionsChildren = row.closest('.JS_multiSelector__box--optionsChildren');
+  const optionsChildren = row.closest('.JS_optionsChildren');
   $(optionsChildren).find('.JS_showSelected').remove();
   // add selected to new one
   $(row).append(`{% include javascript/itemSelected.html %}`);
