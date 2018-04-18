@@ -33,16 +33,18 @@
           <ul class="itemBox__row itemBox__row--item JS_filterableCell">
             <li class="itemBox__cell">
               <div class="itemBox__cellInner JS_toggle--color">
+                <div class="itemBox__value">
 
-                {% include javascript/colorToggle.html color=item.color %}
-                <div class="pmx-selector pmx-selector--readonly">
-                  <div class="pmx-selector__item">
-                    <div class="pmx-selector__block">
-                      <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
+                  {% include javascript/colorToggle.html color=item.color %}
+                  <div class="pmx-selector pmx-selector--readonly">
+                    <div class="pmx-selector__item">
+                      <div class="pmx-selector__block">
+                        <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
+                      </div>
                     </div>
                   </div>
-                </div>
 
+                </div>
               </div>
             </li>
             <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action ui-sortable-handle">
@@ -84,17 +86,19 @@
         <ul class="itemBox__row itemBox__row--item JS_filterableCell">
           <li class="itemBox__cell ">
             <div class="itemBox__cellInner JS_toggle--color">
+              <div class="itemBox__value">
 
-              {% include javascript/colorToggle.html color=item.color %}
-              <div class="pmx-selector pmx-selector--readonly">
-                <div class="pmx-selector__item">
-                  <div class="pmx-selector__block">
-                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
+                {% include javascript/colorToggle.html color=item.color %}
+                <div class="pmx-selector pmx-selector--readonly">
+                  <div class="pmx-selector__item">
+                    <div class="pmx-selector__block">
+                      <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
+                    </div>
                   </div>
                 </div>
+
               </div>
             </div>
-
           </li>
           {% if item.selected == "true" %}
             <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">

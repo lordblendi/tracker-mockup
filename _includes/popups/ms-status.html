@@ -34,16 +34,18 @@
       <ul class="itemBox__row itemBox__row--item JS_filterableCell">
         <li class="itemBox__cell">
           <div class="itemBox__cellInner">
+            <div class="itemBox__value">
 
-            <div class="pmx-selector pmx-selector--readonly">
-              <div class="pmx-selector__item">
-                <div class="pmx-selector__block">
-                  <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
-                  <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
+              <div class="pmx-selector pmx-selector--readonly">
+                <div class="pmx-selector__item">
+                  <div class="pmx-selector__block">
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
+                    <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
+                  </div>
                 </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </li>
         {% if item.selected == "true" %}

@@ -51,14 +51,18 @@
           <div class="itemBoxBody--sortableConnected itemBoxBody--sortableInclude ui-sortable">
             {% for item in site.data.newmultiselect.selected.included %}
               <ul class="itemBox__row JS_filterableCell">
-              <li class="itemBox__cell " style="flex-grow: 6;" data-flex="6">
+              <li class="itemBox__cell itemBox__cell--flex6">
                 <div class="itemBox__cellInner ">
-                  <div class="pmx-selector pmx-selector--readonly">
-                    <div class="pmx-selector__item">
-                      <div class="pmx-selector__block">
-                        <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item}}</div>
+                  <div class="itemBox__value">
+
+                    <div class="pmx-selector pmx-selector--readonly">
+                      <div class="pmx-selector__item">
+                        <div class="pmx-selector__block">
+                          <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item}}</div>
+                        </div>
                       </div>
                     </div>
+
                   </div>
                 </div>
               </li>
@@ -98,13 +102,17 @@
           <ul class="itemBox__row JS_filterableCell JS_children-closed">
             <li class="itemBox__cell ">
               <div class="itemBox__cellInner ">
-                {% include blocks/popup/include-exclude-selector.html selected="include"%}
-                <div class="pmx-selector pmx-selector--readonly">
-                  <div class="pmx-selector__item">
-                    <div class="pmx-selector__block">
-                      <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
+                <div class="itemBox__value">
+
+                  {% include blocks/popup/include-exclude-selector.html selected="include"%}
+                  <div class="pmx-selector pmx-selector--readonly">
+                    <div class="pmx-selector__item">
+                      <div class="pmx-selector__block">
+                        <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
+                      </div>
                     </div>
                   </div>
+
                 </div>
               </div>
             </li>

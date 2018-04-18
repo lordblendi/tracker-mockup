@@ -186,7 +186,7 @@
       &:hover {
         .itemBox__cellInner {
           .itemBox__value,
-          .itemBox__action {
+          .itemBox__action:not(.itemBox__action--hidden) {
             transform: translateY(-2px);
           }
         }
