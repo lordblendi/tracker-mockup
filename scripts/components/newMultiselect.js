@@ -139,11 +139,11 @@ function addSelectedBlock(multiSelector, selectedBlockClass){
   if (multiSelector.find('.JS_selectionChildren').length > 0) {
     // if we are only missing JS_selectionChildrenInclude
     if(selectedBlockClass === '.JS_selectionChildrenInclude') {
-      multiSelector.find('.JS_selectionChildren > .itemBoxTable > .itemBoxBody').prepend(`{% include javascript/selectedBlock-Include.html %}`);
+      multiSelector.find('.JS_selectionChildren .JS_sortable').prepend(`{% include javascript/selectedBlock-Include.html %}`);
     }
     // if we are only missing JS_selectionChildrenExclude
     else if(selectedBlockClass === '.JS_selectionChildrenExclude') {
-      multiSelector.find('.JS_selectionChildren > .itemBoxTable > .itemBoxBody').append(`{% include javascript/selectedBlock-Exclude.html %}`);
+      multiSelector.find('.JS_selectionChildren .JS_sortable').append(`{% include javascript/selectedBlock-Exclude.html %}`);
     }
   }
   // otherwise we have to add the whole block
@@ -185,7 +185,7 @@ function handleComplexGroupAdd(action, children, exclude) {
 
     // finding all the already selected items
     const optionItems = children.find('ul .JS_text');
-    const itemBoxBody = selection.find('> .itemBoxTable > .itemBoxBody');
+    const itemBoxBody = selection.find('.JS_sortable');
     const selectedItems = selection.find('.JS_text');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html().trim();
@@ -206,7 +206,7 @@ function handleComplexGroupAdd(action, children, exclude) {
         const JS_filterableCell = $(item).closest('.JS_filterableCell');
         const filter = $(JS_filterableCell).find('.JS_inclExl');
         if(filter.length > 0) {
-          const filteredSelectedBlockSelector = selectedBlockClass + filter.attr('data-filter') + " > .itemBoxTable > .itemBoxBody";
+          const filteredSelectedBlockSelector = selectedBlockClass + filter.attr('data-filter') + " JS_sortable";
           neededSelectedBlock = $(itemBoxBody).find(filteredSelectedBlockSelector);
         }
         neededSelectedBlock.append(getNewItem(item, exclude));
@@ -374,7 +374,6 @@ function checkCounter(selectionChildren){
 
 // function to handle add/remove for one item
 function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
-  debugger;
   const add = $(action).hasClass('JS_itemBox__action--add');
   const remove = $(action).hasClass('JS_itemBox__action--remove');
   const toggle = $(action).hasClass('JS_toggle');
@@ -440,7 +439,7 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
     // if selecting and it's not selected yet
     // create a new item, add it to selected and replace action in options
     if(add && !isAlreadySelected) {
-      const itemBoxBody = selection.find('> .itemBoxTable > .itemBoxBody');
+      const itemBoxBody = selection.find('.JS_sortable');
       itemBoxBody.append(getNewItem(actionItem, exclude));
 
       const newItem = $(itemBoxBody).find('> .itemBox__row').last();
