@@ -30,7 +30,7 @@
           <ul class="itemBox__row itemBox__row--item itemBox__row--action JS_filterableCell ">
             <li class="itemBox__cell JS_textAction">
               <div class="itemBox__cellInner JS_text">
-                <div>{{selected}}</div>
+                <div class="itemBox__value">{{selected}}</div>
               </div>
             </li>
             <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action">
@@ -94,7 +94,9 @@
           {% for item in group.items %}
             <ul class="itemBox__row itemBox__row--item itemBox__row--action JS_filterableCell">
               <li class="itemBox__cell JS_textAction">
-                <div class="itemBox__cellInner JS_text">{{item.name}}</div>
+                <div class="itemBox__cellInner JS_text">
+                  <div class="itemBox__value">{{item.name}}</div>
+                </div>
               </li>
               {% if item.selected == "true" %}
                 <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">

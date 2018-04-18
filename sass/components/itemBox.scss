@@ -151,16 +151,6 @@
         }
       }
 
-      &--action {
-        &:hover {
-          .itemBox__cellInner {
-            *:not(.itemBox__action--hidden) {
-              transform: translateY(-2px);
-            }
-          }
-        }
-      }
-
       &:nth-of-type(odd) {
         .itemBox {
           &__cell:not(.itemBox__cell--flex0) {
@@ -187,6 +177,17 @@
             &--hidden {
               opacity: 1;
             }
+          }
+        }
+      }
+    }
+
+    &--action {
+      &:hover {
+        .itemBox__cellInner {
+          .itemBox__value,
+          .itemBox__action {
+            transform: translateY(-2px);
           }
         }
       }
@@ -281,10 +282,14 @@
     }
   }
 
+  &__value {
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+  }
+
   &__action {
     cursor: pointer;
     transition: all .3s ease-in-out;
-    font-family: 'tenforce', sans-serif;
     color: #CCAF75;
 
     &:hover {
