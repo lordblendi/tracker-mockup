@@ -27,9 +27,11 @@
     <div class="itemBox JS_itemBox--children itemBox--children JS_selectionChildren">
       <div class="JS_sortable">
         {% for selected in site.data.columnpicker.selected %}
-          <ul class="itemBox__row itemBox__row--item JS_filterableCell ">
-            <li class="itemBox__cell itemBox__cell--actionToggle JS_textAction">
-              <div class="itemBox__cellInner JS_text">{{selected}}</div>
+          <ul class="itemBox__row itemBox__row--item itemBox__row--action JS_filterableCell ">
+            <li class="itemBox__cell JS_textAction">
+              <div class="itemBox__cellInner JS_text">
+                <div>{{selected}}</div>
+              </div>
             </li>
             <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action">
               <div class="itemBox__cellInner">
