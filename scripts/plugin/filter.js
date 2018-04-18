@@ -4,7 +4,7 @@ $('.JS_multiSelector__filterInput').keyup(function() {
   var multiSelector = $(input).closest(".multiSelector");
   filterResults(input, '.JS_selectionChildren .JS_filterableCell, .JS_optionsChildren .JS_filterableCell');
 
-  checkGroups(multiSelector, '.JS_multiSelector__box  .itemBox__row:not(.JS_filterableCell)');
+  checkGroups(multiSelector, '.JS_itemBox  .itemBox__row:not(.JS_filterableCell)');
 
   reInitActions(multiSelector);
 });
@@ -101,7 +101,7 @@ function checkGroups(multiSelector, possibleChildren) {
 // where the input field is
 function reInitActions(multiSelector) {
   // normal + x actions
-  $(multiSelector).find('.JS_multiSelector__box .itemBox__action').on('click', function(){
+  $(multiSelector).find('.JS_itemBox .JS_itemBox__action').on('click', function(){
     const action = $(this);
     handleActionOnclick(action);
   });

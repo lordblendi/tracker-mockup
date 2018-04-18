@@ -1,6 +1,6 @@
 <div class="multiSelector multiSelector--popup JS_multiSelector--simpleText JS_multiSelector--textAction" id="multiSelector-columnpicker">
 
-  <div class="itemBox JS_multiSelector__box">
+  <div class="itemBox JS_itemBox">
     <ul class="itemBox__row">
       <li class="itemBox__cell">
         <div class="itemBox__cellInner">
@@ -10,14 +10,14 @@
     </ul>
   </div>
 
-  <div class="itemBox JS_multiSelector__box">
+  <div class="itemBox JS_itemBox">
     <ul class="itemBox__row JS_selectionTitle">
       <li class="itemBox__cell itemBox__cell--action JS_toggle">
         <div class="itemBox__cellInner">
           <div class="itemBox__action">ऄ Selected</div>
         </div>
       </li>
-      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
         <div class="itemBox__cellInner">
           <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected">—</div>
         </div>
@@ -36,7 +36,7 @@
                 <div class="itemBox__action itemBox__action--hidden">އ</div>
               </div>
             </li>
-            <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action  JS_itemBox__cell--remove">
+            <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action  JS_itemBox__cell--remove JS_itemBox__action">
               <div class="itemBox__cellInner itemBox__cellInner--action">
                 <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
               </div>
@@ -73,14 +73,14 @@
             </div>
           </li>
           {% if group.noneSelected == "false" %}
-            <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll">
+            <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
               <div class="itemBox__cellInner">
                 <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove">—</div>
               </div>
             </li>
           {% endif %}
           {% if group.allSelected == "false" %}
-            <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__cell--addAll">
+            <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__cell--addAll JS_itemBox__action">
               <div class="itemBox__cellInner">
                 <div class="itemBox__action JS_itemBox__action--add JS_itemBox__action--addAll">ބ</div>
               </div>
@@ -95,13 +95,13 @@
                 <div class="itemBox__cellInner JS_text">{{item.name}}</div>
               </li>
               {% if item.selected == "true" %}
-                <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove">
+                <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
                   <div class="itemBox__cellInner">
                     <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove">—</div>
                   </div>
                 </li>
               {% else %}
-                <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--add">
+                <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__action">
                   <div class="itemBox__cellInner">
                     <div class="itemBox__action JS_itemBox__action--add">ބ</div>
                   </div>

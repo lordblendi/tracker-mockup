@@ -4,23 +4,24 @@
 
 // COMPLEX multiSelector
 // set actions for + and X
-$('.multiSelector .JS_multiSelector__box .itemBox__action').on('click', function(){
+$('.multiSelector .JS_itemBox .JS_itemBox__action').on('click', function(){
   const action = $(this);
   handleActionOnclick(action);
 });+
-$('.multiSelector .JS_multiSelector__box .JS_textAction').on('click', function(){
+$('.multiSelector .JS_itemBox .JS_textAction').on('click', function(){
   handleTextAction($(this));
 });
 
 function handleTextAction(text) {
   const bodyRow = text.closest('.itemBox__row');
   // find the first add/remove action close to the text
-  $(bodyRow).find('.itemBox__action:not(.itemBox__action--drag)').trigger('click');
+  $(bodyRow).find('.JS_itemBox__action:not(.itemBox__action--drag)').trigger('click');
 
 }
 
 // handles onclick`
 function handleActionOnclick(action) {
+  action = $(action).find('.itemBox__action');
   // if this just shows selected, don't do anything (has same design css class)
   if(action.hasClass('JS_showSelected')) {
     return;
@@ -373,6 +374,7 @@ function checkCounter(selectionChildren){
 
 // function to handle add/remove for one item
 function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
+  debugger;
   const add = $(action).hasClass('JS_itemBox__action--add');
   const remove = $(action).hasClass('JS_itemBox__action--remove');
   const toggle = $(action).hasClass('JS_toggle');
@@ -549,12 +551,12 @@ function reset(){
     }
 
     // reinitiate onclick and reorder actions in selection blocks
-    $(multiSelector).find('.JS_multiSelector__box .itemBox__action').off('click').on('click', function(){
+    $(multiSelector).find('.JS_itemBox .JS_itemBox__action').off('click').on('click', function(){
       const action = $(this);
       handleActionOnclick(action);
     });
     window.setTimeout( function() {
-        $(multiSelector).find('.JS_multiSelector__box .JS_textAction').off('click').on('click', function(){
+        $(multiSelector).find('.JS_itemBox .JS_textAction').off('click').on('click', function(){
           handleTextAction($(this));
         });
     }, 250);
