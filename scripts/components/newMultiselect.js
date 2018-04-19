@@ -560,20 +560,7 @@ function reset(){
         });
     }, 250);
     // reinitiate reorder functionality
-    if ($(multiSelector).hasClass('JS_multiSelector--withFilter')){
-      $(multiSelector).find(".itemBoxBody--sortableInclude, .itemBoxBody--sortableExclude").sortable({
-        handle: '.itemBox__cell--draggable',
-        placeholder: 'itemBox__cell--draggablePlaceholder',
-        connectWith: ".itemBoxBody--sortableConnected"
-      });
-    }
-    else {
-      $(multiSelector).find(".JS_sortable").sortable({
-        handle: '.itemBox__cell--draggable',
-        placeholder: 'itemBox__cell--draggablePlaceholder'
-      });
-    }
-
+    reinitSortable(multiSelector);
 
     // reinitiate selectorItem inside multiselector
     $(multiSelector).find('.JS_selectorItem').off('click').on('click', function() {
