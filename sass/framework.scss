@@ -13,7 +13,7 @@
 
 .row {
   position: relative;
-  
+
   &::after {
     content: '';
     display: table;
@@ -139,4 +139,26 @@
   padding: 5px;
   min-width: 40px;
   text-align: center;
+}
+
+/* States */
+
+.loading {
+
+}
+
+.disabled {
+
+}
+
+.saved {
+
+}
+
+/* Animations */
+
+.animation {
+  &--hover {
+
+  }
 }
