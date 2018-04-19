@@ -1,4 +1,4 @@
-{% assign selectedClass = "pmx-selector__item--selected" %}
+{% assign selectedClass = "selector__item--selected" %}
 
 
 {% assign includeSelectedClass = {selectedClass} %}
@@ -12,16 +12,16 @@
 
 
 
-<div class="pmx-selector pmx-selector--expanded JS_selector">
-  <div class="pmx-selector__item JS_selectorItem  {{includeSelectedClass}} JS_itemBox__cellInner--inclExcl" data-filter="Include">
-    <div class="pmx-selector__block">
-      <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Include</div>
+<div class="selector selector--expanded JS_selector">
+  <div class="selector__item JS_selectorItem  {{includeSelectedClass}} JS_itemBox__cellInner--inclExcl" data-filter="Include">
+    <div class="selector__block">
+      <div class="selector__blockPart selector__blockPart--label">Include</div>
     </div>
   </div>
-  <div class="pmx-selector__itemSeperator"></div>
-  <div class="pmx-selector__item JS_selectorItem {{excludeSelectedClass}} JS_itemBox__cellInner--inclExcl" data-filter="Exclude">
-    <div class="pmx-selector__block">
-      <div class="pmx-selector__blockPart pmx-selector__blockPart--label">Exclude</div>
+  <div class="selector__itemSeperator"></div>
+  <div class="selector__item JS_selectorItem {{excludeSelectedClass}} JS_itemBox__cellInner--inclExcl" data-filter="Exclude">
+    <div class="selector__block">
+      <div class="selector__blockPart selector__blockPart--label">Exclude</div>
     </div>
   </div>
 </div>
