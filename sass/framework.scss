@@ -155,10 +155,20 @@
 
 }
 
-/* Animations */
+/* Hover */
 
-.animation {
-  &--hover {
+.effect1 {
+  transform: translateY(-1px);
+  box-shadow: 0 0 100px rgba(0,0,0,.5); // less shadow
+}
 
-  }
+.effect2 {
+  opacity: .7;
+  transform: translateY(-1px); // ????
+}
+
+.effect3 {
+  transform: translateY(-1px);
+  opacity: .7;
+  filter: saturate(.7);
 }
