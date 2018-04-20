@@ -2,15 +2,15 @@
   {% for item in site.data.breadcrumbs.items %}
     <div class="breadcrumbs__item JS_breadcrumbs__item">
 
-      <div class="pmx-selector">
-        <div class="pmx-selector__item pmx-selector__item--selected">
-          <div class="pmx-selector__block">
-            <div class="pmx-selector__blockPart pmx-selector__blockPart--label MULTISELECT__POPUP JS_breadcrumbPopup" data-popid="#multiSelector-breadcrumb">{{item.label}}</div>
+      <div class="selector">
+        <div class="selector__item selector__item--selected">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--label MULTISELECT__POPUP JS_breadcrumbPopup" data-popid="#multiSelector-breadcrumb">{{item.label}}</div>
           </div>
         </div>
       </div>
       
-      <div class="pmx-link">
+      <div class="link">
         <a href="#">{{item.name}}</a>
       </div>
 

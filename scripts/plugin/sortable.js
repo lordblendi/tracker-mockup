@@ -2,13 +2,24 @@
 ---
 
 // set sortable in multiselect options
-$(".multiSelector:not(.JS_multiSelector--withFilter) .JS_sortable").sortable({
-  handle: '.itemBox__cell',
-  placeholder: 'itemBox__cell'
-});
+$('.multiSelector').each(function(){
+  reinitSortable($(this));
+})
 
-$(".multiSelector.JS_multiSelector--withFilter .itemBoxBody--sortableInclude, .multiSelector.JS_multiSelector--withFilter .itemBoxBody--sortableExclude").sortable({
-  handle: '.itemBox__cell',
-  placeholder: 'itemBox__cell',
-  connectWith: ".itemBoxBody--sortableConnected"
-});
+
+// reinitiate reorder functionality
+function reinitSortable(multiSelector) {
+  if ($(multiSelector).hasClass('JS_multiSelector--withFilter')){
+    $(multiSelector).find(".itemBoxBody--sortableInclude, .itemBoxBody--sortableExclude").sortable({
+      handle: '.JS_itemBox__cell--draggable',
+      placeholder: 'itemBox__row itemBox__row--item',
+      connectWith: ".itemBoxBody--sortableConnected"
+    });
+  }
+  else {
+    $(multiSelector).find(".JS_sortable").sortable({
+      handle: '.JS_itemBox__cell--draggable',
+      placeholder: 'itemBox__row itemBox__row--item'
+    });
+  }
+}

@@ -5,17 +5,17 @@
         <div class="itemBox__cellInner JS_toggle--color">
 
           {% include javascript/colorToggle.html color=item.color %}
-          <div class="pmx-selector pmx-selector--readonly">
-            <div class="pmx-selector__item">
-              <div class="pmx-selector__block">
-                <div class="pmx-selector__blockPart pmx-selector__blockPart--field JS_text">{{item.name}}</div>
+          <div class="selector selector--readonly">
+            <div class="selector__item">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field JS_text">{{item.name}}</div>
               </div>
             </div>
           </div>
 
         </div>
       </li>
-      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action ui-sortable-handle">
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">
         <div class="itemBox__cellInner">
           <div class="itemBox__action itemBox__action--hidden">އ</div>
         </div>

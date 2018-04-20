@@ -1,5 +1,5 @@
 // action for triggering old-multiselect-popup in /pmx
-$('.JS_old-pmx-multiselect-trigger').click(function() {
+$('.JS_old-multiselect-trigger').click(function() {
   var oldpopup = $('.old-multiselect-popup');
   // if hidden, show it and add overlay
   if(oldpopup.hasClass('old-multiselect-popup--hidden')) {

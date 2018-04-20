@@ -88,15 +88,15 @@
     z-index: 9999;
   }
 
-  .pmx-selector__item {
+  .selector__item {
     &:hover, &--selected {
-      &.JS_pmx-selector__item--include {
-        .pmx-selector__block {
+      &.JS_selector__item--include {
+        .selector__block {
           color: #C79D54 !important;
         }
       }
-      &.JS_pmx-selector__item--exclude {
-        .pmx-selector__block {
+      &.JS_selector__item--exclude {
+        .selector__block {
           color: red !important;
         }
       }

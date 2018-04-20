@@ -21,16 +21,16 @@
   {% if splittedDay contains "-" %}
     {% assign splittedDayArray = {splittedDay} | split: "-" %}
     {% assign day = {splittedDayArray.first} %}
-    {% assign dayClass = {splittedDayArray.last} | prepend: "pmx-selector_date--" %}
+    {% assign dayClass = {splittedDayArray.last} | prepend: "selector_date--" %}
   {% endif %}
 
   <li class="itemBox__cell">
     <div class="itemBox__cellInner">
 
-      <div class="pmx-selector pmx-selector--readonly {{ dayClass }}">
-        <div class="pmx-selector__item">
-          <div class="pmx-selector__block ">
-            <div class="pmx-selector__blockPart pmx-selector__blockPart--field ">{{ day }}</div>
+      <div class="selector selector--readonly {{ dayClass }}">
+        <div class="selector__item">
+          <div class="selector__block ">
+            <div class="selector__blockPart selector__blockPart--field ">{{ day }}</div>
           </div>
         </div>
       </div>
