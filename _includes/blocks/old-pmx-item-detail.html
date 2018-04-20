@@ -35,14 +35,14 @@
                         </div>
                         <div class="tab-scroller">
                             <ul>
-                                <li id="OverviewTab" tab-name="overview" class="selected"><a href="#"><span>Overview</span></a></li>
-                                <li id="SolutionTab" tab-name="solution"><a href="#"><span>Solution</span></a></li>
-                                <li id="ChilditemsTab0" tab-name="Bugs"><a href="#"><span>Bugs <span>0</span></span></a></li>
+                                <li class="old-tab-selector selected" id="OverviewTab" tab-name="overview" ><a href="#"><span>Overview</span></a></li>
+                                <li class="old-tab-selector" id="SolutionTab" tab-name="solution"><a href="#"><span>Solution</span></a></li>
+                                <li class="old-tab-selector" id="ChilditemsTab0" tab-name="Bugs"><a href="#"><span>Bugs <span>0</span></span></a></li>
                             </ul>
                         </div>
                     </div>
 
-                    <div id="ctl00_PageContentPlaceHolder_ctl00_contentcontainer">
+                    <div class="tab-content" tab-name="overview">
                         <div id="OverviewTab_Content" class="tid-content">
                             <h2 class="pagetitle">Details</h2>
                             <div class="newgrid containsipe">
@@ -104,7 +104,14 @@
                             <div class="clear"></div>
                         </div>
                     </div>
-                </div>
+
+                    <div class="tab-content" tab-name="solution" style="display: none;">
+                        solution tab
+                    </div>
+                    <div class="tab-content" tab-name="Bugs" style="display: none;">
+                        bug tab
+                    </div>
+                  </div>
 
 
             </div>
