@@ -1,79 +1,0 @@
-[1mdiff --git a/_includes/blocks/old-pmx-item-detail.html b/_includes/blocks/old-pmx-item-detail.html[m
-[1mindex 480df27..1852198 100644[m
-[1m--- a/_includes/blocks/old-pmx-item-detail.html[m
-[1m+++ b/_includes/blocks/old-pmx-item-detail.html[m
-[36m@@ -9,21 +9,21 @@[m
-         <div id="itemdetailpage" class="item-detail ">[m
-             <div id="ctl00_PageContentPlaceHolder_ctl00_ItemDetailContent">[m
- [m
-[31m-                <div class="header">[m
-[31m-                    <div class="actions">[m
-[31m-                        <ul id="ctl00_PageContentPlaceHolder_ctl00_ItemTools_itemdetailtools">[m
-[31m-                            <li class="delete" title="Permanently delete this item. This cannot be undone"><a href="#">Delete</a></li>[m
-[31m-                            <li class="copy" title="Create a new item based on the one currently displayed"><a href="#">Copy</a></li>[m
-[31m-                            <li class="move" title="Move this item from its current list to a new workspace and/or list"><a href="#">Move</a></li>[m
-[31m-                            <li class="new" title="Attach this item to (another) parent item as a child"><a href="#">Link parent</a></li>[m
-[31m-                            <li class="mail" title="Mail the content of this item and its attachments to anyone"><a href="#">Email</a></li>[m
-[31m-                            <li class="print" title="Create a printable view of all tabs of this item"><a href="#">Print</a></li>[m
-[31m-                            <li class="time" title="Show which time sheet registrations have been done on this item"><a href="#">Show time</a></li>[m
-[31m-                            <li class="time" title="Enter a Time Sheet Registration for this item"><a href="#">Add time</a></li>[m
-[31m-                            <li class="copy" title="Save all outstanding edits"><a href="#">Save changes</a></li>[m
-[31m-                        </ul>[m
-[31m-                    </div>[m
-[32m+[m[32m              <div class="header">[m[41m[m
-[32m+[m[32m                <div class="actions">[m[41m[m
-[32m+[m[32m                  <ul id="ctl00_PageContentPlaceHolder_ctl00_ItemTools_itemdetailtools">[m[41m[m
-[32m+[m[32m                    <li class="delete" title="Permanently delete this item. This cannot be undone"><a href="#">Delete</a></li>[m[41m[m
-[32m+[m[32m                    <li class="copy" title="Create a new item based on the one currently displayed"><a href="#">Copy</a></li>[m[41m[m
-[32m+[m[32m                    <li class="move" title="Move this item from its current list to a new workspace and/or list"><a href="#">Move</a></li>[m[41m[m
-[32m+[m[32m                    <li class="new" title="Attach this item to (another) parent item as a child"><a href="#">Link parent</a></li>[m[41m[m
-[32m+[m[32m                    <li class="mail" title="Mail the content of this item and its attachments to anyone"><a href="#">Email</a></li>[m[41m[m
-[32m+[m[32m                    <li class="print" title="Create a printable view of all tabs of this item"><a href="#">Print</a></li>[m[41m[m
-[32m+[m[32m                    <li class="time" title="Show which time sheet registrations have been done on this item"><a href="#">Show time</a></li>[m[41m[m
-[32m+[m[32m                    <li class="time" title="Enter a Time Sheet Registration for this item"><a href="#">Add time</a></li>[m[41m[m
-[32m+[m[32m                    <li class="copy" title="Save all outstanding edits"><a href="#">Save changes</a></li>[m[41m[m
-[32m+[m[32m                  </ul>[m[41m[m
-                 </div>[m
-[32m+[m[32m              </div>[m[41m[m
- [m
-                 <div class="tid-content-wrapper">[m
-                     <div id="tabs" class="tid-sidebar">[m
-[1mdiff --git a/sass/framework.scss b/sass/framework.scss[m
-[1mindex 306b6f1..2e54149 100644[m
-[1m--- a/sass/framework.scss[m
-[1m+++ b/sass/framework.scss[m
-[36m@@ -13,7 +13,7 @@[m
- [m
- .row {[m
-   position: relative;[m
-[31m-  [m
-[32m+[m[41m[m
-   &::after {[m
-     content: '';[m
-     display: table;[m
-[36m@@ -140,3 +140,25 @@[m
-   min-width: 40px;[m
-   text-align: center;[m
- }[m
-[32m+[m[41m[m
-[32m+[m[32m/* States */[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m.loading {[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m}[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m.disabled {[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m}[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m.saved {[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m}[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m/* Animations */[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m.animation {[m[41m[m
-[32m+[m[32m  &--hover {[m[41m[m
-[32m+[m[41m[m
-[32m+[m[32m  }[m[41m[m
-[32m+[m[32m}[m[41m[m
