@@ -1,8 +1,3 @@
-// toggle simple
-$('.JS_selector').on('click', function() {
-  $(this).toggleClass('selector--clicked');
-});
-
 // toggle button actions
 $('.JS_selectorItem').on('click', function() {
   const selectorValue = $(this);

@@ -14,7 +14,7 @@
   </div>
 
   <div class="itemBox JS_itemBox">
-    <ul class="itemBox__row JS_selectionTitle">
+    <ul class="itemBox__row itemBox__row--item JS_selectionTitle">
       <li class="itemBox__cell itemBox__cell--action JS_toggle">
         <div class="itemBox__cellInner">
           <div class="itemBox__action">ऄ Selected</div>
@@ -89,6 +89,7 @@
               <div class="itemBox__value">
 
                 {% include javascript/colorToggle.html color=item.color %}
+
                 <div class="selector selector--readonly">
                   <div class="selector__item">
                     <div class="selector__block">
