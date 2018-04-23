@@ -109,6 +109,12 @@
 
                             <div id="CommentsTab_Content" class="tid-content">
 
+                              <div class="newgrid">
+                                <div class="comment-col-footer-button">
+                                  <a class="comment-expand button color-blue" tabindex="-1"><span>Expand all</span></a>
+                                </div>
+                              </div>
+
                               <ol id="commentList" class="comments">
                                 <li id="">
                                   <div class="comment-col-container">
@@ -183,47 +189,104 @@
                                       </tbody>
                                     </table>
                                   </div>
-                                  <div class="noprint newgrid">
-                                    <div class="comment-col-footer-button">
-                                      <a class="comment-expand button color-blue" tabindex="-1"><span>Expand all</span></a>
-                                    </div>
-                                  </div>
+
                                   <div class="clear"></div>
                                 </div>
 
                           </div><!-- /.col -->
                           <div class="col col-6">
 
-                            <ol id="attachmentList" class="attachments"><li class="attachment" data-ft-file="qa_tagscats.jpg"><a class="remove" onclick="attachments.removeAttachment(this, 267016)" href="#"></a><a class="inner" target="_blank" href="/download/attachment/267016"><div class="file"><div class="thumbnail"><img src="https://tracker.tenforce.com/download/attachmentthumb/267016" alt="qa_tagscats.jpg"></div></div><div class="filename">qa_tagscats.jpg</div></a><div class="meta"><div class="filename">qa_tagscats.jpg</div><div id="attachmentComment_267016" class="description hasipe addcontent" title="Click here to edit" ipe_id="267016" ipe_type="BigText" ipe_property="LinkReason" ipe_editmodeallowed="true" ipe_object="ItemDocument"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</div><hr class="divider"><div class="uploaded-by">Uploaded by<div class="author"> <span>Konstantin Kharlov</span></div> <div class="date">on  <span class="time">3/02/2016 at 9:17</span></div></div><div class="filesize">0,19MB</div></div></li></ol>
+                            <ol id="attachmentList" class="attachments">
+                              <li class="attachment" data-ft-file="qa_tagscats.jpg">
+                                <a class="remove" onclick="attachments.removeAttachment(this, 267016)" href="#"></a>
+                                <a class="inner" target="_blank" href="/download/attachment/267016">
+                                  <div class="file">
+                                    <div class="thumbnail">
+                                      <img src="./assets/images/files.jpg" alt="qa_tagscats.jpg">
+                                    </div>
+                                  </div>
+                                  <div class="filename">qa_tagscats.jpg</div>
+                                </a>
+                                <div class="meta">
+                                  <div class="filename">qa_tagscats.jpg</div>
+                                  <div id="attachmentComment_267016" class="description hasipe addcontent" title="Click here to edit" ipe_id="267016" ipe_type="BigText" ipe_property="LinkReason" ipe_editmodeallowed="true" ipe_object="ItemDocument">
+                                    <a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit
+                                  </div><hr class="divider">
+                                  <div class="uploaded-by">
+                                    Uploaded by<div class="author"> <span>Konstantin Kharlov</span></div> <div class="date">on  <span class="time">3/02/2016 at 9:17</span></div>
+                                  </div>
+                                  <div class="filesize">0,19MB</div>
+                                </div>
+                              </li>
+                              <li class="attachment" data-ft-file="qa_tagscats.jpg">
+                                <a class="remove" onclick="attachments.removeAttachment(this, 267016)" href="#"></a>
+                                <a class="inner" target="_blank" href="/download/attachment/267016">
+                                  <div class="file">
+                                    <div class="thumbnail">
+                                      <img src="./assets/images/files.jpg" alt="qa_tagscats.jpg">
+                                    </div>
+                                  </div>
+                                  <div class="filename">qa_tagscats.jpg</div>
+                                </a>
+                                <div class="meta">
+                                  <div class="filename">qa_tagscats.jpg</div>
+                                  <div id="attachmentComment_267016" class="description hasipe addcontent" title="Click here to edit" ipe_id="267016" ipe_type="BigText" ipe_property="LinkReason" ipe_editmodeallowed="true" ipe_object="ItemDocument">
+                                    <a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit
+                                  </div><hr class="divider">
+                                  <div class="uploaded-by">
+                                    Uploaded by<div class="author"> <span>Konstantin Kharlov</span></div> <div class="date">on  <span class="time">3/02/2016 at 9:17</span></div>
+                                  </div>
+                                  <div class="filesize">0,19MB</div>
+                                </div>
+                              </li>
+                            </ol>
 
                             <div class="clear"></div>
 
                             <div id="item_upload_wrapper" class="newgrid">
                               <h3 id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_newAttachmentLabel">New attachment</h3>
                               <dl>
-                      	        <dt class="label">
-                      	            <div class="radio"><span class="checked"><input id="fileAttachmentRadio" name="upload" checked="checked" style="opacity: 0;" type="radio"></span></div>
-                                      <span id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_Span1">File</span>
-                                  </dt>
-                      	        <dd class="value">
-                      	            <div id="upload_button" class="addcontent fixed">Click here to select a file</div>
-                      	        </dd>
-                      	        <dd class="clear">&nbsp;</dd>
 
-                      	        <dt class="label">
-                                      <div class="radio"><span class=""><input id="urlAttachmentRadio" name="upload" style="opacity: 0;" type="radio"></span></div>
+                                <div class="row">
+                                  <div class="col col-6">
+
+                                    <dt class="label">
+                                      <div class="radio">
+                                        <span class="checked">
+                                          <input id="fileAttachmentRadio" name="upload" checked="checked" style="opacity: 0;" type="radio">
+                                        </span>
+                                      </div>
+                                      <span id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_Span1">File</span>
+                                    </dt>
+                                    <dd class="value">
+                                      <div id="upload_button" class="addcontent fixed">Click here to select a file</div>
+                                    </dd>
+
+                                  </div>
+                                  <div class="col col-6">
+
+                                    <dt class="label">
+                                      <div class="radio">
+                                        <span class="">
+                                          <input id="urlAttachmentRadio" name="upload" style="opacity: 0;" type="radio">
+                                        </span>
+                                      </div>
                                       <span id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_Span2">URL</span>
-                                  </dt>
-                                  <dd class="value">
+                                    </dt>
+                                    <dd class="value">
                                       <input id="urlAttachmentInput" class="text wide" type="text" placeholder="Urls start with https://, references to files start with \\servername\d.">
-                                  </dd>
-                                  <dd class="clear">&nbsp;</dd>
+                                    </dd>
+
+                                  </div>
+                                </div>
+
+
 
                       	        <dt class="label">
                       		        <label id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_Label1" for="fileDescription">Description</label>
                       	        </dt>
                       	        <dd class="value">
-                      		        <textarea id="fileDescription" cols="88" rows="5" class="full"></textarea>
+                      		        <textarea id="fileDescription" cols="88" rows="3" class="full"></textarea>
                       	        </dd>
                       	        <dd class="clear">&nbsp;</dd>
 
