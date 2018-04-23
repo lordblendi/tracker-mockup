@@ -1,84 +1,6 @@
 ---
 ---
 
-.field {
-  position: relative;
-  min-height: 80px;
-  padding: 15px;
-  border: 1px solid transparent;
-  transition: all .3s ease-in-out;
-
-  &--error {
-    .field {
-      &__label {
-        color: --color-secondary;
-      }
-    }
-  }
-
-  &--focus {
-    border: 1px solid #F7F7F7;
-    border-radius: 3px;
-    box-shadow: 0 0 200px rgba(0,0,0,.1);
-
-    .field__label {
-      top: 2px;
-    }
-  }
-
-  &__label {
-    position: relative;
-    top: 2px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: all .15s ease-in-out;
-
-    font-size: 12px;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #808080;
-
-    &--placeholder {
-      top: 14px;
-
-      font-size: 16px;
-      font-weight: 400;
-      font-style: italic;
-      letter-spacing: normal;
-      text-transform: none;
-      opacity: .4;
-    }
-  }
-
-  &__value {
-    position: relative;
-    font-size: 16px;
-    line-height: 40px;
-    margin: -5px -1px;
-    white-space: nowrap;
-    overflow: hidden;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50px;
-      height: 100%;
-      color: rgba(255, 255, 255, 0.95);
-      box-shadow: inset -10px 0 20px 0;
-      pointer-events: none;
-    }
-
-    .selector {
-      margin: 5px 1px;
-    }
-  }
-}
-
 .selector {
   position: relative;
   display: inline-block;
@@ -115,21 +37,25 @@
       cursor: text;
       filter: saturate(1) opacity(1);
     }
-  }
 
-  &--single {
-
+    .selector {
+      &__item {
+        &:active {
+          opacity: 1;
+        }
+      }
+    }
   }
 
   &--singleselect {
     .selector__item {
-      &:not(.selector__item--selected) {
-        &:hover {
-          transform: translateY(1px);
-        }
+      &:hover {
+        transform: translateY(1px);
+      }
 
-        &:active {
-          opacity: 1;
+      &--selected {
+        &:hover {
+          transform: none;
         }
       }
     }
@@ -179,13 +105,6 @@
         opacity: 1;
       }
     }
-
-/*
-  &:hover {
-    box-shadow: 0 2px 8px -2px rgba(0,0,0,0.55);
-    filter: saturate(.85) opacity(.85);
-  }
-*/
 
     &:first-child {
       .selector__block  {
@@ -266,9 +185,6 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       font-size: 16px;
-      font-weight: normal;
-      letter-spacing: normal;
-      text-transform: none;
       backface-visibility: hidden;
 
       &--prefix {

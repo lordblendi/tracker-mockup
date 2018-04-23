@@ -11,7 +11,7 @@
   </div>
 
   <div class="itemBox JS_itemBox">
-    <ul class="itemBox__row JS_selectionTitle">
+    <ul class="itemBox__row itemBox__row--item JS_selectionTitle">
       <li class="itemBox__cell itemBox__cell--action JS_toggle">
         <div class="itemBox__cellInner">
           <div class="itemBox__action">ऄ Selected</div>
@@ -24,7 +24,7 @@
       </li>
     </ul>
 
-    <div class="itemBox JS_itemBox--children itemBox--children JS_selectionChildren">
+    <div class="itemBox JS_itemBox--children JS_selectionChildren">
       <div class="JS_sortable">
         {% for selected in site.data.columnpicker.selected %}
           <ul class="itemBox__row itemBox__row--item itemBox__row--action JS_filterableCell ">
@@ -48,7 +48,7 @@
       </div>
     </div><!-- /.itemBox -->
 
-    <ul class="itemBox__row JS_optionsTitle">
+    <ul class="itemBox__row itemBox__row--item JS_optionsTitle">
       <li class="itemBox__cell itemBox__cell--action JS_toggle">
         <div class="itemBox__cellInner">
           <div class="itemBox__action">ऄ All</div>
@@ -66,9 +66,9 @@
       </li>
     </ul>
 
-    <div class="itemBox JS_itemBox--children itemBox--children JS_optionsChildren">
+    <div class="itemBox JS_itemBox--children JS_optionsChildren">
       {% for group in site.data.columnpicker.options.groups %}
-        <ul class="itemBox__row">
+        <ul class="itemBox__row itemBox__row--item">
           <li class="itemBox__cell itemBox__cell--action JS_toggle">
             <div class="itemBox__cellInner">
               <div class="itemBox__action">{{group.name}}</div>
@@ -90,7 +90,7 @@
           {% endif %}
         </ul>
 
-        <div class="itemBox JS_itemBox--children itemBox--children">
+        <div class="itemBox JS_itemBox--children">
           {% for item in group.items %}
             <ul class="itemBox__row itemBox__row--item itemBox__row--action JS_filterableCell">
               <li class="itemBox__cell JS_textAction">
