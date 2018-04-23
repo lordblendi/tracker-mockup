@@ -200,3 +200,17 @@ sup {
 .item-detail #item_upload_wrapper.newgrid dl dd.value textarea.full {
   border-bottom: 1px solid #AAA;
 }
+
+li.attachment .filename, li.attachment .meta .filename {
+  width: auto;
+}
+li.attachment:hover .inner .filename {
+  padding: 15px 0;
+  left: -15px;
+  width: calc(100% + 30px);
+}
+li.attachment .meta {
+  padding: 0 0 15px;
+  left: 0;
+  width: 100%;
+}
