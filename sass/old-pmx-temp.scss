@@ -159,3 +159,44 @@ sup {
 .radio {
   height: 20px;
 }
+
+
+.item-detail #item_upload_wrapper.newgrid dl dt.label,
+.item-detail #item_upload_wrapper.newgrid dl dt.largelabel,
+.item-detail #item_upload_wrapper.newgrid dl dd.largevalue,
+.item-detail #item_upload_wrapper.newgrid dl dd.value {
+  width: 100%;
+  margin: 0;
+}
+.item-detail #item_upload_wrapper.newgrid dl dd.value input.text.wide,
+.item-detail #item_upload_wrapper.newgrid dl dd.valuetextarea.wide,
+.item-detail #item_upload_wrapper.newgrid dl dd.value select.wide {
+  width: 100%;
+}
+.item-detail #item_upload_wrapper dl dt.label {
+  color: #666;
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  padding: 5px;
+}
+
+.item-detail #item_upload_wrapper.newgrid dl dd.value .addcontent.fixed {
+  border: 0;
+  color: #b0b0b0;
+  font-style: italic;
+  display: block;
+  font-weight: normal;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 300;
+  border-bottom: 1px solid #AAA;
+  line-height: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-detail #item_upload_wrapper.newgrid dl dd.value textarea.full {
+  border-bottom: 1px solid #AAA;
+}
