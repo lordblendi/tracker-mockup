@@ -245,7 +245,7 @@
     min-width: 40px;
     white-space: nowrap;
 
-    &--flex0 {
+    &.flex-grow-0 {
       flex-grow: 0;
       text-align: center;
 
@@ -253,12 +253,6 @@
         padding: 5px;
       }
     }
-    &--flex1 { flex-grow: 1; }
-    &--flex2 { flex-grow: 2; }
-    &--flex3 { flex-grow: 3; }
-    &--flex4 { flex-grow: 4; }
-    &--flex5 { flex-grow: 5; }
-    &--flex6 { flex-grow: 6; }
 
     &--action {
       color: var(--color-primary);
