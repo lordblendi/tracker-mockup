@@ -26,16 +26,6 @@ $(document).ready(function() {
     $('body').addClass('fixed');
   });
 
-  // semsearch hover over action
-  $('.JS_toggle-semsearch-1, .JS_semsearch-1').on('mouseover', function() {
-    $('.JS_semsearch-1').addClass('multiSelector--visible');
-  });
-
-  // semsearch hover out action
-  $('.JS_semsearch-1').on('mouseout', function() {
-    $(this).removeClass('multiSelector--visible');
-  });
-
   // applicable-sliders click actions
   $('.appl-slider__headerToggle').on('click', function(e) {
     e.preventDefault();
