@@ -261,7 +261,7 @@
     &--flex6 { flex-grow: 6; }
 
     &--action {
-      color: #CCAF75;
+      color: var(--color-primary);
 
       &:first-child {
         + .itemBox__cell {
@@ -307,7 +307,7 @@
   &__action {
     cursor: pointer;
     transition: all .3s ease-in-out;
-    color: #CCAF75;
+    color: var(--color-primary);
 
     &:hover {
       transform: translateY(-2px);
