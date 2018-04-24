@@ -22,7 +22,7 @@
           {% include javascript/and-or-selector.html %}
         </div>
       </li>
-      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
         <div class="itemBox__cellInner">
           <div class="itemBox__action JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected">—</div>
         </div>
@@ -41,7 +41,7 @@
               {% include javascript/and-or-selector.html %}
             </div>
           </li>
-          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
             <div class="itemBox__cellInner">
               <div class="itemBox__action JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected">—</div>
             </div>
@@ -51,7 +51,7 @@
           <div class="itemBoxBody--sortableConnected itemBoxBody--sortableInclude ui-sortable">
             {% for item in site.data.newmultiselect.selected.included %}
               <ul class="itemBox__row JS_filterableCell">
-              <li class="itemBox__cell itemBox__cell--flex6">
+              <li class="itemBox__cell flex-grow-6">
                 <div class="itemBox__cellInner ">
                   <div class="itemBox__value">
 
@@ -66,12 +66,12 @@
                   </div>
                 </div>
               </li>
-              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--draggable ui-sortable-handle JS_itemBox__cell--draggable">
+              <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--draggable ui-sortable-handle JS_itemBox__cell--draggable">
                 <div class="itemBox__cellInner">
                   <div class="itemBox__action itemBox__action--drag">އ</div>
                 </div>
               </li>
-              <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
+              <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
                 <div class="itemBox__cellInner">
                   <div class="itemBox__action JS_itemBox__action--remove">—</div>
                 </div>
@@ -89,7 +89,7 @@
           <div class="itemBox__action">ऄ All</div>
         </div>
       </li>
-      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
         <div class="itemBox__cellInner">
           <div class="itemBox__action JS_itemBox__action--removeAll JS_itemBox__action--remove">—</div>
         </div>
@@ -115,13 +115,13 @@
           </div>
         </li>
         {% if item.selected == "true" %}
-          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
+          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
             <div class="itemBox__cellInner">
               <div class="itemBox__action JS_itemBox__action--remove">—</div>
             </div>
           </li>
         {% else %}
-          <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__action">
+          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__action">
             <div class="itemBox__cellInner">
               <div class="itemBox__action JS_itemBox__action--add">ބ</div>
             </div>

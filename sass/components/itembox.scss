@@ -139,7 +139,7 @@
             transition: all .3s ease-in-out;
           }
 
-          &:not(.itemBox__cell--flex0) {
+          &:not(.flex-grow-0) {
             &::after {
               content: '';
               position: absolute;
@@ -169,7 +169,7 @@
 
       &:nth-of-type(odd) {
         .itemBox {
-          &__cell:not(.itemBox__cell--flex0) {
+          &__cell:not(.flex-grow-0) {
             &::after {
               background: linear-gradient(to right, rgba(255,255,255,0) 0%, #FFFFFF 90%, #FFFFFF 100%);
             }
@@ -179,7 +179,7 @@
 
       &:nth-of-type(even) {
         .itemBox {
-          &__cell:not(.itemBox__cell--flex0) {
+          &__cell:not(.flex-grow-0) {
             &::after {
               background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #F2F2F2 90%, #F2F2F2 100%);
             }

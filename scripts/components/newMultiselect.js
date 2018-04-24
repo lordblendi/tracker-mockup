@@ -152,7 +152,7 @@ function addSelectedBlock(multiSelector, selectedBlockClass){
     var andOrSelector = '';
     if(multiSelector.hasClass('JS_multiSelector--withFilter')) {
       selectedFilters = `{% include javascript/selectedBlock-Include.html %}{% include javascript/selectedBlock-Exclude.html %}`;
-      andOrSelector = `<li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action align-right">
+      andOrSelector = `<li class="itemBox__cell flex-grow-0 itemBox__cell--action align-right">
         <div class="itemBox__cellInner">
           {% include javascript/and-or-selector.html %}
         </div>
