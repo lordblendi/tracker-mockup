@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // initialize sticky header for item
   $(".sticky-header").sticky({
-    zIndex: 10
+    zIndex: 9999
   });
 
 });
