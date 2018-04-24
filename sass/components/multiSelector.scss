@@ -2,84 +2,20 @@
 ---
 
 .multiSelector {
-  text-align: left;
-
-  &--popup {
-    opacity: 0;
-    pointer-events: none;
-    z-index: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 300px;
-    width: 100%;
-    box-shadow: 0 0 200px 60px rgba(0,0,0,0.2);
-    transition: opacity .3s ease-in-out;
-
-    &#multiSelector-columnpicker {
-      left: auto;
-      right: 0;
-      margin-top: -50px;
-      width: auto;
-    }
-
-    &-semsearch {
-      top: 10px;
-      left: inherit;
-      right: 60px;
-      width: 50vw;
-    }
-
-    &-breadcrumb {
-      width: 300px;
-      left: inherit;
-    }
-
-    .itemBox {
-
-      .itemBox--children {
-        background-color: transparent;
-
-        &-sublist {
-          padding: 10px 0 10px 10px;
-          background-color: #B2B2B2;
-        }
-      }
-    }
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 300px;
+  box-shadow: 0 0 200px 60px rgba(0,0,0,0.2);
+  transition: opacity .3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
 
   &--colorPicker {
     position: absolute;
     min-width: auto;
     width: auto;
-
-    .itemBoxTable__bodyRow {
-      &::after {
-        height: 0px;
-      }
-    }
-
-    .itemBoxTable__bodyCell {
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 0;
-        background: #B2B2B2;
-        pointer-events: none;
-        transition:
-          all .2s ease-in-out
-        ;
-      }
-
-      &:hover {
-        &::after {
-          height: 2px;
-        }
-      }
-    }
   }
 
   &--visible {
@@ -88,39 +24,13 @@
     z-index: 9999;
   }
 
-  .selector__item {
-    &:hover, &--selected {
-      &.JS_selector__item--include {
-        .selector__block {
-          color: #C79D54 !important;
-        }
-      }
-      &.JS_selector__item--exclude {
-        .selector__block {
-          color: red !important;
-        }
-      }
-    }
-  }
-}
+  .itemBox {
+    background-color: rgba(0, 0, 0, 0.17);
 
-@media (max-width: 900px) {
-  .multiSelector--popup {
-    width: 100%;
-  }
-}
-
-
-.multiSelector {
-  &--popup {
-    .itemBox {
-      background-color: rgba(0, 0, 0, 0.17);
-
-      .itemBox,
-      .itemBox .itemBox,
-      .itemBox .itemBox .itemBox {
-        background-color: transparent;
-      }
+    .itemBox,
+    .itemBox .itemBox,
+    .itemBox .itemBox .itemBox {
+      background-color: transparent;
     }
   }
 }

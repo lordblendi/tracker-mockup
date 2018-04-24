@@ -22,7 +22,6 @@
 // the file extension has to be .css
 
 @import "reset.css";
-@import "framework.css";
 @import "app.css";
 
 // Plugins
@@ -50,3 +49,6 @@
 
 // temporary, because of js
 @import "temporary.css";
+
+// Framework
+@import "framework.css";

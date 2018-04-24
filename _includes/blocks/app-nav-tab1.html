@@ -1,50 +1,46 @@
-<div class="multiSelector">
+<div class="itemBox">
+  <ul class="itemBox__row">
+    <li class="itemBox__cell">
+      <div class="itemBox__cellInner">
+        <input type="search" class="itemBox__input itemBox__input--fluid JS_appNav__filterInput" placeholder="filter through structure items">
+      </div>
+    </li>
+  </ul>
+</div><!-- /.itemBox -->
 
-  <div class="itemBox">
-    <ul class="itemBox__row">
-      <li class="itemBox__cell">
+<div class="itemBox JS_appNavBox">
+  {% for group in site.data.app-nav-tab1.groups %}
+    <ul class="itemBox__row itemBox__row--item">
+      <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_toggle">
         <div class="itemBox__cellInner">
-          <input type="search" class="itemBox__input itemBox__input--fluid JS_appNav__filterInput" placeholder="filter through structure items">
+          <div class="itemBox__action">{{group.icon}}</div>
+        </div>
+      </li>
+      <li class="itemBox__cell itemBox__cell--permalink">
+        <div class="itemBox__cellInner">
+          <div class="JS_text">{{group.name}}</div>
         </div>
       </li>
     </ul>
-  </div><!-- /.itemBox -->
+    <div class="itemBox JS_itemBox--children JS_children-closed">
+      {% for item in group.items %}
+        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+          <li class="itemBox__cell itemBox__cell--permalink">
+            <div class="itemBox__cellInner ">
 
-  <div class="itemBox JS_appNavBox">
-    {% for group in site.data.app-nav-tab1.groups %}
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--flex0 itemBox__cell--action JS_toggle">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action">{{group.icon}}</div>
-          </div>
-        </li>
-        <li class="itemBox__cell itemBox__cell--permalink">
-          <div class="itemBox__cellInner">
-            <div class="JS_text">{{group.name}}</div>
-          </div>
-        </li>
-      </ul>
-      <div class="itemBox JS_itemBox--children JS_children-closed">
-        {% for item in group.items %}
-          <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-            <li class="itemBox__cell itemBox__cell--permalink">
-              <div class="itemBox__cellInner ">
-
-                <div class="selector selector--readonly">
-                  <div class="selector__item">
-                    <div class="selector__block">
-                      <div class="selector__blockPart selector__blockPart--field JS_text">{{item}}</div>
-                    </div>
+              <div class="selector selector--readonly">
+                <div class="selector__item">
+                  <div class="selector__block">
+                    <div class="selector__blockPart selector__blockPart--field JS_text">{{item}}</div>
                   </div>
                 </div>
-
               </div>
-            </li>
-          </ul>
-        {% endfor %}
-      </div>
-    {% endfor %}
-    {% include blocks/popup/ms-load-more.html %}
-  </div><!-- /.itemBox -->
 
-</div><!-- /.multiSelector -->
+            </div>
+          </li>
+        </ul>
+      {% endfor %}
+    </div>
+  {% endfor %}
+  {% include blocks/popup/ms-load-more.html %}
+</div><!-- /.itemBox -->

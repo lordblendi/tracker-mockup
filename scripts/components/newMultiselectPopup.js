@@ -103,7 +103,7 @@ function closeOverlay(){
     'opacity': ''
   });
 
-  $('.multiSelector--popup').css({
+  $('.multiSelector').css({
     'z-index': '0',
     'pointer-events': 'none',
     'opacity': '0',
