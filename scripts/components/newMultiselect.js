@@ -568,7 +568,7 @@ function reset(){
       const selector = selectorValue.closest('.JS_selector');
 
       // only if this is not a multiselect popup toggle
-      if(!selector.hasClass('MULTISELECT__POPUP')) {
+      if(!selector.hasClass('JS_has-popup')) {
         handleSelector(selector, selectorValue);
       }
 

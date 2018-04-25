@@ -202,7 +202,7 @@
 }
 @keyframes animate-popup {
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
@@ -211,6 +211,7 @@
 @keyframes animate-fadein {
   100% {
     opacity: 1;
+    transform: translateY(0px);
   }
 }
 
@@ -248,7 +249,8 @@
 
   &--fadein {
     opacity: 0;
-    animation: animate-fadein 2s ease forwards;
+    transform: translateY(-20px);
+    animation: animate-fadein .3s ease forwards;
   }
 
   &--save {

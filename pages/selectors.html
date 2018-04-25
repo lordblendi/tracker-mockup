@@ -63,7 +63,7 @@ permalink: /selectors
   <div class="field__value">
     <input type="text" value="Not started" class="field__input">
 
-    <div class="selector selector--singleselect MULTISELECT__POPUP JS_selector" data-popid="#multiSelector-1">
+    <div class="selector selector--singleselect JS_has-popup JS_has-popup--error" data-popid="#multiSelector-1">
       <div class="selector__item selector__item--selected JS_selectorItem">
         <div class="selector__block">
           <div class="selector__blockPart selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: #ff9b9b;">ध</div>
@@ -80,7 +80,7 @@ permalink: /selectors
   <div class="field__value">
     <input type="text" value="" class="field__input">
 
-    <div class="selector selector--singleselect MULTISELECT__POPUP JS_selector" data-popid="#multiSelector-2">
+    <div class="selector selector--singleselect JS_has-popup" data-popid="#multiSelector-2">
       <div class="selector__item selector__item--selected JS_selectorItem">
         <div class="selector__block">
           <div class="selector__blockPart selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: #ff9b9b;">ध</div>
@@ -490,7 +490,7 @@ permalink: /selectors
   <div class="field__value">
     <input type="text" value="Design" class="field__input">
 
-    <div class="selector selector--readonly MULTISELECT__POPUP" data-popid="#filter-tagpicker">
+    <div class="selector selector--readonly JS_has-popup" data-popid="#filter-tagpicker">
       <div class="selector__itemSeperator selector__itemSeperator--hasLabel font--label">Include</div>
       <div class="selector__item">
         <div class="selector__block">
@@ -536,7 +536,7 @@ permalink: /selectors
   <div class="field__value">
     <input type="text" value="next 2 weeks (12/03/18-25/03/18)" class="field__input">
 
-    <div class="selector selector--readonly MULTISELECT__POPUP" data-popid="#filter-datepicker">
+    <div class="selector selector--readonly JS_has-popup" data-popid="#filter-datepicker">
       <div class="selector__itemSeperator selector__itemSeperator--hasLabel font--label">Include</div>
       <div class="selector__item">
         <div class="selector__block">
@@ -580,7 +580,7 @@ permalink: /selectors
   <div class="field__value">
     <input type="text" value="282 2013_Maintenance workaround_available" class="field__input">
 
-    <div class="selector selector--multiselect MULTISELECT__POPUP JS_selector" data-popid="#multiSelector-tagpicker">
+    <div class="selector selector--multiselect JS_has-popup JS_selector" data-popid="#multiSelector-tagpicker">
       <div class="selector__item selector__item--selected">
         <div class="selector__block">
           <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;">ग़</div>
@@ -603,7 +603,6 @@ permalink: /selectors
 {% include popups/multiSelector-tags-colors.html %}
 {% include popups/filter-tags.html%}
 {% include popups/filter-date.html%}
-{% include popups/multiSelector-tags-colors.html %}
 
 <script>
   checkEmptyFields();

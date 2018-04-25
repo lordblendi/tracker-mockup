@@ -1,8 +1,9 @@
 // toggle multiselet popup
 // calculates the position of the popup
 // depending on where is the toggle for it
-$('.MULTISELECT__POPUP').on('click', function() {
+$('.JS_has-popup').on('click', function() {
   const toggle = $(this);
+  const popid = $(this).attr('data-popid');
   // outerWidth (including padding, border, and optionally margin -> true parameter)
   // innerWidth (including padding but not border)
   // width (not including anything)
@@ -60,26 +61,24 @@ $('.MULTISELECT__POPUP').on('click', function() {
   // toggle is left
   // left side of the popup is left side of toggle
   if (isOnLeft) {
-    $('' + $(this).attr('data-popid')).css({
-      'z-index': '99999999',
-      'pointer-events': 'auto',
-      'opacity': '1',
+    $(popid).css({
       'top': newTop,
       'left': left,
       'width': width
-    });
+    }).addClass('multiSelector--visible');
+
+    toggle.hasClass('JS_has-popup--error') ? $(popid).addClass('animate--popup') : $(popid).addClass('animate--fadein');
   }
   // toggle is right, right side of the popup is right side of toggle
   else {
-    $('' + $(this).attr('data-popid')).css({
-      'z-index': '99999999',
-      'pointer-events': 'auto',
-      'opacity': '1',
+    $(popid).css({
       'top': newTop,
       'right': right,
       'left': newLeft,
       'width': width
-    });
+    }).addClass('multiSelector--visible');
+
+    toggle.hasClass('JS_has-popup--error') ? $(popid).addClass('animate--popup') : $(popid).addClass('animate--fadein');
   }
 
   // show overlay
@@ -103,9 +102,5 @@ function closeOverlay(){
     'opacity': ''
   });
 
-  $('.multiSelector').css({
-    'z-index': '0',
-    'pointer-events': 'none',
-    'opacity': '0',
-  });
+  $('.multiSelector').removeClass('multiSelector--visible animate--popup animate--fadein');
 }

@@ -1,4 +1,4 @@
-<div class="multiSelector multiSelector--popup" id="multiSelector-1">
+<div class="multiSelector" id="multiSelector-1">
 
 
 
@@ -7,7 +7,7 @@
       <li class="itemBox__cell">
         <div class="itemBox__cellInner">
 
-          <input type="search" class="JS_multiSelector__filterInput" placeholder="filter through items">
+          <input type="search" class="JS_filterInput" placeholder="filter through items">
 
         </div>
       </li>
@@ -31,7 +31,7 @@
 
   <div class="itemBox JS_optionsChildren">
     {% for item in site.data.multiselector-status.items %}
-      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+      <ul class="itemBox__row itemBox__row--item JS_filterable">
         <li class="itemBox__cell">
           <div class="itemBox__cellInner">
             <div class="itemBox__value">
