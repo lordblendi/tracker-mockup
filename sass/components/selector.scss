@@ -91,6 +91,12 @@
           opacity: .45;
         }
       }
+
+      &--selected {
+        &:hover {
+          opacity: .85;
+        }
+      }
     }
   }
 
