@@ -244,14 +244,6 @@
       flex-grow: 0;
       text-align: center;
 
-      .itemBox__cellInner {
-        padding: 5px;
-      }
-    }
-
-    &--action {
-      color: var(--color-primary);
-
       &:first-child {
         + .itemBox__cell {
           .itemBox__cellInner {
@@ -259,6 +251,14 @@
           }
         }
       }
+
+      .itemBox__cellInner {
+        padding: 5px;
+      }
+    }
+
+    &--action {
+      color: var(--color-primary);
     }
 
     &--focus {

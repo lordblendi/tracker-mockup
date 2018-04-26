@@ -1,6 +1,24 @@
 ---
 ---
 
+@font-face {
+  font-family: 'pmx';
+  src: url('../assets/fonts/pmx.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'tenforce';
+  src: url('../assets/fonts/tenforce.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color-primary: #BF920B;
+  --color-secondary: #E61616;
+}
+
 body {
   font-family: 'Source Sans Pro', 'tenforce', Arial, sans-serif;
   font-kerning: normal;
