@@ -3,7 +3,8 @@
 
 .field {
   position: relative;
-  margin: 30px 10px;
+  margin: 18px 10px 30px 10px;
+  padding: 12px 0 0;
   transition: all .3s ease-in-out;
 
   &--error {
@@ -16,8 +17,7 @@
 
   &--focus {
     .field__label {
-      top: -14px;
-
+      top: -2px;
       font-size: 12px;
       font-weight: 600;
       font-style: normal;
@@ -30,12 +30,13 @@
     .field__value {
       background-color: #FFF;
       box-shadow: 0 0 200px rgba(0, 0, 0, 0.4);
+      z-index: 3;
     }
   }
 
   &__label {
     position: absolute;
-    top: -10px;
+    top: -1px;
     padding: 0 5px;
     white-space: nowrap;
     overflow: hidden;
@@ -87,7 +88,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      padding: 5px 15px;
+      padding: 5px;
     }
   }
 

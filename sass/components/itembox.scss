@@ -3,7 +3,6 @@
 
 .itemBox {
   padding-bottom: 10px;
-
   font-size: 16px;
 
   .itemBox {
@@ -19,7 +18,7 @@
 
     &--h1 {
       background-color: #FFF;
-      border-bottom: 2px dashed #BFBFBF;
+      border-top: 1px dotted #BFBFBF;
       height: 60px;
       line-height: 50px;
 
@@ -55,10 +54,12 @@
     }
 
     &--h2 {
-      background: #DEDEDE;
-      background: linear-gradient(to bottom, #F2F2F2 0%, #CCC 100%);
+      background: #d9d9d9;
+      color: #808080;
       height: 50px;
       line-height: 40px;
+      border-radius: 5px 5px 0 0;
+      font-style: italic;
 
       .itemBox {
         &__cell {
@@ -110,11 +111,11 @@
       }
 
       &:nth-of-type(odd) {
-        background-color: #FFFFFF;
+        background-color: #F2F2F2;
       }
 
       &:nth-of-type(even) {
-        background-color: #F2F2F2;
+        background-color: #FFFFFF;
       }
 
       .itemBox {
@@ -166,7 +167,7 @@
         .itemBox {
           &__cell:not(.flex-grow-0) {
             &::after {
-              background: linear-gradient(to right, rgba(255,255,255,0) 0%, #FFFFFF 90%, #FFFFFF 100%);
+              background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #F2F2F2 90%, #F2F2F2 100%);
             }
           }
         }
@@ -176,7 +177,7 @@
         .itemBox {
           &__cell:not(.flex-grow-0) {
             &::after {
-              background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #F2F2F2 90%, #F2F2F2 100%);
+              background: linear-gradient(to right, rgba(255,255,255,0) 0%, #FFFFFF 90%, #FFFFFF 100%);
             }
           }
         }
@@ -296,9 +297,10 @@
   }
 
   &__action {
-    font-size: 16px;
     cursor: pointer;
     transition: all .3s ease-in-out;
+    font-size: 16px;
+    font-style: normal;
     color: var(--color-primary);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;

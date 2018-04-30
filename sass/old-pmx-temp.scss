@@ -136,9 +136,12 @@ body {
 }
 
 
-
-
-
+.item-detail .tab-content {
+  padding: 15px;
+}
+.item-detail .tid-content {
+  padding: 0;
+}
 .item-detail .tid-content h3, .item-detail .tid-content .newgrid h3 {
   color: #285C9E;
   font-size: 18px;
