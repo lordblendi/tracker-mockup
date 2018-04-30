@@ -76,6 +76,8 @@
       text-align: center;
       letter-spacing: 1px;
       transition: all .3s ease-in-out;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
 
       &:not(.tabs-nav__link--active):hover {
         transform: translateY(-2px);
