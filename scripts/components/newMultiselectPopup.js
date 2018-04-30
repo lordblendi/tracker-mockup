@@ -29,10 +29,10 @@ $('.JS_has-popup').on('click', function() {
   var newLeft = right - width + "px";
 
   if($(this).hasClass('selector') ) {
-    newTop = (Math.round(top) - 50) + 'px';
+    newTop = (Math.round(top) - 47) + 'px';
   }
   else if ($(this).hasClass('JS_breadcrumbPopup') ) {
-    newTop = (Math.round(top) - 6) + 'px';
+    newTop = (Math.round(top) - 3) + 'px';
 
     var selector = $(this).closest('.selector');
     width = selector.outerWidth(true);

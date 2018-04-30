@@ -143,7 +143,13 @@
 
     &__action {
       display: inline-block;
-      margin: 5px;
+      height: 40px;
+      padding: 5px;
+      line-height: 30px;
+
+      .selector {
+        vertical-align: top;
+      }
     }
   }
 }

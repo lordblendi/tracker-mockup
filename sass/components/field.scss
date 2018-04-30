@@ -3,9 +3,7 @@
 
 .field {
   position: relative;
-  min-height: 80px;
-  padding: 15px 10px;
-  border: 1px solid transparent;
+  margin: 30px 10px;
   transition: all .3s ease-in-out;
 
   &--error {
@@ -17,12 +15,8 @@
   }
 
   &--focus {
-    border: 1px solid #F7F7F7;
-    border-radius: 3px;
-    box-shadow: 0 0 200px rgba(0,0,0,.1);
-
     .field__label {
-      top: 5px;
+      top: -14px;
 
       font-size: 12px;
       font-weight: 600;
@@ -33,13 +27,15 @@
       opacity: 1;
     }
 
-    .field__input {
+    .field__value {
+      background-color: #FFF;
+      box-shadow: 0 0 200px rgba(0, 0, 0, 0.4);
     }
   }
 
   &__label {
-    position: relative;
-    top: 5px;
+    position: absolute;
+    top: -10px;
     padding: 0 5px;
     white-space: nowrap;
     overflow: hidden;
@@ -53,7 +49,7 @@
     color: #808080;
 
     &--placeholder {
-      top: 14px;
+      top: 10px;
       font-size: 16px;
       font-weight: 400;
       font-style: italic;
@@ -65,10 +61,12 @@
 
   &__value {
     position: relative;
+    min-height: 40px;
     z-index: 1;
     white-space: nowrap;
     overflow: hidden;
     padding: 5px;
+    transition: all .3s ease-in-out;
 
     &::after {
       content: '';
@@ -85,6 +83,11 @@
 
     input {
       width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 5px 15px;
     }
   }
 
