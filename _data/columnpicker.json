@@ -2,7 +2,7 @@
   "selected": ["Title", "Performed for", "Assigned to"],
   "options": {
     "groups": [{
-        "name": "अ Main attributes",
+        "name": " Main attributes",
         "noneSelected": "false",
         "allSelected": "false",
         "items": [{
@@ -59,7 +59,7 @@
           }
         ]
       }, {
-        "name": "अ Who is involved",
+        "name": " Who is involved",
         "noneSelected": "false",
         "allSelected": "false",
         "items": [{
@@ -85,7 +85,7 @@
         ]
       },
       {
-        "name": "अ Tracking and tracing",
+        "name": " Tracking and tracing",
         "noneSelected": "true",
         "allSelected": "false",
         "items": [{
@@ -114,7 +114,7 @@
           }
         ]
       }, {
-        "name": "अ Time and effort",
+        "name": " Time and effort",
         "noneSelected": "true",
         "allSelected": "false",
         "items": [{
@@ -137,7 +137,7 @@
           }
         ]
       }, {
-        "name": "अ Other",
+        "name": " Other",
         "noneSelected": "true",
         "allSelected": "false",
         "items": [{

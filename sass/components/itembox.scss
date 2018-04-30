@@ -277,6 +277,10 @@
     padding: 5px 15px;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    .selector {
+      vertical-align: top;
+    }
   }
 
   &__input {

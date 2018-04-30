@@ -1,36 +1,36 @@
 {
   "groups": [{
-      "icon": "अ",
+      "icon": "",
       "name": ".TenForceWiki",
       "items": ["Approve", "CPBW", "CPBW Actions", "Process Documentation", "Task"]
     },
     {
-      "icon": "अ",
+      "icon": "",
       "name": "Marketing & Design",
       "items": ["Bugs", "Tasks"]
     },
     {
-      "icon": "अ",
+      "icon": "",
       "name": "Operations",
       "items": ["Equipment assigment", "Hosted Virtual", "IT Meetings", "IT Projects", "IT Requests", "IT Tasks", "Logistics", "Maintanance Tasks", "Move to production", "Virtual Machines", "WIKI"]
     },
     {
-      "icon": "अ",
+      "icon": "",
       "name": "pmX Projects and Support",
       "items": ["Addins - Presets", "Code Reviews", "Coding Standards", "Customer", "Financial milestones", "Holidays", "Knowledge Base", "Meetings", "On demand", "Project Deliverables", "Projects", "Review Tasks", "Service Requests", "Tasks", "Tickets", "Trainings", "WIKI"]
     },
     {
-      "icon": "अ",
+      "icon": "",
       "name": "Product Development",
       "items": ["Actions", "Bugs", "Epics", "Installation notes", "Meetings", "Product sprints", "Release", "SRB Meetings (new)", "SRB Topics", "Stabilize test", "Stories", "Strategic Goals", "Technical topics", "Translations"]
     },
     {
-      "icon": "अ",
+      "icon": "",
       "name": "Prof. Serv.",
       "items": ["Actions", "Contacts", "Financial milestones", "Meetings", "Tickets", "Work Orders"]
     },
     {
-      "icon": "अ",
+      "icon": "",
       "name": "Semantic Technology",
       "items": ["Actions", "Innovation", "Meetings", "SemTech Backlog", "Wiki"]
     }

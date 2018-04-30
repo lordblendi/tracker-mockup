@@ -86,8 +86,10 @@
 		}
 
     .link {
+      position: relative;
       transition: all .3s ease-in-out;
       font-size: 16px;
+      vertical-align: top;
 
       a {
         display: inline-block;
@@ -103,7 +105,6 @@
   &__seperator {
     display: inline;
     font-size: 16px;
-    vertical-align: middle;
     padding: 0 2px;
   }
 }

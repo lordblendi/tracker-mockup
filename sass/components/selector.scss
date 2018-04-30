@@ -18,6 +18,9 @@
     border: 2px solid #D7D7D7;
 
     .selector__item {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      
       &Seperator {
         background-color: transparent;
       }
@@ -28,13 +31,18 @@
     background-color: #D7D7D7;
     border: 2px solid #D7D7D7;
 
-    .selector__itemSeperator {
-      border-radius: 15px;
+    .selector {
+      &__item {
+        &Seperator {
+          border-radius: 15px;
+        }
+      }
     }
 
     .selector__item,
     .selector__item:hover {
       cursor: text;
+      -webkit-filter: saturate(1);
       filter: saturate(1);
       opacity: 1;
     }
@@ -112,12 +120,14 @@
     border-radius: 15px;
     background-color: #FFF;
     transition: all .3s ease-in-out;
+    -webkit-filter: saturate(.4);
     filter: saturate(.4);
     opacity: .4;
     cursor: pointer;
 
     &--selected {
       box-shadow: 0 2px 8px -2px rgba(0,0,0,.7);
+      -webkit-filter: saturate(1);
       filter: saturate(1);
       opacity: 1;
     }

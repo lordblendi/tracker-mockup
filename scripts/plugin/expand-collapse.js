@@ -3,8 +3,8 @@
 ////
 
 // icons to be swapped
-const expanded = "ऄ";
-const collapsed = "अ";
+const expanded = "";
+const collapsed = "";
 
 // expand/collapse action listener on toggle
 $('.JS_toggle').on('click', function() {
