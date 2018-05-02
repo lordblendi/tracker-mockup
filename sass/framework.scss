@@ -276,9 +276,7 @@
 /* Action */
 
 .action {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
   min-height: 40px;
   min-width: 40px;
   padding: 5px;
