@@ -80,6 +80,12 @@ function handleActionOnclick(action) {
     handleComplexItemAddRemove(action, exclude, selectedBlockClass);
   }
 
+  // whatever happened, show resetSuggestions
+  // if the multiselector has that enabled
+  if($(multiSelector).hasClass('JS_multiSelector--resetFunctionality')){
+    $(multiSelector).find('.JS_itemBox--resetSuggestion').css('display', 'block');
+  }
+
   // whatever happened, reset the filter
   // in case some stuff were filtered
   if(!$(action).hasClass('JS_toggle') &&

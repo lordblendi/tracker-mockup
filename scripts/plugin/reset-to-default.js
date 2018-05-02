@@ -9,9 +9,16 @@ function resetToDefault(resetToDefaultRow) {
   const multiSelector = resetToDefaultRow.closest('.multiSelector');
   const replaceFile = $(resetToDefaultRow).attr('reset-file');
 
+  var newContentString = '';
+
+  // if the replace file is columnpicker, use that html
   if (replaceFile === 'columnpicker') {
-    const newContentString = `{% include popups/multiSelector-columnpicker.html %}`;
-    const newContent = $.parseHTML(newContentString.replace('id="multiSelector-columnpicker"', ''));
+    newContentString = `{% include popups/multiSelector-columnpicker.html %}`;
+  }
+
+  // only replace it if the newContentString is not empty
+  if (newContentString.length > 0) {
+    const newContent = $.parseHTML(newContentString);
     $(multiSelector).html($(newContent).html());
     reset();
   }
