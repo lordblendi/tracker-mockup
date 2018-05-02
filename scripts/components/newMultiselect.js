@@ -582,5 +582,17 @@ function reset(){
         toggleInclExclSelector(toggle);
       });
     }, 250);
+
+
+    // reset functionality
+    $(multiSelector).find('.JS_resetToDefault').on('click', function() {
+      resetToDefault($(this));
+    });
+
+    // expand-collapse reset
+    $(multiSelector).find('.JS_toggle').off('click').on('click', function() {
+      const itemBox__row = $(this).closest('.itemBox__row');
+      expandCloseRow(itemBox__row);
+    });
   });
 }
