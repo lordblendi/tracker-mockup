@@ -1,25 +1,34 @@
----
----
-
 // set sortable in multiselect options
-$('.multiSelector').each(function(){
+$('.multiSelector').each(function() {
   reinitSortable($(this));
 })
 
 
 // reinitiate reorder functionality
 function reinitSortable(multiSelector) {
-  if ($(multiSelector).hasClass('JS_multiSelector--withFilter')){
-    $(multiSelector).find(".itemBoxBody--sortableInclude, .itemBoxBody--sortableExclude").sortable({
+  var options = {};
+  var sortableSelector = "";
+  if ($(multiSelector).hasClass('JS_multiSelector--withFilter')) {
+    sortableSelector = ".itemBoxBody--sortableInclude, .itemBoxBody--sortableExclude";
+    options = {
       handle: '.JS_itemBox__cell--draggable',
       placeholder: 'itemBox__row itemBox__row--item',
       connectWith: ".itemBoxBody--sortableConnected"
-    });
-  }
-  else {
-    $(multiSelector).find(".JS_sortable").sortable({
+    };
+  } else {
+    sortableSelector = ".JS_sortable";
+    options = {
       handle: '.JS_itemBox__cell--draggable',
       placeholder: 'itemBox__row itemBox__row--item'
-    });
+    };
   }
+
+  if ($(multiSelector).hasClass('JS_multiSelector--resetFunctionality')) {
+    options['stop'] = function(event, ui) {
+      const sortedItem = $(ui.item);
+      const multiSelector = sortedItem.closest('.multiSelector');
+      $(multiSelector).find('.JS_itemBox--resetSuggestion').css('display', 'block');
+    };
+  }
+  $(multiSelector).find(sortableSelector).sortable(options);
 }
