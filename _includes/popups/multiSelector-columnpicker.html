@@ -10,35 +10,29 @@
     </ul>
   </div>
 
-  <div class="itemBox JS_itemBox">
-    <ul class="itemBox__row itemBox__row--item JS_selectionTitle">
-      <li class="itemBox__cell itemBox__cell--action JS_toggle">
+  <div class="itemBox">
+    <ul class="itemBox__row itemBox__row--item itemBox__row--action">
+      <li class="itemBox__cell itemBox__cell--action">
         <div class="itemBox__cellInner">
-          <div class="itemBox__action"> Suggested</div>
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
+          <div class="itemBox__action">Reset all</div>
         </div>
       </li>
     </ul>
+    <ul class="itemBox__row itemBox__row--item itemBox__row--action">
+      <li class="itemBox__cell JS_textAction">
+        <div class="itemBox__cellInner JS_text">
+          <div class="itemBox__value">Suggested item</div>
+        </div>
+      </li>
+      <li class="itemBox__cell flex-grow-0 itemBox__cell--action  JS_itemBox__cell--add JS_itemBox__action">
+        <div class="itemBox__cellInner">
+          <div class="itemBox__action JS_itemBox__action--add"></div>
+        </div>
+      </li>
+    </ul>
+  </div><!-- /.itemBox -->
 
-    <div class="itemBox JS_itemBox--children JS_selectionChildren">
-      <ul class="itemBox__row itemBox__row--item itemBox__row--action JS_filterableCell ">
-        <li class="itemBox__cell JS_textAction">
-          <div class="itemBox__cellInner JS_text">
-            <div class="itemBox__value">Suggested item</div>
-          </div>
-        </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action  JS_itemBox__cell--add JS_itemBox__action">
-          <div class="itemBox__cellInner itemBox__cellInner--action">
-            <div class="itemBox__action JS_itemBox__action--add"></div>
-          </div>
-        </li>
-      </ul>
-    </div><!-- /.itemBox -->
-
+  <div class="itemBox JS_itemBox">
     <ul class="itemBox__row itemBox__row--item JS_selectionTitle">
       <li class="itemBox__cell itemBox__cell--action JS_toggle">
         <div class="itemBox__cellInner">
@@ -67,7 +61,7 @@
               </div>
             </li>
             <li class="itemBox__cell flex-grow-0 itemBox__cell--action  JS_itemBox__cell--remove JS_itemBox__action">
-              <div class="itemBox__cellInner itemBox__cellInner--action">
+              <div class="itemBox__cellInner">
                 <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
               </div>
             </li>

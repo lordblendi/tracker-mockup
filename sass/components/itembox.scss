@@ -15,7 +15,7 @@
     background-color: #FFF;
     height: 40px;
     line-height: 30px;
-
+/*
     &--h1 {
       background-color: #FFF;
       border-top: 1px dotted #BFBFBF;
@@ -48,8 +48,8 @@
         }
       }
     }
-
-    &--h2 {
+*/
+    &--thead {
       background: #d9d9d9;
       color: #808080;
       height: 50px;
@@ -214,7 +214,7 @@
       }
     }
 
-    &--foot {
+    &--tfoot {
       height: 22px;
       line-height: 12px;
       background: #d9d9d9;
@@ -301,8 +301,15 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
+
     &:hover {
       transform: translateY(-2px);
+    }
+
+    &--inline {
+      display: inline-block;
+      min-width: 30px;
+      text-align: center;
     }
 
     &--disabled {

@@ -6,7 +6,7 @@ permalink: /selectors
 
 
 <div class="field JS_field">
-  <div class="field__label">Assigned to</div>
+  <div class="field__label JS_has-popup" data-popid="#multiSelector-tooltip">Assigned to ܌</div>
   <div class="field__value">
 
     <div class="selector selector--singleselect">
@@ -21,8 +21,8 @@ permalink: /selectors
 </div>
 
 <div class="field JS_field">
-  <div class="field__label">Assigned to ܌</div>
-  <div class="field__value JS_has-popup" data-popid="#multiSelector-single">
+  <div class="field__label">Assigned to</div>
+  <div class="field__value">
     <input type="text" value="" class="field__input">
   </div>
 </div>
@@ -572,7 +572,7 @@ permalink: /selectors
   </div>
 </div>
 
-{% include popups/ms-single.html %}
+{% include popups/ms-tooltip.html %}
 {% include popups/ms-status.html %}
 {% include popups/ms-status2.html %}
 {% include popups/multiSelector-tags-colors.html %}
