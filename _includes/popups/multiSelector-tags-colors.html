@@ -36,8 +36,9 @@
                 <div class="itemBox__value">
 
                   {% include javascript/colorToggle.html color=item.color %}
-                  <div class="selector selector--readonly">
-                    <div class="selector__item">
+
+                  <div class="selector selector--expanded">
+                    <div class="selector__item selector__item--selected">
                       <div class="selector__block">
                         <div class="selector__blockPart selector__blockPart--field JS_text">{{item.name}}</div>
                       </div>
@@ -90,8 +91,8 @@
 
                 {% include javascript/colorToggle.html color=item.color %}
 
-                <div class="selector selector--readonly">
-                  <div class="selector__item">
+                <div class="selector selector--expanded">
+                  <div class="selector__item selector__item--selected">
                     <div class="selector__block">
                       <div class="selector__blockPart selector__blockPart--field JS_text">{{item.name}}</div>
                     </div>

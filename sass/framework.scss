@@ -273,12 +273,41 @@
   }
 }
 
+/* Action */
+
+.action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  min-width: 40px;
+  padding: 5px;
+  cursor: pointer;
+  line-height: 30px;
+  font-size: 16px;
+  color: var(--color-primary);
+  text-align: center;
+  transition: all .3s ease-in-out;
+  backface-visibility: hidden;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
 /* States */
 
 .disabled {
   filter: saturate(.7);
   opacity: .5;
   pointer-events: none;
+  cursor: default;
+}
+
+.readonly {
+  &:hover {
+    transform: none;
+  }
 }
 
 .saved {

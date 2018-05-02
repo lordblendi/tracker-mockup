@@ -1,11 +1,58 @@
-{% include popups/multiSelector-columnpicker.html %}
+
+
+
+<header class="header header--item">
+  <div class="header__title">
+    <div class="header__type header__type--bug">
+      <span class="header__label">Bug</span>
+      <span class="header__id">391441</span>
+    </div>
+    <h2>Multiple Element Scroll with 1 scrollbar<sup>5</sup></h2>
+  </div>
+  <div class="header__actions">
+    <div class="action disabled"></div>
+    <div class="action readonly">
+
+      <div class="selector selector--expanded">
+        <div class="selector__item selector__item--selected">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--field">Ongoing</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="action"></div>
+    <div class="action"><sup>0/3</sup></div>
+  </div>
+</header>
+
+<header class="header header--section">
+  <div class="header__title">
+    <h2>Verify the configuration against an add-in manifest (simulation/repair)<sup>5</sup></h2>
+  </div>
+  <div class="header__actions">
+    <div class="action disabled"></div>
+    <div class="action">Print</div>
+    <div class="action"></div>
+    <div class="action"><sup>0/3</sup></div>
+  </div>
+</header>
+
+<header class="header header--section">
+  <div class="header__title">
+    <h2>Description</h2>
+  </div>
+</header>
+
+
 
 <div class="itemBox">
 
   <ul class="itemBox__row itemBox__row--h1">
     <li class="itemBox__cell flex-grow-1">
       <div class="itemBox__cellInner">
-        <h2 class="font--h2 ellipsis">Lorem ipsum dolor sit amet</h2>
+        <h2 class="ellipsis">Lorem ipsum dolor sit amet<sup>43</sup></h2>
       </div>
     </li>
     <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
@@ -42,12 +89,8 @@
     <li class="itemBox__cell">
       <div class="itemBox__cellInner">Performed For</div>
     </li>
-    <li class="itemBox__cell flex-grow-0">
-      <div class="itemBox__cellInner">
-      </div>
-    </li>
     <li class="itemBox__cell flex-grow-3">
-      <div class="itemBox__cellInner">Assigned to</div>
+      <div class="itemBox__cellInner">Due date</div>
     </li>
   </ul>
 
@@ -63,15 +106,10 @@
     <li class="itemBox__cell">
       <div class="itemBox__cellInner">34342-34252345-342543523-343213124</div>
     </li>
-    <li class="itemBox__cell flex-grow-0">
-      <div class="itemBox__cellInner animate--popup">
-        <div class="itemBox__action itemBox__action--secondary">܌</div>
-      </div>
-    </li>
-    <li class="itemBox__cell flex-grow-3">
+    <li class="itemBox__cell flex-grow-3 JS_has-popup" data-popid="#multiSelector-single">
       <div class="itemBox__cellInner">
 
-        <div class="selector selector--expanded">
+        <div class="selector selector--singleselect">
           <div class="selector__item selector__item--selected">
             <div class="selector__block">
               <span class="selector__blockPart selector__blockPart--field">11/17/2017</span>
@@ -95,14 +133,10 @@
     <li class="itemBox__cell">
       <div class="itemBox__cellInner">34342-34252345-342543523-343213124</div>
     </li>
-    <li class="itemBox__cell flex-grow-0">
-      <div class="itemBox__cellInner">
-      </div>
-    </li>
     <li class="itemBox__cell flex-grow-3">
       <div class="itemBox__cellInner animate--loading">
 
-        <div class="selector selector--expanded">
+        <div class="selector selector--singleselect">
           <div class="selector__item selector__item--selected">
             <div class="selector__block">
               <span class="selector__blockPart selector__blockPart--field">11/17/2017</span>
@@ -118,7 +152,7 @@
     <ul class="itemBox__row itemBox__row--h1">
       <li class="itemBox__cell">
         <div class="itemBox__cellInner">
-          <h2 class="font--h2 ellipsis">Contruction Reports</h2>
+          <h2 class="ellipsis">Contruction Reports</h2>
         </div>
       </li>
       <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
@@ -224,7 +258,7 @@
           <div class="itemBox__cellInner">
 
             <div class="selector selector--expanded selector--multiselect JS_selector">
-              <div class="selector__item  selector__item--selected JS_selectorItem">
+              <div class="selector__item selector__item--selected JS_selectorItem">
                 <div class="selector__block">
                   <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0bda51;"></div>
                   <div class="selector__blockPart selector__blockPart--label">design</div>
@@ -268,7 +302,7 @@
       <ul class="itemBox__row itemBox__row--h1">
         <li class="itemBox__cell">
           <div class="itemBox__cellInner">
-            <h2 class="font--h2 ellipsis">Contruction Reports</h2>
+            <h2 class="ellipsis">Contruction Reports</h2>
           </div>
         </li>
         <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
@@ -332,7 +366,6 @@
 
     {% include blocks/itembox-row.html %}
     {% include blocks/itembox-row.html %}
-
     {% include blocks/popup/ms-load-more.html %}
 
     <ul class="itemBox__row itemBox__row--foot">
@@ -346,7 +379,6 @@
   {% include blocks/itembox-row.html %}
   {% include blocks/itembox-row.html %}
   {% include blocks/itembox-row.html %}
-
   {% include blocks/popup/ms-load-more.html %}
 
   <ul class="itemBox__row itemBox__row--foot">
@@ -355,3 +387,35 @@
     </li>
   </ul>
 </div><!-- /.itemBox -->
+
+
+<!-- POPUPS -->
+
+{% include popups/multiSelector-columnpicker.html %}
+
+<div class="multiSelector" id="multiSelector-single">
+  <div class="itemBox JS_itemBox">
+    <ul class="itemBox__row">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner">
+          <input type="search" class="JS_filterInput" placeholder="filter through items">
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="itemBox">
+    <ul class="itemBox__row itemBox__row--custom">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner">
+
+          <div class="note note--info">
+            <p>Choose a date to finish this item.</p>
+          </div>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- /.itemBox -->
+</div>
+<!-- /.multiSelector -->
