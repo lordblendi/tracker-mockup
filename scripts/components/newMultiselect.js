@@ -80,6 +80,12 @@ function handleActionOnclick(action) {
     handleComplexItemAddRemove(action, exclude, selectedBlockClass);
   }
 
+  // whatever happened, show resetSuggestions
+  // if the multiselector has that enabled
+  if($(multiSelector).hasClass('JS_multiSelector--resetFunctionality')){
+    $(multiSelector).find('.JS_itemBox--resetSuggestion').css('display', 'block');
+  }
+
   // whatever happened, reset the filter
   // in case some stuff were filtered
   if(!$(action).hasClass('JS_toggle') &&
@@ -582,5 +588,17 @@ function reset(){
         toggleInclExclSelector(toggle);
       });
     }, 250);
+
+
+    // reset functionality
+    $(multiSelector).find('.JS_resetToDefault').on('click', function() {
+      resetToDefault($(this));
+    });
+
+    // expand-collapse reset
+    $(multiSelector).find('.JS_toggle').off('click').on('click', function() {
+      const itemBox__row = $(this).closest('.itemBox__row');
+      expandCloseRow(itemBox__row);
+    });
   });
 }
