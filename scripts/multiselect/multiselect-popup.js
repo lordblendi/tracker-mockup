@@ -77,7 +77,7 @@ $('.JS_has-popup').on('click', function() {
     }).addClass('multiSelector--visible');
   }
 
-  // toggle.hasClass('JS_has-popup--error') ? $(popid).addClass('animate--popup') : $(popid).addClass('animate--fadein');
+   toggle.hasClass('JS_has-popup--error') ? $(popid).addClass('animate--popup') : $(popid).addClass('animate--fadein');
 
   // show overlay
   $(".app__overlay").css({
