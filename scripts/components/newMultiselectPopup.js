@@ -9,31 +9,30 @@ $('.JS_has-popup').on('click', function() {
   // width (not including anything)
   var width = Math.round(toggle.outerWidth(true));
   var height = Math.round(toggle.outerHeight(true));
-  var toggleWidth = width;
 
   // corners of toggle
   var top = Math.round(toggle.offset().top);
   var left = Math.round(toggle.offset().left);
-  var right = Math.round(left + width);
-  var bottom = Math.round(top + height);
+  var right = left + width;
+  var bottom = top + height;
 
   // position of toggle, which side of the screen
   const windowWidth = $(window).width();
-  var isOnLeft = Math.round(windowWidth/2) >= Math.round(left);
-  const isOnRight = Math.round(windowWidth/2) < Math.round(left);
+  var isOnLeft = Math.round(windowWidth/2) >= left;
+  const isOnRight = Math.round(windowWidth/2) < left;
 
   if(width < 300) {
     width = 300;
   }
   // top for popup is under the toggle
-  var newTop = Math.round(bottom) + 'px';
+  var newTop = bottom + 'px';
   var newLeft = left + "px";
 
   if($(this).hasClass('selector') ) {
-    newTop = (Math.round(top) - 47) + 'px';
+    newTop = top + 'px';
   }
   else if ($(this).hasClass('JS_breadcrumbPopup') ) {
-    newTop = (Math.round(top) - 3) + 'px';
+    newTop = (top - 3) + 'px';
 
     var selector = $(this).closest('.selector');
     width = selector.outerWidth(true);
