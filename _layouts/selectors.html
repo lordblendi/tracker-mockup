@@ -5,16 +5,12 @@
   </head>
 
   <body class="page-{{ page.title }}">
-    <div class="app">
-      <div class="app__overlay"></div>
-      {{ content }}
-    </div>
+    <div class="app__overlay"></div>
+    {{ content }}
 
     {% include popups/multiSelector-tags-colors.html %}
     {% include popups/filter-tags.html%}
     {% include popups/filter-date.html%}
-    {% include popups/ms-privacy.html%}
-    {% include popups/ms-status.html%}
     {% include foot.html %}
   </body>
 </html>
