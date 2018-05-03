@@ -45,7 +45,7 @@
             </li>
             <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
               <div class="itemBox__cellInner">
-                <div class="itemBox__action "></div>
+                <div class="itemBox__action "><sup>•</sup></div>
               </div>
             </li>
             <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--draggable">
@@ -59,6 +59,7 @@
               </div>
             </li>
           </ul>
+        {% include blocks/popup/ms-sublist-options.html %}
         {% endfor%}
       </div>
     </div><!-- /.itemBox -->

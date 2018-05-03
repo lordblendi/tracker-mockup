@@ -1,0 +1,13 @@
+{
+  "items": [{
+      "name": "sum",
+      "icon": "∑",
+      "label": "the data in this column"
+    },
+    {
+      "name": "group",
+      "icon": "",
+      "label": "on this column"
+    }
+  ]
+}
