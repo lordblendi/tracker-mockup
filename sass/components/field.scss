@@ -7,6 +7,14 @@
   padding: 12px 0 0;
   transition: all .3s ease-in-out;
 
+  &--tooltip {
+    .field {
+      &__label {
+        cursor: pointer;
+      }
+    }
+  }
+
   &--error {
     .field {
       &__label {
