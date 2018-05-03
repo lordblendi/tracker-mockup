@@ -324,6 +324,7 @@ function getNewItem(item, exclude) {
   var colorSelectorToggle = $(bodyRow).find('.JS_toggle--color');
   var simpleText = $(item).closest('.JS_multiSelector--simpleText');
   var textAction = $(item).closest('.JS_multiSelector--textAction');
+  var columnpickerOption = $(item).closest('.JS_multiSelector--columnpickerOptions');
 
   var textActionClass = ""
   var newSelectedItemHTML = "";
@@ -331,6 +332,14 @@ function getNewItem(item, exclude) {
   var colorChildren = '';
   var colorToggleHTML = '';
   var colorToggleTriggerInnerClass = '';
+  var columnPickerOptionBlock = ""
+  var columnpickeroptions = ""
+
+
+  if(columnpickerOption.length > 0) {
+    columnPickerOptionBlock = `{% include javascript/ms-toggle-columnpicker-option.html %}`;
+    columnpickeroptions = `{% include blocks/popup/ms-sublist-options.html %}`;
+  }
   if(textAction.length > 0){
     textActionClass = 'JS_textAction';
   }

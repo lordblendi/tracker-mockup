@@ -1,4 +1,4 @@
-<div class="multiSelector JS_multiSelector--simpleText JS_multiSelector--textAction JS_multiSelector--resetFunctionality" id="multiSelector-columnpicker">
+<div class="multiSelector JS_multiSelector--simpleText JS_multiSelector--textAction JS_multiSelector--resetFunctionality JS_multiSelector--columnpickerOptions" id="multiSelector-columnpicker">
 
   <div class="itemBox JS_itemBox">
     <ul class="itemBox__row">
@@ -43,11 +43,7 @@
                 <div class="itemBox__value">{{selected}}</div>
               </div>
             </li>
-            <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
-              <div class="itemBox__cellInner JS_toggle--columnpickerOptions">
-                {% include javascript/ms-columnpickerOption--disabled.html %}
-              </div>
-            </li>
+            {% include javascript/ms-toggle-columnpicker-option.html %}
             <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--draggable">
               <div class="itemBox__cellInner">
                 <div class="itemBox__action ">އ</div>

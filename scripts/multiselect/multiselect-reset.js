@@ -69,7 +69,7 @@ function reset(){
 
 
     // reset functionality
-    $(multiSelector).find('.JS_resetToDefault').on('click', function() {
+    $(multiSelector).find('.JS_resetToDefault').off('click').on('click', function() {
       resetToDefault($(this));
     });
 
@@ -77,6 +77,16 @@ function reset(){
     $(multiSelector).find('.JS_toggle').off('click').on('click', function() {
       const itemBox__row = $(this).closest('.itemBox__row');
       expandCloseRow(itemBox__row);
+    });
+
+    // columnpicker OPTIONS
+    $(multiSelector).find('.JS_itemBox--columnpickerOptions .JS_selectorItem').on('click', function() {
+      handleColumnPickerOptionChange($(this));
+    });
+    $(multiSelector).find('.JS_toggle--columnpickerOptions').off('click').on('click', function() {
+      const toggle = $(this);
+      closeAllOtherSublists(toggle);
+      toggleColumnpickerOptions(toggle);
     });
   });
 }
