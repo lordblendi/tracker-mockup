@@ -2,19 +2,18 @@
 ---
 
 .note {
-  padding: 10px;
-  background-color: #F7F7F7;
-
-  &--error {
-    background-color: #ffdfdf;
-  }
-
-  &--info {
-    background-color: #e0f0ff;
-  }
+  position: relative;
+  display: inline-block;
+  padding: 7px 10px;
+  background-color: #F8FAFC;
+  border-radius: 3px;
 
   &--tooltip {
-    background-color: #efefef;
+    background-color: #E0F0FF;
+  }
+
+  &--error {
+    background-color: #FFDFDF;
   }
 
   p {
@@ -24,16 +23,6 @@
 
     &:last-child {
       margin-bottom: 0;
-    }
-
-    a {
-      color: #01ADFF;
-      text-decoration: underline;
-      transition: all .3s ease-in-out;
-
-      &:focus {
-        box-shadow: 0 0 30px -5px rgba(36, 104, 182, .5);
-      }
     }
   }
 }

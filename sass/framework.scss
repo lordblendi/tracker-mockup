@@ -90,6 +90,10 @@
 
 /* Positioning */
 
+.inline {
+  display: inline;
+}
+
 .align-left {
   text-align: left;
 }
@@ -178,6 +182,28 @@
     font-style: normal;
     letter-spacing: 1px;
     text-transform: uppercase;
+  }
+}
+
+/* Links */
+
+.link {
+  display: inline-block;
+  color: inherit;
+  text-decoration: underline;
+  transition: all .3s ease-in-out;
+
+  &--primary {
+    color: #01ADFF;
+
+    &:hover {
+      color: #047CB6;
+    }
+  }
+
+  &:active {
+    opacity: .5;
+    transform: translateY(1px);
   }
 }
 

@@ -4,9 +4,57 @@ title: Selectors
 permalink: /selectors
 ---
 
+<section style="height: 100vh;">
+
+  <div class="field">
+    <div class="field__label JS_has-popup" data-popid="#multiSelector-privacy">Privacy Policy </div>
+    <div class="field__value">
+
+        <div class="selector selector--singleselect selector--expanded JS_selector">
+          <div class="selector__item JS_selectorItem selector__item--selected">
+            <div class="selector__block">
+              <div class="selector__blockPart selector__blockPart--field">Disagree</div>
+            </div>
+          </div>
+          <div class="selector__itemSeperator"></div>
+          <div class="selector__item JS_selectorItem">
+            <div class="selector__block ">
+              <div class="selector__blockPart selector__blockPart--field">Agree</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="inline">with our <a href="#" class="link link--primary">Privacy Policiy</a>.</div>
+
+    </div>
+  </div>
+
+
+  <div class="field JS_field">
+    <div class="field__label">Email</div>
+    <div class="field__value">
+
+      <div class="selector selector--singleselect">
+        <div class="selector__item selector__item--selected JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--field">nick.de.jaeger@tenforce.com</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note">
+      <p>Fill in a valid email address.</p>
+    </div>
+  </div>
+
+</section>
+
+
 
 <div class="field JS_field">
-  <div class="field__label JS_has-popup" data-popid="#multiSelector-tooltip">Assigned to ܌</div>
+  <div class="field__label JS_has-popup" data-popid="#multiSelector-tooltip">Assigned to </div>
   <div class="field__value">
 
     <div class="selector selector--singleselect">
@@ -45,7 +93,7 @@ permalink: /selectors
 
   <div class="note">
     <p>Actual invoice amount</p>
-    <p>For fixed price projects and service requests (no <a href="#">timesheets</a>): when you change the status to 'to be invoiced', please insert the exact amount that needs to be invoiced.</p>
+    <p>For fixed price projects and service requests (no <a href="#" class="link">timesheets</a>): when you change the status to 'to be invoiced', please insert the exact amount that needs to be invoiced.</p>
   </div>
 </div>
 
@@ -572,6 +620,7 @@ permalink: /selectors
   </div>
 </div>
 
+{% include popups/ms-privacy.html %}
 {% include popups/ms-tooltip.html %}
 {% include popups/ms-status.html %}
 {% include popups/ms-status2.html %}
