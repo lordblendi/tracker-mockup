@@ -11,6 +11,9 @@ function closeAllOtherSublists(toggle) {
   if(!toggle.hasClass('JS_toggle--calendar')) {
     closeCalendarOptions(itemBox__row);
   }
+  if(!toggle.hasClass('JS_toggle--columnpickerOptions')) {
+    closeColumnpickerOptions(itemBox__row);
+  }
 }
 
 // close incl-exlToggle if open
@@ -38,6 +41,16 @@ function closeColorOptions(itemBox__row) {
 // close calendar if open
 function closeCalendarOptions(itemBox__row) {
   const activeTrigger = $(itemBox__row).find('.itemBox__cell--active .JS_toggle--calendar');
+
+  // if there is an active color trigger in this bodyRow
+  if(activeTrigger.length > 0) {
+    toggleCalendarSelector($(activeTrigger));
+  }
+}
+
+// close columnpicker options if open
+function closeColumnpickerOptions(itemBox__row) {
+  const activeTrigger = $(itemBox__row).find('.itemBox__cell--active .JS_toggle--optionsColumnpicker');
 
   // if there is an active color trigger in this bodyRow
   if(activeTrigger.length > 0) {

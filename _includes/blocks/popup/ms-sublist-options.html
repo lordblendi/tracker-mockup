@@ -1,62 +1,22 @@
-<div class="itemBox JS_itemBox--children JS_itemBox--children JS_itemBox--children-sublist itemBox--sublist">
+<div class="itemBox JS_itemBox--children JS_itemBox--children JS_itemBox--children-sublist itemBox--sublist JS_itemBox--columnpickerOptions JS_children-closed" style="display: none;">
   {% for item in site.data.ms-options.items %}
   <ul class="itemBox__row itemBox__row--item">
     <li class="itemBox__cell">
-      <div class="itemBox__cellInner">
+      <div class="itemBox__cellInner JS_toggle--options">
         <div class="selector selector--singleselect selector--expanded JS_selector">
+          <div class="selector__item JS_selectorItem">
+            <div class="selector__block">
+              <div class="selector__blockPart selector__blockPart--field"></div>
+            </div>
+          </div>
+          <div class="selector__itemSeperator"></div>
           <div class="selector__item JS_selectorItem selector__item--selected">
-            <div class="selector__block">
-              <div class="selector__blockPart selector__blockPart--field">don't {{item.name}}</div>
-            </div>
-          </div>
-          <div class="selector__itemSeperator"></div>
-          <div class="selector__item JS_selectorItem">
             <div class="selector__block ">
-              <div class="selector__blockPart selector__blockPart--field">{{item.name}}</div>
+              <div class="selector__blockPart selector__blockPart--field"></div>
             </div>
           </div>
         </div>
-        <div class="inline">{{item.label}}</div>
-      </div>
-    </li>
-  </ul>
-  <ul class="itemBox__row itemBox__row--item">
-    <li class="itemBox__cell">
-      <div class="itemBox__cellInner">
-        <div class="selector selector--singleselect selector--expanded JS_selector">
-          <div class="selector__item selector__item--selected JS_selectorItem">
-            <div class="selector__block">
-              <div class="selector__blockPart selector__blockPart--prefix">{{item.name}}</div>
-            </div>
-          </div>
-          <div class="selector__itemSeperator"></div>
-          <div class="selector__item JS_selectorItem">
-            <div class="selector__block">
-              <div class="selector__blockPart selector__blockPart--prefix">don't {{item.name}}</div>
-            </div>
-          </div>
-          <div class="selector__itemSeperator selector__itemSeperator--hasLabel font--label">{{item.label}}</div>
-        </div>
-      </div>
-    </li>
-  </ul>
-  <ul class="itemBox__row itemBox__row--item">
-    <li class="itemBox__cell">
-      <div class="itemBox__cellInner">
-        <div class="selector selector--singleselect selector--expanded JS_selector">
-          <div class="selector__item selector__item--selected JS_selectorItem">
-            <div class="selector__block">
-              <div class="selector__blockPart selector__blockPart--prefix">{{item.name}}</div>
-            </div>
-          </div>
-          <div class="selector__itemSeperator"></div>
-          <div class="selector__item JS_selectorItem">
-            <div class="selector__block">
-              <div class="selector__blockPart selector__blockPart--prefix">don't {{item.name}}</div>
-            </div>
-          </div>
-          <div class="selector__itemSeperator selector__itemSeperator--hasLabel font--label">{{item.label}}</div>
-        </div>
+        <div class="inline">{{item  | capitalize}}</div>
       </div>
     </li>
   </ul>
