@@ -1,16 +1,14 @@
 ---
 ---
 
-// CALENDAR OPTIONS EXPAND-COLLAPSE
+// columnpicker OPTIONS EXPAND-COLLAPSE
 $('.JS_toggle--columnpickerOptions').on('click', function() {
   const toggle = $(this);
   closeAllOtherSublists(toggle);
   toggleColumnpickerOptions(toggle);
 });
 
-// open calendar
-// set a tick for the selected option
-// toggle active class depending on expanding/collapsing
+// open options
 function toggleColumnpickerOptions(toggle) {
   // if there is a color box, expand/collapse it
   const itemBox__row = toggle.closest('.itemBox__row');
@@ -18,7 +16,6 @@ function toggleColumnpickerOptions(toggle) {
 
   // only toggle, if they actually exists;
   if (possibleChildren.length > 0) {
-    // TODO when we need to show what is selected
 
     const bodyCell = toggle.closest('.itemBox__cell');
     if (bodyCell.hasClass('itemBox__cell--active')) {
@@ -50,4 +47,8 @@ function handleColumnPickerOptionChange(selector) {
   const bodyRow = $(itemBox).prevAll('ul.itemBox__row.JS_filterableCell:first');
   const toggle = $(bodyRow).find('.JS_toggle--columnpickerOptions');
   toggle.html(columnPickerToggleContent);
+  
+  // show reset to default
+  const multiSelector = $(bodyRow).closest('.multiSelector');
+  $(multiSelector).find('.JS_itemBox--resetSuggestion').css('display', 'block');
 }
