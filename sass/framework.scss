@@ -253,7 +253,7 @@
     &::before {
       content: '';
       position: absolute;
-      z-index: 2;
+      z-index: 10;
       top: 0; right: 0; bottom: 0; left: 0;
       display: inline-block;
       width: 100%;
@@ -313,10 +313,11 @@
   color: var(--color-primary);
   text-align: center;
   transition: all .3s ease-in-out;
+  transform: translate(0, 0);
   backface-visibility: hidden;
 
   &:hover {
-    transform: translateY(-2px);
+    transform: translate(0, -2px);
   }
 }
 

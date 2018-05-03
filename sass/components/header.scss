@@ -111,7 +111,9 @@
   }
 
   &--item {
-    border-top-color: transparent;
+    &::before {
+      border-top-color: transparent;
+    }
   }
 
   &--section {

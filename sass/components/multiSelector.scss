@@ -12,6 +12,30 @@
   pointer-events: none;
   z-index: -1;
 
+  .itemBox {
+    background-color: rgba(0, 0, 0, 0.17);
+
+    &--sublist {
+      padding: 5px 0 5px 5px;
+      background-color: #A9A9A9;
+      margin: 0 0 5px 0;
+    }
+
+    .itemBox,
+    .itemBox .itemBox,
+    .itemBox .itemBox .itemBox {
+      background-color: transparent;
+
+      &--sublist {
+        padding: 5px 0 5px 5px;
+        background-color: #A9A9A9;
+        margin: 0 0 5px 0;
+      }
+    }
+  }
+
+  /* Modiefiers */
+
   &--colorPicker {
     position: absolute;
     min-width: auto;
@@ -22,15 +46,5 @@
     opacity: 1;
     pointer-events: auto;
     z-index: 9999;
-  }
-
-  .itemBox {
-    background-color: rgba(0, 0, 0, 0.17);
-
-    .itemBox,
-    .itemBox .itemBox,
-    .itemBox .itemBox .itemBox {
-      background-color: transparent;
-    }
   }
 }
