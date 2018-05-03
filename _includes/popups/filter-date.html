@@ -203,7 +203,7 @@
             <div class="itemBox__cellInner ">
               <div class="itemBox__value">
 
-                {% include blocks/popup/include-exclude-selector.html selected="exclude"%}
+                {% include blocks/popup/selector-include-exclude.html selected="exclude"%}
                 <div class="selector selector--expanded">
                   <div class="selector__item selector__item--selected">
                     <div class="selector__block">
@@ -221,7 +221,7 @@
             </div>
           </li>
         </ul>
-        {% include blocks/popup/ms-create-new.html %}
+        {% include blocks/popup/ms-row-create-new.html %}
       </div>
       <!-- smart dates -->
 
@@ -244,7 +244,7 @@
             <div class="itemBox__cellInner ">
               <div class="itemBox__value">
 
-                {% include blocks/popup/include-exclude-selector.html selected="exclude"%}
+                {% include blocks/popup/selector-include-exclude.html selected="exclude"%}
                 <div class="selector selector--expanded JS_toggle--calendar">
                   <div class="selector__item selector__item--selected">
                     <div class="selector__block">
@@ -262,8 +262,8 @@
             </div>
           </li>
         </ul>
-        {% include blocks/popup/calendar/ms-calendar-sublist.html %}
-        {% include blocks/popup/ms-create-new.html %}
+        {% include blocks/popup/calendar/ms-sublist-calendar.html %}
+        {% include blocks/popup/ms-row-create-new.html %}
       </div>
       <!-- simple dates -->
 
@@ -286,7 +286,7 @@
             <div class="itemBox__cellInner">
               <div class="itemBox__value">
 
-                {% include blocks/popup/include-exclude-selector.html selected="include"%}
+                {% include blocks/popup/selector-include-exclude.html selected="include"%}
                 <div class="selector selector--expanded">
                   <div class="selector__item selector__item--selected">
                     <div class="selector__block">
@@ -304,7 +304,7 @@
             </div>
           </li>
         </ul>
-        {% include blocks/popup/ms-create-new.html %}
+        {% include blocks/popup/ms-row-create-new.html %}
       </div>
       <!-- ranges -->
 
@@ -327,7 +327,7 @@
             <div class="itemBox__cellInner">
               <div class="itemBox__value">
 
-                {% include blocks/popup/include-exclude-selector.html selected="include"%}
+                {% include blocks/popup/selector-include-exclude.html selected="include"%}
                 <div class="selector selector--expanded">
                   <div class="selector__item selector__item--selected">
                     <div class="selector__block">
@@ -346,7 +346,7 @@
           </li>
         </ul>
 
-        {% include blocks/popup/ms-create-new.html %}
+        {% include blocks/popup/ms-row-create-new.html %}
       </div>
       <!-- next last dates -->
     </div>

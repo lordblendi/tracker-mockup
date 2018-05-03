@@ -345,7 +345,7 @@ function getNewItem(item, exclude) {
       colorToggleHTML = `{% include javascript/colorToggle.html color="${color}" %}`;
       if($(item).closest('.multiSelector.JS_multiSelector--withColors').length > 0) {
         colorToggleTriggerInnerClass = ' JS_toggle--color';
-        colorChildren = `{% include blocks/popup/ms-tags-colors-color-sublist.html %}`;
+        colorChildren = `{% include blocks/popup/ms-sublist-tags-colors-color.html %}`;
       }
     }
     // otherwise only check if the prefix is there or not
