@@ -190,6 +190,10 @@
 
       .itemBox__cellInner {
         padding: 5px;
+
+        .inline {
+          vertical-align: top;
+        }
       }
     }
 
