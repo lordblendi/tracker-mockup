@@ -7,26 +7,27 @@ $('.JS_has-popup').on('click', function() {
   // outerWidth (including padding, border, and optionally margin -> true parameter)
   // innerWidth (including padding but not border)
   // width (not including anything)
-  var width = toggle.outerWidth(true);
-  var height = toggle.outerHeight(true);
+  var width = Math.round(toggle.outerWidth(true));
+  var height = Math.round(toggle.outerHeight(true));
+  var toggleWidth = width;
 
   // corners of toggle
-  var top = toggle.offset().top;
-  var left = toggle.position().left;
-  var right = left + width;
-  var bottom = top + height;
+  var top = Math.round(toggle.offset().top);
+  var left = Math.round(toggle.offset().left);
+  var right = Math.round(left + width);
+  var bottom = Math.round(top + height);
 
   // position of toggle, which side of the screen
   const windowWidth = $(window).width();
-  var isOnLeft = Math.round(windowWidth/2) >= Math.round(toggle.offset().left);
-  const isOnRight = Math.round(windowWidth/2) < Math.round(toggle.offset().left);
+  var isOnLeft = Math.round(windowWidth/2) >= Math.round(left);
+  const isOnRight = Math.round(windowWidth/2) < Math.round(left);
 
   if(width < 300) {
     width = 300;
   }
   // top for popup is under the toggle
-  var newTop = (Math.round(top) + Math.round(height)) + 'px';
-  var newLeft = right - width + "px";
+  var newTop = Math.round(bottom) + 'px';
+  var newLeft = left + "px";
 
   if($(this).hasClass('selector') ) {
     newTop = (Math.round(top) - 47) + 'px';
@@ -66,20 +67,18 @@ $('.JS_has-popup').on('click', function() {
       'left': left,
       'width': width
     }).addClass('multiSelector--visible');
-
-    toggle.hasClass('JS_has-popup--error') ? $(popid).addClass('animate--popup') : $(popid).addClass('animate--fadein');
   }
   // toggle is right, right side of the popup is right side of toggle
   else {
+    newLeft = right - width + 'px';
     $(popid).css({
       'top': newTop,
-      'right': right,
       'left': newLeft,
       'width': width
     }).addClass('multiSelector--visible');
-
-    toggle.hasClass('JS_has-popup--error') ? $(popid).addClass('animate--popup') : $(popid).addClass('animate--fadein');
   }
+
+  // toggle.hasClass('JS_has-popup--error') ? $(popid).addClass('animate--popup') : $(popid).addClass('animate--fadein');
 
   // show overlay
   $(".app__overlay").css({

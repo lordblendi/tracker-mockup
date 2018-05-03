@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body class="page-{{ page.title }}">
+    <div class="app">
+      <div class="app__overlay"></div>
+      {{ content }}
+    </div>
+    <!-- POPUPS -->
+
+    {% include popups/multiSelector-columnpicker.html %}
+
+    <div class="multiSelector" id="multiSelector-error">
+      <div class="itemBox">
+        <ul class="itemBox__row itemBox__row--custom">
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">
+
+              <div class="note note--error">
+                <p>Due date must be somewhere in the future.</p>
+              </div>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- /.itemBox -->
+    </div>
+    <!-- /.multiSelector -->
+    {% include foot.html %}
+  </body>
+</html>
