@@ -28,3 +28,8 @@ function toggleColumnpickerOptions(toggle) {
     expandCloseRow(itemBox__row, undefined, possibleChildren);
   }
 }
+
+
+$('.JS_itemBox--columnpickerOptions JS_selector').on('click', function(){
+
+});
