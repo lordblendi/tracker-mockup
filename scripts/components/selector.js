@@ -24,15 +24,15 @@ function handleSelector(selector, selectorValue) {
   // toggleSelect = singleSelect
   if (toggleSelect === true) {
     // if required, remove all the others from being selected
-    selectedValues.removeClass('selector__item--selected');
+    selectedValues.removeClass('selector__item--selected JS_selectorItem--active');
     // if required, select the one you clicked on
     if(required === true) {
-      selectorValue.addClass('selector__item--selected');
+      selectorValue.addClass('selector__item--selected JS_selectorItem--active');
     }
     // otherwise if it's not selected, toggle it;
     else {
       if(!isSelected) {
-        selectorValue.toggleClass('selector__item--selected');
+        selectorValue.toggleClass('selector__item--selected JS_selectorItem--active');
       }
     }
 
@@ -55,16 +55,16 @@ function handleSelector(selector, selectorValue) {
     if(required === true) {
       if(selectedValues.length === 1) {
         if (isSelected === false) {
-          selectorValue.toggleClass('selector__item--selected');
+          selectorValue.toggleClass('selector__item--selected JS_selectorItem--active');
         }
       }
       else {
-        selectorValue.toggleClass('selector__item--selected');
+        selectorValue.toggleClass('selector__item--selected JS_selectorItem--active');
       }
     }
     // otherwise just toggle
     else {
-      selectorValue.toggleClass('selector__item--selected');
+      selectorValue.toggleClass('selector__item--selected JS_selectorItem--active');
     }
   }
 
