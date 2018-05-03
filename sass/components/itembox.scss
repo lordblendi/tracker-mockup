@@ -62,6 +62,13 @@
             }
           }
 
+          &--active {
+            &::before {
+              height: 2px;
+              opacity: 1;
+            }
+          }
+
           &--permalink {
             cursor: pointer;
 
@@ -183,13 +190,6 @@
 
       .itemBox__cellInner {
         padding: 5px;
-      }
-    }
-
-    &--active {
-      &::before {
-        height: 2px;
-        opacity: 1;
       }
     }
 
