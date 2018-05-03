@@ -13,10 +13,6 @@
   font-size: 0;
   color: #000;
 
-  &::before {
-    border-radius: 15px;
-  }
-
   &__item {
     position: relative;
     display: inline-block;
