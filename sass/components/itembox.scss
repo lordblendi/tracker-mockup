@@ -257,11 +257,19 @@
     &--action {
       color: var(--color-primary);
     }
+  }
 
-    &--focus {
-      background-color: #FFF;
-      box-shadow: 0 0 50px rgba(24, 74, 103, 0.4);
-      z-index: 2;
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+
+    &:focus + .itemBox__cellInner {
+      box-shadow: 0 0 100px rgba(0, 0, 0, .2);
+      z-index: 1;
     }
   }
 
