@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var $app = $('.app');
+  var $app = $('body');
 
   // app-navigator toggle action
   $('.JS_toggle-app-navigator').on('click', function() {
