@@ -37,7 +37,7 @@
     <div class="itemBox JS_itemBox--children JS_selectionChildren">
       <div class="JS_sortable">
         {% for selected in site.data.columnpicker.selected %}
-          <ul class="itemBox__row itemBox__row--item itemBox__row--action JS_filterableCell ">
+          <ul class="itemBox__row itemBox__row--item JS_filterableCell ">
             <li class="itemBox__cell JS_textAction">
               <div class="itemBox__cellInner JS_text">
                 <div class="itemBox__value">{{selected}}</div>
@@ -46,10 +46,10 @@
             {% include javascript/ms-toggle-columnpicker-option.html %}
             <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--draggable">
               <div class="itemBox__cellInner">
-                <div class="itemBox__action ">އ</div>
+                <div class="itemBox__action">އ</div>
               </div>
             </li>
-            <li class="itemBox__cell flex-grow-0 itemBox__cell--action  JS_itemBox__cell--remove JS_itemBox__action">
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
               <div class="itemBox__cellInner">
                 <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
               </div>

@@ -6,9 +6,9 @@
 }
 
 .is-sticky .sticky-header {
-  box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 100px rgba(0, 0, 0, .2);
 
-  .item-header {
+  .header::after {
     border-bottom-style: solid;
   }
 }

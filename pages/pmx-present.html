@@ -4,27 +4,25 @@ title: PMX present
 permalink: /present
 ---
 
-<div class="app">
-  <div class="app__overlay"></div>
+<div class="app__overlay"></div>
 
-  <div class="app-navigator">
-    {% include blocks/app-nav.html %}
-  </div>
-
-  <div class="user-menu">
-    {% include blocks/user-menu.html %}
-  </div>
-
-  <main class="app__container">
-    <header class="app-header">
-      {% include blocks/app-header.html %}
-    </header>
-
-    {% include blocks/old-pmx-tabline.html %}
-
-    <div style="background-color: #4692C3;padding: 10px 0;">
-      {% include blocks/breadcrumbs.html %}
-      {% include blocks/old-pmx-item-detail.html %}
-    </div>
-  </main>
+<div class="app-navigator">
+  {% include blocks/app-nav.html %}
 </div>
+
+<div class="user-menu">
+  {% include blocks/user-menu.html %}
+</div>
+
+<main class="app__container">
+  <header class="app-header">
+    {% include blocks/app-header.html %}
+  </header>
+
+  {% include blocks/old-pmx-tabline.html %}
+
+  <div style="background-color: #4692C3;padding: 10px 0;">
+    {% include blocks/breadcrumbs.html %}
+    {% include blocks/old-pmx-item-detail.html %}
+  </div>
+</main>
