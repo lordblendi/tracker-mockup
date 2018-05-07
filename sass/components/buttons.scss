@@ -1,7 +1,11 @@
 ---
 ---
 
-.push {
+.buttons {
+  margin: 30px 10px;
+}
+
+.button {
   outline: 0;
   border: 0;
   overflow: visible;
@@ -28,24 +32,23 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: -2px;
-    left: 5%;
-    width: 90%;
-    height: 50%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
-    filter: blur(3px) contrast(.7);
-    border-radius: 30px;
-    background-color: inherit;
+    border-radius: 37px;
     transition: all .3s ease-in-out;
-    backface-visibility: hidden;
-    will-change: filter;
+    color: inherit;
+    box-shadow: 0 2px 0 0;
+    pointer-events: none;
   }
 
   &:hover {
     transform: translatey(1px);
 
     &::after {
-      filter: blur(1px) contrast(.7);
+      box-shadow: 0 1px 0 0;
     }
   }
 
@@ -60,6 +63,10 @@
   &--naked {
     background-color: transparent;
     text-decoration: underline;
+
+    &::after {
+      display: none;
+    }
 
     span {
       padding: 5px 0;
