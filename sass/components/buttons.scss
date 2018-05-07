@@ -1,0 +1,54 @@
+---
+---
+
+.push {
+  outline: 0;
+  border: 0;
+  overflow: visible;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 5px 18px;
+  border-radius: 30px;
+  text-align: center;
+  transition: all .3s ease-in-out;
+  font-size: 16px;
+  background-color: #F4F4F4;
+  color: #000;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 5%;
+    width: 90%;
+    height: 50%;
+    z-index: -1;
+    filter: blur(3px) contrast(.7);
+    border-radius: 30px;
+    background-color: inherit;
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover {
+    transform: translatey(1px);
+
+    &::after {
+      filter: blur(1px) contrast(.7);
+    }
+  }
+
+  &--go {
+    background-color: #01ADFF;
+  }
+
+  &--drop {
+    background-color: #FF1919;
+  }
+
+  &--naked {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+}
