@@ -9,13 +9,21 @@
   cursor: pointer;
   position: relative;
   display: inline-block;
-  padding: 5px 18px;
+  margin: 0 5px;
   border-radius: 30px;
   text-align: center;
   transition: all .3s ease-in-out;
   font-size: 16px;
   background-color: #F4F4F4;
   color: #000;
+  backface-visibility: hidden;
+
+  span {
+    display: block;
+    padding: 5px 18px;
+    background-color: inherit;
+    border-radius: 15px;
+  }
 
   &::after {
     content: '';
@@ -29,6 +37,8 @@
     border-radius: 30px;
     background-color: inherit;
     transition: all .3s ease-in-out;
+    backface-visibility: hidden;
+    will-change: filter;
   }
 
   &:hover {
@@ -50,5 +60,9 @@
   &--naked {
     background-color: transparent;
     text-decoration: underline;
+
+    span {
+      padding: 5px 0;
+    }
   }
 }
