@@ -1,0 +1,81 @@
+<div id="AttachmentsTab_Content" class="tid-content">
+  <h2 class="pagetitle">Attachments</h2>
+
+  <div id="item_upload_wrapper" class="newgrid block p-4 border border-solid border-grey rounded">
+    <dl>
+      <dt class="label">
+        <div class="radio"><span class="checked"><input id="fileAttachmentRadio" name="upload" checked="checked" style="opacity: 0;" type="radio"></span></div>
+        <span id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_Span1">File</span>
+      </dt>
+      <dd class="value">
+        <div id="upload_button" class="addcontent fixed">Click here to select a file</div>
+      </dd>
+      <dt class="label">
+        <div class="radio"><span class=""><input id="urlAttachmentRadio" name="upload" style="opacity: 0;" type="radio"></span></div>
+        <span id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_Span2">URL</span>
+      </dt>
+      <dd class="value">
+        <input id="urlAttachmentInput" class="text wide" type="text">
+        <br><small>Urls start with <strong>https://</strong>, references to files start with <strong>\\servername\d</strong>.</small>
+      </dd>
+      <dt class="label">
+        <label id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_Label1" for="fileDescription">Description</label>
+      </dt>
+      <dd class="value ipeblock">
+        <textarea id="fileDescription" cols="88" rows="2" class="full"></textarea>
+      </dd>
+      <dd class="value">
+        <p class="hasbuttons">
+          <a class="button save" tabindex="-1">
+          <span id="ctl00_PageContentPlaceHolder_ctl00_m_AttachmentsTab_attachments_Span4">Add</span>
+          </a>
+        </p>
+      </dd>
+    </dl>
+  </div>
+
+  <ol id="attachmentList" class="attachments">
+    <li class="attachment" data-ft-file="contacten aannemers.xlsx">
+      <a class="remove" onclick="attachments.removeAttachment(this, 351007)" href="#"></a>
+      <a class="inner" target="_blank" href="/download/attachment/351007">
+        <div class="file">
+          <div class="no-img _xlsx"></div>
+        </div>
+        <div class="filename">contacten aannemers.xlsx</div>
+      </a>
+      <div class="meta">
+        <div class="filename">contacten aannemers.xlsx</div>
+        <div id="attachmentComment_351007" class="description hasipe addcontent" title="Click here to edit" ipe_id="351007" ipe_type="BigText" ipe_property="LinkReason" ipe_editmodeallowed="true" ipe_object="ItemDocument"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</div>
+        <hr class="divider">
+        <div class="uploaded-by">
+          Uploaded by
+          <div class="author"> <span>Kasper Van Waes</span></div>
+          <div class="date">on  <span class="time">14/03/2018 at 12:54</span></div>
+        </div>
+        <div class="filesize">0,11MB</div>
+      </div>
+    </li>
+    <li class="attachment" data-ft-file="Requirements Events- actions- workflows rev13_19022018.xlsx">
+      <a class="remove" onclick="attachments.removeAttachment(this, 351006)" href="#"></a>
+      <a class="inner" target="_blank" href="/download/attachment/351006">
+        <div class="file">
+          <div class="no-img _xlsx"></div>
+        </div>
+        <div class="filename">Requirements Events- actions- workflows rev13_19022018.xlsx</div>
+      </a>
+      <div class="meta">
+        <div class="filename">Requirements Events- actions- workflows rev13_19022018.xlsx</div>
+        <div id="attachmentComment_351006" class="description hasipe addcontent" title="Click here to edit" ipe_id="351006" ipe_type="BigText" ipe_property="LinkReason" ipe_editmodeallowed="true" ipe_object="ItemDocument"><a class="focuscatcher" href="#" onclick="return false"></a>Click here to edit</div>
+        <hr class="divider">
+        <div class="uploaded-by">
+          Uploaded by
+          <div class="author"> <span>Kasper Van Waes</span></div>
+          <div class="date">on  <span class="time">14/03/2018 at 12:53</span></div>
+        </div>
+        <div class="filesize">0,23MB</div>
+      </div>
+    </li>
+  </ol>
+
+  <div class="clear"></div>
+</div>

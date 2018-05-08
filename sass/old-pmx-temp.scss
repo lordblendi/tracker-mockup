@@ -135,83 +135,10 @@ body {
   padding: 0 20px 20px;
 }
 
-
-.item-detail .tab-content {
-  padding: 15px;
-}
-.item-detail .tid-content {
-  padding: 0;
-}
-.item-detail .tid-content h3, .item-detail .tid-content .newgrid h3 {
-  color: #285C9E;
-  font-size: 18px;
-  margin: 0;
-  padding: 0 0 20px;
-  border: 0;
-}
-.item-detail #item_upload_wrapper {
-  border: 0;
+.addcontent.fixed {
+  position: relative;
 }
 
-.newgrid dl {
-  width: auto;
-}
-
-.radio {
-  height: 20px;
-}
-
-
-.item-detail #item_upload_wrapper.newgrid dl dt.label,
-.item-detail #item_upload_wrapper.newgrid dl dt.largelabel,
-.item-detail #item_upload_wrapper.newgrid dl dd.largevalue,
-.item-detail #item_upload_wrapper.newgrid dl dd.value {
-  width: 100%;
-  margin: 0;
-}
-.item-detail #item_upload_wrapper.newgrid dl dd.value input.text.wide,
-.item-detail #item_upload_wrapper.newgrid dl dd.valuetextarea.wide,
-.item-detail #item_upload_wrapper.newgrid dl dd.value select.wide {
-  width: 100%;
-}
-.item-detail #item_upload_wrapper dl dt.label {
-  color: #666;
-  text-align: left;
-  width: 100%;
-  margin: 0;
-  padding: 5px;
-}
-
-.item-detail #item_upload_wrapper.newgrid dl dd.value .addcontent.fixed {
-  border: 0;
-  color: #b0b0b0;
-  font-style: italic;
-  display: block;
-  font-weight: normal;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 300;
-  border-bottom: 1px solid #AAA;
-  line-height: normal;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.item-detail #item_upload_wrapper.newgrid dl dd.value textarea.full {
-  border-bottom: 1px solid #AAA;
-}
-
-li.attachment .filename, li.attachment .meta .filename {
-  width: auto;
-}
-li.attachment:hover .inner .filename {
-  padding: 15px 0;
-  left: -15px;
-  width: calc(100% + 30px);
-}
-li.attachment .meta {
-  padding: 0 0 15px;
-  left: 0;
-  width: 100%;
+.radio span:before {
+  font-size: 12px;
 }

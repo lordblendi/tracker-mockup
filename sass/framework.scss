@@ -101,6 +101,10 @@
   display: inline;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .middle {
   vertical-align: middle;
 }
@@ -208,7 +212,7 @@
   transition: all .3s ease-in-out;
 
   &--primary {
-    color: #01ADFF;
+    color: var(--color-blue);
 
     &:hover {
       color: #047CB6;
