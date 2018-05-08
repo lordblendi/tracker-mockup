@@ -461,11 +461,17 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
       if($(newItem).find('.JS_toggle--color').length > 0 ){
         resetColorToggle(newItem);
       }
-      animateNewItem(newItem);
+      animateNewItem(newItem, () => {
+        if(positionOfItemInOptions >= 0) {
+          $(itemInOptionsAction).replaceWith(removeActionHTML);
+        }
 
-      if(positionOfItemInOptions >= 0) {
-        $(itemInOptionsAction).replaceWith(removeActionHTML);
-      }
+        // needed because of the delay
+        // check counter, reset actions
+        checkCounter(selection);
+        reset();
+      });
+
     }
     // if removing something that is already selected
     // remove it from selected, replace action in options
