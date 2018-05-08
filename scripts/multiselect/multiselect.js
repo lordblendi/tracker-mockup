@@ -83,7 +83,7 @@ function handleActionOnclick(action) {
   // whatever happened, show resetSuggestions
   // if the multiselector has that enabled
   if($(multiSelector).hasClass('JS_multiSelector--resetFunctionality')){
-    $(multiSelector).find('.JS_itemBox--resetSuggestion').css('display', 'block');
+    showResetToDefault(multiSelector);
   }
 
   // whatever happened, reset the filter

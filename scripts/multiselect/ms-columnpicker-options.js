@@ -47,8 +47,8 @@ function handleColumnPickerOptionChange(selector) {
   const bodyRow = $(itemBox).prevAll('ul.itemBox__row.JS_filterableCell:first');
   const toggle = $(bodyRow).find('.JS_toggle--columnpickerOptions');
   toggle.html(columnPickerToggleContent);
-  
+
   // show reset to default
   const multiSelector = $(bodyRow).closest('.multiSelector');
-  $(multiSelector).find('.JS_itemBox--resetSuggestion').css('display', 'block');
+  showResetToDefault(multiSelector);
 }

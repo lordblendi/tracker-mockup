@@ -27,7 +27,7 @@ function reinitSortable(multiSelector) {
     options['stop'] = function(event, ui) {
       const sortedItem = $(ui.item);
       const multiSelector = sortedItem.closest('.multiSelector');
-      $(multiSelector).find('.JS_itemBox--resetSuggestion').css('display', 'block');
+      showResetToDefault(multiSelector);
     };
   }
   $(multiSelector).find(sortableSelector).sortable(options);
