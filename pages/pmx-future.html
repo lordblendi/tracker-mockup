@@ -4,7 +4,6 @@ title: PMX future
 permalink: /future
 ---
 
-<div class="app item-progress--visible">
   <div class="app__overlay"></div>
 
   <div class="app-navigator">
@@ -22,33 +21,34 @@ permalink: /future
 
     {% include blocks/breadcrumbs.html %}
 
-    <div class="item">
+    <div class="mx-4">
       <div class="sticky-header">
         {% include blocks/item-header.html %}
       </div>
 
-      <div class="item-body">
-        <div class="item-progress ms-fixed">
-          <div class="item-progress__inner">
+      <div class="py-4 clearfix">
+
+        <div class="item-progress w-1/4 pr-4 float-left">
+          <div class="panel">
             {% include blocks/item-progress.html %}
           </div>
         </div>
 
-        <div class="item-main ms-fixed">
-          <div class="item-main__inner">
+        <div class="item-details w-3/4 p-0 float-left">
+          <div class="panel shadow-lg">
             {% include blocks/item-main.html %}
           </div>
         </div>
 
-        <div class="item-comments">
-          <div class="item-comments__inner">
+        <div class="item-extras w-1/2 pl-4 float-right hidden">
+          <div class="panel">
             {% include blocks/item-comments.html %}
           </div>
         </div>
+
       </div>
       <!-- /.item-body -->
     </div>
     <!-- /.app__document -->
   </main>
   <!-- //app__container -->
-</div>

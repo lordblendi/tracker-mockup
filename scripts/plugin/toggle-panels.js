@@ -65,13 +65,17 @@ $(document).ready(function() {
     }
   });
 
-  // Toggle COMMENTS-ATTACHMENTS-HISTORY
-  $('.JS_toggle-comments').on('click', function() {
-    $app.toggleClass('item-comments--visible');
+  // Panel toggles
+  $('.JS_panels-state-1').on('click', function() {
+    $app.removeClass('panels-state-1 panels-state-2 panels-state-3');
+    $app.addClass('panels-state-1');
   });
-
-  // Toggle INFO
-  $('.JS_toggle-progress').on('click', function() {
-    $app.toggleClass('item-progress--visible');
+  $('.JS_panels-state-2').on('click', function() {
+    $app.removeClass('panels-state-1 panels-state-2 panels-state-3');
+    $app.addClass('panels-state-2');
+  });
+  $('.JS_panels-state-3').on('click', function() {
+    $app.removeClass('panels-state-1 panels-state-2 panels-state-3');
+    $app.addClass('panels-state-3');
   });
 });

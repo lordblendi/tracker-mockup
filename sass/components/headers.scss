@@ -65,25 +65,10 @@
     padding: 7px 10px 7px 15px;
     line-height: 1;
     border-radius: 0 15px 15px 0;
-    font-size: 12px;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #808080;
   }
 
   &__id {
     margin: 0 5px;
-  }
-
-  &__title {
-    h2 {
-      font-size: 20px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
   }
 
   &__actions {
@@ -113,19 +98,6 @@
   &--item {
     &::before {
       border-top-color: transparent;
-    }
-    .header {
-      &__inputTitle {
-        font-size: 24px;
-        font-weight: 600;
-      }
-
-      &__title {
-        h2 {
-          font-size: 24px;
-          font-weight: 600;
-        }
-      }
     }
   }
 

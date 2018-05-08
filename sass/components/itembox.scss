@@ -78,7 +78,7 @@
 
             &::before {
               background: #B2B2B2;
-              background: linear-gradient(to right, #b2b2b2 0%, #00baff 20%, #00baff 50%, #00baff 80%, #b2b2b2 100%);
+              background: linear-gradient(to right, var(--color-grey-dark) 0%, var(--color-blue) 20%, var(--color-blue) 50%, var(--color-blue) 80%, var(--color-grey-dark) 100%);
             }
           }
         }
@@ -88,7 +88,7 @@
         .itemBox {
           &__cell:not(.flex-grow-0) {
             &::after {
-              background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(242,242,242,.5) 50%, #F2F2F2 100%);
+              background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(242,242,242,.5) 50%, var(--color-grey-lightest) 100%);
             }
           }
         }
@@ -105,7 +105,7 @@
       }
 
       &:nth-of-type(odd) {
-        background-color: #F2F2F2;
+        background-color: var(--color-grey-lightest);
       }
 
       &:nth-of-type(even) {
@@ -191,7 +191,7 @@
     }
 
     &--action {
-      color: var(--color-primary);
+      color: var(--color-gold);
     }
   }
 
@@ -246,7 +246,7 @@
     transition: all .3s ease-in-out;
     font-size: 16px;
     font-style: normal;
-    color: var(--color-primary);
+    color: var(--color-gold);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 

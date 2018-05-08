@@ -1,0 +1,71 @@
+---
+---
+
+.panels-state {
+  &-1 {
+    .item-progress {
+      display: block;
+      width: 25%;
+    }
+
+    .item-details {
+      display: block;
+      width: 75%;
+    }
+
+    .item-extras {
+      display: none;
+    }
+  }
+
+  &-2 {
+    .item-progress {
+      display: block;
+      width: 25%;
+    }
+
+    .item-details {
+      display: block;
+      width: 50%;
+    }
+
+    .item-extras {
+      display: block;
+      width: 25%;
+    }
+  }
+
+  &-3 {
+    .item-progress {
+      display: none;
+    }
+
+    .item-details {
+      display: block;
+      width: 75%;
+    }
+
+    .item-extras {
+      display: block;
+      width: 25%;
+    }
+  }
+}
+
+.item-progress {
+  .panel {
+
+  }
+}
+
+.item-details {
+  .panel {
+    background-color: #FFF;
+  }
+}
+
+.item-extras {
+  .panel {
+    background-color: #FFF;
+  }
+}

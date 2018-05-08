@@ -18,7 +18,7 @@
   &--error {
     .field {
       &__label {
-        color: var(--color-secondary);
+        color: var(--color-red);
       }
     }
   }
@@ -103,6 +103,6 @@
   &__error {
     font-size: 12px;
     padding: 0 5px;
-    color: var(--color-secondary);
+    color: var(--color-red);
   }
 }

@@ -1,73 +1,11 @@
 ---
 ---
 
-/* Global */
+/*
+  Extend Tailwind Framework
+*/
 
-.clearfix::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.primary {
-  color: var(--color-primary);
-}
-.secondary {
-  color: var(--color-secondary);
-}
-
-/* grid */
-
-.row {
-  position: relative;
-
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-}
-
-.col {
-  float: left;
-
-  &-1 {
-    width: 8.333332%;
-  }
-  &-2 {
-    width: 16.666667%;
-  }
-  &-3 {
-    width: 25%;
-  }
-  &-4 {
-    width: 33.333332%
-  }
-  &-5 {
-    width: auto;
-  }
-  &-6 {
-    width: 50%;
-  }
-  &-7 {
-    width: 58.333332%;
-  }
-  &-8 {
-    width: 66.666667%
-  }
-  &-9 {
-    width: 75%
-  }
-  &-10 {
-    width: 83.333332%;
-  }
-  &-11 {
-    width: 91.666667%;
-  }
-  &-12 {
-    width: 100%;
-  }
-}
+/* Flex */
 
 .flex {
   &-grow {
@@ -95,112 +33,79 @@
   }
 }
 
-/* Positioning */
-
-.inline {
-  display: inline;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.middle {
-  vertical-align: middle;
-}
-.baseline {
-  vertical-align: baseline;
-}
-
-.align-left {
-  text-align: left;
-}
-.align-center {
-  text-align: center;
-}
-.align-right {
-  text-align: right;
-}
-
-.pin-l {
-  left: 0;
-  right: inherit;
-}
-.pin-r {
-  left: inherit;
-  right: 0;
-}
-
 /* Sizing */
-
-.w-full {
-  width: 100%;
-}
-
-.w-screen {
-  width: 100vw;
-}
 
 .w-half-screen {
   width: 50vw;
 }
 
-/* Fonts */
+/* Text */
 
-.ellipsis, .ellipsis * {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+h2,
+.h2 {
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
 }
 
-.font {
+h3,
+.h3 {
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+h6,
+.h6 {
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #808080;
+}
+
+.text-base {
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
   letter-spacing: normal;
   text-transform: none;
+}
 
-  &--h2 {
-    font-size: 24px;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: normal;
-    text-transform: none;
-  }
+.text-xs {
+  font-size: 10px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
 
-  &--action {
-    font-size: 24px;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: normal;
-    text-transform: none;
-  }
+.text-placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: normal;
+  text-transform: none;
+  opacity: .4;
+}
 
-  &--label {
-    font-size: 12px;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #808080;
-  }
 
-  &--placeholder {
-    font-size: 16px;
-    font-weight: 400;
-    font-style: italic;
-    letter-spacing: normal;
-    text-transform: none;
-    opacity: .4;
-  }
+/*
+  Extend with custom framework classes
+*/
 
-  &--xs {
-    font-size: 10px;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+/* Colors */
+
+.primary {
+  color: var(--color-gold);
+}
+.secondary {
+  color: var(--color-red);
 }
 
 /* Links */
@@ -223,14 +128,6 @@
     opacity: .5;
     transform: translateY(1px);
   }
-}
-
-/* Actions */
-
-.action-icon {
-  display: inline-block;
-  padding: 5px;
-  text-align: center;
 }
 
 /* Animations */
@@ -309,6 +206,12 @@
 
 /* Action */
 
+.action-icon {
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+}
+
 .action {
   display: inline-block;
   min-height: 40px;
@@ -317,7 +220,7 @@
   cursor: pointer;
   line-height: 30px;
   font-size: 16px;
-  color: var(--color-primary);
+  color: var(--color-gold);
   text-align: center;
   transition: all .3s ease-in-out;
   transform: translate(0, 0);
@@ -325,10 +228,6 @@
 
   &:hover {
     transform: translate(0, -2px);
-  }
-
-  &--secondary {
-    color: var(--color-secondary);
   }
 }
 
@@ -345,26 +244,4 @@
   &:hover {
     transform: none;
   }
-}
-
-.saved {
-
-}
-
-/* TEMP Hover */
-
-.effect1 {
-  transform: translateY(-1px);
-  box-shadow: 0 0 100px rgba(0,0,0,.5); // less shadow
-}
-
-.effect2 {
-  opacity: .7;
-  transform: translateY(-1px); // ????
-}
-
-.effect3 {
-  transform: translateY(-1px);
-  opacity: .7;
-  filter: saturate(.7);
 }
