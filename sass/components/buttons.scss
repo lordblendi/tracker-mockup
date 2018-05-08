@@ -1,11 +1,11 @@
 ---
 ---
 
-.buttons {
+.btns {
   margin: 30px 10px;
 }
 
-.button {
+.btn {
   outline: 0;
   border: 0;
   overflow: visible;
@@ -19,7 +19,7 @@
   text-align: center;
   transition: all .3s ease-in-out;
   font-size: 16px;
-  background-color: #F4F4F4;
+  background-color: #E5E4E2;
   color: #000;
   box-shadow: 0 2px 0 #CCC;
 
@@ -29,7 +29,7 @@
   }
 
   &--go {
-    background-color: #01ADFF;
+    background-color: #00BFFF;
     box-shadow: 0 2px 0 #055074;
 
     &:hover {
@@ -38,7 +38,7 @@
   }
 
   &--drop {
-    background-color: #FF1919;
+    background-color: #E30022;
     box-shadow: 0 2px 0 #660202;
 
     &:hover {
