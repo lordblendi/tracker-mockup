@@ -114,6 +114,19 @@
     &::before {
       border-top-color: transparent;
     }
+    .header {
+      &__inputTitle {
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      &__title {
+        h2 {
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+    }
   }
 
   &--section {
