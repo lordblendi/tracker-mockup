@@ -461,6 +461,7 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
       if($(newItem).find('.JS_toggle--color').length > 0 ){
         resetColorToggle(newItem);
       }
+      animateNewItem(newItem);
 
       if(positionOfItemInOptions >= 0) {
         $(itemInOptionsAction).replaceWith(removeActionHTML);
@@ -470,11 +471,18 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
     // remove it from selected, replace action in options
     else if(remove && isAlreadySelected) {
       const itemToRemove = $(selectedItems[positionOfItemInSelected]).closest('.JS_filterableCell');
-      itemToRemove.remove();
+      animateToBeRemovedItem(itemToRemove, () => {
+        itemToRemove.remove();
+        if(positionOfItemInOptions >= 0) {
+          $(itemInOptionsAction).replaceWith(addActionHTML);
+        }
 
-      if(positionOfItemInOptions >= 0) {
-        $(itemInOptionsAction).replaceWith(addActionHTML);
-      }
+        // needed because of the delay
+        // check counter, reset actions
+        checkCounter(selection);
+        reset();
+      });
+
     }
 
     // check counter, reset actions
