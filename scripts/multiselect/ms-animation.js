@@ -1,11 +1,14 @@
 function animateNewItem(item, callback) {
   $.Velocity.animate(item, 'slideDown', {
-    display: 'flex'
+    display: 'flex',
+    duration: 250
   }).then(callback);
 }
 
 function animateToBeRemovedItem(item, callback) {
-  $.Velocity.animate(item, 'slideUp').then(callback);
+  $.Velocity.animate(item, 'slideUp', {
+    duration: 250
+  }).then(callback);
 }
 
 function fadeMultiselect(multiselect) {

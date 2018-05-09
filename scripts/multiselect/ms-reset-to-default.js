@@ -33,6 +33,8 @@ function resetToDefault(resetToDefaultRow) {
 function showResetToDefault(multiSelector) {
   const suggestion = $(multiSelector).find('.JS_itemBox--resetSuggestion');
   if (suggestion.css("display") !== 'block') {
-    $.Velocity.animate(suggestion, 'slideDown');
+    $.Velocity.animate(suggestion, 'slideDown', {
+      duration: 250
+    });
   }
 }
