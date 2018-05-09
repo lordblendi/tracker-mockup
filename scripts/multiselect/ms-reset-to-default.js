@@ -18,15 +18,10 @@ function resetToDefault(resetToDefaultRow) {
 
   // only replace it if the newContentString is not empty
   if (newContentString.length > 0) {
-    fadeMultiselect(multiSelector);
     const newContent = $.parseHTML(newContentString);
     $(multiSelector).html($(newContent).html());
     reset();
     resetFilterActions();
-    setTimeout(function() {
-      fadeMultiselect(multiSelector);
-    }, 500);
-
   }
 }
 
