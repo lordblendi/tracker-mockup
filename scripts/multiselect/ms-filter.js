@@ -13,7 +13,7 @@ $('.JS_multiSelector__filterInput').keyup(function() {
 $('.JS_appNav__filterInput').keyup(function() {
   var input = $(this);
   filterResults(input, '.JS_appNavBox .JS_filterableCell');
-  var multiSelector = $(input).closest(".multiSelector");
+  var multiSelector = $(input).closest(".multiSelector, .tabs-panels__panel");
 
   checkGroups(multiSelector, '.JS_appNavBox  .itemBox__row:not(.JS_filterableCell)');
 
@@ -26,7 +26,7 @@ function filterResults(input, listItemSelector) {
   // find the listItems with the provided selector in the same multiSelector,
   // where the input field is located at
   var filter = input[0].value.toUpperCase();
-  var multiSelector = $(input).closest(".multiSelector");
+  var multiSelector = $(input).closest(".multiSelector, .tabs-panels__panel");
   var listItems = $(multiSelector).find(listItemSelector);
 
   // if the filter is longar than 0 characters
