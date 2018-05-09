@@ -1,24 +1,28 @@
-//  filter for multiselects - action handler for input field
-$('.JS_multiSelector__filterInput').keyup(function() {
-  var input = $(this);
-  var multiSelector = $(input).closest(".multiSelector");
-  filterResults(input, '.JS_selectionChildren .JS_filterableCell, .JS_optionsChildren .JS_filterableCell');
+resetFilterActions();
 
-  checkGroups(multiSelector, '.JS_itemBox  .itemBox__row:not(.JS_filterableCell)');
+function resetFilterActions() {
+  //  filter for multiselects - action handler for input field
+  $('.JS_multiSelector__filterInput').keyup(function() {
+    var input = $(this);
+    var multiSelector = $(input).closest(".multiSelector");
+    filterResults(input, '.JS_selectionChildren .JS_filterableCell, .JS_optionsChildren .JS_filterableCell');
 
-  reInitActions(multiSelector);
-});
+    checkGroups(multiSelector, '.JS_itemBox  .itemBox__row:not(.JS_filterableCell)');
 
-// filter for app_navigator - action handler for input field
-$('.JS_appNav__filterInput').keyup(function() {
-  var input = $(this);
-  filterResults(input, '.JS_appNavBox .JS_filterableCell');
-  var multiSelector = $(input).closest(".multiSelector, .tabs-panels__panel");
+    reInitActions(multiSelector);
+  });
 
-  checkGroups(multiSelector, '.JS_appNavBox  .itemBox__row:not(.JS_filterableCell)');
+  // filter for app_navigator - action handler for input field
+  $('.JS_appNav__filterInput').keyup(function() {
+    var input = $(this);
+    filterResults(input, '.JS_appNavBox .JS_filterableCell');
+    var multiSelector = $(input).closest(".multiSelector, .tabs-panels__panel");
 
-  reInitActions(multiSelector);
-});
+    checkGroups(multiSelector, '.JS_appNavBox  .itemBox__row:not(.JS_filterableCell)');
+
+    reInitActions(multiSelector);
+  });
+}
 
 // function that handles simple filter results
 function filterResults(input, listItemSelector) {

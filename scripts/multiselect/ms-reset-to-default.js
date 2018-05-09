@@ -22,6 +22,7 @@ function resetToDefault(resetToDefaultRow) {
     const newContent = $.parseHTML(newContentString);
     $(multiSelector).html($(newContent).html());
     reset();
+    resetFilterActions();
     setTimeout(function() {
       fadeMultiselect(multiSelector);
     }, 500);
