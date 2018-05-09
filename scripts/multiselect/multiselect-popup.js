@@ -79,6 +79,14 @@ $('.JS_has-popup').on('click', function() {
 
    toggle.hasClass('JS_has-popup--error') ? $(popid).addClass('animate--popup') : $(popid).addClass('animate--fadein');
 
+  if (toggle.hasClass('JS_has-popup--error')) {
+    $('body').addClass('state-overlay-error');
+  }
+
+  if (toggle.hasClass('JS_has-popup--tooltip')) {
+    $('body').addClass('state-overlay-tooltip');
+  }
+
   // show overlay
   $(".app__overlay").css({
     'pointer-events': 'auto',
@@ -99,6 +107,9 @@ function closeOverlay(){
     'pointer-events': '',
     'opacity': ''
   });
+
+  $('body').removeClass('state-overlay-error');
+  $('body').removeClass('state-overlay-tooltip');
 
   $('.multiSelector').removeClass('multiSelector--visible animate--popup animate--fadein');
 }
