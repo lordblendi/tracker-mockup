@@ -160,6 +160,12 @@ h6,
     transform: translateY(0px);
   }
 }
+@keyframes animate-fadeout {
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
 
 .animate {
   &--loading {
@@ -197,6 +203,11 @@ h6,
     opacity: 0;
     transform: translateY(-20px);
     animation: animate-fadein .3s ease forwards;
+  }
+  &--fadeout {
+    opacity: 1;
+    transform: translateY(0);
+    animation: animate-fadeout .3s ease forwards;
   }
 
   &--save {

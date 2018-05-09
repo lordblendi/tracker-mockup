@@ -18,15 +18,20 @@ function resetToDefault(resetToDefaultRow) {
 
   // only replace it if the newContentString is not empty
   if (newContentString.length > 0) {
+    fadeMultiselect(multiSelector);
     const newContent = $.parseHTML(newContentString);
     $(multiSelector).html($(newContent).html());
     reset();
+    setTimeout(function() {
+      fadeMultiselect(multiSelector);
+    }, 500);
+
   }
 }
 
-function showResetToDefault(multiSelector){
+function showResetToDefault(multiSelector) {
   const suggestion = $(multiSelector).find('.JS_itemBox--resetSuggestion');
-  if(suggestion.css("display") !== 'block') {
+  if (suggestion.css("display") !== 'block') {
     $.Velocity.animate(suggestion, 'slideDown');
   }
 }
