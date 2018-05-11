@@ -5,7 +5,7 @@ permalink: /drag
 ---
 
 <style>
-  @keyframes barberpole {
+  @keyframes dashed-border-spinner {
     100% {
       background-position: 100% 100%;
     }
@@ -18,14 +18,7 @@ permalink: /drag
     transition: all .3s ease-in-out;
     border-color: transparent;
     background-size: 200% 200%;
-    background-attachment: fixed;
-    background-image: repeating-linear-gradient(
-      45deg,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2) 10px,
-      rgba(0, 0, 0, 0.4) 10px,
-      rgba(0, 0, 0, 0.4) 20px
-    );
+    background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 10px, rgba(0, 0, 0, 0.4) 10px, rgba(0, 0, 0, 0.4) 20px);
   }
   .selector--draggable .selector__item {
     cursor: move;
@@ -35,13 +28,7 @@ permalink: /drag
   }
 
   .ui-widget-content .selector:hover {
-    background-image: repeating-linear-gradient(
-      45deg,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2) 10px,
-      rgba(0, 0, 0, 0.6) 10px,
-      rgba(0, 0, 0, 0.6) 20px
-    );
+    background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 10px, rgba(0, 0, 0, 0.6) 10px, rgba(0, 0, 0, 0.6) 20px);
   }
   .ui-draggable {
     overflow: hidden;
@@ -53,12 +40,11 @@ permalink: /drag
   }
   .ui-draggable .selector:active,
   .ui-draggable-dragging .selector {
-    transform: scale(1.05);
+    transform: scale(1.03);
     opacity: .5;
-    box-shadow: 0 0 100px rgba(0,0,0,.2);
-    animation: barberpole 10s linear infinite;
+    box-shadow: 0 0 100px rgba(0,0,0,.95);
+    animation: dashed-border-spinner 10s linear infinite;
   }
-
 
   .cell {
     position: relative;
@@ -79,14 +65,10 @@ permalink: /drag
     z-index: 1;
   }
 </style>
+
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-  $(function() {
-    $(".ui-widget-content").draggable();
-  });
-</script>
-
+<script>$(function() { $(".ui-widget-content").draggable(); });</script>
 
 <div class="cell">
 
