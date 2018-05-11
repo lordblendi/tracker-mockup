@@ -167,6 +167,36 @@ h6,
   }
 }
 
+@keyframes danger {
+  0% {
+    box-shadow: 0 0 100px rgb(255, 0, .2);
+  }
+  50% {
+    box-shadow: 0 0 300px rgb(255, 0, .8);
+  }
+  100% {
+    box-shadow: 0 0 100px rgb(255, 0, .2);
+  }
+}
+
+@keyframes spin-danger {
+  0% {
+    box-shadow: -50px 50px 200px -10px rgb(255, 0, .5);
+  }
+  25% {
+    box-shadow: -50px -50px 200px -10px rgb(255, 0, .5);
+  }
+  50% {
+    box-shadow: 50px -50px 200px -10px rgb(255, 0, .5);
+  }
+  75% {
+    box-shadow: 50px 50px 200px -10px rgb(255, 0, .5);
+  }
+  100% {
+    box-shadow: -50px 50px 200px -10px rgb(255, 0, .5);
+  }
+}
+
 .animate {
   &--loading {
     &::before {

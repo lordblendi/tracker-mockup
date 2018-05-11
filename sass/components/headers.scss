@@ -34,7 +34,6 @@
     width: 100%;
     margin: 15px 0;
     padding: 0 15px;
-    background-color: #FFF;
     z-index: 1;
     opacity: 0;
     font-size: 20px;
@@ -45,12 +44,13 @@
     &:focus {
       height: 100%;
       margin: 0;
-      padding: 46px 15px 15px;
+      padding: 40px 15px 15px;
       opacity: 1;
       box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
 
-      ~ .header__actions {
-        z-index: 0;
+      ~ .header__title .header__type, ~ .header__actions {
+        opacity: 0;
+        pointer-events: none;
       }
     }
   }
@@ -58,6 +58,8 @@
   &__type {
     display: inline-block;
     margin: 0 0 0 -15px;
+    opacity: 1;
+    transition: all .15s ease-in-out;
   }
 
   &__label {
@@ -82,6 +84,8 @@
     z-index: 2;
     display: flex;
     align-items: center;
+    opacity: 1;
+    transition: opacity .15s ease-in-out;
 
     &::before {
       content: '';
