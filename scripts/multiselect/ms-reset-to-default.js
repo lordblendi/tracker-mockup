@@ -19,9 +19,17 @@ function resetToDefault(resetToDefaultRow) {
   // only replace it if the newContentString is not empty
   if (newContentString.length > 0) {
     const newContent = $.parseHTML(newContentString);
-    $(multiSelector).html($(newContent).html());
-    reset();
-    resetFilterActions();
+    const newContentSelectedChildren = $(newContent).find('.JS_selectionChildren');
+
+    const selectedTitleToggle = $(multiSelector).find('.JS_selectionTitle .JS_toggle');
+    selectedTitleToggle.click();
+    setTimeout(function() {
+      $(multiSelector).find('.JS_selectionChildren').html($(newContentSelectedChildren).html());
+      reset();
+      resetFilterActions();
+      selectedTitleToggle.click();
+      hideResetToDefault(multiSelector);
+    }, 300);
   }
 }
 
@@ -29,7 +37,15 @@ function showResetToDefault(multiSelector) {
   const suggestion = $(multiSelector).find('.JS_itemBox--resetSuggestion');
   if (suggestion.css("display") !== 'block') {
     $.Velocity.animate(suggestion, 'slideDown', {
-      duration: 250
+      duration: 125
+    });
+  }
+}
+function hideResetToDefault(multiSelector) {
+  const suggestion = $(multiSelector).find('.JS_itemBox--resetSuggestion');
+  if (suggestion.css("display") === 'block') {
+    $.Velocity.animate(suggestion, 'slideUp', {
+      duration: 125
     });
   }
 }

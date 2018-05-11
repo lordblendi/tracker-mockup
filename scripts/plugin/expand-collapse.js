@@ -38,7 +38,7 @@ function expandCloseRow(itemBox__row, rowClosed, possibleChildren){
     // open it, if we have to
     if (rowClosed === true) {
       $.Velocity.animate(possibleChildren, 'slideDown', {
-        duration: 500
+        duration: 250
       }).then(function() {
         $(possibleChildren).removeClass('JS_children-closed');
         if(iContent !== null && iContent !== undefined){
@@ -50,7 +50,7 @@ function expandCloseRow(itemBox__row, rowClosed, possibleChildren){
     // otherwise close it
     else {
       $.Velocity.animate(possibleChildren, 'slideUp', {
-        duration: 500
+        duration: 250
       }).then(function() {
         $(possibleChildren).addClass('JS_children-closed');
         if(iContent !== null && iContent !== undefined){
