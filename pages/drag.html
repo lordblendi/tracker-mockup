@@ -12,6 +12,7 @@ permalink: /drag
   }
 
   .selector--draggable {
+    margin: 5px;
     cursor: move;
     pointer-events: all;
     transition: all .3s ease-in-out;
@@ -41,6 +42,14 @@ permalink: /drag
       rgba(0, 0, 0, 0.6) 20px
     );
   }
+  .ui-draggable {
+    overflow: hidden;
+  }
+  .ui-draggable:active,
+  .ui-draggable-dragging {
+    overflow: visible;
+    z-index: 2;
+  }
   .ui-draggable .selector:active,
   .ui-draggable-dragging .selector {
     transform: scale(1.05);
@@ -48,27 +57,71 @@ permalink: /drag
     box-shadow: 0 0 100px rgba(0,0,0,.2);
     animation: barberpole 10s linear infinite;
   }
+
+
+  .cell {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    min-height: 80px;
+    border: 1px solid #DDD;
+    vertical-align: top;
+  }
+  .cell::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%,rgb(255, 255, 255) 100%);
+    z-index: 1;
+  }
 </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
   $(function() {
-    $("#draggable").draggable();
+    $(".ui-widget-content").draggable();
   });
 </script>
 
 
-<div id="draggable" class="ui-widget-content">
+<div class="cell">
 
-  <div class="selector selector--expanded selector--draggable">
-    <div class="selector__item JS_selectorItem--active selector__item--selected">
-      <div class="selector__block">
-        <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
-        <div class="selector__blockPart selector__blockPart--label">Label</div>
-        <div class="selector__blockSeperator"></div>
-        <div class="selector__blockPart selector__blockPart--field">Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</div>
+  <div class="ui-widget-content">
+
+    <div class="selector selector--expanded selector--draggable">
+      <div class="selector__item JS_selectorItem--active selector__item--selected">
+        <div class="selector__block">
+          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
+          <div class="selector__blockPart selector__blockPart--label">4362</div>
+          <div class="selector__blockSeperator"></div>
+          <div class="selector__blockPart selector__blockPart--field">Bulk update speed regressed in 282.0</div>
+        </div>
       </div>
     </div>
+
   </div>
+
+  <div class="ui-widget-content">
+
+    <div class="selector selector--expanded selector--draggable">
+      <div class="selector__item JS_selectorItem--active selector__item--selected">
+        <div class="selector__block">
+          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
+          <div class="selector__blockPart selector__blockPart--label">7654</div>
+          <div class="selector__blockSeperator"></div>
+          <div class="selector__blockPart selector__blockPart--field">Add indicators in import/export</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="cell">
+
 
 </div>
