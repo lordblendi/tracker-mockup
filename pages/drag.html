@@ -5,32 +5,53 @@ permalink: /drag
 ---
 
 <style>
+  @keyframes barberpole {
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+
   .selector--draggable {
     cursor: move;
     pointer-events: all;
     transition: all .3s ease-in-out;
+    border-color: transparent;
+    background-size: 200% 200%;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) 10px,
+      rgba(0, 0, 0, 0.4) 10px,
+      rgba(0, 0, 0, 0.4) 20px
+    );
   }
   .selector--draggable .selector__item {
     cursor: move;
   }
 
-
-
   .ui-widget-content .selector:hover {
-    border-style: dashed;
-    border-color: var(--color-grey-dark);
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) 10px,
+      rgba(0, 0, 0, 0.6) 10px,
+      rgba(0, 0, 0, 0.6) 20px
+    );
   }
+  .ui-draggable .selector:active,
   .ui-draggable-dragging .selector {
+    transform: scale(1.05);
     opacity: .5;
     box-shadow: 0 0 100px rgba(0,0,0,.2);
+    animation: barberpole 10s linear infinite;
   }
 </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-$( function() {
-  $( "#draggable" ).draggable();
-} );
+  $(function() {
+    $("#draggable").draggable();
+  });
 </script>
 
 
