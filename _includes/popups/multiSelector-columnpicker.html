@@ -1,20 +1,22 @@
 <div class="multiSelector JS_multiSelector--simpleText JS_multiSelector--textAction JS_multiSelector--resetFunctionality JS_multiSelector--columnpickerOptions" id="multiSelector-columnpicker">
 
   <div class="itemBox JS_itemBox">
-    <ul class="itemBox__row itemBox__row--item">
+    <ul class="itemBox__row">
       <li class="itemBox__cell">
         <div class="itemBox__cellInner">
           <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="filter through columns">
         </div>
       </li>
     </ul>
-    <ul class="itemBox__row itemBox__row--item JS_resetToDefault JS_itemBox--resetSuggestion" reset-file="columnpicker" style="display: none;">
-      <li class="itemBox__cell itemBox__cell--action">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action">Reset to default</div>
-        </div>
-      </li>
-    </ul>
+    <div class="itemBox__suggestions">
+      <ul class="itemBox__row itemBox__row--item JS_resetToDefault JS_itemBox--resetSuggestion" reset-file="columnpicker" style="display: none;">
+        <li class="itemBox__cell itemBox__cell--action">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action">Reset to default</div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 
 
