@@ -4,194 +4,203 @@ title: Selectors
 permalink: /selectors
 ---
 
-<section style="min-height: 100vh;">
+<div class="flex min-h-screen">
 
-  <!-- Field -->
-  <div class="field JS_field">
-    <div class="field__label">Checkbox</div>
-    <div class="field__value">
-      <div class="selector selector--singleselect selector--expanded animate--loading JS_selector">
-        <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-          <div class="selector__block">
-            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
-          </div>
-        </div>
-        <div class="selector__itemSeperator"></div>
-        <div class="selector__item JS_selectorItem">
-          <div class="selector__block">
-            <div class="selector__blockPart selector__blockPart--prefix"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="sm:w-1/2 px-4">
 
-  <!-- Field -->
-  <div class="field JS_field">
-    <div class="field__label">Assigned to</div>
-    <div class="field__value">
-      <div class="selector selector--singleselect animate--loading">
-        <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-          <div class="selector__block">
-            <div class="selector__blockPart selector__blockPart--field">Nick De Jaeger</div>
+    <!-- Field -->
+    <div class="field JS_field">
+      <div class="field__label">Checkbox</div>
+      <div class="field__value">
+        <div class="selector selector--singleselect selector--expanded animate--loading JS_selector">
+          <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+            <div class="selector__block">
+              <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
+            </div>
+          </div>
+          <div class="selector__itemSeperator"></div>
+          <div class="selector__item JS_selectorItem">
+            <div class="selector__block">
+              <div class="selector__blockPart selector__blockPart--prefix"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Field -->
-  <div class="field JS_field">
-    <div class="field__label">Assigned to</div>
-    <div class="field__value animate--loading">
-      <input type="text" value="Nick De Jaeger" class="field__input">
-    </div>
-  </div>
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-<h2>Tooltip/Error/Description</h2>
-
-<!-- Field -->
-<div class="field field--tooltip">
-  <div class="field__label JS_has-popup JS_has-popup--tooltip" data-popid="#multiSelector-privacy">Privacy Policy <div class="inline-action animate-fly-in-left"></div></div>
-  <div class="field__value">
-      <div class="selector selector--singleselect selector--expanded JS_selector">
-        <div class="selector__item JS_selectorItem JS_selectorItem--active selector__item--selected">
-          <div class="selector__block">
-            <div class="selector__blockPart selector__blockPart--field">Disagree</div>
-          </div>
-        </div>
-        <div class="selector__itemSeperator"></div>
-        <div class="selector__item JS_selectorItem">
-          <div class="selector__block ">
-            <div class="selector__blockPart selector__blockPart--field">Agree</div>
+    <!-- Field -->
+    <div class="field JS_field">
+      <div class="field__label">Assigned to</div>
+      <div class="field__value">
+        <div class="selector selector--singleselect animate--loading">
+          <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+            <div class="selector__block">
+              <div class="selector__blockPart selector__blockPart--field">Nick De Jaeger</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="inline align-middle">with our <a href="#" class="link link--primary">Privacy Policiy</a>.</div>
-  </div>
-</div>
+    </div>
 
-<!-- Popup -->
-<div class="multiSelector" id="multiSelector-privacy" style="margin-top: 36px;">
-  <div class="itemBox">
-    <ul class="itemBox__row itemBox__row--custom">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-
-          <div class="note note--tooltip">
-            <p>By selecting 'Agree' you have read and accepted TenForce's <a href="#" class="link link--primary">Privacy Policy</a>, concerning your personal data and how it is used.</p>
-          </div>
-
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<!-- Field -->
-<div class="field JS_field">
-  <div class="field__label">Email</div>
-  <div class="field__value">
-    <input type="text" value="nick.de.jaeger@tenforce.com" class="field__input">
-  </div>
-  <div class="note">
-    <p>Fill in a valid email address.</p>
-  </div>
-</div>
-
-<!-- Field -->
-<div class="field field--error JS_field">
-  <div class="field__label">Status</div>
-  <div class="field__value">
-    <div class="inline-action secondary animate-fly-in-left JS_has-popup JS_has-popup--error" data-popid="#ms-error"></div>
-    <div class="selector selector--singleselect JS_has-popup JS_has-popup--error" data-popid="#ms-status">
-      <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: #FF9B9B;"></div>
-          <div class="selector__blockPart selector__blockPart--field JS_singleSelect--label">Not started</div>
-        </div>
+    <!-- Field -->
+    <div class="field JS_field">
+      <div class="field__label">Assigned to</div>
+      <div class="field__value">
+        <div class="inline-action secondary animate-fly-in-left JS_has-popup JS_has-popup--error" data-popid="#ms-error"></div>
+        <input type="text" value="Nick De Jaeger" class="field__input">
       </div>
     </div>
-  </div>
-  <div class="note">
-    <p>Actual invoice amount</p>
-    <p>For fixed price projects and service requests (no <a href="#" class="link link--primary">timesheets</a>): when you change the status to 'to be invoiced', please insert the exact amount that needs to be invoiced.</p>
-  </div>
-</div>
 
-<!-- Popup -->
-<div class="multiSelector" id="ms-error">
-  <div class="itemBox">
-    <ul class="itemBox__row itemBox__row--custom">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          <div class="note note--error">
-            <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
-          </div>
-        </div>
-      </li>
-    </ul>
   </div>
-</div>
 
-<!-- Popup -->
-<div class="multiSelector animate--popup" id="ms-status">
-  <div class="itemBox JS_itemBox">
-    <ul class="itemBox__row">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          <input type="search" class="JS_filterInput" placeholder="filter through items">
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="itemBox">
-    <ul class="itemBox__row itemBox__row--custom">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          <div class="note note--error">
-            <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="itemBox JS_optionsChildren">
-    {% for item in site.data.multiselector-status.items %}
-      <ul class="itemBox__row itemBox__row--item JS_filterable">
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__value">
-              <div class="selector selector--expanded">
-                <div class="selector__item JS_selectorItem--active selector__item--selected">
-                  <div class="selector__block">
-                    <div class="selector__blockPart selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
-                    <div class="selector__blockPart selector__blockPart--field JS_text">{{item.name}}</div>
-                  </div>
-                </div>
+  <div class="sm:w-1/2 px-4">
+
+    <!-- Field -->
+    <div class="field field--tooltip">
+      <div class="field__label JS_has-popup JS_has-popup--tooltip" data-popid="#multiSelector-privacy">Privacy Policy <div class="inline-action animate-fly-in-left"></div></div>
+      <div class="field__value">
+          <div class="selector selector--singleselect selector--expanded JS_selector">
+            <div class="selector__item JS_selectorItem JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field">Disagree</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator"></div>
+            <div class="selector__item JS_selectorItem">
+              <div class="selector__block ">
+                <div class="selector__blockPart selector__blockPart--field">Agree</div>
               </div>
             </div>
           </div>
-        </li>
-        {% if item.selected == "true" %}
-          {% include javascript/itemSelected.html %}
-        {% endif %}
-      </ul>
-    {% endfor %}
+          <div class="inline align-middle">with our <a href="#" class="link link--primary">Privacy Policiy</a>.</div>
+      </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="multiSelector" id="multiSelector-privacy" style="margin-top: 36px;">
+      <div class="itemBox">
+        <ul class="itemBox__row itemBox__row--custom">
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">
+
+              <div class="note note--tooltip">
+                <p>By selecting 'Agree' you have read and accepted TenForce's <a href="#" class="link link--primary">Privacy Policy</a>, concerning your personal data and how it is used.</p>
+              </div>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Field -->
+    <div class="field JS_field">
+      <div class="field__label">Email</div>
+      <div class="field__value">
+        <input type="text" value="nick.de.jaeger@tenforce.com" class="field__input">
+      </div>
+      <div class="note">
+        <p>Fill in a valid email address.</p>
+      </div>
+    </div>
+
+    <!-- Field -->
+    <div class="field field--error JS_field">
+      <div class="field__label">Status</div>
+      <div class="field__value">
+        <div class="inline-action secondary animate-fly-in-left JS_has-popup JS_has-popup--error" data-popid="#ms-error"></div>
+        <div class="selector selector--singleselect JS_has-popup JS_has-popup--error" data-popid="#ms-status">
+          <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+            <div class="selector__block">
+              <div class="selector__blockPart selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: #FF9B9B;"></div>
+              <div class="selector__blockPart selector__blockPart--field JS_singleSelect--label">Not started</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="note">
+        <p>Actual invoice amount</p>
+        <p>For fixed price projects and service requests (no <a href="#" class="link link--primary">timesheets</a>): when you change the status to 'to be invoiced', please insert the exact amount that needs to be invoiced.</p>
+      </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="multiSelector" id="ms-error">
+      <div class="itemBox">
+        <ul class="itemBox__row itemBox__row--custom">
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">
+              <div class="note note--error">
+                <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="multiSelector animate--popup" id="ms-status">
+      <div class="itemBox JS_itemBox">
+        <ul class="itemBox__row">
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">
+              <input type="search" class="JS_filterInput" placeholder="filter through items">
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="itemBox">
+        <ul class="itemBox__row itemBox__row--custom">
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">
+              <div class="note note--error">
+                <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="itemBox JS_optionsChildren">
+        {% for item in site.data.multiselector-status.items %}
+          <ul class="itemBox__row itemBox__row--item JS_filterable">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__value">
+                  <div class="selector selector--expanded">
+                    <div class="selector__item JS_selectorItem--active selector__item--selected">
+                      <div class="selector__block">
+                        <div class="selector__blockPart selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
+                        <div class="selector__blockPart selector__blockPart--field JS_text">{{item.name}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            {% if item.selected == "true" %}
+              {% include javascript/itemSelected.html %}
+            {% endif %}
+          </ul>
+        {% endfor %}
+      </div>
+    </div>
+
   </div>
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h2>Buttons</h2>
 
