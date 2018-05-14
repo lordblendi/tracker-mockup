@@ -43,7 +43,6 @@ function resetToDefault(resetToDefaultRow) {
     selectedTitleToggle.click();
     setTimeout(function() {
       $(multiSelector).find('.JS_selectionChildren').html($(newContentSelectedChildren).html());
-      checkAllSelectedItems(multiSelector, selectedBlockClass);
       reset();
       resetFilterActions();
       selectedTitleToggle.click();
@@ -69,32 +68,4 @@ function hideResetToDefault(multiSelector) {
       delay: 250
     });
   }
-}
-
-function checkAllSelectedItems(multiSelector, selectedBlockClass) {
-  var selection = multiSelector.find(selectedBlockClass);
-  const options = multiSelector.find('.JS_optionsChildren');
-
-  var selectedItemTexts = [];
-  if(selection !== null || options !== undefined || selection.length !== 0) {
-    const selectedItems = $(selection).find('.JS_text');
-    selectedItemTexts = $.map(selectedItems, function(item){
-      return $(item).html().trim();
-    });
-  }
-
-  const optionItems = options.find('.JS_text');
-
-  $.each(optionItems, function(index, optionItem){
-    const textOfActionItem = $(optionItem).html().trim();
-    const row = $(optionItem).closest('.itemBox__row');
-    const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
-
-    if(positionOfItemInSelected >= 0) {
-      $(row).find('.JS_itemBox__cell--add').replaceWith(removeActionHTML);
-    }
-    else {
-      $(row).find('.JS_itemBox__cell--remove').replaceWith(addActionHTML);
-    }
-  });
 }

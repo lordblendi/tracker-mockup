@@ -8,9 +8,10 @@ removeGroupActionHTML = `{% include javascript/removeGroupAction.html %}`;
 // resetting actions for new action buttons
 // checking group actions
 function reset(){
-  checkGroupActions();
 
   $('.multiSelector').each(function(index, multiSelector){
+    checkAllSelectedItems(multiSelector);
+    checkGroupActions(multiSelector);
     // probably doesn't belong here, but making sure, we don't have empty selection subgroups
     const selectionMainTitle = $(multiSelector).find('.JS_selectionTitle');
     const selectionMain = $(multiSelector).find('.JS_selectionChildren');
@@ -91,13 +92,46 @@ function reset(){
   });
 }
 
+// check all items if they are selected or not
+function checkAllSelectedItems(multiSelector) {
+  multiSelector = $(multiSelector);
+  var selection = multiSelector.find('.JS_selectionChildren');
+  const options = multiSelector.find('.JS_optionsChildren');
+
+  var selectedItemTexts = [];
+  // if there is no selected block; then the list of selected items is []
+  if(selection !== null || options !== undefined || selection.length !== 0) {
+    const selectedItems = $(selection).find('.JS_text');
+    selectedItemTexts = $.map(selectedItems, function(item){
+      return $(item).html().trim();
+    });
+  }
+
+  const optionItems = options.find('.JS_text');
+  // for each item we check if it's selected or not.
+  $.each(optionItems, function(index, optionItem){
+    const textOfActionItem = $(optionItem).html().trim();
+    const row = $(optionItem).closest('.itemBox__row');
+    const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
+
+    if(positionOfItemInSelected >= 0) {
+      // if selected, remove --add action and replace it with --remove action
+      $(row).find('.JS_itemBox__cell--add').replaceWith(removeActionHTML);
+    }
+    else {
+      // if not selected, remove --remove action and replace it with --add action
+      $(row).find('.JS_itemBox__cell--remove').replaceWith(addActionHTML);
+    }
+  });
+}
+
 
 // check group actions to make sure that addAll and removeAll show
 // nothing selected -> addAll
 // everything selected -> removeAll
 // both selected and unselected -> removeAll addAll
-function checkGroupActions() {
-  const multiSelector = $('.multiSelector');
+function checkGroupActions(multiSelector) {
+  multiSelector = $(multiSelector);
 
   // check on the current status group action, remove or add necessary actions
   const childrenInOptions = multiSelector.find('.JS_itemBox--children:not(.JS_selectionChildren):not(.JS_itemBox--children-sublist):not(.JS_itemBox--suggestions)');
