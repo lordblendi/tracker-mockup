@@ -18,7 +18,7 @@ permalink: /drag
     transition: all .3s ease-in-out;
     border-color: transparent;
     background-size: 200% 200%;
-    background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 10px, rgba(0, 0, 0, 0.4) 10px, rgba(0, 0, 0, 0.4) 20px);
+    background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 5px, rgba(0, 0, 0, .1) 5px, rgba(0, 0, 0, 0.1) 10px);
   }
   .selector--draggable .selector__item {
     cursor: move;
@@ -28,7 +28,7 @@ permalink: /drag
   }
 
   .ui-widget-content .selector:hover {
-    background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 10px, rgba(0, 0, 0, 0.6) 10px, rgba(0, 0, 0, 0.6) 20px);
+    background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 5px, rgba(0, 0, 0, .2) 5px, rgba(0, 0, 0, 0.2) 10px);
   }
   .ui-draggable {
     overflow: hidden;
@@ -41,7 +41,6 @@ permalink: /drag
   .ui-draggable .selector:active,
   .ui-draggable-dragging .selector {
     transform: scale(1.03);
-    opacity: .5;
     box-shadow: 0 0 100px rgba(0,0,0,.95);
     animation: dashed-border-spinner 10s linear infinite;
   }
