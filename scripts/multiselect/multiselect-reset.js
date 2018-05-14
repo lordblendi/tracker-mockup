@@ -20,6 +20,7 @@ function reset(){
       selectionMain.remove();
     }
     else {
+      checkCounter(selectionMain);
       const selectionExcludedTitle = $(multiSelector).find('.JS_selectionTitleExclude');
       const selectionExcluded = $(multiSelector).find('.JS_selectionChildrenExclude');
       if(selectionExcluded.find('.JS_text').length === 0) {
@@ -177,4 +178,25 @@ function checkGroupActions(multiSelector) {
       }
     }
   });
+}
+
+
+// if there are no more added items, then remove selected block
+// if there are more than 5 elements, refresh a counter
+// otherwise remove counter
+function checkCounter(selectionChildren){
+  const selectionTitle = selectionChildren.prev();
+  const numOfSelected = selectionChildren.find('.JS_text').length;
+  if( numOfSelected === 0) {
+    selectionChildren.remove();
+    selectionTitle.remove();
+  }
+  else if (numOfSelected >= 5 ){
+    const selectedText = selectionTitle.find('.itemBox__cellInner--selectedText');
+    selectedText.find('sup').remove();
+    selectedText.append(`<sup>${numOfSelected}</sup>`);
+  }
+  else {
+    selectionTitle.find('.itemBox__cellInner--selectedText sup').remove();
+  }
 }
