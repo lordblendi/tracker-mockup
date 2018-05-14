@@ -192,11 +192,11 @@ function checkCounter(selectionChildren){
     selectionTitle.remove();
   }
   else if (numOfSelected >= 5 ){
-    const selectedText = selectionTitle.find('.itemBox__cellInner--selectedText');
+    const selectedText = selectionTitle.find('.JS_selectedText');
     selectedText.find('sup').remove();
     selectedText.append(`<sup>${numOfSelected}</sup>`);
   }
   else {
-    selectionTitle.find('.itemBox__cellInner--selectedText sup').remove();
+    selectionTitle.find('.JS_selectedText sup').remove();
   }
 }
