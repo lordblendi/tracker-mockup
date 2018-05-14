@@ -12,6 +12,7 @@ $('.multiSelector .JS_itemBox .JS_textAction').on('click', function(){
   handleTextAction($(this));
 });
 
+// handles onclick on text
 function handleTextAction(text) {
   const bodyRow = text.closest('.itemBox__row');
   // find the first add/remove action close to the text
@@ -103,41 +104,6 @@ var addGroupActionHTML = `{% include javascript/addGroupAction.html %}`;
 var removeActionHTML = `{% include javascript/removeAction.html %}`;
 var removeGroupActionHTML = `{% include javascript/removeGroupAction.html %}`;
 
-
-// for a whole group adding addActionHTMLs
-function resetGroupRemoveActions(removeAllActions, children) {
-  $.each(removeAllActions, function(index, item){
-    const ulParent = $(item).parent();
-    // we always remove the removeAll Button
-    item.remove();
-    // if the parent doesn't have any addAll -> append
-    if(ulParent.children('.JS_itemBox__cell--addAll').length === 0) {
-      ulParent.append(addGroupActionHTML);
-    }
-  });
-  // replace all normal actions with addAction
-  $.each(children, function(index, child) {
-    $(child).find('li.JS_itemBox__cell--remove:not(.JS_itemBox__cell--removeAll)').replaceWith(addActionHTML);
-  });
-
-}
-
-// for a whole group adding removeActionHTMLs
-function resetGroupAddActions(removeAllActions, children) {
-  $.each(removeAllActions, function(index, item){
-    const ulParent = $(item).parent();
-    // we always remove the addAll Button
-    item.remove();
-    // if the parent doesn't have any removeAll -> append
-    if(ulParent.children('.JS_itemBox__cell--removeAll').length === 0) {
-      ulParent.append(removeGroupActionHTML);
-    }
-  });
-  // replace all normal actions with removeAction
-  children.find('ul li.JS_itemBox__cell--add').replaceWith(removeActionHTML);
-}
-
-
 // if the selected block is not present, we add it to the multiSelector
 // also reinit the toggle action, if we want to close it
 function addSelectedBlock(multiSelector, selectedBlockClass){
@@ -176,139 +142,6 @@ function addSelectedBlock(multiSelector, selectedBlockClass){
 
 }
 
-// action to handle ADD for a whole group
-function handleComplexGroupAdd(action, children, exclude) {
-  var selectedBlockClass = '.JS_selectionChildren';
-  const multiSelector = children.closest('.multiSelector');
-  exclude = $(multiSelector[0]).find('.JS_exclude').length > 0;
-
-  // check if there is a selected block. if not, add it
-  var selection = multiSelector.find(selectedBlockClass);
-    if(selection === null || selection === undefined || selection.length === 0) {
-      addSelectedBlock(multiSelector, selectedBlockClass);
-      selection = multiSelector.find(selectedBlockClass);
-    }
-
-    // finding all the already selected items
-    const optionItems = children.find('ul .JS_text');
-    const itemBoxBody = selection.find('.JS_sortable');
-    const selectedItems = selection.find('.JS_text');
-    const selectedItemTexts = $.map(selectedItems, function(item){
-      return $(item).html().trim();
-    });
-
-    // for each item in the group, check if they are already part of selected.
-    // if not, add them and change their action to remove
-    $.each(optionItems, function(index, item){
-      const textOfActionItem = $(item).html().trim();
-      const bodyRow = $(item).closest('.itemBox__row');
-      // there should be only ONE for an item. either add or remove
-      const itemInOptionsAction = $(item).find('.JS_itemBox__cell--add, .JS_itemBox__cell--remove')[0];
-
-      const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
-      if (positionOfItemInSelected < 0) {
-        var neededSelectedBlock = itemBoxBody;
-        // if there is a filter, choose the good selected Block
-        const JS_filterableCell = $(item).closest('.JS_filterableCell');
-        const filter = $(JS_filterableCell).find('.JS_inclExl');
-        if(filter.length > 0) {
-          const filteredSelectedBlockSelector = selectedBlockClass + filter.attr('data-filter') + " JS_sortable";
-          neededSelectedBlock = $(itemBoxBody).find(filteredSelectedBlockSelector);
-        }
-        neededSelectedBlock.append(getNewItem(item, exclude));
-        const newItem = $(neededSelectedBlock).find('> .itemBox__row').last();
-        if($(newItem).find('.JS_toggle--color').length > 0 ){
-          resetColorToggle(newItem);
-        }
-
-        $(itemInOptionsAction).replaceWith(removeActionHTML);
-      }
-    });
-
-    // check their actions and the selected counter
-    var removeAllActions = children.find('ul li.JS_itemBox__cell--addAll');
-    removeAllActions.push(action.closest('li.JS_itemBox__cell--addAll'));
-    resetGroupAddActions(removeAllActions, children);
-    checkCounter(selection);
-    reset();
-}
-
-
-// action to handle REMOVE for a whole group
-function handleComplexGroupRemove(action, children, fromSelectedAction, selectedBlockClass){
-  const multiSelector = children.closest('.multiSelector');
-
-  const selection = multiSelector.find(selectedBlockClass);
-  // exit if there is no selection block
-  if(selection === null || selection === undefined || selection.length === 0) {
-    return;
-  }
-
-  // if it's triggered from the selected group
-  // remove selected block, set everything to add
-  if(fromSelectedAction) {
-    // here the "children" were not part of the options block, so we have to look for them
-    const options = multiSelector.find('.JS_optionsChildren');
-    var removeAllActions = options.find('li.JS_itemBox__cell--removeAll');
-    var childrenToRemove = [];
-    const selectedItems = selection.find('.JS_text');
-    const selectedItemTexts = $.map(selectedItems, function(item){
-      return $(item).html().trim();
-    });
-    const optionChildren = options.find('.JS_text');
-    if(selectedBlockClass !== '.JS_selectionChildren') {
-      $.each(optionChildren, function(index, child){
-        if($.inArray($(child).html().trim(), selectedItemTexts) > -1){
-          childrenToRemove = childrenToRemove.concat($(child).closest('ul.itemBox__row'));
-        }
-      });
-    }
-    else {
-      $.each(optionChildren, function(index, child){
-        // if($.inArray($(child).html().trim(), selectedItemTexts) > -1){
-          childrenToRemove = childrenToRemove.concat($(child).closest('ul.itemBox__row'));
-        // }
-      });
-    }
-
-    resetGroupRemoveActions(removeAllActions, childrenToRemove);
-
-
-    const selectionTitle = selection.prev();
-    selection.remove();
-    selectionTitle.remove();
-
-  }
-  // otherwise find each selected item from a group and remove it from selected
-  else {
-    const childrenToRemove = children.find('ul li.JS_itemBox__cell--remove').closest('.itemBox__row').find('.JS_text');
-    const selectedItems = selection.find('.JS_text');
-    const selectedItemTexts = $.map(selectedItems, function(item){
-      return $(item).html().trim();
-    });
-
-
-    $.each(childrenToRemove, function(index, child) {
-      const textOfActionItem = $(child).html().trim();
-      const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
-      if(positionOfItemInSelected >= 0) {
-        selectedItems[positionOfItemInSelected].closest('ul.itemBox__row').remove();
-      }
-    });
-
-    // remove children actions
-    // also adding the original action button
-    var removeAllActions = children.find('ul li.JS_itemBox__cell--removeAll');
-    removeAllActions.push(action.closest('li.JS_itemBox__cell--removeAll'));
-    resetGroupRemoveActions(removeAllActions, children);
-
-  }
-
-  // check counter and reinitiate onclick and reorder actions in selection blocks
-  checkCounter(selection);
-  reset();
-}
-
 // creates new selected item
 function getNewItem(item, exclude) {
   // check if it has to be excluded or not (design difference)
@@ -317,7 +150,7 @@ function getNewItem(item, exclude) {
     excludeClass = "itemBox__cellInner--excluded";
   }
 
-  // check if there should be a color trigger or not.
+  // check for multiple options/sublists.
   var textOfActionItem = $(item).html().trim();
   var bodyRow = $(item).closest('.itemBox__row');
   var colorPrefix = $(bodyRow).find('.JS_Color--prefix');
@@ -367,23 +200,101 @@ function getNewItem(item, exclude) {
   return `{% include javascript/newSelectedItem.html %}`;
 }
 
-// if there are no more added items, then remove selected block
-// if there are more than 5 elements, refresh a counter
-// otherwise remove counter
-function checkCounter(selectionChildren){
-  const selectionTitle = selectionChildren.prev();
-  const numOfSelected = selectionChildren.find('.JS_text').length;
-  if( numOfSelected === 0) {
-    selectionChildren.remove();
-    selectionTitle.remove();
+// action to handle ADD for a whole group
+function handleComplexGroupAdd(action, children, exclude) {
+  var selectedBlockClass = '.JS_selectionChildren';
+  const multiSelector = children.closest('.multiSelector');
+  exclude = $(multiSelector[0]).find('.JS_exclude').length > 0;
+
+  // check if there is a selected block. if not, add it
+  var selection = multiSelector.find(selectedBlockClass);
+  if(selection === null || selection === undefined || selection.length === 0) {
+    addSelectedBlock(multiSelector, selectedBlockClass);
+    selection = multiSelector.find(selectedBlockClass);
   }
-  else if (numOfSelected >= 5 ){
-    const selectedText = selectionTitle.find('.itemBox__cellInner--selectedText');
-    selectedText.find('sup').remove();
-    selectedText.append(`<sup>${numOfSelected}</sup>`);
+
+  // finding all the already selected items
+  const optionItems = children.find('ul .JS_text');
+  const itemBoxBody = selection.find('.JS_sortable');
+  const selectedItems = selection.find('.JS_text');
+  const selectedItemTexts = $.map(selectedItems, function(item){
+    return $(item).html().trim();
+  });
+
+  // for each item in the group, check if they are already part of selected.
+  // if not, add them and change their action to remove
+  $.each(optionItems, function(index, item){
+    const textOfActionItem = $(item).html().trim();
+    const bodyRow = $(item).closest('.itemBox__row');
+    // there should be only ONE for an item. either add or remove
+    const itemInOptionsAction = $(item).find('.JS_itemBox__cell--add, .JS_itemBox__cell--remove')[0];
+
+    const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
+    if (positionOfItemInSelected < 0) {
+      var neededSelectedBlock = itemBoxBody;
+      // if there is a filter, choose the good selected Block
+      const JS_filterableCell = $(item).closest('.JS_filterableCell');
+      const filter = $(JS_filterableCell).find('.JS_inclExl');
+      if(filter.length > 0) {
+        const filteredSelectedBlockSelector = selectedBlockClass + filter.attr('data-filter') + " JS_sortable";
+        neededSelectedBlock = $(itemBoxBody).find(filteredSelectedBlockSelector);
+      }
+      neededSelectedBlock.append(getNewItem(item, exclude));
+      const newItem = $(neededSelectedBlock).find('> .itemBox__row').last();
+      animateNewItem(newItem, () => {
+        if($(newItem).find('.JS_toggle--color').length > 0 ){
+          resetColorToggle(newItem);
+        }
+        $(itemInOptionsAction).replaceWith(removeActionHTML);
+        reset();
+      });
+    }
+  });
+}
+
+// action to handle REMOVE for a whole group
+function handleComplexGroupRemove(action, children, fromSelectedAction, selectedBlockClass){
+  const multiSelector = children.closest('.multiSelector');
+
+  const selection = multiSelector.find(selectedBlockClass);
+  // exit if there is no selection block
+  if(selection === null || selection === undefined || selection.length === 0) {
+    return;
   }
+
+  // if it's triggered from the selected group
+  // remove selected block, set everything to add
+  if(fromSelectedAction) {
+    const selectionTitle = selection.prev();
+    const selectedTitleToggle = $(selectionTitle).find('.JS_toggle');
+    selectedTitleToggle.click();
+    setTimeout(function() {
+      animateToBeRemovedItem(selectionTitle, () => {
+        selection.remove();
+        selectionTitle.remove();
+        reset()
+      });
+    }, 300);
+  }
+  // otherwise find each selected item from a group and remove it from selected
   else {
-    selectionTitle.find('.itemBox__cellInner--selectedText sup').remove();
+    const childrenToRemove = children.find('ul li.JS_itemBox__cell--remove').closest('.itemBox__row').find('.JS_text');
+    const selectedItems = selection.find('.JS_text');
+    const selectedItemTexts = $.map(selectedItems, function(item){
+      return $(item).html().trim();
+    });
+
+    $.each(childrenToRemove, function(index, child) {
+      const textOfActionItem = $(child).html().trim();
+      const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
+      if(positionOfItemInSelected >= 0) {
+        const itemToRemove = selectedItems[positionOfItemInSelected].closest('ul.itemBox__row');
+        animateToBeRemovedItem(itemToRemove, () => {
+          itemToRemove.remove();
+          reset()
+        });
+      }
+    });
   }
 }
 
@@ -465,10 +376,6 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
         if(positionOfItemInOptions >= 0) {
           $(itemInOptionsAction).replaceWith(removeActionHTML);
         }
-
-        // needed because of the delay
-        // check counter, reset actions
-        checkCounter(selection);
         reset();
       });
 
@@ -483,16 +390,9 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
           $(itemInOptionsAction).replaceWith(addActionHTML);
         }
 
-        // needed because of the delay
-        // check counter, reset actions
-        checkCounter(selection);
         reset();
       });
 
     }
-
-    // check counter, reset actions
-    checkCounter(selection);
-    reset();
   }
 }
