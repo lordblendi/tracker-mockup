@@ -197,6 +197,20 @@ h6,
   }
 }
 
+@keyframes fly-in-left {
+  0% {
+    opacity: 0;
+    left: -40px;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
 .animate {
   &--loading {
     &::before {
@@ -240,8 +254,8 @@ h6,
     animation: animate-fadeout .3s ease forwards;
   }
 
-  &--save {
-
+  &-fly-in-left {
+    animation: fly-in-left 1s ease forwards;
   }
 }
 
@@ -266,6 +280,19 @@ h6,
   transition: all .3s ease-in-out;
   transform: translate(0, 0);
   backface-visibility: hidden;
+
+  &:hover {
+    transform: translate(0, -2px);
+  }
+}
+
+.inline-action {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  transform: translate(0, 0);
 
   &:hover {
     transform: translate(0, -2px);
