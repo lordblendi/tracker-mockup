@@ -266,9 +266,15 @@ function handleComplexGroupRemove(action, children, fromSelectedAction, selected
   // remove selected block, set everything to add
   if(fromSelectedAction) {
     const selectionTitle = selection.prev();
-    selection.remove();
-    selectionTitle.remove();
-
+    const selectedTitleToggle = $(selectionTitle).find('.JS_toggle');
+    selectedTitleToggle.click();
+    setTimeout(function() {
+      animateToBeRemovedItem(selectionTitle, () => {
+        selection.remove();
+        selectionTitle.remove();
+        reset()
+      });
+    }, 300);
   }
   // otherwise find each selected item from a group and remove it from selected
   else {
