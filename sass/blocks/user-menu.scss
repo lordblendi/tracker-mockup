@@ -4,6 +4,7 @@
 .user-menu--visible .app__overlay {
   opacity: 1;
   pointer-events: auto;
+  background-color: rgba(0, 0, 0, 0.55);
 }
 .user-menu--visible .user-menu {
   right: 0;

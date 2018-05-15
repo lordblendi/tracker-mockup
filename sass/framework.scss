@@ -261,25 +261,11 @@ h6,
 
 /* Action */
 
-.action-icon {
-  display: inline-block;
-  padding: 5px;
-  text-align: center;
-}
-
 .action {
-  display: inline-block;
-  min-height: 40px;
-  min-width: 40px;
-  padding: 5px;
+  position: relative;
   cursor: pointer;
-  line-height: 30px;
-  font-size: 16px;
-  color: var(--color-gold);
-  text-align: center;
   transition: all .3s ease-in-out;
   transform: translate(0, 0);
-  backface-visibility: hidden;
 
   &:hover {
     transform: translate(0, -2px);
@@ -293,6 +279,25 @@ h6,
   cursor: pointer;
   transition: all .3s ease-in-out;
   transform: translate(0, 0);
+
+  &:hover {
+    transform: translate(0, -2px);
+  }
+}
+
+.block-action {
+  display: inline-block;
+  min-height: 40px;
+  min-width: 40px;
+  padding: 5px;
+  cursor: pointer;
+  line-height: 30px;
+  font-size: 16px;
+  color: var(--color-gold);
+  text-align: center;
+  transition: all .3s ease-in-out;
+  transform: translate(0, 0);
+  backface-visibility: hidden;
 
   &:hover {
     transform: translate(0, -2px);

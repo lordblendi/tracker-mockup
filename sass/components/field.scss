@@ -3,7 +3,7 @@
 
 .field {
   position: relative;
-  margin: 18px 10px 30px 10px;
+  margin: 18px 0 30px 0;
   padding: 12px 0 0;
   transition: all .3s ease-in-out;
 
@@ -45,7 +45,7 @@
   &__label {
     position: absolute;
     top: -1px;
-    padding: 0 5px;
+    padding: 0 5px 0 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -71,10 +71,11 @@
   &__value {
     position: relative;
     min-height: 40px;
+    line-height: 30px;
     z-index: 1;
     white-space: nowrap;
     overflow: hidden;
-    padding: 5px;
+    padding: 5px 0;
     background-color: transparent;
     transition: all .3s ease-in-out;
 
@@ -91,21 +92,8 @@
       z-index: 2;
     }
 
-    input {
-      outline: 0;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 5px;
-      background-color: transparent;
+    .selector {
+      vertical-align: top;
     }
-  }
-
-  &__error {
-    font-size: 12px;
-    padding: 0 5px;
-    color: var(--color-red);
   }
 }
