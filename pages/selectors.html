@@ -9,7 +9,7 @@ permalink: /selectors
   <div class="sm:w-1/2 px-4">
 
     <!-- Field -->
-    <div class="field JS_field" tabindex="">
+    <div class="field JS_field" tabindex="1">
       <div class="field__label">Checkbox</div>
       <div class="field__value">
         <div class="inline align-middle">
@@ -31,23 +31,15 @@ permalink: /selectors
     </div>
 
     <!-- Field -->
-    <div class="field JS_field">
-      <div class="field__label">Assigned to</div>
+    <div class="field JS_field" tabindex="2">
+      <div class="field__label field__label--placeholder">Assigned to</div>
       <div class="field__value">
-        <div class="inline align-middle">
-          <div class="selector selector--singleselect animate--loading">
-            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field">Nick De Jaeger</div>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
 
     <!-- Field -->
-    <div class="field field--error JS_field">
+    <div class="field field--error JS_field" tabindex="3">
       <div class="field__label">Assigned to</div>
       <div class="field__value">
         <div class="inline-action secondary animate-fly-in-left JS_has-popup JS_has-popup--error" data-popid="#ms-error-user"></div>
@@ -83,12 +75,20 @@ permalink: /selectors
       </div>
     </div>
 
+    <!-- Field -->
+    <div class="field JS_field" tabindex="5">
+      <div class="field__label field__label--placeholder">Due date</div>
+      <div class="field__value">
+
+      </div>
+    </div>
+
   </div>
 
   <div class="sm:w-1/2 px-4">
 
     <!-- Field -->
-    <div class="field field--tooltip">
+    <div class="field field--tooltip" tabindex="4">
       <div class="field__label JS_has-popup JS_has-popup--tooltip" data-popid="#multiSelector-privacy">Privacy Policy <div class="inline-action animate-fly-in-left"></div></div>
       <div class="field__value">
         <div class="inline align-middle">
