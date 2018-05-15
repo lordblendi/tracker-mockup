@@ -2,8 +2,11 @@
 // calculates the position of the popup
 // depending on where is the toggle for it
 $('.JS_has-popup').on('click', function() {
-  const toggle = $(this);
-  const popid = $(this).attr('data-popid');
+  handlePopupClick(this);
+})
+function handlePopupClick(toggle) {
+  toggle = $(toggle);
+  const popid = $(toggle).attr('data-popid');
   // outerWidth (including padding, border, and optionally margin -> true parameter)
   // innerWidth (including padding but not border)
   // width (not including anything)
@@ -28,13 +31,13 @@ $('.JS_has-popup').on('click', function() {
   var newTop = bottom + 'px';
   var newLeft = left + "px";
 
-  if($(this).hasClass('selector') ) {
+  if($(toggle).hasClass('selector') ) {
     newTop = top + 'px';
   }
-  else if ($(this).hasClass('JS_breadcrumbPopup') ) {
+  else if ($(toggle).hasClass('JS_breadcrumbPopup') ) {
     newTop = (top - 3) + 'px';
 
-    var selector = $(this).closest('.selector');
+    var selector = $(toggle).closest('.selector');
     width = selector.outerWidth(true);
     height = selector.outerHeight(true);
 
@@ -92,7 +95,7 @@ $('.JS_has-popup').on('click', function() {
     'pointer-events': 'auto',
     'opacity': '1'
   });
-});
+}
 
 // onclick action on overlay to close popups
 $('.app__overlay').on('click', function() {

@@ -141,9 +141,8 @@ permalink: /selectors
     <!-- Field -->
     <div class="field JS_field JS_field--error">
       <div class="field__label">Status</div>
-      <div class="field__value" style="left: -35px; transition: left 1s ease;">
-        <div class="inline-action secondary animate-fly-in-left JS_has-popup JS_has-popup--error JS_errorActionIcon" data-popid="#ms-error" style="opacity: 0;"></div>
-        <div class="inline align-middle">
+      <div class="field__value">
+        <div class="inline align-middle JS_moveToRight">
           <div class="selector selector--singleselect JS_has-popup JS_has-popup--error" data-popid="#ms-status">
             <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
               <div class="selector__block">
@@ -657,8 +656,21 @@ $("#ms-status .JS_error-popupRow").on('click', function(){
   $('.JS_field--error').each(function(){
     const errorField = $(this);
     errorField.addClass('field--error');
+
     errorField.find('.JS_has-popup').addClass('JS_has-popup--error');
-    errorField.find('.field__value').css('left', '0');
+    if(errorField.find('.field__value .JS_errorActionIcon').length === 0) {
+      $.Velocity.animate($(errorField.find('.field__value .JS_moveToRight').children()), {
+        "margin-left": '35px'
+      }, {
+        duration: 1000
+      });
+
+      errorField.find('.field__value').prepend('<div class="inline-action secondary animate-fly-in-left JS_has-popup JS_has-popup--error JS_errorActionIcon" data-popid="#ms-error" style="width:0px;"></div>');
+
+      errorField.find('.JS_errorActionIcon').on('click', function() {
+        handlePopupClick(this);
+      });
+    }
 
     const icon = errorField.find('.JS_errorActionIcon');
     $(icon).addClass('animate-fly-in-left').css('opacity', 1);
