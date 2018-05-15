@@ -139,10 +139,10 @@ permalink: /selectors
     </div>
 
     <!-- Field -->
-    <div class="field field--error JS_field">
+    <div class="field JS_field JS_field--error">
       <div class="field__label">Status</div>
-      <div class="field__value">
-        <div class="inline-action secondary animate-fly-in-left JS_has-popup JS_has-popup--error" data-popid="#ms-error"></div>
+      <div class="field__value" style="left: -35px; transition: left 1s ease;">
+        <div class="inline-action secondary animate-fly-in-left JS_has-popup JS_has-popup--error JS_errorActionIcon" data-popid="#ms-error" style="opacity: 0;"></div>
         <div class="inline align-middle">
           <div class="selector selector--singleselect JS_has-popup JS_has-popup--error" data-popid="#ms-status">
             <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
@@ -182,13 +182,13 @@ permalink: /selectors
         <ul class="itemBox__row">
           <li class="itemBox__cell">
             <div class="itemBox__cellInner">
-              <input type="search" class="JS_filterInput" placeholder="filter through items">
+              <input type="search" class="JS_multiSelector__filterInput" placeholder="filter through statuses">
             </div>
           </li>
         </ul>
       </div>
       <div class="itemBox">
-        <ul class="itemBox__row itemBox__row--custom">
+        <ul class="itemBox__row itemBox__row--custom JS_itemBoxRow--error" style="display: none;">
           <li class="itemBox__cell">
             <div class="itemBox__cellInner">
               <div class="note note--error">
@@ -200,7 +200,7 @@ permalink: /selectors
       </div>
       <div class="itemBox JS_optionsChildren">
         {% for item in site.data.multiselector-status.items %}
-          <ul class="itemBox__row itemBox__row--item JS_filterable">
+          <ul class="itemBox__row itemBox__row--item JS_filterableCell JS_error-popupRow">
             <li class="itemBox__cell">
               <div class="itemBox__cellInner">
                 <div class="itemBox__value">
