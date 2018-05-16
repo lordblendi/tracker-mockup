@@ -32,9 +32,22 @@ permalink: /selectors
 
     <!-- Field -->
     <div class="field JS_field" tabindex="2">
-      <div class="field__label field__label--placeholder">Assigned to</div>
-      <div class="field__value">
+      <div class="field__label field__label--placeholder">Title</div>
+      <div class="field__value JS_has-popup" data-popid="#ms-title-input">
 
+      </div>
+    </div>
+
+    <!-- Popup (input) -->
+    <div class="multiSelector animate--popup" id="ms-title-input" style="margin-top: -49px; margin-left: -10px;">
+      <div class="itemBox JS_itemBox">
+        <ul class="itemBox__row">
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">
+              <input type="input" placeholder="Which title fits this item?" autofocus>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -78,10 +91,24 @@ permalink: /selectors
     <!-- Field -->
     <div class="field JS_field" tabindex="5">
       <div class="field__label field__label--placeholder">Due date</div>
-      <div class="field__value">
+      <div class="field__value JS_has-popup" data-popid="#ms-date-input">
 
       </div>
     </div>
+
+    <!-- Popup (input) -->
+    <div class="multiSelector animate--popup" id="ms-date-input" style="margin-top: -49px; margin-left: -10px;">
+      <div class="itemBox JS_itemBox">
+        <ul class="itemBox__row">
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">
+              <input type="input" placeholder="What is the deadline?" autofocus>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
 
   </div>
 
@@ -219,6 +246,26 @@ permalink: /selectors
             {% endif %}
           </ul>
         {% endfor %}
+      </div>
+    </div>
+
+
+    <!-- Field -->
+    <div class="field JS_field">
+      <div class="field__label">Status</div>
+      <div class="field__value">
+        <div class="inline-action secondary error"></div>
+        <div class="inline align-middle JS_moveToRight">
+          <div class="selector selector--singleselect">
+            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: var(--color-red);"></div>
+                <div class="selector__blockPart selector__blockPart--field JS_singleSelect--label">Not started</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="inline align-middle">check correct alignment</a>.</div>
       </div>
     </div>
 
@@ -619,6 +666,7 @@ permalink: /selectors
 </div>
 
 <script>
+
   checkEmptyFields();
 
   $('.JS_field').focusin(function() {
@@ -626,8 +674,8 @@ permalink: /selectors
     checkEmptyFields();
   });
 
-  $('.JS_field').focusout(function() {
-    $(this).removeClass('field--focus');
+  $('.app__overlay').on('click', function() {
+    $('.field').removeClass('field--focus');
     checkEmptyFields();
   });
 

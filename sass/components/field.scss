@@ -20,6 +20,13 @@
       &__label {
         color: var(--color-red);
       }
+
+      &__value {
+        .error {
+          width: 26px;
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -33,12 +40,6 @@
       text-transform: uppercase;
       color: #808080;
       opacity: 1;
-    }
-
-    .field__value {
-      background-color: #FFF;
-      box-shadow: 0 0 200px rgba(0, 0, 0, 0.4);
-      z-index: 3;
     }
   }
 
@@ -77,6 +78,7 @@
     padding: 5px 0;
     background-color: transparent;
     transition: all .3s ease-in-out;
+    cursor: text;
 
     &::after {
       content: '';
@@ -89,6 +91,11 @@
       box-shadow: inset -10px 0 20px 0;
       pointer-events: none;
       z-index: 2;
+    }
+
+    .error {
+      width: 0;
+      opacity: 0;
     }
 
     .selector {
