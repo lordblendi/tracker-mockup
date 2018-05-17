@@ -30,9 +30,6 @@ permalink: /drag
   .ui-widget-content .selector:hover {
     background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 5px, rgba(0, 0, 0, .2) 5px, rgba(0, 0, 0, 0.2) 10px);
   }
-  .ui-draggable {
-    overflow: hidden;
-  }
   .ui-draggable:active,
   .ui-draggable-dragging {
     overflow: visible;
@@ -44,32 +41,12 @@ permalink: /drag
     box-shadow: 0 0 150px rgba(0,0,0,.8);
     animation: dashed-border-spinner 10s linear infinite;
   }
-
-  .cell {
-    position: relative;
-    display: inline-block;
-    width: 300px;
-    min-height: 80px;
-    border: 1px solid #DDD;
-    vertical-align: top;
-  }
-  .cell::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20px;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%,rgb(255, 255, 255) 100%);
-    z-index: 1;
-  }
 </style>
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>$(function() { $(".ui-widget-content").draggable(); });</script>
 
-<div class="cell">
 
   <div class="ui-widget-content">
 
@@ -101,5 +78,3 @@ permalink: /drag
     </div>
 
   </div>
-
-</div>
