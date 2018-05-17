@@ -15,12 +15,6 @@
   .itemBox {
     background-color: rgba(0, 0, 0, 0.17);
 
-    &--sublist {
-      padding: 5px 0 5px 5px;
-      background-color: #A9A9A9;
-      margin: 0 0 5px 0;
-    }
-
     .itemBox,
     .itemBox .itemBox,
     .itemBox .itemBox .itemBox {
@@ -28,9 +22,13 @@
 
       &--sublist {
         padding: 5px 0 5px 5px;
-        background-color: #A9A9A9;
-        margin: 0 0 5px 0;
+        background-color: #929292;
       }
+    }
+
+    &--sublist {
+      padding: 5px 0 5px 5px;
+      background-color: #929292;
     }
   }
 

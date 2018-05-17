@@ -5,6 +5,10 @@
   Extend Tailwind Framework
 */
 
+button:focus {
+    outline: 0;
+}
+
 /* Flex */
 
 .flex {

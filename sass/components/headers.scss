@@ -102,6 +102,8 @@
   }
 
   &--item {
+    border-radius: 0;
+    
     &::before {
       border-top-color: transparent;
     }

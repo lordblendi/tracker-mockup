@@ -1,3 +1,6 @@
 {
-  "items": [ "sum the data in this column", "group on this column"]
+  "items": [
+    "Sum data",
+    "Group"
+  ]
 }
