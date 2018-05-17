@@ -1,10 +1,7 @@
 ---
 ---
 
-.btns {
-  margin: 30px 0;
-}
-
+.push,
 .btn {
   outline: 0;
   border: 0;
@@ -29,7 +26,7 @@
   }
 
   &--go {
-    background-color: #00BFFF;
+    background-color: var(--color-blue);
     box-shadow: 0 2px 0 #055074;
 
     &:hover {
@@ -38,7 +35,7 @@
   }
 
   &--drop {
-    background-color: #E30022;
+    background-color: var(--color-red);
     box-shadow: 0 2px 0 #660202;
 
     &:hover {
