@@ -92,11 +92,3 @@ body {
     }
   }
 }
-
-input,
-textarea {
-  &::-webkit-input-placeholder {
-    font-style: italic;
-    opacity: .4;
-  }
-}

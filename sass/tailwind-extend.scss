@@ -9,6 +9,12 @@ input[type=password] {
   letter-spacing: 2px;
 }
 
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-style: italic;
+  opacity: .4;
+}
+
 html {
   line-height: normal;
 }
