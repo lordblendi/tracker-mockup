@@ -1,0 +1,374 @@
+---
+---
+
+---
+---
+
+input, textarea, button:focus {
+  outline: 0;
+}
+
+html {
+  line-height: normal;
+}
+
+/* Margin & Padding */
+
+.p-10 {
+  padding: 2.5rem;
+}
+.pt-10, .py-10 {
+  padding-top: 2.5rem;
+}
+.pr-10, .px-10 {
+  padding-right: 2.5rem;
+}
+.pb-10, .py-10 {
+  padding-bottom: 2.5rem;
+}
+.pl-10, .px-10 {
+  padding-left: 2.5rem;
+}
+
+.p-12 {
+  padding: 3rem;
+}
+.pt-12, .py-12 {
+  padding-top: 3rem;
+}
+.pr-12, .px-12 {
+  padding-right: 3rem;
+}
+.pb-12, .py-12 {
+  padding-bottom: 3rem;
+}
+.pl-12, .px-12 {
+  padding-left: 3rem;
+}
+
+.p-20 {
+  padding: 5rem;
+}
+.pt-20, .py-20 {
+  padding-top: 5rem;
+}
+.pr-20, .px-20 {
+  padding-right: 5rem;
+}
+.pb-20, .py-20 {
+  padding-bottom: 5rem;
+}
+.pl-20, .px-20 {
+  padding-left: 5rem;
+}
+
+.px-1\/5 {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.pl-1\/5 {
+  padding-left: 20%;
+}
+.pr-1\/5 {
+  padding-right: 20%;
+}
+
+/* Text */
+
+p {
+  margin: 1em 0;
+}
+h1 {
+  margin: 0.83em 0;
+}
+h2 {
+  margin: 0.83em 0;
+}
+h3 {
+  margin: 1em 0;
+}
+h4 {
+  margin: 1.33em 0;
+}
+h5 {
+  margin: 1.67em 0;
+}
+h6 {
+  margin: 2.33em 0;
+}
+
+h1, .h1 {
+  font-size: 72px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h2, .h2 {
+  font-size: 40px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+h3, .h3 {
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+h4, .h4 {
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+h5, .h5 {
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h6, .h6 {
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.h7 {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.h8 {
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.h9 {
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.h-dotted {
+  position: relative;
+  padding: 10px 10px;
+  overflow: hidden;
+
+  &::before, &::after {
+    content: '...........................................................................................................';
+    position: absolute;
+    left: 0;
+    letter-spacing: 6px;
+    color: #999;
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  &::before {
+    top: -6px;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+}
+
+.text-huge {
+  font-size: 94px;
+}
+
+/* Position */
+
+.z-1- {
+  z-index: -1;
+}
+
+/* Animations */
+
+@-webkit-keyframes bg-gradient {
+  0% {background-position: 0% 0%;}
+  50% {background-position: 100% 100%;}
+  100% {background-position: 0% 0%;}
+}
+@keyframes bg-gradient {
+  0% {background-position: 0% 0%;}
+  50% {background-position: 100% 100%;}
+  100% {background-position: 0% 0%;}
+}
+.animate-bg-gradient {
+  overflow: hidden;
+  color: #FFF;
+}
+.animate-bg-gradient-container {
+  background-size: 200%;
+  background-position: 0 0;
+  -webkit-animation: bg-gradient 70s ease infinite;
+  animation: bg-gradient 70s ease infinite;
+}
+
+@-webkit-keyframes multi-color {
+  0%   {  color: #000;    }
+  20%  {  color: #c90000; }
+  40%  {  color: #c39132; }
+  60%  {  color: #0ad1e9; }
+  80%  {  color: #180c49; }
+  100% {  color: #000;    }
+}
+@keyframes multi-color {
+  0%   {  color: #000;    }
+  20%  {  color: #c90000; }
+  40%  {  color: #c39132; }
+  60%  {  color: #0ad1e9; }
+  80%  {  color: #180c49; }
+  100% {  color: #000;    }
+}
+.animate-multi-color {
+  -webkit-animation: multi-color 20s linear infinite;
+  animation: multi-color 20s linear infinite;
+}
+
+/* Width / Height */
+
+.max-w-xxs {
+  max-width: 5rem;
+}
+
+.min-h-1\/2-screen {
+  min-height: 50vh;
+}
+.min-h-2\/3-screen {
+  min-height: 75vh;
+}
+
+@media (min-width: 576px) {
+  .sm\:min-h-1\/2-screen {
+    min-height: 50vh;
+  }
+  .sm\:min-h-2\/3-screen {
+    min-height: 75vh;
+  }
+}
+
+/* Transitions */
+
+.transition {
+  transition-property: all;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+.transition-fastest {
+  transition-duration: .15s;
+}
+.transition-faster {
+  transition-duration: .3s;
+}
+.transition-fast {
+  transition-duration: .5s;
+}
+.transition-slowest {
+  transition-duration: 30s;
+}
+.transition-linear {
+  transition-timing-function: linear;
+}
+.transition-ease {
+  transition-timing-function: ease;
+}
+
+/* Lists */
+
+.list-reset li::before {
+  display: none;
+}
+
+.list-blue li a {
+  color: #01ADFF;
+}
+
+/* Transforms */
+
+.transform-scale-base {
+  transform: scale(1);
+}
+.transform-scale-md {
+  transform: scale(1.5);
+}
+
+.hover\:transform-scale-base:hover {
+  transform: scale(1);
+}
+.hover\:transform-scale-md:hover {
+  transform: scale(1.2);
+}
+
+@media (min-width: 576px) {
+  .sm\:transform-scale-base {
+    transform: scale(0);
+  }
+  .sm\:transform-scale-md {
+    transform: scale(1.5);
+  }
+}
+
+/* Filters */
+
+.filter-blur-0 {
+  filter: blur(0);
+}
+.filter-blur-15 {
+  filter: blur(15px);
+}
+.filter-blur-20 {
+  filter: blur(20px);
+}
+
+.filter-grayscale-100 {
+  filter: grayscale(1);
+}
+
+@media (min-width: 576px) {
+  .sm\:filter-blur-0 {
+    filter: blur(0);
+  }
+  .sm\:filter-blur-15 {
+    filter: blur(15px);
+  }
+  .sm\:filter-blur-20 {
+    filter: blur(20px);
+  }
+}
+
+/* Backgrounds */
+
+.bg-cover-wide {
+  position: absolute;
+  top: -5%;
+  right: 0;
+  bottom: 0;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
