@@ -20,9 +20,11 @@ permalink: /drag
     background-size: 200% 200%;
     background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 5px, rgba(0, 0, 0, .1) 5px, rgba(0, 0, 0, 0.1) 10px);
   }
+
   .selector--draggable .selector__item {
     cursor: move;
   }
+
   .selector--draggable .selector__block {
     background-color: #FFF;
   }
@@ -30,51 +32,70 @@ permalink: /drag
   .ui-widget-content .selector:hover {
     background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 5px, rgba(0, 0, 0, .2) 5px, rgba(0, 0, 0, 0.2) 10px);
   }
+
   .ui-draggable:active,
   .ui-draggable-dragging {
     overflow: visible;
     z-index: 2;
   }
+
   .ui-draggable .selector:active,
   .ui-draggable-dragging .selector {
     transform: scale(1.03);
-    box-shadow: 0 0 150px rgba(0,0,0,.8);
+    box-shadow: 0 0 150px rgba(0, 0, 0, .2);
     animation: dashed-border-spinner 10s linear infinite;
+  }
+
+  .dragging-started .selector, .dragging-started .selector:active {
+    opacity: 0.4;
+    background-image: none;
+    box-shadow: none;
   }
 </style>
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>$(function() { $(".ui-widget-content").draggable(); });</script>
+<script>
+  $(function() {
+    $(".ui-widget-content").draggable({
+      helper: "clone",
+      revert: true
+    }).on("dragstart", function(event, ui) {
+      $(this).addClass("dragging-started");
+    }).on("dragstop", function(event, ui) {
+      $(this).removeClass("dragging-started");
+    });
+  });
+</script>
 
 
-  <div class="ui-widget-content">
+<div class="ui-widget-content">
 
-    <div class="selector selector--expanded selector--draggable">
-      <!--<div class="selector__itemSeperator selector__itemSeperator--hasLabel h6"></div>-->
-      <div class="selector__item JS_selectorItem--active selector__item--selected">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
-          <div class="selector__blockPart selector__blockPart--label">4362</div>
-          <div class="selector__blockSeperator"></div>
-          <div class="selector__blockPart selector__blockPart--field">Bulk update speed regressed in 282.0</div>
-        </div>
+  <div class="selector selector--expanded selector--draggable">
+    <!--<div class="selector__itemSeperator selector__itemSeperator--hasLabel h6"></div>-->
+    <div class="selector__item JS_selectorItem--active selector__item--selected">
+      <div class="selector__block">
+        <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
+        <div class="selector__blockPart selector__blockPart--label">4362</div>
+        <div class="selector__blockSeperator"></div>
+        <div class="selector__blockPart selector__blockPart--field">Bulk update speed regressed in 282.0</div>
       </div>
     </div>
-
   </div>
 
-  <div class="ui-widget-content">
+</div>
 
-    <div class="selector selector--expanded selector--draggable">
-      <div class="selector__item JS_selectorItem--active selector__item--selected">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
-          <div class="selector__blockPart selector__blockPart--label">7654</div>
-          <div class="selector__blockSeperator"></div>
-          <div class="selector__blockPart selector__blockPart--field">Add indicators in import/export</div>
-        </div>
+<div class="ui-widget-content">
+
+  <div class="selector selector--expanded selector--draggable">
+    <div class="selector__item JS_selectorItem--active selector__item--selected">
+      <div class="selector__block">
+        <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
+        <div class="selector__blockPart selector__blockPart--label">7654</div>
+        <div class="selector__blockSeperator"></div>
+        <div class="selector__blockPart selector__blockPart--field">Add indicators in import/export</div>
       </div>
     </div>
-
   </div>
+
+</div>
