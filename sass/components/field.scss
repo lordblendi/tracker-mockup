@@ -46,6 +46,7 @@
     transition: all .3s ease-in-out;
     cursor: text;
     overflow: hidden;
+    border-radius: 2px;
 
     &::after {
       content: '';
@@ -102,7 +103,15 @@
       text-transform: uppercase;
       color: #808080;
       opacity: 1;
+    }
 
+    .field__value {
+      box-shadow: 0 0 50px rgba(0,0,0,.2);
+      margin: 0 -10px;
+
+      input {
+        padding: 0 10px;
+      }
     }
   }
 }
