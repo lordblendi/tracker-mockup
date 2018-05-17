@@ -5,6 +5,10 @@ input, textarea, button:focus {
   outline: 0;
 }
 
+input[type=password] {
+  letter-spacing: 2px;
+}
+
 html {
   line-height: normal;
 }
@@ -86,6 +90,20 @@ html {
   .sm\:pl-20, .sm\:px-20 {
     padding-left: 5rem;
   }
+}
+
+/* Text */
+
+.h8 {
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.text-huge {
+  font-size: 94px;
 }
 
 /* Position */
