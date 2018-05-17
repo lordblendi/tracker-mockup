@@ -667,7 +667,6 @@ permalink: /selectors
 </div>
 
 <script>
-
   checkEmptyFields();
 
   $('.JS_field').focusin(function() {
@@ -693,19 +692,19 @@ permalink: /selectors
     });
   }
 
-// error field, by default don't show errors
-  $('.JS_field--error').each(function(){
-    const errorField = $(this);
-    errorField.find('.JS_has-popup').removeClass('JS_has-popup--error');
-  });
+  // error field, by default don't show errors
+    $('.JS_field--error').each(function(){
+      const errorField = $(this);
+      errorField.find('.JS_has-popup').removeClass('JS_has-popup--error');
+    });
 
-$("#ms-status .JS_error-popupRow").on('click', function(){
-  closeOverlay();
-  $("#ms-status .JS_itemBoxRow--error").css('display', 'flex');
-  $('.JS_field--error').each(function(){
-    const errorField = $(this);
-    errorField.addClass('field--error');
-    errorField.find('.JS_has-popup').addClass('JS_has-popup--error');
+  $("#ms-status .JS_error-popupRow").on('click', function(){
+    closeOverlay();
+    $("#ms-status .JS_itemBoxRow--error").css('display', 'flex');
+    $('.JS_field--error').each(function(){
+      const errorField = $(this);
+      errorField.addClass('field--error');
+      errorField.find('.JS_has-popup').addClass('JS_has-popup--error');
+    });
   });
-});
 </script>
