@@ -91,7 +91,7 @@
         .itemBox {
           &__cell:not(.flex-grow-0) {
             &::after {
-              background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(242,242,242,.5) 50%, var(--color-grey-lightest) 100%);
+              background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(242,242,242,.5) 50%, var(--color-grey-lightest) 80%, var(--color-grey-lightest) 100%);
             }
           }
         }
@@ -101,7 +101,7 @@
         .itemBox {
           &__cell:not(.flex-grow-0) {
             &::after {
-              background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, #FFF 100%);
+              background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, #FFF 80%, #FFF 100%);
             }
           }
         }

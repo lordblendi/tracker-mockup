@@ -1,14 +1,6 @@
 ---
 ---
 
-/*
-  Extend Tailwind Framework
-*/
-
-button:focus {
-    outline: 0;
-}
-
 /* Flex */
 
 .flex {
@@ -35,12 +27,6 @@ button:focus {
       flex-grow: 6;
     }
   }
-}
-
-/* Sizing */
-
-.w-half-screen {
-  width: 50vw;
 }
 
 /* Text */

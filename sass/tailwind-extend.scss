@@ -1,9 +1,6 @@
 ---
 ---
 
----
----
-
 input, textarea, button:focus {
   outline: 0;
 }
@@ -73,128 +70,22 @@ html {
   padding-right: 20%;
 }
 
-/* Text */
-
-p {
-  margin: 1em 0;
-}
-h1 {
-  margin: 0.83em 0;
-}
-h2 {
-  margin: 0.83em 0;
-}
-h3 {
-  margin: 1em 0;
-}
-h4 {
-  margin: 1.33em 0;
-}
-h5 {
-  margin: 1.67em 0;
-}
-h6 {
-  margin: 2.33em 0;
-}
-
-h1, .h1 {
-  font-size: 72px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-h2, .h2 {
-  font-size: 40px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: normal;
-  text-transform: none;
-}
-
-h3, .h3 {
-  font-size: 24px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: normal;
-  text-transform: none;
-}
-
-h4, .h4 {
-  font-size: 24px;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: normal;
-  text-transform: none;
-}
-
-h5, .h5 {
-  font-size: 20px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-h6, .h6 {
-  font-size: 18px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: normal;
-  text-transform: none;
-}
-
-.h7 {
-  font-size: 18px;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: normal;
-  text-transform: none;
-}
-
-.h8 {
-  font-size: 12px;
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.h9 {
-  font-size: 14px;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: normal;
-  text-transform: none;
-}
-
-.h-dotted {
-  position: relative;
-  padding: 10px 10px;
-  overflow: hidden;
-
-  &::before, &::after {
-    content: '...........................................................................................................';
-    position: absolute;
-    left: 0;
-    letter-spacing: 6px;
-    color: #999;
-    font-size: 12px;
-    line-height: 1;
+@media (min-width: 576px) {
+  .sm\:p-20 {
+    padding: 5rem;
   }
-
-  &::before {
-    top: -6px;
+  .sm\:pt-20, .sm\:py-20 {
+    padding-top: 5rem;
   }
-
-  &::after {
-    bottom: 0;
+  .sm\:pr-20, .sm\:px-20 {
+    padding-right: 5rem;
   }
-}
-
-.text-huge {
-  font-size: 94px;
+  .sm\:pb-20, .sm\:py-20 {
+    padding-bottom: 5rem;
+  }
+  .sm\:pl-20, .sm\:px-20 {
+    padding-left: 5rem;
+  }
 }
 
 /* Position */
@@ -251,6 +142,10 @@ h6, .h6 {
 
 .max-w-xxs {
   max-width: 5rem;
+}
+
+.w-half-screen {
+  width: 50vw;
 }
 
 .min-h-1\/2-screen {

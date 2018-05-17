@@ -17,48 +17,25 @@
   <meta name="theme-color" content="#ffffff">
 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="{{ site.baseurl }}/sass/app.css">
 
-  <style>
-    body {
-      background-color: #2C5386;
-    }
-    section {
-      text-align: center;
-      margin: 50px 10%;
-    }
-    section a {
-      padding: 50px;
-      background-color: #FFF;
-      box-shadow: 0 0 100px rgba(0,0,0,.2);
-      border-radius: 3px;
-      display: inline-block;
-      vertical-align: top;
-      margin: 10px;
-      color: #000;
-      font-family: 'Source Sans Pro', sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      transition: all .3s ease-in-out;
-    }
-    section a:hover {
-      box-shadow: 0 0 30px rgba(0,0,0,.5);
-      transform: translateY(2px);
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.5.2/tailwind.min.css" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/sass/tailwind-extend.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/sass/components/buttons.css">
 </head>
 
-<body>
+<body style="background-color: #FFF;">
 
-  <section>
-    <a href="present" target="_blank">Current<br>Layout</a>
-    <a href="future" target="_blank">Future<br>Layout</a>
+  <section class="my-8 px-1/5 text-center">
+    <a href="present" target="_blank" class="push push--go">Current</a>
+    <a href="future" target="_blank" class="push push--go">Future</a>
   </section>
 
-  <section>
-    <a href="selectors" target="_blank">PMX<br>Selectors</a>
-    <a href="itembox" target="_blank">PMX<br>ItemBox</a>
-    <a href="font" target="_blank">Font<br>Configuration</a>
-    <a href="tutorial" target="_blank">Tutorial<br>Example</a>
+  <section class="my-8 px-1/5 text-center">
+    <a href="selectors" target="_blank" class="push push--go">Selectors</a>
+    <a href="itembox" target="_blank" class="push push--go">Table</a>
+    <a href="font" target="_blank" class="push">Font config</a>
+    <a href="tutorial" target="_blank" class="push">Tutorial</a>
   </section>
 
 </body>
