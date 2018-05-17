@@ -17,10 +17,6 @@
 
   &--error {
     .field {
-      &__label {
-        color: var(--color-red);
-      }
-
       &__value {
         .error {
           width: 26px;
