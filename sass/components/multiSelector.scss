@@ -6,26 +6,12 @@
   top: 0;
   left: 0;
   min-width: 300px;
-  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
   transition: opacity .3s ease-in-out;
   opacity: 0;
   pointer-events: none;
   z-index: -1;
 
   .itemBox {
-    background-color: rgba(0, 0, 0, 0.17);
-
-    .itemBox,
-    .itemBox .itemBox,
-    .itemBox .itemBox .itemBox {
-      background-color: transparent;
-
-      &--sublist {
-        padding: 5px 0 5px 5px;
-        background-color: #929292;
-      }
-    }
-
     &--sublist {
       padding: 5px 0 5px 5px;
       background-color: #929292;
