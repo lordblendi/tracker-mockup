@@ -162,11 +162,11 @@ html {
   animation: multi-color 20s linear infinite;
 }
 
-@keyframes animate-loading {
+@keyframes loading {
   0% { background-position: 0 0; }
   100% { background-position: 80px 0; }
 }
-.animate--loading::before {
+.animate-loading::before {
   content: '';
   position: absolute;
   z-index: 10;
@@ -186,43 +186,41 @@ html {
     transparent 90%,
     rgba(0,0,0,.1) 100%
   );
-  -webkit-animation: animate-loading 3s linear infinite;
-  -moz-animation: animate-loading 3s linear infinite;
-  animation: animate-loading 3s linear infinite;
+  animation: loading 3s linear infinite;
 }
 
-@keyframes animate-popup {
+@keyframes pop {
   25% { transform: scale(1.1); }
   50% { transform: scale(1); }
   75% { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
-.animate--popup {
-  animation: animate-popup .5s ease forwards;
+.animate-popup {
+  animation: pop .5s ease forwards;
 }
 
-@keyframes animate-fadein {
+@keyframes fadein {
   100% {
     opacity: 1;
     transform: translateY(0px);
   }
 }
-.animate--fadein {
+.animate-fadein {
   opacity: 0;
   transform: translateY(-20px);
-  animation: animate-fadein .3s ease forwards;
+  animation: fadein .3s ease forwards;
 }
 
-@keyframes animate-fadeout {
+@keyframes fadeout {
   100% {
     opacity: 0;
     transform: translateY(-20px);
   }
 }
-.animate--fadeout {
+.animate-fadeout {
   opacity: 1;
   transform: translateY(0);
-  animation: animate-fadeout .3s ease forwards;
+  animation: fadeout .3s ease forwards;
 }
 
 

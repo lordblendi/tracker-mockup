@@ -12,5 +12,5 @@ function animateToBeRemovedItem(item, callback) {
 }
 
 function fadeMultiselect(multiselect) {
-  $(multiselect).toggleClass('animate--fadein animate--fadeout');
+  $(multiselect).toggleClass('animate-fadein animate-fadeout');
 }

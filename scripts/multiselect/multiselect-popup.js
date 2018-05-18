@@ -80,7 +80,7 @@ function handlePopupClick(toggle) {
     }).addClass('multiSelector--visible');
   }
 
-   toggle.hasClass('JS_has-popup--error') ? $(popid).addClass('animate--popup') : $(popid).addClass('animate--fadein');
+   toggle.hasClass('JS_has-popup--error') ? $(popid).addClass('animate-popup') : $(popid).addClass('animate-fadein');
 
   if (toggle.hasClass('JS_has-popup--error')) {
     $('body').addClass('state-overlay-error');
@@ -114,5 +114,5 @@ function closeOverlay(){
   $('body').removeClass('state-overlay-error');
   $('body').removeClass('state-overlay-tooltip');
 
-  $('.multiSelector').removeClass('multiSelector--visible animate--popup animate--fadein');
+  $('.multiSelector').removeClass('multiSelector--visible animate-popup animate-fadein');
 }
