@@ -1,0 +1,144 @@
+---
+---
+
+*::before,
+*::after {
+  font-family: 'pmx';
+}
+
+body {
+  font-size: 16px;
+}
+
+.tabline {
+  background-color: #2C5386;
+
+  .tab-scroller {
+    ul {
+      &.tabs {
+        li {
+          &.tab {
+            background-color: #224066;
+
+            &::before {
+              border-top: 15px solid #2C5386;
+            }
+
+            &.tab-fixed {
+              border-top: 2px dotted #224066;
+            }
+
+            &.tab-selected {
+              background-color: #4692C3;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.old-multiselect-popup,
+.old-multiselect-tab {
+  display: block !important;
+}
+.old-multiselect-popup--hidden, .old-multiselect-tab--hidden {
+  display: none !important;
+}
+.JS_old-multiselect-tab-negative span.checked:before,
+.JS_old-multiselect-tab-negative span.checked:hover:before {
+  color: red;
+}
+
+
+
+
+.selected sup {
+  display: none;
+}
+
+
+
+.databox.itembox {
+  * {
+    box-sizing: border-box;
+  }
+
+  ul {
+    &.itembox li {
+      background-color: inherit;
+    }
+  }
+
+  li {
+    ul {
+      &.columns {
+        li {
+          height: 29px;
+
+          &.action {
+            padding: 6px 0;
+          }
+        }
+      }
+    }
+
+    .inlinefilter {
+      tr {
+        background-color: #E6E6E6;
+
+        td {
+          &.titlefilter {
+            input,
+            .solidinput.haspicker {
+              height: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+#picker.solidinput .newpicker {
+  &.bottom .newpickercontent-wrapper {
+    top: 14px;
+  }
+
+  #tabs {
+    margin: -10px;
+    margin-bottom: unset;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .newpickercontent {
+    .inlinesearch {
+      &::before {
+        padding: 11px 5px;
+      }
+
+      input.text.empty {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+
+.footer {
+  padding: 0 20px 20px;
+}
+
+.addcontent.fixed {
+  position: relative;
+}
+
+.radio span:before {
+  font-size: 12px;
+}

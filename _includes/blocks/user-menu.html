@@ -1,13 +1,11 @@
-<div class="user-menu__userInfo">
-  <div class="user-menu__userInfoName">
-    <a href="#" class="user-menu__userInfoLongName">{{site.data.user-menu.name}}</a>
+<div class="flex items-center justify-end whitespace-no-wrap px-4 py-3 text-right text-white bg-blue-darker">
+  <div class="flex-shrink pr-2 truncate">
+    <a class="no-underline text-white" href="#">{{site.data.user-menu.name}}</a>
   </div>
-  <div class="user-menu__userInfoAvatar">
-    <img src="assets/images/profile.jpg" alt="profile picture">
-  </div>
+  <div class="flex-no-shrink w-8 h-8 rounded-full bg-cover bg-center bg-no-repeat" style="background-image:url('assets/images/profile.jpg');"></div>
 </div>
 
-<div class="user-menu__actions">
+<div class="p-2">
   {% for itemgroup in site.data.user-menu.itemgroups %}
     <div class="itemBox">
       {% for item in itemgroup %}

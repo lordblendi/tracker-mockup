@@ -1,6 +1,10 @@
 ---
 ---
 
+:focus {
+  outline: 0;
+}
+
 input, textarea, button:focus {
   outline: 0;
 }
@@ -17,6 +21,10 @@ textarea::-webkit-input-placeholder {
 
 html {
   line-height: normal;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
 
 /* Margin & Padding */
@@ -98,15 +106,86 @@ html {
   }
 }
 
-/* Text */
+/* Flex */
 
-.h8 {
-  font-size: 12px;
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.flex {
+  &-grow {
+    &-0 {
+      flex-grow: 0;
+    }
+    &-1 {
+      flex-grow: 1;
+    }
+    &-2 {
+      flex-grow: 2;
+    }
+    &-3 {
+      flex-grow: 3;
+    }
+    &-4 {
+      flex-grow: 4;
+    }
+    &-5 {
+      flex-grow: 5;
+    }
+    &-6 {
+      flex-grow: 6;
+    }
+  }
 }
+
+/* Width / Height */
+
+.max-w-xxs {
+  max-width: 5rem;
+}
+
+.w-half-screen {
+  width: 50vw;
+}
+
+.min-h-1\/2-screen {
+  min-height: 50vh;
+}
+.min-h-2\/3-screen {
+  min-height: 75vh;
+}
+
+@media (min-width: 576px) {
+  .sm\:min-h-1\/2-screen {
+    min-height: 50vh;
+  }
+  .sm\:min-h-2\/3-screen {
+    min-height: 75vh;
+  }
+}
+
+/* Lists */
+
+.list-reset li::before {
+  display: none;
+}
+
+.list-blue li a {
+  color: #01ADFF;
+}
+
+/* Backgrounds */
+
+.bg-cover-wide {
+  position: absolute;
+  top: -5%;
+  right: 0;
+  bottom: 0;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Text */
 
 .text-huge {
   font-size: 94px;
@@ -223,33 +302,6 @@ html {
   animation: fadeout .3s ease forwards;
 }
 
-
-/* Width / Height */
-
-.max-w-xxs {
-  max-width: 5rem;
-}
-
-.w-half-screen {
-  width: 50vw;
-}
-
-.min-h-1\/2-screen {
-  min-height: 50vh;
-}
-.min-h-2\/3-screen {
-  min-height: 75vh;
-}
-
-@media (min-width: 576px) {
-  .sm\:min-h-1\/2-screen {
-    min-height: 50vh;
-  }
-  .sm\:min-h-2\/3-screen {
-    min-height: 75vh;
-  }
-}
-
 /* Transitions */
 
 .transition {
@@ -274,16 +326,6 @@ html {
 }
 .transition-ease {
   transition-timing-function: ease;
-}
-
-/* Lists */
-
-.list-reset li::before {
-  display: none;
-}
-
-.list-blue li a {
-  color: #01ADFF;
 }
 
 /* Transforms */
@@ -337,19 +379,4 @@ html {
   .sm\:filter-blur-20 {
     filter: blur(20px);
   }
-}
-
-/* Backgrounds */
-
-.bg-cover-wide {
-  position: absolute;
-  top: -5%;
-  right: 0;
-  bottom: 0;
-  left: -5%;
-  width: 110%;
-  height: 110%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }

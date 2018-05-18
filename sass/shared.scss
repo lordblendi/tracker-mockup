@@ -3,7 +3,6 @@
 
 // the file extension has to be .css
 
-@import "reset.css";
 @import "app.css";
 
 // Plugins
@@ -11,9 +10,6 @@
 @import "plugins/sticky.css";
 
 // Blocks
-@import "blocks/app-navigator.css";
-@import "blocks/user-menu.css";
-
 @import "blocks/applicable-slider.css";
 
 // Components
@@ -28,6 +24,3 @@
 @import "components/buttons.css";
 @import "components/progress.css";
 @import "components/comments.css";
-
-// temporary, because of js
-@import "temporary.css";

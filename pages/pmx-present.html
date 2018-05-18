@@ -4,17 +4,17 @@ title: PMX present
 permalink: /present
 ---
 
-<div class="overlay-body"></div>
+<div class="overlay-body fixed pin opacity-0 pointer-events-none transition z-40"></div>
 
-<div class="app-navigator">
+<div class="app-navigator fixed pin-t z-50 w-1/2 h-screen transition bg-blue-dark">
   {% include blocks/app-nav.html %}
 </div>
 
-<div class="user-menu">
+<div class="user-menu fixed pin-t z-50 w-1/4 h-screen transition bg-blue-dark z-50">
   {% include blocks/user-menu.html %}
 </div>
 
-<main class="app__container">
+<main class="container-master">
   <header class="app-header px-4 py-2">
     {% include blocks/app-header.html %}
   </header>

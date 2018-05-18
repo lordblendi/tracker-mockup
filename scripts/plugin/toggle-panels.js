@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var $app = $('body');
+  var $body = $('body');
 
   // app-navigator toggle action
   $('.JS_toggle-app-navigator').on('click', function() {
@@ -16,13 +16,13 @@ $(document).ready(function() {
       });
     });
 
-    $app.addClass('app-navigator--visible');
+    $body.addClass('app-navigator--visible');
     $('body').addClass('fixed');
   });
 
   // user-menu toggle action
   $('.JS_toggle-user-menu').on('click', function() {
-    $app.addClass('user-menu--visible');
+    $body.addClass('user-menu--visible');
     $('body').addClass('fixed');
   });
 
@@ -43,23 +43,23 @@ $(document).ready(function() {
   // to remove app-navigator or user-menu
   // and make the body scrollable again
   $('.overlay-body').on('click', function() {
-    if ($app.hasClass('app-navigator--visible')) {
-      $app.removeClass('app-navigator--visible');
+    if ($body.hasClass('app-navigator--visible')) {
+      $body.removeClass('app-navigator--visible');
       $('body').removeClass('fixed');
     }
 
-    if ($app.hasClass('user-menu--visible')) {
-      $app.removeClass('user-menu--visible');
+    if ($body.hasClass('user-menu--visible')) {
+      $body.removeClass('user-menu--visible');
       $('body').removeClass('fixed');
     }
 
-    if ($app.hasClass('assistance--visible')) {
-      $app.removeClass('assistance--visible');
+    if ($body.hasClass('assistance--visible')) {
+      $body.removeClass('assistance--visible');
       $('.assistance').removeClass('visible');
     }
 
-    if ($app.hasClass('overlay--visible')) {
-      $app.removeClass('overlay--visible');
+    if ($body.hasClass('overlay--visible')) {
+      $body.removeClass('overlay--visible');
 
       $('.breadcrumbs__item').removeClass('breadcrumbs__item--active');
     }
@@ -67,15 +67,15 @@ $(document).ready(function() {
 
   // Panel toggles
   $('.JS_panels-state-1').on('click', function() {
-    $app.removeClass('panels-state-1 panels-state-2 panels-state-3');
-    $app.addClass('panels-state-1');
+    $body.removeClass('panels-state-1 panels-state-2 panels-state-3');
+    $body.addClass('panels-state-1');
   });
   $('.JS_panels-state-2').on('click', function() {
-    $app.removeClass('panels-state-1 panels-state-2 panels-state-3');
-    $app.addClass('panels-state-2');
+    $body.removeClass('panels-state-1 panels-state-2 panels-state-3');
+    $body.addClass('panels-state-2');
   });
   $('.JS_panels-state-3').on('click', function() {
-    $app.removeClass('panels-state-1 panels-state-2 panels-state-3');
-    $app.addClass('panels-state-3');
+    $body.removeClass('panels-state-1 panels-state-2 panels-state-3');
+    $body.addClass('panels-state-3');
   });
 });

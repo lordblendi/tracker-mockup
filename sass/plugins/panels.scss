@@ -1,6 +1,40 @@
 ---
 ---
 
+
+.app-navigator {
+  left: -50%;
+}
+.app-navigator--visible .app-navigator {
+  left: 0;
+}
+.app-navigator--visible .container-master {
+  left: 50%;
+}
+.app-navigator--visible .overlay-body {
+  opacity: 1;
+  pointer-events: auto;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+
+.user-menu {
+  right: -25%;
+}
+.user-menu--visible .overlay-body {
+  opacity: 1;
+  pointer-events: auto;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+.user-menu--visible .user-menu {
+  right: 0;
+}
+.user-menu--visible .container-master {
+  left: -25%;
+}
+
+
+
 .panels-state {
   &-1 {
     .item-progress {
