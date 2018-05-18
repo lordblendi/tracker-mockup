@@ -82,12 +82,12 @@ body {
 
 .state-overlay {
   &-tooltip {
-    .app__overlay {
+    .overlay-body {
       background-color: rgba(210, 229, 255, 0.4);
     }
   }
   &-error {
-    .app__overlay {
+    .overlay-body {
       background-color: rgba(255, 85, 85, 0.4);
     }
   }

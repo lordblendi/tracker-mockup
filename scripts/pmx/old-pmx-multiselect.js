@@ -4,7 +4,7 @@ $('.JS_old-multiselect-trigger').click(function() {
   // if hidden, show it and add overlay
   if(oldpopup.hasClass('old-multiselect-popup--hidden')) {
     oldpopup.removeClass('old-multiselect-popup--hidden');
-    $(".overlay, .app__overlay").css("display", 'block');
+    $(".overlay, .overlay-body").css("display", 'block');
   }
   // if not hidden, hide it, close overlay
   else {
@@ -37,7 +37,7 @@ $('.JS_new-multiselect-trigger').click(function() {
   });
   $(multiselectId).toggleClass('multiSelector--visible');
   // show overlay
-  $(".app__overlay").css({
+  $(".overlay-body").css({
     'pointer-events': 'auto',
     'opacity': '1'
   });
@@ -47,8 +47,8 @@ $('.JS_new-multiselect-trigger').click(function() {
 // - column-picker
 // - old-multiselect
 // - new-multiselect
-$('.app__overlay').on('click', function() {
-  $(".app__overlay").css({
+$('.overlay-body').on('click', function() {
+  $(".overlay-body").css({
     'pointer-events': '',
     'opacity': ''
   });

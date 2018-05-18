@@ -91,14 +91,14 @@ function handlePopupClick(toggle) {
   }
 
   // show overlay
-  $(".app__overlay").css({
+  $(".overlay-body").css({
     'pointer-events': 'auto',
     'opacity': '1'
   });
 }
 
 // onclick action on overlay to close popups
-$('.app__overlay').on('click', function() {
+$('.overlay-body').on('click', function() {
   if($(this).closest('.app.app-navigator--visible, .app.user-menu--visible').length === 0){
     closeOverlay();
   }
@@ -106,7 +106,7 @@ $('.app__overlay').on('click', function() {
 
 // close overlay and popups
 function closeOverlay(){
-  $(".app__overlay").css({
+  $(".overlay-body").css({
     'pointer-events': '',
     'opacity': ''
   });
