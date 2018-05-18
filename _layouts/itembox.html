@@ -5,12 +5,11 @@
   </head>
 
   <body class="page-{{ page.title }}">
-    <div class="app">
-      <div class="overlay-body"></div>
-      {{ content }}
-    </div>
-    <!-- POPUPS -->
+    <div class="overlay-body fixed pin opacity-0 pointer-events-none transition z-40"></div>
 
+    {{ content }}
+
+    <!-- POPUPS -->
     {% include popups/multiSelector-columnpicker.html %}
 
     <div class="multiSelector" id="multiSelector-error">
@@ -18,18 +17,15 @@
         <ul class="itemBox__row itemBox__row--custom">
           <li class="itemBox__cell">
             <div class="itemBox__cellInner">
-
               <div class="note note--error">
                 <p>Due date must be somewhere in the future.</p>
               </div>
-
             </div>
           </li>
         </ul>
       </div>
-      <!-- /.itemBox -->
     </div>
-    <!-- /.multiSelector -->
+
     {% include foot.html %}
   </body>
 </html>

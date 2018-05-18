@@ -5,7 +5,8 @@
   </head>
 
   <body class="page-{{ page.title }}">
-    <div class="overlay-body"></div>
+    <div class="overlay-body fixed pin opacity-0 pointer-events-none transition z-40"></div>
+    
     {{ content }}
 
     {% include popups/multiSelector-tags-colors.html %}
