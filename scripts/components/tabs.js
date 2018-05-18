@@ -2,7 +2,7 @@ var resizeTimer;
 
 $(function() {
   // setup tabs for the app navigator
-  setup(".app-navigator__nav .tabs-nav");
+  setup(".app-navigator .tabs-nav");
 
   // click tab link
   $('.tabs-nav__link').on('click', function(e) {

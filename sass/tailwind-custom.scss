@@ -1,35 +1,6 @@
 ---
 ---
 
-.bg-blue-dark {
-  background-color: #2C5386;
-}
-
-/* Global */
-
-.primary {
-  color: var(--color-gold);
-}
-.secondary {
-  color: var(--color-red);
-}
-
-.disabled {
-  filter: saturate(.7);
-  opacity: .5;
-  pointer-events: none;
-  cursor: default;
-}
-.readonly {
-  &:hover {
-    transform: none;
-  }
-}
-
-.overlay-body {
-  background-color: rgba(0,0,0,.25);
-}
-
 /* Text */
 
 h1, .h1 {
@@ -166,4 +137,33 @@ h6, .h6 {
   &:hover {
     transform: translate(0, -2px);
   }
+}
+
+/* Globals */
+
+.bg-blue-dark {
+  background-color: #2C5386;
+}
+
+.primary {
+  color: var(--color-gold);
+}
+.secondary {
+  color: var(--color-red);
+}
+
+.disabled {
+  filter: saturate(.7);
+  opacity: .5;
+  pointer-events: none;
+  cursor: default;
+}
+.readonly {
+  &:hover {
+    transform: none;
+  }
+}
+
+.overlay-body {
+  background-color: rgba(0,0,0,.25);
 }
