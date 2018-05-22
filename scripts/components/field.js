@@ -1,6 +1,6 @@
 checkEmptyFields();
 
-$('.JS_field').focusin(function() {
+$('.JS_field').click(function() {
   $(this).addClass('field--focus');
   checkEmptyFields();
 });
