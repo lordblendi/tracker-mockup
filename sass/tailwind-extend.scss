@@ -9,10 +9,6 @@ input, textarea, button:focus {
   outline: 0;
 }
 
-input[type=password] {
-  letter-spacing: 2px;
-}
-
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   font-style: italic;
@@ -134,6 +130,12 @@ html {
   }
 }
 
+/* Position */
+
+.z-1- {
+  z-index: -1;
+}
+
 /* Width / Height */
 
 .max-w-xxs {
@@ -183,18 +185,6 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-/* Text */
-
-.text-huge {
-  font-size: 94px;
-}
-
-/* Position */
-
-.z-1- {
-  z-index: -1;
 }
 
 /* Animations */
@@ -379,4 +369,10 @@ html {
   .sm\:filter-blur-20 {
     filter: blur(20px);
   }
+}
+
+/* Text */
+
+.text-huge {
+  font-size: 94px;
 }
