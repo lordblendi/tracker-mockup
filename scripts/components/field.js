@@ -1,30 +1,33 @@
-checkEmptyFields();
 
-$('.JS_field').click(function() {
-  $(this).addClass('field--focus');
-  checkEmptyFields();
+$('.field').each(function() {
+  var label = $(this).find('.field__label');
+  var input = $(this).find('.field__input');
+  console.log($(this).find('.selector').length);
+
+  if ( (input.val().length > 0) || ($(this).find('.selector').length > 0) ) {
+    $(this).removeClass('field--empty');
+  }
+  else {
+    $(this).addClass('field--empty');
+  }
 });
 
-$('.overlay-body').on('click', function() {
-  $('.field').removeClass('field--focus');
-  checkEmptyFields();
+$('.field__input').on('focus', function() {
+  $('overlay-body').addClass('pointer-events-auto opacity-100');
+  $(this).parent().parent().addClass('field--focus');
 });
 
-function checkEmptyFields() {
-  $('.JS_field .field__input').each(function() {
-    var thisLabel = $(this).parent().parent().find('.field__label');
+$('.field__input').on('focusout', function() {
+  $('overlay-body').removeClass('pointer-events-auto opacity-100');
+  $(this).parent().parent().removeClass('field--focus');
+});
 
-    if ($(this).val().length > 0 || $(this).parent().find('.selector').length > 0) {
-      thisLabel.removeClass('field__label--placeholder');
-    }
-    else {
-      thisLabel.addClass('field__label--placeholder');
-    }
-  });
-}
+/*
 
 // error field, by default don't show errors
 $('.JS_field--error').each(function(){
   const errorField = $(this);
   errorField.find('.JS_has-popup').removeClass('JS_has-popup--error');
 });
+
+*/
