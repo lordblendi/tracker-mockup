@@ -3,6 +3,9 @@
 // depending on where is the toggle for it
 $('.JS_has-popup').on('click', function() {
   handlePopupClick(this);
+  if ($(this).hasClass('JS_movePlaceholder')) {
+    $(this).addClass('field--focus');
+  }
 })
 function handlePopupClick(toggle) {
   toggle = $(toggle);
