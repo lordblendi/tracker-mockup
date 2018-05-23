@@ -2,13 +2,13 @@ var resizeTimer;
 
 $(function() {
   // setup tabs for the app navigator
-  setup(".app-navigator .tabs-nav");
+  setup(".app-navigator .tabs-nav, .register-navigator .tabs-nav");
 
   // click tab link
   $('.tabs-nav__link').on('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
-
+    // getting .tabs
     var _parent = $(this).parent().parent().parent().parent();
     var _tabindex = $(this).attr('tabindex');
 
