@@ -16,6 +16,13 @@ $('.field').each(function() {
   input.on('focusout', function() {
     field.removeClass('field--focus');
     $('.overlay-body').removeClass('pointer-events-auto opacity-100');
+
+    if (input.val()) {
+      field.addClass('field--not-empty');
+    }
+    else {
+      field.removeClass('field--not-empty');
+    }
   });
 });
 
