@@ -68,10 +68,10 @@
   text-decoration: none;
   position: relative;
   display: inline-block;
-  vertical-align: middle;
   cursor: pointer;
   transition: all .3s ease-in-out;
   transform: translate(0, 0);
+  color: var(--color-gold);
 
   &:hover {
     transform: translate(0, -2px);
