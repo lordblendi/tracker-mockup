@@ -44,20 +44,6 @@ permalink: /selectors
       </div>
     </div>
 
-    <!-- Popup (input)
-    <div class="multiSelector animate-popup" id="ms-title-input" style="margin-top: -49px; margin-left: -10px;">
-      <div class="itemBox JS_itemBox">
-        <ul class="itemBox__row">
-          <li class="itemBox__cell">
-            <div class="itemBox__cellInner">
-              <input type="input" placeholder="Which title fits this item?" autofocus>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  -->
-
     <!-- Field -->
     <div class="field field--error">
       <div class="field__label">Assigned to</div>
@@ -83,18 +69,8 @@ permalink: /selectors
         </ul>
       </div>
     </div>
-    <div class="multiSelector animate-popup" id="ms-single-input" style="margin-top: -29px; margin-left: -10px;">
-      <div class="itemBox JS_itemBox">
-        <ul class="itemBox__row">
-          <li class="itemBox__cell">
-            <div class="itemBox__cellInner">
-              <input type="input" value="_Not Assigned" autofocus>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
--->
+    -->
+
     <!-- Field -->
     <div class="field">
       <div class="field__label">Due date</div>
@@ -104,20 +80,6 @@ permalink: /selectors
         </div>
       </div>
     </div>
-
-    <!-- Popup (input)
-    <div class="multiSelector animate-popup" id="ms-date-input" style="margin-top: -49px; margin-left: -10px;">
-      <div class="itemBox JS_itemBox">
-        <ul class="itemBox__row">
-          <li class="itemBox__cell">
-            <div class="itemBox__cellInner">
-              <input type="input" placeholder="What is the deadline?" autofocus>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
- -->
 
   </div>
 
@@ -152,25 +114,8 @@ permalink: /selectors
       </div>
     </div>
 
-    <!-- Popup
-    <div class="multiSelector" id="multiSelector-privacy" style="margin-top: 36px;">
-      <div class="itemBox">
-        <ul class="itemBox__row itemBox__row--custom">
-          <li class="itemBox__cell">
-            <div class="itemBox__cellInner">
-
-              <div class="note note--tooltip">
-                <p>By selecting 'Agree' you have read and accepted TenForce's <a href="#" class="link link--primary">Privacy Policy</a>, concerning your personal data and how it is used.</p>
-              </div>
-
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
--->
     <!-- Field -->
-    <div class="field JS_field">
+    <div class="field">
       <div class="field__label">Email</div>
       <div class="field__data">
         <div class="field__value">
@@ -183,7 +128,7 @@ permalink: /selectors
     </div>
 
     <!-- Field -->
-    <div class="field JS_field JS_field--error">
+    <div class="field--error">
       <div class="field__label">Status</div>
       <div class="field__data">
 
@@ -305,83 +250,97 @@ permalink: /selectors
 <h2>Without popup</h2>
 
 <!-- Field -->
-<div class="field JS_field">
+<div class="field">
   <div class="field__label">Danger level</div>
   <div class="field__data">
-    <div class="selector selector--singleselect selector--expanded JS_selector">
-      <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;">Low</div>
+    <div class="field__value">
+
+      <div class="selector selector--singleselect selector--expanded JS_selector">
+        <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;">Low</div>
+          </div>
+        </div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;">Moderate</div>
+          </div>
+        </div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: var(--color-red);">High</div>
+          </div>
         </div>
       </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;">Moderate</div>
-        </div>
-      </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: var(--color-red);">High</div>
-        </div>
-      </div>
+
+      <input class="field__input" type="text" value="low">
+
     </div>
   </div>
 </div>
 
 <!-- Field -->
-<div class="field JS_field">
+<div class="field">
   <div class="field__label">Product contact</div>
   <div class="field__data">
-    <div class="selector selector--multiselect selector--expanded JS_selector">
-      <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;"></div>
-          <div class="selector__blockPart selector__blockPart--field">Heet</div>
+    <div class="field__value">
+
+      <div class="selector selector--multiselect selector--expanded JS_selector">
+        <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;"></div>
+            <div class="selector__blockPart selector__blockPart--field">Heet</div>
+          </div>
+        </div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: var(--color-red);"></div>
+            <div class="selector__blockPart selector__blockPart--field">Brandbaar</div>
+          </div>
+        </div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: var(--color-red);"></div>
+            <div class="selector__blockPart selector__blockPart--field">Huidopname</div>
+          </div>
         </div>
       </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: var(--color-red);"></div>
-          <div class="selector__blockPart selector__blockPart--field">Brandbaar</div>
-        </div>
-      </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: var(--color-red);"></div>
-          <div class="selector__blockPart selector__blockPart--field">Huidopname</div>
-        </div>
-      </div>
+
+      <input class="field__input" type="text" value="">
+
     </div>
   </div>
 </div>
 
 <!-- Field -->
-<div class="field JS_field">
+<div class="field">
   <div class="field__label">Status</div>
   <div class="field__data">
-    <div class="selector selector--singleselect selector--expanded JS_selector">
-      <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
-          <div class="selector__blockPart selector__blockPart--field">Not started</div>
+    <div class="field__value">
+      <div class="selector selector--singleselect selector--expanded JS_selector">
+        <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
+            <div class="selector__blockPart selector__blockPart--field">Not started</div>
+          </div>
         </div>
-      </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;"></div>
-          <div class="selector__blockPart selector__blockPart--field">Ongoing</div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;"></div>
+            <div class="selector__blockPart selector__blockPart--field">Ongoing</div>
+          </div>
         </div>
-      </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: var(--color-red);"></div>
-          <div class="selector__blockPart selector__blockPart--field">Finished</div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: var(--color-red);"></div>
+            <div class="selector__blockPart selector__blockPart--field">Finished</div>
+          </div>
         </div>
       </div>
     </div>
@@ -389,28 +348,30 @@ permalink: /selectors
 </div>
 
 <!-- Field -->
-<div class="field JS_field">
+<div class="field">
   <div class="field__label">Tags</div>
   <div class="field__data">
-    <div class="selector selector--multiselect selector--expanded JS_selector">
-      <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
-          <div class="selector__blockPart selector__blockPart--field">dev-team</div>
+    <div class="field__value">
+      <div class="selector selector--multiselect selector--expanded JS_selector">
+        <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
+            <div class="selector__blockPart selector__blockPart--field">dev-team</div>
+          </div>
         </div>
-      </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
-          <div class="selector__blockPart selector__blockPart--field">back-end</div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
+            <div class="selector__blockPart selector__blockPart--field">back-end</div>
+          </div>
         </div>
-      </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;"></div>
-          <div class="selector__blockPart selector__blockPart--field">297</div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;"></div>
+            <div class="selector__blockPart selector__blockPart--field">297</div>
+          </div>
         </div>
       </div>
     </div>
@@ -418,28 +379,30 @@ permalink: /selectors
 </div>
 
 <!-- Field -->
-<div class="field JS_field">
+<div class="field">
   <div class="field__label">Status</div>
   <div class="field__data">
-    <div class="selector selector--singleselect selector--expanded JS_selector">
-      <div class="selector__item JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;"></div>
-          <div class="selector__blockPart selector__blockPart--field">Not started</div>
+    <div class="field__value">
+      <div class="selector selector--singleselect selector--expanded JS_selector">
+        <div class="selector__item JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;"></div>
+            <div class="selector__blockPart selector__blockPart--field">Not started</div>
+          </div>
         </div>
-      </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
-          <div class="selector__blockPart selector__blockPart--field">Ongoing</div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
+            <div class="selector__blockPart selector__blockPart--field">Ongoing</div>
+          </div>
         </div>
-      </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
-          <div class="selector__blockPart selector__blockPart--field">Done</div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
+            <div class="selector__blockPart selector__blockPart--field">Done</div>
+          </div>
         </div>
       </div>
     </div>
@@ -447,39 +410,21 @@ permalink: /selectors
 </div>
 
 <!-- Field -->
-<div class="field JS_field">
+<div class="field">
   <div class="field__label">Checkbox (filter in header)</div>
   <div class="field__data">
-    <div class="selector selector--multiselect selector--expanded JS_selector">
-      <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--field"></div>
+    <div class="field__value">
+      <div class="selector selector--multiselect selector--expanded JS_selector">
+        <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--field"></div>
+          </div>
         </div>
-      </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--field"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Field -->
-<div class="field JS_field">
-  <div class="field__label">Checkbox</div>
-  <div class="field__data">
-    <div class="selector selector--singleselect selector--expanded JS_selector">
-      <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix"></div>
-        </div>
-      </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix"></div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--field"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -487,31 +432,55 @@ permalink: /selectors
 </div>
 
 <!-- Field -->
-<div class="field JS_field">
+<div class="field">
   <div class="field__label">Checkbox</div>
   <div class="field__data">
-    <div class="selector selector--singleselect selector--expanded JS_selector">
-      <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem JS_toggle-progress">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix"></div>
+    <div class="field__value">
+      <div class="selector selector--singleselect selector--expanded JS_selector">
+        <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix"></div>
+          </div>
+        </div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix"></div>
+          </div>
         </div>
       </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item  JS_selectorItem JS_toggle-comments">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix"><sup>11</sup></div>
+    </div>
+  </div>
+</div>
+
+<!-- Field -->
+<div class="field">
+  <div class="field__label">Checkbox</div>
+  <div class="field__data">
+    <div class="field__value">
+      <div class="selector selector--singleselect selector--expanded JS_selector">
+        <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem JS_toggle-progress">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix"></div>
+          </div>
         </div>
-      </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix"></div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item  JS_selectorItem JS_toggle-comments">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix"><sup>11</sup></div>
+          </div>
         </div>
-      </div>
-      <div class="selector__itemSeperator"></div>
-      <div class="selector__item JS_selectorItem">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix"></div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix"></div>
+          </div>
+        </div>
+        <div class="selector__itemSeperator"></div>
+        <div class="selector__item JS_selectorItem">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -521,15 +490,17 @@ permalink: /selectors
 <h2>Read-only with ellipsis</h2>
 
 <!-- Field -->
-<div class="field JS_field">
+<div class="field">
   <div class="field__data">
-    <div class="selector selector--expanded">
-      <div class="selector__item JS_selectorItem--active selector__item--selected">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
-          <div class="selector__blockPart selector__blockPart--label">Label</div>
-          <div class="selector__blockSeperator"></div>
-          <div class="selector__blockPart selector__blockPart--field">Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</div>
+    <div class="field__value">
+      <div class="selector selector--expanded">
+        <div class="selector__item JS_selectorItem--active selector__item--selected">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
+            <div class="selector__blockPart selector__blockPart--label">Label</div>
+            <div class="selector__blockSeperator"></div>
+            <div class="selector__blockPart selector__blockPart--field">Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</div>
+          </div>
         </div>
       </div>
     </div>
@@ -539,106 +510,112 @@ permalink: /selectors
 <h2>Filters</h2>
 
 <!-- Field -->
-<div class="field JS_field">
+<div class="field">
   <div class="field__label">Description</div>
   <div class="field__data">
-    <div class="selector selector--expanded" >
-      <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
-      <div class="selector__item JS_selectorItem--active selector__item--selected">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--field">improvement</div>
-        </div>
-      </div>
-    </div>
-    <div class="selector selector--expanded">
-      <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
-    </div>
-    <div class="selector selector--expanded">
-      <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
-      <div class="selector__item JS_selectorItem--active selector__item--selected">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--field">design</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Field -->
-<div class="field JS_field">
-  <div class="field__label">Tags  Filter</div>
-  <div class="field__data">
-    <div class="selector selector--expanded JS_has-popup" data-popid="#filter-tagpicker">
-      <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
-      <div class="selector__item JS_selectorItem--active selector__item--selected">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
-          <div class="selector__blockPart selector__blockPart--field">Design</div>
-        </div>
-      </div>
-      <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
-      <div class="selector__item JS_selectorItem--active selector__item--selected">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
-          <div class="selector__blockPart selector__blockPart--field">Marketing</div>
-        </div>
-      </div>
-    </div>
-    <div class="selector selector--expanded JS_selector">
-      <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
-    </div>
-    <div class="selector selector--expanded JS_selector">
-      <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
-      <div class="selector__item JS_selectorItem--active selector__item--selected">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #f4ca16;"></div>
-          <div class="selector__blockPart selector__blockPart--field">front-end</div>
-        </div>
-      </div>
-      <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
-      <div class="selector__item JS_selectorItem--active selector__item--selected">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #e30022;"></div>
-          <div class="selector__blockPart selector__blockPart--field">back-end</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Field -->
-<div class="field JS_field">
-  <div class="field__label">Date  Filter</div>
-  <div class="field__data">
-    <div class="inline align-middle overflow-hidden">
-      <div class="selector selector--expanded JS_has-popup" data-popid="#filter-datepicker">
+    <div class="field__value">
+      <div class="selector selector--expanded" >
         <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
         <div class="selector__item JS_selectorItem--active selector__item--selected">
           <div class="selector__block">
-            <div class="selector__blockPart selector__blockPart--field">next 2 weeks (12/03/18-25/03/18)</div>
-          </div>
-        </div>
-        <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
-        <div class="selector__item JS_selectorItem--active selector__item--selected">
-          <div class="selector__block">
-            <div class="selector__blockPart selector__blockPart--field">19/03/18-20/03/18</div>
+            <div class="selector__blockPart selector__blockPart--field">improvement</div>
           </div>
         </div>
       </div>
       <div class="selector selector--expanded">
-        <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+        <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
       </div>
       <div class="selector selector--expanded">
         <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
         <div class="selector__item JS_selectorItem--active selector__item--selected">
           <div class="selector__block">
-            <div class="selector__blockPart selector__blockPart--field">today</div>
+            <div class="selector__blockPart selector__blockPart--field">design</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Field -->
+<div class="field">
+  <div class="field__label">Tags  Filter</div>
+  <div class="field__data">
+    <div class="field__value">
+      <div class="selector selector--expanded JS_has-popup" data-popid="#filter-tagpicker">
+        <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
+        <div class="selector__item JS_selectorItem--active selector__item--selected">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
+            <div class="selector__blockPart selector__blockPart--field">Design</div>
+          </div>
+        </div>
+        <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
+        <div class="selector__item JS_selectorItem--active selector__item--selected">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
+            <div class="selector__blockPart selector__blockPart--field">Marketing</div>
+          </div>
+        </div>
+      </div>
+      <div class="selector selector--expanded JS_selector">
+        <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+      </div>
+      <div class="selector selector--expanded JS_selector">
+        <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
+        <div class="selector__item JS_selectorItem--active selector__item--selected">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #f4ca16;"></div>
+            <div class="selector__blockPart selector__blockPart--field">front-end</div>
           </div>
         </div>
         <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
         <div class="selector__item JS_selectorItem--active selector__item--selected">
           <div class="selector__block">
-            <div class="selector__blockPart selector__blockPart--field">18/03/18</div>
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #e30022;"></div>
+            <div class="selector__blockPart selector__blockPart--field">back-end</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Field -->
+<div class="field">
+  <div class="field__label">Date  Filter</div>
+  <div class="field__data">
+    <div class="field__value">
+      <div class="inline align-middle overflow-hidden">
+        <div class="selector selector--expanded JS_has-popup" data-popid="#filter-datepicker">
+          <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
+          <div class="selector__item JS_selectorItem--active selector__item--selected">
+            <div class="selector__block">
+              <div class="selector__blockPart selector__blockPart--field">next 2 weeks (12/03/18-25/03/18)</div>
+            </div>
+          </div>
+          <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
+          <div class="selector__item JS_selectorItem--active selector__item--selected">
+            <div class="selector__block">
+              <div class="selector__blockPart selector__blockPart--field">19/03/18-20/03/18</div>
+            </div>
+          </div>
+        </div>
+        <div class="selector selector--expanded">
+          <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+        </div>
+        <div class="selector selector--expanded">
+          <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
+          <div class="selector__item JS_selectorItem--active selector__item--selected">
+            <div class="selector__block">
+              <div class="selector__blockPart selector__blockPart--field">today</div>
+            </div>
+          </div>
+          <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+          <div class="selector__item JS_selectorItem--active selector__item--selected">
+            <div class="selector__block">
+              <div class="selector__blockPart selector__blockPart--field">18/03/18</div>
+            </div>
           </div>
         </div>
       </div>
@@ -649,20 +626,22 @@ permalink: /selectors
 <h2>Tag Picker</h2>
 
 <!-- Field -->
-<div class="field JS_field">
+<div class="field">
   <div class="field__label">Tags</div>
   <div class="field__data">
-    <div class="selector selector--multiselect JS_has-popup JS_selector" data-popid="#multiSelector-tagpicker">
-      <div class="selector__item JS_selectorItem--active selector__item--selected">
-        <div class="selector__block">
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
-          <div class="selector__blockPart selector__blockPart--field">282</div>
-          <div class="selector__itemSeperator"></div>
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;"></div>
-          <div class="selector__blockPart selector__blockPart--field">2013_Maintenance</div>
-          <div class="selector__itemSeperator"></div>
-          <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #E30022;"></div>
-          <div class="selector__blockPart selector__blockPart--field">workaround_available</div>
+    <div class="field__value">
+      <div class="selector selector--multiselect JS_has-popup JS_selector" data-popid="#multiSelector-tagpicker">
+        <div class="selector__item JS_selectorItem--active selector__item--selected">
+          <div class="selector__block">
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
+            <div class="selector__blockPart selector__blockPart--field">282</div>
+            <div class="selector__itemSeperator"></div>
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;"></div>
+            <div class="selector__blockPart selector__blockPart--field">2013_Maintenance</div>
+            <div class="selector__itemSeperator"></div>
+            <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #E30022;"></div>
+            <div class="selector__blockPart selector__blockPart--field">workaround_available</div>
+          </div>
         </div>
       </div>
     </div>
