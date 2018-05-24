@@ -9,19 +9,21 @@
 
   &__label {
     position: absolute;
-    top: -1px;
     padding: 0 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     transition: all .15s ease-in-out;
-    font-size: 12px;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: 1px;
-    text-transform: uppercase;
     color: #808080;
     z-index: 2;
+    pointer-events: none;
+    top: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: normal;
+    text-transform: none;
+    opacity: .4;
   }
 
   &__data {
@@ -65,16 +67,16 @@
     }
 
     .selector {
-      z-index: 2;
     }
 
     .selector ~ .field__input {
       position: absolute;
       left: 0;
       top: 0;
-      z-index: 0;
+      z-index: -1;
       height: 100%;
       user-select: none;
+      color: transparent;
     }
   }
 
@@ -88,7 +90,6 @@
 
     &:focus {
       background-color: #FFF;
-      box-shadow: 0 0 100px rgba(0,0,0,.4);
       z-index: 50;
     }
   }
@@ -106,20 +107,10 @@
     }
   }
 
-  &--empty {
-    .field__label {
-      top: 16px;
-      font-size: 16px;
-      font-weight: 400;
-      font-style: italic;
-      letter-spacing: normal;
-      text-transform: none;
-      opacity: .4;
-    }
-  }
-
+  &--not-empty,
   &--focus {
     .field__label {
+      pointer-events: auto;
       top: -1px;
       font-size: 12px;
       font-weight: 600;
@@ -127,6 +118,12 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       opacity: 1;
+    }
+  }
+
+  &--focus {
+    .field__value {
+      z-index: 50;
     }
   }
 }

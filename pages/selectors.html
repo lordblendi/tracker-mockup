@@ -28,7 +28,7 @@ permalink: /selectors
             </div>
           </div>
 
-          <input class="field__input" type="text">
+          <input class="field__input" type="text" value="checked">
         </div>
 
       </div>
@@ -39,7 +39,7 @@ permalink: /selectors
       <div class="field__label">Title</div>
       <div class="field__data">
         <div class="field__value">
-          <input class="field__input" type="text">
+          <input class="field__input" type="text" value="">
         </div>
       </div>
     </div>
@@ -100,7 +100,7 @@ permalink: /selectors
       <div class="field__label">Due date</div>
       <div class="field__data">
         <div class="field__value">
-          <input class="field__input">
+          <input class="field__input" value="">
         </div>
       </div>
     </div>
@@ -129,6 +129,7 @@ permalink: /selectors
       <div class="field__data">
 
         <div class="field__value">
+
           <div class="selector selector--singleselect selector--expanded JS_selector">
             <div class="selector__item JS_selectorItem JS_selectorItem--active selector__item--selected">
               <div class="selector__block">
@@ -143,15 +144,15 @@ permalink: /selectors
             </div>
           </div>
 
-          <input class="field__input" type="text">
+          <span>with our <a href="#" class="link link--primary">Privacy Policiy</a>.</span>
+
+          <input class="field__input" type="text" value="disagree">
         </div>
 
-        <div class="">with our <a href="#" class="link link--primary">Privacy Policiy</a>.</div>
-          
       </div>
     </div>
 
-    <!-- Popup -->
+    <!-- Popup
     <div class="multiSelector" id="multiSelector-privacy" style="margin-top: 36px;">
       <div class="itemBox">
         <ul class="itemBox__row itemBox__row--custom">
@@ -167,12 +168,14 @@ permalink: /selectors
         </ul>
       </div>
     </div>
-
+-->
     <!-- Field -->
     <div class="field JS_field">
       <div class="field__label">Email</div>
       <div class="field__data">
-        <div class="inline align-middle">nick.de.jaeger@tenforce.com</div>
+        <div class="field__value">
+          <input class="field__input" type="email" value="nick.de.jaeger@tenforce.com">
+        </div>
       </div>
       <div class="note">
         <p>Fill in a valid email address.</p>
@@ -183,8 +186,10 @@ permalink: /selectors
     <div class="field JS_field JS_field--error">
       <div class="field__label">Status</div>
       <div class="field__data">
-        <div class="inline-action secondary error JS_has-popup" data-popid="#ms-error"></div>
-        <div class="inline align-middle">
+
+        <div class="field__error"></div>
+        <div class="field__value">
+
           <div class="selector selector--singleselect JS_has-popup" data-popid="#ms-status">
             <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
               <div class="selector__block">
@@ -193,8 +198,12 @@ permalink: /selectors
               </div>
             </div>
           </div>
+
+          <span>check correct alignment</a>.</span>
+
+          <input class="field__input" type="text" value="_Not Assigned">
         </div>
-        <div class="inline align-middle">check correct alignment</a>.</div>
+
       </div>
       <div class="note">
         <p>Actual invoice amount</p>
@@ -265,27 +274,7 @@ permalink: /selectors
     </div>
 
 
-    <!-- Field -->
-    <div class="field JS_field  JS_field--error">
-      <div class="field__label">Status</div>
-      <div class="field__data">
-        <div class="inline-action secondary error JS_has-popup" data-popid="#ms-error"></div>
-        <div class="inline align-middle">
-          <div class="selector selector--singleselect JS_has-popup" data-popid="#ms-status">
-            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: var(--color-red);"></div>
-                <div class="selector__blockPart selector__blockPart--field JS_singleSelect--label">Not started</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="inline align-middle">check correct alignment</a>.</div>
-      </div>
-    </div>
-
   </div>
-
 </div>
 
 

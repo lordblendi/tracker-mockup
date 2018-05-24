@@ -1,26 +1,24 @@
 
 $('.field').each(function() {
+  var field = $(this);
   var label = $(this).find('.field__label');
   var input = $(this).find('.field__input');
-  console.log($(this).find('.selector').length);
 
-  if ( (input.val().length > 0) || ($(this).find('.selector').length > 0) ) {
-    $(this).removeClass('field--empty');
+  if (input.val()) {
+    field.addClass('field--not-empty');
   }
-  else {
-    $(this).addClass('field--empty');
-  }
+
+  input.on('focus', function() {
+    field.addClass('field--focus');
+    $('.overlay-body').addClass('pointer-events-auto opacity-100');
+  });
+
+  input.on('focusout', function() {
+    field.removeClass('field--focus');
+    $('.overlay-body').removeClass('pointer-events-auto opacity-100');
+  });
 });
 
-$('.field__input').on('focus', function() {
-  $('overlay-body').addClass('pointer-events-auto opacity-100');
-  $(this).parent().parent().addClass('field--focus');
-});
-
-$('.field__input').on('focusout', function() {
-  $('overlay-body').removeClass('pointer-events-auto opacity-100');
-  $(this).parent().parent().removeClass('field--focus');
-});
 
 /*
 
