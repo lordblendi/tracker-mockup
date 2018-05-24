@@ -2,7 +2,9 @@ var resizeTimer;
 
 $(function() {
   // setup tabs for the app navigator
-  setup(".app-navigator .tabs-nav, .register-navigator .tabs-nav");
+  if ($(".app-navigator .tabs-nav, .register-navigator .tabs-nav").length > 0) {
+    setup(".app-navigator .tabs-nav, .register-navigator .tabs-nav");
+  }
 
   // click tab link
   $('.tabs-nav__link').on('click', function(e) {
