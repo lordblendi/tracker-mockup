@@ -7,6 +7,19 @@
   &--invert {
     .tabs-nav {
       filter: invert(1) hue-rotate(185deg) brightness(130%);
+
+      &__slide {
+        &--left {
+          .tabs-nav__slideShadow {
+            background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #91AED4 100%);
+          }
+        }
+        &--right {
+          .tabs-nav__slideShadow {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #91AED4 100%);
+          }
+        }
+      }
     }
   }
 
@@ -116,6 +129,7 @@
       z-index: 1;
       opacity: 1;
       transition: opacity 0.5s;
+      cursor: pointer;
 
       &:hover {
         .tabs-nav__slideArrow {
