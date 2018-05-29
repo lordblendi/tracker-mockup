@@ -38,7 +38,7 @@ permalink: /selectors
       <div class="inline-action"></div>
     </div>
     <div class="comment-field__input">
-      <textarea id="ttt" placeholder="Use @ to notify person" style="height: 100px;">Please read acceptence criterias, @KonstantinKharlov and you can find the layout of these stories on http://devcenter.tenforce.com/mockups/ along with the @desired effects when clicking the 'menu' and 'account' icons, and the tabs navigation. please do not look at the main content layout, @since these are not at all anything final.</textarea>
+      <textarea placeholder="Use @ to notify person" style="height: 100px;">Please read acceptence criterias, @KonstantinKharlov and you can find the layout of these stories on http://devcenter.tenforce.com/mockups/ along with the @desired effects when clicking the 'menu' and 'account' icons, and the tabs navigation. please do not look at the main content layout, @since these are not at all anything final.</textarea>
       <div class="fake-input"></div>
     </div>
     <div class="comment-field__action comment-field__send">
@@ -65,6 +65,7 @@ permalink: /selectors
 
     $('.comment-field__input textarea').on('focusout', function() {
       checkContentInput();
+      checkFakeInputHeight();
     });
 
     $('.comment-field__input textarea').on('keyup', function() {
