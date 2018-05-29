@@ -10,6 +10,7 @@ permalink: /selectors
     </div>
     <div class="comment-field__input comment-field__input--empty">
       <textarea placeholder="Use @ to notify person"></textarea>
+      <div class="fake-input fake-input-empty"></div>
     </div>
     <div class="comment-field__action comment-field__send hidden">
       <div class="inline-action"></div>
@@ -66,6 +67,10 @@ permalink: /selectors
       checkContentInput();
     });
 
+    $('.comment-field__input textarea').on('keyup', function() {
+      checkFakeInputHeight();
+    });
+
     function checkFakeInputHeight() {
       $('.comment-field').each(function() {
         var textarea = $(this).find('.comment-field__input textarea');
@@ -84,6 +89,8 @@ permalink: /selectors
         if (textarea[0].value.length > 0) {
           $(this).find('.comment-field__input').removeClass('comment-field__input--empty');
           $(this).find('.comment-field__send').removeClass('hidden');
+
+          $(this).find('.fake-input-empty').html(textarea[0].value);
         }
         else {
           $(this).find('.comment-field__input').addClass('comment-field__input--empty');
