@@ -29,10 +29,20 @@
       border-radius: 5px 5px 0 0;
       font-style: italic;
 
-      .itemBox {
-        &__cell {
-          min-width: 40px;
-        }
+      .itemBox__cell {
+        min-width: 40px;
+      }
+    }
+
+    &--tfoot {
+      height: 22px;
+      line-height: 12px;
+      background: #d9d9d9;
+      border-radius: 0 0 5px 5px;
+
+      .itemBox__cellInner {
+        color: #808080;
+        text-align: right;
       }
     }
 
@@ -54,17 +64,15 @@
             transition: all .3s ease-in-out;
           }
 
-          &:not(.flex-grow-0) {
-            &::after {
-              content: '';
-              position: absolute;
-              top: 0;
-              right: 0;
-              width: 10px;
-              height: 100%;
-              z-index: 1;
-              pointer-events: none;
-            }
+          &:not(.flex-grow-0)::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
           }
 
           &--active {
@@ -89,95 +97,45 @@
       }
 
       &:nth-of-type(odd) {
-        .itemBox {
-          &__cell:not(.flex-grow-0) {
-            &::after {
-              background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(242,242,242,.5) 50%, var(--color-grey-lightest) 80%, var(--color-grey-lightest) 100%);
-            }
-          }
-        }
-      }
-
-      &:nth-of-type(even) {
-        .itemBox {
-          &__cell:not(.flex-grow-0) {
-            &::after {
-              background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, #FFF 80%, #FFF 100%);
-            }
-          }
-        }
-      }
-
-      &:nth-of-type(odd) {
         background-color: var(--color-grey-lightest);
+
+        .itemBox__cell:not(.flex-grow-0)::after {
+          background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(242,242,242,.5) 50%, var(--color-grey-lightest) 80%, var(--color-grey-lightest) 100%);
+        }
       }
 
       &:nth-of-type(even) {
-        background-color: #FFFFFF;
+        .itemBox__cell:not(.flex-grow-0)::after {
+          background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, #FFF 80%, #FFF 100%);
+        }
       }
 
       &:hover {
-        .itemBox {
-          &__cell {
+        .itemBox__cell {
+          &::before {
+            height: 2px;
+            opacity: 1;
+          }
+
+          &--permalink {
             &::before {
-              height: 2px;
-              opacity: 1;
+              opacity: .5;
             }
 
-            &--permalink {
+            &:hover {
               &::before {
-                opacity: .5;
-              }
-
-              &:hover {
-                &::before {
-                  opacity: 1;
-                }
+                opacity: 1;
               }
             }
           }
-          &__action {
-            &--hidden {
-              opacity: 1;
-            }
+        }
+
+        .itemBox__action {
+          &--hidden {
+            opacity: 1;
           }
         }
       }
-    }
-
-    &--permalink {
-      &::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 0;
-        display: block;
-        background-color: var(--color-blue);
-        z-index: 2;
-        pointer-events: none;
-        opacity: 0;
-        transition: all .3s ease-in-out;
-      }
-
-      &:focus,
-      &:hover {
-        &::before {
-          height: 2px;
-          opacity: 1;
-        }
-      }
-
-      .itemBox__cell {
-        &::before {
-          display: none;
-        }
-      }
-    }
-
-    &--action {
-
     }
 
     &--custom {
@@ -190,22 +148,6 @@
         width: auto;
         white-space: normal;
         padding: 0;
-      }
-    }
-
-    &--tfoot {
-      height: 22px;
-      line-height: 12px;
-      background: #d9d9d9;
-      border-radius: 0 0 5px 5px;
-
-      .itemBox {
-        &__cell {
-          &Inner {
-            color: #808080;
-            text-align: right;
-          }
-        }
       }
     }
   }
