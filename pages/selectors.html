@@ -11,7 +11,7 @@ permalink: /selectors
     <div class="comment-field__input comment-field__input--empty">
       <textarea placeholder="Use @ to notify person"></textarea>
     </div>
-    <div class="comment-field__action">
+    <div class="comment-field__action hidden">
       <div class="inline-action"></div>
     </div>
   </div>
@@ -47,6 +47,7 @@ permalink: /selectors
   <script>
     // Quick JS for comment/attachment field component
 
+    // init with delay (due slow html load)
     setTimeout(function() {
       checkFakeInputHeight();
       checkContentInput();
@@ -54,7 +55,10 @@ permalink: /selectors
 
     $(window).on('resize', function() {
       checkFakeInputHeight();
+    });
 
+    $('.comment-field__input textarea').on('focusout', function() {
+      console.log('focus out');
       checkContentInput();
     });
 
@@ -73,8 +77,9 @@ permalink: /selectors
       $('.comment-field').each(function() {
         var textarea = $(this).find('.comment-field__input textarea');
 
-        if (textarea[0].innerHTML.length > 0) {
+        if (textarea[0].value.length > 0) {
           $(this).find('.comment-field__input').removeClass('comment-field__input--empty');
+          $(this).find('.comment-field__action').removeClass('hidden');
         }
       });
     }
