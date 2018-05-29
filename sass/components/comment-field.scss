@@ -1,6 +1,13 @@
 ---
 ---
 
+.fake-input {
+  position: absolute;
+  padding: 10px;
+  bottom: 0;
+  left: 0;
+}
+
 .comment-field {
   display: flex;
   align-items: center;
@@ -18,6 +25,7 @@
   }
 
   &__input {
+    position: relative;
     flex: auto;
     box-shadow: 0 0 50px 0 rgba(0,0,0,.35);
     transition: all .5s ease;
@@ -32,6 +40,7 @@
       height: 40px;
       resize: none;
       margin-bottom: -4px;
+      line-height: normal;
 
       &::-webkit-input-placeholder {
         font-style: italic;

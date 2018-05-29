@@ -4,11 +4,6 @@ title: Selectors
 permalink: /selectors
 ---
 
-
-
-
-
-
   <div class="comment-field">
     <div class="comment-field__action">
       <div class="inline-action"></div>
@@ -36,6 +31,54 @@ permalink: /selectors
     </div>
   </div>
 
+  <div class="comment-field">
+    <div class="comment-field__action">
+      <div class="inline-action"></div>
+    </div>
+    <div class="comment-field__input">
+      <textarea placeholder="Use @ to notify person" style="height: 100px; opacity: 0;">Please read acceptence criterias, @Konstantin_Kharlov and you can find the layout of these stories on http://devcenter.tenforce.com/mockups/ along with the desired effects when clicking the 'menu' and 'account' icons, and the tabs navigation. please do not look at the main content layout, since these are not at all anything final.</textarea>
+      <div class="fake-input">Please read acceptence criterias, <span class="inline-action">@Konstantin_Kharlov</span> and you can find the layout of these stories on http://devcenter.tenforce.com/mockups/ along with the desired effects when clicking the 'menu' and 'account' icons, and the tabs navigation. please do not look at the main content layout, since these are not at all anything final.</div>
+    </div>
+    <div class="comment-field__action">
+      <div class="inline-action"></div>
+    </div>
+  </div>
+
+  <script>
+    // Quick JS for comment/attachment field component
+
+    setTimeout(function() {
+      checkFakeInputHeight();
+      checkContentInput();
+    }, 3000);
+
+    $(window).on('resize', function() {
+      checkFakeInputHeight();
+
+      checkContentInput();
+    });
+
+    function checkFakeInputHeight() {
+      $('.comment-field').each(function() {
+        var textarea = $(this).find('.comment-field__input textarea');
+        var fakeInput = $(this).find('.fake-input');
+
+        textarea.css({
+          'height': fakeInput.height() + 'px'
+        });
+      });
+    }
+
+    function checkContentInput() {
+      $('.comment-field').each(function() {
+        var textarea = $(this).find('.comment-field__input textarea');
+
+        if (textarea[0].innerHTML.length > 0) {
+          $(this).find('.comment-field__input').removeClass('comment-field__input--empty');
+        }
+      });
+    }
+  </script>
 
 
 
