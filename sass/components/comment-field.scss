@@ -1,0 +1,65 @@
+---
+---
+
+.comment-field {
+  display: flex;
+  align-items: center;
+
+  margin: 20px 0;
+
+  &__action {
+    flex: initial;
+    flex-basis: 40px;
+    align-self: flex-end;
+    padding: 5px 10px;
+    text-align: center;
+    height: 40px;
+    line-height: 30px;
+  }
+
+  &__input {
+    flex: auto;
+    box-shadow: 0 0 50px 0 rgba(0,0,0,.35);
+    transition: all .5s ease;
+
+    input,
+    textarea {
+      outline: 0;
+      padding: 10px;
+      border-radius: 1px;
+      width: 100%;
+      min-height: 40px;
+      height: 40px;
+      resize: none;
+      margin-bottom: -4px;
+
+      &::-webkit-input-placeholder {
+        font-style: italic;
+        color: rgba(0,0,0,.75);
+      }
+    }
+
+    &--empty {
+      box-shadow: none;
+
+      &:focus-within {
+        box-shadow: 0 0 50px 0 rgba(0,0,0,.35);
+      }
+    }
+  }
+
+  &__attachment {
+    position: relative;
+    height: 160px;
+    background-color: #CCC;
+    background-position: center;
+    background-size: cover;
+
+    &-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
