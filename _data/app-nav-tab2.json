@@ -1,6 +1,6 @@
 {
   "groups": [{
-      "name": " My private smartlists",
+      "name": " My private overviews",
       "loadmore": "false",
       "counter":"",
       "items": [
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "name": " My shared smartlists",
+      "name": " My shared overviews",
       "loadmore": "true",
       "counter":"1k+",
       "items": [
@@ -69,7 +69,7 @@
       ]
     },
     {
-      "name": " Smartlists shared with me",
+      "name": " Overviews shared with me",
       "loadmore": "false",
       "counter":"",
       "items": [
