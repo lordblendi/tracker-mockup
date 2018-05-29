@@ -12,14 +12,14 @@
 <div class="itemBox JS_appNavBox">
   {% for group in site.data.app-nav-tab1.groups %}
     <ul class="itemBox__row itemBox__row--item">
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_toggle">
+      <li class="itemBox__cell itemBox__cell--action JS_toggle">
         <div class="itemBox__cellInner">
-          <div class="itemBox__action">{{group.icon}}</div>
+          <div class="itemBox__action">{{group.icon}} {{group.name}}</div>
         </div>
       </li>
-      <li class="itemBox__cell itemBox__cell--permalink">
+      <li class="itemBox__cell itemBox__cell--action flex-grow-0">
         <div class="itemBox__cellInner">
-          <div class="JS_text">{{group.name}}</div>
+          <div class="itemBox__action">→</div>
         </div>
       </li>
     </ul>
