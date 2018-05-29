@@ -13,7 +13,7 @@ $.Velocity.animate(multiOptionChildren, 'slideUp').then(function() {
 
 
 //default collapse everything in  app-navigator
-const appNavChildren = $(".app-navigator__nav .tabs-panels .tabs-panels__panel[tabindex='1']").find('.JS_itemBox--children');
+const appNavChildren = $(".app-navigator .tabs-panels .tabs-panels__panel[tabindex='1']").find('.JS_itemBox--children');
 const appNavBodyRow = $(appNavChildren).find('.itemBox__row');
 
 $.Velocity.animate(appNavChildren, 'slideUp').then(function() {
