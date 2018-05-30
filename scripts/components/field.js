@@ -26,6 +26,15 @@ $('.field').each(function() {
   });
 });
 
+$('.header__inputTitle').on('focus', function() {
+  $(this).addClass("header__inputTitle--focused");
+  $('.overlay-body').addClass('pointer-events-auto opacity-100');
+});
+$('.header__inputTitle').on('focusout', function() {
+  $(this).removeClass("header__inputTitle--focused");
+  $('.overlay-body').removeClass('pointer-events-auto opacity-100');
+});
+
 
 /*
 
