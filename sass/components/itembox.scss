@@ -150,6 +150,18 @@
         padding: 0;
       }
     }
+
+    &--permalink {
+      &:hover {
+        .itemBox__cell {
+          &--permalink {
+            &::before {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
   }
 
   &__cell {
