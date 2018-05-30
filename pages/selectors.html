@@ -54,6 +54,7 @@ permalink: /selectors
       checkContentInput();
       checkFakeInputHeight();
 
+      // Not working (find a way to trigger focus over fake-input because @<notifed> links need to be clickable)
       $('.fake-input span').each(function() {
         $(this).on('click', function() {
           console.log('clicked span');
@@ -80,7 +81,8 @@ permalink: /selectors
         $(this).parent().parent().find('.comment-field__attach .inline-action').html('');
       }
       else {
-        $(this).parent().parent().find('.comment-field__attach .inline-action').html('');
+        $(this).parent().parent().find('.comment-field__attach .inline-action').html('<input name="upload" type="file" class="file-input">');
+        $(this).parent().parent().find('.comment-field__attachment').remove();
       }
       checkFakeInputHeight();
     });
@@ -120,16 +122,14 @@ permalink: /selectors
           $(this).find('.comment-field__input').removeClass('comment-field__input--empty');
           $(this).find('.comment-field__send').removeClass('hidden');
 
-              if (notified != null && notified.length > 0) {
-                for (var i = 0; i < notified.length; i++) {
-                  newval = newval.replace(notified[i], '</span><a href="#'+notified[i]+'" class="inline-action">' + notified[i] + '</a><span>');
-                }
+            // turn @<notified> into links
+            if (notified != null && notified.length > 0) {
+              for (var i = 0; i < notified.length; i++) {
+                newval = newval.replace(notified[i], '</span><a href="#'+notified[i]+'" class="inline-action">' + notified[i] + '</a><span>');
               }
-
-              newval = newval.replace(newval, '<span>' + newval + '</span>');
-
-              $(this).find('.fake-input').html(newval);
-
+            }
+            newval = newval.replace(newval, '<span>' + newval + '</span>');
+            $(this).find('.fake-input').html(newval);
         }
         else {
           $(this).find('.comment-field__input').addClass('comment-field__input--empty');
