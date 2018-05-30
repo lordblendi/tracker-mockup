@@ -3,6 +3,8 @@
 
 .breadcrumbs {
   position: relative;
+  display: flex;
+  align-items: center;
   padding: 5px 10px;
   background-color: var(--color-grey);
   white-space: nowrap;
@@ -63,8 +65,8 @@
 	}
 
 	&__item {
-	  position: relative;
-	  display: inline-block;
+    display: flex;
+    align-items: center;
 
     * {
       transition: all .3s ease-in-out;
@@ -83,16 +85,21 @@
         left: 0px;
 			}
 		}
-
-    .link {
-      vertical-align: middle;
-      max-width: 300px;
-    }
 	}
 
+  &__link {
+    max-width: 300px;
+    color: inherit;
+    text-decoration: underline;
+    transition: all .3s ease-in-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 3px;
+  }
+
   &__seperator {
-    display: inline;
     font-size: 16px;
-    padding: 0 2px;
+    padding: 0 3px;
   }
 }
