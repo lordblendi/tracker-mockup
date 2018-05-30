@@ -27,8 +27,10 @@
     transform: translate(0);
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+    /* Causes unsmooth animation on hover on FireFox
     -webkit-filter: saturate(.4);
     filter: saturate(.4);
+    */
     opacity: .4;
     cursor: text;
 
