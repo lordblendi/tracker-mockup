@@ -41,18 +41,29 @@
     text-overflow: ellipsis;
     overflow: hidden;
 
+    &:hover {
+      cursor: pointer;
+
+      &:focus {
+        cursor: text;
+      }
+    }
+
     &:focus {
       height: 100%;
       margin: 0;
-      padding: 40px 15px 15px;
+      padding: 45px 15px 15px;
       opacity: 1;
       box-shadow: 0 0 100px rgba(0, 0, 0, 0.2);
+      cursor: text;
 
       ~ .header__title .header__type, ~ .header__actions {
         opacity: 0;
         pointer-events: none;
       }
     }
+
+
   }
 
   &__type {
