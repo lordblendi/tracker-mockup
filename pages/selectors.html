@@ -4,47 +4,53 @@ title: Selectors
 permalink: /selectors
 ---
 
-  <div class="comment-field">
-    <div class="comment-field__action comment-field__attach">
-      <div class="inline-action"><input name="upload" type="file" class="file-input"></div>
-    </div>
-    <div class="comment-field__input comment-field__input--empty">
-      <textarea placeholder="Use @ to notify person"></textarea>
-      <div class="fake-input fake-input-nohtml"></div>
-    </div>
-    <div class="comment-field__action comment-field__send hidden">
-      <div class="inline-action"></div>
-    </div>
-  </div>
+<div class="flex flex-col sm:flex-row min-h-screen">
+  <div class="sm:w-1/2 px-4">
 
-  <div class="comment-field">
-    <div class="comment-field__action comment-field__attach">
-      <div class="inline-action"></div>
+    <div class="comment-field">
+      <div class="comment-field__action comment-field__attach">
+        <div class="inline-action"><input name="upload" type="file" class="file-input"></div>
+      </div>
+      <div class="comment-field__input comment-field__input--empty">
+        <textarea placeholder="Use @ to notify person"></textarea>
+        <div class="fake-input fake-input-nohtml"></div>
+      </div>
+      <div class="comment-field__action comment-field__send hidden">
+        <div class="inline-action"></div>
+      </div>
     </div>
-    <div class="comment-field__input">
-      <a href="#" class="comment-field__attachment" style="background-image:url('./assets/images/files.jpg');">
-        <div class="comment-field__attachment-label h2">jpg</div>
-      </a>
-      <textarea placeholder="Use @ to notify person">Please read acceptence criterias,</textarea>
-      <div class="fake-input fake-input-nohtml">Please read acceptence criterias,</div>
-    </div>
-    <div class="comment-field__action comment-field__send">
-      <div class="inline-action"></div>
-    </div>
-  </div>
 
-  <div class="comment-field">
-    <div class="comment-field__action comment-field__attach">
-      <div class="inline-action"></div>
+    <div class="comment-field">
+      <div class="comment-field__action comment-field__attach">
+        <div class="inline-action"></div>
+      </div>
+      <div class="comment-field__input">
+        <a href="#" class="comment-field__attachment" style="background-image:url('./assets/images/files.jpg');">
+          <div class="comment-field__attachment-label h2">jpg</div>
+        </a>
+        <textarea placeholder="Use @ to notify person">Please read acceptence criterias,</textarea>
+        <div class="fake-input fake-input-nohtml">Please read acceptence criterias,</div>
+      </div>
+      <div class="comment-field__action comment-field__send">
+        <div class="inline-action"></div>
+      </div>
     </div>
-    <div class="comment-field__input">
-      <textarea placeholder="Use @ to notify person" style="height: 100px;">Please read acceptence criterias, @KonstantinKharlov and you can find the layout of these stories on http://devcenter.tenforce.com/mockups/ along with the @desired effects when clicking the 'menu' and 'account' icons, and the tabs navigation. please do not look at the main content layout, @since these are not at all anything final.</textarea>
-      <div class="fake-input"></div>
+
+    <div class="comment-field">
+      <div class="comment-field__action comment-field__attach">
+        <div class="inline-action"></div>
+      </div>
+      <div class="comment-field__input">
+        <textarea placeholder="Use @ to notify person" style="height: 100px;">Please read acceptence criterias, @KonstantinKharlov and you can find the layout of these stories on http://devcenter.tenforce.com/mockups/ along with the @desired effects when clicking the 'menu' and 'account' icons, and the tabs navigation. please do not look at the main content layout, @since these are not at all anything final.</textarea>
+        <div class="fake-input"></div>
+      </div>
+      <div class="comment-field__action comment-field__send">
+        <div class="inline-action"></div>
+      </div>
     </div>
-    <div class="comment-field__action comment-field__send">
-      <div class="inline-action"></div>
-    </div>
+
   </div>
+</div>
 
   <script>
     // Quick JS for comment/attachment field component
@@ -84,6 +90,8 @@ permalink: /selectors
         $(this).parent().parent().find('.comment-field__attach .inline-action').html('<input name="upload" type="file" class="file-input">');
         $(this).parent().parent().find('.comment-field__attachment').remove();
       }
+
+      checkContentInput();
       checkFakeInputHeight();
     });
 
@@ -102,6 +110,7 @@ permalink: /selectors
     });
 
     function checkFakeInputHeight() {
+      console.log('fake function triggered');
       $('.comment-field').each(function() {
         var textarea = $(this).find('.comment-field__input textarea');
         var fakeInput = $(this).find('.fake-input');
