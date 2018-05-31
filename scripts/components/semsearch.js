@@ -1,4 +1,4 @@
-$('.JS_toggle-semsearch').hover(function() {
+$('.JS_toggle-semsearch').click(function() {
   const toggle = $(this);
   var width = Math.round(toggle.outerWidth(true));
   var top = Math.round(toggle.offset().top);
@@ -14,12 +14,9 @@ $('.JS_toggle-semsearch').hover(function() {
     top: top
   });
   $(popup).addClass('multiSelector--visible');
-}, function() {
-  $('.JS_semsearch').removeClass('multiSelector--visible');
-});
-
-$('.JS_semsearch').hover(function() {
-  $(this).addClass('multiSelector--visible');
-}, function() {
-  $(this).removeClass('multiSelector--visible');
+  // show overlay
+  $(".overlay-body").css({
+    'pointer-events': 'auto',
+    'opacity': '1'
+  });
 });
