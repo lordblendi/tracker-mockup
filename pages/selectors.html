@@ -4,6 +4,7 @@ title: Selectors
 permalink: /selectors
 ---
 
+<div class="relative h-32"></div>
 <div class="fixed pin-t pin-l w-full flex pt-4 z-50 bg-grey-lightest shadow-lg text-center">
   <div class="px-4">
 
@@ -102,7 +103,7 @@ permalink: /selectors
       </div>
       <div class="comment-field__input">
         <a href="#" class="comment-field__attachment" style="background-image:url('./assets/images/files.jpg');">
-          <div class="comment-field__attachment-label h2">jpg</div>
+          <div class="comment-field__attachment-label h2 hidden">jpg</div>
         </a>
         <textarea placeholder="Use @ to notify person">Please read acceptence criterias,</textarea>
         <div class="fake-input fake-input-nohtml">Please read acceptence criterias,</div>
@@ -150,10 +151,14 @@ permalink: /selectors
     });
 
     $('.comment-field__input textarea').on('focusin', function() {
+      $('.overlay-body').addClass('opacity-100');
+      $(this).parent().parent().addClass('.comment-field--focus');
       $(this).parent().parent().find('.comment-field__send').removeClass('hidden');
     });
 
     $('.comment-field__input textarea').on('focusout', function() {
+      $('.overlay-body').removeClass('opacity-100');
+      $(this).parent().parent().removeClass('.comment-field--focus');
       checkContentInput();
       checkFakeInputHeight();
     });
@@ -177,10 +182,9 @@ permalink: /selectors
       var fileExtension = filePath.substring(filePath.lastIndexOf(".") + 1, filePath.length);
 
       $(this).parent().parent().parent().find('.comment-field__send').removeClass('hidden');
-      $(this).parent().parent().parent().find('.comment-field__input').removeClass('comment-field__input--empty').prepend('<a href="#'+fileName+'" class="comment-field__attachment" style="background-image:url(./assets/images/files.jpg);"><div class="comment-field__attachment-label h2">'+fileExtension+'</div></a>');
+      $(this).parent().parent().parent().find('.comment-field__input').removeClass('comment-field__input--empty').prepend('<a href="#'+fileName+'" class="comment-field__attachment" style="background-image:url(./assets/images/files.jpg);"><div class="comment-field__attachment-label h2 hidden">'+fileExtension+'</div></a>');
       $(this).parent().parent().parent().find('.comment-field__input textarea').val(fileName);
       $(this).parent().parent().parent().find('.fake-input').html(fileName);
-
       $(this).parent().parent().parent().find('.comment-field__attach .inline-action').html('');
     });
 
