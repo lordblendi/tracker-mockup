@@ -69,10 +69,24 @@ $(document).ready(function() {
   $('.JS_panels-state-1').on('click', function() {
     $body.removeClass('panels-state-1 panels-state-2 panels-state-3');
     $body.addClass('panels-state-1');
+
+    const panelname = $(this).attr("panel-name");
+    const panel = $body.find(`.JS-old-panel[panel-name='${panelname}']`);
+    if(panel.length > 0) {
+      $body.find('.JS-old-panel').css('display', 'none');
+      panel.css('display', 'block');
+    }
   });
   $('.JS_panels-state-2').on('click', function() {
     $body.removeClass('panels-state-1 panels-state-2 panels-state-3');
     $body.addClass('panels-state-2');
+
+    const panelname = $(this).attr("panel-name");
+    const panel = $body.find(`.JS-old-panel[panel-name='${panelname}']`);
+    if(panel.length > 0) {
+      $body.find('.JS-old-panel').css('display', 'none');
+      panel.css('display', 'block');
+    }
   });
   $('.JS_panels-state-3').on('click', function() {
     $body.removeClass('panels-state-1 panels-state-2 panels-state-3');
