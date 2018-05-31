@@ -4,8 +4,84 @@ title: Selectors
 permalink: /selectors
 ---
 
-<div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark">
-  <div class="sm:w-1/2 px-4">
+<div class="fixed pin-t pin-l w-full flex pt-4 z-50 bg-grey-lightest shadow-lg text-center">
+  <div class="px-4">
+
+    <div class="field field--not-empty">
+      <div class="field__label">Theme</div>
+      <div class="field__data">
+        <div class="field__value">
+          <div class="selector selector--singleselect selector--expanded JS_selector ">
+            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field JS_theme_light">Light</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator"></div>
+            <div class="selector__item JS_selectorItem">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--prefix JS_theme_dark">Dark</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="px-4">
+
+    <div class="field field--not-empty">
+      <div class="field__label">Loading</div>
+      <div class="field__data">
+        <div class="field__value">
+          <div class="selector selector--multiselect selector--expanded JS_selector">
+            <div class="selector__item JS_selectorItem--active JS_selectorItem">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field JS_load_selectors">Selectors</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator"></div>
+            <div class="selector__item JS_selectorItem--active JS_selectorItem">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field JS_load_buttons">Buttons</div>
+              </div>
+            </div>
+          </div>
+
+          <input class="field__input" type="text" value=", ">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  $('.JS_theme_light').on('click', function() {
+    $('body').css('background-color', 'white');
+  });
+  $('.JS_theme_dark').on('click', function() {
+    $('body').css('background-color', 'black');
+  });
+
+  $('.JS_load_selectors').on('click', function() {
+    $('.selector').each(function() {
+      $(this).toggleClass('animate-loading');
+    });
+
+    $(this).parent().parent().parent().removeClass('animate-loading');
+  });
+
+  $('.JS_load_buttons').on('click', function() {
+    $('.btn').each(function() {
+      $(this).toggleClass('animate-loading');
+    });
+  });
+</script>
+
+<div class="flex flex-col sm:flex-row m-8 mt-12 pt-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
+  <div class="sm:w-1/2 p-8 overflow-hidden">
 
     <div class="comment-field">
       <div class="comment-field__action comment-field__attach">
@@ -22,7 +98,7 @@ permalink: /selectors
 
     <div class="comment-field">
       <div class="comment-field__action comment-field__attach">
-        <div class="inline-action"></div>
+        <div class="inline-action JS_remove_comment"></div>
       </div>
       <div class="comment-field__input">
         <a href="#" class="comment-field__attachment" style="background-image:url('./assets/images/files.jpg');">
@@ -38,7 +114,7 @@ permalink: /selectors
 
     <div class="comment-field">
       <div class="comment-field__action comment-field__attach">
-        <div class="inline-action"></div>
+        <div class="inline-action JS_remove_comment"></div>
       </div>
       <div class="comment-field__input">
         <textarea placeholder="Use @ to notify person" style="height: 100px;">Please read acceptence criterias, @KonstantinKharlov and you can find the layout of these stories on http://devcenter.tenforce.com/mockups/ along with the @desired effects when clicking the 'menu' and 'account' icons, and the tabs navigation. please do not look at the main content layout, @since these are not at all anything final.</textarea>
@@ -106,11 +182,18 @@ permalink: /selectors
       $(this).parent().parent().parent().find('.fake-input').html(fileName);
 
       $(this).parent().parent().parent().find('.comment-field__attach .inline-action').html('');
+    });
 
+    $('.JS_remove_comment').on('click', function() {
+      $(this).parent().parent().find('.comment-field__attach .inline-action').html('<input name="upload" type="file" class="file-input">');
+      $(this).parent().parent().find('.comment-field__attachment').remove();
+      $(this).parent().parent().find('.comment-field__input textarea').empty();
+
+      checkContentInput();
+      checkFakeInputHeight();
     });
 
     function checkFakeInputHeight() {
-      console.log('fake function triggered');
       $('.comment-field').each(function() {
         var textarea = $(this).find('.comment-field__input textarea');
         var fakeInput = $(this).find('.fake-input');
@@ -152,7 +235,7 @@ permalink: /selectors
 
 
 
-<div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark">
+<div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
   <div class="sm:w-1/2 px-4">
 
     <!-- Field -->
@@ -368,8 +451,8 @@ permalink: /selectors
   </div>
 </div>
 
-<div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark">
-  <div class="sm:w-1/2 px-4">
+<div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
+  <div class="sm:w-1/2 p-8 overflow-hidden">
 
     <h2>Buttons</h2>
 
@@ -386,6 +469,9 @@ permalink: /selectors
       <div class="inline align-baseline">or</div>
       <button class="btn btn--naked"><span>forget me tomorrow</span></button>
     </div>
+
+  </div>
+  <div class="sm:w-1/2 p-8 overflow-hidden">
 
     <h2>Without popup</h2>
 
@@ -639,27 +725,11 @@ permalink: /selectors
       </div>
     </div>
 
-    <h2>Read-only with ellipsis</h2>
+  </div>
+</div>
 
-    <!-- Field -->
-    <div class="field">
-      <div class="field__data">
-        <div class="field__value">
-          <div class="selector selector--expanded">
-            <div class="selector__item JS_selectorItem--active selector__item--selected">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
-                <div class="selector__blockPart selector__blockPart--label">Label</div>
-                <div class="selector__blockSeperator"></div>
-                <div class="selector__blockPart selector__blockPart--field">Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</div>
-              </div>
-            </div>
-          </div>
-
-          <input class="field__input" type="text" value="Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" tabindex="-1">
-        </div>
-      </div>
-    </div>
+<div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
+  <div class="sm:w-1/2 p-8 overflow-hidden">
 
     <h2>Filters</h2>
 
@@ -781,6 +851,37 @@ permalink: /selectors
         </div>
       </div>
     </div>
+
+  </div>
+</div>
+
+<div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
+  <div class="sm:w-1/2 p-8 overflow-hidden">
+
+    <h2>Read-only with ellipsis</h2>
+
+    <!-- Field -->
+    <div class="field">
+      <div class="field__data">
+        <div class="field__value">
+          <div class="selector selector--expanded">
+            <div class="selector__item JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
+                <div class="selector__blockPart selector__blockPart--label">Label</div>
+                <div class="selector__blockSeperator"></div>
+                <div class="selector__blockPart selector__blockPart--field">Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</div>
+              </div>
+            </div>
+          </div>
+
+          <input class="field__input" type="text" value="Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" tabindex="-1">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="sm:w-1/2 p-8 overflow-hidden">
 
     <h2>Tag Picker</h2>
 

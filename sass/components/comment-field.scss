@@ -7,6 +7,7 @@
   bottom: 0;
   left: 0;
   pointer-events: none;
+  width: 100%;
   word-break: break-word;
 
   span {
@@ -26,10 +27,15 @@
 }
 
 .comment-field {
+  position: relative;
   display: flex;
   align-items: center;
 
   margin: 20px 0;
+
+  &:focus-within {
+    z-index: 1;
+  }
 
   &__action {
     position: relative;
@@ -45,6 +51,7 @@
   &__input {
     position: relative;
     flex: auto;
+    background-color: #FFF;
     box-shadow: 0 0 50px 0 rgba(0,0,0,.35);
     transition: all .5s ease;
 
