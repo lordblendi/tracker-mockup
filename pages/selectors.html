@@ -150,20 +150,21 @@ permalink: /selectors
       checkFakeInputHeight();
     });
 
-    $('.comment-field__input textarea').on('focusin', function() {
+
+    $('body').on('focusin', '.comment-field__input textarea', function() {
       $('.overlay-body').addClass('opacity-100');
       $(this).parent().parent().addClass('.comment-field--focus');
       $(this).parent().parent().find('.comment-field__send').addClass('opacity-100');
     });
 
-    $('.comment-field__input textarea').on('focusout', function() {
+    $('body').on('focusout', '.comment-field__input textarea', function() {
       $('.overlay-body').removeClass('opacity-100');
       $(this).parent().parent().removeClass('.comment-field--focus');
       checkContentInput();
       checkFakeInputHeight();
     });
 
-    $('.comment-field__input textarea').on('keyup', function() {
+    $('body').on('keyup', '.comment-field__input textarea', function() {
       if ($(this).val().length > 0) {
         $(this).parent().parent().find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
       }
@@ -176,7 +177,7 @@ permalink: /selectors
       checkFakeInputHeight();
     });
 
-    $('input[type=file]').change(function () {
+    $('body').on('change', 'input[type=file]', function () {
       var filePath = $(this).val();
       var fileName = filePath.substring(filePath.lastIndexOf("\\") + 1, filePath.length);
       var fileExtension = filePath.substring(filePath.lastIndexOf(".") + 1, filePath.length);
@@ -188,10 +189,10 @@ permalink: /selectors
       $(this).parent().parent().parent().find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
     });
 
-    $('.JS_remove_comment').on('click', function() {
+    $('body').on('click', '.JS_remove_comment', function() {
       $(this).parent().parent().find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
       $(this).parent().parent().find('.comment-field__attachment').remove();
-      $(this).parent().parent().find('.comment-field__input textarea').empty();
+      $(this).parent().parent().find('.comment-field__input textarea').val('');
 
       checkContentInput();
       checkFakeInputHeight();
