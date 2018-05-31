@@ -38,10 +38,12 @@ body {
   &.fixed {
     overflow-y: hidden;
   }
-  &.page-Drag,
-  &.page-Selectors {
+  &.page-Drag {
     background-color: #FFF;
     margin: 50px 5%;
+  }
+  &.page-Selectors {
+    background-color: #FFF;
   }
   &.page-Itembox {
     background-color: #FFF;
