@@ -7,6 +7,12 @@
   padding: 12px 0 0;
   transition: all .3s ease-in-out;
 
+  &:hover {
+    .field__label {
+      opacity: 85;
+    }
+  }
+
   &__label {
     position: absolute;
     padding: 0 5px;
@@ -95,6 +101,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    cursor: pointer;
 
     &:focus {
       background-color: #FFF;
@@ -126,6 +133,17 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       opacity: 1;
+    }
+
+    .field__input {
+      cursor: auto;
+    }
+
+    &:hover {
+      &--not-empty,
+      &--focus {
+        opacity: 1;
+      }
     }
   }
 
