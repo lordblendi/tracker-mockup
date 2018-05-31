@@ -7,9 +7,11 @@ $('.JS_has-popup').on('click', function() {
     $(this).addClass('field--focus');
   }
 })
-function handlePopupClick(toggle) {
+function handlePopupClick(toggle, popid) {
   toggle = $(toggle);
-  const popid = $(toggle).attr('data-popid');
+  if(popid === undefined || popid === null) {
+    popid = $(toggle).attr('data-popid');
+  }
   // outerWidth (including padding, border, and optionally margin -> true parameter)
   // innerWidth (including padding but not border)
   // width (not including anything)
