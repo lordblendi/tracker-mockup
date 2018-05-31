@@ -29,6 +29,8 @@ $('.field').each(function() {
 $('.header__inputTitle').on('focus', function() {
   $(this).addClass("header__inputTitle--focused");
   $('.overlay-body').addClass('pointer-events-none opacity-100');
+  $(this).select();
+
 });
 $('.header__inputTitle').on('focusout', function() {
   $(this).removeClass("header__inputTitle--focused");
