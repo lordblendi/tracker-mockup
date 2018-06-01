@@ -17,34 +17,34 @@
   0% {
     transform: translate(0,0);
   }
-  10% {
+  0.1% {
     transform: translate(-2px, -2px);
   }
-  20% {
+  0.1% {
     transform: translate(2px, -2px);
   }
-  30% {
+  0.3% {
     transform: translate(-2px, 2px);
   }
-  40% {
+  0.4% {
     transform: translate(2px, 2px);
   }
-  50% {
+  0.5% {
     transform: translate(0,0);
   }
-  60% {
+  0.6% {
     transform: translate(-2px, -2px);
   }
-  70% {
+  0.7% {
     transform: translate(2px, -2px);
   }
-  80% {
+  0.8% {
     transform: translate(-2px, 2px);
   }
-  90% {
+  0.9% {
     transform: translate(2px, 2px);
   }
-  100% {
+  1% {
     transform: translate(0,0);
   }
 }
@@ -103,7 +103,7 @@
 
     animation:
       shadow-low-high 3s ease-in-out infinite,
-      shake-it 0.2s linear 20s forwards;
+      shake-it 20s linear 20s infinite;
 
     &:not(.comment-field__input--empty):hover {
       box-shadow: 0 -2px 20px rgba(0,0,0,.13), 0 1px 0px rgba(0,0,0,.09);
