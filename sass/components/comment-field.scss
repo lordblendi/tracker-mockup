@@ -48,6 +48,7 @@
   &__input {
     position: relative;
     flex: auto;
+    min-height: 40px;
     background-color: #FFF;
 
     /*
@@ -57,7 +58,7 @@
     box-shadow: 0 -2px 20px rgba(0,0,0,.07), 0 1px 0px rgba(0,0,0,.03);
     transition: all .5s ease;
 
-    &:hover {
+    &:not(.comment-field__input--empty):hover {
       box-shadow: 0 -2px 20px rgba(0,0,0,.1), 0 1px 0px rgba(0,0,0,.06);
     }
 
@@ -101,6 +102,7 @@
       input,
       textarea {
         opacity: 1;
+        box-sizing: border-box;
       }
     }
   }
