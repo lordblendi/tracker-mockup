@@ -326,6 +326,37 @@ html {
   animation: fadeout .3s ease forwards;
 }
 
+@keyframes width-to-full {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes opacity-to-0 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.animate-fadein-and-dissapear {
+  animation: opacity-to-0 .3s linear 2s forwards;
+}
+.animate-fadein-and-dissapear::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(0,0,0,.02);
+  z-index: 1;
+  animation: width-to-full 2s linear forwards;
+}
+
 /* Transitions */
 
 .transition {

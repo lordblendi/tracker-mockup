@@ -85,7 +85,17 @@ function handlePopupClick(toggle, popid) {
     }).addClass('multiSelector--visible');
   }
 
-   toggle.hasClass('JS_has-popup--error') ? $(popid).addClass('animate-popup') : $(popid).addClass('animate-fadein');
+  if ( toggle.hasClass('JS_has-popup--error') ) {
+    $(popid).addClass('animate-popup');
+  }
+
+  else if ( toggle.hasClass('JS_share') ) {
+    $(popid).addClass('animate-fadein-and-dissapear');
+  }
+
+  else {
+    $(popid).addClass('animate-fadein');
+  }
 
   if (toggle.hasClass('JS_has-popup--error')) {
     $('body').addClass('state-overlay-error');
