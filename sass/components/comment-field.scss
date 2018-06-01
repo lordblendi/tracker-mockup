@@ -1,7 +1,7 @@
 ---
 ---
 
-@keyframes shadowHighLow {
+@keyframes shadow-low-high {
   0% {
     box-shadow: 0 -2px 20px rgba(0,0,0,.07), 0 1px 0px rgba(0,0,0,.03);
   }
@@ -10,6 +10,42 @@
   }
   100% {
     box-shadow: 0 -2px 20px rgba(0,0,0,.07), 0 1px 0px rgba(0,0,0,.03);
+  }
+}
+
+@keyframes shake-it {
+  0% {
+    transform: translate(0,0);
+  }
+  10% {
+    transform: translate(-2px, -2px);
+  }
+  20% {
+    transform: translate(2px, -2px);
+  }
+  30% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(2px, 2px);
+  }
+  50% {
+    transform: translate(0,0);
+  }
+  60% {
+    transform: translate(-2px, -2px);
+  }
+  70% {
+    transform: translate(2px, -2px);
+  }
+  80% {
+    transform: translate(-2px, 2px);
+  }
+  90% {
+    transform: translate(2px, 2px);
+  }
+  100% {
+    transform: translate(0,0);
   }
 }
 
@@ -65,7 +101,9 @@
     box-shadow: 0 -2px 20px rgba(0,0,0,.07), 0 1px 0px rgba(0,0,0,.03);
     transition: all .5s ease;
 
-    animation: shadowHighLow 3s ease-in-out infinite;
+    animation:
+      shadow-low-high 3s ease-in-out infinite,
+      shake-it 0.2s linear 20s forwards;
 
     &:not(.comment-field__input--empty):hover {
       box-shadow: 0 -2px 20px rgba(0,0,0,.13), 0 1px 0px rgba(0,0,0,.09);

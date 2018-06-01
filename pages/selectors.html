@@ -104,7 +104,7 @@ permalink: /selectors
       </div>
       <div class="comment-field__input">
         <a href="#" class="comment-field__attachment">
-          <div class="comment-field__attachment-thumbnail" style="background-image:url('./assets/images/files.jpg');"></div>
+          <div class="comment-field__attachment-thumbnail" style="background-image:url('./assets/images/screenshot.png');"></div>
           <div class="comment-field__attachment-label h2 hidden">jpg</div>
         </a>
         <textarea placeholder="Use @ to notify person">Please read acceptence criterias,</textarea>
@@ -135,7 +135,7 @@ permalink: /selectors
       <div class="comment-post__value">
         <div class="comment-post__bubble">
           <a href="#" class="comment-post__bubble-attachment">
-            <div class="comment-post__bubble-attachment-thumbnail" style="background-image:url('./assets/images/files.jpg');"></div>
+            <div class="comment-post__bubble-attachment-thumbnail" style="background-image:url('./assets/images/screenshot.png');"></div>
           </a>
           <div class="comment-post__bubble-message">
             <a href="#" class="inline-action">@nickdejaeger</a> Important notes:
@@ -252,7 +252,7 @@ permalink: /selectors
     var fileExtension = filePath.substring(filePath.lastIndexOf(".") + 1, filePath.length);
 
     $(this).parent().parent().parent().find('.comment-field__send').addClass('opacity-100');
-    $(this).parent().parent().parent().find('.comment-field__input').removeClass('comment-field__input--empty').prepend('<a href="#'+fileName+'" class="comment-field__attachment"><div class="comment-field__attachment-thumbnail" style="background-image:url(./assets/images/files.jpg);"></div><div class="comment-field__attachment-label h2 hidden">'+fileExtension+'</div></a>');
+    $(this).parent().parent().parent().find('.comment-field__input').removeClass('comment-field__input--empty').prepend('<a href="#'+fileName+'" class="comment-field__attachment"><div class="comment-field__attachment-thumbnail" style="background-image:url(./assets/images/screenshot.png);"></div><div class="comment-field__attachment-label h2 hidden">'+fileExtension+'</div></a>');
     $(this).parent().parent().parent().find('.comment-field__input textarea').val(fileName);
     $(this).parent().parent().parent().find('.fake-input').html(fileName);
     $(this).parent().parent().parent().find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
@@ -335,7 +335,7 @@ permalink: /selectors
               '<div class="comment-post__value">' +
                 '<div class="comment-post__bubble">' +
                   '<a href="#" class="comment-post__bubble-attachment">' +
-                    '<div class="comment-post__bubble-attachment-thumbnail" style="background-image:url(./assets/images/files.jpg);"></div>' +
+                    '<div class="comment-post__bubble-attachment-thumbnail" style="background-image:url(./assets/images/screenshot.png);"></div>' +
                   '</a>' +
                   '<div class="comment-post__bubble-message">' +
                     newval +
