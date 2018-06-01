@@ -293,6 +293,8 @@ permalink: /selectors
         var notified = textarea[0].value.match(/@[a-z]+/gi);
         var newval = textarea[0].value;
 
+        var time = new Date().toLocaleTimeString('en-US', { hour12: false, hour: "numeric", minute: "numeric", second: "numeric"});
+
         if ( textarea.val().length > 0 ) {
           // turn @<notified> into links
           if (notified != null && notified.length > 0) {
@@ -305,7 +307,7 @@ permalink: /selectors
             $('#comments-container').prepend(
               '<div class="comment-post">' +
                 '<div class="comment-post__label">' +
-                  '<div class="h8"><span class="primary">Jetro Wils</span> at <span>15:16</span></div>' +
+                  '<div class="h8"><span class="primary">Jetro Wils</span> at <span>' + time + '</span></div>' +
                 '</div>' +
                 '<div class="comment-post__value">' +
                   '<div class="comment-post__bubble">' +
@@ -324,7 +326,7 @@ permalink: /selectors
             $('#comments-container').prepend(
               '<div class="comment-post">' +
                 '<div class="comment-post__label">' +
-                  '<div class="h8"><span class="primary">Jetro Wils</span> at <span>15:16</span></div>' +
+                  '<div class="h8"><span class="primary">Jetro Wils</span> at <span>' + time + '</span></div>' +
                 '</div>' +
                 '<div class="comment-post__value">' +
                   '<div class="comment-post__bubble">' +

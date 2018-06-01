@@ -102,6 +102,7 @@
   &__attachment {
     position: relative;
     display: block;
+    min-width: 160px;
     height: 160px;
     overflow: hidden;
     background-color: #CCC;
@@ -162,6 +163,7 @@
     &-attachment {
       position: relative;
       display: block;
+      min-width: 160px;
       height: 160px;
       overflow: hidden;
       background-color: #CCC;
