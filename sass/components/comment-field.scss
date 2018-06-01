@@ -50,11 +50,6 @@
     flex: auto;
     min-height: 40px;
     background-color: #FFF;
-
-    /*
-    border: 2px dashed #e8e8e8;
-    */
-
     box-shadow: 0 -2px 20px rgba(0,0,0,.07), 0 1px 0px rgba(0,0,0,.03);
     transition: all .5s ease;
 
@@ -85,18 +80,9 @@
           opacity: 0;
         }
       }
-
-      &::-webkit-input-placeholder {
-        font-style: italic;
-        color: rgba(0,0,0,.75);
-      }
     }
 
     &--empty {
-      /*
-      border: 2px solid #FFF;
-      */
-
       box-shadow: none;
 
       input,
@@ -151,10 +137,6 @@
     z-index: 100;
 
     .comment-field__input {
-      /*
-      border: 2px solid #FFF;
-      */
-
       box-shadow: none;
     }
   }

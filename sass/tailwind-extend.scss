@@ -9,10 +9,24 @@ input, textarea, button:focus {
   outline: 0;
 }
 
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  font-style: italic;
-  opacity: .35;
+input, textarea {
+  &::-webkit-input-placeholder {
+    font-style: italic;
+    color: rgba(0,0,0,.75);
+  }
+
+  &::placeholder {
+    font-style: italic;
+    color: rgba(0,0,0,.75);
+    transition: color .3s ease-in-out;
+  }
+
+  &:hover {
+    &::-webkit-input-placeholder,
+    &::placeholder {
+      color: rgba(0,0,0,.9);
+    }
+  }
 }
 
 html {
