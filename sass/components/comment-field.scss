@@ -1,6 +1,18 @@
 ---
 ---
 
+@keyframes shadowHighLow {
+  0% {
+    box-shadow: 0 -2px 20px rgba(0,0,0,.07), 0 1px 0px rgba(0,0,0,.03);
+  }
+  50% {
+    box-shadow: 0 -2px 20px rgba(0,0,0,.13), 0 1px 0px rgba(0,0,0,.09);
+  }
+  100% {
+    box-shadow: 0 -2px 20px rgba(0,0,0,.07), 0 1px 0px rgba(0,0,0,.03);
+  }
+}
+
 .fake-input {
   position: absolute;
   padding: 10px;
@@ -53,8 +65,10 @@
     box-shadow: 0 -2px 20px rgba(0,0,0,.07), 0 1px 0px rgba(0,0,0,.03);
     transition: all .5s ease;
 
+    animation: shadowHighLow 3s ease-in-out infinite;
+
     &:not(.comment-field__input--empty):hover {
-      box-shadow: 0 -2px 20px rgba(0,0,0,.1), 0 1px 0px rgba(0,0,0,.06);
+      box-shadow: 0 -2px 20px rgba(0,0,0,.13), 0 1px 0px rgba(0,0,0,.09);
     }
 
     input,
@@ -84,6 +98,7 @@
 
     &--empty {
       box-shadow: none;
+      animation: none;
 
       input,
       textarea {
@@ -138,6 +153,7 @@
 
     .comment-field__input {
       box-shadow: none;
+      animation: none;
     }
   }
 }
