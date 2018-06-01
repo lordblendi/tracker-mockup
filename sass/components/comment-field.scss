@@ -9,10 +9,6 @@
   pointer-events: none;
   width: 100%;
   word-break: break-word;
-
-  span {
-
-  }
 }
 
 .file-input {
@@ -33,10 +29,6 @@
 
   margin: 20px 0;
 
-  &--focus {
-    z-index: 100;
-  }
-
   &:focus-within {
     z-index: 100;
   }
@@ -56,8 +48,18 @@
   &__input {
     position: relative;
     flex: auto;
-    background-color: #F8F8F8;
+    background-color: #FFF;
+
+    /*
+    border: 2px dashed #e8e8e8;
+    */
+
+    box-shadow: 0 -2px 20px rgba(0,0,0,.07), 0 1px 0px rgba(0,0,0,.03);
     transition: all .5s ease;
+
+    &:hover {
+      box-shadow: 0 -2px 20px rgba(0,0,0,.1), 0 1px 0px rgba(0,0,0,.06);
+    }
 
     input,
     textarea {
@@ -90,6 +92,10 @@
     }
 
     &--empty {
+      /*
+      border: 2px solid #FFF;
+      */
+
       box-shadow: none;
 
       input,
@@ -137,6 +143,18 @@
     transition: all 10s ease;
     transform: scale(1);
     backface-visibility: hidden;
+  }
+
+  &--focus {
+    z-index: 100;
+
+    .comment-field__input {
+      /*
+      border: 2px solid #FFF;
+      */
+
+      box-shadow: none;
+    }
   }
 }
 

@@ -222,13 +222,13 @@ permalink: /selectors
 
   $('body').on('focusin', '.comment-field__input textarea', function() {
     $('.overlay-body').addClass('opacity-100');
-    $(this).parent().parent().addClass('.comment-field--focus');
+    $(this).parent().parent().addClass('comment-field--focus');
     $(this).parent().parent().find('.comment-field__send').addClass('opacity-100');
   });
 
   $('body').on('focusout', '.comment-field__input textarea', function() {
     $('.overlay-body').removeClass('opacity-100');
-    $(this).parent().parent().removeClass('.comment-field--focus');
+    $(this).parent().parent().removeClass('comment-field--focus');
     checkContentInput();
     checkFakeInputHeight();
   });
