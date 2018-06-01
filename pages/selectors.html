@@ -172,188 +172,188 @@ permalink: /selectors
   </div>
 </div>
 
-  <script>
-    // Quick JS for comment/attachment field component
+<!-- Comments/Attachments SCRIPT -->
+<script>
+  // init with delay (due slow html load)
+  setTimeout(function() {
+    checkContentInput();
+    checkFakeInputHeight();
 
-    // init with delay (due slow html load)
-    setTimeout(function() {
-      checkContentInput();
-      checkFakeInputHeight();
-
-      // Not working (find a way to trigger focus over fake-input because @<notifed> links need to be clickable)
-      $('.fake-input span').each(function() {
-        $(this).on('click', function() {
-          console.log('clicked span');
-          $(this).parent().parent().find('textarea').trigger('focusin');
-        });
+    // Not working (find a way to trigger focus over fake-input because @<notifed> links need to be clickable)
+    $('.fake-input span').each(function() {
+      $(this).on('click', function() {
+        console.log('clicked span');
+        $(this).parent().parent().find('textarea').trigger('focusin');
       });
-    }, 3000);
-
-    $(window).on('resize', function() {
-      checkFakeInputHeight();
     });
+  }, 3000);
+
+  $(window).on('resize', function() {
+    checkFakeInputHeight();
+  });
 
 
-    $('body').on('focusin', '.comment-field__input textarea', function() {
-      $('.overlay-body').addClass('opacity-100');
-      $(this).parent().parent().addClass('.comment-field--focus');
-      $(this).parent().parent().find('.comment-field__send').addClass('opacity-100');
-    });
+  $('body').on('focusin', '.comment-field__input textarea', function() {
+    $('.overlay-body').addClass('opacity-100');
+    $(this).parent().parent().addClass('.comment-field--focus');
+    $(this).parent().parent().find('.comment-field__send').addClass('opacity-100');
+  });
 
-    $('body').on('focusout', '.comment-field__input textarea', function() {
-      $('.overlay-body').removeClass('opacity-100');
-      $(this).parent().parent().removeClass('.comment-field--focus');
-      checkContentInput();
-      checkFakeInputHeight();
-    });
+  $('body').on('focusout', '.comment-field__input textarea', function() {
+    $('.overlay-body').removeClass('opacity-100');
+    $(this).parent().parent().removeClass('.comment-field--focus');
+    checkContentInput();
+    checkFakeInputHeight();
+  });
 
-    $('body').on('keyup', '.comment-field__input textarea', function() {
-      if ($(this).val().length > 0) {
-        $(this).parent().parent().find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
-      }
-      else {
-        $(this).parent().parent().find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
-        $(this).parent().parent().find('.comment-field__attachment').remove();
-      }
-
-      checkContentInput();
-      checkFakeInputHeight();
-    });
-
-    $('body').on('change', 'input[type=file]', function () {
-      var filePath = $(this).val();
-      var fileName = filePath.substring(filePath.lastIndexOf("\\") + 1, filePath.length);
-      var fileExtension = filePath.substring(filePath.lastIndexOf(".") + 1, filePath.length);
-
-      $(this).parent().parent().parent().find('.comment-field__send').addClass('opacity-100');
-      $(this).parent().parent().parent().find('.comment-field__input').removeClass('comment-field__input--empty').prepend('<a href="#'+fileName+'" class="comment-field__attachment"><div class="comment-field__attachment-thumbnail" style="background-image:url(./assets/images/files.jpg);"></div><div class="comment-field__attachment-label h2 hidden">'+fileExtension+'</div></a>');
-      $(this).parent().parent().parent().find('.comment-field__input textarea').val(fileName);
-      $(this).parent().parent().parent().find('.fake-input').html(fileName);
-      $(this).parent().parent().parent().find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
-    });
-
-    $('body').on('click', '.JS_remove_comment', function() {
+  $('body').on('keyup', '.comment-field__input textarea', function() {
+    if ($(this).val().length > 0) {
+      $(this).parent().parent().find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
+    }
+    else {
       $(this).parent().parent().find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
       $(this).parent().parent().find('.comment-field__attachment').remove();
-      $(this).parent().parent().find('.comment-field__input textarea').val('');
+    }
 
-      checkContentInput();
-      checkFakeInputHeight();
+    checkContentInput();
+    checkFakeInputHeight();
+  });
+
+  $('body').on('change', 'input[type=file]', function () {
+    var filePath = $(this).val();
+    var fileName = filePath.substring(filePath.lastIndexOf("\\") + 1, filePath.length);
+    var fileExtension = filePath.substring(filePath.lastIndexOf(".") + 1, filePath.length);
+
+    $(this).parent().parent().parent().find('.comment-field__send').addClass('opacity-100');
+    $(this).parent().parent().parent().find('.comment-field__input').removeClass('comment-field__input--empty').prepend('<a href="#'+fileName+'" class="comment-field__attachment"><div class="comment-field__attachment-thumbnail" style="background-image:url(./assets/images/files.jpg);"></div><div class="comment-field__attachment-label h2 hidden">'+fileExtension+'</div></a>');
+    $(this).parent().parent().parent().find('.comment-field__input textarea').val(fileName);
+    $(this).parent().parent().parent().find('.fake-input').html(fileName);
+    $(this).parent().parent().parent().find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
+  });
+
+  $('body').on('click', '.JS_remove_comment', function() {
+    $(this).parent().parent().find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
+    $(this).parent().parent().find('.comment-field__attachment').remove();
+    $(this).parent().parent().find('.comment-field__input textarea').val('');
+
+    checkContentInput();
+    checkFakeInputHeight();
+  });
+
+  function checkFakeInputHeight() {
+    $('.comment-field').each(function() {
+      var textarea = $(this).find('.comment-field__input textarea');
+      var fakeInput = $(this).find('.fake-input');
+
+      textarea.css({
+        'height': fakeInput.height() + 'px'
+      });
     });
+  }
 
-    function checkFakeInputHeight() {
-      $('.comment-field').each(function() {
-        var textarea = $(this).find('.comment-field__input textarea');
-        var fakeInput = $(this).find('.fake-input');
+  function checkContentInput() {
+    $('.comment-field').each(function() {
+      var textarea = $(this).find('.comment-field__input textarea');
+      var notified = textarea[0].value.match(/@[a-z]+/gi);
+      var newval = textarea[0].value;
 
-        textarea.css({
-          'height': fakeInput.height() + 'px'
-        });
-      });
-    }
+      if (textarea[0].value.length > 0) {
+        $(this).find('.comment-field__input').removeClass('comment-field__input--empty');
+        $(this).find('.comment-field__send').addClass('opacity-100');
 
-    function checkContentInput() {
-      $('.comment-field').each(function() {
-        var textarea = $(this).find('.comment-field__input textarea');
-        var notified = textarea[0].value.match(/@[a-z]+/gi);
-        var newval = textarea[0].value;
-
-        if (textarea[0].value.length > 0) {
-          $(this).find('.comment-field__input').removeClass('comment-field__input--empty');
-          $(this).find('.comment-field__send').addClass('opacity-100');
-
-            // turn @<notified> into links
-            if (notified != null && notified.length > 0) {
-              for (var i = 0; i < notified.length; i++) {
-                newval = newval.replace(notified[i], '</span><a href="#'+notified[i]+'" class="inline-action">' + notified[i] + '</a><span>');
-              }
-            }
-            newval = newval.replace(newval, '<span>' + newval + '</span>');
-            $(this).find('.fake-input').html(newval);
-        }
-        else {
-          $(this).find('.comment-field__input').addClass('comment-field__input--empty');
-          $(this).find('.comment-field__send').removeClass('opacity-100');
-          $(this).find('.fake-input').empty();
-        }
-      });
-    }
-
-
-
-    $('.JS_comment_post').each(function() {
-      var hasFile = false;
-
-      $(this).on('change', 'input[type=file]', function() {
-        hasFile = true;
-      });
-
-      $(this).on('click', '.comment-field__send', function() {
-        var textarea = $(this).parent().find('.comment-field__input textarea');
-        var notified = textarea[0].value.match(/@[a-z]+/gi);
-        var newval = textarea[0].value;
-
-        var time = new Date().toLocaleTimeString('en-US', { hour12: false, hour: "numeric", minute: "numeric", second: "numeric"});
-
-        if ( textarea.val().length > 0 ) {
           // turn @<notified> into links
           if (notified != null && notified.length > 0) {
             for (var i = 0; i < notified.length; i++) {
               newval = newval.replace(notified[i], '</span><a href="#'+notified[i]+'" class="inline-action">' + notified[i] + '</a><span>');
             }
           }
+          newval = newval.replace(newval, '<span>' + newval + '</span>');
+          $(this).find('.fake-input').html(newval);
+      }
+      else {
+        $(this).find('.comment-field__input').addClass('comment-field__input--empty');
+        $(this).find('.comment-field__send').removeClass('opacity-100');
+        $(this).find('.fake-input').empty();
+      }
+    });
+  }
 
-          if (hasFile) {
-            $('#comments-container').prepend(
-              '<div class="comment-post">' +
-                '<div class="comment-post__label">' +
-                  '<div class="h8"><span class="primary">Jetro Wils</span> at <span>' + time + '</span></div>' +
-                '</div>' +
-                '<div class="comment-post__value">' +
-                  '<div class="comment-post__bubble">' +
-                    '<a href="#" class="comment-post__bubble-attachment">' +
-                      '<div class="comment-post__bubble-attachment-thumbnail" style="background-image:url(./assets/images/files.jpg);"></div>' +
-                    '</a>' +
-                    '<div class="comment-post__bubble-message">' +
-                      newval +
-                    '</div>' +
+  $('.JS_comment_post').each(function() {
+    var hasFile = false;
+
+    $(this).on('change', 'input[type=file]', function() {
+      hasFile = true;
+    });
+
+    $(this).on('click', '.comment-field__send', function() {
+      var textarea = $(this).parent().find('.comment-field__input textarea');
+      var notified = textarea[0].value.match(/@[a-z]+/gi);
+      var newval = textarea[0].value;
+      var time = new Date().toLocaleTimeString('en-US', { hour12: false, hour: "numeric", minute: "numeric", second: "numeric"});
+
+      if ( textarea.val().length > 0 ) {
+        // turn @<notified> into links
+        if (notified != null && notified.length > 0) {
+          for (var i = 0; i < notified.length; i++) {
+            newval = newval.replace(notified[i], '</span><a href="#'+notified[i]+'" class="inline-action">' + notified[i] + '</a><span>');
+          }
+        }
+
+        if (hasFile) {
+          $('#comments-container').prepend(
+            '<div class="comment-post">' +
+              '<div class="comment-post__label">' +
+                '<div class="h8"><span class="primary">Jetro Wils</span> at <span>' + time + '</span></div>' +
+              '</div>' +
+              '<div class="comment-post__value">' +
+                '<div class="comment-post__bubble">' +
+                  '<a href="#" class="comment-post__bubble-attachment">' +
+                    '<div class="comment-post__bubble-attachment-thumbnail" style="background-image:url(./assets/images/files.jpg);"></div>' +
+                  '</a>' +
+                  '<div class="comment-post__bubble-message">' +
+                    newval +
                   '</div>' +
                 '</div>' +
-              '</div>'
-            );
-          }
-          else {
-            $('#comments-container').prepend(
-              '<div class="comment-post">' +
-                '<div class="comment-post__label">' +
-                  '<div class="h8"><span class="primary">Jetro Wils</span> at <span>' + time + '</span></div>' +
-                '</div>' +
-                '<div class="comment-post__value">' +
-                  '<div class="comment-post__bubble">' +
-                    '<div class="comment-post__bubble-message">' +
-                      newval +
-                    '</div>' +
-                  '</div>' +
-                '</div>' +
-              '</div>'
-            );
-          }
-
-          $(this).parent().find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
-          $(this).parent().find('.comment-field__attachment').remove();
-          $(this).parent().find('.comment-field__input textarea').val('');
-
-          checkContentInput();
-          checkFakeInputHeight();
+              '</div>' +
+            '</div>'
+          );
         }
         else {
-
+          $('#comments-container').prepend(
+            '<div class="comment-post">' +
+              '<div class="comment-post__label">' +
+                '<div class="h8"><span class="primary">Jetro Wils</span> at <span>' + time + '</span></div>' +
+              '</div>' +
+              '<div class="comment-post__value">' +
+                '<div class="comment-post__bubble">' +
+                  '<div class="comment-post__bubble-message">' +
+                    newval +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+            '</div>'
+          );
         }
 
-        hasFile = false;
-      });
+        $(this).parent().find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
+        $(this).parent().find('.comment-field__attachment').remove();
+        $(this).parent().find('.comment-field__input textarea').val('');
+
+        checkContentInput();
+        checkFakeInputHeight();
+      }
+      else {
+        $(this).parent().find('.comment-field__input').addClass('animate-popup');
+
+        setTimeout(function() {
+          $('.comment-field__input').removeClass('animate-popup');
+        }, 1000);
+      }
+
+      hasFile = false;
     });
-  </script>
+  });
+</script>
 
 
 
