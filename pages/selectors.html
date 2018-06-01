@@ -102,7 +102,8 @@ permalink: /selectors
         <div class="inline-action JS_remove_comment"></div>
       </div>
       <div class="comment-field__input">
-        <a href="#" class="comment-field__attachment" style="background-image:url('./assets/images/files.jpg');">
+        <a href="#" class="comment-field__attachment">
+          <div class="comment-field__attachment-thumbnail" style="background-image:url('./assets/images/files.jpg');"></div>
           <div class="comment-field__attachment-label h2 hidden">jpg</div>
         </a>
         <textarea placeholder="Use @ to notify person">Please read acceptence criterias,</textarea>
@@ -120,6 +121,46 @@ permalink: /selectors
       <div class="comment-field__input">
         <textarea placeholder="Use @ to notify person" style="height: 100px;">Please read acceptence criterias, @KonstantinKharlov and you can find the layout of these stories on http://devcenter.tenforce.com/mockups/ along with the @desired effects when clicking the 'menu' and 'account' icons, and the tabs navigation. please do not look at the main content layout, @since these are not at all anything final.</textarea>
         <div class="fake-input"></div>
+      </div>
+      <div class="comment-field__action comment-field__send opacity-0">
+        <div class="inline-action"></div>
+      </div>
+    </div>
+
+    <div class="comment-post">
+      <div class="comment-post__label">
+        <div class="h8"><span class="primary">Jetro Wils</span> at <span>15:16</span></div>
+      </div>
+      <div class="comment-post__value">
+        <div class="comment-post__bubble">
+          <a href="#" class="comment-post__bubble-attachment">
+            <div class="comment-post__bubble-attachment-thumbnail" style="background-image:url('./assets/images/files.jpg');"></div>
+          </a>
+          <div class="comment-post__bubble-message">
+            Status Update:
+            <br><br>
+            - Fixing integration tests: 30 tests failing<br>
+            - We fixed 3 since yesterday<br>
+            - Ward is working on this. Except to finish this week.<br>
+            - Functional: the URI must be in sync with the content panel
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="sm:w-1/2 p-8 overflow-hidden">
+
+    <div id="comments-container"></div>
+
+    <div class="comment-field JS_comment_post">
+      <div class="comment-field__action comment-field__attach">
+        <div class="inline-action"><input name="upload" type="file" class="file-input" tabindex="-1"></div>
+      </div>
+      <div class="comment-field__input comment-field__input--empty">
+        <textarea placeholder="Use @ to notify person"></textarea>
+        <div class="fake-input fake-input-nohtml"></div>
       </div>
       <div class="comment-field__action comment-field__send opacity-0">
         <div class="inline-action"></div>
@@ -183,7 +224,7 @@ permalink: /selectors
       var fileExtension = filePath.substring(filePath.lastIndexOf(".") + 1, filePath.length);
 
       $(this).parent().parent().parent().find('.comment-field__send').addClass('opacity-100');
-      $(this).parent().parent().parent().find('.comment-field__input').removeClass('comment-field__input--empty').prepend('<a href="#'+fileName+'" class="comment-field__attachment" style="background-image:url(./assets/images/files.jpg);"><div class="comment-field__attachment-label h2 hidden">'+fileExtension+'</div></a>');
+      $(this).parent().parent().parent().find('.comment-field__input').removeClass('comment-field__input--empty').prepend('<a href="#'+fileName+'" class="comment-field__attachment"><div class="comment-field__attachment-thumbnail" style="background-image:url(./assets/images/files.jpg);"></div><div class="comment-field__attachment-label h2 hidden">'+fileExtension+'</div></a>');
       $(this).parent().parent().parent().find('.comment-field__input textarea').val(fileName);
       $(this).parent().parent().parent().find('.fake-input').html(fileName);
       $(this).parent().parent().parent().find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
@@ -235,6 +276,79 @@ permalink: /selectors
         }
       });
     }
+
+
+
+    $('.JS_comment_post').each(function() {
+      var hasFile = false;
+
+      $(this).on('change', 'input[type=file]', function() {
+        hasFile = true;
+      });
+
+      $(this).on('click', '.comment-field__send', function() {
+        var textarea = $(this).parent().find('.comment-field__input textarea');
+        var notified = textarea[0].value.match(/@[a-z]+/gi);
+        var newval = textarea[0].value;
+
+        if ( textarea.val().length > 0 ) {
+          // turn @<notified> into links
+          if (notified != null && notified.length > 0) {
+            for (var i = 0; i < notified.length; i++) {
+              newval = newval.replace(notified[i], '</span><a href="#'+notified[i]+'" class="inline-action">' + notified[i] + '</a><span>');
+            }
+          }
+
+          if (hasFile) {
+            $('#comments-container').prepend(
+              '<div class="comment-post">' +
+                '<div class="comment-post__label">' +
+                  '<div class="h8"><span class="primary">Jetro Wils</span> at <span>15:16</span></div>' +
+                '</div>' +
+                '<div class="comment-post__value">' +
+                  '<div class="comment-post__bubble">' +
+                    '<a href="#" class="comment-post__bubble-attachment">' +
+                      '<div class="comment-post__bubble-attachment-thumbnail" style="background-image:url(./assets/images/files.jpg);"></div>' +
+                    '</a>' +
+                    '<div class="comment-post__bubble-message">' +
+                      newval +
+                    '</div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>'
+            );
+          }
+          else {
+            $('#comments-container').prepend(
+              '<div class="comment-post">' +
+                '<div class="comment-post__label">' +
+                  '<div class="h8"><span class="primary">Jetro Wils</span> at <span>15:16</span></div>' +
+                '</div>' +
+                '<div class="comment-post__value">' +
+                  '<div class="comment-post__bubble">' +
+                    '<div class="comment-post__bubble-message">' +
+                      newval +
+                    '</div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>'
+            );
+          }
+
+          $(this).parent().find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
+          $(this).parent().find('.comment-field__attachment').remove();
+          $(this).parent().find('.comment-field__input textarea').val('');
+
+          checkContentInput();
+          checkFakeInputHeight();
+        }
+        else {
+
+        }
+
+        hasFile = false;
+      });
+    });
   </script>
 
 
