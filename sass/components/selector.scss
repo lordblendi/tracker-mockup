@@ -12,6 +12,7 @@
   border: 2px solid transparent;
   font-size: 0;
   color: #000;
+  z-index: 1;
 
   &__item {
     position: relative;
@@ -35,8 +36,10 @@
     cursor: text;
 
     &--selected {
+      /*
       -webkit-filter: saturate(1);
       filter: saturate(1);
+      */
       opacity: 1;
     }
 

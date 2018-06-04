@@ -75,10 +75,40 @@
   }
 
   &__label {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 15px;
+      top: 8px;
+      left: -15px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 15px;
+      top: 8px;
+      right: -10px;
+    }
+
+    &--bug {
+      &::before {
+        background-color: var(--color-red);
+      }
+
+      &::after {
+        background-color: var(--color-red);
+        border-radius: 0 9999px 9999px 0;
+      }
+    }
   }
 
   &__id {
-    margin: 0 5px;
+    margin: 0 0 0 20px;
   }
 
   &__actions {
