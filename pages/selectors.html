@@ -250,18 +250,17 @@ permalink: /selectors
     var filePath = $(this).val();
     var fileName = filePath.substring(filePath.lastIndexOf("\\") + 1, filePath.length);
     var fileExtension = filePath.substring(filePath.lastIndexOf(".") + 1, filePath.length);
-
-    $(this).parent().parent().parent().find('.comment-field__send').addClass('opacity-100');
-    $(this).parent().parent().parent().find('.comment-field__input').removeClass('comment-field__input--empty').prepend('<a href="#'+fileName+'" class="comment-field__attachment"><div class="comment-field__attachment-thumbnail" style="background-image:url(./assets/images/screenshot.png);"></div><div class="comment-field__attachment-label h2 hidden">'+fileExtension+'</div></a>');
-    $(this).parent().parent().parent().find('.comment-field__input textarea').val(fileName);
-    $(this).parent().parent().parent().find('.fake-input').html(fileName);
-    $(this).parent().parent().parent().find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
+    $(this).closest('.comment-field').find('.comment-field__send').addClass('opacity-100');
+    $(this).closest('.comment-field').find('.comment-field__input').removeClass('comment-field__input--empty').prepend('<a href="#'+fileName+'" class="comment-field__attachment"><div class="comment-field__attachment-thumbnail" style="background-image:url(./assets/images/screenshot.png);"></div><div class="comment-field__attachment-label h2 hidden">'+fileExtension+'</div></a>');
+    $(this).closest('.comment-field').find('.comment-field__input textarea').val(fileName);
+    $(this).closest('.comment-field').find('.fake-input').html(fileName);
+    $(this).closest('.comment-field').find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
   });
 
   $('body').on('click', '.JS_remove_comment', function() {
-    $(this).parent().parent().find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
-    $(this).parent().parent().find('.comment-field__attachment').remove();
-    $(this).parent().parent().find('.comment-field__input textarea').val('');
+    $(this).closest('.comment-field').find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
+    $(this).closest('.comment-field').find('.comment-field__attachment').remove();
+    $(this).closest('.comment-field').find('.comment-field__input textarea').val('');
 
     checkContentInput();
     checkFakeInputHeight();
@@ -313,7 +312,7 @@ permalink: /selectors
     });
 
     $(this).on('click', '.comment-field__send', function() {
-      var textarea = $(this).parent().find('.comment-field__input textarea');
+      var textarea = $(this).closest('.comment-field').find('.comment-field__input textarea');
       var notified = textarea[0].value.match(/@[a-z]+/gi);
       var newval = textarea[0].value;
       var time = new Date().toLocaleTimeString('en-US', { hour12: false, hour: "numeric", minute: "numeric", second: "numeric"});
@@ -362,15 +361,15 @@ permalink: /selectors
           );
         }
 
-        $(this).parent().find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
-        $(this).parent().find('.comment-field__attachment').remove();
-        $(this).parent().find('.comment-field__input textarea').val('');
+        $(this).closest('.comment-field').find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
+        $(this).closest('.comment-field').find('.comment-field__attachment').remove();
+        $(this).closest('.comment-field').find('.comment-field__input textarea').val('');
 
         checkContentInput();
         checkFakeInputHeight();
       }
       else {
-        $(this).parent().find('.comment-field__input').addClass('animate-popup');
+        $(this).closest('.comment-field').find('.comment-field__input').addClass('animate-popup');
 
         setTimeout(function() {
           $('.comment-field__input').removeClass('animate-popup');
