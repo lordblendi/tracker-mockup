@@ -70,8 +70,8 @@ permalink: /selectors
     $('.selector').each(function() {
       $(this).toggleClass('animate-loading');
     });
-
-    $(this).parent().parent().parent().removeClass('animate-loading');
+    // remove the loading animation from this selector
+    $(this).closest('.selector').removeClass('animate-loading');
   });
 
   $('.JS_load_buttons').on('click', function() {
@@ -210,7 +210,7 @@ permalink: /selectors
     $('.fake-input span').each(function() {
       $(this).on('click', function() {
         console.log('clicked span');
-        $(this).parent().parent().find('textarea').trigger('focusin');
+        $(this).closest('.comment-field__input').find('textarea').trigger('focusin');
       });
     });
   }, 3000);
@@ -222,24 +222,24 @@ permalink: /selectors
 
   $('body').on('focusin', '.comment-field__input textarea', function() {
     $('.overlay-body').addClass('opacity-100');
-    $(this).parent().parent().addClass('comment-field--focus');
-    $(this).parent().parent().find('.comment-field__send').addClass('opacity-100');
+    $(this).closest('.comment-field').addClass('comment-field--focus');
+    $(this).closest('.comment-field').find('.comment-field__send').addClass('opacity-100');
   });
 
   $('body').on('focusout', '.comment-field__input textarea', function() {
     $('.overlay-body').removeClass('opacity-100');
-    $(this).parent().parent().removeClass('comment-field--focus');
+    $(this).closest('.comment-field').removeClass('comment-field--focus');
     checkContentInput();
     checkFakeInputHeight();
   });
 
   $('body').on('keyup', '.comment-field__input textarea', function() {
     if ($(this).val().length > 0) {
-      $(this).parent().parent().find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
+      $(this).closest('.comment-field').find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
     }
     else {
-      $(this).parent().parent().find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
-      $(this).parent().parent().find('.comment-field__attachment').remove();
+      $(this).closest('.comment-field').find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
+      $(this).closest('.comment-field').find('.comment-field__attachment').remove();
     }
 
     checkContentInput();
