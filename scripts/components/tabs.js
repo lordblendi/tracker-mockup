@@ -11,14 +11,14 @@ $(function() {
     e.preventDefault();
     e.stopPropagation();
     // getting .tabs
-    var _parent = $(this).parent().parent().parent().parent();
+    var tabs = $(this).closest('.tabs');
     var _tabindex = $(this).attr('tabindex');
 
     // Change panel
-    _parent.find('.tabs-panels__panel').hide().removeClass('tabs-panels__panel--active');
-    _parent.find('.tabs-panels__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('tabs-panels__panel--active');
+    tabs.find('.tabs-panels__panel').hide().removeClass('tabs-panels__panel--active');
+    tabs.find('.tabs-panels__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('tabs-panels__panel--active');
 
-    _parent.find('.tabs-nav__link').removeClass('tabs-nav__link--active');
+    tabs.find('.tabs-nav__link').removeClass('tabs-nav__link--active');
     $(this).addClass('tabs-nav__link--active');
   });
 });
@@ -102,7 +102,7 @@ function setup(tabsSelector) {
   $(more).hover(function() {
     //  only when it's not hidden
     if (!$(this).hasClass('tabs-nav__slide--hidden')) {
-      // var tab_nav = $(this).parent();
+      // var tab_nav = $(this).closest('.tabs-nav');
       // var less = tab_nav.find('.tabs-nav__slide--left');
       // var more = tab_nav.find('.tabs-nav__slide--right');
       // var ul = tab_nav.find('ul');
@@ -331,9 +331,9 @@ setTimeout(function(){
 
 // new position for bar if clicking on link
 $('.tabs-nav__link').on('click', function(e) {
-  var bar = $(this).parent().parent().parent().find('.tabs-nav__linkBar');
+  var bar = $(this).closest('.tabs-nav').find('.tabs-nav__linkBar');
   var barWidth = $(this).outerWidth(true);
-  var barLeft = $(this).parent().position().left;
+  var barLeft = $(this).closest('li').position().left;
 
   // Slide bar
   bar.css({
