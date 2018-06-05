@@ -343,7 +343,9 @@ html {
   }
 }
 .animate-fadein-and-dissapear {
-  animation: opacity-to-0 .3s linear 2s forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadein .3s ease forwards, opacity-to-0 .3s linear 2s forwards;
 }
 .animate-fadein-and-dissapear::before {
   content: '';
