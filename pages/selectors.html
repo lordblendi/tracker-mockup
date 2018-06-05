@@ -201,7 +201,23 @@ permalink: /selectors
   // init with delay (due slow html load)
   setTimeout(function() {
     $('.comment-field__input textarea').autogrow();
+    $('.comment-field__input textarea').trigger('autogrow.resize');
+
+
+
+    // Not working (find a way to trigger focus over fake-input because @<notifed> links need to be clickable)
+    $('.fake-input span').each(function() {
+      $(this).on('click', function() {
+        console.log('clicked span');
+        $(this).closest('.comment-field__input').find('textarea').trigger('focusin');
+      });
+    });
   }, 3000);
+
+  $(window).on('resize', function() {
+
+  });
+
 
   $('body').on('focusin', '.comment-field__input textarea', function() {
     $('.overlay-body').addClass('opacity-100');
@@ -216,14 +232,9 @@ permalink: /selectors
 
   });
 
-  $('body').on('keyup', '.comment-field__input textarea', function(e) {
+  $('body').on('keyup', '.comment-field__input textarea', function() {
     if ($(this).val().length > 0) {
       $(this).closest('.comment-field').find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
-      // if it's an enter and not a shift-enter, send comment
-      if(e.key === "Enter" && e.shiftKey === false) {
-        $(this).closest('.comment-field').find('.comment-field__send').click();
-        $(this).blur();
-      }
     }
     else {
       $(this).closest('.comment-field').find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
