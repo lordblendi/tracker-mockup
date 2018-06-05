@@ -1,0 +1,25 @@
+---
+---
+
+.transform-scale-base {
+  transform: scale(1);
+}
+.transform-scale-md {
+  transform: scale(1.5);
+}
+
+.hover\:transform-scale-base:hover {
+  transform: scale(1);
+}
+.hover\:transform-scale-md:hover {
+  transform: scale(1.2);
+}
+
+@media (min-width: 576px) {
+  .sm\:transform-scale-base {
+    transform: scale(0);
+  }
+  .sm\:transform-scale-md {
+    transform: scale(1.5);
+  }
+}

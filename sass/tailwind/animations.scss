@@ -1,0 +1,138 @@
+---
+---
+
+@-webkit-keyframes bg-gradient {
+  0% {background-position: 0% 0%;}
+  50% {background-position: 100% 100%;}
+  100% {background-position: 0% 0%;}
+}
+@keyframes bg-gradient {
+  0% {background-position: 0% 0%;}
+  50% {background-position: 100% 100%;}
+  100% {background-position: 0% 0%;}
+}
+.animate-bg-gradient {
+  overflow: hidden;
+  color: #FFF;
+}
+.animate-bg-gradient-container {
+  background-size: 200%;
+  background-position: 0 0;
+  -webkit-animation: bg-gradient 70s ease infinite;
+  animation: bg-gradient 70s ease infinite;
+}
+
+@-webkit-keyframes multi-color {
+  0%   {  color: #000;    }
+  20%  {  color: #c90000; }
+  40%  {  color: #c39132; }
+  60%  {  color: #0ad1e9; }
+  80%  {  color: #180c49; }
+  100% {  color: #000;    }
+}
+@keyframes multi-color {
+  0%   {  color: #000;    }
+  20%  {  color: #c90000; }
+  40%  {  color: #c39132; }
+  60%  {  color: #0ad1e9; }
+  80%  {  color: #180c49; }
+  100% {  color: #000;    }
+}
+.animate-multi-color {
+  -webkit-animation: multi-color 20s linear infinite;
+  animation: multi-color 20s linear infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 0 0; }
+  100% { background-position: 80px 0; }
+}
+.animate-loading::before {
+  content: '';
+  position: absolute;
+  z-index: 10;
+  top: 0; right: 0; bottom: 0; left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-size: 80px 80px;
+  background-image: linear-gradient(
+    135deg,
+    rgba(0,0,0,.1) 0%,
+    rgba(0,0,0,.1) 20%,
+    transparent 40%,
+    rgba(0,0,0,.1) 50%,
+    rgba(0,0,0,.1) 70%,
+    transparent 90%,
+    rgba(0,0,0,.1) 100%
+  );
+  animation: loading 3s linear infinite;
+}
+
+@keyframes pop {
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.animate-popup {
+  animation: pop .5s ease forwards;
+}
+
+@keyframes fadein {
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.animate-fadein {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadein .3s ease forwards;
+}
+
+@keyframes fadeout {
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+.animate-fadeout {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeout .3s ease forwards;
+}
+
+@keyframes width-to-full {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes opacity-to-0 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.animate-fadein-and-dissapear {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadein .3s ease forwards, opacity-to-0 .3s linear 2s forwards;
+}
+.animate-fadein-and-dissapear::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(0,0,0,.02);
+  z-index: 1;
+  animation: width-to-full 2s linear forwards;
+}

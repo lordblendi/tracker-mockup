@@ -1,0 +1,28 @@
+---
+---
+
+.filter-blur-0 {
+  filter: blur(0);
+}
+.filter-blur-15 {
+  filter: blur(15px);
+}
+.filter-blur-20 {
+  filter: blur(20px);
+}
+
+.filter-grayscale-100 {
+  filter: grayscale(1);
+}
+
+@media (min-width: 576px) {
+  .sm\:filter-blur-0 {
+    filter: blur(0);
+  }
+  .sm\:filter-blur-15 {
+    filter: blur(15px);
+  }
+  .sm\:filter-blur-20 {
+    filter: blur(20px);
+  }
+}
