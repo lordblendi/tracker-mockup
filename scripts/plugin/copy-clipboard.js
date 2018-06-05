@@ -7,7 +7,7 @@ $('.JS_share').each(function() {
     handlePopupClick(toggle, '#ms-copy-success');
 
     setTimeout(function() {
-      $('.multiSelector').removeClass('animate-fadein-and-dissapear');
+      $('.multiSelector').removeClass('animate-fadein-and-disappear');
       closeOverlay();
     }, 2000);
   });
@@ -17,7 +17,7 @@ $('.JS_share').each(function() {
     handlePopupClick(toggle, '#ms-copy-error');
 
     setTimeout(function() {
-      $('.multiSelector').removeClass('animate-fadein-and-dissapear');
+      $('.multiSelector').removeClass('animate-fadein-and-disappear');
       closeOverlay();
     }, 2000);
   });
