@@ -29,13 +29,12 @@ $(document).ready(function() {
   // applicable-sliders click actions
   $('.appl-slider__headerToggle').on('click', function(e) {
     e.preventDefault();
-
     if ($(this).hasClass('appl-slider__headerToggle--active')) {
       $(this).removeClass('appl-slider__headerToggle--active');
-      $(this).parent().parent().find('.appl-slider__body').slideUp();
+      $(this).closest('.appl-slider').find('.appl-slider__body').slideUp();
     } else {
       $(this).addClass('appl-slider__headerToggle--active');
-      $(this).parent().parent().find('.appl-slider__body').slideDown();
+      $(this).closest('.appl-slider').find('.appl-slider__body').slideDown();
     }
   });
 
