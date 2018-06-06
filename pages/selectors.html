@@ -91,6 +91,7 @@ permalink: /selectors
       </div>
       <div class="comment-field__input comment-field__input--empty">
         <textarea placeholder="Use @ to notify person"></textarea>
+        <div class="fake-input fake-input-nohtml"></div>
       </div>
       <div class="comment-field__action comment-field__send opacity-0">
         <div class="inline-action"></div>
@@ -107,6 +108,7 @@ permalink: /selectors
           <div class="comment-field__attachment-label h2 hidden">jpg</div>
         </a>
         <textarea placeholder="Use @ to notify person">Please read acceptence criterias,</textarea>
+        <div class="fake-input fake-input-nohtml">Please read acceptence criterias,</div>
       </div>
       <div class="comment-field__action comment-field__send opacity-0">
         <div class="inline-action"></div>
@@ -118,7 +120,7 @@ permalink: /selectors
         <div class="inline-action JS_remove_comment"></div>
       </div>
       <div class="comment-field__input">
-        <textarea placeholder="Use @ to notify person" style="height: 145px;">Please read acceptence criterias, @KonstantinKharlov and you can find the layout of these stories on http://devcenter.tenforce.com/mockups/ along with the @desired effects when clicking the 'menu' and 'account' icons, and the tabs navigation. please do not look at the main content layout, @since these are not at all anything final.</textarea>
+        <textarea placeholder="Use @ to notify person" style="height: 100px;">Please read acceptence criterias, @KonstantinKharlov and you can find the layout of these stories on http://devcenter.tenforce.com/mockups/ along with the @desired effects when clicking the 'menu' and 'account' icons, and the tabs navigation. please do not look at the main content layout, @since these are not at all anything final.</textarea>
         <div class="fake-input"></div>
       </div>
       <div class="comment-field__action comment-field__send opacity-0">
@@ -187,6 +189,7 @@ permalink: /selectors
       </div>
       <div class="comment-field__input comment-field__input--empty">
         <textarea placeholder="Use @ to notify person"></textarea>
+        <div class="fake-input fake-input-nohtml"></div>
       </div>
       <div class="comment-field__action comment-field__send opacity-0">
         <div class="inline-action"></div>
@@ -200,8 +203,22 @@ permalink: /selectors
 <script>
   // init with delay (due slow html load)
   setTimeout(function() {
-    $('.comment-field__input textarea').autogrow();
+    checkContentInput();
+    checkFakeInputHeight();
+
+    // Not working (find a way to trigger focus over fake-input because @<notifed> links need to be clickable)
+    $('.fake-input span').each(function() {
+      $(this).on('click', function() {
+        console.log('clicked span');
+        $(this).closest('.comment-field__input').find('textarea').trigger('focusin');
+      });
+    });
   }, 3000);
+
+  $(window).on('resize', function() {
+    checkFakeInputHeight();
+  });
+
 
   $('body').on('focusin', '.comment-field__input textarea', function() {
     $('.overlay-body').addClass('opacity-100');
@@ -212,23 +229,21 @@ permalink: /selectors
   $('body').on('focusout', '.comment-field__input textarea', function() {
     $('.overlay-body').removeClass('opacity-100');
     $(this).closest('.comment-field').removeClass('comment-field--focus');
-
-
+    checkContentInput();
+    checkFakeInputHeight();
   });
 
-  $('body').on('keyup', '.comment-field__input textarea', function(e) {
+  $('body').on('keyup', '.comment-field__input textarea', function() {
     if ($(this).val().length > 0) {
       $(this).closest('.comment-field').find('.comment-field__attach .inline-action').addClass('JS_remove_comment').html('');
-      // if it's an enter and not a shift-enter, send comment
-      if(e.key === "Enter" && e.shiftKey === false) {
-        $(this).closest('.comment-field').find('.comment-field__send').click();
-        $(this).blur();
-      }
     }
     else {
       $(this).closest('.comment-field').find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
       $(this).closest('.comment-field').find('.comment-field__attachment').remove();
     }
+
+    checkContentInput();
+    checkFakeInputHeight();
   });
 
   $('body').on('change', 'input[type=file]', function () {
@@ -245,8 +260,49 @@ permalink: /selectors
   $('body').on('click', '.JS_remove_comment', function() {
     $(this).closest('.comment-field').find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
     $(this).closest('.comment-field').find('.comment-field__attachment').remove();
-    $(this).closest('.comment-field').find('.comment-field__input textarea').val('').css('height', "45px");
+    $(this).closest('.comment-field').find('.comment-field__input textarea').val('');
+
+    checkContentInput();
+    checkFakeInputHeight();
   });
+
+  function checkFakeInputHeight() {
+    $('.comment-field').each(function() {
+      var textarea = $(this).find('.comment-field__input textarea');
+      var fakeInput = $(this).find('.fake-input');
+
+      textarea.css({
+        'height': fakeInput.height() + 'px'
+      });
+    });
+  }
+
+  function checkContentInput() {
+    $('.comment-field').each(function() {
+      var textarea = $(this).find('.comment-field__input textarea');
+      var notified = textarea[0].value.match(/@[a-z]+/gi);
+      var newval = textarea[0].value;
+
+      if (textarea[0].value.length > 0) {
+        $(this).find('.comment-field__input').removeClass('comment-field__input--empty');
+        $(this).find('.comment-field__send').addClass('opacity-100');
+
+          // turn @<notified> into links
+          if (notified != null && notified.length > 0) {
+            for (var i = 0; i < notified.length; i++) {
+              newval = newval.replace(notified[i], '</span><a href="#'+notified[i]+'" class="inline-action">' + notified[i] + '</a><span>');
+            }
+          }
+          newval = newval.replace(newval, '<span>' + newval + '</span>');
+          $(this).find('.fake-input').html(newval);
+      }
+      else {
+        $(this).find('.comment-field__input').addClass('comment-field__input--empty');
+        $(this).find('.comment-field__send').removeClass('opacity-100');
+        $(this).find('.fake-input').empty();
+      }
+    });
+  }
 
   $('.JS_comment_post').each(function() {
     var hasFile = false;
@@ -307,7 +363,10 @@ permalink: /selectors
 
         $(this).closest('.comment-field').find('.comment-field__attach .inline-action').removeClass('JS_remove_comment').html('<input name="upload" type="file" class="file-input" tabindex="-1">');
         $(this).closest('.comment-field').find('.comment-field__attachment').remove();
-        $(this).closest('.comment-field').find('.comment-field__input textarea').val('').css('height', "45px");
+        $(this).closest('.comment-field').find('.comment-field__input textarea').val('');
+
+        checkContentInput();
+        checkFakeInputHeight();
       }
       else {
         $(this).closest('.comment-field').find('.comment-field__input').addClass('animate-popup');
@@ -407,7 +466,7 @@ permalink: /selectors
 
     <!-- Field -->
     <div class="field">
-      <div class="field__label">Privacy Policy <div class="inline-action primary animate-fly-in-left JS_has-popup--tooltip JS_has-popup" data-popid="#ms-privacy"></div></div>
+      <div class="field__label">Privacy Policy <div class="inline-action primary animate-fly-in-left JS_has-popup" data-popid="#ms-privacy"></div></div>
       <div class="field__data">
 
         <div class="field__value">

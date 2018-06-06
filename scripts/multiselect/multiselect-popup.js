@@ -90,7 +90,7 @@ function handlePopupClick(toggle, popid) {
   }
 
   else if ( toggle.hasClass('JS_share') ) {
-    $(popid).addClass('animate-fadein-and-dissapear');
+    $(popid).addClass('animate-fadein-and-disappear');
   }
 
   else {
