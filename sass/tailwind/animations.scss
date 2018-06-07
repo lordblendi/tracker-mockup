@@ -81,6 +81,10 @@
 }
 
 @keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
   100% {
     opacity: 1;
     transform: translateY(0px);
@@ -93,6 +97,9 @@
 }
 
 @keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
   100% {
     opacity: 0;
     transform: translateY(-20px);
@@ -112,6 +119,14 @@
     width: 100%;
   }
 }
+@keyframes height-to-full {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
 @keyframes opacity-to-0 {
   0% {
     opacity: 1;
@@ -123,16 +138,16 @@
 .animate-fadein-and-dissapear {
   opacity: 0;
   transform: translateY(-20px);
-  animation: fadein .3s ease forwards, opacity-to-0 .3s linear 2s forwards;
+  animation: fadein .3s ease forwards, fadeout .3s linear 2.3s forwards;
 }
 .animate-fadein-and-dissapear::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 0%;
-  height: 100%;
+  height: 0%;
+  width: 100%;
   background-color: rgba(0,0,0,.02);
   z-index: 1;
-  animation: width-to-full 2s linear forwards;
+  animation: height-to-full 2s linear .3s forwards;
 }

@@ -71,7 +71,6 @@
   cursor: pointer;
   transition: all .3s ease-in-out;
   transform: translate(0, 0);
-  color: var(--color-gold);
 
   &:hover {
     transform: translate(0, -2px);
@@ -124,6 +123,14 @@
 .readonly {
   &:hover {
     transform: none;
+  }
+}
+.unselected {
+  color: grey;
+  opacity: .5;
+
+  &:hover {
+    color: var(--color-gold);
   }
 }
 
