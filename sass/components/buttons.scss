@@ -26,9 +26,20 @@
     box-shadow: 0 1px 0 #8E8E8E;
   }
 
+  /* Modifiers */
+
+  &--small-caps {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .75px;
+    padding: 8px 18px;
+  }
+
   &--go {
     background-color: var(--color-blue);
-    box-shadow: 0 2px 0 #0574A9;
+    color: #FFF;
+    box-shadow: 0 2px 0 #007b9e;
 
     &:hover {
       box-shadow: 0 1px 0 #055074;
