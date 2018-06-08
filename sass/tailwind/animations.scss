@@ -139,12 +139,12 @@
     opacity: 0;
   }
 }
-.animate-fadein-and-dissapear {
+.animate-fadein-and-disappear {
   opacity: 0;
   transform: translateY(-20px);
   animation: fadein .3s ease forwards, fadeout .3s linear 2.3s forwards;
 }
-.animate-fadein-and-dissapear::before {
+.animate-fadein-and-disappear::before {
   content: '';
   position: absolute;
   top: 0;
