@@ -101,11 +101,9 @@
 @keyframes fadeout {
   0% {
     opacity: 1;
-    z-index: 999;
   }
   100% {
     opacity: 0;
-    z-index: -1;
     transform: translateY(-20px);
   }
 }
@@ -151,7 +149,7 @@
   left: 0;
   height: 0%;
   width: 100%;
-  background-color: rgba(0,0,0,.02);
+  background-color: rgba(0,0,0,.15);
   z-index: 1;
   animation: height-to-full 2s linear .3s forwards;
 }
