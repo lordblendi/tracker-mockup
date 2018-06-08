@@ -135,6 +135,13 @@
         color: #808080;
         line-height: 28px;
       }
+
+      &--small-caps {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+        font-weight: 600;
+      }
     }
   }
 
