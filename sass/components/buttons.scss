@@ -11,18 +11,17 @@
   position: relative;
   display: inline-block;
   padding: 5px 18px;
-  border-radius: 15px;
+  border-radius: 9999px;
   text-align: center;
-  transition: all .3s ease-in-out;
+  transition: all .15s linear;
   font-size: 16px;
   background-color: var(--color-platinum);
   color: #000;
-  box-shadow: 0 2px 0 #BFBFBF;
-  backface-visibility: hidden;
+  box-shadow: 0 3px 0 #A5A5A5;
 
   &:hover {
-    transform: translatey(1px);
-    box-shadow: 0 1px 0 #8E8E8E;
+    transform: translatey(2px);
+    box-shadow: 0 1px 0 #6C6C6C;
   }
 
   /* Modifiers */
@@ -32,7 +31,7 @@
     font-size: 12px;
     font-weight: 600;
     letter-spacing: .75px;
-    padding: 8px 18px;
+    padding: 8px 18px 7px;
   }
 
   &--go {
@@ -47,10 +46,11 @@
 
   &--drop {
     background-color: var(--color-red);
-    box-shadow: 0 2px 0 #660202;
+    color: #FFF;
+    box-shadow: 0 3px 0 #8B0C0C;
 
     &:hover {
-      box-shadow: 0 1px 0 #660202;
+      box-shadow: 0 1px 0 #680505;
     }
   }
 
