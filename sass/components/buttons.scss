@@ -24,6 +24,11 @@
     box-shadow: 0 1px 0 #6C6C6C;
   }
 
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #c5c5c5;
+  }
+
   /* Modifiers */
 
   &--small-caps {
@@ -42,6 +47,10 @@
     &:hover {
       box-shadow: 0 1px 0 #055074;
     }
+
+    &:active {
+      box-shadow: 0 1px 0 #1681b5;
+    }
   }
 
   &--drop {
@@ -52,6 +61,10 @@
     &:hover {
       box-shadow: 0 1px 0 #680505;
     }
+
+    &:active {
+      box-shadow: 0 1px 0 #9e1515;
+    }
   }
 
   &--naked {
@@ -61,6 +74,10 @@
     box-shadow: none;
 
     &:hover {
+      box-shadow: none;
+    }
+
+    &:active {
       box-shadow: none;
     }
   }
