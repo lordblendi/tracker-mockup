@@ -3,28 +3,14 @@ var resizeTimer;
 $(function() {
   // setup tabs for every tabs
   if ($(".tabs-nav").length > 0) {
-    setup(".tabs-nav");
+    setupTabs(".tabs-nav");
   }
 
-  // click tab link
-  $('.tabs-nav__link').on('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    // getting .tabs
-    var tabs = $(this).closest('.tabs');
-    var _tabindex = $(this).attr('tabindex');
 
-    // Change panel
-    tabs.find('.tabs-panels__panel').hide().removeClass('tabs-panels__panel--active');
-    tabs.find('.tabs-panels__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('tabs-panels__panel--active');
-
-    tabs.find('.tabs-nav__link').removeClass('tabs-nav__link--active');
-    $(this).addClass('tabs-nav__link--active');
-  });
 });
 
 // setting up tabs
-function setup(tabsSelector) {
+function setupTabs(tabsSelector) {
   const tab_nav = $(tabsSelector);
 
   const less = tab_nav.find('.tabs-nav__slide--left');
@@ -283,6 +269,8 @@ function setup(tabsSelector) {
     return 0;
   }
 
+  setupTabsLinkOnclick();
+
 };
 
 // function to animate scrolling through the list
@@ -313,31 +301,48 @@ function calculateDuration(tablist) {
   return numberOfChildren * 425;
 }
 
+function setupTabsLinkOnclick(){
+    setTimeout(function(){
+      // for every tabnav set the position of the line
+      $('.tabs-nav').each(function() {
+        var activeLink = $(this).find('.tabs-nav__link--active');
+        if (activeLink.length > 0) {
+          var barWidth = activeLink.width();
+          var barLeft = $(activeLink).position().left;
+          $(this).find('.tabs-nav__linkBar').css({
+            'left': barLeft + 'px',
+            'width': barWidth + 'px'
+          });
+        }
+      });
+    }, 400);
 
-setTimeout(function(){
-  // for every tabnav set the position of the line
-  $('.tabs-nav').each(function() {
-    var activeLink = $(this).find('.tabs-nav__link--active');
-    if (activeLink.length > 0) {
-      var barWidth = activeLink.width();
-      var barLeft = $(activeLink).position().left;
-      $(this).find('.tabs-nav__linkBar').css({
-        'left': barLeft + 'px',
+    // click tab link
+    $('.tabs-nav__link').on('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      // getting .tabs
+      var tabs = $(this).closest('.tabs');
+      var _tabindex = $(this).attr('tabindex');
+
+      // Change panel
+      tabs.find('.tabs-panels__panel').hide().removeClass('tabs-panels__panel--active');
+      tabs.find('.tabs-panels__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('tabs-panels__panel--active');
+
+      tabs.find('.tabs-nav__link').removeClass('tabs-nav__link--active');
+      $(this).addClass('tabs-nav__link--active');
+    });
+
+    // new position for bar if clicking on link
+    $('.tabs-nav__link').on('click', function(e) {
+      var bar = $(this).closest('.tabs-nav').find('.tabs-nav__linkBar');
+      var barWidth = $(this).outerWidth(true);
+      var barLeft = $(this).closest('li').position().left;
+
+      // Slide bar
+      bar.css({
+        'left': barLeft + 10 + 'px',
         'width': barWidth + 'px'
       });
-    }
-  });
-}, 400);
-
-// new position for bar if clicking on link
-$('.tabs-nav__link').on('click', function(e) {
-  var bar = $(this).closest('.tabs-nav').find('.tabs-nav__linkBar');
-  var barWidth = $(this).outerWidth(true);
-  var barLeft = $(this).closest('li').position().left;
-
-  // Slide bar
-  bar.css({
-    'left': barLeft + 10 + 'px',
-    'width': barWidth + 'px'
-  });
-});
+    });
+}
