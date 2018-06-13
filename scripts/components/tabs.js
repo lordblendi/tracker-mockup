@@ -1,9 +1,9 @@
 var resizeTimer;
 
 $(function() {
-  // setup tabs for the app navigator
-  if ($(".app-navigator .tabs-nav, .register-navigator .tabs-nav").length > 0) {
-    setup(".app-navigator .tabs-nav, .register-navigator .tabs-nav");
+  // setup tabs for every tabs
+  if ($(".tabs-nav").length > 0) {
+    setup(".tabs-nav");
   }
 
   // click tab link
