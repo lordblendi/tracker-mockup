@@ -134,6 +134,19 @@
   }
 }
 
+.is-read {
+  color: #38c172;
+  filter: saturate(.7);
+  opacity: .85;
+  pointer-events: none;
+  cursor: default;
+}
+
+
+
+
+
+
 .overlay-body {
   background-color: rgba(0,0,0,.25);
 

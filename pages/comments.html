@@ -150,7 +150,7 @@ permalink: /comments
               </div>
             </div>
             <div class="comment-post__action">
-              <div class="inline-action unselected"></div>
+              <div class="inline-action unselected JS_read"></div>
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@ permalink: /comments
               </div>
             </div>
             <div class="comment-post__action">
-              <div class="inline-action unselected"></div>
+              <div class="inline-action unselected JS_read"></div>
             </div>
           </div>
         </div>
@@ -236,7 +236,7 @@ permalink: /comments
               </div>
             </div>
             <div class="comment-post__action">
-              <div class="inline-action text-green disabled"></div>
+              <div class="inline-action is-read"></div>
             </div>
           </div>
         </div>
@@ -451,9 +451,15 @@ permalink: /comments
     });
   });
 
+  $('body').on('click', '.JS_read', function() {
+    $(this).addClass('is-read');
+  });
+
   $('body').on('click', '.JS_readmore', function() {
     $(this).closest('.comment-post__bubble').removeClass('comment-post__bubble--overflow').css({
       'max-height': '100%'
     });
   });
+
+
 </script>
