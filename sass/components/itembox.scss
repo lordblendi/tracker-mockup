@@ -17,6 +17,12 @@
     background-color: #929292;
   }
 
+  &--gdpr {
+    .itemBox {
+      padding: 20px;
+    }
+  }
+
   &__row {
     position: relative;
     display: flex;
