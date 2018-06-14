@@ -7,14 +7,13 @@ const expanded = "";
 const collapsed = "";
 
 // expand/collapse action listener on toggle
-$('.JS_toggle').on('click', function() {
+$('.JS_toggle, .JS_expand').on('click', function() {
   const itemBox__row = $(this).closest('.itemBox__row');
   expandCloseRow(itemBox__row);
 });
 
 // function to expand or close rows
 function expandCloseRow(itemBox__row, rowClosed, possibleChildren){
-
   if(possibleChildren === undefined) {
     // if the next one is color options, then get the one after it
     // as it should be like this:
@@ -71,11 +70,11 @@ function checkTableHeaderIcon(itemBox__row) {
   // check, if everything is closed, or not
   // and change it in the table
   const itemBox = $(itemBox__row).closest('.itemBox');
-  const itemBoxHead = $(itemBox).children('.itemBox__row--h2');
+  const itemBoxHead = $(itemBox).children('.itemBox__row--thead');
   const closedChildren = $(itemBox).children('.JS_itemBox--children.JS_children-closed');
   const children = $(itemBox).children('.JS_itemBox--children');
 
-  var i = $(itemBoxHead).find('.JS_expand .itemBox__cellInner');
+  var i = $(itemBoxHead).find('.JS_expand_header .itemBox__cellInner');
   if ($(i).find('.itemBox__action') > 0) {
     i = $(i).find('.itemBox__action');
   }
@@ -93,7 +92,7 @@ function checkTableHeaderIcon(itemBox__row) {
 }
 
 // action for toggle in header to expand/collapse all
-$('.itemBox__row--h2 .JS_expand').on('click', function(){
+$('.itemBox__row--thead .JS_expand_header').on('click', function(){
   const toggle = $(this);
   const itemBox = $(toggle).closest('.itemBox');
   const siblingRowItems = $(itemBox).children('.itemBox__row--item');
@@ -117,15 +116,4 @@ $('.itemBox__row--h2 .JS_expand').on('click', function(){
   else {
     expandCloseRow(itemBox__row, true);
   }
-});
-
-// action for table row expand/collapse
-$('.JS_expand').on('click', function() {
-  // if it's in the header, return
-  if ( $(this).closest('.itemBox__row--h2') > 0) {
-    return;
-  }
-
-  const itemBox__row = $(this).closest('.itemBox__row');
-  expandCloseRow(itemBox__row);
 });
