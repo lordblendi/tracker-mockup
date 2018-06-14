@@ -6,11 +6,40 @@
 const expanded = "";
 const collapsed = "";
 
-// expand/collapse action listener on toggle
-$('.JS_toggle, .JS_expand').on('click', function() {
-  const itemBox__row = $(this).closest('.itemBox__row');
-  expandCloseRow(itemBox__row);
-});
+initExpandCollapseActions();
+
+function initExpandCollapseActions(){
+  // expand/collapse action listener on toggle
+  $('.JS_toggle, .JS_expand').on('click', function() {
+    const itemBox__row = $(this).closest('.itemBox__row');
+    expandCloseRow(itemBox__row);
+  });
+
+  // action for toggle in header to expand/collapse all
+  $('.itemBox__row--thead .JS_expand_header').on('click', function(){
+    const toggle = $(this);
+    const itemBox = $(toggle).closest('.itemBox');
+    const siblingRowItems = $(itemBox).children('.itemBox__row--item');
+
+    const closedChildren = $(itemBox).children('.JS_itemBox--children.JS_children-closed');
+    const children = $(itemBox).children('.JS_itemBox--children');
+
+    // finding all toggles
+    const bodyCelltoggles = $(siblingRowItems).children('.JS_expand');
+
+    // finding the bodyRows from toggles
+    // so these ARE parent bodyRows
+    const itemBox__row = $(bodyCelltoggles).closest('.itemBox__row--item');
+
+    //if the children are all closed
+    if(closedChildren.length !== children.length) {
+      expandCloseRow(itemBox__row, false);
+    }
+    else {
+      expandCloseRow(itemBox__row, true);
+    }
+  });
+}
 
 // function to expand or close rows
 function expandCloseRow(itemBox__row, rowClosed, possibleChildren){
@@ -90,30 +119,3 @@ function checkTableHeaderIcon(itemBox__row) {
     }
   }
 }
-
-// action for toggle in header to expand/collapse all
-$('.itemBox__row--thead .JS_expand_header').on('click', function(){
-  const toggle = $(this);
-  const itemBox = $(toggle).closest('.itemBox');
-  const siblingRowItems = $(itemBox).children('.itemBox__row--item');
-
-  const closedChildren = $(itemBox).children('.JS_itemBox--children.JS_children-closed');
-  const children = $(itemBox).children('.JS_itemBox--children');
-
-
-  // finding all toggles
-  const bodyCelltoggles = $(siblingRowItems).children('.JS_expand');
-
-  // finding the bodyRows from toggles
-  // so these ARE parent bodyRows
-  const itemBox__row = $(bodyCelltoggles).closest('.itemBox__row--item');
-
-
-  //if the children are all closed
-  if(closedChildren.length !== children.length) {
-    expandCloseRow(itemBox__row, false);
-  }
-  else {
-    expandCloseRow(itemBox__row, true);
-  }
-});
