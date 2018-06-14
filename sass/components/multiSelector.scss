@@ -11,13 +11,6 @@
   pointer-events: none;
   z-index: -1;
 
-  .itemBox {
-    &--sublist {
-      padding: 5px 0 5px 5px;
-      background-color: #929292;
-    }
-  }
-
   /* Modiefiers */
 
   &--colorPicker {

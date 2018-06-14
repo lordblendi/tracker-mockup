@@ -12,6 +12,11 @@
     padding: 5px 0 5px 15px;
   }
 
+  &--sublist {
+    padding: 5px 0 5px 5px;
+    background-color: #929292;
+  }
+
   &__row {
     position: relative;
     display: flex;
