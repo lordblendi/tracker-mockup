@@ -1,0 +1,41 @@
+<!-- splitting up the data into multiple items. separator ; -->
+{% assign data = include.selectorData | split: ";" %}
+
+<div class="selector selector--expanded">
+<!-- for loop through items -->
+{% for item in data %}
+  <!-- getting the variables from the items. separator , -->
+  {% assign itemData = item | split: "," %}
+  <!-- assign color variable if there is a color -->
+  {% if itemData[0] != "" %}
+    {% assign color = "style='background-color: "| append: {{itemData[0]}} | append: ";'" %}
+  {% endif %}
+  {% assign icon = itemData[1] %}
+  {% assign label = itemData[2] %}
+  {% assign field = itemData[3] %}
+
+  {% assign colorSize = color | size %}
+  {% assign iconSize = icon | size %}
+  {% assign labelSize = label | size %}
+  {% assign fieldSize = field | size %}
+
+  <div class="selector__item JS_selectorItem--active selector__item--selected">
+    <div class="selector__block">
+      <!-- only show item parts if they are at least 1 character long -->
+      {% if iconSize > 0 %}
+        <div class="selector__blockPart selector__blockPart--prefix" {{color}} >{{icon}}</div>
+      {% endif %}
+      {% if labelSize > 0  %}
+        <div class="selector__blockPart selector__blockPart--label">{{label}}</div>
+      {% endif %}
+      {% if fieldSize > 0   %}
+        {% if labelSize > 0   %}
+          <div class="selector__blockSeperator"></div>
+        {% endif %}
+        <div class="selector__blockPart selector__blockPart--field">{{field}}</div>
+
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+</div>
