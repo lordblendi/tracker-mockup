@@ -1,7 +1,8 @@
 <!-- splitting up the data into multiple items. separator ; -->
 {% assign data = include.selectorData | split: ";" %}
 
-<div class="selector JS_selector {% if include.expanded %} selector--expanded {% endif %} {% if include.singleselect %} selector--singleselect {% endif %}">
+<div class="selector JS_selector {% if include.expanded %} selector--expanded {% endif %} {% if include.singleselect %} selector--singleselect {% endif %} {% if include.multiselect %} selector--multiselect {% endif %} {% if include.popupId %} JS_has-popup {% endif %}"
+{% if include.popupId %} data-popid="include.popupId" {% endif %}>
 <!-- for loop through items -->
 {% for item in data %}
   <!-- getting the variables from the items. separator , -->

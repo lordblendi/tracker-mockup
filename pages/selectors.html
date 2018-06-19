@@ -327,29 +327,7 @@ permalink: /selectors
       <div class="field__label">Product contact</div>
       <div class="field__data">
         <div class="field__value">
-
-          <div class="selector selector--multiselect selector--expanded JS_selector">
-            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;"></div>
-                <div class="selector__blockPart selector__blockPart--field">Heet</div>
-              </div>
-            </div>
-            <div class="selector__itemSeperator"></div>
-            <div class="selector__item JS_selectorItem">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: var(--color-red);"></div>
-                <div class="selector__blockPart selector__blockPart--field">Brandbaar</div>
-              </div>
-            </div>
-            <div class="selector__itemSeperator"></div>
-            <div class="selector__item JS_selectorItem">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: var(--color-red);"></div>
-                <div class="selector__blockPart selector__blockPart--field">Huidopname</div>
-              </div>
-            </div>
-          </div>
+          {% include components/selector.html selectorData="#F4CA16,,,Heet;var(--color-red),,,Brandbaar;var(--color-red),,,Huidopname" expanded="true" multiselect="true" selectedIndex=1 %}
 
           <input class="field__input" type="text" value="">
 
