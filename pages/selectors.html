@@ -91,7 +91,6 @@ permalink: /selectors
 
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,;,,," expanded="true" singleselect="true" selectedIndex=1 %}
-
           <input class="field__input" type="text" value="checked">
         </div>
 
@@ -109,17 +108,17 @@ permalink: /selectors
     </div>
 
     <!-- Field -->
-    <div class="field field--error">
+    <div class="field field--error JS_field--error">
       <div class="field__label">Assigned to</div>
       <div class="field__data">
-        <div class="field__error"></div>
+        <div class="field__error JS_has-popup JS_has-popup--error" data-popid="#ms-error-user"></div>
         <div class="field__value">
           <input class="field__input" type="text" value="_Not Assigned">
         </div>
       </div>
     </div>
 
-    <!-- Popup (error)
+    <!-- Popup (error)-->
     <div class="multiSelector" id="ms-error-user">
       <div class="itemBox">
         <ul class="itemBox__row itemBox__row--custom">
@@ -133,7 +132,7 @@ permalink: /selectors
         </ul>
       </div>
     </div>
-    -->
+
 
     <!-- Field -->
     <div class="field">
@@ -196,9 +195,8 @@ permalink: /selectors
       <div class="field__label">Status</div>
       <div class="field__data">
 
-        <div class="field__error"></div>
+        <div class="field__error JS_has-popup" data-popid="#ms-error"></div>
         <div class="field__value">
-
           <div class="selector selector--singleselect JS_has-popup" data-popid="#ms-status">
             <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
               <div class="selector__block">
