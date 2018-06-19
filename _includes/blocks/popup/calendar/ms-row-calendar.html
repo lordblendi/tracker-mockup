@@ -25,16 +25,8 @@
   {% endif %}
 
   <li class="itemBox__cell">
-    <div class="itemBox__cellInner">
-
-      <div class="selector selector--expanded {{ dayClass }}">
-        <div class="selector__item JS_selectorItem--active selector__item--selected">
-          <div class="selector__block ">
-            <div class="selector__blockPart selector__blockPart--field ">{{ day }}</div>
-          </div>
-        </div>
-      </div>
-
+    <div class="itemBox__cellInner {{ dayClass }}">
+      {{day}}
     </div>
   </li>
 {% endfor %}
