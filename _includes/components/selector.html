@@ -1,36 +1,71 @@
 <!-- splitting up the data into multiple items. separator ; -->
 {% assign data = include.selectorData | split: ";" %}
+{% assign selectedIndexes = include.selectedIndexes | split: "," %}
 
-<div class="selector JS_selector {% if include.expanded %} selector--expanded {% endif %} {% if include.singleselect %} selector--singleselect {% endif %} {% if include.multiselect %} selector--multiselect {% endif %} {% if include.popupId %} JS_has-popup {% endif %}"
-{% if include.popupId %} data-popid="include.popupId" {% endif %}>
-<!-- for loop through items -->
+<!-- assign different classses depending on the flags -->
+<!-- expanded class -->
+{% assign expanded = "" %}
+{% if include.expanded %}
+  {% assign expanded = "selector--expanded" %}
+{% endif %}
+<!-- singlselect class -->
+{% assign singleselect = "" %}
+{% if include.singleselect %}
+  {% assign singleselect = "selector--singleselect" %}
+{% endif %}
+<!-- multiselect class -->
+{% assign multiselect = "" %}
+{% if include.multiselect %}
+  {% assign multiselect = "selector--multiselect" %}
+{% endif %}
+<!-- has-popup class -->
+{% assign popupId = "" %}
+{% if include.popupId %}
+  {% assign popupId = "JS_has-popup" %}
+{% endif %}
+
+<!-- if it's a popup, add data-popid -->
+<div class="selector JS_selector {{expanded}} {{singleselect}} {{multiselect}} {{popupId}}" {% if include.popupId %}data-popid="{{include.popupId}}"{% endif %}>
+
+<!-- for loop through selectorItems -->
 {% for item in data %}
   <!-- getting the variables from the items. separator , -->
   {% assign itemData = item | split: "," %}
   <!-- assign color variable if there is a color -->
+  {% assign color = "" %}
   {% if itemData[0] != "" %}
     {% assign color = "style='background-color: "| append: {{itemData[0]}} | append: ";'" %}
-  {% else %}
-    {% assign color = "" %}
   {% endif %}
-
   {% assign prefix = itemData[1] %}
   {% assign label = itemData[2] %}
   {% assign field = itemData[3] %}
 
+  <!-- assign variables for the length of items -->
   {% assign colorSize = color | size %}
   {% assign prefixSize = prefix | size %}
   {% assign labelSize = label | size %}
   {% assign fieldSize = field | size %}
 
+  <!-- check if it's a selected item or not-->
+  {% assign selected = "" %}
+  <!-- capture the forloop index as a string-->
+  {% capture itemIndex %}{{forloop.index}}{% endcapture %}
+
+  {% for selectedIndex in selectedIndexes %}
+    <!-- if it's the same index, add the selected class -->
+    {% if selectedIndex == itemIndex %}
+      {% assign selected = "selector__item--selected JS_selectorItem--active" %}
+    {% endif %}
+  {% endfor %}
+
   <!-- add itemSeparator if it's multiple items -->
   {% if forloop.index > 1 %}
     <div class="selector__itemSeperator"></div>
   {% endif %}
-  <div class="selector__item JS_selectorItem {% if include.selectedIndex == forloop.index %} selector__item--selected JS_selectorItem--active {% endif %}">
+  <div class="selector__item JS_selectorItem {{selected}}">
     <div class="selector__block">
       <!-- only show item parts if they are at least 1 character long -->
-      {% if prefixSize > 0 %}
+      {% if prefixSize > 0 or colorSize > 0 %}
         <div class="selector__blockPart selector__blockPart--prefix" {{color}} >{{prefix}}</div>
       {% endif %}
       {% if labelSize > 0  %}
