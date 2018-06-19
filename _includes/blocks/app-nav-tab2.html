@@ -23,19 +23,8 @@
       <ul class="itemBox__row itemBox__row--item JS_filterableCell">
         <li class="itemBox__cell itemBox__cell--permalink">
           <div class="itemBox__cellInner JS_text">
-
-            <div class="selector selector--expanded">
-              <div class="selector__item JS_selectorItem--active selector__item--selected">
-                <div class="selector__block">
-                  <div class="selector__blockPart selector__blockPart--prefix">{{item.prefix}}</div>
-                  <div class="selector__blockSeperator"></div>
-                  <div class="selector__blockPart selector__blockPart--label" title="{{item.label}}">{{item.label}}</div>
-                  <div class="selector__blockSeperator"></div>
-                  <div class="selector__blockPart selector__blockPart--field" title="{{item.name}}">{{item.name}}</div>
-                </div>
-              </div>
-            </div>
-
+            {% assign selectorData = "," | append: item.prefix | append: "," | append: item.label | append: "," | append: item.name %}
+            {% include components/selector.html selectorData=selectorData expanded="true" selectedIndexes="1" %}
           </div>
         </li>
       </ul>
