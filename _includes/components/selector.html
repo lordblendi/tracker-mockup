@@ -1,5 +1,6 @@
 <!-- splitting up the data into multiple items. separator ; -->
 {% assign data = include.selectorData | split: ";" %}
+<!-- selected items, starting index is 1. separator , -->
 {% assign selectedIndexes = include.selectedIndexes | split: "," %}
 
 <!-- assign different classses depending on the flags -->
