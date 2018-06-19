@@ -154,20 +154,7 @@ permalink: /selectors
       <div class="field__data">
 
         <div class="field__value">
-
-          <div class="selector selector--singleselect selector--expanded JS_selector">
-            <div class="selector__item JS_selectorItem JS_selectorItem--active selector__item--selected">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field">Disagree</div>
-              </div>
-            </div>
-            <div class="selector__itemSeperator"></div>
-            <div class="selector__item JS_selectorItem">
-              <div class="selector__block ">
-                <div class="selector__blockPart selector__blockPart--field">Agree</div>
-              </div>
-            </div>
-          </div>
+        {% include components/selector.html selectorData=",,,Disagree;,,,Agree" expanded="true" singleselect="true" selectedIndex=1 %}
 
           <span>with our <a href="#" class="link link--primary">Privacy Policiy</a>.</span>
 
@@ -328,27 +315,7 @@ permalink: /selectors
       <div class="field__label">Danger level</div>
       <div class="field__data">
         <div class="field__value">
-
-          <div class="selector selector--singleselect selector--expanded JS_selector">
-            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;">Low</div>
-              </div>
-            </div>
-            <div class="selector__itemSeperator"></div>
-            <div class="selector__item JS_selectorItem">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #F4CA16;">Moderate</div>
-              </div>
-            </div>
-            <div class="selector__itemSeperator"></div>
-            <div class="selector__item JS_selectorItem">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: var(--color-red);">High</div>
-              </div>
-            </div>
-          </div>
-
+          {% include components/selector.html selectorData="#0BDA51,Low,,;#F4CA16,Moderate,,;var(--color-red),High,," expanded="true" singleselect="true" selectedIndex=1 %}
           <input class="field__input" type="text" value="low">
 
         </div>
