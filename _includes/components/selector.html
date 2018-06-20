@@ -19,6 +19,16 @@
 {% if include.multiselect %}
   {% assign multiselect = "selector--multiselect" %}
 {% endif %}
+<!-- multiselect class -->
+{% assign required = "" %}
+{% if include.required %}
+  {% assign required = "selector--required" %}
+{% endif %}
+<!-- multiselect class -->
+{% assign readonly = "JS_selectorItem" %}
+{% if include.readonly %}
+  {% assign readonly = "" %}
+{% endif %}
 <!-- has-popup class -->
 {% assign popupId = "" %}
 {% if include.popupId %}
@@ -26,7 +36,7 @@
 {% endif %}
 
 <!-- if it's a popup, add data-popid -->
-<div class="selector JS_selector {{expanded}} {{singleselect}} {{multiselect}} {{popupId}}" {% if include.popupId %}data-popid="{{include.popupId}}"{% endif %}>
+<div class="selector JS_selector {{expanded}} {{singleselect}} {{multiselect}} {{popupId}} {{required}}" {% if include.popupId %}data-popid="{{include.popupId}}"{% endif %}>
 
 <!-- for loop through selectorItems -->
 {% for item in data %}
@@ -63,7 +73,7 @@
   {% if forloop.index > 1 %}
     <div class="selector__itemSeperator"></div>
   {% endif %}
-  <div class="selector__item JS_selectorItem {{selected}}">
+  <div class="selector__item {{readonly}} {{selected}}">
     <div class="selector__block">
       <!-- only show item parts if they are at least 1 character long -->
       <!-- if there is a prefix or color, show prefix -->
