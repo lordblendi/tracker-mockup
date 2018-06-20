@@ -24,7 +24,7 @@
         <li class="itemBox__cell itemBox__cell--permalink">
           <div class="itemBox__cellInner JS_text">
             {% assign selectorData = "," | append: item.prefix | append: "," | append: item.label | append: "," | append: item.name %}
-            {% include components/selector.html selectorData=selectorData expanded="true" selectedIndexes="1" %}
+            {% include components/selector.html selectorData=selectorData expanded="true"  singleselect="true" readonly="true" selectedIndexes="1" %}
           </div>
         </li>
       </ul>
