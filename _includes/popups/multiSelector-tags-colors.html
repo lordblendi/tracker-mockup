@@ -37,7 +37,7 @@
 
                   {% include javascript/colorToggle.html color=item.color %}
                   {% assign selectorData = ",,," | append: item.name %}
-                  {% include components/selector.html selectorData=selectorData expanded="true" selectedIndexes="1" %}
+                  {% include components/selector.html selectorData=selectorData expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
 
                 </div>
               </div>
@@ -85,7 +85,7 @@
 
                 {% include javascript/colorToggle.html color=item.color %}
                 {% assign selectorData = ",,," | append: item.name %}
-                {% include components/selector.html selectorData=selectorData expanded="true" selectedIndexes="1" %}
+                {% include components/selector.html selectorData=selectorData expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
 
               </div>
             </div>

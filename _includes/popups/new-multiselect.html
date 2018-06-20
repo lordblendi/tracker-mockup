@@ -56,7 +56,7 @@
                   <div class="itemBox__value">
 
                     {% assign selectorData = ",,," | append: item %}
-                    {% include components/selector.html selectorData=selectorData expanded="true" selectedIndexes="1" %}
+                    {% include components/selector.html selectorData=selectorData expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
 
                   </div>
                 </div>
@@ -99,7 +99,7 @@
 
               {% include blocks/popup/selector-include-exclude.html selected="include"%}
               {% assign selectorData = ",,," | append: item.name %}
-              {% include components/selector.html selectorData=selectorData expanded="true" selectedIndexes="1" %}
+              {% include components/selector.html selectorData=selectorData expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
 
             </div>
           </div>
