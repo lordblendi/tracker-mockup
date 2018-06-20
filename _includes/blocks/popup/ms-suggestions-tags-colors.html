@@ -5,14 +5,8 @@
         <div class="itemBox__cellInner JS_toggle--color">
 
           {% include javascript/colorToggle.html color=item.color %}
-          <div class="selector selector--expanded">
-            <div class="selector__item JS_selectorItem--active selector__item--selected">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field JS_text">{{item.name}}</div>
-              </div>
-            </div>
-          </div>
-
+          {% assign selectorData = ",,," | append: item %}
+          {% include components/selector.html selectorData=selectorData singleselect="true" selectedIndexes="1" %}
         </div>
       </li>
       <li class="itemBox__cell flex-grow-0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">

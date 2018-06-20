@@ -55,14 +55,7 @@
               <li class="itemBox__cell">
                 <div class="itemBox__cellInner">
                   <div class="itemBox__value">
-
-                    <div class="selector selector--expanded">
-                      <div class="selector__item JS_selectorItem--active selector__item--selected">
-                        <div class="selector__block">
-                          <div class="selector__blockPart selector__blockPart--field JS_text">next 2 weeks (12/03/18-25/03/18)</div>
-                        </div>
-                      </div>
-                    </div>
+                    {% include components/selector.html selectorData=",,,next 2 weeks (12/03/18-25/03/18)" expanded="true" selectedIndexes="1" %}
 
                   </div>
                 </div>
@@ -78,15 +71,7 @@
               <li class="itemBox__cell">
                 <div class="itemBox__cellInner">
                   <div class="itemBox__value">
-
-                    <div class="selector selector--expanded">
-                      <div class="selector__item JS_selectorItem--active selector__item--selected">
-                        <div class="selector__block">
-                          <div class="selector__blockPart selector__blockPart--field JS_text">19/03/18-20/03/18</div>
-                        </div>
-                      </div>
-                    </div>
-
+                    {% include components/selector.html selectorData=",,,19/03/18-20/03/18" expanded="true" selectedIndexes="1" %}
                   </div>
                 </div>
               </li>
@@ -123,14 +108,7 @@
               <li class="itemBox__cell">
                 <div class="itemBox__cellInner">
                   <div class="itemBox__value">
-
-                    <div class="selector selector--expanded">
-                      <div class="selector__item JS_selectorItem--active selector__item--selected">
-                        <div class="selector__block">
-                          <div class="selector__blockPart selector__blockPart--field JS_text">today</div>
-                        </div>
-                      </div>
-                    </div>
+                    {% include components/selector.html selectorData=",,,today" expanded="true" selectedIndexes="1" %}
 
                   </div>
                 </div>
@@ -146,14 +124,7 @@
               <li class="itemBox__cell">
                 <div class="itemBox__cellInner">
                   <div class="itemBox__value">
-
-                    <div class="selector selector--expanded">
-                      <div class="selector__item JS_selectorItem--active selector__item--selected">
-                        <div class="selector__block">
-                          <div class="selector__blockPart selector__blockPart--field JS_text">18/04/18</div>
-                        </div>
-                      </div>
-                    </div>
+                    {% include components/selector.html selectorData=",,,18/04/18" expanded="true" selectedIndexes="1" %}
 
                   </div>
                 </div>
@@ -204,14 +175,7 @@
               <div class="itemBox__value">
 
                 {% include blocks/popup/selector-include-exclude.html selected="exclude"%}
-                <div class="selector selector--expanded">
-                  <div class="selector__item JS_selectorItem--active selector__item--selected">
-                    <div class="selector__block">
-                      <div class="selector__blockPart selector__blockPart--field JS_text">today</div>
-                    </div>
-                  </div>
-                </div>
-
+                {% include components/selector.html selectorData=",,,today" expanded="true" selectedIndexes="1" %}
               </div>
             </div>
           </li>
@@ -287,13 +251,7 @@
               <div class="itemBox__value">
 
                 {% include blocks/popup/selector-include-exclude.html selected="include"%}
-                <div class="selector selector--expanded">
-                  <div class="selector__item JS_selectorItem--active selector__item--selected">
-                    <div class="selector__block">
-                      <div class="selector__blockPart selector__blockPart--field JS_text">19/03/18-20/03/18</div>
-                    </div>
-                  </div>
-                </div>
+                {% include components/selector.html selectorData=",,,19/03/18-20/03/18" expanded="true" selectedIndexes="1" %}
 
               </div>
             </div>
@@ -328,13 +286,7 @@
               <div class="itemBox__value">
 
                 {% include blocks/popup/selector-include-exclude.html selected="include"%}
-                <div class="selector selector--expanded">
-                  <div class="selector__item JS_selectorItem--active selector__item--selected">
-                    <div class="selector__block">
-                      <div class="selector__blockPart selector__blockPart--field JS_text">next 2 weeks (12/03/18-25/03/18)</div>
-                    </div>
-                  </div>
-                </div>
+                {% include components/selector.html selectorData=",,,next 2 weeks (12/03/18-25/03/18)" expanded="true" selectedIndexes="1" %}
 
               </div>
             </div>
