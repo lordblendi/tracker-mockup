@@ -26,8 +26,10 @@
 {% endif %}
 <!-- multiselect class -->
 {% assign readonly = "JS_selectorItem" %}
+{% assign readonlyClass = "" %}
 {% if include.readonly or expanded == "" %}
   {% assign readonly = "" %}
+  {% assign readonlyClass = "selector--readonly" %}
 {% endif %}
 <!-- has-popup class -->
 {% assign popupId = "" %}
@@ -36,7 +38,7 @@
 {% endif %}
 
 <!-- if it's a popup, add data-popid -->
-<div class="selector JS_selector {{expanded}} {{singleselect}} {{multiselect}} {{popupId}} {{required}}" {% if include.popupId %}data-popid="{{include.popupId}}"{% endif %}>
+<div class="selector JS_selector {{expanded}} {{singleselect}} {{multiselect}} {{popupId}} {{required}} {{readonlyClass}}" {% if include.popupId %}data-popid="{{include.popupId}}"{% endif %}>
 
 <!-- for loop through selectorItems -->
 {% for item in data %}

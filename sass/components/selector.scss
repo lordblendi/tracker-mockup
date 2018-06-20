@@ -178,14 +178,6 @@
         box-shadow: 0 2px 8px -2px rgba(0,0,0,.7);
       }
     }
-    // 
-    // &.selector--expanded {
-    //   .selector__item {
-    //     &--selected {
-    //       pointer-events: none;
-    //     }
-    //   }
-    // }
   }
 
   &--multiselect {
@@ -221,6 +213,14 @@
           opacity: .85;
         }
       }
+    }
+  }
+
+  &--readonly {
+    .selector__item {
+      box-shadow: none;
+      pointer-events: none;
+      cursor: default;
     }
   }
 }
