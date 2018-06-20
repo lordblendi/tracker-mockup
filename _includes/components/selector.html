@@ -26,7 +26,7 @@
 {% endif %}
 <!-- multiselect class -->
 {% assign readonly = "JS_selectorItem" %}
-{% if include.readonly %}
+{% if include.readonly or expanded == "" %}
   {% assign readonly = "" %}
 {% endif %}
 <!-- has-popup class -->
