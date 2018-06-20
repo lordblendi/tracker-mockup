@@ -29,6 +29,8 @@
 {% assign readonlyClass = "" %}
 {% if include.readonly or expanded == "" %}
   {% assign readonly = "" %}
+{% endif %}
+{% if include.readonly %}
   {% assign readonlyClass = "selector--readonly" %}
 {% endif %}
 <!-- has-popup class -->
