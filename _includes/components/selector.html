@@ -19,12 +19,12 @@
 {% if include.multiselect %}
   {% assign multiselect = "selector--multiselect" %}
 {% endif %}
-<!-- multiselect class -->
+<!-- required class -->
 {% assign required = "" %}
 {% if include.required %}
   {% assign required = "selector--required" %}
 {% endif %}
-<!-- multiselect class -->
+<!-- readonly -->
 {% assign readonly = "JS_selectorItem" %}
 {% assign readonlyClass = "" %}
 {% if include.readonly or expanded == "" %}
@@ -38,9 +38,14 @@
 {% if include.popupId %}
   {% assign popupId = "JS_has-popup" %}
 {% endif %}
+<!-- draggable class -->
+{% assign draggable = "" %}
+{% if include.draggable %}
+  {% assign draggable = "selector--draggable" %}
+{% endif %}
 
 <!-- if it's a popup, add data-popid -->
-<div class="selector JS_selector {{expanded}} {{singleselect}} {{multiselect}} {{popupId}} {{required}} {{readonlyClass}}" {% if include.popupId %}data-popid="{{include.popupId}}"{% endif %}>
+<div class="selector JS_selector {{expanded}} {{singleselect}} {{multiselect}} {{popupId}} {{required}} {{readonlyClass}} {{draggable}}" {% if include.popupId %}data-popid="{{include.popupId}}"{% endif %}>
 
 <!-- for loop through selectorItems -->
 {% for item in data %}
