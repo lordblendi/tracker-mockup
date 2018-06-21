@@ -324,6 +324,17 @@ permalink: /selectors
     </div>
     <!-- Field -->
     <div class="field">
+      <div class="field__label">Single select: expanded and required (you cannot unselect all of them)</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/selector.html selectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" required="true" selectedIndexes="1" %}
+          <input class="field__input" type="text" value="low">
+
+        </div>
+      </div>
+    </div>
+    <!-- Field -->
+    <div class="field">
       <div class="field__label">Single select: expanded and readonly</div>
       <div class="field__data">
         <div class="field__value">
@@ -339,7 +350,7 @@ permalink: /selectors
       <div class="field__label">Single select: not expanded (shows only one item) - no popup attached</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#F4CA16,,,Ongoing" expanded="true" singleselect="true" selectedIndexes="1" %}
+          {% include components/selector.html selectorData="#F4CA16,,,Ongoing" singleselect="true" selectedIndexes="1" %}
           <input class="field__input" type="text" value="low">
 
         </div>
@@ -366,6 +377,17 @@ permalink: /selectors
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" multiselect="true" selectedIndexes="1,2" %}
+          <input class="field__input" type="text" value="low">
+
+        </div>
+      </div>
+    </div>
+    <!-- Field -->
+    <div class="field">
+      <div class="field__label">Multi select: expanded and required (at least one has to be selected)</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/selector.html selectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" multiselect="true" required="true" selectedIndexes="1" %}
           <input class="field__input" type="text" value="low">
 
         </div>
