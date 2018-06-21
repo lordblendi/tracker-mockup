@@ -33,7 +33,7 @@ body {
   -webkit-font-feature-settings: "kern" 1,"liga" 0;
   font-feature-settings: "kern" 1,"liga" 0;
   text-rendering: optimizeLegibility;
-  background-color: #4692C3;
+  background-color: #2C5386;
 
   &.fixed {
     overflow-y: hidden;
@@ -61,7 +61,6 @@ body {
   transition: all .3s ease-in-out;
   max-width: 100vw;
   width: 100%;
-  background-color: #2C5386;
 }
 
 .state-overlay {

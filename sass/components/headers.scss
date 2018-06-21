@@ -3,28 +3,14 @@
 
 .header {
   position: relative;
-  background-color: #FFF;
-  padding: 15px;
-  border-radius: 5px 5px 0 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  overflow: hidden;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 0;
-    border-top: 2px dashed #E6E6E6;
-    width: 100%;
-    z-index: 3;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    border-bottom: 2px dashed #E6E6E6;
-    width: 100%;
-    z-index: 3;
+  &__inner {
+    position: relative;
+    background-color: #FFF;
+    padding: 15px;
   }
 
   &__inputTitle {
@@ -139,10 +125,58 @@
   }
 
   &--item {
+    padding: 0;
     border-radius: 0;
+    background-color: #FFF;
 
-    &::before {
-      border-top-color: transparent;
+    .header__inner {
+      &::before {
+        border-top-color: transparent;
+      }
+    }
+  }
+
+  &--smartlist {
+    padding-top: 10px;
+    padding-bottom: 2px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -30%;
+      bottom: -30px;
+      width: 160%;
+      height: 60px;
+      z-index: 99;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 100%);
+      pointer-events: none;
+    }
+
+    .header__inner {
+      box-shadow: -5px 0 #E6E6E6, -10px 5px #CCC, -15px 10px #B3B3B3, 5px 0 #E6E6E6, 10px 5px #CCC, 15px 10px #B3B3B3;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+        height: 5px;
+        background-color: #FFF;
+        border-radius: 99999px 99999px 0 0;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 3;
+        height: 2px;
+        background: linear-gradient(to right, transparent 50%, #d7d7d7 50%), linear-gradient(to right, #ffffff, #ffffff);
+        background-size: 16px 2px, 100% 2px;
+      }
     }
   }
 

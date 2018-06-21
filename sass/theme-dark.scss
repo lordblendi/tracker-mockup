@@ -1,0 +1,39 @@
+---
+---
+
+body.theme-dark {
+  background-color: #343434;
+
+  .app-header {
+    .block-action,
+    .block-action.text-white {
+      color: var(--color-blue);
+    }
+  }
+
+  /* Breadcrumbs */
+
+  .breadcrumbs {
+    background-color: #343434;
+
+    &.breadcrumbs--overflow .breadcrumbs__item:first-child {
+      background-color: #343434;
+    }
+    &.breadcrumbs--overflow .breadcrumbs__item:first-child::before {
+      background: linear-gradient(to right, #343434 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .breadcrumbs__link {
+      color: #FFF;
+      font-weight: 300;
+    }
+
+    .breadcrumbs__seperator {
+      color: #FFF;
+    }
+
+    .selector__blockPart {
+      background-color: #282828;
+    }
+  }
+}
