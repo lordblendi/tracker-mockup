@@ -140,6 +140,17 @@
     padding-top: 10px;
     padding-bottom: 2px;
 
+    &::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 13px;
+      right: 13px;
+      height: 100%;
+      background-color: #BE8446;
+      border-radius: 10px 10px 0 0;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -174,7 +185,7 @@
         width: 100%;
         z-index: 3;
         height: 2px;
-        background: linear-gradient(to right, transparent 50%, #d7d7d7 50%), linear-gradient(to right, #ffffff, #ffffff);
+        background: linear-gradient(to right, transparent 50%, #D7D7D7 50%), linear-gradient(to right, #FFF, #FFF);
         background-size: 16px 2px, 100% 2px;
       }
     }

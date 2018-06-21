@@ -19,38 +19,34 @@ permalink: /future
       {% include blocks/app-header-future.html %}
     </header>
 
-    <div class="mx-8">
+    <div class="px-8">
       {% include blocks/breadcrumbs.html %}
     </div>
 
-    <div class="">
-      <div class="sticky-header">
-        {% include blocks/item-header-future.html %}
-      </div>
-
-      <div class="py-4 clearfix">
-
-        <div class="item-progress w-1/4 pr-4 float-left">
-          <div class="panel">
-            {% include blocks/item-progress.html %}
-          </div>
-        </div>
-
-        <div class="item-details w-3/4 p-0 float-left">
-          <div class="panel shadow-lg">
-            {% include blocks/item-main.html %}
-          </div>
-        </div>
-
-        <div class="item-extras w-1/2 pl-4 float-right hidden">
-          <div class="panel">
-            {% include blocks/item-comments.html %}
-          </div>
-        </div>
-
-      </div>
-      <!-- /.item-body -->
+    <div class="sticky-header">
+      {% include blocks/item-header-future.html %}
     </div>
-    <!-- /.app__document -->
+
+    <div class="px-8 my-4 clearfix">
+
+      <div class="item-progress w-1/4 pr-4 float-left">
+        <div class="panel">
+          {% include blocks/item-progress.html %}
+        </div>
+      </div>
+
+      <div class="item-details w-3/4 p-0 float-left">
+        <div class="panel shadow-lg">
+          {% include blocks/item-main.html %}
+        </div>
+      </div>
+
+      <div class="item-extras w-1/2 pl-4 float-right hidden">
+        <div class="panel">
+          {% include blocks/item-comments.html %}
+        </div>
+      </div>
+
+    </div>
+
   </main>
-  <!-- //container-master -->
