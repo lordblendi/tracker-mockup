@@ -14,16 +14,8 @@
   font-style: normal;
 }
 
-:root {
-  --color-gold: #AC840B;
-  --color-blue: #00BFFF;
-  --color-red: #E61616;
-  --color-platinum: #E5E4E2;
-  --color-grey-lightest: #F2F2F2;
-  --color-grey-light: #D7D7D7;
-  --color-grey: #C1C1C1;
-  --color-grey-dark: #B2B2B2;
-}
+
+@import "variables.css";
 
 body {
   font-family: 'Source Sans Pro', 'tenforce', Arial, sans-serif;
