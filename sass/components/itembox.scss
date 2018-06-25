@@ -4,10 +4,6 @@
 .itemBox {
   font-size: 16px;
 
-  + .itemBox {
-    padding-top: 10px;
-  }
-
   .itemBox {
     padding: 5px 0 5px 15px;
   }
@@ -22,6 +18,7 @@
       padding: 20px;
     }
   }
+
   &__row {
     &:nth-of-type(odd) {
       >.itemBox__rowInner--item {
@@ -40,6 +37,11 @@
         }
       }
     }
+
+    > .itemBox {
+      padding-top: 10px;
+    }
+
   }
 
   &__rowInner {
