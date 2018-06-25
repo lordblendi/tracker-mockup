@@ -16,20 +16,20 @@ function initExpandCollapseActions(){
   });
 
   // action for toggle in header to expand/collapse all
-  $('.itemBox__row--thead .JS_expand_header').on('click', function(){
+  $('.itemBox__rowInner--thead .JS_expand_header').on('click', function(){
     const toggle = $(this);
     const itemBox = $(toggle).closest('.itemBox');
-    const siblingRowItems = $(itemBox).children('.itemBox__row--item');
+    const siblingRowItems = $(itemBox).find('> .itemBox__row > .itemBox__rowInner--item');
 
-    const closedChildren = $(itemBox).children('.JS_itemBox--children.JS_children-closed');
-    const children = $(itemBox).children('.JS_itemBox--children');
+    const closedChildren = $(itemBox).find('> .itemBox__row > .JS_itemBox--children.JS_children-closed');
+    const children = $(itemBox).find('> .itemBox__row > .JS_itemBox--children');
 
     // finding all toggles
-    const bodyCelltoggles = $(siblingRowItems).children('.JS_expand');
+    const bodyCelltoggles = $(siblingRowItems).find('> .JS_expand');
 
     // finding the bodyRows from toggles
     // so these ARE parent bodyRows
-    const itemBox__row = $(bodyCelltoggles).closest('.itemBox__row--item');
+    const itemBox__row = $(bodyCelltoggles).closest('.itemBox__rowInner--item');
 
     //if the children are all closed
     if(closedChildren.length !== children.length) {
@@ -99,9 +99,9 @@ function checkTableHeaderIcon(itemBox__row) {
   // check, if everything is closed, or not
   // and change it in the table
   const itemBox = $(itemBox__row).closest('.itemBox');
-  const itemBoxHead = $(itemBox).children('.itemBox__row--thead');
-  const closedChildren = $(itemBox).children('.JS_itemBox--children.JS_children-closed');
-  const children = $(itemBox).children('.JS_itemBox--children');
+  const itemBoxHead = $(itemBox).find('> .itemBox__row > .itemBox__rowInner--thead');
+  const closedChildren = $(itemBox).find('> .itemBox__row >  .JS_itemBox--children.JS_children-closed');
+  const children = $(itemBox).find('> .itemBox__row > .JS_itemBox--children');
 
   var i = $(itemBoxHead).find('.JS_expand_header .itemBox__cellInner');
   if ($(i).find('.itemBox__action') > 0) {

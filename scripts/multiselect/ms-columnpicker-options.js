@@ -44,7 +44,7 @@ function handleColumnPickerOptionChange(selector) {
     columnPickerToggleContent = `{% include javascript/ms-columnpickerOption--enabled.html%}`;
   }
 
-  const bodyRow = $(itemBox).prevAll('ul.itemBox__row.JS_filterableCell:first');
+  const bodyRow = $(itemBox).prevAll('ul.itemBox__rowInner.JS_filterableCell:first');
   const toggle = $(bodyRow).find('.JS_toggle--columnpickerOptions');
   toggle.html(columnPickerToggleContent);
 

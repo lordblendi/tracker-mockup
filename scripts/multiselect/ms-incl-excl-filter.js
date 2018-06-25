@@ -16,7 +16,7 @@ function selectNewFilterOption(incleExclBodyRow) {
 
   // find the bodyRow related to this toggle
   const itemBox = incleExclBodyRow.closest('.JS_itemBox--filterInclExcl');
-  const bodyRow = $(itemBox).prevAll('ul.itemBox__row.JS_filterableCell:first:not(".JS_createNewTag")');
+  const bodyRow = $(itemBox).prevAll('ul.itemBox__rowInner.JS_filterableCell:first:not(".JS_createNewTag")');
 
   // find toggle and replace text and data-filter
   const toggle = $(bodyRow).find('.JS_inclExl');
@@ -52,7 +52,7 @@ function selectNewFilterOption(incleExclBodyRow) {
     const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
 
     const oldItemTextBlock = selectedItems[positionOfItemInSelected];
-    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.itemBox__row.JS_filterableCell');
+    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.itemBox__rowInner.JS_filterableCell');
     // append to newSelectedBlock
     // cloning includes eventhandlers too
     // remove from oldSelectedBlock
@@ -113,7 +113,7 @@ $('.JS_itemBox__cellInner--inclExcl.JS_selectorItem').on('click', function() {
     const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
 
     const oldItemTextBlock = selectedItems[positionOfItemInSelected];
-    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.itemBox__row.JS_filterableCell');
+    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.itemBox__rowInner.JS_filterableCell');
     // append to newSelectedBlock
     // cloning includes eventhandlers too
     // remove from oldSelectedBlock

@@ -17,7 +17,7 @@ function selectNewColor(colorItemBodyRow) {
   const color = colorItemBodyRow.find('.JS_itemBox__cellInner--color .JS_Color').attr('data-color');
   // find the text of the item
   const itemBox = colorItemBodyRow.closest('.JS_itemBox--colors');
-  const bodyRow = $(itemBox).prevAll('ul.itemBox__row.JS_filterableCell:first:not(".JS_createNewTag")');
+  const bodyRow = $(itemBox).prevAll('ul.itemBox__rowInner.JS_filterableCell:first:not(".JS_createNewTag")');
   const tagText = bodyRow.find('.JS_text').html().trim();
 
   // find all tags with the same text

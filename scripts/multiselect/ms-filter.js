@@ -7,7 +7,7 @@ function resetFilterActions() {
     var multiSelector = $(input).closest(".multiSelector");
     filterResults(input, '.JS_selectionChildren .JS_filterableCell, .JS_optionsChildren .JS_filterableCell');
 
-    checkGroups(multiSelector, '.JS_itemBox  .itemBox__row:not(.JS_filterableCell)');
+    checkGroups(multiSelector, '.JS_itemBox  .itemBox__rowInner:not(.JS_filterableCell)');
 
     reInitActions(multiSelector);
   });
@@ -18,7 +18,7 @@ function resetFilterActions() {
     filterResults(input, '.JS_appNavBox .JS_filterableCell');
     var multiSelector = $(input).closest(".multiSelector, .tabs-panels__panel");
 
-    checkGroups(multiSelector, '.JS_appNavBox  .itemBox__row:not(.JS_filterableCell)');
+    checkGroups(multiSelector, '.JS_appNavBox  .itemBox__rowInner:not(.JS_filterableCell)');
 
     reInitActions(multiSelector);
 
