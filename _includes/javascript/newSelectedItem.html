@@ -1,18 +1,20 @@
-<ul class="itemBox__row itemBox__row--item JS_filterableCell" style="display: none;">
-  <li class="itemBox__cell ${textActionClass}">
-    ${newSelectedItemHTML}
-  </li>
-${columnPickerOptionBlock}
-  <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--draggable">
-    <div class="itemBox__cellInner">
-      <i class="itemBox__action ">އ</i>
-    </div>
-  </li>
-  <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__action">
-    <div class="itemBox__cellInner">
-      <i class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></i>
-    </div>
-  </li>
-</ul>
-${colorChildren}
-${columnpickeroptions}
+<div class="itemBox__row">
+  <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell" style="display: none;">
+    <li class="itemBox__cell ${textActionClass}">
+      ${newSelectedItemHTML}
+    </li>
+    ${columnPickerOptionBlock}
+    <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--draggable">
+      <div class="itemBox__cellInner">
+        <i class="itemBox__action ">އ</i>
+      </div>
+    </li>
+    <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__action">
+      <div class="itemBox__cellInner">
+        <i class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></i>
+      </div>
+    </li>
+  </ul>
+  ${colorChildren}
+  ${columnpickeroptions}
+</div>

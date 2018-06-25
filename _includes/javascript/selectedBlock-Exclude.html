@@ -1,21 +1,23 @@
-<ul class="itemBox__row itemBox__row--item JS_selectionTitleExclude">
-  <li class="itemBox__cell itemBox__cell--action JS_toggle">
-    <div class="itemBox__cellInner">
-      <div class="itemBox__action"> Exclude</div>
-    </div>
-  </li>
-  <li class="itemBox__cell text-right">
-    <div class="itemBox__cellInner">
-      {% include javascript/and-or-selector.html %}
-    </div>
-  </li>
-  <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-    <div class="itemBox__cellInner">
-      <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
-    </div>
-  </li>
-</ul>
+<div class="itemBox__row">
+  <ul class="itemBox__rowInner itemBox__rowInner--item JS_selectionTitleExclude">
+    <li class="itemBox__cell itemBox__cell--action JS_toggle">
+      <div class="itemBox__cellInner">
+        <div class="itemBox__action"> Exclude</div>
+      </div>
+    </li>
+    <li class="itemBox__cell text-right">
+      <div class="itemBox__cellInner">
+        {% include javascript/and-or-selector.html %}
+      </div>
+    </li>
+    <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+      <div class="itemBox__cellInner">
+        <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
+      </div>
+    </li>
+  </ul>
 
-<div class="itemBox JS_itemBox--children JS_selectionChildrenExclude">
-  <div class="itemBoxBody--sortableConnected itemBoxBody--sortableExclude ui-sortable"></div>
+  <div class="itemBox JS_itemBox--children JS_selectionChildrenExclude">
+    <div class="itemBoxBody--sortableConnected itemBoxBody--sortableExclude ui-sortable"></div>
+  </div>
 </div>

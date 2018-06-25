@@ -1,38 +1,44 @@
 <div class="itemBox">
-  <ul class="itemBox__row">
-    <li class="itemBox__cell">
-      <div class= "itemBox__cellInner JS_text">
-        <input type="search" class="itemBox__input itemBox__input--fluid JS_appNav__filterInput" placeholder="filter through overview items">
-      </div>
-    </li>
-  </ul>
+  <div class="itemBox__row">
+    <ul class="itemBox__rowInner">
+      <li class="itemBox__cell">
+        <div class= "itemBox__cellInner JS_text">
+          <input type="search" class="itemBox__input itemBox__input--fluid JS_appNav__filterInput" placeholder="filter through overview items">
+        </div>
+      </li>
+    </ul>
+  </div>
   {% include blocks/popup/ms-row-use-global-search.html%}
 </div><!-- /.itemBox -->
 
 <div class="itemBox JS_appNavBox">
   {% for group in site.data.app-nav-tab2.groups %}
-    <ul class="itemBox__row itemBox__row--item">
-      <li class="itemBox__cell itemBox__cell--action JS_toggle">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action">{{group.name}}{% if group.loadmore == "true"%}<sup>{{group.counter}}</sup>{% endif %}</div>
-        </div>
-      </li>
-    </ul>
-    <div class="itemBox JS_itemBox--children">
-      {% for item in group.items %}
-      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-        <li class="itemBox__cell itemBox__cell--permalink">
-          <div class="itemBox__cellInner JS_text">
-            {% assign selectorData = "," | append: item.prefix | append: "," | append: item.label | append: "," | append: item.name %}
-            {% include components/selector.html selectorData=selectorData expanded="true"  singleselect="true" readonly="true" selectedIndexes="1" %}
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
+        <li class="itemBox__cell itemBox__cell--action JS_toggle">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action">{{group.name}}{% if group.loadmore == "true"%}<sup>{{group.counter}}</sup>{% endif %}</div>
           </div>
         </li>
       </ul>
-      {% endfor %}
+      <div class="itemBox JS_itemBox--children">
+        {% for item in group.items %}
+          <div class="itemBox__row">
+            <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+              <li class="itemBox__cell itemBox__cell--permalink">
+                <div class="itemBox__cellInner JS_text">
+                  {% assign selectorData = "," | append: item.prefix | append: "," | append: item.label | append: "," | append: item.name %}
+                  {% include components/selector.html selectorData=selectorData expanded="true"  singleselect="true" readonly="true" selectedIndexes="1" %}
+                </div>
+              </li>
+            </ul>
+          </div>
+        {% endfor %}
 
-      {% if group.loadmore == "true"%}
-        {% include blocks/popup/ms-row-load-more.html %}
-      {% endif %}
+        {% if group.loadmore == "true"%}
+          {% include blocks/popup/ms-row-load-more.html %}
+        {% endif %}
+      </div>
     </div>
   {% endfor %}
 </div><!-- /.itemBox -->

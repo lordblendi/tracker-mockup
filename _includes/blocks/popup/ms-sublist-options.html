@@ -1,24 +1,26 @@
 <div class="itemBox JS_itemBox--children JS_itemBox--children JS_itemBox--sublist itemBox--sublist JS_itemBox--columnpickerOptions JS_children-closed" style="display: none;">
   {% for item in site.data.ms-options.items %}
-  <ul class="itemBox__row itemBox__row--item">
-    <li class="itemBox__cell">
-      <div class="itemBox__cellInner JS_toggle--options">
-        <div class="selector selector--singleselect selector--required selector--expanded JS_selector">
-          <div class="selector__item JS_selectorItem JS_columnPickerOption--enabled">
-            <div class="selector__block">
-              <div class="selector__blockPart selector__blockPart--field"></div>
+  <div class="itemBox__row">
+    <ul class="itemBox__rowInner itemBox__rowInner--item">
+      <li class="itemBox__cell">
+        <div class="itemBox__cellInner JS_toggle--options">
+          <div class="selector selector--singleselect selector--required selector--expanded JS_selector">
+            <div class="selector__item JS_selectorItem JS_columnPickerOption--enabled">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field"></div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator"></div>
+            <div class="selector__item JS_selectorItem JS_selectorItem--active selector__item--selected">
+              <div class="selector__block ">
+                <div class="selector__blockPart selector__blockPart--field"></div>
+              </div>
             </div>
           </div>
-          <div class="selector__itemSeperator"></div>
-          <div class="selector__item JS_selectorItem JS_selectorItem--active selector__item--selected">
-            <div class="selector__block ">
-              <div class="selector__blockPart selector__blockPart--field"></div>
-            </div>
-          </div>
+          <div class="inline align-middle pl-1">{{item  | capitalize}}</div>
         </div>
-        <div class="inline align-middle pl-1">{{item  | capitalize}}</div>
-      </div>
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </div>
   {% endfor %}
 </div>

@@ -1,198 +1,164 @@
 <div class="multiSelector JS_multiSelector--withFilter" id="filter-datepicker">
 
   <div class="itemBox">
-    <ul class="itemBox__row">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="search through dates">
-        </div>
-      </li>
-    </ul><!-- /.itemBox__row -->
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="search through dates">
+          </div>
+        </li>
+      </ul>
+      <!-- /.itemBox__rowInner -->
+    </div>
   </div>
 
   <div class="itemBox JS_itemBox">
-    <ul class="itemBox__row itemBox__row--item JS_selectionTitle">
-      <li class="itemBox__cell itemBox__cell--action JS_toggle">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action JS_selectedText"> Selected</div>
-        </div>
-      </li>
-      <li class="itemBox__cell text-right">
-        <div class="itemBox__cellInner">
-          {% include javascript/and-or-selector.html %}
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
-        </div>
-      </li>
-    </ul>
-
-    <div class="itemBox JS_itemBox--children JS_selectionChildren">
-      <div class="itemBoxBody--sortable ui-sortable">
-        <ul class="itemBox__row itemBox__row--item JS_selectionTitleInclude">
-          <li class="itemBox__cell itemBox__cell--action JS_toggle">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__action"> Include</div>
-            </div>
-          </li>
-          <li class="itemBox__cell text-right">
-            <div class="itemBox__cellInner">
-              {% include javascript/and-or-selector.html %}
-            </div>
-          </li>
-          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
-            </div>
-          </li>
-        </ul>
-
-        <div class="itemBox JS_itemBox--children JS_selectionChildrenInclude">
-          <div class="itemBoxBody--sortableConnected itemBoxBody--sortableInclude ui-sortable">
-            <ul class="itemBox__row itemBox__row--item JS_filterableCell JS_sortable">
-              <li class="itemBox__cell">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__value">
-                    {% include components/selector.html selectorData=",,,next 2 weeks (12/03/18-25/03/18)" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
-
-                  </div>
-                </div>
-              </li>
-              <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-                </div>
-              </li>
-            </ul>
-
-            <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-              <li class="itemBox__cell">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__value">
-                    {% include components/selector.html selectorData=",,,19/03/18-20/03/18" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
-                  </div>
-                </div>
-              </li>
-              <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <ul class="itemBox__row itemBox__row--item JS_selectionTitleExclude">
-          <li class="itemBox__cell itemBox__cell--action JS_toggle">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__action"> Exclude</div>
-            </div>
-          </li>
-          <li class="itemBox__cell text-right">
-            <div class="itemBox__cellInner">
-              {% include javascript/and-or-selector.html %}
-            </div>
-          </li>
-          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
-            </div>
-          </li>
-        </ul>
-
-        <div class="itemBox JS_itemBox--children JS_selectionChildrenExclude">
-          <div class="itemBoxBody--sortableConnected itemBoxBody--sortableExclude ui-sortable">
-            <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-              <li class="itemBox__cell">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__value">
-                    {% include components/selector.html selectorData=",,,today" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
-
-                  </div>
-                </div>
-              </li>
-              <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-                </div>
-              </li>
-            </ul>
-
-            <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-              <li class="itemBox__cell">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__value">
-                    {% include components/selector.html selectorData=",,,18/04/18" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
-
-                  </div>
-                </div>
-              </li>
-              <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.itemBox -->
-
-    <ul class="itemBox__row itemBox__row--item JS_optionsTitle">
-      <li class="itemBox__cell itemBox__cell--action JS_toggle">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action"> All</div>
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
-        </div>
-      </li>
-    </ul>
-
-    <div class="itemBox JS_itemBox--children JS_optionsChildren">
-      <ul class="itemBox__row itemBox__row--item">
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item JS_selectionTitle">
         <li class="itemBox__cell itemBox__cell--action JS_toggle">
           <div class="itemBox__cellInner">
-            <div class="itemBox__action"> Smart Dates</div>
+            <div class="itemBox__action JS_selectedText"> Selected</div>
+          </div>
+        </li>
+        <li class="itemBox__cell text-right">
+          <div class="itemBox__cellInner">
+            {% include javascript/and-or-selector.html %}
           </div>
         </li>
         <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
           <div class="itemBox__cellInner">
-            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
+            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
           </div>
         </li>
       </ul>
 
-      <div class="itemBox JS_itemBox--children">
-        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-          <li class="itemBox__cell ">
-            <div class="itemBox__cellInner ">
-              <div class="itemBox__value">
+      <div class="itemBox JS_itemBox--children JS_selectionChildren">
+        <div class="itemBoxBody--sortable ui-sortable">
+          <div class="itemBox__row">
+            <ul class="itemBox__rowInner itemBox__rowInner--item JS_selectionTitleInclude">
+              <li class="itemBox__cell itemBox__cell--action JS_toggle">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action"> Include</div>
+                </div>
+              </li>
+              <li class="itemBox__cell text-right">
+                <div class="itemBox__cellInner">
+                  {% include javascript/and-or-selector.html %}
+                </div>
+              </li>
+              <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
+                </div>
+              </li>
+            </ul>
 
-                {% include blocks/popup/selector-include-exclude.html selected="exclude"%}
-                {% include components/selector.html selectorData=",,,today" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
+            <div class="itemBox JS_itemBox--children JS_selectionChildrenInclude">
+              <div class="itemBoxBody--sortableConnected itemBoxBody--sortableInclude ui-sortable">
+                <div class="itemBox__row">
+                  <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell JS_sortable">
+                    <li class="itemBox__cell">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__value">
+                          {% include components/selector.html selectorData=",,,next 2 weeks (12/03/18-25/03/18)" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
+
+                        </div>
+                      </div>
+                    </li>
+                    <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="itemBox__row">
+                  <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+                    <li class="itemBox__cell">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__value">
+                          {% include components/selector.html selectorData=",,,19/03/18-20/03/18" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
+                        </div>
+                      </div>
+                    </li>
+                    <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </li>
-          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-            </div>
-          </li>
-        </ul>
-        {% include blocks/popup/ms-row-create-new.html %}
-      </div>
-      <!-- smart dates -->
+          </div>
+          <div class="itemBox__row">
+            <ul class="itemBox__rowInner itemBox__rowInner--item JS_selectionTitleExclude">
+              <li class="itemBox__cell itemBox__cell--action JS_toggle">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action"> Exclude</div>
+                </div>
+              </li>
+              <li class="itemBox__cell text-right">
+                <div class="itemBox__cellInner">
+                  {% include javascript/and-or-selector.html %}
+                </div>
+              </li>
+              <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
+                </div>
+              </li>
+            </ul>
 
-      <ul class="itemBox__row itemBox__row--item">
+            <div class="itemBox JS_itemBox--children JS_selectionChildrenExclude">
+              <div class="itemBoxBody--sortableConnected itemBoxBody--sortableExclude ui-sortable">
+                <div class="itemBox__row">
+                  <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+                    <li class="itemBox__cell">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__value">
+                          {% include components/selector.html selectorData=",,,today" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
+
+                        </div>
+                      </div>
+                    </li>
+                    <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="itemBox__row">
+                  <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+                    <li class="itemBox__cell">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__value">
+                          {% include components/selector.html selectorData=",,,18/04/18" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
+
+                        </div>
+                      </div>
+                    </li>
+                    <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.itemBox -->
+    </div>
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item JS_optionsTitle">
         <li class="itemBox__cell itemBox__cell--action JS_toggle">
           <div class="itemBox__cellInner">
-            <div class="itemBox__action"> Simple Dates</div>
+            <div class="itemBox__action"> All</div>
           </div>
         </li>
         <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
@@ -202,107 +168,163 @@
         </li>
       </ul>
 
-      <div class="itemBox JS_itemBox--children">
-        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-          <li class="itemBox__cell ">
-            <div class="itemBox__cellInner ">
-              <div class="itemBox__value">
+      <div class="itemBox JS_itemBox--children JS_optionsChildren">
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item">
+            <li class="itemBox__cell itemBox__cell--action JS_toggle">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action"> Smart Dates</div>
+              </div>
+            </li>
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
+              </div>
+            </li>
+          </ul>
 
-                {% include blocks/popup/selector-include-exclude.html selected="exclude"%}
-                <div class="selector selector--expanded JS_toggle--calendar">
-                  <div class="selector__item JS_selectorItem--active selector__item--selected">
-                    <div class="selector__block">
-                      <div class="selector__blockPart selector__blockPart--field JS_text">18/04/18</div>
+          <div class="itemBox JS_itemBox--children">
+            <div class="itemBox__row">
+              <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+                <li class="itemBox__cell ">
+                  <div class="itemBox__cellInner ">
+                    <div class="itemBox__value">
+
+                      {% include blocks/popup/selector-include-exclude.html selected="exclude"%} {% include components/selector.html selectorData=",,,today" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
                     </div>
                   </div>
-                </div>
-
+                </li>
+                <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>{% include blocks/popup/ms-row-create-new.html %}
+          </div>
+          <!-- smart dates -->
+        </div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item">
+            <li class="itemBox__cell itemBox__cell--action JS_toggle">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action"> Simple Dates</div>
               </div>
-            </div>
-          </li>
-          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-            </div>
-          </li>
-        </ul>
-        {% include blocks/popup/calendar/ms-sublist-calendar.html %}
-        {% include blocks/popup/ms-row-create-new.html %}
-      </div>
-      <!-- simple dates -->
-
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--action JS_toggle">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action"> Ranges</div>
-          </div>
-        </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
-          </div>
-        </li>
-      </ul>
-
-      <div class="itemBox JS_itemBox--children">
-        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-          <li class="itemBox__cell">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__value">
-
-                {% include blocks/popup/selector-include-exclude.html selected="include"%}
-                {% include components/selector.html selectorData=",,,19/03/18-20/03/18" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
-
+            </li>
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
               </div>
+            </li>
+          </ul>
+
+          <div class="itemBox JS_itemBox--children">
+            <div class="itemBox__row">
+              <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+                <li class="itemBox__cell ">
+                  <div class="itemBox__cellInner ">
+                    <div class="itemBox__value">
+
+                      {% include blocks/popup/selector-include-exclude.html selected="exclude"%}
+                      <div class="selector selector--expanded JS_toggle--calendar">
+                        <div class="selector__item JS_selectorItem--active selector__item--selected">
+                          <div class="selector__block">
+                            <div class="selector__blockPart selector__blockPart--field JS_text">18/04/18</div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </li>
+                <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+                  </div>
+                </li>
+              </ul>
+              {% include blocks/popup/calendar/ms-sublist-calendar.html %} {% include blocks/popup/ms-row-create-new.html %}
             </div>
-          </li>
-          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-            </div>
-          </li>
-        </ul>
-        {% include blocks/popup/ms-row-create-new.html %}
-      </div>
-      <!-- ranges -->
-
-      <ul class="itemBox__row itemBox__row--item">
-        <li class="itemBox__cell itemBox__cell--action JS_toggle">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action"> Next/Last</div>
           </div>
-        </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
-          </div>
-        </li>
-      </ul>
-
-      <div class="itemBox JS_itemBox--children">
-        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-          <li class="itemBox__cell ">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__value">
-
-                {% include blocks/popup/selector-include-exclude.html selected="include"%}
-                {% include components/selector.html selectorData=",,,next 2 weeks (12/03/18-25/03/18)" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
-
+          <!-- simple dates -->
+        </div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item">
+            <li class="itemBox__cell itemBox__cell--action JS_toggle">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action"> Ranges</div>
               </div>
-            </div>
-          </li>
-          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-            </div>
-          </li>
-        </ul>
+            </li>
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
+              </div>
+            </li>
+          </ul>
 
-        {% include blocks/popup/ms-row-create-new.html %}
+          <div class="itemBox JS_itemBox--children">
+            <div class="itemBox__row">
+              <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+                <li class="itemBox__cell">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__value">
+
+                      {% include blocks/popup/selector-include-exclude.html selected="include"%} {% include components/selector.html selectorData=",,,19/03/18-20/03/18" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
+
+                    </div>
+                  </div>
+                </li>
+                <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            {% include blocks/popup/ms-row-create-new.html %}
+          </div>
+          <!-- ranges -->
+        </div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item">
+            <li class="itemBox__cell itemBox__cell--action JS_toggle">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action"> Next/Last</div>
+              </div>
+            </li>
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
+              </div>
+            </li>
+          </ul>
+
+          <div class="itemBox JS_itemBox--children">
+            <div class="itemBox__row">
+              <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+                <li class="itemBox__cell ">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__value">
+
+                      {% include blocks/popup/selector-include-exclude.html selected="include"%} {% include components/selector.html selectorData=",,,next 2 weeks (12/03/18-25/03/18)" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
+
+                    </div>
+                  </div>
+                </li>
+                <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            {% include blocks/popup/ms-row-create-new.html %}
+          </div>
+          <!-- next last dates -->
+        </div>
       </div>
-      <!-- next last dates -->
+      <!-- /.itemBox -->
     </div>
-    <!-- /.itemBox -->
   </div>
   <!-- /.itemBox -->
 

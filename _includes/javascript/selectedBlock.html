@@ -1,4 +1,5 @@
-<ul class="itemBox__row itemBox__row--item JS_selectionTitle">
+<div class="itemBox__row">
+  <ul class="itemBox__rowInner itemBox__rowInner--item JS_selectionTitle">
     <li class="itemBox__cell itemBox__cell--action JS_toggle">
       <div class="itemBox__cellInner">
         <div class="itemBox__action JS_selectedText"> Selected</div>
@@ -10,9 +11,11 @@
         <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
       </div>
     </li>
-</ul>
-<div class="itemBox JS_itemBox--children JS_selectionChildren">
-  <div class="JS_sortable">
-    ${selectedFilters}
+  </ul>
+  <div class="itemBox JS_itemBox--children JS_selectionChildren">
+    <div class="JS_sortable">
+      ${selectedFilters}
+    </div>
   </div>
-</div><!-- /.itemBox selection-->
+  <!-- /.itemBox selection-->
+</div>

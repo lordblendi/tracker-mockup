@@ -1,39 +1,47 @@
 <div class="itemBox">
-  <ul class="itemBox__row">
-    <li class="itemBox__cell">
-      <div class="itemBox__cellInner">
-        <input type="search" class="itemBox__input itemBox__input--fluid JS_appNav__filterInput" placeholder="filter through structure items">
-      </div>
-    </li>
-  </ul>
-  {% include blocks/popup/ms-row-use-global-search.html%}
-</div><!-- /.itemBox -->
-
-<div class="itemBox JS_appNavBox">
-  {% for group in site.data.app-nav-tab1.groups %}
-    <ul class="itemBox__row itemBox__row--item">
-      <li class="itemBox__cell itemBox__cell--action JS_toggle">
+  <div class="itemBox__row">
+    <ul class="itemBox__rowInner">
+      <li class="itemBox__cell">
         <div class="itemBox__cellInner">
-          <div class="itemBox__action">{{group.icon}} {{group.name}}</div>
-        </div>
-      </li>
-      <li class="itemBox__cell itemBox__cell--action flex-grow-0">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action">→</div>
+          <input type="search" class="itemBox__input itemBox__input--fluid JS_appNav__filterInput" placeholder="filter through structure items">
         </div>
       </li>
     </ul>
-    <div class="itemBox JS_itemBox--children JS_children-closed">
-      {% for item in group.items %}
-        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-          <li class="itemBox__cell itemBox__cell--permalink">
-            <div class="itemBox__cellInner ">
-              {% assign selectorData = ",,," | append: item %}
-              {% include components/selector.html selectorData=selectorData expanded="true" singleselect="true" readonly="true" selectedIndexes="1" %}
-            </div>
-          </li>
-        </ul>
-      {% endfor %}
+  </div>
+  {% include blocks/popup/ms-row-use-global-search.html%}
+</div>
+<!-- /.itemBox -->
+
+<div class="itemBox JS_appNavBox">
+  {% for group in site.data.app-nav-tab1.groups %}
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
+        <li class="itemBox__cell itemBox__cell--action JS_toggle">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action">{{group.icon}} {{group.name}}</div>
+          </div>
+        </li>
+        <li class="itemBox__cell itemBox__cell--action flex-grow-0">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action">→</div>
+          </div>
+        </li>
+      </ul>
+      <div class="itemBox JS_itemBox--children JS_children-closed">
+        {% for item in group.items %}
+          <div class="itemBox__row">
+            <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+              <li class="itemBox__cell itemBox__cell--permalink">
+                <div class="itemBox__cellInner ">
+                  {% assign selectorData = ",,," | append: item %}
+                  {% include components/selector.html selectorData=selectorData expanded="true" singleselect="true" readonly="true" selectedIndexes="1" %}
+                </div>
+              </li>
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
     </div>
   {% endfor %}
-</div><!-- /.itemBox -->
+</div>
+<!-- /.itemBox -->

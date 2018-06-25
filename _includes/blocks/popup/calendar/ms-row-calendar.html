@@ -4,30 +4,31 @@
 
 <!-- we make an array of it -->
 {% assign splittedDays = {include.days} | split: "," %}
+<div class="itemBox__row">
+  <ul class="itemBox__rowInner itemBox__rowInner--item">
 
-<ul class="itemBox__row itemBox__row--item">
+  <!-- and loop through the array -->
+  {% for splittedDay in splittedDays %}
+    <!-- if the element contains a suffix '-' -->
+    <!-- then it is from another month -->
+    <!-- like -prev or -next -->
+    <!-- make the day simply the part before the '-' -->
+    <!-- and the second part into the class -->
+    <!-- otherwise class is empty, and day is untouched -->
+    {% assign day = {splittedDay} %}
+    {% assign dayClass = "" %}
 
-<!-- and loop through the array -->
-{% for splittedDay in splittedDays %}
-  <!-- if the element contains a suffix '-' -->
-  <!-- then it is from another month -->
-  <!-- like -prev or -next -->
-  <!-- make the day simply the part before the '-' -->
-  <!-- and the second part into the class -->
-  <!-- otherwise class is empty, and day is untouched -->
-  {% assign day = {splittedDay} %}
-  {% assign dayClass = "" %}
+    {% if splittedDay contains "-" %}
+      {% assign splittedDayArray = {splittedDay} | split: "-" %}
+      {% assign day = {splittedDayArray.first} %}
+      {% assign dayClass = {splittedDayArray.last} | prepend: "selector_date--" %}
+    {% endif %}
 
-  {% if splittedDay contains "-" %}
-    {% assign splittedDayArray = {splittedDay} | split: "-" %}
-    {% assign day = {splittedDayArray.first} %}
-    {% assign dayClass = {splittedDayArray.last} | prepend: "selector_date--" %}
-  {% endif %}
-
-  <li class="itemBox__cell">
-    <div class="itemBox__cellInner {{ dayClass }}">
-      {{day}}
-    </div>
-  </li>
-{% endfor %}
-</ul>
+    <li class="itemBox__cell">
+      <div class="itemBox__cellInner {{ dayClass }}">
+        {{day}}
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+</div>

@@ -1,25 +1,27 @@
 <div class="itemBox JS_itemBox--children JS_itemBox--sublist itemBox--sublist JS_itemBox--suggestions" style="display: none;">
   {% for item in site.data.tag-picker-color.suggestions %}
-    <ul class="itemBox__row">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner JS_toggle--color">
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner JS_toggle--color">
 
-          {% include javascript/colorToggle.html color=item.color %}
-          {% assign selectorData = ",,," | append: item %}
-          {% include components/selector.html selectorData=selectorData singleselect="true" selectedIndexes="1" %}
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action itemBox__action--hidden">އ</div>
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action JS_itemBoxTable__action--remove"></div>
-        </div>
-      </li>
-    </ul>
+            {% include javascript/colorToggle.html color=item.color %}
+            {% assign selectorData = ",,," | append: item %}
+            {% include components/selector.html selectorData=selectorData singleselect="true" selectedIndexes="1" %}
+          </div>
+        </li>
+        <li class="itemBox__cell flex-grow-0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action itemBox__action--hidden">އ</div>
+          </div>
+        </li>
+        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action JS_itemBoxTable__action--remove"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
     {% include blocks/popup/ms-sublist-tags-colors-color.html %}
   {% endfor %}
 </div>
