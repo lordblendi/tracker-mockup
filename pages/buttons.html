@@ -1,0 +1,216 @@
+---
+layout: selectors
+title: Buttons
+permalink: /buttons
+---
+
+<div class="relative h-32"></div>
+<div class="fixed pin-t pin-l w-full flex pt-4 z-highest bg-grey-lightest shadow-lg text-center">
+  <div class="px-4">
+
+    <div class="field field--not-empty">
+      <div class="field__label">Theme</div>
+      <div class="field__data">
+        <div class="field__value">
+          <div class="selector selector--singleselect selector--expanded JS_selector ">
+            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field JS_theme_light">Light</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator"></div>
+            <div class="selector__item JS_selectorItem">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--prefix JS_theme_dark">Dark</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="px-4">
+
+    <div class="field field--not-empty">
+      <div class="field__label">Loading</div>
+      <div class="field__data">
+        <div class="field__value">
+          <div class="selector selector--multiselect selector--expanded JS_selector">
+            <div class="selector__item JS_selectorItem--active JS_selectorItem">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field JS_load_pushes">Pushes</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator"></div>
+            <div class="selector__item JS_selectorItem--active JS_selectorItem">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field JS_load_buttons">Buttons</div>
+              </div>
+            </div>
+          </div>
+
+          <input class="field__input" type="text" value=", ">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  $('.JS_theme_light').on('click', function() {
+    $('body').css('background-color', 'white');
+  });
+  $('.JS_theme_dark').on('click', function() {
+    $('body').css('background-color', 'black');
+  });
+
+  $('.JS_load_pushes').on('click', function() {
+    $('.push').each(function() {
+      $(this).toggleClass('animate-loading');
+    });
+    // remove the loading animation from this selector
+    $(this).closest('.selector').removeClass('animate-loading');
+  });
+
+  $('.JS_load_buttons').on('click', function() {
+    $('.btn').each(function() {
+      $(this).toggleClass('animate-loading');
+    });
+  });
+</script>
+
+
+<div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
+  <div class="sm:w-1/2 p-8 overflow-hidden">
+
+    <h2 class="mb-8">Button configurations</h2>
+
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Button</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/button.html title="Keep me in for 2 weeks" %}
+        </div>
+      </div>
+    </div>
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Button - small capital (possible with any color)</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/button.html title="Keep me in for 2 weeks" smallCaps="true" %}
+        </div>
+      </div>
+    </div>
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Button - go</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/button.html title="Keep me in for 2 weeks" go="true"%}
+        </div>
+      </div>
+    </div>
+
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Button - naked</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/button.html title="Keep me in for 2 weeks" naked="true"%}
+        </div>
+      </div>
+    </div>
+
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Button - drop</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/button.html title="Keep me in for 2 weeks" drop="true"%}
+        </div>
+      </div>
+    </div>
+
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Buttons - aligned text in the middle</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/button.html title="Keep me in for 2 weeks" go="true"%}
+          {% include components/button-aligned-text.html title="or" %}
+          {% include components/button.html title="forget me tomorrow"%}
+        </div>
+      </div>
+    </div>
+
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Buttons - aligned text in the middle 2</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/button.html title="Keep me in for 2 weeks" go="true"%}
+          {% include components/button-aligned-text.html title="or" %}
+          {% include components/button.html title="forget me tomorrow" naked="true"%}
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="sm:w-1/2 p-8 overflow-hidden">
+    <h2 class="mb-8">Push configurations - looks like a button, but it's a link</h2>
+
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Push</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/push.html title="Present" href="present" %}
+        </div>
+      </div>
+    </div>
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Push - small capital (possible with any color)</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/push.html title="Present" href="present" smallCaps="true" %}
+        </div>
+      </div>
+    </div>
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Push - go</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/push.html title="Present" href="present" go="true"%}
+        </div>
+      </div>
+    </div>
+
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Push - naked</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/push.html title="Present" href="present" naked="true"%}
+        </div>
+      </div>
+    </div>
+
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Push - drop</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/push.html title="Present" href="present" drop="true"%}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
