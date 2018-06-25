@@ -4,7 +4,8 @@ title: Selectors
 permalink: /selectors
 ---
 
-<div class="relative h-32"></div>
+<div class="relative h-32">
+</div>
 <div class="fixed pin-t pin-l w-full flex pt-4 z-highest bg-grey-lightest shadow-lg text-center">
   <div class="px-4">
 
@@ -81,10 +82,10 @@ permalink: /selectors
   });
 </script>
 
-<div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
-  <div class="p-8 overflow-hidden">
+<div class="flex flex-col sm:flex-row m-8 pb-4 border-b-2 border-dashed border-grey-dark overflow-hidden">
+  <div class="sm:w-1/2 p-2 overflow-hidden">
 
-    <h2 class="mb-8">Selector configuration examples without popup</h2>
+    <h2 class="mb-8">Single select configuration examples without popup</h2>
 
     <!-- SingleSelects -->
     <!-- Field -->
@@ -144,8 +145,9 @@ permalink: /selectors
         </div>
       </div>
     </div>
-
-
+  </div>
+  <div class="sm:w-1/2 p-2 overflow-hidden">
+    <h2 class="mb-8">Multi select configuration examples without popup</h2>
     <!-- Multiselects -->
     <!-- Field -->
     <div class="field">
@@ -202,10 +204,23 @@ permalink: /selectors
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-
-
+<div class="flex flex-col sm:flex-row m-8 py-4 border-b-2 border-dashed border-grey-dark overflow-hidden">
+  <div class="sm:w-1/3 p-2 overflow-hidden">
     <h2 class="my-8">Examples without popup</h2>
+    <!-- Field -->
+    <div class="field">
+      <div class="field__label">Panel selector</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/selector.html selectorData=",,,;,<sup>11</sup>,,;,,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
+          <input class="field__input" type="text" value="">
+        </div>
+      </div>
+    </div>
+
     <!-- Field -->
     <div class="field">
       <div class="field__label">Danger level</div>
@@ -235,12 +250,11 @@ permalink: /selectors
       <div class="field__label">Status</div>
       <div class="field__data">
         <div class="field__value">
-            {% include components/selector.html selectorData="#F4CA16,,,Not started;#00BFFF,,,Ongoing;#0BDA51,,,Done" expanded="true" singleselect="true" selectedIndexes="1" %}
+          {% include components/selector.html selectorData="#F4CA16,,,Not started;#00BFFF,,,Ongoing;#0BDA51,,,Done" expanded="true" singleselect="true" selectedIndexes="1" %}
           <input class="field__input" type="text" value="Ongoing">
         </div>
       </div>
     </div>
-
 
     <!-- Field -->
     <div class="field">
@@ -254,32 +268,145 @@ permalink: /selectors
       </div>
     </div>
 
-
-      <!-- Field -->
-      <div class="field">
-        <div class="field__label">Product contact</div>
-        <div class="field__data">
-          <div class="field__value">
-            {% include components/selector.html selectorData="#F4CA16,,,Heet;var(--color-red),,,Brandbaar;var(--color-red),,,Huidopname" expanded="true" multiselect="true" selectedIndexes="1" %}
-
-            <input class="field__input" type="text" value="">
-
-          </div>
-        </div>
-      </div>
-
-
     <!-- Field -->
     <div class="field">
-      <div class="field__label">Checkbox (filter in header)</div>
+      <div class="field__label">Product contact</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData=",,,;,,," expanded="true" multiselect="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value=", ">
+          {% include components/selector.html selectorData="#F4CA16,,,Heet;var(--color-red),,,Brandbaar;var(--color-red),,,Huidopname" expanded="true" multiselect="true" selectedIndexes="1" %}
+
+          <input class="field__input" type="text" value="">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sm:w-1/3 p-2 overflow-hidden">
+    <h2 class="my-8">Examples with popup</h2>
+    <!-- Field -->
+    <div class="field">
+      <div class="field__label">Privacy Policy - tooltip example (note in popup), click icon
+        <div class="inline-action primary animate-fly-in-left JS_has-popup" data-popid="#ms-privacy"></div>
+      </div>
+      <div class="field__data">
+
+        <div class="field__value">
+          {% include components/selector.html selectorData=",,,Disagree;,,,Agree" expanded="true" singleselect="true" selectedIndexes="1" %}
+
+          <span>with our <a href="#" class="link link--primary">Privacy Policiy</a>.</span>
+
+          <input class="field__input" type="text" value="disagree">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="multiSelector" id="ms-privacy">
+      <div class="itemBox">
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--custom">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+
+                <div class="note note--tooltip">
+                  <p>By selecting 'Agree' you have read and accepted TenForce's <a href="#" class="link link--primary">Privacy Policy</a>, concerning your personal data and how it is used.</p>
+                </div>
+
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
 
+    <!-- Field -->
+    <div class="field JS_field--error">
+      <div class="field__label">Status - with description and error animation </div>
+      <div class="field__data">
+
+        <div class="field__error JS_has-popup" data-popid="#ms-error"></div>
+        <div class="field__value">
+          <div class="selector selector--singleselect JS_has-popup" data-popid="#ms-status">
+            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: var(--color-red);"></div>
+                <div class="selector__blockPart selector__blockPart--field JS_singleSelect--label">Not started</div>
+              </div>
+            </div>
+          </div>
+
+          <span>selector with aligned text.</span>
+
+          <input class="field__input" type="text" value="_Not Assigned">
+        </div>
+
+      </div>
+      <div class="note">
+        <p>This is a simple description (no <a href="#" class="link link--primary">with a link example</a>)</p>
+        <p>Error animation example: try to change status, then click on error icon or selector field again.</p>
+      </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="multiSelector" id="ms-error">
+      <div class="itemBox">
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--custom">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                <div class="note note--error">
+                  <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="multiSelector animate-popup" id="ms-status">
+      <div class="itemBox">
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--custom JS_itemBoxRow--error" style="display: none;">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                <div class="note note--error">
+                  <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="itemBox JS_optionsChildren">
+        {% for item in site.data.multiselector-status.items %}
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell JS_error-popupRow">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__value">
+                  <div class="selector selector--expanded">
+                    <div class="selector__item JS_selectorItem--active selector__item--selected">
+                      <div class="selector__block">
+                        <div class="selector__blockPart selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
+                        <div class="selector__blockPart selector__blockPart--field JS_text">{{item.name}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            {% if item.selected == "true" %} {% include javascript/itemSelected.html %} {% endif %}
+          </ul>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="sm:w-1/3 p-2 overflow-hidden">
+    <h2 class="mt-8">Checkboxes</h2>
     <!-- Field -->
     <div class="field">
       <div class="field__label">Checkbox</div>
@@ -294,11 +421,60 @@ permalink: /selectors
 
     <!-- Field -->
     <div class="field">
-      <div class="field__label">Panel selector</div>
+      <div class="field__label">Checkbox - colored </div>
+      <div class="field__data">
+
+        <div class="field__value">
+          {% include components/selector.html selectorData="#0BDA51,,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
+          <input class="field__input" type="text" value="checked">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Field -->
+    <div class="field">
+      <div class="field__label">Checkbox (filter in header)</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData=",,,;,<sup>11</sup>,,;,,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value="">
+          {% include components/selector.html selectorData=",,,;,,," expanded="true" multiselect="true" selectedIndexes="1" %}
+          <input class="field__input" type="text" value=", ">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="flex flex-col sm:flex-row m-8 py-4 border-b-2 border-dashed border-grey-dark overflow-hidden">
+  <div class="sm:w-1/2 p-8 overflow-hidden">
+
+    <h2 class="mb-8">Read-only with ellipsis</h2>
+
+    <!-- Field -->
+    <div class="field">
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/selector.html selectorData="#0BDA51,,Label,Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" expanded="true" singleselect="true" selectedIndexes="1" readonly="true"%}
+
+          <input class="field__input" type="text" value="Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" tabindex="-1">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="sm:w-1/2 p-8 overflow-hidden">
+
+    <h2 class="mb-8">Tag Picker</h2>
+
+    <!-- Field -->
+    <div class="field">
+      <div class="field__label">Tags</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/selector.html selectorData="#0BDA51,,,282;#F4CA16,,,2013_Maintenance;#E30022,,,workaround_available" multiselect="true" selectedIndexes="1,2,3" popupId="#multiSelector-tagpicker" %}
+
+          <input class="field__input" type="text" value="282, 2013_Maintenance, workaround_available">
         </div>
       </div>
     </div>
@@ -306,7 +482,7 @@ permalink: /selectors
   </div>
 </div>
 
-<div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
+<div class="flex flex-col sm:flex-row m-8 py-4 border-b-2 border-dashed border-grey-dark overflow-hidden">
   <div class="sm:w-1/2 p-8 overflow-hidden">
 
     <h2 class="mb-8">Filters</h2>
@@ -316,7 +492,7 @@ permalink: /selectors
       <div class="field__label">Description</div>
       <div class="field__data">
         <div class="field__value">
-          <div class="selector selector--expanded" >
+          <div class="selector selector--expanded">
             <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
             <div class="selector__item JS_selectorItem--active selector__item--selected">
               <div class="selector__block">
@@ -393,39 +569,39 @@ permalink: /selectors
       <div class="field__data">
         <div class="field__value">
 
-            <div class="selector selector--expanded JS_has-popup" data-popid="#filter-datepicker">
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
-              <div class="selector__item JS_selectorItem--active selector__item--selected">
-                <div class="selector__block">
-                  <div class="selector__blockPart selector__blockPart--field">next 2 weeks (12/03/18-25/03/18)</div>
-                </div>
-              </div>
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
-              <div class="selector__item JS_selectorItem--active selector__item--selected">
-                <div class="selector__block">
-                  <div class="selector__blockPart selector__blockPart--field">19/03/18-20/03/18</div>
-                </div>
+          <div class="selector selector--expanded JS_has-popup" data-popid="#filter-datepicker">
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
+            <div class="selector__item JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field">next 2 weeks (12/03/18-25/03/18)</div>
               </div>
             </div>
-            <div class="selector selector--expanded">
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
-            </div>
-            <div class="selector selector--expanded">
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
-              <div class="selector__item JS_selectorItem--active selector__item--selected">
-                <div class="selector__block">
-                  <div class="selector__blockPart selector__blockPart--field">today</div>
-                </div>
-              </div>
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
-              <div class="selector__item JS_selectorItem--active selector__item--selected">
-                <div class="selector__block">
-                  <div class="selector__blockPart selector__blockPart--field">18/03/18</div>
-                </div>
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
+            <div class="selector__item JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field">19/03/18-20/03/18</div>
               </div>
             </div>
+          </div>
+          <div class="selector selector--expanded">
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+          </div>
+          <div class="selector selector--expanded">
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
+            <div class="selector__item JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field">today</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+            <div class="selector__item JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field">18/03/18</div>
+              </div>
+            </div>
+          </div>
 
-            <input class="field__input" type="text" value="include next 2 weeks (12/03/18-25/03/18) and 19/03/18-20/03/18, exclude today or 18/03/18">
+          <input class="field__input" type="text" value="include next 2 weeks (12/03/18-25/03/18) and 19/03/18-20/03/18, exclude today or 18/03/18">
         </div>
       </div>
     </div>
@@ -433,60 +609,8 @@ permalink: /selectors
   </div>
 </div>
 
-<div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
-  <div class="sm:w-1/2 p-8 overflow-hidden">
-
-    <h2 class="mb-8">Read-only with ellipsis</h2>
-
-    <!-- Field -->
-    <div class="field">
-      <div class="field__data">
-        <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,Label,Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" expanded="true" singleselect="true" selectedIndexes="1" readonly="true"%}
-
-          <input class="field__input" type="text" value="Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" tabindex="-1">
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="sm:w-1/2 p-8 overflow-hidden">
-
-    <h2 class="mb-8">Tag Picker</h2>
-
-    <!-- Field -->
-    <div class="field">
-      <div class="field__label">Tags</div>
-      <div class="field__data">
-        <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,282;#F4CA16,,,2013_Maintenance;#E30022,,,workaround_available" multiselect="true" selectedIndexes="1,2,3" popupId="#multiSelector-tagpicker" %}
-
-          <input class="field__input" type="text" value="282, 2013_Maintenance, workaround_available">
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-
-<div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
+<div class="flex flex-col sm:flex-row m-8 py-4 border-b-2 border-dashed border-grey-dark overflow-hidden">
   <div class="sm:w-1/2 px-4">
-
-    <!-- Field -->
-    <div class="field">
-      <div class="field__label">Checkbox</div>
-      <div class="field__data">
-
-        <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value="checked">
-        </div>
-
-      </div>
-    </div>
-
     <!-- Field -->
     <div class="field">
       <div class="field__label">Title</div>
@@ -494,6 +618,31 @@ permalink: /selectors
         <div class="field__value">
           <input class="field__input" type="text" value="">
         </div>
+      </div>
+    </div>
+
+    <!-- Field -->
+    <div class="field">
+      <div class="field__label">Due date</div>
+      <div class="field__data">
+        <div class="field__value">
+          <input class="field__input" value="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sm:w-1/2 px-4">
+    <!-- Field -->
+    <div class="field">
+      <div class="field__label">Email</div>
+      <div class="field__data">
+        <div class="field__value">
+          <input class="field__input" type="email" value="nick.de.jaeger@tenforce.com">
+        </div>
+      </div>
+      <div class="note">
+        <p>Fill in a valid email address.</p>
       </div>
     </div>
 
@@ -524,175 +673,14 @@ permalink: /selectors
         </div>
       </div>
     </div>
-
-
-    <!-- Field -->
-    <div class="field">
-      <div class="field__label">Due date</div>
-      <div class="field__data">
-        <div class="field__value">
-          <input class="field__input" value="">
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="sm:w-1/2 px-4">
-
-    <!-- Field -->
-    <div class="field">
-      <div class="field__label">Privacy Policy <div class="inline-action primary animate-fly-in-left JS_has-popup" data-popid="#ms-privacy"></div></div>
-      <div class="field__data">
-
-        <div class="field__value">
-        {% include components/selector.html selectorData=",,,Disagree;,,,Agree" expanded="true" singleselect="true" selectedIndexes="1" %}
-
-          <span>with our <a href="#" class="link link--primary">Privacy Policiy</a>.</span>
-
-          <input class="field__input" type="text" value="disagree">
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Field -->
-    <div class="field">
-      <div class="field__label">Email</div>
-      <div class="field__data">
-        <div class="field__value">
-          <input class="field__input" type="email" value="nick.de.jaeger@tenforce.com">
-        </div>
-      </div>
-      <div class="note">
-        <p>Fill in a valid email address.</p>
-      </div>
-    </div>
-
-    <!-- Field -->
-    <div class="field JS_field--error">
-      <div class="field__label">Status</div>
-      <div class="field__data">
-
-        <div class="field__error JS_has-popup" data-popid="#ms-error"></div>
-        <div class="field__value">
-          <div class="selector selector--singleselect JS_has-popup" data-popid="#ms-status">
-            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: var(--color-red);"></div>
-                <div class="selector__blockPart selector__blockPart--field JS_singleSelect--label">Not started</div>
-              </div>
-            </div>
-          </div>
-
-          <span>check correct alignment</a>.</span>
-
-          <input class="field__input" type="text" value="_Not Assigned">
-        </div>
-
-      </div>
-      <div class="note">
-        <p>Actual invoice amount</p>
-        <p>For fixed price projects and service requests (no <a href="#" class="link link--primary">timesheets</a>): when you change the status to 'to be invoiced', please insert the exact amount that needs to be invoiced.</p>
-      </div>
-    </div>
-
-    <!-- Popup -->
-    <div class="multiSelector" id="ms-error">
-      <div class="itemBox">
-        <div class="itemBox__row">
-          <ul class="itemBox__rowInner itemBox__rowInner--custom">
-            <li class="itemBox__cell">
-              <div class="itemBox__cellInner">
-                <div class="note note--error">
-                  <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Popup -->
-    <div class="multiSelector animate-popup" id="ms-status">
-      <div class="itemBox JS_itemBox">
-        <div class="itemBox__row">
-          <ul class="itemBox__rowInner">
-            <li class="itemBox__cell">
-              <div class="itemBox__cellInner">
-                <input type="search" class="JS_multiSelector__filterInput" placeholder="filter through statuses">
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="itemBox">
-        <div class="itemBox__row">
-          <ul class="itemBox__rowInner itemBox__rowInner--custom JS_itemBoxRow--error" style="display: none;">
-            <li class="itemBox__cell">
-              <div class="itemBox__cellInner">
-                <div class="note note--error">
-                  <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="itemBox JS_optionsChildren">
-        {% for item in site.data.multiselector-status.items %}
-          <div class="itemBox__row">
-            <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell JS_error-popupRow">
-              <li class="itemBox__cell">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__value">
-                    <div class="selector selector--expanded">
-                      <div class="selector__item JS_selectorItem--active selector__item--selected">
-                        <div class="selector__block">
-                          <div class="selector__blockPart selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
-                          <div class="selector__blockPart selector__blockPart--field JS_text">{{item.name}}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              {% if item.selected == "true" %}
-                {% include javascript/itemSelected.html %}
-              {% endif %}
-            </ul>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-
-     <!-- Popup -->
-    <div class="multiSelector" id="ms-privacy">
-      <div class="itemBox">
-        <div class="itemBox__row">
-          <ul class="itemBox__rowInner itemBox__rowInner--custom">
-            <li class="itemBox__cell">
-              <div class="itemBox__cellInner">
-
-                <div class="note note--tooltip">
-                  <p>By selecting 'Agree' you have read and accepted TenForce's <a href="#" class="link link--primary">Privacy Policy</a>, concerning your personal data and how it is used.</p>
-                </div>
-
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
 <script>
-  $("#ms-status .JS_error-popupRow").on('click', function(){
+  $("#ms-status .JS_error-popupRow").on('click', function() {
     closeOverlay();
     $("#ms-status .JS_itemBoxRow--error").css('display', 'flex');
-    $('.JS_field--error').each(function(){
+    $('.JS_field--error').each(function() {
       const errorField = $(this);
       errorField.addClass('field--error');
       errorField.find('.JS_has-popup').addClass('JS_has-popup--error');
