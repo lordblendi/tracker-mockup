@@ -134,7 +134,7 @@ function addSelectedBlock(multiSelector, selectedBlockClass){
     multiSelector.find('.JS_optionsTitle').before(selectedBlock);
     const selectionTitle = multiSelector.find('.JS_selectionTitle');
     // enable toggle again
-    $(selectionTitle.find('.itemBox__cell--toggle')).on('click', function() {
+    $(selectionTitle.find('.JS_toggle')).on('click', function() {
       const itemBox__row = $(this).closest('.itemBox__rowInner');
       expandCloseRow(itemBox__row);
     });

@@ -133,8 +133,8 @@ function reInitActions(multiSelector) {
   });
 
   // expand-collapse
-  $(multiSelector).find('.itemBox__cell--toggle').unbind('click');
-  $(multiSelector).find('.itemBox__cell--toggle').on('click', function() {
+  $(multiSelector).find('.JS_toggle').unbind('click');
+  $(multiSelector).find('.JS_toggle').on('click', function() {
     const itemBox__row = $(this).closest('.itemBox__rowInner');
     expandCloseRow(itemBox__row);
   });
