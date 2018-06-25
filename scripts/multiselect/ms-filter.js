@@ -135,7 +135,7 @@ function reInitActions(multiSelector) {
   // expand-collapse
   $(multiSelector).find('.itemBox__cell--toggle').unbind('click');
   $(multiSelector).find('.itemBox__cell--toggle').on('click', function() {
-    const itemBox__row = $(this).closest('.itemBox__row');
+    const itemBox__row = $(this).closest('.itemBox__rowInner');
     expandCloseRow(itemBox__row);
   });
 
@@ -146,7 +146,7 @@ function reInitActions(multiSelector) {
   });
 
   // simple multiSelector-1
-  $('#multiSelector-1 .itemBox__row').on('click', function() {
+  $('#multiSelector-1 .itemBox__rowInner').on('click', function() {
     const row = $(this);
     selectNewSingleItem(row);
   })

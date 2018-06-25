@@ -1,6 +1,6 @@
 function closeAllOtherSublists(toggle) {
 
-  const itemBox__row = toggle.closest('.itemBox__row');
+  const itemBox__row = toggle.closest('.itemBox__rowInner');
 
   if(!toggle.hasClass('JS_toggle--InclExcl')) {
     closeInclExclOptions(itemBox__row);

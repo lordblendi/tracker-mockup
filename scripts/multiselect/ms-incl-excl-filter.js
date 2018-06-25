@@ -2,7 +2,7 @@
 ---
 
 // SELECT INCL/EXCL
-$('.JS_itemBox--filterInclExcl .itemBox__row').on('click', function() {
+$('.JS_itemBox--filterInclExcl .itemBox__rowInner').on('click', function() {
   const incleExclBodyRow = $(this);
   selectNewFilterOption(incleExclBodyRow);
 });
@@ -134,7 +134,7 @@ $('.JS_toggle--InclExcl').on('click', function() {
 // toggle active class depending on expanding/collapsing
 function toggleInclExclSelector(toggle) {
   // if there is a  box, expand/collapse it
-  const itemBox__row = toggle.closest('.itemBox__row');
+  const itemBox__row = toggle.closest('.itemBox__rowInner');
   const possibleChildren = itemBox__row.nextAll('.JS_itemBox--filterInclExcl:first');
 
   // only toggle, if they actually exists;
@@ -149,7 +149,7 @@ function toggleInclExclSelector(toggle) {
   // // only if opening
 
   const selectedFilter = possibleChildren.find(`.JS_itemBox__cellInner--inclExcl[data-filter='${actualFilter}']`);
-  const selectedFilterBodyRow = $(selectedFilter).closest('.itemBox__row');
+  const selectedFilterBodyRow = $(selectedFilter).closest('.itemBox__rowInner');
   selectedFilterBodyRow.append(`{% include javascript/itemSelected.html %}`);
 
 

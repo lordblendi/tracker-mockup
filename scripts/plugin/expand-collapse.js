@@ -11,7 +11,7 @@ initExpandCollapseActions();
 function initExpandCollapseActions(){
   // expand/collapse action listener on toggle
   $('.JS_toggle, .JS_expand').on('click', function() {
-    const itemBox__row = $(this).closest('.itemBox__row');
+    const itemBox__row = $(this).closest('.itemBox__rowInner');
     expandCloseRow(itemBox__row);
   });
 

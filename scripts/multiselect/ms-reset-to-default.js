@@ -31,7 +31,7 @@ function resetToDefault(resetToDefaultRow) {
       selection = multiSelector.find(selectedBlockClass);
       selectedTitleToggle = $(multiSelector).find('.JS_selectionTitle .JS_toggle');
       selectedTitleToggle.on('click', function() {
-        const itemBox__row = $(this).closest('.itemBox__row');
+        const itemBox__row = $(this).closest('.itemBox__rowInner');
         expandCloseRow(itemBox__row);
       });
     }

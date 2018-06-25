@@ -11,7 +11,7 @@ $('.JS_toggle--columnpickerOptions').on('click', function() {
 // open options
 function toggleColumnpickerOptions(toggle) {
   // if there is a color box, expand/collapse it
-  const itemBox__row = toggle.closest('.itemBox__row');
+  const itemBox__row = toggle.closest('.itemBox__rowInner');
   const possibleChildren = itemBox__row.nextAll('.JS_itemBox--columnpickerOptions:first');
 
   // only toggle, if they actually exists;

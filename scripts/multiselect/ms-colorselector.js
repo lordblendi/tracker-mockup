@@ -2,7 +2,7 @@
 ---
 
 // COLOR OPTIONS SELECTION
-$('.JS_itemBox--colors .itemBox__row').on('click', function() {
+$('.JS_itemBox--colors .itemBox__rowInner').on('click', function() {
   const colorItemBodyRow = $(this);
   selectNewColor(colorItemBodyRow);
 });
@@ -33,7 +33,7 @@ function selectNewColor(colorItemBodyRow) {
 
   // change color for all other tags, that have the same textOfActionItem
   $.each(filteredTags, function(index, tag){
-    const tagBodyRow = $(tag).closest('.itemBox__row');
+    const tagBodyRow = $(tag).closest('.itemBox__rowInner');
     const colorItem = tagBodyRow.find('.JS_toggle--color .JS_Color');
     if($(colorItem).hasClass('JS_Color--prefix')) {
       colorItem.css('background-color', color).attr('data-color', color);
@@ -46,7 +46,7 @@ function selectNewColor(colorItemBodyRow) {
     const possibleChildren = tagBodyRow.next('.JS_itemBox--colors');
     $(possibleChildren).find('.JS_showSelected').remove();
     const selectedColor = possibleChildren.find(`.JS_itemBox__cellInner--color .JS_Color[data-color='${color}']`);
-    const selectedColorBodyRow = $(selectedColor).closest('.itemBox__row');
+    const selectedColorBodyRow = $(selectedColor).closest('.itemBox__rowInner');
     selectedColorBodyRow.append(`{% include javascript/itemSelected.html %}`);
 
 
@@ -74,7 +74,7 @@ $('.JS_toggle--color').on('click', function() {
 // toggle active class depending on expanding/collapsing
 function toggleColorSelector(colorToggle) {
   // if there is a color box, expand/collapse it
-  const itemBox__row = colorToggle.closest('.itemBox__row');
+  const itemBox__row = colorToggle.closest('.itemBox__rowInner');
   const possibleChildren = itemBox__row.nextAll('.JS_itemBox--colors:first');
 
   // only do the action, if the colorChildren exists
@@ -87,7 +87,7 @@ function toggleColorSelector(colorToggle) {
     // add selection to new color (can be changed by other tags)
     // only if opening
     const selectedColor = possibleChildren.find(`.JS_itemBox__cellInner--color .JS_Color[data-color='${actualColor}']`);
-    const selectedColorBodyRow = $(selectedColor).closest('.itemBox__row');
+    const selectedColorBodyRow = $(selectedColor).closest('.itemBox__rowInner');
     selectedColorBodyRow.append(`{% include javascript/itemSelected.html %}`);
 
     const bodyCell = colorToggle.closest('.itemBox__cell');
@@ -108,7 +108,7 @@ function toggleColorSelector(colorToggle) {
 
 // INITIAL - collapse all color options
 const colorOptions = $(".JS_selectionChildren, .JS_optionsChildren, .JS_itemBox--suggestions").find('.JS_itemBox--children.JS_itemBox--colors');
-const colorBodyRow = $(colorOptions).find('.itemBox__row');
+const colorBodyRow = $(colorOptions).find('.itemBox__rowInner');
 
 $.Velocity.animate(colorOptions, 'slideUp').then(function() {
   $(colorOptions).addClass('JS_children-closed');
@@ -129,7 +129,7 @@ function resetColorToggle(item) {
   $(item).addClass('JS_children-closed');
 
   // color setting action
-  $(possibleColorChildren).find('.itemBox__row').on('click', function() {
+  $(possibleColorChildren).find('.itemBox__rowInner').on('click', function() {
     const colorItemBodyRow = $(this);
     selectNewColor(colorItemBodyRow);
   });

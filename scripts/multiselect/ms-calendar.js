@@ -10,7 +10,7 @@ $('.JS_toggle--calendar').on('click', function() {
 // toggle active class depending on expanding/collapsing
 function toggleCalendarSelector(toggle) {
   // if there is a color box, expand/collapse it
-  const itemBox__row = toggle.closest('.itemBox__row');
+  const itemBox__row = toggle.closest('.itemBox__rowInner');
   const possibleChildren = itemBox__row.nextAll('.JS_itemBox--calendar:first');
 
   // only toggle, if they actually exists;

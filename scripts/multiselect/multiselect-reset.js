@@ -77,7 +77,7 @@ function reset(){
 
     // expand-collapse reset
     $(multiSelector).find('.JS_toggle').off('click').on('click', function() {
-      const itemBox__row = $(this).closest('.itemBox__row');
+      const itemBox__row = $(this).closest('.itemBox__rowInner');
       expandCloseRow(itemBox__row);
     });
 
@@ -112,7 +112,7 @@ function checkAllSelectedItems(multiSelector) {
   // for each item we check if it's selected or not.
   $.each(optionItems, function(index, optionItem){
     const textOfActionItem = $(optionItem).html().trim();
-    const row = $(optionItem).closest('.itemBox__row');
+    const row = $(optionItem).closest('.itemBox__rowInner');
     const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
 
     if(positionOfItemInSelected >= 0) {
