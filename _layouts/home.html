@@ -27,19 +27,19 @@
 <body style="background-color: #FFF;">
 
   <section class="my-8 px-1/5 text-center">
-    <a href="present" target="_blank" class="push push--go mx-1">Current</a>
-    <a href="future" target="_blank" class="push push--go mx-1">Future</a>
+    {% include components/push.html href="present" title="Present" go="true" %}
+    {% include components/push.html href="future" title="Future" go="true" %}
   </section>
 
   <section class="my-8 px-1/5 text-center">
-    <a href="selectors" target="_blank" class="push push--go mx-1">Selectors</a>
-    <a href="comments" target="_blank" class="push push--drop push--small-caps mx-1"><span class="font-normal"></span> Comments</a>
-    <a href="itembox" target="_blank" class="push push--go mx-1">Table</a>
+    {% include components/push.html href="selectors" title="Selectors" go="true" %}
+    {% include components/push.html href="comments" title="<span class='font-normal'></span>Comments" drop="true" smallCaps='true' %}
+    {% include components/push.html href="itembox" title="Itembox" go="true" %}
   </section>
 
   <section class="my-8 px-1/5 text-center">
-    <a href="font" target="_blank" class="push mx-1">Font config</a>
-    <a href="tutorial" target="_blank" class="push mx-1">Tutorial</a>
+    {% include components/push.html href="font" title="Font config" %}
+    {% include components/push.html href="tutorial" title="Tutorial" %}
   </section>
 
 </body>
