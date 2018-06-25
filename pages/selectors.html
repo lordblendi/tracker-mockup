@@ -511,15 +511,17 @@ permalink: /selectors
     <!-- Popup (error)-->
     <div class="multiSelector" id="ms-error-user">
       <div class="itemBox">
-        <ul class="itemBox__row itemBox__row--custom">
-          <li class="itemBox__cell">
-            <div class="itemBox__cellInner">
-              <div class="note note--error">
-                <p>Item must have a user assigned.</p>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--custom">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                <div class="note note--error">
+                  <p>Item must have a user assigned.</p>
+                </div>
               </div>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -598,61 +600,69 @@ permalink: /selectors
     <!-- Popup -->
     <div class="multiSelector" id="ms-error">
       <div class="itemBox">
-        <ul class="itemBox__row itemBox__row--custom">
-          <li class="itemBox__cell">
-            <div class="itemBox__cellInner">
-              <div class="note note--error">
-                <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--custom">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                <div class="note note--error">
+                  <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
+                </div>
               </div>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <!-- Popup -->
     <div class="multiSelector animate-popup" id="ms-status">
       <div class="itemBox JS_itemBox">
-        <ul class="itemBox__row">
-          <li class="itemBox__cell">
-            <div class="itemBox__cellInner">
-              <input type="search" class="JS_multiSelector__filterInput" placeholder="filter through statuses">
-            </div>
-          </li>
-        </ul>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                <input type="search" class="JS_multiSelector__filterInput" placeholder="filter through statuses">
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="itemBox">
-        <ul class="itemBox__row itemBox__row--custom JS_itemBoxRow--error" style="display: none;">
-          <li class="itemBox__cell">
-            <div class="itemBox__cellInner">
-              <div class="note note--error">
-                <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--custom JS_itemBoxRow--error" style="display: none;">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                <div class="note note--error">
+                  <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
+                </div>
               </div>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="itemBox JS_optionsChildren">
         {% for item in site.data.multiselector-status.items %}
-          <ul class="itemBox__row itemBox__row--item JS_filterableCell JS_error-popupRow">
-            <li class="itemBox__cell">
-              <div class="itemBox__cellInner">
-                <div class="itemBox__value">
-                  <div class="selector selector--expanded">
-                    <div class="selector__item JS_selectorItem--active selector__item--selected">
-                      <div class="selector__block">
-                        <div class="selector__blockPart selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
-                        <div class="selector__blockPart selector__blockPart--field JS_text">{{item.name}}</div>
+          <div class="itemBox__row">
+            <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell JS_error-popupRow">
+              <li class="itemBox__cell">
+                <div class="itemBox__cellInner">
+                  <div class="itemBox__value">
+                    <div class="selector selector--expanded">
+                      <div class="selector__item JS_selectorItem--active selector__item--selected">
+                        <div class="selector__block">
+                          <div class="selector__blockPart selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
+                          <div class="selector__blockPart selector__blockPart--field JS_text">{{item.name}}</div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            {% if item.selected == "true" %}
-              {% include javascript/itemSelected.html %}
-            {% endif %}
-          </ul>
+              </li>
+              {% if item.selected == "true" %}
+                {% include javascript/itemSelected.html %}
+              {% endif %}
+            </ul>
+          </div>
         {% endfor %}
       </div>
     </div>
@@ -660,17 +670,19 @@ permalink: /selectors
      <!-- Popup -->
     <div class="multiSelector" id="ms-privacy">
       <div class="itemBox">
-        <ul class="itemBox__row itemBox__row--custom">
-          <li class="itemBox__cell">
-            <div class="itemBox__cellInner">
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--custom">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
 
-              <div class="note note--tooltip">
-                <p>By selecting 'Agree' you have read and accepted TenForce's <a href="#" class="link link--primary">Privacy Policy</a>, concerning your personal data and how it is used.</p>
+                <div class="note note--tooltip">
+                  <p>By selecting 'Agree' you have read and accepted TenForce's <a href="#" class="link link--primary">Privacy Policy</a>, concerning your personal data and how it is used.</p>
+                </div>
+
               </div>
-
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

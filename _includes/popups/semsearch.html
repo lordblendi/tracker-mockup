@@ -1,65 +1,75 @@
 <div class="multiSelector pin-r w-half-screen JS_semsearch">
 
   <div class="itemBox">
-    <ul class="itemBox__row">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
 
-          <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="search through items">
+            <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="search through items">
 
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action"></div>
-        </div>
-      </li>
-    </ul>
-  </div><!-- /.itemBox -->
+          </div>
+        </li>
+        <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- /.itemBox -->
 
   <div class="itemBox">
-    <ul class="itemBox__row itemBox__row--item">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__value">
-            {% include components/selector.html selectorData=",,Any,Typed keyword" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__value">
+              {% include components/selector.html selectorData=",,Any,Typed keyword" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
 
+            </div>
           </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__value">
+              {% include components/selector.html selectorData=",,title,Enhance login formula for listly" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
 
-    <ul class="itemBox__row itemBox__row--item">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__value">
-            {% include components/selector.html selectorData=",,title,Enhance login formula for listly" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
-
+            </div>
           </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__value">
+              {% include components/selector.html selectorData=",,Assigned to,Nick De Jaeger keyword" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
 
-    <ul class="itemBox__row itemBox__row--item">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__value">
-            {% include components/selector.html selectorData=",,Assigned to,Nick De Jaeger keyword" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
-
+            </div>
           </div>
-        </div>
-      </li>
-    </ul>
-
-    <ul class="itemBox__row itemBox__row--item">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__value">
-            {% include components/selector.html selectorData=",,Priority,Critical" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
+        </li>
+      </ul>
+    </div>
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__value">
+              {% include components/selector.html selectorData=",,Priority,Critical" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
+            </div>
           </div>
-        </div>
-      </li>
-    </ul>
-  </div><!-- /.itemBox -->
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- /.itemBox -->
 
-</div><!-- /.multiSelector -->
+</div>
+<!-- /.multiSelector -->

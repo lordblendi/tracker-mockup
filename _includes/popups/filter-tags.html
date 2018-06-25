@@ -1,41 +1,25 @@
 <div class="multiSelector JS_multiSelector--withFilter" id="filter-tagpicker">
 
   <div class="itemBox">
-    <ul class="itemBox__row">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
 
-          <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="search through tags">
+            <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="search through tags">
 
-        </div>
-      </li>
-    </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 
   <div class="itemBox JS_itemBox">
-    <ul class="itemBox__row itemBox__row--item JS_selectionTitle">
-      <li class="itemBox__cell itemBox__cell--action JS_toggle">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action JS_selectedText"> Selected</div>
-        </div>
-      </li>
-      <li class="itemBox__cell text-right">
-        <div class="itemBox__cellInner">
-          {% include javascript/and-or-selector.html %}
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
-        </div>
-      </li>
-    </ul>
-
-    <div class="itemBox JS_itemBox--children JS_selectionChildren">
-      <ul class="itemBox__row itemBox__row--item JS_selectionTitleInclude">
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item JS_selectionTitle">
         <li class="itemBox__cell itemBox__cell--action JS_toggle">
           <div class="itemBox__cellInner">
-            <div class="itemBox__action"> Include</div>
+            <div class="itemBox__action JS_selectedText"> Selected</div>
           </div>
         </li>
         <li class="itemBox__cell text-right">
@@ -50,266 +34,304 @@
         </li>
       </ul>
 
-      <div class="itemBox JS_itemBox--children JS_selectionChildrenInclude">
-        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-          <li class="itemBox__cell">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__value">
-
-                <div class="selector selector--expanded">
-                  <div class="selector__item JS_selectorItem--active selector__item--selected">
-                    <div class="selector__block">
-                      <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #00bfff;" data-color="#00bfff"></div>
-                      <div class="selector__blockPart selector__blockPart--field JS_text">Design</div>
-                    </div>
-                  </div>
-                </div>
-
+      <div class="itemBox JS_itemBox--children JS_selectionChildren">
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item JS_selectionTitleInclude">
+            <li class="itemBox__cell itemBox__cell--action JS_toggle">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action"> Include</div>
               </div>
-            </div>
-          </li>
-          <li class="itemBox__cell flex-grow-0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__action itemBox__action--hidden">އ</div>
-            </div>
-          </li>
-          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-            </div>
-          </li>
-        </ul>
-        <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-          <li class="itemBox__cell">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__value">
-
-                <div class="selector selector--expanded">
-                  <div class="selector__item JS_selectorItem--active selector__item--selected">
-                    <div class="selector__block">
-                      <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #0bda51;" data-color="#0bda51"></div>
-                      <div class="selector__blockPart selector__blockPart--field JS_text">Marketing</div>
-                    </div>
-                  </div>
-                </div>
-
+            </li>
+            <li class="itemBox__cell text-right">
+              <div class="itemBox__cellInner">
+                {% include javascript/and-or-selector.html %}
               </div>
-            </div>
-          </li>
-          <li class="itemBox__cell flex-grow-0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__action itemBox__action--hidden">އ</div>
-            </div>
-          </li>
-          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
-            <div class="itemBox__cellInner">
-              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-            </div>
-          </li>
-        </ul>
-      </div>
+            </li>
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
+              </div>
+            </li>
+          </ul>
 
-      <ul class="itemBox__row itemBox__row--item JS_selectionTitleExclude">
-        <li class="itemBox__cell itemBox__cell--action JS_toggle">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action"> Exclude</div>
-          </div>
-        </li>
-        <li class="itemBox__cell text-right">
-          <div class="itemBox__cellInner">
-            {% include javascript/and-or-selector.html %}
-          </div>
-        </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
-          </div>
-        </li>
-      </ul>
+          <div class="itemBox JS_itemBox--children JS_selectionChildrenInclude">
+            <div class="itemBox__row">
+              <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+                <li class="itemBox__cell">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__value">
 
-      <div class="itemBox JS_itemBox--children JS_selectionChildrenExclude">
-        <div class="itemBoxTable">
-          <div class="itemBoxBody itemBoxBody--sortableConnected itemBoxBody--sortableExclude ui-sortable">
-            <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-              <li class="itemBox__cell ">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__value">
-
-                    <div class="selector selector--expanded">
-                      <div class="selector__item JS_selectorItem--active selector__item--selected">
-                        <div class="selector__block">
-                          <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #f4ca16;" data-color="#f4ca16"></div>
-                          <div class="selector__blockPart selector__blockPart--field JS_text">Front-end</div>
+                      <div class="selector selector--expanded">
+                        <div class="selector__item JS_selectorItem--active selector__item--selected">
+                          <div class="selector__block">
+                            <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #00bfff;" data-color="#00bfff"></div>
+                            <div class="selector__blockPart selector__blockPart--field JS_text">Design</div>
+                          </div>
                         </div>
                       </div>
+
                     </div>
-
                   </div>
-                </div>
-              </li>
-              <li class="itemBox__cell flex-grow-0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__action itemBox__action--hidden">އ</div>
-                </div>
-              </li>
-              <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-                </div>
-              </li>
-            </ul>
+                </li>
+                <li class="itemBox__cell flex-grow-0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__action itemBox__action--hidden">އ</div>
+                  </div>
+                </li>
+                <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="itemBox__row">
+              <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+                <li class="itemBox__cell">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__value">
 
-            <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-              <li class="itemBox__cell">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__value">
-
-                    <div class="selector selector--expanded">
-                      <div class="selector__item JS_selectorItem--active selector__item--selected">
-                        <div class="selector__block">
-                          <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #e30022;" data-color="#e30022"></div>
-                          <div class="selector__blockPart selector__blockPart--field JS_text">Back-end</div>
+                      <div class="selector selector--expanded">
+                        <div class="selector__item JS_selectorItem--active selector__item--selected">
+                          <div class="selector__block">
+                            <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #0bda51;" data-color="#0bda51"></div>
+                            <div class="selector__blockPart selector__blockPart--field JS_text">Marketing</div>
+                          </div>
                         </div>
                       </div>
+
                     </div>
-
                   </div>
-                </div>
-              </li>
-              <li class="itemBox__cell flex-grow-0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__action itemBox__action--hidden">އ</div>
-                </div>
-              </li>
-              <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-                </div>
-              </li>
-            </ul>
+                </li>
+                <li class="itemBox__cell flex-grow-0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__action itemBox__action--hidden">އ</div>
+                  </div>
+                </li>
+                <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item JS_selectionTitleExclude">
+            <li class="itemBox__cell itemBox__cell--action JS_toggle">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action"> Exclude</div>
+              </div>
+            </li>
+            <li class="itemBox__cell text-right">
+              <div class="itemBox__cellInner">
+                {% include javascript/and-or-selector.html %}
+              </div>
+            </li>
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
+              </div>
+            </li>
+          </ul>
 
+          <div class="itemBox JS_itemBox--children JS_selectionChildrenExclude">
+            <div class="itemBoxTable">
+              <div class="itemBoxBody itemBoxBody--sortableConnected itemBoxBody--sortableExclude ui-sortable">
+                <div class="itemBox__row">
+                  <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+                    <li class="itemBox__cell ">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__value">
+
+                          <div class="selector selector--expanded">
+                            <div class="selector__item JS_selectorItem--active selector__item--selected">
+                              <div class="selector__block">
+                                <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #f4ca16;" data-color="#f4ca16"></div>
+                                <div class="selector__blockPart selector__blockPart--field JS_text">Front-end</div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </li>
+                    <li class="itemBox__cell flex-grow-0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__action itemBox__action--hidden">އ</div>
+                      </div>
+                    </li>
+                    <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="itemBox__row">
+                  <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+                    <li class="itemBox__cell">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__value">
+
+                          <div class="selector selector--expanded">
+                            <div class="selector__item JS_selectorItem--active selector__item--selected">
+                              <div class="selector__block">
+                                <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #e30022;" data-color="#e30022"></div>
+                                <div class="selector__blockPart selector__blockPart--field JS_text">Back-end</div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </li>
+                    <li class="itemBox__cell flex-grow-0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__action itemBox__action--hidden">އ</div>
+                      </div>
+                    </li>
+                    <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <!-- /.itemBox -->
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item JS_optionsTitle">
+        <li class="itemBox__cell itemBox__cell--action JS_toggle">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action"> All</div>
+          </div>
+        </li>
+        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
+          </div>
+        </li>
+      </ul>
 
-    <ul class="itemBox__row itemBox__row--item JS_optionsTitle">
-      <li class="itemBox__cell itemBox__cell--action JS_toggle">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action"> All</div>
+      <div class="itemBox JS_itemBox--children JS_optionsChildren">
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+            <li class="itemBox__cell ">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__value">
+
+                  {% include blocks/popup/selector-include-exclude.html selected="include"%}
+
+                  <div class="selector selector--expanded">
+                    <div class="selector__item JS_selectorItem--active selector__item--selected">
+                      <div class="selector__block">
+                        <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #00bfff;" data-color="#00bfff"></div>
+                        <div class="selector__blockPart selector__blockPart--field JS_text">Design</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </li>
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+              </div>
+            </li>
+          </ul>
         </div>
-      </li>
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+            <li class="itemBox__cell ">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__value">
+
+                  {% include blocks/popup/selector-include-exclude.html selected="include"%}
+
+                  <div class="selector selector--expanded">
+                    <div class="selector__item JS_selectorItem--active selector__item--selected">
+                      <div class="selector__block">
+                        <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #0bda51;" data-color="#0bda51"></div>
+                        <div class="selector__blockPart selector__blockPart--field JS_text">Marketing</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </li>
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+              </div>
+            </li>
+          </ul>
         </div>
-      </li>
-    </ul>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+            <li class="itemBox__cell ">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__value">
 
-    <div class="itemBox JS_itemBox--children JS_optionsChildren">
-      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-        <li class="itemBox__cell ">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__value">
-
-              {% include blocks/popup/selector-include-exclude.html selected="include"%}
-
-              <div class="selector selector--expanded">
-                <div class="selector__item JS_selectorItem--active selector__item--selected">
-                  <div class="selector__block">
-                    <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #00bfff;" data-color="#00bfff"></div>
-                    <div class="selector__blockPart selector__blockPart--field JS_text">Design</div>
+                  {% include blocks/popup/selector-include-exclude.html selected="exclude"%}
+                  <div class="selector selector--expanded">
+                    <div class="selector__item JS_selectorItem--active selector__item--selected">
+                      <div class="selector__block">
+                        <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #f4ca16;" data-color="#f4ca16"></div>
+                        <div class="selector__blockPart selector__blockPart--field JS_text">Front-end</div>
+                      </div>
+                    </div>
                   </div>
+
                 </div>
               </div>
+            </li>
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
+            <li class="itemBox__cell ">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__value">
 
-            </div>
-          </div>
-        </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-          </div>
-        </li>
-      </ul>
-
-      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-        <li class="itemBox__cell ">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__value">
-
-              {% include blocks/popup/selector-include-exclude.html selected="include"%}
-
-              <div class="selector selector--expanded">
-                <div class="selector__item JS_selectorItem--active selector__item--selected">
-                  <div class="selector__block">
-                    <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #0bda51;" data-color="#0bda51"></div>
-                    <div class="selector__blockPart selector__blockPart--field JS_text">Marketing</div>
+                  {% include blocks/popup/selector-include-exclude.html selected="exclude"%}
+                  <div class="selector selector--expanded">
+                    <div class="selector__item JS_selectorItem--active selector__item--selected">
+                      <div class="selector__block">
+                        <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #E30022;" data-color="#E30022"></div>
+                        <div class="selector__blockPart selector__blockPart--field JS_text">Back-end</div>
+                      </div>
+                    </div>
                   </div>
+
                 </div>
               </div>
-
-            </div>
-          </div>
-        </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-          </div>
-        </li>
-      </ul>
-
-      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-        <li class="itemBox__cell ">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__value">
-
-              {% include blocks/popup/selector-include-exclude.html selected="exclude"%}
-              <div class="selector selector--expanded">
-                <div class="selector__item JS_selectorItem--active selector__item--selected">
-                  <div class="selector__block">
-                    <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #f4ca16;" data-color="#f4ca16"></div>
-                    <div class="selector__blockPart selector__blockPart--field JS_text">Front-end</div>
-                  </div>
-                </div>
+            </li>
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
               </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /.itemBox -->
+  </div>
+  <!-- /.itemBox -->
 
-            </div>
-          </div>
-        </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-          </div>
-        </li>
-      </ul>
-
-      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
-        <li class="itemBox__cell ">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__value">
-
-              {% include blocks/popup/selector-include-exclude.html selected="exclude"%}
-              <div class="selector selector--expanded">
-                <div class="selector__item JS_selectorItem--active selector__item--selected">
-                  <div class="selector__block">
-                    <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #E30022;" data-color="#E30022"></div>
-                    <div class="selector__blockPart selector__blockPart--field JS_text">Back-end</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-          </div>
-        </li>
-      </ul>
-    </div><!-- /.itemBox -->
-  </div><!-- /.itemBox -->
-
-</div><!-- /.multiSelector -->
+</div>
+<!-- /.multiSelector -->

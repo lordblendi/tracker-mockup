@@ -1,26 +1,30 @@
 <div class="multiSelector" id="multiSelector-breadcrumb">
 
   <div class="itemBox JS_itemBox">
-    <ul class="itemBox__row">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
 
-          <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput JS_Breadcrumb_Input" placeholder="filter through mijlpaal items">
+            <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput JS_Breadcrumb_Input" placeholder="filter through mijlpaal items">
 
-        </div>
-      </li>
-    </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 
   <div class="itemBox JS_optionsChildren">
     {% for item in site.data.breadcrumb-popup.items %}
-      <ul class="itemBox__row itemBox__row--item JS_filterableCell">
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
         <li class="itemBox__cell itemBox__cell--permalink">
           <div class="itemBox__cellInner JS_text">
             <div class="itemBox__value">{{item}}</div>
           </div>
         </li>
       </ul>
+    </div>
     {% endfor %}
     {% include blocks/popup/ms-row-load-more.html %}
   </div>

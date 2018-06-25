@@ -1,126 +1,139 @@
 <div class="multiSelector JS_multiSelector--simpleText JS_multiSelector--textAction JS_multiSelector--resetFunctionality JS_multiSelector--columnpickerOptions" id="multiSelector-columnpicker">
 
   <div class="itemBox JS_itemBox">
-    <ul class="itemBox__row">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="filter through columns">
-        </div>
-      </li>
-    </ul>
-    {% include blocks/popup/ms-row-reset-to-default.html%}
-  </div>
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            <input type="search" class="itemBox__input itemBox__input--fluid JS_multiSelector__filterInput" placeholder="filter through columns">
+          </div>
+        </li>
+      </ul>
+      {% include blocks/popup/ms-row-reset-to-default.html%}
+    </div>
 
 
-  <div class="itemBox JS_itemBox">
-    <ul class="itemBox__row itemBox__row--item JS_selectionTitle">
-      <li class="itemBox__cell itemBox__cell--action JS_toggle">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action JS_selectedText"> Selected</div>
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
-        </div>
-      </li>
-    </ul>
-
-    <div class="itemBox JS_itemBox--children JS_selectionChildren">
-      <div class="JS_sortable">
-        {% for selected in site.data.columnpicker.selected %}
-          <ul class="itemBox__row itemBox__row--item JS_filterableCell ">
-            <li class="itemBox__cell JS_textAction">
-              <div class="itemBox__cellInner JS_text">
-                <div class="itemBox__value">{{selected}}</div>
-              </div>
-            </li>
-            {% include javascript/ms-toggle-columnpicker-option.html %}
-            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--draggable">
-              <div class="itemBox__cellInner">
-                <div class="itemBox__action">އ</div>
-              </div>
-            </li>
-            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
-              <div class="itemBox__cellInner">
-                <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
-              </div>
-            </li>
-          </ul>
-          {% include blocks/popup/ms-sublist-options.html %}
-        {% endfor%}
-      </div>
-    </div><!-- /.itemBox -->
-
-    <ul class="itemBox__row itemBox__row--item JS_optionsTitle">
-      <li class="itemBox__cell itemBox__cell--action JS_toggle">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action"> All</div>
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__cell--addAll JS_itemBox__action">
-        <div class="itemBox__cellInner">
-          <div class="itemBox__action JS_itemBox__action--add JS_itemBox__action--addAll"></div>
-        </div>
-      </li>
-    </ul>
-
-    <div class="itemBox JS_itemBox--children JS_optionsChildren">
-      {% for group in site.data.columnpicker.options.groups %}
-        <ul class="itemBox__row itemBox__row--item">
+    <div class="itemBox JS_itemBox">
+      <div class="itemBox__row">
+        <ul class="itemBox__rowInner itemBox__rowInner--item JS_selectionTitle">
           <li class="itemBox__cell itemBox__cell--action JS_toggle">
             <div class="itemBox__cellInner">
-              <div class="itemBox__action">{{group.name}}</div>
+              <div class="itemBox__action JS_selectedText"> Selected</div>
             </div>
           </li>
-          {% if group.noneSelected == "false" %}
-            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-              <div class="itemBox__cellInner">
-                <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
-              </div>
-            </li>
-          {% endif %}
-          {% if group.allSelected == "false" %}
-            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__cell--addAll JS_itemBox__action">
-              <div class="itemBox__cellInner">
-                <div class="itemBox__action JS_itemBox__action--add JS_itemBox__action--addAll"></div>
-              </div>
-            </li>
-          {% endif %}
+          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
+            </div>
+          </li>
         </ul>
 
-        <div class="itemBox JS_itemBox--children JS_children-closed"  style="display: none;">
-          {% for item in group.items %}
-            <ul class="itemBox__row itemBox__row--item itemBox__row--action JS_filterableCell">
-              <li class="itemBox__cell JS_textAction">
-                <div class="itemBox__cellInner JS_text">
-                  <div class="itemBox__value">{{item.name}}</div>
-                </div>
-              </li>
-              {% if item.selected == "true" %}
+        <div class="itemBox JS_itemBox--children JS_selectionChildren">
+          <div class="JS_sortable">
+            {% for selected in site.data.columnpicker.selected %}
+            <div class="itemBox__row">
+              <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell ">
+                <li class="itemBox__cell JS_textAction">
+                  <div class="itemBox__cellInner JS_text">
+                    <div class="itemBox__value">{{selected}}</div>
+                  </div>
+                </li>
+                {% include javascript/ms-toggle-columnpicker-option.html %}
+                <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--draggable">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__action">އ</div>
+                  </div>
+                </li>
                 <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
                   <div class="itemBox__cellInner">
                     <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
                   </div>
                 </li>
-              {% else %}
-                <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__action">
+              </ul>
+              {% include blocks/popup/ms-sublist-options.html %}
+            </div>
+            {% endfor%}
+          </div>
+        </div>
+        <!-- /.itemBox -->
+      </div>
+      <div class="itemBox__row">
+        <ul class="itemBox__rowInner itemBox__rowInner--item JS_optionsTitle">
+          <li class="itemBox__cell itemBox__cell--action JS_toggle">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action"> All</div>
+            </div>
+          </li>
+          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
+            </div>
+          </li>
+          <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__cell--addAll JS_itemBox__action">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action JS_itemBox__action--add JS_itemBox__action--addAll"></div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="itemBox JS_itemBox--children JS_optionsChildren">
+          {% for group in site.data.columnpicker.options.groups %}
+            <div class="itemBox__row">
+              <ul class="itemBox__rowInner itemBox__rowInner--item">
+                <li class="itemBox__cell itemBox__cell--action JS_toggle">
                   <div class="itemBox__cellInner">
-                    <div class="itemBox__action JS_itemBox__action--add"></div>
+                    <div class="itemBox__action">{{group.name}}</div>
                   </div>
                 </li>
-              {% endif %}
-            </ul>
+                {% if group.noneSelected == "false" %}
+                <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
+                  </div>
+                </li>
+                {% endif %} {% if group.allSelected == "false" %}
+                <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__cell--addAll JS_itemBox__action">
+                  <div class="itemBox__cellInner">
+                    <div class="itemBox__action JS_itemBox__action--add JS_itemBox__action--addAll"></div>
+                  </div>
+                </li>
+                {% endif %}
+              </ul>
+
+              <div class="itemBox JS_itemBox--children JS_children-closed" style="display: none;">
+                {% for item in group.items %}
+                <div class="itemBox__row">
+                  <ul class="itemBox__rowInner itemBox__rowInner--item itemBox__rowInner--action JS_filterableCell">
+                    <li class="itemBox__cell JS_textAction">
+                      <div class="itemBox__cellInner JS_text">
+                        <div class="itemBox__value">{{item.name}}</div>
+                      </div>
+                    </li>
+                    {% if item.selected == "true" %}
+                    <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+                      </div>
+                    </li>
+                    {% else %}
+                    <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__action">
+                      <div class="itemBox__cellInner">
+                        <div class="itemBox__action JS_itemBox__action--add"></div>
+                      </div>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          <!-- /.itemBox -->
           {% endfor %}
-        </div><!-- /.itemBox -->
-      {% endfor %}
-    </div><!-- /.itemBox -->
-
-  </div><!-- /.itemBox -->
-
-</div><!-- /.multiSelector -->
+        </div>
+        <!-- /.itemBox -->
+      </div>
+    </div>
+    <!-- /.itemBox -->
+  </div>
+</div>
+<!-- /.multiSelector -->
