@@ -7,7 +7,7 @@ permalink: /present
 <div class="overlay-body fixed pin opacity-0 pointer-events-none transition z-40"></div>
 
 <div class="app-navigator fixed pin-t z-50 w-1/2 h-screen transition bg-blue-dark">
-  {% include blocks/app-nav.html %}
+  {% include blocks/app-nav/app-nav.html %}
 </div>
 
 <div class="user-menu fixed pin-t z-50 w-1/4 h-screen transition bg-blue-dark z-50">
@@ -16,10 +16,10 @@ permalink: /present
 
 <main class="container-master">
   <header class="app-header px-4 py-2">
-    {% include blocks/app-header.html %}
+    {% include blocks/app-header/app-header.html %}
   </header>
 
-  {% include blocks/old-pmx-tabline.html %}
+  {% include blocks/old-pmx/old-pmx-tabline.html %}
 
   <div style="background-color: #4692C3;" class="py-2 bg-blue-light">
 
@@ -27,7 +27,7 @@ permalink: /present
       {% include blocks/breadcrumbs.html %}
     </div>
     
-    {% include blocks/old-pmx-item-detail.html %}
+    {% include blocks/old-pmx/old-pmx-item-detail.html %}
 
   </div>
 </main>

@@ -1,8 +1,8 @@
 {% assign tabsNavData = "Progress;Info" %}
 {% capture panelData %}
-  {% include blocks/item-progress-tab1.html %}
+  {% include blocks/item-progress/item-progress-tab1.html %}
   ;&&;
-  {% include blocks/item-progress-tab2.html %}
+  {% include blocks/item-progress/item-progress-tab2.html %}
 {% endcapture %}
 
 {% include components/tabs.html tabsNavData=tabsNavData panelData=panelData invert="true" %}

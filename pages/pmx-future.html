@@ -7,7 +7,7 @@ permalink: /future
   <div class="overlay-body fixed pin opacity-0 pointer-events-none transition z-40"></div>
 
   <div class="app-navigator fixed pin-t z-50 w-1/2 h-screen transition bg-blue-dark">
-    {% include blocks/app-nav.html %}
+    {% include blocks/app-nav/app-nav.html %}
   </div>
 
   <div class="user-menu fixed pin-t z-50 w-1/4 h-screen transition bg-blue-dark z-50">
@@ -16,7 +16,7 @@ permalink: /future
 
   <main class="container-master">
     <header class="app-header px-8 py-2">
-      {% include blocks/app-header-future.html %}
+      {% include blocks/app-header/app-header-future.html %}
     </header>
 
     <div class="px-8">
@@ -24,26 +24,26 @@ permalink: /future
     </div>
 
     <div class="sticky-header">
-      {% include blocks/item-header-future.html %}
+      {% include blocks/item-header/item-header-future.html %}
     </div>
 
     <div class="px-8 my-4 clearfix">
 
       <div class="item-progress w-1/4 pr-4 float-left">
         <div class="panel">
-          {% include blocks/item-progress.html %}
+          {% include blocks/item-progress/item-progress.html %}
         </div>
       </div>
 
       <div class="item-details w-3/4 p-0 float-left">
         <div class="panel shadow-lg">
-          {% include blocks/item-main.html %}
+          {% include blocks/item-main/item-main.html %}
         </div>
       </div>
 
       <div class="item-extras w-1/2 pl-4 float-right hidden">
         <div class="panel">
-          {% include blocks/item-comments.html %}
+          {% include blocks/item-comments/item-comments.html %}
         </div>
       </div>
 
