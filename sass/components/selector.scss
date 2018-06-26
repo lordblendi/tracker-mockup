@@ -165,7 +165,7 @@
     .selector__item {
       cursor: pointer;
 
-      &:hover {
+      &:hover, &:focus {
         transform: translate(0, 1px);
         opacity: .7;
 
@@ -197,7 +197,7 @@
         border-bottom-right-radius: 15px;
       }
 
-      &:hover {
+      &:hover, &:focus {
         transform: translate(0, 1px);
         opacity: .7;
 
@@ -209,7 +209,7 @@
       &--selected {
         box-shadow: 0 2px 8px -2px rgba(0,0,0,.7);
 
-        &:hover {
+        &:hover, &:focus {
           opacity: .85;
         }
       }

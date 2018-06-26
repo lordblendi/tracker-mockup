@@ -14,13 +14,13 @@ permalink: /selectors
       <div class="field__data">
         <div class="field__value">
           <div class="selector selector--singleselect selector--expanded JS_selector ">
-            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem" tabindex='0'>
               <div class="selector__block">
                 <div class="selector__blockPart selector__blockPart--field JS_theme_light">Light</div>
               </div>
             </div>
             <div class="selector__itemSeperator"></div>
-            <div class="selector__item JS_selectorItem">
+            <div class="selector__item JS_selectorItem" tabindex='0'>
               <div class="selector__block">
                 <div class="selector__blockPart selector__blockPart--prefix JS_theme_dark">Dark</div>
               </div>
@@ -38,20 +38,12 @@ permalink: /selectors
       <div class="field__data">
         <div class="field__value">
           <div class="selector selector--multiselect selector--expanded JS_selector">
-            <div class="selector__item JS_selectorItem--active JS_selectorItem">
+            <div class="selector__item JS_selectorItem--active JS_selectorItem" tabindex='0'>
               <div class="selector__block">
                 <div class="selector__blockPart selector__blockPart--field JS_load_selectors">Selectors</div>
               </div>
             </div>
-            <div class="selector__itemSeperator"></div>
-            <div class="selector__item JS_selectorItem--active JS_selectorItem">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field JS_load_buttons">Buttons</div>
-              </div>
-            </div>
           </div>
-
-          <input class="field__input" type="text" value=", ">
         </div>
       </div>
     </div>
@@ -89,59 +81,49 @@ permalink: /selectors
 
     <!-- SingleSelects -->
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Single select - expanded</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value="low">
-
         </div>
       </div>
     </div>
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Single select - expanded and required (you cannot unselect all of them)</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" required="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value="low">
-
         </div>
       </div>
     </div>
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Single select - expanded and readonly</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value="low">
-
         </div>
       </div>
     </div>
 
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Single select - not expanded (shows only one item) - no popup attached</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#F4CA16,,,Ongoing" singleselect="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value="low">
-
         </div>
       </div>
     </div>
 
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Single select - not expanded (shows only one item) and readonly</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#F4CA16,,,Ongoing" readonly="true" singleselect="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value="low">
-
         </div>
       </div>
     </div>
@@ -150,57 +132,47 @@ permalink: /selectors
     <h2 class="mb-8">Multi select configuration examples without popup</h2>
     <!-- Multiselects -->
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Multi select - expanded</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" multiselect="true" selectedIndexes="1,2" %}
-          <input class="field__input" type="text" value="low">
-
         </div>
       </div>
     </div>
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Multi select - expanded and required (at least one has to be selected)</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" multiselect="true" required="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value="low">
-
         </div>
       </div>
     </div>
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Multi select - expanded and readonly</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" readonly="true" multiselect="true" selectedIndexes="1,2" %}
-          <input class="field__input" type="text" value="low">
-
         </div>
       </div>
     </div>
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Multi select - not expanded</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" multiselect="true" selectedIndexes="1,2,3" %}
-          <input class="field__input" type="text" value="low">
-
         </div>
       </div>
     </div>
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Multi select - not expanded and readonly</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" readonly="true" multiselect="true" selectedIndexes="1,2,3" %}
-          <input class="field__input" type="text" value="low">
-
         </div>
       </div>
     </div>
@@ -211,72 +183,61 @@ permalink: /selectors
   <div class="sm:w-1/3 p-2 overflow-hidden">
     <h2 class="my-8">Examples without popup</h2>
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Panel selector</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData=",,,;,<sup>11</sup>,,;,,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value="">
         </div>
       </div>
     </div>
 
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Danger level</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,Low,,;#F4CA16,Moderate,,;var(--color-red),High,," expanded="true" singleselect="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value="low">
-
         </div>
       </div>
     </div>
 
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Status</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" selectedIndexes="1" %}
-
-          <input class="field__input" type="text" value="Not started">
         </div>
       </div>
     </div>
 
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Status</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#F4CA16,,,Not started;#00BFFF,,,Ongoing;#0BDA51,,,Done" expanded="true" singleselect="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value="Ongoing">
         </div>
       </div>
     </div>
 
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Tags</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" multiselect="true" selectedIndexes="1,2,3" %}
-
-          <input class="field__input" type="text" value="dev-team, back-end, 298">
         </div>
       </div>
     </div>
 
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Product contact</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#F4CA16,,,Heet;var(--color-red),,,Brandbaar;var(--color-red),,,Huidopname" expanded="true" multiselect="true" selectedIndexes="1" %}
-
-          <input class="field__input" type="text" value="">
-
         </div>
       </div>
     </div>
@@ -284,7 +245,7 @@ permalink: /selectors
   <div class="sm:w-1/3 p-2 overflow-hidden">
     <h2 class="my-8">Examples with popup</h2>
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Privacy Policy - tooltip example (note in popup), click icon
         <div class="inline-action primary animate-fly-in-left JS_has-popup" data-popid="#ms-privacy"></div>
       </div>
@@ -292,10 +253,7 @@ permalink: /selectors
 
         <div class="field__value">
           {% include components/selector.html selectorData=",,,Disagree;,,,Agree" expanded="true" singleselect="true" selectedIndexes="1" %}
-
           <span>with our <a href="#" class="link link--primary">Privacy Policiy</a>.</span>
-
-          <input class="field__input" type="text" value="disagree">
         </div>
 
       </div>
@@ -321,24 +279,21 @@ permalink: /selectors
     </div>
 
     <!-- Field -->
-    <div class="field JS_field--error">
+    <div class="field field--not-empty JS_field--error">
       <div class="field__label">Status - with description and error animation </div>
       <div class="field__data">
 
         <div class="field__error JS_has-popup" data-popid="#ms-error"></div>
         <div class="field__value">
           <div class="selector selector--singleselect JS_has-popup" data-popid="#ms-status">
-            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem">
+            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem" tabindex="0">
               <div class="selector__block">
                 <div class="selector__blockPart selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: var(--color-red);"></div>
                 <div class="selector__blockPart selector__blockPart--field JS_singleSelect--label">Not started</div>
               </div>
             </div>
           </div>
-
           <span>selector with aligned text.</span>
-
-          <input class="field__input" type="text" value="_Not Assigned">
         </div>
 
       </div>
@@ -408,37 +363,31 @@ permalink: /selectors
   <div class="sm:w-1/3 p-2 overflow-hidden">
     <h2 class="mt-8">Checkboxes</h2>
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Checkbox</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
-
-          <input class="field__input" type="text" value="">
         </div>
       </div>
     </div>
 
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Checkbox - colored </div>
       <div class="field__data">
-
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value="checked">
         </div>
-
       </div>
     </div>
 
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Checkbox (filter in header)</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData=",,,;,,," expanded="true" multiselect="true" selectedIndexes="1" %}
-          <input class="field__input" type="text" value=", ">
         </div>
       </div>
     </div>
@@ -448,16 +397,12 @@ permalink: /selectors
 
 <div class="flex flex-col sm:flex-row m-8 py-4 border-b-2 border-dashed border-grey-dark overflow-hidden">
   <div class="sm:w-1/2 p-8 overflow-hidden">
-
     <h2 class="mb-8">Read-only with ellipsis</h2>
-
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,Label,Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" expanded="true" singleselect="true" selectedIndexes="1" readonly="true"%}
-
-          <input class="field__input" type="text" value="Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" tabindex="-1">
         </div>
       </div>
     </div>
@@ -468,13 +413,11 @@ permalink: /selectors
     <h2 class="mb-8">Tag Picker</h2>
 
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Tags</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/selector.html selectorData="#0BDA51,,,282;#F4CA16,,,2013_Maintenance;#E30022,,,workaround_available" multiselect="true" selectedIndexes="1,2,3" popupId="#multiSelector-tagpicker" %}
-
-          <input class="field__input" type="text" value="282, 2013_Maintenance, workaround_available">
         </div>
       </div>
     </div>
@@ -488,7 +431,7 @@ permalink: /selectors
     <h2 class="mb-8">Filters</h2>
 
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Description</div>
       <div class="field__data">
         <div class="field__value">
@@ -511,14 +454,12 @@ permalink: /selectors
               </div>
             </div>
           </div>
-
-          <input class="field__input" type="text" value="improvement, design">
         </div>
       </div>
     </div>
 
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Tags  Filter</div>
       <div class="field__data">
         <div class="field__value">
@@ -557,18 +498,15 @@ permalink: /selectors
               </div>
             </div>
           </div>
-
-          <input class="field__input" type="text" value="design, marketing, front-end, back-end">
         </div>
       </div>
     </div>
 
     <!-- Field -->
-    <div class="field">
+    <div class="field field--not-empty">
       <div class="field__label">Date  Filter</div>
       <div class="field__data">
         <div class="field__value">
-
           <div class="selector selector--expanded JS_has-popup" data-popid="#filter-datepicker">
             <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
             <div class="selector__item JS_selectorItem--active selector__item--selected">
@@ -600,8 +538,6 @@ permalink: /selectors
               </div>
             </div>
           </div>
-
-          <input class="field__input" type="text" value="include next 2 weeks (12/03/18-25/03/18) and 19/03/18-20/03/18, exclude today or 18/03/18">
         </div>
       </div>
     </div>
