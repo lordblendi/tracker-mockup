@@ -24,7 +24,7 @@
     box-shadow: 0 1px 0 #6C6C6C;
   }
 
-  &:active {
+  &:active, &:focus {
     transform: translateY(3px);
     box-shadow: 0 1px 0 #c5c5c5;
   }
