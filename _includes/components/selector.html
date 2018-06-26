@@ -31,6 +31,10 @@
 {% if include.readonly or expanded == "" %}
   {% assign readonly = "" %}
 {% endif %}
+{% if include.readonly and expanded == "" %}
+  {% assign readonly = "" %}
+  {% assign expanded = "selector--expanded" %}
+{% endif %}
 {% if include.readonly %}
   {% assign tabindex = "" %}
   {% assign readonlyClass = "selector--readonly" %}
