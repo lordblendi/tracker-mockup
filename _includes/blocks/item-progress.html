@@ -1,12 +1,5 @@
-    <div class="tabs">
-    <div class="tabs-nav">
-      <ul>
-        <span class="tabs-nav__linkBar"></span>
-        <li><a href="#" class="tabs-nav__link tabs-nav__link--active" tabindex="1">Progress</a></li>
-        <li><a href="#" class="tabs-nav__link" tabindex="2">Info</a></li>
-      </ul>
-    </div><!-- /.tabs__nav -->
-
+    <div class="tabs tabs--invert">
+      {% include components/tabs-nav.html data="Progress;Info" %}
     <div class="tabs-panels">
         <div class="tabs-panels__panel" tabindex="1">
             <ul class="item-progress__steps">
@@ -60,7 +53,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            
+
         </div><!-- /.tabs__panel -->
     </div><!-- /.tabs__panels -->
 

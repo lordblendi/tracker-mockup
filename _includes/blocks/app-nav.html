@@ -1,26 +1,7 @@
 <div class="h-full overflow-y-auto scrollbar-none">
 
   <div class="tabs tabs--invert">
-    <div class="tabs-nav">
-      <div class="tabs-nav__slide tabs-nav__slide--left tabs-nav__slide--hidden">
-        <span class="tabs-nav__slideShadow"></span>
-        <span class="tabs-nav__slideArrow">←</span>
-        <span class="tabs-nav__slideCounter">1</span>
-      </div>
-      <ul>
-        <span class="tabs-nav__linkBar"></span>
-        <li><a href="#" class="tabs-nav__link tabs-nav__link--active" tabindex="1"><span>Structure</span></a></li>
-        <li><a href="#" class="tabs-nav__link" tabindex="2"><span>Overviews</span></a></li>
-        <li><a href="#" class="tabs-nav__link" tabindex="3"><span>Recently used</span></a></li>
-        <li><a href="#" class="tabs-nav__link" tabindex="4"><span>Favorites</span></a></li>
-      </ul>
-      <div class="tabs-nav__slide tabs-nav__slide--right">
-        <span class="tabs-nav__slideShadow"></span>
-        <span class="tabs-nav__slideArrow">→</span>
-        <span class="tabs-nav__slideCounter">9</span>
-      </div>
-    </div>
-    <!-- /.tabs__nav -->
+    {% include components/tabs-nav.html data="Structure;Overviews;Recently used;Favorites" %}
 
     <div class="tabs-panels p-2">
       <div class="tabs-panels__panel" tabindex="1">

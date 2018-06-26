@@ -11,32 +11,9 @@
       </div>
     </header>
 
-
-
-
-
-
     <div class="tabs">
-      <div class="tabs-nav">
-        <div class="tabs-nav__slide tabs-nav__slide--left">
-          <span class="tabs-nav__slideShadow"></span>
-          <span class="tabs-nav__slideArrow">←</span>
-          <span class="tabs-nav__slideCounter">1</span>
-        </div>
-        <ul>
-          <span class="tabs-nav__linkBar"></span>
-          <li><a href="#" class="tabs-nav__link tabs-nav__link--active" tabindex="1">General</a></li>
-          <li><a href="#" class="tabs-nav__link" tabindex="2">Permit Parameters</a></li>
-          <li><a href="#" class="tabs-nav__link" tabindex="3">Special instructions</a></li>
-        </ul>
-        <div class="tabs-nav__slide tabs-nav__slide--right">
-          <span class="tabs-nav__slideShadow"></span>
-          <span class="tabs-nav__slideArrow">→</span>
-          <span class="tabs-nav__slideCounter">9</span>
-        </div>
-      </div><!-- /.tabs-nav -->
-
-    <div class="tabs-panels">
+      {% include components/tabs-nav.html data="General;Permit Parameters;Special instructions" %}
+      <div class="tabs-panels">
         <div class="tabs-panels__panel" tabindex="1">
             <div class="appl-sliders">
                 <div class="appl-slider">
