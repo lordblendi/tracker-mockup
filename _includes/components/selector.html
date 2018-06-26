@@ -53,29 +53,42 @@
 <!-- if it's a popup, add data-popid -->
 <div class="selector JS_selector {{expanded}} {{singleselect}} {{multiselect}} {{popupId}} {{required}} {{readonlyClass}} {{draggable}}" {% if include.popupId %}data-popid="{{include.popupId}}"{% endif %}>
 
-<!-- for loop through selectorItems -->
-{% for item in data %}
-    <!-- check if it's a selected item or not-->
-    {% assign selected = "" %}
-    <!-- capture the forloop index as a string-->
-    {% capture itemIndex %}{{forloop.index}}{% endcapture %}
-
-    {% for selectedIndex in selectedIndexes %}
-      <!-- if it's the same index, add the selected class -->
-      {% if selectedIndex == itemIndex %}
-        {% assign selected = "selector__item--selected JS_selectorItem--active" %}
-      {% endif %}
-    {% endfor %}
-
-    <!-- add itemSeparator if it's multiple items -->
-
-    {% if forloop.index > 1 %}
-      <div class="selector__itemSeperator"></div>
-    {% endif %}
-    <div class="selector__item {{readonly}} {{selected}}" {{tabindex}} >
+  <!-- if multiselect but not expanded -->
+  {% if multiselect != "" and expanded == "" %}
+    <div class="selector__item {{readonly}} selector__item--selected JS_selectorItem--active" {{tabindex}} >
       <div class="selector__block">
-        {% include components/unit.html item=item %}
+        <!-- for loop through selectorItems -->
+        {% for item in data %}
+          {% include components/unit.html item=item %}
+        {% endfor %}
       </div>
     </div>
-{% endfor %}
+
+  {% else %}
+    <!-- for loop through selectorItems -->
+    {% for item in data %}
+        <!-- check if it's a selected item or not-->
+        {% assign selected = "" %}
+        <!-- capture the forloop index as a string-->
+        {% capture itemIndex %}{{forloop.index}}{% endcapture %}
+
+        {% for selectedIndex in selectedIndexes %}
+          <!-- if it's the same index, add the selected class -->
+          {% if selectedIndex == itemIndex %}
+            {% assign selected = "selector__item--selected JS_selectorItem--active" %}
+          {% endif %}
+        {% endfor %}
+
+        <!-- add itemSeparator if it's multiple items -->
+
+        {% if forloop.index > 1 %}
+          <div class="selector__itemSeperator"></div>
+        {% endif %}
+        <div class="selector__item {{readonly}} {{selected}}" {{tabindex}} >
+          <div class="selector__block">
+            {% include components/unit.html item=item %}
+          </div>
+        </div>
+    {% endfor %}
+  {% endif %}
 </div>
