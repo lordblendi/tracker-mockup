@@ -1,130 +1,21 @@
-<header class="header header--section">
-  <div class="header__title">
-    <h3 class="truncate">Bugs<sup>76</sup></h3>
-  </div>
+<div class="mb-8 pb-8">
+  <header class="header header--section">
+    <div class="header__title">
+      <h3 class="truncate">Bugs<sup>76</sup></h3>
+    </div>
 
-  <div class="header__actions">
-    <button class="block-action"></button>
-    <button class="block-action"></button>
-  </div>
-</header>
+    <div class="header__actions">
+      <button class="block-action"></button>
+      <button class="block-action"></button>
+    </div>
+  </header>
 
-<div class="itemBox">
-  <div class="itemBox__row">
-    <ul class="itemBox__rowInner itemBox__rowInner--thead">
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_expand_header">
-        <div class="itemBox__cellInner">
-          <button class="itemBox__action"></button>
-        </div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">Nr</div>
-      </li>
-      <li class="itemBox__cell flex-grow-2">
-        <div class="itemBox__cellInner">Title</div>
-      </li>
-      <li class="itemBox__cell flex-grow-2">
-        <div class="itemBox__cellInner">Assigned to</div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">Reported by customer</div>
-      </li>
-    </ul>
-  </div>
-
-  <div class="itemBox__row">
-    <ul class="itemBox__rowInner itemBox__rowInner--item">
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
-        <div class="itemBox__cellInner"></div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,395415"  readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
-        <div class="itemBox__cellInner">Bulk update speed regressed in 282.0</div>
-      </li>
-      <li class="itemBox__cell flex-grow-2">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,Vasya Aksyonov" singleselect="true" selectedIndexes="1" %}
-        </div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="2" %}
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  <div class="itemBox__row">
-    <ul class="itemBox__rowInner itemBox__rowInner--item">
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
-        <div class="itemBox__cellInner"></div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,35825" readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
-        <div class="itemBox__cellInner">Write spec for semantic search</div>
-      </li>
-      <li class="itemBox__cell flex-grow-2">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,Vincent Goossens" singleselect="true" selectedIndexes="1" %}
-        </div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="2" %}
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  <div class="itemBox__row">
-    <ul class="itemBox__rowInner itemBox__rowInner--item">
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_expand">
-        <div class="itemBox__cellInner">
-          <button class="itemBox__action"></button>
-        </div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner"></div>
-      </li>
-      <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
-        <div class="itemBox__cellInner">Integrated Release Management</div>
-      </li>
-      <li class="itemBox__cell flex-grow-2">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,_Not Assigned" singleselect="true" selectedIndexes="1" %}
-        </div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
-        </div>
-      </li>
-    </ul>
-    <div class="itemBox animate-fadein JS_itemBox--children">
-      <header class="header header--table">
-        <div class="header__title">
-          <h2>Integrated Release Management</h2>
-        </div>
-        <div class="header__actions">
-          <button class="block-action disabled"></button>
-          <button class="block-action">Print</button>
-          <button class="block-action"></button>
-          <button class="block-action JS_has-popup" data-popid="#multiSelector-columnpicker"></button>
-        </div>
-      </header>
-      <div class="itemBox__row">
-        <ul class="itemBox__rowInner itemBox__rowInner--thead">
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+  <div class="itemBox">
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--thead">
+        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_expand_header">
           <div class="itemBox__cellInner">
-            <div class="itemBox__action"></div>
+            <button class="itemBox__action"></button>
           </div>
         </li>
         <li class="itemBox__cell">
@@ -136,187 +27,530 @@
         <li class="itemBox__cell flex-grow-2">
           <div class="itemBox__cellInner">Assigned to</div>
         </li>
-        <li class="itemBox__cell flex-grow-3">
-          <div class="itemBox__cellInner">Tags</div>
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">Reported by customer</div>
         </li>
       </ul>
-      </div>
-      <div class="itemBox__row">
-        <ul class="itemBox__rowInner itemBox__rowInner--item">
+    </div>
+
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
         <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
           <div class="itemBox__cellInner"></div>
         </li>
         <li class="itemBox__cell">
           <div class="itemBox__cellInner">
-            {% include components/selector.html selectorData=",,,32072" readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
+            {% include components/selector.html selectorData=",,,395415"  readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
           </div>
         </li>
         <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
-          <div class="itemBox__cellInner">Add indicators in import/export</div>
+          <div class="itemBox__cellInner">Permalink cell</div>
         </li>
         <li class="itemBox__cell flex-grow-2">
           <div class="itemBox__cellInner">
-            {% include components/selector.html selectorData=",,,Jonathan Langens" singleselect="true" selectedIndexes="1" %}
+            {% include components/selector.html selectorData=",,,Vasya Aksyonov" singleselect="true" selectedIndexes="1" %}
           </div>
         </li>
-        <li class="itemBox__cell flex-grow-3">
+        <li class="itemBox__cell">
           <div class="itemBox__cellInner">
-            {% include components/selector.html selectorData="blue,,,281;green,,,282;salmon,,,283" multiselect="true" selectedIndexes="1,2,3" %}
+            {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="2" %}
           </div>
         </li>
       </ul>
-      </div>
-      <div class="itemBox__row">
-        <ul class="itemBox__rowInner itemBox__rowInner--item">
+    </div>
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
         <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
           <div class="itemBox__cellInner"></div>
         </li>
         <li class="itemBox__cell">
           <div class="itemBox__cellInner">
-            {% include components/selector.html selectorData=",,,32750"  readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
+            {% include components/selector.html selectorData=",,,395415"  readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
           </div>
         </li>
         <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
-          <div class="itemBox__cellInner">Source files of project in sub-folders of install folder</div>
+          <div class="itemBox__cellInner">Permalink cell</div>
         </li>
         <li class="itemBox__cell flex-grow-2">
           <div class="itemBox__cellInner">
-            {% include components/selector.html selectorData=",,,Koen" singleselect="true" selectedIndexes="1" %}
+            {% include components/selector.html selectorData=",,,Vasya Aksyonov" singleselect="true" selectedIndexes="1" %}
           </div>
-        </li>
-        <li class="itemBox__cell flex-grow-3">
-          <div class="itemBox__cellInner">
-            {% include components/selector.html selectorData="gray,,,275;black,,,scripting:common" multiselect="true" selectedIndexes="1,2" %}
-          </div>
-        </li>
-      </ul>
-      </div>
-      <div class="itemBox__row">
-        <ul class="itemBox__rowInner itemBox__rowInner--item">
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
-          <div class="itemBox__cellInner"></div>
         </li>
         <li class="itemBox__cell">
           <div class="itemBox__cellInner">
-            {% include components/selector.html selectorData=",,,32454"  readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
+            {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="2" %}
           </div>
         </li>
+      </ul>
+    </div>
+
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
+        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_expand">
+          <div class="itemBox__cellInner">
+            <button class="itemBox__action"></button>
+          </div>
+        </li>
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner"></div>
+        </li>
         <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
-          <div class="itemBox__cellInner">Publish the "binary" and "selenium" (zip) packages as NuGet packages</div>
+          <div class="itemBox__cellInner">Integrated Release Management</div>
         </li>
         <li class="itemBox__cell flex-grow-2">
           <div class="itemBox__cellInner">
             {% include components/selector.html selectorData=",,,_Not Assigned" singleselect="true" selectedIndexes="1" %}
           </div>
         </li>
-        <li class="itemBox__cell flex-grow-3">
+        <li class="itemBox__cell">
           <div class="itemBox__cellInner">
-            {% include components/selector.html selectorData="gray,,,275;yellow,,,276" multiselect="true" selectedIndexes="1,2" %}
+            {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
           </div>
         </li>
       </ul>
+      <div class="itemBox animate-fadein JS_itemBox--children">
+        <header class="header header--table">
+          <div class="header__title">
+            <h2>Integrated Release Management</h2>
+          </div>
+          <div class="header__actions">
+            <button class="block-action disabled"></button>
+            <button class="block-action">Print</button>
+            <button class="block-action"></button>
+            <button class="block-action JS_has-popup" data-popid="#multiSelector-columnpicker"></button>
+          </div>
+        </header>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--thead">
+          <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+            <div class="itemBox__cellInner">
+              <div class="itemBox__action"></div>
+            </div>
+          </li>
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">Nr</div>
+          </li>
+          <li class="itemBox__cell flex-grow-2">
+            <div class="itemBox__cellInner">Title</div>
+          </li>
+          <li class="itemBox__cell flex-grow-2">
+            <div class="itemBox__cellInner">Assigned to</div>
+          </li>
+          <li class="itemBox__cell flex-grow-3">
+            <div class="itemBox__cellInner">Tags</div>
+          </li>
+        </ul>
+        </div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item">
+          <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+            <div class="itemBox__cellInner"></div>
+          </li>
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">
+              {% include components/selector.html selectorData=",,,32072" readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
+            </div>
+          </li>
+          <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
+            <div class="itemBox__cellInner">Add indicators in import/export</div>
+          </li>
+          <li class="itemBox__cell flex-grow-2">
+            <div class="itemBox__cellInner">
+              {% include components/selector.html selectorData=",,,Jonathan Langens" singleselect="true" selectedIndexes="1" %}
+            </div>
+          </li>
+          <li class="itemBox__cell flex-grow-3">
+            <div class="itemBox__cellInner">
+              {% include components/selector.html selectorData="blue,,,281;green,,,282;salmon,,,283" multiselect="true" selectedIndexes="1,2,3" %}
+            </div>
+          </li>
+        </ul>
+        </div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item">
+          <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+            <div class="itemBox__cellInner"></div>
+          </li>
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">
+              {% include components/selector.html selectorData=",,,32750"  readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
+            </div>
+          </li>
+          <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
+            <div class="itemBox__cellInner">Source files of project in sub-folders of install folder</div>
+          </li>
+          <li class="itemBox__cell flex-grow-2">
+            <div class="itemBox__cellInner">
+              {% include components/selector.html selectorData=",,,Koen" singleselect="true" selectedIndexes="1" %}
+            </div>
+          </li>
+          <li class="itemBox__cell flex-grow-3">
+            <div class="itemBox__cellInner">
+              {% include components/selector.html selectorData="gray,,,275;black,,,scripting:common" multiselect="true" selectedIndexes="1,2" %}
+            </div>
+          </li>
+        </ul>
+        </div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item">
+          <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+            <div class="itemBox__cellInner"></div>
+          </li>
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner">
+              {% include components/selector.html selectorData=",,,32454"  readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
+            </div>
+          </li>
+          <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
+            <div class="itemBox__cellInner">Publish the "binary" and "selenium" (zip) packages as NuGet packages</div>
+          </li>
+          <li class="itemBox__cell flex-grow-2">
+            <div class="itemBox__cellInner">
+              {% include components/selector.html selectorData=",,,_Not Assigned" singleselect="true" selectedIndexes="1" %}
+            </div>
+          </li>
+          <li class="itemBox__cell flex-grow-3">
+            <div class="itemBox__cellInner">
+              {% include components/selector.html selectorData="gray,,,275;yellow,,,276" multiselect="true" selectedIndexes="1,2" %}
+            </div>
+          </li>
+        </ul>
+        </div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--tfoot">
+          <li class="itemBox__cell">
+            <div class="itemBox__cellInner text-xs">All <span>423</span> items loaded</div>
+          </li>
+        </ul>
+        </div>
       </div>
-      <div class="itemBox__row">
-        <ul class="itemBox__rowInner itemBox__rowInner--tfoot">
+      <!-- /.itemBox -->
+    </div>
+
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
+        <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+          <div class="itemBox__cellInner"></div>
+        </li>
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            {% include components/selector.html selectorData=",,,31795" readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
+            </div>
+        </li>
+        <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
+          <div class="itemBox__cellInner">Opening person detail page is slow (> 30 sec)</div>
+        </li>
+        <li class="itemBox__cell flex-grow-2">
+          <div class="itemBox__cellInner">
+            {% include components/selector.html selectorData=",,,Andriy Lisoyov" singleselect="true" selectedIndexes="1" %}
+          </div>
+        </li>
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
+        <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+          <div class="itemBox__cellInner"></div>
+        </li>
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            {% include components/selector.html selectorData=",,,161531" readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
+          </div>
+        </li>
+        <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
+          <div class="itemBox__cellInner">Backup Report [Failed] > backup.admin@tenforce.com > Belgacom-App > Job 2013-06-</div>
+        </li>
+        <li class="itemBox__cell flex-grow-2">
+          <div class="itemBox__cellInner">
+            {% include components/selector.html selectorData=",,,Manuel" singleselect="true" selectedIndexes="1" %}
+          </div>
+        </li>
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="2" %}
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
+        <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+          <div class="itemBox__cellInner"></div>
+        </li>
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            {% include components/selector.html selectorData=",,,283377" readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
+          </div>
+        </li>
+        <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
+          <div class="itemBox__cellInner">Kallo: statistiek geen tekst FW: stats</div>
+        </li>
+        <li class="itemBox__cell flex-grow-2">
+          <div class="itemBox__cellInner">
+            {% include components/selector.html selectorData=",,,Elton" singleselect="true" selectedIndexes="1" %}
+          </div>
+        </li>
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="2" %}
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    {% include blocks/popup/ms-row-load-more.html %}
+
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--tfoot">
         <li class="itemBox__cell">
           <div class="itemBox__cellInner text-xs">All <span>423</span> items loaded</div>
         </li>
       </ul>
+    </div>
+  </div>
+  <!-- /.itemBox -->
+</div>
+
+
+<div class="mt-8 pt-8">
+  <!-- table header for section and not thead!-->
+  <header class="header header--section">
+    <div class="header__title">
+      <h3 class="truncate">table section header above itemBox</h3>
+    </div>
+    <!-- header actions -->
+    <div class="header__actions">
+      <button class="block-action"></button>
+      <button class="block-action"></button>
+    </div>
+  </header>
+  <!-- ItemBox Div -->
+  <div class="itemBox">
+    <!-- group for row and possible children -->
+    <div class="itemBox__row">
+      <!-- row itself -->
+      <!-- this is a thead row -->
+      <ul class="itemBox__rowInner itemBox__rowInner--thead">
+        <!-- cell, that contains only one icon is always flex-grow-0 -->
+        <!-- if NO action, then empty cell, but the cell is still visible -->
+        <!-- if there is an action in it, then it contans a button, otherwise only cellInner -->
+
+        <!-- expands and collapses current itemBox's children -->
+        <!-- if nothing is expanded -> expand all children -->
+        <!-- otherwise collapse all children -->
+        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_expand_header">
+          <div class="itemBox__cellInner">
+            <button class="itemBox__action"></button>
+          </div>
+        </li>
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">header cell 1</div>
+        </li>
+        <li class="itemBox__cell flex-grow-2">
+          <div class="itemBox__cellInner">header cell 2 with flex-grow-2</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- group for row and possible children -->
+    <div class="itemBox__row">
+      <!-- item row itself, this is an itemrow, a simple row-->
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
+        <!-- cell, that contains only one icon is always flex-grow-0 -->
+        <!-- if NO action, then empty cell, but the cell is still visible -->
+        <!-- if there is an action in it, then it contans a button, otherwise only cellInner -->
+        <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+          <div class="itemBox__cellInner"></div>
+        </li>
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            {% include components/selector.html selectorData=",,,395415" readonly="true" singleselect="true" expanded="true" selectedIndexes="1" %}
+          </div>
+        </li>
+        <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
+          <div class="itemBox__cellInner">Permalink cell</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- item row -->
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item">
+        <!-- cell, that contains only one icon is always flex-grow-0 -->
+        <!-- if NO action, then empty cell, but the cell is still visible -->
+        <!-- if there is an action in it, then it contans a button, otherwise only cellInner -->
+
+        <!-- expands and collapses current row's children -->
+        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_expand">
+          <div class="itemBox__cellInner">
+            <button class="itemBox__action"></button>
+          </div>
+        </li>
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner">
+            <!-- a cell can contain any kind of data -->
+            readonly cell with any kind of data in it
+          </div>
+        </li>
+        <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
+          <div class="itemBox__cellInner">Permalink cell</div>
+        </li>
+      </ul>
+
+      <!-- if you want to add children, just include a new itembox-->
+      <!-- children are itembox inside itembox with transparent background-->
+
+      <!-- special type of children is a sublist (belongs to a cell of the row not to the full row)-->
+      <!-- that has a gray background, see columnpicker options, child table, |||| action-->
+      <!-- there the cell, what the sublist belongs to, gets an underline-->
+      <div class="itemBox animate-fadein JS_itemBox--children">
+        <!-- table header and not thead!-->
+        <header class="header header--table">
+          <div class="header__title">
+            <h2>table header title for inner itemBox. that has it's own header, thead, 'tbody' and tfoot</h2>
+          </div>
+          <!-- header actions -->
+          <div class="header__actions">
+            <button class="block-action disabled"></button>
+            <button class="block-action">Print</button>
+            <button class="block-action"></button>
+            <button class="block-action JS_has-popup" data-popid="#multiSelector-columnpicker"></button>
+          </div>
+        </header>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--thead">
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__action"></div>
+              </div>
+            </li>
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">Nr</div>
+            </li>
+            <li class="itemBox__cell flex-grow-2">
+              <div class="itemBox__cellInner">Title</div>
+            </li>
+            <li class="itemBox__cell flex-grow-2">
+              <div class="itemBox__cellInner">Assigned to</div>
+            </li>
+            <li class="itemBox__cell flex-grow-3">
+              <div class="itemBox__cellInner">Tags</div>
+            </li>
+          </ul>
+        </div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item">
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+              <div class="itemBox__cellInner"></div>
+            </li>
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                {% include components/selector.html selectorData=",,,32072" readonly="true" singleselect="true" expanded="true" selectedIndexes="1" %}
+              </div>
+            </li>
+            <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
+              <div class="itemBox__cellInner">Add indicators in import/export</div>
+            </li>
+            <li class="itemBox__cell flex-grow-2">
+              <div class="itemBox__cellInner">
+                {% include components/selector.html selectorData=",,,Jonathan Langens" singleselect="true" selectedIndexes="1" %}
+              </div>
+            </li>
+            <li class="itemBox__cell flex-grow-3">
+              <div class="itemBox__cellInner">
+                {% include components/selector.html selectorData="blue,,,281;green,,,282;salmon,,,283" multiselect="true" selectedIndexes="1,2,3" %}
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item">
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+              <div class="itemBox__cellInner"></div>
+            </li>
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                {% include components/selector.html selectorData=",,,32750" readonly="true" singleselect="true" expanded="true" selectedIndexes="1" %}
+              </div>
+            </li>
+            <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
+              <div class="itemBox__cellInner">Source files of project in sub-folders of install folder</div>
+            </li>
+            <li class="itemBox__cell flex-grow-2">
+              <div class="itemBox__cellInner">
+                {% include components/selector.html selectorData=",,,Koen" singleselect="true" selectedIndexes="1" %}
+              </div>
+            </li>
+            <li class="itemBox__cell flex-grow-3">
+              <div class="itemBox__cellInner">
+                {% include components/selector.html selectorData="gray,,,275;black,,,scripting:common" multiselect="true" selectedIndexes="1,2" %}
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item">
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
+              <div class="itemBox__cellInner"></div>
+            </li>
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                {% include components/selector.html selectorData=",,,32454" readonly="true" singleselect="true" expanded="true" selectedIndexes="1" %}
+              </div>
+            </li>
+            <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
+              <div class="itemBox__cellInner">Publish the "binary" and "selenium" (zip) packages as NuGet packages</div>
+            </li>
+            <li class="itemBox__cell flex-grow-2">
+              <div class="itemBox__cellInner">
+                {% include components/selector.html selectorData=",,,_Not Assigned" singleselect="true" selectedIndexes="1" %}
+              </div>
+            </li>
+            <li class="itemBox__cell flex-grow-3">
+              <div class="itemBox__cellInner">
+                {% include components/selector.html selectorData="gray,,,275;yellow,,,276" multiselect="true" selectedIndexes="1,2" %}
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--tfoot">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner text-xs">All <span>423</span> items loaded</div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <!-- /.itemBox -->
-  </div>
 
-  <div class="itemBox__row">
-    <ul class="itemBox__rowInner itemBox__rowInner--item">
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
-        <div class="itemBox__cellInner"></div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,31795" readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
+    <!-- load more row if needed with smart text in it -->
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--item itemBox__rowInner--action JS_loadMoreButton">
+        <li class="itemBox__cell itemBox__cell--action">
+          <div class="itemBox__cellInner">
+            <div class="itemBox__action">Load <span>25</span> more out of 75</div>
           </div>
-      </li>
-      <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
-        <div class="itemBox__cellInner">Opening person detail page is slow (> 30 sec)</div>
-      </li>
-      <li class="itemBox__cell flex-grow-2">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,Andriy Lisoyov" singleselect="true" selectedIndexes="1" %}
-        </div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
-        </div>
-      </li>
-    </ul>
-  </div>
+        </li>
+      </ul>
+    </div>
 
-  <div class="itemBox__row">
-    <ul class="itemBox__rowInner itemBox__rowInner--item">
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
-        <div class="itemBox__cellInner"></div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,161531" readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
-        <div class="itemBox__cellInner">Backup Report [Failed] > backup.admin@tenforce.com > Belgacom-App > Job 2013-06-</div>
-      </li>
-      <li class="itemBox__cell flex-grow-2">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,Manuel" singleselect="true" selectedIndexes="1" %}
-        </div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="2" %}
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  <div class="itemBox__row">
-    <ul class="itemBox__rowInner itemBox__rowInner--item">
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
-        <div class="itemBox__cellInner"></div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,283377" readonly="true" singleselect="true" expanded="true"  selectedIndexes="1" %}
-        </div>
-      </li>
-      <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink">
-        <div class="itemBox__cellInner">Kallo: statistiek geen tekst FW: stats</div>
-      </li>
-      <li class="itemBox__cell flex-grow-2">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,Elton" singleselect="true" selectedIndexes="1" %}
-        </div>
-      </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="2" %}
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  {% include blocks/popup/ms-row-load-more.html %}
-
-  <div class="itemBox__row">
-    <ul class="itemBox__rowInner itemBox__rowInner--tfoot">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner text-xs">All <span>423</span> items loaded</div>
-      </li>
-    </ul>
+    <!-- itemrow tfoot -->
+    <div class="itemBox__row">
+      <ul class="itemBox__rowInner itemBox__rowInner--tfoot">
+        <li class="itemBox__cell">
+          <div class="itemBox__cellInner text-xs">All <span>423</span> items loaded</div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
-<!-- /.itemBox -->
-
 
 
 
