@@ -57,10 +57,11 @@
   position: relative;
   cursor: pointer;
   transition: all .3s ease-in-out;
-  transform: translate(0, 0);
+  transform: translateY(0);
 
+  &:focus,
   &:hover {
-    transform: translate(0, -2px);
+    transform: translateY(-2px);
   }
 }
 
@@ -70,10 +71,11 @@
   display: inline-block;
   cursor: pointer;
   transition: all .3s ease-in-out;
-  transform: translate(0, 0);
+  transform: translateY(0);
 
+  &:focus,
   &:hover {
-    transform: translate(0, -2px);
+    transform: translateY(-2px);
   }
 }
 
@@ -89,15 +91,16 @@
   color: var(--color-gold);
   text-align: center;
   transition: all .3s ease-in-out;
-  transform: translate(0, 0);
+  transform: translateY(0);
   backface-visibility: hidden;
 
   &.text-white {
     color: white;
   }
 
+  &:focus,
   &:hover {
-    transform: translate(0, -2px);
+    transform: translateY(-2px);
   }
 }
 

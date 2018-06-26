@@ -263,7 +263,7 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
-
+    &:focus,
     &:hover {
       transform: translateY(-2px);
     }
