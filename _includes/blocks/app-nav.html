@@ -1,13 +1,11 @@
 <div class="h-full overflow-y-auto scrollbar-none">
-
   {% assign tabsNavData = "Structure;Overviews;Recently used;Favorites" %}
-
   {% capture panelData %}
-      {% include blocks/app-nav-tab1.html %}
-      ;&&;
-      {% include blocks/app-nav-tab2.html %}
-      ;&&;
-      ;&&;
+    {% include blocks/app-nav-tab1.html %}
+    ;&&;
+    {% include blocks/app-nav-tab2.html %}
+    ;&&;
+    ;&&;
   {% endcapture %}
 
   {% include components/tabs.html tabsNavData=tabsNavData panelData=panelData invert="true" %}
