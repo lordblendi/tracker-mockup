@@ -1,27 +1,14 @@
 <div class="h-full overflow-y-auto scrollbar-none">
 
-  <div class="tabs tabs--invert">
-    {% include components/tabs-nav.html data="Structure;Overviews;Recently used;Favorites" %}
+  {% assign tabsNavData = "Structure;Overviews;Recently used;Favorites" %}
 
-    <div class="tabs-panels p-2">
-      <div class="tabs-panels__panel" tabindex="1">
-        {% include blocks/app-nav-tab1.html %}
-      </div>
-      <!-- /.tabs__panel -->
-      <div class="tabs-panels__panel" tabindex="2">
-        {% include blocks/app-nav-tab2.html %}
-      </div>
-      <!-- /.tabs__panel -->
-      <div class="tabs-panels__panel" tabindex="3">
+  {% capture panelData %}
+      {% include blocks/app-nav-tab1.html %}
+      ;&&;
+      {% include blocks/app-nav-tab2.html %}
+      ;&&;
+      ;&&;
+  {% endcapture %}
 
-      </div>
-      <!-- /.tabs__panel -->
-      <div class="tabs-panels__panel" tabindex="4">
-
-      </div>
-      <!-- /.tabs__panel -->
-    </div>
-    <!-- /.tabs__panels -->
-  </div>
-
+  {% include components/tabs.html tabsNavData=tabsNavData panelData=panelData invert="true" %}
 </div>

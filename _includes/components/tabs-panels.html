@@ -1,0 +1,10 @@
+<!-- splitting up the data into multiple items. separator ;&&; -->
+{% assign tabsData = include.data | split: ";&&;" %}
+
+<div class="tabs-panels p-2">
+    {% for tab in tabsData %}
+        <div class="tabs-panels__panel" tabindex="{{forloop.index}}">
+          {{tab}}
+        </div><!-- /.tabs__panel -->
+    {% endfor %}
+  </div><!-- /.tabs__panels -->
