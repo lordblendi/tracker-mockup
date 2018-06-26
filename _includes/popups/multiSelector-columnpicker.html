@@ -41,7 +41,7 @@
                 {% include javascript/ms-toggle-columnpicker-option.html %}
                 <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--draggable">
                   <div class="itemBox__cellInner">
-                    <div class="itemBox__action">އ</div>
+                    <button class="itemBox__action">އ</button>
                   </div>
                 </li>
                 <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
@@ -61,7 +61,7 @@
         <ul class="itemBox__rowInner itemBox__rowInner--item JS_optionsTitle">
           <li class="itemBox__cell itemBox__cell--action JS_toggle">
             <div class="itemBox__cellInner">
-              <div class="itemBox__action"> All</div>
+              <button class="itemBox__action"> All</button>
             </div>
           </li>
           <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
@@ -82,7 +82,7 @@
               <ul class="itemBox__rowInner itemBox__rowInner--item">
                 <li class="itemBox__cell itemBox__cell--action JS_toggle">
                   <div class="itemBox__cellInner">
-                    <div class="itemBox__action">{{group.name}}</div>
+                    <button class="itemBox__action">{{group.name}}</button>
                   </div>
                 </li>
                 {% if group.noneSelected == "false" %}
