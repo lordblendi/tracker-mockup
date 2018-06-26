@@ -55,59 +55,27 @@
 
 <!-- for loop through selectorItems -->
 {% for item in data %}
-  <!-- getting the variables from the items. separator , -->
-  {% assign itemData = item | split: "," %}
-  <!-- assign color variable if there is a color -->
-  {% assign color = "" %}
-  {% if itemData[0] != "" %}
-    {% assign color = "style='background-color: "| append: {{itemData[0]}} | append: ";'" %}
-  {% endif %}
-  {% assign prefix = itemData[1] %}
-  {% assign label = itemData[2] %}
-  {% assign field = itemData[3] %}
+    <!-- check if it's a selected item or not-->
+    {% assign selected = "" %}
+    <!-- capture the forloop index as a string-->
+    {% capture itemIndex %}{{forloop.index}}{% endcapture %}
 
-  <!-- assign variables for the length of items -->
-  {% assign colorSize = color | size %}
-  {% assign prefixSize = prefix | size %}
-  {% assign labelSize = label | size %}
-  {% assign fieldSize = field | size %}
+    {% for selectedIndex in selectedIndexes %}
+      <!-- if it's the same index, add the selected class -->
+      {% if selectedIndex == itemIndex %}
+        {% assign selected = "selector__item--selected JS_selectorItem--active" %}
+      {% endif %}
+    {% endfor %}
 
-  <!-- check if it's a selected item or not-->
-  {% assign selected = "" %}
-  <!-- capture the forloop index as a string-->
-  {% capture itemIndex %}{{forloop.index}}{% endcapture %}
+    <!-- add itemSeparator if it's multiple items -->
 
-  {% for selectedIndex in selectedIndexes %}
-    <!-- if it's the same index, add the selected class -->
-    {% if selectedIndex == itemIndex %}
-      {% assign selected = "selector__item--selected JS_selectorItem--active" %}
+    {% if forloop.index > 1 %}
+      <div class="selector__itemSeperator"></div>
     {% endif %}
-  {% endfor %}
-
-  <!-- add itemSeparator if it's multiple items -->
-  {% if forloop.index > 1 %}
-    <div class="selector__itemSeperator"></div>
-  {% endif %}
-  <div class="selector__item {{readonly}} {{selected}}" {{tabindex}} >
-    <div class="selector__block">
-      <!-- only show item parts if they are at least 1 character long -->
-      <!-- if there is a prefix or color, show prefix -->
-      {% if prefixSize > 0 or colorSize > 0 %}
-        <div class="selector__blockPart selector__blockPart--prefix" {{color}} >{{prefix}}</div>
-      {% endif %}
-      <!-- if there is a label, show label -->
-      {% if labelSize > 0 %}
-        <div class="selector__blockPart selector__blockPart--label">{{label}}</div>
-      {% endif %}
-      <!-- if there is a field, show field -->
-      {% if fieldSize > 0 %}
-        <!-- if there is a field AND a label, show blockSeparator -->
-        {% if labelSize > 0 %}
-          <div class="selector__blockSeperator"></div>
-        {% endif %}
-        <div class="selector__blockPart selector__blockPart--field JS_text">{{field}}</div>
-      {% endif %}
+    <div class="selector__item {{readonly}} {{selected}}" {{tabindex}} >
+      <div class="selector__block">
+        {% include components/unit.html item=item %}
+      </div>
     </div>
-  </div>
 {% endfor %}
 </div>
