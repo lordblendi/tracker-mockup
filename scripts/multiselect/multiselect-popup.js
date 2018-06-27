@@ -106,10 +106,7 @@ function handlePopupClick(toggle, popid) {
   }
 
   // show overlay
-  $(".overlay-body").css({
-    'pointer-events': 'auto',
-    'opacity': '1'
-  });
+  $(".overlay-body").addClass('opacity-100 pointer-events-auto')
 }
 
 // onclick action on overlay to close popups
@@ -121,10 +118,7 @@ $('.overlay-body').on('click', function() {
 
 // close overlay and popups
 function closeOverlay(){
-  $(".overlay-body").css({
-    'pointer-events': '',
-    'opacity': ''
-  });
+  $(".overlay-body").removeClass('opacity-100 pointer-events-auto');
 
   $('body').removeClass('state-overlay-error');
   $('body').removeClass('state-overlay-tooltip');
