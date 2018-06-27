@@ -93,9 +93,11 @@ function setupTabs(tabsSelector) {
       // var more = tab_nav.find('.tabs-nav__slide--right');
       // var ul = tab_nav.find('ul');
       // calculate scrollWidth and duration
-      var max_width = parseInt(tab_nav.css('width'));
-      var scrollWidth = (calculateListSize() - max_width) * -1;
-      var duration = calculateDuration(ul);
+
+      // -10 is to have some padding after the last item
+      let max_width = parseInt(tab_nav.css('width')) - 10;
+      let scrollWidth = (calculateListSize() - max_width) * -1;
+      let duration = calculateDuration(ul);
 
       less.removeClass('stop');
       more.removeClass('stop');
@@ -118,7 +120,7 @@ function setupTabs(tabsSelector) {
   $(less).hover(function() {
     //  only when it's not hidden
     if (!$(this).hasClass('tabs-nav__slide--hidden')) {
-      var duration = calculateDuration(ul);
+      let duration = calculateDuration(ul);
 
       less.removeClass('stop');
       more.removeClass('stop');
@@ -140,10 +142,11 @@ function setupTabs(tabsSelector) {
   // SCROLL HELPERS
   // calculate size of list
   function calculateListSize() {
-    var listItems = Array.from(ul[0].children);
-    var listWidth = listItems.map(function(item) {
+    let listItems = Array.from(ul[0].children);
+    let listWidth = listItems.map(function(item) {
       if (item.nodeName.toLocaleLowerCase() == 'li') {
-        return parseInt(item.scrollWidth) + parseInt($(item).css('margin-left')) + parseInt($(item).css('margin-right'));
+        // return parseInt(item.scrollWidth) + parseInt($(item).css('margin-left')) + parseInt($(item).css('margin-right'));
+        return parseInt($(item).outerWidth(true));
       }
       return 0;
     });
@@ -153,9 +156,9 @@ function setupTabs(tabsSelector) {
   }
   // check if the list is longer than the provided space
   function isThereEnoughPlace() {
-    var tabWidth = parseInt(tab_nav.css('width'));
-    var listItems = Array.from(ul[0].children);
-    var listWidth = calculateListSize();
+    let tabWidth = parseInt(tab_nav.css('width'));
+    let listItems = Array.from(ul[0].children);
+    let listWidth = calculateListSize();
     // we don't need the first margin-left and last margin-right
     listWidth -= 5;
     return listWidth < tabWidth;
@@ -210,8 +213,8 @@ function setupTabs(tabsSelector) {
 
   function calculateArrowJump(right) {
     // calculate where are we now
-    var translateText = "";
-    var currentTranslate = 0;
+    let translateText = "";
+    let currentTranslate = 0;
     const ulElement = ul[0];
     // if existing item, get translate text
     if (ulElement !== undefined && ulElement != null) {
@@ -230,11 +233,11 @@ function setupTabs(tabsSelector) {
 
     const scrollableElements = $(ulElement).find('li');
 
-    var currentScroll = 0;
-    var newScroll = 0;
+    let currentScroll = 0;
+    let newScroll = 0;
     // calculate next distance depending on the direction
     $.each(scrollableElements, function(index, item) {
-      var possibleNextOne = currentScroll + parseInt($(item).outerWidth(true));
+      let possibleNextOne = currentScroll + parseInt($(item).outerWidth(true));
       if (right === true) {
         // if the next one would be bigger, we need that column
         if (possibleNextOne > currentTranslate) {
@@ -275,7 +278,7 @@ function setupTabs(tabsSelector) {
 
 // function to animate scrolling through the list
 function scrollList(item, translate, duration, callback, easing) {
-  var options = {};
+  let options = {};
   if (duration) {
     options.duration = duration;
   }
@@ -291,10 +294,10 @@ function scrollList(item, translate, duration, callback, easing) {
 // calculate duration
 function calculateDuration(tablist) {
   // have default values so we can return something when there are no children
-  var duration = 425;
-  var numberOfChildren = 1;
+  let duration = 425;
+  let numberOfChildren = 1;
   if (tablist.length > 0) {
-    var listItems = Array.from(tablist[0].children);
+    let listItems = Array.from(tablist[0].children);
     numberOfChildren = listItems.length;
   }
 
@@ -305,10 +308,10 @@ function setupTabsLinkOnclick(){
     setTimeout(function(){
       // for every tabnav set the position of the line
       $('.tabs-nav').each(function() {
-        var activeLink = $(this).find('.tabs-nav__link--active');
+        let activeLink = $(this).find('.tabs-nav__link--active');
         if (activeLink.length > 0) {
-          var barWidth = activeLink.width();
-          var barLeft = $(activeLink).position().left;
+          let barWidth = activeLink.width();
+          let barLeft = $(activeLink).position().left;
           $(this).find('.tabs-nav__linkBar').css({
             'left': barLeft + 'px',
             'width': barWidth + 'px'
@@ -322,8 +325,8 @@ function setupTabsLinkOnclick(){
       e.preventDefault();
       e.stopPropagation();
       // getting .tabs
-      var tabs = $(this).closest('.tabs');
-      var _tabindex = $(this).attr('tabindex');
+      let tabs = $(this).closest('.tabs');
+      let _tabindex = $(this).attr('tabindex');
 
       // Change panel
       tabs.find('.tabs-panels__panel').hide().removeClass('tabs-panels__panel--active');
@@ -335,9 +338,9 @@ function setupTabsLinkOnclick(){
 
     // new position for bar if clicking on link
     $('.tabs-nav__link').on('click', function(e) {
-      var bar = $(this).closest('.tabs-nav').find('.tabs-nav__linkBar');
-      var barWidth = $(this).outerWidth(true);
-      var barLeft = $(this).closest('li').position().left;
+      let bar = $(this).closest('.tabs-nav').find('.tabs-nav__linkBar');
+      let barWidth = $(this).outerWidth(true);
+      let barLeft = $(this).closest('li').position().left;
 
       // Slide bar
       bar.css({
