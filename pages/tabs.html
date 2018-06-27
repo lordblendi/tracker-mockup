@@ -80,6 +80,7 @@ permalink: /tabs
       <ul>
         <li> There is a hover effect or not selected tab_nav_links.</li>
         <li> On choosing the new one, the line under the selected tab_nav_link moves to the new one.</li>
+        <li> The counter next to the arrows in the shadow should depend on how many is hidden currently (so change the counter when horizontal scrolling). Should only appear when there are more than 5 items hidden. This feature is not implemented in the mockup.</li>
         <li> Shadows are visible if there is not enough place to fit every tab on the screen.</li>
         <li> Shadow is only visible, if something is hidden on that side of the tabs_nav.</li>
         <li> Hovering over a shadow should start horizontal scrolling the tabs_nav left or right. At the end on the right, there should be extra 10px or so.</li>
@@ -87,6 +88,7 @@ permalink: /tabs
         <li> Hovering over the arrow in the shadow should stop horizontal scrolling the tabs_nav.</li>
         <li> Clicking the arrow in the shadow should jump one tab left or right in the tabs_nav, positionning the new one to the first in the left. (This Jquery code is has bugs in it.)</li>
         <li> If something is hidden, but suddenly there is enough space again, the tabs should reorganize themselves if needed, and check the conditionals for the shadows. To try: 25%, scroll all the way to the right, 75%</li>
+        <li> Using the tab should have the same effect as hovering over a tab_nav_link. The shadow should be also moved with that. This feature is not implemented in the mockup.</li>
       </ul>
     </div>
 
