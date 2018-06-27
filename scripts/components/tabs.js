@@ -36,14 +36,14 @@ function setupTabs(tabsSelector) {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
 
-      var duration = calculateDuration(ul);
-      var max_width = parseInt(tab_nav.css('width'));
-      var tablist = $(ul)[0];
-      var translateText = "";
+      let duration = calculateDuration(ul);
+      let max_width = parseInt(tab_nav.css('width'));
+      let tablist = $(ul)[0];
+      let translateText = "";
       if (tablist !== undefined && tablist != null) {
         translateText = tablist.style.transform;
       }
-      var scrollWidth = (calculateListSize() - max_width) * -1;
+      let scrollWidth = (calculateListSize() - max_width) * -1;
 
       if (isThereEnoughPlace()) {
         // scroll to beginning, because we have enough space
@@ -58,7 +58,7 @@ function setupTabs(tabsSelector) {
         //  scroll to the end if not everything is visiable
         //  if there is translate text we calculate it
         if (translateText !== "" && translateText !== undefined && translateText != null) {
-          var currentTranslate = parseFloat(translateText.substring(translateText.lastIndexOf("(") + 1, translateText.indexOf("px")))
+          let currentTranslate = parseFloat(translateText.substring(translateText.lastIndexOf("(") + 1, translateText.indexOf("px")))
 
           // if it's zero, just show the more shadow
           if (currentTranslate == 0) {
@@ -88,10 +88,6 @@ function setupTabs(tabsSelector) {
   $(more).hover(function() {
     //  only when it's not hidden
     if (!$(this).hasClass('tabs-nav__slide--hidden')) {
-      // var tab_nav = $(this).closest('.tabs-nav');
-      // var less = tab_nav.find('.tabs-nav__slide--left');
-      // var more = tab_nav.find('.tabs-nav__slide--right');
-      // var ul = tab_nav.find('ul');
       // calculate scrollWidth and duration
 
       // -10 is to have some padding after the last item
@@ -104,10 +100,12 @@ function setupTabs(tabsSelector) {
       less.removeClass('tabs-nav__slide--hidden');
 
       scrollList(ul, scrollWidth, duration, function() {
-        if (!more.hasClass('stop')) {
-          more.addClass('tabs-nav__slide--hidden');
-        }
-        more.removeClass('stop');
+        setTimeout(() => {
+          if (!more.hasClass('stop')) {
+            more.addClass('tabs-nav__slide--hidden');
+            more.removeClass('stop');
+          }
+        }, 250);
       }, 'easeInOutSine');
     }
 
@@ -127,10 +125,12 @@ function setupTabs(tabsSelector) {
       more.removeClass('tabs-nav__slide--hidden');
 
       scrollList(ul, 0, duration, function() {
-        if (!(less.hasClass('stop'))) {
-          less.addClass('tabs-nav__slide--hidden');
-        }
-        less.removeClass('stop');
+        setTimeout(() => {
+          if (!(less.hasClass('stop'))) {
+            less.addClass('tabs-nav__slide--hidden');
+            less.removeClass('stop');
+          }
+        }, 250);
       }, 'easeInOutSine');
     }
 
@@ -189,8 +189,8 @@ function setupTabs(tabsSelector) {
       if (distance === max) {
         if (!more.hasClass('stop')) {
           more.addClass('tabs-nav__slide--hidden');
+          more.removeClass('stop');
         }
-        more.removeClass('stop');
       }
     }, 'easeInOutSine');
 
@@ -205,8 +205,8 @@ function setupTabs(tabsSelector) {
       if (distance === 0) {
         if (!less.hasClass('stop')) {
           less.addClass('tabs-nav__slide--hidden');
+          less.removeClass('stop');
         }
-        less.removeClass('stop');
       }
     }, 'easeInOutSine');
   });
@@ -256,7 +256,7 @@ function setupTabs(tabsSelector) {
 
     // if we are going to the right
     if (right === true) {
-      const max_width = parseInt(tab_nav.css('width'));
+      const max_width = parseInt(tab_nav.css('width')) ;
       const max = (calculateListSize() - max_width);
       if (newScroll < max) {
         return newScroll;

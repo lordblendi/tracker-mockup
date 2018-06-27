@@ -35,25 +35,13 @@ permalink: /tabs
       <div class="field__data">
         <div class="field__value">
           <div class="selector selector--singleselect selector--expanded selector--required JS_selector">
-            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem JS_changeTabsWidth" tabindex='0' data-width="sm:w-full">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field ">Full</div>
-              </div>
-            </div>
-            <div class="selector__itemSeperator"></div>
-            <div class="selector__item JS_selectorItem--active JS_selectorItem JS_changeTabsWidth" tabindex='0' data-width="sm:w-3/4">
+            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem JS_changeTabsWidth" tabindex='0' data-width="sm:w-3/4">
               <div class="selector__block">
                 <div class="selector__blockPart selector__blockPart--field ">75%</div>
               </div>
             </div>
             <div class="selector__itemSeperator"></div>
-            <div class="selector__item JS_selectorItem--active JS_selectorItem JS_changeTabsWidth" tabindex='0' data-width="sm:w-1/2">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field ">50%</div>
-              </div>
-            </div>
-            <div class="selector__itemSeperator"></div>
-            <div class="selector__item JS_selectorItem--active JS_selectorItem JS_changeTabsWidth" tabindex='0' data-width="sm:w-1/4">
+            <div class="selector__item JS_selectorItem JS_changeTabsWidth" tabindex='0' data-width="sm:w-1/4">
               <div class="selector__block">
                 <div class="selector__blockPart selector__blockPart--field ">25%</div>
               </div>
@@ -86,9 +74,23 @@ permalink: /tabs
 </script>
 
 <div class="flex flex-col sm:flex-row m-8 pb-4 border-b-2 border-dashed border-grey-dark overflow-hidden">
-  <div class="JS_change_my_width sm:w-full p-2 overflow-hidden">
+  <div class=" sm:w-full p-2 overflow-hidden">
     <h2 class="mb-8">Tabs</h2>
-    <div class="bg-grey-light">
+    <div class="note">
+      <ul>
+        <li> There is a hover effect or not selected tab_nav_links.</li>
+        <li> On choosing the new one, the line under the selected tab_nav_link moves to the new one.</li>
+        <li> Shadows are visible if there is not enough place to fit every tab on the screen.</li>
+        <li> Shadow is only visible, if something is hidden on that side of the tabs_nav.</li>
+        <li> Hovering over a shadow should start horizontal scrolling the tabs_nav left or right. At the end on the right, there should be extra 10px or so.</li>
+        <li> Hovering off the shadow should stop horizontal scrolling the tabs_nav.</li>
+        <li> Hovering over the arrow in the shadow should stop horizontal scrolling the tabs_nav.</li>
+        <li> Clicking the arrow in the shadow should jump one tab left or right in the tabs_nav, positionning the new one to the first in the left. (This Jquery code is has bugs in it.)</li>
+        <li> If something is hidden, but suddenly there is enough space again, the tabs should reorganize themselves if needed, and check the conditionals for the shadows. To try: 25%, scroll all the way to the right, 75%</li>
+      </ul>
+    </div>
+
+    <div class="JS_change_my_width sm:w-3/4 bg-grey-light mt-4">
       {% assign tabsNavData = "Structure;Overviews;Recently used;Favorites;Tab5;Tab6;Tab long text example" %}
       {% capture panelData %}
         {% include blocks/app-nav/app-nav-tab1.html %}
