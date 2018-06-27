@@ -1,5 +1,5 @@
 var resizeTimer;
-
+const extraRightTabsPadding = 10;
 $(function() {
   // setup tabs for every tabs
   if ($(".tabs-nav").length > 0) {
@@ -91,7 +91,7 @@ function setupTabs(tabsSelector) {
       // calculate scrollWidth and duration
 
       // -10 is to have some padding after the last item
-      let max_width = parseInt(tab_nav.css('width')) - 10;
+      let max_width = parseInt(tab_nav.css('width')) - extraRightTabsPadding;
       let scrollWidth = (calculateListSize() - max_width) * -1;
       let duration = calculateDuration(ul);
 
@@ -182,7 +182,7 @@ function setupTabs(tabsSelector) {
 
     const distance = calculateArrowJump(true) * -1;
     const max_width = parseInt(tab_nav.css('width'));
-    const max = (calculateListSize() - max_width) * -1;
+    const max = (calculateListSize() - max_width + extraRightTabsPadding) * -1;
     $(more).removeClass('stop');
 
     scrollList(ul, distance, 500, function() {
@@ -261,7 +261,7 @@ function setupTabs(tabsSelector) {
       if (newScroll < max) {
         return newScroll;
       }
-      return max;
+      return max + extraRightTabsPadding;
     }
     // if we are going to the left
     else {
