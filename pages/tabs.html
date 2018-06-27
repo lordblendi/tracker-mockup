@@ -8,124 +8,115 @@ permalink: /tabs
 </div>
 <div class="fixed pin-t pin-l w-full flex pt-4 z-highest bg-grey-lightest shadow-lg text-center">
   <div class="px-4">
-
     <div class="field field--not-empty">
       <div class="field__label">Theme</div>
       <div class="field__data">
         <div class="field__value">
-          <div class="selector selector--singleselect selector--expanded JS_selector ">
+          <div class="selector selector--singleselect selector--expanded selector--required JS_selector ">
             <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem" tabindex='0'>
               <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field JS_theme_light">Light</div>
+                <div class="selector__blockPart selector__blockPart--field JS_theme_normal">Normal</div>
               </div>
             </div>
             <div class="selector__itemSeperator"></div>
             <div class="selector__item JS_selectorItem" tabindex='0'>
               <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix JS_theme_dark">Dark</div>
+                <div class="selector__blockPart selector__blockPart--prefix JS_theme_invert">Invert</div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
   <div class="px-4">
-
     <div class="field field--not-empty">
-      <div class="field__label">Loading</div>
+      <div class="field__label">Tabs panel width</div>
       <div class="field__data">
         <div class="field__value">
-          <div class="selector selector--multiselect selector--expanded JS_selector">
-            <div class="selector__item JS_selectorItem--active JS_selectorItem" tabindex='0'>
+          <div class="selector selector--singleselect selector--expanded selector--required JS_selector">
+            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem JS_changeTabsWidth" tabindex='0' data-width="sm:w-full">
               <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field JS_load_selectors">Selectors</div>
+                <div class="selector__blockPart selector__blockPart--field ">Full</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator"></div>
+            <div class="selector__item JS_selectorItem--active JS_selectorItem JS_changeTabsWidth" tabindex='0' data-width="sm:w-3/4">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field ">75%</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator"></div>
+            <div class="selector__item JS_selectorItem--active JS_selectorItem JS_changeTabsWidth" tabindex='0' data-width="sm:w-1/2">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field ">50%</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator"></div>
+            <div class="selector__item JS_selectorItem--active JS_selectorItem JS_changeTabsWidth" tabindex='0' data-width="sm:w-1/4">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field ">25%</div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
 <script>
-  $('.JS_theme_light').on('click', function() {
-    $('body').css('background-color', 'white');
+  $('.JS_theme_normal').on('click', function() {
+    $('.tabs').removeClass('tabs--invert');
   });
-  $('.JS_theme_dark').on('click', function() {
-    $('body').css('background-color', 'black');
-  });
-
-  $('.JS_load_selectors').on('click', function() {
-    $('.selector').each(function() {
-      $(this).toggleClass('animate-loading');
-    });
-    // remove the loading animation from this selector
-    $(this).closest('.selector').removeClass('animate-loading');
+  $('.JS_theme_invert').on('click', function() {
+    $('.tabs').addClass('tabs--invert');
   });
 
-  $('.JS_load_buttons').on('click', function() {
-    $('.btn').each(function() {
-      $(this).toggleClass('animate-loading');
-    });
+  $('.JS_changeTabsWidth').on('click', function() {
+    setTimeout( () => {
+      if($(this).hasClass('JS_selectorItem--active')) {
+        $('.JS_change_my_width').removeClass('sm:w-full sm:w-1/4 sm:w-3/4 sm:w-1/2');
+        $('.JS_change_my_width').addClass($(this).attr('data-width'));
+        window.dispatchEvent(new Event('resize'));
+      }
+    }, 250);
   });
+
 </script>
 
 <div class="flex flex-col sm:flex-row m-8 pb-4 border-b-2 border-dashed border-grey-dark overflow-hidden">
-  <div class="sm:w-full p-2 overflow-hidden">
-
+  <div class="JS_change_my_width sm:w-full p-2 overflow-hidden">
     <h2 class="mb-8">Tabs</h2>
+    <div class="bg-grey-light">
+      {% assign tabsNavData = "Structure;Overviews;Recently used;Favorites;Tab5;Tab6;Tab long text example" %}
+      {% capture panelData %}
+        {% include blocks/app-nav/app-nav-tab1.html %}
+        ;&&;
+        {% include blocks/app-nav/app-nav-tab2.html %}
+        ;&&;
+        <div class="text-lg text-red">
+          recently used
+        </div>
+        ;&&;
+        <div class="text-lg text-blue">
+          favorites
+        </div>
+        ;&&;
+        <div class="text-lg text-orange">
+          Tab5
+        </div>
+        ;&&;
+        <div class="text-lg text-yellow-darker">
+          Tab6
+        </div>
+        ;&&;
+        <div class="text-lg text-green-light">
+          Tab long text example
+        </div>
+      {% endcapture %}
 
-    <!-- SingleSelects -->
-    <!-- Field -->
-    <div class="field field--not-empty">
-      <div class="field__label">Single select - expanded</div>
-      <div class="field__data">
-        <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" selectedIndexes="1" %}
-        </div>
-      </div>
-    </div>
-    <!-- Field -->
-    <div class="field field--not-empty">
-      <div class="field__label">Single select - expanded and required (you cannot unselect all of them)</div>
-      <div class="field__data">
-        <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" required="true" selectedIndexes="1" %}
-        </div>
-      </div>
-    </div>
-    <!-- Field -->
-    <div class="field field--not-empty">
-      <div class="field__label">Single select - expanded and readonly</div>
-      <div class="field__data">
-        <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
-        </div>
-      </div>
-    </div>
-
-    <!-- Field -->
-    <div class="field field--not-empty">
-      <div class="field__label">Single select - not expanded (shows only one item) - no popup attached</div>
-      <div class="field__data">
-        <div class="field__value">
-          {% include components/selector.html selectorData="#F4CA16,,,Ongoing" singleselect="true" selectedIndexes="1" %}
-        </div>
-      </div>
-    </div>
-
-    <!-- Field -->
-    <div class="field field--not-empty">
-      <div class="field__label">Single select - not expanded (shows only one item) and readonly</div>
-      <div class="field__data">
-        <div class="field__value">
-          {% include components/selector.html selectorData="#F4CA16,,,Ongoing" readonly="true" singleselect="true" selectedIndexes="1" %}
-        </div>
-      </div>
+      {% include components/tabs.html tabsNavData=tabsNavData panelData=panelData %}
     </div>
   </div>
 </div>

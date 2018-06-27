@@ -15,7 +15,7 @@
 <div class="itemBox JS_appNavBox">
   {% for group in site.data.app-nav-tab1.groups %}
     <div class="itemBox__row">
-      <ul class="itemBox__rowInner itemBox__rowInner--item">
+      <ul class="itemBox__rowInner itemBox__rowInner--item JS_children-closed">
         <li class="itemBox__cell itemBox__cell--action JS_toggle">
           <div class="itemBox__cellInner">
             <button class="itemBox__action">{{group.icon}} {{group.name}}</button>
@@ -27,7 +27,7 @@
           </div>
         </li>
       </ul>
-      <div class="itemBox JS_itemBox--children JS_children-closed">
+      <div class="itemBox JS_itemBox--children JS_children-closed" style="display:none;">
         {% for item in group.items %}
           <div class="itemBox__row">
             <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
