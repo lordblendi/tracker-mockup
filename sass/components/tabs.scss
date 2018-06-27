@@ -92,7 +92,7 @@
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
 
-      &:not(.tabs-nav__link--active):hover {
+      &:not(.tabs-nav__link--active):hover, &:not(.tabs-nav__link--active):focus {
         transform: translateY(-2px);
       }
 
