@@ -8,7 +8,6 @@ permalink: /selectors
 </div>
 <div class="fixed pin-t pin-l w-full flex pt-4 z-highest bg-grey-lightest shadow-lg text-center">
   <div class="px-4">
-
     <div class="field field--not-empty">
       <div class="field__label">Theme</div>
       <div class="field__data">
@@ -29,10 +28,8 @@ permalink: /selectors
         </div>
       </div>
     </div>
-
   </div>
   <div class="px-4">
-
     <div class="field field--not-empty">
       <div class="field__label">Loading</div>
       <div class="field__data">
@@ -47,7 +44,6 @@ permalink: /selectors
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -544,82 +540,3 @@ permalink: /selectors
 
   </div>
 </div>
-
-<div class="flex flex-col sm:flex-row m-8 py-4 border-b-2 border-dashed border-grey-dark overflow-hidden">
-  <div class="sm:w-1/2 px-4">
-    <!-- Field -->
-    <div class="field">
-      <div class="field__label">Title</div>
-      <div class="field__data">
-        <div class="field__value">
-          <input class="field__input" type="text" value="">
-        </div>
-      </div>
-    </div>
-
-    <!-- Field -->
-    <div class="field">
-      <div class="field__label">Due date</div>
-      <div class="field__data">
-        <div class="field__value">
-          <input class="field__input" value="">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="sm:w-1/2 px-4">
-    <!-- Field -->
-    <div class="field">
-      <div class="field__label">Email</div>
-      <div class="field__data">
-        <div class="field__value">
-          <input class="field__input" type="email" value="nick.de.jaeger@tenforce.com">
-        </div>
-      </div>
-      <div class="note">
-        <p>Fill in a valid email address.</p>
-      </div>
-    </div>
-
-    <!-- Field -->
-    <div class="field field--error JS_field--error">
-      <div class="field__label">Assigned to</div>
-      <div class="field__data">
-        <div class="field__error JS_has-popup JS_has-popup--error" data-popid="#ms-error-user"></div>
-        <div class="field__value">
-          <input class="field__input" type="text" value="_Not Assigned">
-        </div>
-      </div>
-    </div>
-
-    <!-- Popup (error)-->
-    <div class="multiSelector" id="ms-error-user">
-      <div class="itemBox">
-        <div class="itemBox__row">
-          <ul class="itemBox__rowInner itemBox__rowInner--custom">
-            <li class="itemBox__cell">
-              <div class="itemBox__cellInner">
-                <div class="note note--error">
-                  <p>Item must have a user assigned.</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  $("#ms-status .JS_error-popupRow").on('click', function() {
-    closeOverlay();
-    $("#ms-status .JS_itemBoxRow--error").css('display', 'flex');
-    $('.JS_field--error').each(function() {
-      const errorField = $(this);
-      errorField.addClass('field--error');
-      errorField.find('.JS_has-popup').addClass('JS_has-popup--error');
-    });
-  });
-</script>
