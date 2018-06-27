@@ -1,0 +1,132 @@
+---
+layout: selectors
+title: Inputs
+permalink: /inputs
+---
+
+<div class="relative h-32">
+</div>
+<div class="fixed pin-t pin-l w-full flex pt-4 z-highest bg-grey-lightest shadow-lg text-center">
+  <div class="px-4">
+    <div class="field field--not-empty">
+      <div class="field__label">Theme</div>
+      <div class="field__data">
+        <div class="field__value">
+          <div class="selector selector--singleselect selector--expanded selector--required JS_selector ">
+            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem" tabindex='0'>
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field JS_theme_light">Light</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator"></div>
+            <div class="selector__item JS_selectorItem" tabindex='0'>
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--prefix JS_theme_dark">Dark</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="px-4">
+    <div class="field field--not-empty">
+      <div class="field__label">Loading</div>
+      <div class="field__data">
+        <div class="field__value">
+          <div class="selector selector--multiselect selector--expanded JS_selector">
+            <div class="selector__item JS_selectorItem--active JS_selectorItem" tabindex='0'>
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field JS_load_inputs">Inputs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('.JS_theme_light').on('click', function() {
+    $('body').css('background-color', 'white');
+  });
+  $('.JS_theme_dark').on('click', function() {
+    $('body').css('background-color', 'black');
+  });
+
+  $('.JS_load_inputs').on('click', function() {
+    $('input.field__input').each(function() {
+      $(this).closest('.field__value').toggleClass('animate-loading');
+    });
+  });
+</script>
+
+<div class="flex flex-col sm:flex-row m-8 py-4 border-b-2 border-dashed border-grey-dark overflow-hidden">
+  <div class="sm:w-1/2 px-4">
+    <!-- Field -->
+    <div class="field">
+      <div class="field__label">Title</div>
+      <div class="field__data">
+        <div class="field__value">
+          <input class="field__input" type="text" value="">
+        </div>
+      </div>
+      <div class="note">
+        <p>Example note under empty field. The label is moved into the input field's position and acts as placeholder.</p>
+      </div>
+    </div>
+
+    <!-- Field -->
+    <div class="field">
+      <div class="field__label">Email</div>
+      <div class="field__data">
+        <div class="field__value">
+          <input class="field__input" type="email" value="nick.de.jaeger@tenforce.com">
+        </div>
+      </div>
+      <div class="note">
+        <p>If the input field is focused or filled, the label is above the input field. When the input field becomes empty again, the label moves down.</p>
+      </div>
+    </div>
+
+    <!-- Field -->
+    <div class="field JS_field--error">
+      <div class="field__label">Assigned to</div>
+      <div class="field__data">
+        <div class="field__error JS_has-popup JS_has-popup--error" data-popid="#ms-error-user"></div>
+        <div class="field__value">
+          <input class="field__input" type="text" value="">
+        </div>
+      </div>
+      <div class="note">
+        <p>Example with error. Start typing to trigger example. The error icon is clickable</p>
+      </div>
+    </div>
+
+    <!-- Popup (error)-->
+    <div class="multiSelector" id="ms-error-user">
+      <div class="itemBox">
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--custom">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                <div class="note note--error">
+                  <p>Item must have a user assigned.</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(".JS_field--error input").on('keyup', function() {
+    $('.JS_field--error').each(function() {
+      $(this).addClass('field--error');
+    });
+  });
+</script>
