@@ -10,13 +10,13 @@
     <div class="itemBox">
       {% for item in itemgroup %}
         <div class="itemBox__row">
-          <ul class="itemBox__rowInner itemBox__rowInner--item itemBox__rowInner--permalink">
-            <li class="itemBox__cell flex-grow-0 itemBox__cell--permalink">
+          <ul class="itemBox__rowInner itemBox__rowInner--item itemBox__rowInner--permalink" tabindex="0">
+            <li class="itemBox__cell flex-grow-0 itemBox__cell--permalink" tabindex="0">
               <div class="itemBox__cellInner">
                 <div class="itemBox__value">{{item.icon}}</div>
               </div>
             </li>
-            <li class="itemBox__cell itemBox__cell--permalink">
+            <li class="itemBox__cell itemBox__cell--permalink" tabindex="0">
               <div class="itemBox__cellInner">
                 <div class="itemBox__value">{{item.name}}</div>
               </div>

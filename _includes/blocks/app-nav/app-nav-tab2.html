@@ -25,7 +25,7 @@
         {% for item in group.items %}
           <div class="itemBox__row">
             <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
-              <li class="itemBox__cell itemBox__cell--permalink">
+              <li class="itemBox__cell itemBox__cell--permalink" tabindex="0">
                 <div class="itemBox__cellInner JS_text">
                   {% assign selectorData = "," | append: item.prefix | append: "," | append: item.label | append: "," | append: item.name %}
                   {% include components/selector.html selectorData=selectorData expanded="true"  singleselect="true" readonly="true" selectedIndexes="1" %}

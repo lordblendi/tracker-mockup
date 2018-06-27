@@ -132,7 +132,7 @@
         }
       }
 
-      &:hover {
+      &:hover, &:focus, &:focus-within {
         .itemBox__cell {
           &::before {
             height: 2px;
@@ -144,7 +144,7 @@
               opacity: .5;
             }
 
-            &:hover {
+            &:hover, &:focus {
               &::before {
                 opacity: 1;
               }
@@ -174,7 +174,7 @@
     }
 
     &--permalink {
-      &:hover {
+      &:hover, &:focus {
         .itemBox__cell {
           &--permalink {
             &::before {
