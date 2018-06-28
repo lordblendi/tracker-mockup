@@ -18,20 +18,17 @@
       <!-- cell, that contains only one icon is always flex-grow-0 -->
       <!-- if NO action, then empty cell, but the cell is still visible -->
       <!-- if there is an action in it, then it contans a button, otherwise only cellInner -->
+      <!-- every header has the title as placeholder and can be used as filter -->
 
-      <!-- expands and collapses current itemBox's children -->
-      <!-- if nothing is expanded -> expand all children -->
-      <!-- otherwise collapse all children -->
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_expand_header">
+      <li class="itemBox__cell">
         <div class="itemBox__cellInner">
-          <button class="itemBox__action"></button>
+          <input class="field__input" type="text" placeholder="header cell 1">
         </div>
       </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">header cell 1</div>
-      </li>
       <li class="itemBox__cell flex-grow-2">
-        <div class="itemBox__cellInner">header cell 2 with flex-grow-2</div>
+        <div class="itemBox__cellInner">
+          <input class="field__input" type="text" placeholder="header cell 2 with flex-grow-2">
+        </div>
       </li>
     </ul>
   </div>
@@ -40,19 +37,15 @@
   <div class="itemBox__row">
     <!-- item row itself, this is an itemrow, a simple row-->
     <ul class="itemBox__rowInner itemBox__rowInner--item">
-      <!-- cell, that contains only one icon is always flex-grow-0 -->
-      <!-- if NO action, then empty cell, but the cell is still visible -->
-      <!-- if there is an action in it, then it contans a button, otherwise only cellInner -->
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
-        <div class="itemBox__cellInner"></div>
-      </li>
       <li class="itemBox__cell">
         <div class="itemBox__cellInner">
           {% include components/selector.html selectorData=",,,395415" readonly="true" singleselect="true" expanded="true" selectedIndexes="1" %}
         </div>
       </li>
-      <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink" tabindex="0">
-        <div class="itemBox__cellInner">Permalink cell</div>
+      <li class="itemBox__cell flex-grow-2">
+        <div class="itemBox__cellInner">
+          <input class="field__input" type="text" value="Example data">
+        </div>
       </li>
     </ul>
   </div>

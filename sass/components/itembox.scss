@@ -242,7 +242,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
-    input {
+    &:focus-within {
+      z-index: 50;
+    }
+
+    input, .field__input {
       width: 100%;
     }
 

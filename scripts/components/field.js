@@ -37,6 +37,13 @@ $('.header__inputTitle').on('focusout', function() {
   closeOverlay();
 });
 
+// for inputs outside of fields show overlay-body--text on focus
+$('.field__input').on('focus', function() {
+  openOverlay(true, false, false);
+}).on('focusout', function() {
+  closeOverlay();
+});
+
 
 /*
 
