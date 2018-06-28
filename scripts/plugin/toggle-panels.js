@@ -17,12 +17,14 @@ $(document).ready(function() {
     });
 
     $body.addClass('app-navigator--visible');
+    openOverlay(false, false, false);
     $('body').addClass('fixed');
   });
 
   // user-menu toggle action
   $('.JS_toggle-user-menu').on('click', function() {
     $body.addClass('user-menu--visible');
+    openOverlay(false, false, false);
     $('body').addClass('fixed');
   });
 
@@ -44,11 +46,13 @@ $(document).ready(function() {
   $('.overlay-body').on('click', function() {
     if ($body.hasClass('app-navigator--visible')) {
       $body.removeClass('app-navigator--visible');
+      closeOverlay();
       $('body').removeClass('fixed');
     }
 
     if ($body.hasClass('user-menu--visible')) {
       $body.removeClass('user-menu--visible');
+      closeOverlay();
       $('body').removeClass('fixed');
     }
 

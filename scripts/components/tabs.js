@@ -1,5 +1,5 @@
 var resizeTimer;
-const extraRightTabsPadding = 10;
+var extraRightTabsPadding = 10;
 $(function() {
   // setup tabs for every tabs
   if ($(".tabs-nav").length > 0) {

@@ -11,18 +11,10 @@
 .app-navigator--visible .container-master {
   left: 50%;
 }
-.app-navigator--visible .overlay-body {
-  opacity: 1;
-  pointer-events: auto;
-}
 
 
 .user-menu {
   right: -25%;
-}
-.user-menu--visible .overlay-body {
-  opacity: 1;
-  pointer-events: auto;
 }
 .user-menu--visible .user-menu {
   right: 0;
