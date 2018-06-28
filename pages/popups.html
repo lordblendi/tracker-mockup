@@ -1,0 +1,122 @@
+---
+layout: selectors
+title: Popups
+permalink: /popups
+---
+
+<div class="relative h-32"></div>
+
+<div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
+  <div class="sm:w-1/2 p-8 overflow-hidden">
+
+    <h2 class="mb-8">Single select example</h2>
+
+    <!-- Field -->
+    <div class="field field--not-empty JS_field--error">
+      <div class="field__label">Status - with description and error animation </div>
+      <div class="field__data">
+        <div class="field__error JS_has-popup" data-popid="#ms-error"></div>
+        <div class="field__value">
+          <div class="selector selector--singleselect JS_has-popup" data-popid="#ms-status">
+            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem" tabindex="0">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: var(--color-red);"></div>
+                <div class="selector__blockPart selector__blockPart--field JS_singleSelect--label">Not started</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          <div class="note">
+            <li>Single select popup, simply having an itemBox in it with the elements. The already selected item has a  in an extra column.</li>
+            <li>Error animation example: try to change status, then click on error icon or selector field again.</li>
+            <li>Upon having an error, there is a new itemBox with a note inside the cellInner, that is an error description.</li>
+            <li>The error icon is also clickable with one single note in it (wrapped in an itemBox).</li>
+            <li>A normal description follows the same structure.</li>
+          </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="multiSelector" id="ms-error">
+      <div class="itemBox">
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--custom">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                <div class="note note--error">
+                  <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="multiSelector animate-popup" id="ms-status">
+      <div class="itemBox">
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--custom JS_itemBoxRow--error" style="display: none;">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                <div class="note note--error">
+                  <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="itemBox JS_optionsChildren">
+        {% for item in site.data.multiselector-status.items %}
+        <div class="itemBox__row">
+          <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell JS_error-popupRow">
+            <li class="itemBox__cell">
+              <div class="itemBox__cellInner">
+                <div class="itemBox__value">
+                  <div class="selector selector--expanded">
+                    <div class="selector__item JS_selectorItem--active selector__item--selected">
+                      <div class="selector__block">
+                        <div class="selector__blockPart selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
+                        <div class="selector__blockPart selector__blockPart--field JS_text">{{item.name}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            {% if item.selected == "true" %} {% include javascript/itemSelected.html %} {% endif %}
+          </ul>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+  <div class="sm:w-1/2 p-8 overflow-hidden">
+    <h2 class="mb-8">Push configurations - looks like a button, but it's a link</h2>
+
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Push</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/push.html title="Present" href="present" %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+  $("#ms-status .JS_error-popupRow").on('click', function() {
+    closeOverlay();
+    $("#ms-status .JS_itemBoxRow--error").css('display', 'flex');
+    $('.JS_field--error').each(function() {
+      const errorField = $(this);
+      errorField.addClass('field--error');
+      errorField.find('.JS_has-popup').addClass('JS_has-popup--error');
+    });
+  });
+</script>
