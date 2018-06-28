@@ -11,7 +11,7 @@ permalink: /popups
       <h4 class="py-2">Position</h4>
       <li>The position of the popup is usually the bottom left of the trigger touches the top left of the popup.</li>
       <li>If this way the popup would be too wide to fit fully on the screen, then it is aligned to the right: bottom right of the trigger touches the top right of the popup.</li>
-      <li>The width of the popup is always the same size as the trigger, but has a min-width 300px. So if the trigger is 50% of your screen, the popup will be 50% wide too.</li>
+      <li>The width of the popup is always the same size as the trigger, but has a min-width 300px. So if the trigger is 50% of your screen, the popup will be 50% wide too. Wider example lower under with filters.</li>
       <h4 class="py-2">Overlay</h4>
       <li>First child of the body</li>
       <li>For normal popups the overlay is darker, pointer-events-none (overlay-body--visible)</li>
@@ -45,6 +45,10 @@ permalink: /popups
         <li>Upon having an error, there is a new itemBox with a note inside the cellInner, that is an error description.</li>
         <li>The error icon is also clickable with one single note in it (wrapped in an itemBox).</li>
         <li>A normal description follows the same structure.</li>
+        <li>Clicking on the row selects the new element and closes the popup.</li>
+        <h4 class="py-2">Optional elements</h4>
+        <li>Grouping, like in the multselector popup / ALL. No add or remove actions.</li>
+        <li>Filter is on top of the selected/all groups in a it's own itemBox, but under error and tooltip notes </li>
       </div>
     </div>
 
@@ -119,15 +123,7 @@ permalink: /popups
           <button class="block-action JS_has-popup" data-popid="#multiSelector-columnpicker"></button>
         </div>
       </div>
-      <div class="note">
-        <li>Single select popup, simply having an itemBox in it with the elements. The already selected item has a  in an extra column.</li>
-        <li>Error animation example: try to change status, then click on error icon or selector field again.</li>
-        <li>Upon having an error, there is a new itemBox with a note inside the cellInner, that is an error description.</li>
-        <li>The error icon is also clickable with one single note in it (wrapped in an itemBox).</li>
-        <li>A normal description follows the same structure.</li>
-      </div>
     </div>
-
     <!-- Popup -->
     <div class="multiSelector" id="ms-privacy">
       <div class="itemBox">
@@ -149,6 +145,38 @@ permalink: /popups
 
     <!-- Popup -->
     {% include popups/multiSelector-columnpicker.html %}
+
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Tags</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/selector.html selectorData="#0BDA51,,,282;#F4CA16,,,2013_Maintenance;#E30022,,,workaround_available" multiselect="true" selectedIndexes="1,2,3" popupId="#multiSelector-tagpicker" %}
+        </div>
+      </div>
+    </div>
+
+      <div class="note">
+        <li>Multiselect popup, has SELECTED and ALL groupings ine ONE itemBox. Both of the groups have collapseable function</li>
+        <li>Selected: on the top, has remove actions  only. Removing on the SELECTED makes the whole group be unselected. If nothing is selected, the group doesn't exists. If more than 4 are selected, there is a counter. No subgroups.</li>
+        <li>All: under the selected group, has add  and remove actions . Subgroups are optional.</li>
+        <h4 class="py-2" >Children and subgroups</h4>
+        <li>Children are actual grouping. They belong under the row in a hierarchical structure. Background is transparent.</li>
+        <li>If there is a subgroup, it has group actions. If everything removed, add action only. If everything is added, remove action only. Otherwise both.</li>
+        <li>Subitems have either add or remove actions depending on their state.</li>
+        <li>Subitems have either add or remove actions depending on their state.</li>
+        <h4 class="py-2" >Sublists</h4>
+        <li>Sublists are options to one of the cells in the row. When a sublist is open, the cell the sublist belongs to has an underline even without hovering over the row. Background is grey.</li>
+        <li>In the columnpicker example, try the . This can be any icon or text. In our example if something is changed in the sublist (a setting), the icon changes to <sup>•</sup></li>
+        <li>Another example is the color changer for the tagpicker.</li>
+        <h4 class="py-2">Optional elements</h4>
+        <li>Filter is on top of the selected/all groups in a it's own itemBox, but under error and tooltip notes </li>
+        <li>Reset to default/previous upon changing ANYTHING</li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </div>
+
   </div>
 </div>
 <script>
@@ -162,3 +190,100 @@ permalink: /popups
     });
   });
 </script>
+
+<div class="flex flex-col sm:flex-row m-8 py-4 border-b-2 border-dashed border-grey-dark overflow-hidden">
+  <div class="sm:w-1/2 p-8 overflow-hidden">
+
+    <h2 class="mb-8">More complex examples regarding to filters</h2>
+
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Tags  Filter</div>
+      <div class="field__data">
+        <div class="field__value JS_has-popup" data-popid="#filter-tagpicker">
+          <div class="selector selector--expanded selector--readonly">
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
+            <div class="selector__item JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
+                <div class="selector__blockPart selector__blockPart--field">Design</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
+            <div class="selector__item JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
+                <div class="selector__blockPart selector__blockPart--field">Marketing</div>
+              </div>
+            </div>
+          </div>
+          <div class="selector selector--expanded selector--readonly JS_selector">
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+          </div>
+          <div class="selector selector--expanded selector--readonly JS_selector">
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
+            <div class="selector__item JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #f4ca16;"></div>
+                <div class="selector__blockPart selector__blockPart--field">front-end</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+            <div class="selector__item JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #e30022;"></div>
+                <div class="selector__blockPart selector__blockPart--field">back-end</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popup -->
+    {% include popups/filter-tags.html%}
+
+    <!-- Field -->
+    <div class="field field--not-empty">
+      <div class="field__label">Date  Filter</div>
+      <div class="field__data">
+        <div class="field__value JS_has-popup" data-popid="#filter-datepicker">
+          <div class="selector selector--expanded selector--readonly">
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
+            <div class="selector__item JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field">next 2 weeks (12/03/18-25/03/18)</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
+            <div class="selector__item JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field">19/03/18-20/03/18</div>
+              </div>
+            </div>
+          </div>
+          <div class="selector selector--expanded selector--readonly">
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+          </div>
+          <div class="selector selector--expanded selector--readonly">
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
+            <div class="selector__item JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field">today</div>
+              </div>
+            </div>
+            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+            <div class="selector__item JS_selectorItem--active selector__item--selected">
+              <div class="selector__block">
+                <div class="selector__blockPart selector__blockPart--field">18/03/18</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popup -->
+    {% include popups/filter-date.html%}
+  </div>
+</div>
