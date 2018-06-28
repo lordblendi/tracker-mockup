@@ -540,3 +540,14 @@ permalink: /selectors
 
   </div>
 </div>
+<script>
+  $("#ms-status .JS_error-popupRow").on('click', function() {
+    closeOverlay();
+    $("#ms-status .JS_itemBoxRow--error").css('display', 'flex');
+    $('.JS_field--error').each(function() {
+      const errorField = $(this);
+      errorField.addClass('field--error');
+      errorField.find('.JS_has-popup').addClass('JS_has-popup--error');
+    });
+  });
+</script>
