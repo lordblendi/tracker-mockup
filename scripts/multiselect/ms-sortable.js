@@ -12,14 +12,14 @@ function reinitSortable(multiSelector) {
     sortableSelector = ".itemBoxBody--sortableInclude, .itemBoxBody--sortableExclude";
     options = {
       handle: '.JS_itemBox__cell--draggable',
-      placeholder: 'itemBox__row itemBox__row--item',
+      placeholder: 'itemBox__rowInner itemBox__row--item',
       connectWith: ".itemBoxBody--sortableConnected"
     };
   } else {
     sortableSelector = ".JS_sortable";
     options = {
       handle: '.JS_itemBox__cell--draggable',
-      placeholder: 'itemBox__row itemBox__row--item'
+      placeholder: 'itemBox__row itemBox__row--placeholder'
     };
   }
 

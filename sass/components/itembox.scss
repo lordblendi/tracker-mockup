@@ -24,7 +24,22 @@
   }
 
   &__row {
+
+    &--placeholder {
+      position: relative;
+      display: flex;
+      background-color: #FFF;
+      height: 40px;
+      line-height: 30px;
+      list-style: none;
+      padding: 0;
+    }
+
     &:nth-of-type(odd) {
+      &.itemBox__row--placeholder {
+        background-color: var(--color-grey-lightest);
+      }
+
       >.itemBox__rowInner--item {
         background-color: var(--color-grey-lightest);
 
@@ -45,7 +60,6 @@
     > .itemBox {
       padding-top: 10px;
     }
-
   }
 
   &__rowInner {
