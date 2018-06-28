@@ -33,16 +33,16 @@ html {
   line-height: normal;
 }
 
-@import "tailwind/layout.css";
-@import "tailwind/typography.css";
-@import "tailwind/backgrounds.css";
-@import "tailwind/flexbox.css";
-@import "tailwind/spacing.css";
-@import "tailwind/sizing.css";
 @import "tailwind/animations.css";
-@import "tailwind/transitions.css";
-@import "tailwind/transforms.css";
+@import "tailwind/backgrounds.css";
 @import "tailwind/filters.css";
+@import "tailwind/flexbox.css";
+@import "tailwind/layout.css";
+@import "tailwind/sizing.css";
+@import "tailwind/spacing.css";
+@import "tailwind/transforms.css";
+@import "tailwind/transitions.css";
+@import "tailwind/typography.css";
 
 .scrollbar-none::-webkit-scrollbar {
   display: none;
