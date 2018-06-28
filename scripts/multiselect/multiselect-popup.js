@@ -97,16 +97,17 @@ function handlePopupClick(toggle, popid) {
     $(popid).addClass('animate-fadein');
   }
 
-  if (toggle.hasClass('JS_has-popup--error')) {
-    $('.overlay-body').addClass('overlay-body--error');
-  }
-
-  if (toggle.hasClass('JS_has-popup--tooltip')) {
-    $('.overlay-body').addClass('overlay-body--tooltip');
-  }
-
   // show overlay
-  $(".overlay-body").addClass('overlay-body--visible')
+  openOverlay(false, false, false);
+  // add error effect
+  if (toggle.hasClass('JS_has-popup--error')) {
+    openOverlay(false, true, false);
+  }
+  // add tooltip effect
+  if (toggle.hasClass('JS_has-popup--tooltip')) {
+    openOverlay(false, false, true);
+  }
+
 }
 
 // onclick action on overlay to close popups
@@ -115,10 +116,3 @@ $('.overlay-body').on('click', function() {
     closeOverlay();
   }
 });
-
-// close overlay and popups
-function closeOverlay(){
-  $(".overlay-body").removeClass('overlay-body--visible overlay-body--error overlay-body--text overlay-body--tooltip');
-
-  $('.multiSelector').removeClass('multiSelector--visible animate-popup animate-fadein');
-}

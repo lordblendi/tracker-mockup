@@ -10,12 +10,12 @@ $('.field').each(function() {
 
   input.on('focus', function() {
     field.addClass('field--focus');
-    $('.overlay-body').addClass('overlay-body--visible overlay-body--text');
+    openOverlay(true, false, false);
   });
 
   input.on('focusout', function() {
     field.removeClass('field--focus');
-    $('.overlay-body').removeClass('overlay-body--visible overlay-body--text');
+    closeOverlay();
 
     if (input.val()) {
       field.addClass('field--not-empty');
@@ -28,13 +28,13 @@ $('.field').each(function() {
 
 $('.header__inputTitle').on('focus', function() {
   $(this).addClass("header__inputTitle--focused");
-  $('.overlay-body').addClass('overlay-body--visible overlay-body--text');
+  openOverlay(true, false, false);
   $(this).select();
 
 });
 $('.header__inputTitle').on('focusout', function() {
   $(this).removeClass("header__inputTitle--focused");
-  $('.overlay-body').removeClass('overlay-body--visible overlay-body--text');
+  closeOverlay();
 });
 
 

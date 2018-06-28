@@ -15,5 +15,5 @@ $('.JS_toggle-semsearch').click(function() {
   });
   $(popup).addClass('multiSelector--visible');
   // show overlay
-  $(".overlay-body").addClass('opacity-100 pointer-events-auto');
+  openOverlay(true, false, false);
 });
