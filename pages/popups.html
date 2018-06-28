@@ -156,26 +156,46 @@ permalink: /popups
       </div>
     </div>
 
-      <div class="note">
-        <li>Multiselect popup, has SELECTED and ALL groupings ine ONE itemBox. Both of the groups have collapseable function</li>
-        <li>Selected: on the top, has remove actions  only. Removing on the SELECTED makes the whole group be unselected. If nothing is selected, the group doesn't exists. If more than 4 are selected, there is a counter. No subgroups.</li>
-        <li>All: under the selected group, has add  and remove actions . Subgroups are optional.</li>
-        <h4 class="py-2" >Children and subgroups</h4>
-        <li>Children are actual grouping. They belong under the row in a hierarchical structure. Background is transparent.</li>
-        <li>If there is a subgroup, it has group actions. If everything removed, add action only. If everything is added, remove action only. Otherwise both.</li>
-        <li>Subitems have either add or remove actions depending on their state.</li>
-        <li>Subitems have either add or remove actions depending on their state.</li>
-        <h4 class="py-2" >Sublists</h4>
-        <li>Sublists are options to one of the cells in the row. When a sublist is open, the cell the sublist belongs to has an underline even without hovering over the row. Background is grey.</li>
-        <li>In the columnpicker example, try the . This can be any icon or text. In our example if something is changed in the sublist (a setting), the icon changes to <sup>•</sup></li>
-        <li>Another example is the color changer for the tagpicker.</li>
-        <h4 class="py-2">Optional elements</h4>
-        <li>Filter is on top of the selected/all groups in a it's own itemBox, but under error and tooltip notes </li>
-        <li>Reset to default/previous upon changing ANYTHING</li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </div>
+    <!-- Popup -->
+    {% include popups/multiSelector-tags-colors.html %}
+
+    <div class="note">
+      <li>Multiselect popup, has Selected and All groupings ine ONE itemBox. Both of the groups have collapseable function</li>
+      <li>Selected: on the top, has remove actions  only. Removing on the Selected makes the whole group be unselected. If nothing is selected, the group doesn't exists. If more than 4 are selected, there is a counter. No subgroups for Selected in normal popups.</li>
+      <li>In the filter example there are subgroups (include/exclude).  (not implemented in the mockup).</li>
+      <li>Every action has primary color (gold), excapt the remove action (secondary color, red).</li>
+      <li>All: under the selected group, has add  and remove actions . Subgroups are optional.</li>
+      <li>Click outside to close and save.</li>
+
+      <h4 class="py-2" >Children and subgroups</h4>
+      <li>Children are actual grouping. They belong under the row in a hierarchical structure. Background is transparent.</li>
+      <li>If there is a subgroup, it has group actions. If everything removed, add action only. If everything is added, remove action only. Otherwise both.</li>
+      <li>Subitems have either add or remove actions depending on their state.</li>
+      <li>Subitems have either add or remove actions depending on their state.</li>
+
+      <h4 class="py-2" >Sublists</h4>
+      <li>Sublists are options to one of the cells in the row. When a sublist is open, the cell the sublist belongs to has an underline even without hovering over the row. Background is grey.</li>
+      <li>In the columnpicker example, try the . This can be any icon or text. In our example if something is changed in the sublist (a setting), the icon changes to <sup>•</sup></li>
+      <li>Another example is the color changer for the tagpicker.</li>
+
+      <h4 class="py-2">Optional filtering</h4>
+      <li>Filter is on top of the selected/all groups in a it's own itemBox, but under error and tooltip notes.</li>
+      <li>Upon filtering if something doesn't match the filter, it's gone. This effects the row coloring too, so display:none is not enough. Either remove it from the dom or change the tagName.</li>
+      <li>If a group has nothing to show upon filtering, the group is also hidden. This can end up hiding both All and Selected groups.</li>
+      <li>Suggestions should be under the filter option in a sublist, see tagpicker + filtering in it.</li>
+
+      <h4 class="py-2">Optional sorting</h4>
+      <li>If needed there is a sorting option in the Selected block, icon is އ.</li>
+      <li>Upon sorting, the children should move with the parents.</li>
+      <li>This is a drag-n-drop action.</li>
+      <li>Sublists should close (not implemented in the mockup).</li>
+      <li>In the filter example you should be able to drop between the subgroups: from the Include group to the Exclude group (not implemented in the mockup).</li>
+      <li>The icon in the mockup is in a div, because it doesn't trigger with a button. But by default, itemBox__action should be a button if possible.</li>
+
+      <h4 class="py-2">Optional elements in columnpicker</h4>
+      <li>Reset to default/previous upon changing ANYTHING</li>
+      <li>Appears as a suggestion inder the filter field.</li>
+    </div>
 
   </div>
 </div>
