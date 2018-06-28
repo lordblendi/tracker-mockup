@@ -4,6 +4,18 @@
 
 .app-navigator {
   left: -50%;
+  .tabs--invert {
+    .tabs-nav__slide--left {
+      .tabs-nav__slideShadow {
+          background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #91AED4 100%) !important;
+      }
+    }
+    .tabs-nav__slide--right {
+      .tabs-nav__slideShadow {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #91AED4 100%) !important;
+      }
+    }
+  }
 }
 .app-navigator--visible .app-navigator {
   left: 0;
