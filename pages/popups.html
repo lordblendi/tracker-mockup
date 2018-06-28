@@ -7,7 +7,17 @@ permalink: /popups
 <div class="relative h-32"></div>
 
 <div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
-  <div class="sm:w-1/2 p-8 overflow-hidden">
+  <div class="sm:w-1/3 p-4 overflow-hidden">
+    <div class="note">
+      <li>The position of the popup is usually the bottom left of the trigger touches the top left of the popup.</li>
+      <li>If this way the popup would be too wide to fit fully on the screen, then it is aligned to the right: bottom right of the trigger touches the top right of the popup.</li>
+      <li>The width of the popup is always the same size as the trigger, but has a min-width 300px. So if the trigger is 50% of your screen, the popup will be 50% wide too.</li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </div>
+  </div>
+  <div class="sm:w-1/3 p-4 overflow-hidden">
 
     <h2 class="mb-8">Single select example</h2>
 
@@ -27,13 +37,13 @@ permalink: /popups
           </div>
         </div>
       </div>
-          <div class="note">
-            <li>Single select popup, simply having an itemBox in it with the elements. The already selected item has a  in an extra column.</li>
-            <li>Error animation example: try to change status, then click on error icon or selector field again.</li>
-            <li>Upon having an error, there is a new itemBox with a note inside the cellInner, that is an error description.</li>
-            <li>The error icon is also clickable with one single note in it (wrapped in an itemBox).</li>
-            <li>A normal description follows the same structure.</li>
-          </div>
+      <div class="note">
+        <li>Single select popup, simply having an itemBox in it with the elements. The already selected item has a  in an extra column.</li>
+        <li>Error animation example: try to change status, then click on error icon or selector field again.</li>
+        <li>Upon having an error, there is a new itemBox with a note inside the cellInner, that is an error description.</li>
+        <li>The error icon is also clickable with one single note in it (wrapped in an itemBox).</li>
+        <li>A normal description follows the same structure.</li>
+      </div>
     </div>
 
     <!-- Popup -->
@@ -94,19 +104,27 @@ permalink: /popups
     </div>
 
   </div>
-  <div class="sm:w-1/2 p-8 overflow-hidden">
-    <h2 class="mb-8">Push configurations - looks like a button, but it's a link</h2>
+  <div class="sm:w-1/3 p-4 overflow-hidden">
+    <h2 class="mb-8">Multiselect example</h2>
 
     <!-- Field -->
     <div class="field field--not-empty">
-      <div class="field__label">Push</div>
+      <div class="field__label">Columnpicker</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/push.html title="Present" href="present" %}
+          <button class="block-action JS_has-popup" data-popid="#multiSelector-columnpicker"></button>
         </div>
       </div>
+      <div class="note">
+        <li>Single select popup, simply having an itemBox in it with the elements. The already selected item has a  in an extra column.</li>
+        <li>Error animation example: try to change status, then click on error icon or selector field again.</li>
+        <li>Upon having an error, there is a new itemBox with a note inside the cellInner, that is an error description.</li>
+        <li>The error icon is also clickable with one single note in it (wrapped in an itemBox).</li>
+        <li>A normal description follows the same structure.</li>
+      </div>
     </div>
-
+    <!-- Popup -->
+    {% include popups/multiSelector-columnpicker.html %}
   </div>
 </div>
 <script>

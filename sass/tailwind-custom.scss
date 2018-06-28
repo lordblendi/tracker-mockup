@@ -145,16 +145,3 @@
   pointer-events: none;
   cursor: default;
 }
-
-
-
-
-
-
-.overlay-body {
-  background-color: rgba(0,0,0,.25);
-
-  &--text {
-    background-color: rgba(0,0,0,.1);
-  }
-}

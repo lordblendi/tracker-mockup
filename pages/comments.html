@@ -270,13 +270,13 @@ permalink: /comments
 
 
   $('body').on('focusin', '.comment-field__input textarea', function() {
-    $('.overlay-body').addClass('opacity-100');
+    $('.overlay-body').addClass('overlay-body--visible overlay-body--text');
     $(this).closest('.comment-field').addClass('comment-field--focus');
     $(this).closest('.comment-field').find('.comment-field__send').addClass('opacity-100');
   });
 
   $('body').on('focusout', '.comment-field__input textarea', function() {
-    $('.overlay-body').removeClass('opacity-100');
+    $('.overlay-body').removeClass('overlay-body--visible overlay-body--text');
     $(this).closest('.comment-field').removeClass('comment-field--focus');
     checkContentInput();
     checkFakeInputHeight();

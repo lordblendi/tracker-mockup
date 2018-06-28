@@ -98,15 +98,15 @@ function handlePopupClick(toggle, popid) {
   }
 
   if (toggle.hasClass('JS_has-popup--error')) {
-    $('body').addClass('state-overlay-error');
+    $('.overlay-body').addClass('overlay-body--error');
   }
 
   if (toggle.hasClass('JS_has-popup--tooltip')) {
-    $('body').addClass('state-overlay-tooltip');
+    $('.overlay-body').addClass('overlay-body--tooltip');
   }
 
   // show overlay
-  $(".overlay-body").addClass('opacity-100 pointer-events-auto')
+  $(".overlay-body").addClass('overlay-body--visible')
 }
 
 // onclick action on overlay to close popups
@@ -118,10 +118,7 @@ $('.overlay-body').on('click', function() {
 
 // close overlay and popups
 function closeOverlay(){
-  $(".overlay-body").removeClass('opacity-100 pointer-events-auto');
-
-  $('body').removeClass('state-overlay-error');
-  $('body').removeClass('state-overlay-tooltip');
+  $(".overlay-body").removeClass('overlay-body--visible overlay-body--error overlay-body--text overlay-body--tooltip');
 
   $('.multiSelector').removeClass('multiSelector--visible animate-popup animate-fadein');
 }
