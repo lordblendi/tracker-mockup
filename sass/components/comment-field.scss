@@ -136,22 +136,13 @@
     height: 160px;
     overflow: hidden;
     background-color: #CCC;
+    color: #000;
 
     &-label {
       position: absolute;
       top: 50%;
       left: 20px;
       transform: translate(0, -50%);
-      font-size: 32px;
-      font-weight: 700;
-      color: white;
-      text-transform: uppercase;
-    }
-
-    &:hover {
-      .comment-field__attachment-thumbnail {
-        /*transform: scale(1.1);*/
-      }
     }
   }
 
@@ -288,13 +279,6 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      transition: all 10s ease;
-      transform: scale(1);
-      backface-visibility: hidden;
-
-      &:hover {
-        transform: scale(1.1);
-      }
     }
 
     &-message {
