@@ -1,25 +1,25 @@
-<!-- assign different classses depending on the flags -->
-<!-- go class -->
+{% comment %} assign different classses depending on the flags {% endcomment %}
+{% comment %} go class {% endcomment %}
 {% assign go = "" %}
 {% if include.go %}
   {% assign go = "btn--go" %}
 {% endif %}
-<!-- drop class -->
+{% comment %} drop class {% endcomment %}
 {% assign drop = "" %}
 {% if include.drop %}
   {% assign drop = "btn--drop" %}
 {% endif %}
-<!-- naked class -->
+{% comment %} naked class {% endcomment %}
 {% assign naked = "" %}
 {% if include.naked %}
   {% assign naked = "btn--naked" %}
 {% endif %}
-<!-- smallCaps class -->
+{% comment %} smallCaps class {% endcomment %}
 {% assign smallCaps = "" %}
 {% if include.smallCaps %}
   {% assign smallCaps = "btn--small-caps" %}
 {% endif %}
 
 
-<!-- if it's a popup, add data-popid -->
+{% comment %} if it's a popup, add data-popid {% endcomment %}
 <button class="btn {{go}} {{drop}} {{naked}} {{smallCaps}}"> {{include.title}}</button>

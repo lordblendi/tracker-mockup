@@ -1,25 +1,25 @@
-<!-- assign different classses depending on the flags -->
-<!-- go class -->
+{% comment %} assign different classses depending on the flags {% endcomment %}
+{% comment %} go class {% endcomment %}
 {% assign go = "" %}
 {% if include.go %}
   {% assign go = "push--go" %}
 {% endif %}
-<!-- drop class -->
+{% comment %} drop class {% endcomment %}
 {% assign drop = "" %}
 {% if include.drop %}
   {% assign drop = "push--drop" %}
 {% endif %}
-<!-- naked class -->
+{% comment %} naked class {% endcomment %}
 {% assign naked = "" %}
 {% if include.naked %}
   {% assign naked = "push--naked" %}
 {% endif %}
-<!-- smallCaps class -->
+{% comment %} smallCaps class {% endcomment %}
 {% assign smallCaps = "" %}
 {% if include.smallCaps %}
   {% assign smallCaps = "push--small-caps" %}
 {% endif %}
 
 
-<!-- if it's a popup, add data-popid -->
+{% comment %} if it's a popup, add data-popid {% endcomment %}
 <a class="push {{go}} {{drop}} {{naked}} {{smallCaps}} mx-1 my-1" target="_blank" href="{{include.href}}"> {{include.title}}</a>

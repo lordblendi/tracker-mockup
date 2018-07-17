@@ -23,7 +23,7 @@ permalink: /popups
 
     <h2 class="mb-8">Single select example</h2>
 
-    <!-- Field -->
+    {% comment %} Field {% endcomment %}
     <div class="field field--not-empty JS_field--error">
       <div class="field__label">Status - with description and error animation </div>
       <div class="field__data">
@@ -52,7 +52,7 @@ permalink: /popups
       </div>
     </div>
 
-    <!-- Popup -->
+    {% comment %} Popup {% endcomment %}
     <div class="multiSelector" id="ms-error">
       <div class="itemBox">
         <div class="itemBox__row">
@@ -69,7 +69,7 @@ permalink: /popups
       </div>
     </div>
 
-    <!-- Popup -->
+    {% comment %} Popup {% endcomment %}
     <div class="multiSelector animate-popup" id="ms-status">
       <div class="itemBox">
         <div class="itemBox__row">
@@ -113,7 +113,7 @@ permalink: /popups
   <div class="sm:w-1/3 p-4 overflow-hidden">
     <h2 class="mb-8">Multiselect example</h2>
 
-    <!-- Field -->
+    {% comment %} Field {% endcomment %}
     <div class="field field--not-empty">
       <div class="field__label">Columnpicker with tooltip example (note in popup), click icon
         <div class="inline-action primary animate-fly-in-left JS_has-popup JS_has-popup--tooltip" data-popid="#ms-privacy"></div>
@@ -124,7 +124,7 @@ permalink: /popups
         </div>
       </div>
     </div>
-    <!-- Popup -->
+    {% comment %} Popup {% endcomment %}
     <div class="multiSelector" id="ms-privacy">
       <div class="itemBox">
         <div class="itemBox__row">
@@ -143,10 +143,10 @@ permalink: /popups
       </div>
     </div>
 
-    <!-- Popup -->
+    {% comment %} Popup {% endcomment %}
     {% include popups/multiSelector-columnpicker.html %}
 
-    <!-- Field -->
+    {% comment %} Field {% endcomment %}
     <div class="field field--not-empty">
       <div class="field__label">Tags</div>
       <div class="field__data">
@@ -156,7 +156,7 @@ permalink: /popups
       </div>
     </div>
 
-    <!-- Popup -->
+    {% comment %} Popup {% endcomment %}
     {% include popups/multiSelector-tags-colors.html %}
 
     <div class="note">
@@ -216,7 +216,7 @@ permalink: /popups
 
     <h2 class="mb-8">More complex examples regarding to filters</h2>
 
-    <!-- Field -->
+    {% comment %} Field {% endcomment %}
     <div class="field field--not-empty">
       <div class="field__label">Tags  Filter</div>
       <div class="field__data">
@@ -260,10 +260,10 @@ permalink: /popups
       </div>
     </div>
 
-    <!-- Popup -->
+    {% comment %} Popup {% endcomment %}
     {% include popups/filter-tags.html%}
 
-    <!-- Field -->
+    {% comment %} Field {% endcomment %}
     <div class="field field--not-empty">
       <div class="field__label">Date  Filter</div>
       <div class="field__data">
@@ -303,7 +303,7 @@ permalink: /popups
       </div>
     </div>
 
-    <!-- Popup -->
+    {% comment %} Popup {% endcomment %}
     {% include popups/filter-date.html%}
   </div>
 </div>

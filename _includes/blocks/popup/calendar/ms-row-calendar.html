@@ -1,20 +1,20 @@
-<!-- The list of days should look something like this: 1,2,3,4,5,6,7 -->
-<!-- or: Mon,Tue,Wed,Thu,Fri,Sat,Sun -->
-<!-- or: Mon,Tue,Wed,Thu,Fri,Sat,Sun -->
+{% comment %} The list of days should look something like this: 1,2,3,4,5,6,7 {% endcomment %}
+{% comment %} or: Mon,Tue,Wed,Thu,Fri,Sat,Sun {% endcomment %}
+{% comment %} or: Mon,Tue,Wed,Thu,Fri,Sat,Sun {% endcomment %}
 
-<!-- we make an array of it -->
+{% comment %} we make an array of it {% endcomment %}
 {% assign splittedDays = {include.days} | split: "," %}
 <div class="itemBox__row">
   <ul class="itemBox__rowInner itemBox__rowInner--item">
 
-  <!-- and loop through the array -->
+  {% comment %} and loop through the array {% endcomment %}
   {% for splittedDay in splittedDays %}
-    <!-- if the element contains a suffix '-' -->
-    <!-- then it is from another month -->
-    <!-- like -prev or -next -->
-    <!-- make the day simply the part before the '-' -->
-    <!-- and the second part into the class -->
-    <!-- otherwise class is empty, and day is untouched -->
+    {% comment %} if the element contains a suffix '-' {% endcomment %}
+    {% comment %} then it is from another month {% endcomment %}
+    {% comment %} like -prev or -next {% endcomment %}
+    {% comment %} make the day simply the part before the '-' {% endcomment %}
+    {% comment %} and the second part into the class {% endcomment %}
+    {% comment %} otherwise class is empty, and day is untouched {% endcomment %}
     {% assign day = {splittedDay} %}
     {% assign dayClass = "" %}
 

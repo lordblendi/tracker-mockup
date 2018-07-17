@@ -1,30 +1,30 @@
-<!-- splitting up the data into multiple items. separator ; -->
+{% comment %} splitting up the data into multiple items. separator ; {% endcomment %}
 {% assign data = include.selectorData | split: ";" %}
-<!-- selected items, starting index is 1. separator , -->
+{% comment %} selected items, starting index is 1. separator , {% endcomment %}
 {% assign selectedIndexes = include.selectedIndexes | split: "," %}
 
-<!-- assign different classses depending on the flags -->
-<!-- expanded class -->
+{% comment %} assign different classses depending on the flags {% endcomment %}
+{% comment %} expanded class {% endcomment %}
 {% assign expanded = "" %}
 {% if include.expanded %}
   {% assign expanded = "selector--expanded" %}
 {% endif %}
-<!-- singlselect class -->
+{% comment %} singlselect class {% endcomment %}
 {% assign singleselect = "" %}
 {% if include.singleselect %}
   {% assign singleselect = "selector--singleselect" %}
 {% endif %}
-<!-- multiselect class -->
+{% comment %} multiselect class {% endcomment %}
 {% assign multiselect = "" %}
 {% if include.multiselect %}
   {% assign multiselect = "selector--multiselect" %}
 {% endif %}
-<!-- required class -->
+{% comment %} required class {% endcomment %}
 {% assign required = "" %}
 {% if include.required %}
   {% assign required = "selector--required" %}
 {% endif %}
-<!-- readonly -->
+{% comment %} readonly {% endcomment %}
 {% assign readonly = "JS_selectorItem" %}
 {% assign readonlyClass = "" %}
 {% assign tabindex = "tabindex='0'" %}
@@ -39,25 +39,25 @@
   {% assign tabindex = "" %}
   {% assign readonlyClass = "selector--readonly" %}
 {% endif %}
-<!-- has-popup class -->
+{% comment %} has-popup class {% endcomment %}
 {% assign popupId = "" %}
 {% if include.popupId %}
   {% assign popupId = "JS_has-popup" %}
 {% endif %}
-<!-- draggable class -->
+{% comment %} draggable class {% endcomment %}
 {% assign draggable = "" %}
 {% if include.draggable %}
   {% assign draggable = "selector--draggable" %}
 {% endif %}
 
-<!-- if it's a popup, add data-popid -->
+{% comment %} if it's a popup, add data-popid {% endcomment %}
 <div class="selector JS_selector {{expanded}} {{singleselect}} {{multiselect}} {{popupId}} {{required}} {{readonlyClass}} {{draggable}}" {% if include.popupId %}data-popid="{{include.popupId}}"{% endif %}>
 
-  <!-- if multiselect but not expanded -->
+  {% comment %} if multiselect but not expanded {% endcomment %}
   {% if multiselect != "" and expanded == "" %}
     <div class="selector__item {{readonly}} selector__item--selected JS_selectorItem--active" {{tabindex}} >
       <div class="selector__block">
-        <!-- for loop through selectorItems -->
+        {% comment %} for loop through selectorItems {% endcomment %}
         {% for item in data %}
           {% include components/unit.html item=item %}
         {% endfor %}
@@ -65,21 +65,21 @@
     </div>
 
   {% else %}
-    <!-- for loop through selectorItems -->
+    {% comment %} for loop through selectorItems {% endcomment %}
     {% for item in data %}
-        <!-- check if it's a selected item or not-->
+        {% comment %} check if it's a selected item or not{% endcomment %}
         {% assign selected = "" %}
-        <!-- capture the forloop index as a string-->
+        {% comment %} capture the forloop index as a string{% endcomment %}
         {% capture itemIndex %}{{forloop.index}}{% endcapture %}
 
         {% for selectedIndex in selectedIndexes %}
-          <!-- if it's the same index, add the selected class -->
+          {% comment %} if it's the same index, add the selected class {% endcomment %}
           {% if selectedIndex == itemIndex %}
             {% assign selected = "selector__item--selected JS_selectorItem--active" %}
           {% endif %}
         {% endfor %}
 
-        <!-- add itemSeparator if it's multiple items -->
+        {% comment %} add itemSeparator if it's multiple items {% endcomment %}
 
         {% if forloop.index > 1 %}
           <div class="selector__itemSeperator"></div>

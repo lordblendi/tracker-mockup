@@ -10,26 +10,26 @@
     {% include components/overlay.html %}
     {{ content }}
 
-    <!-- POPUPS -->
+    {% comment %} POPUPS {% endcomment %}
     {% include popups/multiSelector-columnpicker.html %}
     {% include popups/popup-copy-clipboard.html %}
 
     {% include foot.html %}
 
-    <!-- Libraries -->
+    {% comment %} Libraries {% endcomment %}
     <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/jquery.stickytableheaders.min.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/jquery.sticky.js"></script>
 
-    <!-- Plugins -->
+    {% comment %} Plugins {% endcomment %}
     <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/sticky.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/scripts/plugin/toggle-panels.js"></script>
 
-    <!-- Components -->
+    {% comment %} Components {% endcomment %}
     <script type="text/javascript" src="{{ site.baseurl }}/scripts/components/semsearch.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/scripts/components/tabs.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/scripts/components/breadcrumbs.js"></script>
 
-    <!-- OLD COMPONENTS -->
+    {% comment %} OLD COMPONENTS {% endcomment %}
     <script type="text/javascript" src="{{ site.baseurl }}/scripts/pmx/old-pmx-tab.js"></script>
   </body>
 </html>

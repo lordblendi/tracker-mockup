@@ -2,23 +2,23 @@
   <div class="header__title">
     <h3 class="truncate">table section header above itemBox</h3>
   </div>
-  <!-- header actions -->
+  {% comment %} header actions {% endcomment %}
   <div class="header__actions">
     <button class="block-action"></button>
     <button class="block-action"></button>
   </div>
 </header>
-<!-- ItemBox Div -->
+{% comment %} ItemBox Div {% endcomment %}
 <div class="itemBox">
-  <!-- group for row and possible children -->
+  {% comment %} group for row and possible children {% endcomment %}
   <div class="itemBox__row">
-    <!-- row itself -->
-    <!-- this is a thead row -->
+    {% comment %} row itself {% endcomment %}
+    {% comment %} this is a thead row {% endcomment %}
     <ul class="itemBox__rowInner itemBox__rowInner--thead">
-      <!-- cell, that contains only one icon is always flex-grow-0 -->
-      <!-- if NO action, then empty cell, but the cell is still visible -->
-      <!-- if there is an action in it, then it contans a button, otherwise only cellInner -->
-      <!-- every header has the title as placeholder and can be used as filter -->
+      {% comment %} cell, that contains only one icon is always flex-grow-0 {% endcomment %}
+      {% comment %} if NO action, then empty cell, but the cell is still visible {% endcomment %}
+      {% comment %} if there is an action in it, then it contans a button, otherwise only cellInner {% endcomment %}
+      {% comment %} every header has the title as placeholder and can be used as filter {% endcomment %}
 
       <li class="itemBox__cell">
         <div class="itemBox__cellInner">
@@ -33,9 +33,9 @@
     </ul>
   </div>
 
-  <!-- group for row and possible children -->
+  {% comment %} group for row and possible children {% endcomment %}
   <div class="itemBox__row">
-    <!-- item row itself, this is an itemrow, a simple row-->
+    {% comment %} item row itself, this is an itemrow, a simple row{% endcomment %}
     <ul class="itemBox__rowInner itemBox__rowInner--item">
       <li class="itemBox__cell">
         <div class="itemBox__cellInner">
@@ -50,7 +50,7 @@
     </ul>
   </div>
 
-  <!-- itemrow tfoot -->
+  {% comment %} itemrow tfoot {% endcomment %}
   <div class="itemBox__row">
     <ul class="itemBox__rowInner itemBox__rowInner--tfoot">
       <li class="itemBox__cell">

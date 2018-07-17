@@ -2,27 +2,27 @@
   <div class="header__title">
     <h2>table section header above itemBox</h2>
   </div>
-  <!-- header actions -->
+  {% comment %} header actions {% endcomment %}
   <div class="header__actions">
     <button class="block-action"></button>
     <button class="block-action"></button>
   </div>
 </header>
-<!-- ItemBox Div -->
+{% comment %} ItemBox Div {% endcomment %}
 <div class="itemBox">
-  <!-- group for row and possible children -->
+  {% comment %} group for row and possible children {% endcomment %}
   <div class="itemBox__row">
-    <!-- row itself -->
-    <!-- this is a thead row -->
+    {% comment %} row itself {% endcomment %}
+    {% comment %} this is a thead row {% endcomment %}
     <ul class="itemBox__rowInner itemBox__rowInner--thead">
-      <!-- cell, that contains only one icon is always flex-grow-0 -->
-      <!-- if NO action, then empty cell, but the cell is still visible -->
-      <!-- if there is an action in it, then it contans a button, otherwise only cellInner -->
-      <!-- every header has the title as placeholder and can be used as filter -->
+      {% comment %} cell, that contains only one icon is always flex-grow-0 {% endcomment %}
+      {% comment %} if NO action, then empty cell, but the cell is still visible {% endcomment %}
+      {% comment %} if there is an action in it, then it contans a button, otherwise only cellInner {% endcomment %}
+      {% comment %} every header has the title as placeholder and can be used as filter {% endcomment %}
 
-      <!-- expands and collapses current itemBox's children -->
-      <!-- if nothing is expanded -> expand all children -->
-      <!-- otherwise collapse all children -->
+      {% comment %} expands and collapses current itemBox's children {% endcomment %}
+      {% comment %} if nothing is expanded -> expand all children {% endcomment %}
+      {% comment %} otherwise collapse all children {% endcomment %}
       <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_expand_header">
         <div class="itemBox__cellInner">
           <button class="itemBox__action"></button>
@@ -41,13 +41,13 @@
     </ul>
   </div>
 
-  <!-- group for row and possible children -->
+  {% comment %} group for row and possible children {% endcomment %}
   <div class="itemBox__row">
-    <!-- item row itself, this is an itemrow, a simple row-->
+    {% comment %} item row itself, this is an itemrow, a simple row{% endcomment %}
     <ul class="itemBox__rowInner itemBox__rowInner--item">
-      <!-- cell, that contains only one icon is always flex-grow-0 -->
-      <!-- if NO action, then empty cell, but the cell is still visible -->
-      <!-- if there is an action in it, then it contans a button, otherwise only cellInner -->
+      {% comment %} cell, that contains only one icon is always flex-grow-0 {% endcomment %}
+      {% comment %} if NO action, then empty cell, but the cell is still visible {% endcomment %}
+      {% comment %} if there is an action in it, then it contans a button, otherwise only cellInner {% endcomment %}
       <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
         <div class="itemBox__cellInner"></div>
       </li>
@@ -62,14 +62,14 @@
     </ul>
   </div>
 
-  <!-- item row -->
+  {% comment %} item row {% endcomment %}
   <div class="itemBox__row">
     <ul class="itemBox__rowInner itemBox__rowInner--item">
-      <!-- cell, that contains only one icon is always flex-grow-0 -->
-      <!-- if NO action, then empty cell, but the cell is still visible -->
-      <!-- if there is an action in it, then it contans a button, otherwise only cellInner -->
+      {% comment %} cell, that contains only one icon is always flex-grow-0 {% endcomment %}
+      {% comment %} if NO action, then empty cell, but the cell is still visible {% endcomment %}
+      {% comment %} if there is an action in it, then it contans a button, otherwise only cellInner {% endcomment %}
 
-      <!-- expands and collapses current row's children -->
+      {% comment %} expands and collapses current row's children {% endcomment %}
       <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_expand">
         <div class="itemBox__cellInner">
           <button class="itemBox__action"></button>
@@ -77,7 +77,7 @@
       </li>
       <li class="itemBox__cell">
         <div class="itemBox__cellInner">
-          <!-- a cell can contain any kind of data -->
+          {% comment %} a cell can contain any kind of data {% endcomment %}
           readonly cell with any kind of data in it
         </div>
       </li>
@@ -86,16 +86,16 @@
       </li>
     </ul>
 
-    <!-- if you want to add children, just include a new itembox-->
-    <!-- children are itembox inside itembox with transparent background-->
+    {% comment %} if you want to add children, just include a new itembox{% endcomment %}
+    {% comment %} children are itembox inside itembox with transparent background{% endcomment %}
 
-    <!-- special type of children is a sublist (belongs to a cell of the row not to the full row)-->
-    <!-- that has a gray background, see columnpicker options, child table, |||| action-->
-    <!-- there the cell, what the sublist belongs to, gets an underline-->
+    {% comment %} special type of children is a sublist (belongs to a cell of the row not to the full row){% endcomment %}
+    {% comment %} that has a gray background, see columnpicker options, child table, |||| action{% endcomment %}
+    {% comment %} there the cell, what the sublist belongs to, gets an underline{% endcomment %}
     {% include blocks/itembox/itembox-inner.html %}
   </div>
 
-  <!-- load more row if needed with smart text in it -->
+  {% comment %} load more row if needed with smart text in it {% endcomment %}
   <div class="itemBox__row">
     <ul class="itemBox__rowInner itemBox__rowInner--item itemBox__rowInner--action JS_loadMoreButton">
       <li class="itemBox__cell itemBox__cell--action">
@@ -106,7 +106,7 @@
     </ul>
   </div>
 
-  <!-- itemrow tfoot -->
+  {% comment %} itemrow tfoot {% endcomment %}
   <div class="itemBox__row">
     <ul class="itemBox__rowInner itemBox__rowInner--tfoot">
       <li class="itemBox__cell">

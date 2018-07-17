@@ -106,9 +106,9 @@ permalink: /comments
 
       <div id="comments-container">
 
-        <!--
+        {% comment %}
           @source: https://tracker.tenforce.com/workspace/383/83172f/561531#commentsAndAttachments
-        -->
+        {% endcomment %}
 
         <div class="comments-seperator">
           <span class="h8">Last month</span>
@@ -241,14 +241,14 @@ permalink: /comments
           </div>
         </div>
 
-      </div><!-- /#comments-container -->
+      </div>{% comment %} /#comments-container {% endcomment %}
 
     </div>
 
   </div>
 </div>
 
-<!-- Comments/Attachments SCRIPT -->
+{% comment %} Comments/Attachments SCRIPT {% endcomment %}
 <script>
   // init with delay (due slow html load)
   setTimeout(function() {
