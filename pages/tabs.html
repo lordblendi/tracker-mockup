@@ -8,34 +8,13 @@ permalink: /tabs
 </div>
 <div class="fixed pin-t pin-l w-full flex pt-4 z-highest bg-grey-lightest shadow-lg text-center">
   {% include blocks/extra-options/background.html %}
-  <div class="px-4">
-    <div class="field field--not-empty">
-      <div class="field__label">Theme</div>
-      <div class="field__data">
-        <div class="field__value">
-          <div class="selector selector--singleselect selector--expanded selector--required JS_selector ">
-            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem" tabindex='0'>
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field JS_theme_normal">Normal</div>
-              </div>
-            </div>
-            <div class="selector__itemSeperator"></div>
-            <div class="selector__item JS_selectorItem" tabindex='0'>
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix JS_theme_invert">Invert</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% include blocks/extra-options/theme.html %}
   <div class="px-4">
     <div class="field field--not-empty">
       <div class="field__label">Tabs panel width</div>
       <div class="field__data">
         <div class="field__value">
-          <div class="selector selector--singleselect selector--expanded selector--required JS_selector">
+          <div class="selector selector--singleselect selector--expanded selector--required JS_selector JS_extra">
             <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem JS_changeTabsWidth" tabindex='0' data-width="sm:w-3/4">
               <div class="selector__block">
                 <div class="selector__blockPart selector__blockPart--field ">75%</div>
@@ -55,13 +34,6 @@ permalink: /tabs
 </div>
 
 <script>
-  $('.JS_theme_normal').on('click', function() {
-    $('.tabs').removeClass('tabs--invert');
-  });
-  $('.JS_theme_invert').on('click', function() {
-    $('.tabs').addClass('tabs--invert');
-  });
-
   $('.JS_changeTabsWidth').on('click', function() {
     setTimeout( () => {
       if($(this).hasClass('JS_selectorItem--active')) {
