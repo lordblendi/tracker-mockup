@@ -34,14 +34,9 @@ permalink: /selectors
     });
     // remove the loading animation from this selector
     $(this).closest('.selector').removeClass('animate-loading');
+    $('.JS_extra').removeClass('animate-loading');
   });
-
-  $('.JS_load_buttons').on('click', function() {
-    $('.btn').each(function() {
-      $(this).toggleClass('animate-loading');
-    });
-  });
-</script>
+  </script>
 
 <div class="flex flex-col sm:flex-row m-8 pb-4 border-b-2 border-dashed border-grey-dark overflow-hidden">
   <div class="sm:w-1/2 p-2 overflow-hidden">
