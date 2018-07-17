@@ -1,7 +1,7 @@
 ---
 ---
 
-// SIMPLE MULTISELECT
+// SIMPLE SINGLESELECT
 // in our case modal-1
 $('.selector--singleselect .JS_filterable').on('click', function(){
   const row = $(this);
