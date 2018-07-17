@@ -70,10 +70,10 @@
   &--naked {
     background-color: transparent;
     text-decoration: underline;
-    padding: 5px 10px;
+    padding: 5px;
     box-shadow: none;
 
-    &:hover {
+    &:hover, &:focus {
       box-shadow: none;
     }
 
