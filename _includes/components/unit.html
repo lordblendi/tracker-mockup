@@ -17,23 +17,24 @@
 {% assign labelSize = label | size %}
 {% assign fieldSize = field | size %}
 
-
-{% comment %} only show item parts if they are at least 1 character long {% endcomment %}
-{% comment %} if there is a prefix or color, show prefix {% endcomment %}
-{% if prefixSize > 0 or colorSize > 0 %}
-  <div class="selector__blockPart selector__blockPart--prefix" {{color}} >{{prefix}}</div>
-{% endif %}
-
-{% comment %} if there is a label, show label {% endcomment %}
-{% if labelSize > 0 %}
-  <div class="selector__blockPart selector__blockPart--label">{{label}}</div>
-{% endif %}
-
-{% comment %} if there is a field, show field {% endcomment %}
-{% if fieldSize > 0 %}
-  {% comment %} if there is a field AND a label, show blockSeparator {% endcomment %}
-  {% if labelSize > 0 %}
-    <div class="selector__blockSeperator"></div>
+<div class="selector__block">
+  {% comment %} only show item parts if they are at least 1 character long {% endcomment %}
+  {% comment %} if there is a prefix or color, show prefix {% endcomment %}
+  {% if prefixSize > 0 or colorSize > 0 %}
+    <div class="selector__blockPart selector__blockPart--prefix" {{color}} >{{prefix}}</div>
   {% endif %}
-  <div class="selector__blockPart selector__blockPart--field JS_text">{{field}}</div>
-{% endif %}
+
+  {% comment %} if there is a label, show label {% endcomment %}
+  {% if labelSize > 0 %}
+    <div class="selector__blockPart selector__blockPart--label">{{label}}</div>
+  {% endif %}
+
+  {% comment %} if there is a field, show field {% endcomment %}
+  {% if fieldSize > 0 %}
+    {% comment %} if there is a field AND a label, show blockSeparator {% endcomment %}
+    {% if labelSize > 0 %}
+      <div class="selector__blockSeperator"></div>
+    {% endif %}
+    <div class="selector__blockPart selector__blockPart--field JS_text">{{field}}</div>
+  {% endif %}
+</div>

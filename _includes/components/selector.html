@@ -56,12 +56,10 @@
   {% comment %} if multiselect but not expanded {% endcomment %}
   {% if multiselect != "" and expanded == "" %}
     <div class="selector__item {{readonly}} selector__item--selected JS_selectorItem--active" {{tabindex}} >
-      <div class="selector__block">
-        {% comment %} for loop through selectorItems {% endcomment %}
-        {% for item in data %}
-          {% include components/unit.html item=item %}
-        {% endfor %}
-      </div>
+      {% comment %} for loop through selectorItems {% endcomment %}
+      {% for item in data %}
+        {% include components/unit.html item=item %}
+      {% endfor %}
     </div>
 
   {% else %}
@@ -85,9 +83,7 @@
           <div class="selector__itemSeperator"></div>
         {% endif %}
         <div class="selector__item {{readonly}} {{selected}}" {{tabindex}} >
-          <div class="selector__block">
-            {% include components/unit.html item=item %}
-          </div>
+          {% include components/unit.html item=item %}
         </div>
     {% endfor %}
   {% endif %}
