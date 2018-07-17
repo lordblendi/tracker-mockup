@@ -45,13 +45,15 @@
 
     &:first-child {
       .selector__block  {
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
+        &:first-child {
+          border-bottom-left-radius: 15px;
+          border-top-left-radius: 15px;
 
-        &Part {
-          &:first-child {
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
+          .selector__blockPart {
+            &:first-child {
+              border-top-left-radius: 15px;
+              border-bottom-left-radius: 15px;
+            }
           }
         }
       }
@@ -59,13 +61,15 @@
 
     &:last-child {
       .selector__block  {
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
+        &:last-child {
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
 
-        &Part {
-          &:last-child {
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
+          .selector__blockPart {
+            &:last-child {
+              border-top-right-radius: 15px;
+              border-bottom-right-radius: 15px;
+            }
           }
         }
       }
@@ -190,11 +194,25 @@
       &:first-child {
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px;
+
+        .selector__block:first-child {
+          .selector__blockPart:first-child {
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+          }
+        }
       }
 
       &:last-child {
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
+
+        .selector__block:last-child {
+          .selector__blockPart:last-child {
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+          }
+        }
       }
 
       &:hover, &:focus {
