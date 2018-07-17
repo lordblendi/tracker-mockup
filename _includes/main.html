@@ -28,7 +28,7 @@
                     <i class="media media--toggle"></i>
                   </div>
 
-                <!--
+                {% comment %}
                   <div class="actions">
                     <i class="more"><span class="counter"></span></i>
                     <i class="delete"></i>
@@ -39,7 +39,7 @@
                     <i class="process process--toggle"></i>
                     <i class="media media--toggle"></i>
                   </div>
-                -->
+                {% endcomment %}
 
                   <div class="status">
                       <span>On schedule</span>
@@ -56,15 +56,15 @@
                 <div class="panel__center">
                   <div class="document__info-data cf">
                     {% include blocks/document-data.html %}
-                  </div><!-- /.document__info-data -->
+                  </div>{% comment %} /.document__info-data {% endcomment %}
                 </div>
 
                 <div class="panel__right">
                   {% include blocks/item-comments/item-comments.html %}
                 </div>
 
-              </div><!-- /.document__content -->
-          </div><!-- /.app__document -->
-      </main><!-- //container-master -->
+              </div>{% comment %} /.document__content {% endcomment %}
+          </div>{% comment %} /.app__document {% endcomment %}
+      </main>{% comment %} //container-master {% endcomment %}
 
-  </div><!-- /.app -->
+  </div>{% comment %} /.app {% endcomment %}
