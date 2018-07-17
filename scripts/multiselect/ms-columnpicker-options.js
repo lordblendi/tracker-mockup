@@ -49,6 +49,6 @@ function handleColumnPickerOptionChange(selector) {
   toggle.html(columnPickerToggleContent);
 
   // show reset to default
-  const multiSelector = $(bodyRow).closest('.multiSelector');
-  showResetToDefault(multiSelector);
+  const modal = $(bodyRow).closest('.modal');
+  showResetToDefault(modal);
 }

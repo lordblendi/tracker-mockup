@@ -1,14 +1,14 @@
 // set sortable in multiselect options
-$('.multiSelector').each(function() {
+$('.modal').each(function() {
   reinitSortable($(this));
 })
 
 
 // reinitiate reorder functionality
-function reinitSortable(multiSelector) {
+function reinitSortable(modal) {
   var options = {};
   var sortableSelector = "";
-  if ($(multiSelector).hasClass('JS_multiSelector--withFilter')) {
+  if ($(modal).hasClass('JS_modal--withFilter')) {
     sortableSelector = ".itemBoxBody--sortableInclude, .itemBoxBody--sortableExclude";
     options = {
       handle: '.JS_itemBox__cell--draggable',
@@ -23,12 +23,12 @@ function reinitSortable(multiSelector) {
     };
   }
 
-  if ($(multiSelector).hasClass('JS_multiSelector--resetFunctionality')) {
+  if ($(modal).hasClass('JS_modal--resetFunctionality')) {
     options['stop'] = function(event, ui) {
       const sortedItem = $(ui.item);
-      const multiSelector = sortedItem.closest('.multiSelector');
-      showResetToDefault(multiSelector);
+      const modal = sortedItem.closest('.modal');
+      showResetToDefault(modal);
     };
   }
-  $(multiSelector).find(sortableSelector).sortable(options);
+  $(modal).find(sortableSelector).sortable(options);
 }

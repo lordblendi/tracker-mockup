@@ -9,26 +9,26 @@ removeGroupActionHTML = `{% include javascript/removeGroupAction.html %}`;
 // checking group actions
 function reset(){
 
-  $('.multiSelector').each(function(index, multiSelector){
-    checkAllSelectedItems(multiSelector);
-    checkGroupActions(multiSelector);
+  $('.modal').each(function(index, modal){
+    checkAllSelectedItems(modal);
+    checkGroupActions(modal);
     // probably doesn't belong here, but making sure, we don't have empty selection subgroups
-    const selectionMainTitle = $(multiSelector).find('.JS_selectionTitle');
-    const selectionMain = $(multiSelector).find('.JS_selectionChildren');
+    const selectionMainTitle = $(modal).find('.JS_selectionTitle');
+    const selectionMain = $(modal).find('.JS_selectionChildren');
     if(selectionMain.find('.JS_text').length === 0) {
       selectionMainTitle.remove();
       selectionMain.remove();
     }
     else {
       checkCounter(selectionMain);
-      const selectionExcludedTitle = $(multiSelector).find('.JS_selectionTitleExclude');
-      const selectionExcluded = $(multiSelector).find('.JS_selectionChildrenExclude');
+      const selectionExcludedTitle = $(modal).find('.JS_selectionTitleExclude');
+      const selectionExcluded = $(modal).find('.JS_selectionChildrenExclude');
       if(selectionExcluded.find('.JS_text').length === 0) {
         selectionExcludedTitle.remove();
         selectionExcluded.remove();
       }
-      const selectionIncludedTitle = $(multiSelector).find('.JS_selectionTitleInclude');
-      const selectionIncluded = $(multiSelector).find('.JS_selectionChildrenInclude');
+      const selectionIncludedTitle = $(modal).find('.JS_selectionTitleInclude');
+      const selectionIncluded = $(modal).find('.JS_selectionChildrenInclude');
       if(selectionIncluded.find('.JS_text').length === 0) {
         selectionIncludedTitle.remove();
         selectionIncluded.remove();
@@ -36,20 +36,20 @@ function reset(){
     }
 
     // reinitiate onclick and reorder actions in selection blocks
-    $(multiSelector).find('.JS_itemBox .JS_itemBox__action').off('click').on('click', function(){
+    $(modal).find('.JS_itemBox .JS_itemBox__action').off('click').on('click', function(){
       const action = $(this);
       handleActionOnclick(action);
     });
     window.setTimeout( function() {
-        $(multiSelector).find('.JS_itemBox .JS_textAction').off('click').on('click', function(){
+        $(modal).find('.JS_itemBox .JS_textAction').off('click').on('click', function(){
           handleTextAction($(this));
         });
     }, 250);
     // reinitiate reorder functionality
-    reinitSortable(multiSelector);
+    reinitSortable(modal);
 
-    // reinitiate selectorItem inside multiselector
-    $(multiSelector).find('.JS_selectorItem').off('click').on('click', function() {
+    // reinitiate selectorItem inside modal
+    $(modal).find('.JS_selectorItem').off('click').on('click', function() {
       const selectorValue = $(this);
       const selector = selectorValue.closest('.JS_selector');
 
@@ -62,7 +62,7 @@ function reset(){
 
     // INCL-EXCL OPTIONS EXPAND-COLLAPSE
     window.setTimeout( function() {
-      $(multiSelector).find('.JS_toggle--InclExcl').off('click').on('click', function() {
+      $(modal).find('.JS_toggle--InclExcl').off('click').on('click', function() {
         const toggle = $(this);
         closeColorOptions(toggle);
         toggleInclExclSelector(toggle);
@@ -71,21 +71,21 @@ function reset(){
 
 
     // reset functionality
-    $(multiSelector).find('.JS_resetToDefault').off('click').on('click', function() {
+    $(modal).find('.JS_resetToDefault').off('click').on('click', function() {
       resetToDefault($(this));
     });
 
     // expand-collapse reset
-    $(multiSelector).find('.JS_toggle').off('click').on('click', function() {
+    $(modal).find('.JS_toggle').off('click').on('click', function() {
       const itemBox__row = $(this).closest('.itemBox__rowInner');
       expandCloseRow(itemBox__row);
     });
 
     // columnpicker OPTIONS
-    $(multiSelector).find('.JS_itemBox--columnpickerOptions .JS_selectorItem').on('click', function() {
+    $(modal).find('.JS_itemBox--columnpickerOptions .JS_selectorItem').on('click', function() {
       handleColumnPickerOptionChange($(this));
     });
-    $(multiSelector).find('.JS_toggle--columnpickerOptions').off('click').on('click', function() {
+    $(modal).find('.JS_toggle--columnpickerOptions').off('click').on('click', function() {
       const toggle = $(this);
       closeAllOtherSublists(toggle);
       toggleColumnpickerOptions(toggle);
@@ -94,10 +94,10 @@ function reset(){
 }
 
 // check all items if they are selected or not
-function checkAllSelectedItems(multiSelector) {
-  multiSelector = $(multiSelector);
-  var selection = multiSelector.find('.JS_selectionChildren');
-  const options = multiSelector.find('.JS_optionsChildren');
+function checkAllSelectedItems(modal) {
+  modal = $(modal);
+  var selection = modal.find('.JS_selectionChildren');
+  const options = modal.find('.JS_optionsChildren');
 
   var selectedItemTexts = [];
   // if there is no selected block; then the list of selected items is []
@@ -131,11 +131,11 @@ function checkAllSelectedItems(multiSelector) {
 // nothing selected -> addAll
 // everything selected -> removeAll
 // both selected and unselected -> removeAll addAll
-function checkGroupActions(multiSelector) {
-  multiSelector = $(multiSelector);
+function checkGroupActions(modal) {
+  modal = $(modal);
 
   // check on the current status group action, remove or add necessary actions
-  const childrenInOptions = multiSelector.find('.JS_itemBox--children:not(.JS_selectionChildren):not(.JS_itemBox--sublist):not(.JS_itemBox--suggestions)');
+  const childrenInOptions = modal.find('.JS_itemBox--children:not(.JS_selectionChildren):not(.JS_itemBox--sublist):not(.JS_itemBox--suggestions)');
   $.each(childrenInOptions, function(index, children) {
     var children = $(children);
     const groupHeader = children.prev();

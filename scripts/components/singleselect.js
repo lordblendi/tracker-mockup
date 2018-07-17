@@ -2,7 +2,7 @@
 ---
 
 // SIMPLE MULTISELECT
-// in our case multiSelector-1
+// in our case modal-1
 $('.selector--singleselect .JS_filterable').on('click', function(){
   const row = $(this);
   selectNewSingleItem(row);
@@ -26,12 +26,12 @@ function selectNewSingleItem(row) {
   // add selected to new one
   $(row).append(`{% include javascript/itemSelected.html %}`);
 
-  const selectorField = $('.JS_has-popup[data-popid="#multiSelector-1"]');
+  const selectorField = $('.JS_has-popup[data-popid="#modal-1"]');
   $(selectorField).find('.JS_singleSelect--label').html(newLabel);
   $(selectorField).find('.JS_singleSelect--prefix').css('background-color', newColor);
   closeOverlay();
 
   // set filter to empty, as we selected stuff
-  var multiSelector = $(row).closest(".multiSelector");
-  multiSelector.find('.JS_multiSelector__filterInput').val("").keyup();
+  var modal = $(row).closest(".modal");
+  modal.find('.JS_modal__filterInput').val("").keyup();
 }

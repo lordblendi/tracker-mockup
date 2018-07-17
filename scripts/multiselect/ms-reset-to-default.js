@@ -6,14 +6,14 @@ $('.JS_resetToDefault').on('click', function() {
 });
 
 function resetToDefault(resetToDefaultRow) {
-  const multiSelector = resetToDefaultRow.closest('.multiSelector');
+  const modal = resetToDefaultRow.closest('.modal');
   const replaceFile = $(resetToDefaultRow).attr('reset-file');
 
   var newContentString = '';
 
   // if the replace file is columnpicker, use that html
   if (replaceFile === 'columnpicker') {
-    newContentString = `{% include popups/multiSelector-columnpicker.html %}`;
+    newContentString = `{% include popups/modal-columnpicker.html %}`;
   }
 
   // only replace it if the newContentString is not empty
@@ -22,14 +22,14 @@ function resetToDefault(resetToDefaultRow) {
 
     const newContent = $.parseHTML(newContentString);
     const newContentSelectedChildren = $(newContent).find(selectedBlockClass);
-    var selectedTitleToggle = $(multiSelector).find('.JS_selectionTitle .JS_toggle');
+    var selectedTitleToggle = $(modal).find('.JS_selectionTitle .JS_toggle');
 
     // see if the selected block is even there or not. If not, add it
-    var selection = multiSelector.find(selectedBlockClass);
+    var selection = modal.find(selectedBlockClass);
     if(selection === null || selection === undefined || selection.length === 0) {
-      addSelectedBlock(multiSelector, selectedBlockClass);
-      selection = multiSelector.find(selectedBlockClass);
-      selectedTitleToggle = $(multiSelector).find('.JS_selectionTitle .JS_toggle');
+      addSelectedBlock(modal, selectedBlockClass);
+      selection = modal.find(selectedBlockClass);
+      selectedTitleToggle = $(modal).find('.JS_selectionTitle .JS_toggle');
       selectedTitleToggle.on('click', function() {
         const itemBox__row = $(this).closest('.itemBox__rowInner');
         expandCloseRow(itemBox__row);
@@ -42,17 +42,17 @@ function resetToDefault(resetToDefaultRow) {
     // hide reset-to-default row
     selectedTitleToggle.click();
     setTimeout(function() {
-      $(multiSelector).find('.JS_selectionChildren').html($(newContentSelectedChildren).html());
+      $(modal).find('.JS_selectionChildren').html($(newContentSelectedChildren).html());
       reset();
       resetFilterActions();
       selectedTitleToggle.click();
-      hideResetToDefault(multiSelector);
+      hideResetToDefault(modal);
     }, 300);
   }
 }
 
-function showResetToDefault(multiSelector) {
-  const suggestion = $(multiSelector).find('.JS_itemBox--resetSuggestion');
+function showResetToDefault(modal) {
+  const suggestion = $(modal).find('.JS_itemBox--resetSuggestion');
   if (suggestion.css("display") !== 'flex') {
     $.Velocity.animate(suggestion, 'slideDown', {
       duration: 125,
@@ -61,8 +61,8 @@ function showResetToDefault(multiSelector) {
     });
   }
 }
-function hideResetToDefault(multiSelector) {
-  const suggestion = $(multiSelector).find('.JS_itemBox--resetSuggestion');
+function hideResetToDefault(modal) {
+  const suggestion = $(modal).find('.JS_itemBox--resetSuggestion');
   if (suggestion.css("display") === 'flex') {
     $.Velocity.animate(suggestion, 'slideUp', {
       duration: 125,

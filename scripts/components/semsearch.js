@@ -13,7 +13,7 @@ $('.JS_toggle-semsearch').click(function() {
     left: newLeft,
     top: top
   });
-  $(popup).addClass('multiSelector--visible');
+  $(popup).addClass('modal--visible');
   // show overlay
   openOverlay(true, false, false);
 });

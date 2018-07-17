@@ -31,14 +31,14 @@ function selectNewFilterOption(incleExclBodyRow) {
     const newClass = selectedBlockClass + newOption;
 
     // find the blocks
-    const multiSelector = $(bodyRow).closest('.multiSelector');
-    const oldSelection = $(multiSelector).find(oldClass);
-    var newSelection = $(multiSelector).find(newClass);
+    const modal = $(bodyRow).closest('.modal');
+    const oldSelection = $(modal).find(oldClass);
+    var newSelection = $(modal).find(newClass);
 
     // if newSelectionBlock is not there, add it
     if(newSelection === null || newSelection === undefined || newSelection.length === 0) {
-      addSelectedBlock(multiSelector, newClass);
-      newSelection = multiSelector.find(newClass);
+      addSelectedBlock(modal, newClass);
+      newSelection = modal.find(newClass);
     }
 
     // find the text in bodyRow - this should be only one
@@ -92,14 +92,14 @@ $('.JS_itemBox__cellInner--inclExcl.JS_selectorItem').on('click', function() {
     const newClass = selectedBlockClass + newOption;
 
     // find the blocks
-    const multiSelector = $(bodyRow).closest('.multiSelector');
-    const oldSelection = $(multiSelector).find(oldClass);
-    var newSelection = $(multiSelector).find(newClass);
+    const modal = $(bodyRow).closest('.modal');
+    const oldSelection = $(modal).find(oldClass);
+    var newSelection = $(modal).find(newClass);
 
     // if newSelectionBlock is not there, add it
     if(newSelection === null || newSelection === undefined || newSelection.length === 0) {
-      addSelectedBlock(multiSelector, newClass);
-      newSelection = multiSelector.find(newClass);
+      addSelectedBlock(modal, newClass);
+      newSelection = modal.find(newClass);
     }
 
     // find the text in bodyRow - this should be only one

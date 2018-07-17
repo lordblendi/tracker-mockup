@@ -2,7 +2,7 @@
 function closeOverlay(){
   $(".overlay-body").removeClass('overlay-body--visible overlay-body--error overlay-body--text overlay-body--tooltip');
 
-  $('.multiSelector').removeClass('multiSelector--visible animate-popup animate-fadein');
+  $('.modal').removeClass('modal--visible animate-popup animate-fadein');
 }
 
 

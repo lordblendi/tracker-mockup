@@ -21,8 +21,8 @@ function selectNewColor(colorItemBodyRow) {
   const tagText = bodyRow.find('.JS_text').html().trim();
 
   // find all tags with the same text
-  const multiSelector = bodyRow.closest('.multiSelector');
-  const possibleTags = multiSelector.find('.JS_text');
+  const modal = bodyRow.closest('.modal');
+  const possibleTags = modal.find('.JS_text');
   var filteredTags = [];
 
   $.each(possibleTags, function(index, tag){

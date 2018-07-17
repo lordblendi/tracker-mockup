@@ -2,29 +2,29 @@ resetFilterActions();
 
 function resetFilterActions() {
   //  filter for multiselects - action handler for input field
-  $('.JS_multiSelector__filterInput').keyup(function() {
+  $('.JS_modal__filterInput').keyup(function() {
     var input = $(this);
-    var multiSelector = $(input).closest(".multiSelector");
+    var modal = $(input).closest(".modal");
     filterResults(input, '.JS_selectionChildren .JS_filterableCell, .JS_optionsChildren .JS_filterableCell');
 
-    checkGroups(multiSelector, '.JS_itemBox  .itemBox__rowInner:not(.JS_filterableCell)');
+    checkGroups(modal, '.JS_itemBox  .itemBox__rowInner:not(.JS_filterableCell)');
 
-    reInitActions(multiSelector);
+    reInitActions(modal);
   });
 
   // filter for app_navigator - action handler for input field
   $('.JS_appNav__filterInput').keyup(function() {
     var input = $(this);
     filterResults(input, '.JS_appNavBox .JS_filterableCell');
-    var multiSelector = $(input).closest(".multiSelector, .tabs-panels__panel");
+    var modal = $(input).closest(".modal, .tabs-panels__panel");
 
-    checkGroups(multiSelector, '.JS_appNavBox  .itemBox__rowInner:not(.JS_filterableCell)');
+    checkGroups(modal, '.JS_appNavBox  .itemBox__rowInner:not(.JS_filterableCell)');
 
-    reInitActions(multiSelector);
+    reInitActions(modal);
 
     // If there are no results -> show global search suggestion
-    const globalSearch = $(multiSelector).find('.JS_globalSearch');
-    if ($(multiSelector).find("ul.JS_filterableCell").length === 0) {
+    const globalSearch = $(modal).find('.JS_globalSearch');
+    if ($(modal).find("ul.JS_filterableCell").length === 0) {
       if (globalSearch.css("display") !== 'flex') {
         $.Velocity.animate(globalSearch, 'slideDown', {
           duration: 250,
@@ -48,19 +48,19 @@ function resetFilterActions() {
 // function that handles simple filter results
 function filterResults(input, listItemSelector) {
   // find the current filter value from the input field
-  // find the listItems with the provided selector in the same multiSelector,
+  // find the listItems with the provided selector in the same modal,
   // where the input field is located at
   var filter = input[0].value.toUpperCase();
-  var multiSelector = $(input).closest(".multiSelector, .tabs-panels__panel");
-  var listItems = $(multiSelector).find(listItemSelector);
+  var modal = $(input).closest(".modal, .tabs-panels__panel");
+  var listItems = $(modal).find(listItemSelector);
 
   // if the filter is longar than 0 characters
   // and there is a suggestion block, display it
   // otherwise hide it.
   if (filter.length > 0) {
-    $(multiSelector).find('.JS_itemBox--suggestions').css('display', 'block');
+    $(modal).find('.JS_itemBox--suggestions').css('display', 'block');
   } else {
-    $(multiSelector).find('.JS_itemBox--suggestions').css('display', 'none');
+    $(modal).find('.JS_itemBox--suggestions').css('display', 'none');
   }
 
   // Loop through all list items, and hide those who don't match the search query
@@ -87,8 +87,8 @@ function filterResults(input, listItemSelector) {
 }
 
 // check all groups, see if they need to be hidden or not
-function checkGroups(multiSelector, possibleChildren) {
-  var groups = $(multiSelector).find(possibleChildren);
+function checkGroups(modal, possibleChildren) {
+  var groups = $(modal).find(possibleChildren);
   for (i = 0; i < groups.length; i++) {
     var currentGroup = $(groups[i]);
     var possibleChild = currentGroup.next();
@@ -123,37 +123,37 @@ function checkGroups(multiSelector, possibleChildren) {
 
 // we have to reinit all actions
 // because changing the element node removes them
-// make sure to only do it to the elements inside the same multiSelector
+// make sure to only do it to the elements inside the same modal
 // where the input field is
-function reInitActions(multiSelector) {
+function reInitActions(modal) {
   // normal + x actions
-  $(multiSelector).find('.JS_itemBox .JS_itemBox__action').on('click', function() {
+  $(modal).find('.JS_itemBox .JS_itemBox__action').on('click', function() {
     const action = $(this);
     handleActionOnclick(action);
   });
 
   // expand-collapse
-  $(multiSelector).find('.JS_toggle').unbind('click');
-  $(multiSelector).find('.JS_toggle').on('click', function() {
+  $(modal).find('.JS_toggle').unbind('click');
+  $(modal).find('.JS_toggle').on('click', function() {
     const itemBox__row = $(this).closest('.itemBox__rowInner');
     expandCloseRow(itemBox__row);
   });
 
   // color picker trigger
-  $(multiSelector).find('.JS_selectionChildren .JS_toggle--color, .JS_optionsChildren .JS_toggle--color').on('click', function() {
+  $(modal).find('.JS_selectionChildren .JS_toggle--color, .JS_optionsChildren .JS_toggle--color').on('click', function() {
     const colorToggle = $(this);
     toggleColorSelector(colorToggle);
   });
 
-  // simple multiSelector-1
-  $('#multiSelector-1 .itemBox__rowInner').on('click', function() {
+  // simple modal-1
+  $('#modal-1 .itemBox__rowInner').on('click', function() {
     const row = $(this);
     selectNewSingleItem(row);
   })
 
   // include-exclude selectors
 
-  $(multiSelector).find('.JS_selectorItem').on('click', function() {
+  $(modal).find('.JS_selectorItem').on('click', function() {
     const selectorValue = $(this);
     const selector = selectorValue.closest('.JS_selector');
 
@@ -164,7 +164,7 @@ function reInitActions(multiSelector) {
   });
   // INCL-EXCL OPTIONS EXPAND-COLLAPSE
   window.setTimeout(() => {
-    $(multiSelector).find('.JS_toggle--InclExcl').off('click').on('click', function() {
+    $(modal).find('.JS_toggle--InclExcl').off('click').on('click', function() {
       const toggle = $(this);
       closeColorOptions(toggle);
       toggleInclExclSelector(toggle);
