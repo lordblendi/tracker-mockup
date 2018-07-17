@@ -83,27 +83,35 @@ permalink: /buttons
 <div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
   <div class="sm:w-1/2 p-8 overflow-hidden">
 
-    <h2 class="mb-8">Button configurations</h2>
+    <h2 class="mb-4">Button configurations</h2>
 
-    {% comment %} Field {% endcomment %}
+    <h3 class="mb-4">Text configuration</h3>
     <div class="field field--not-empty">
-      <div class="field__label">Button</div>
+      <div class="field__label">Button - default text configuration</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/button.html title="Keep me in for 2 weeks" %}
         </div>
       </div>
     </div>
-    {% comment %} Field {% endcomment %}
     <div class="field field--not-empty">
-      <div class="field__label">Button - small capital (possible with any color)</div>
+      <div class="field__label">Button - small capital</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/button.html title="Keep me in for 2 weeks" smallCaps="true" %}
         </div>
       </div>
     </div>
-    {% comment %} Field {% endcomment %}
+
+    <h3 class="mb-4 mt-8">Button color configuration</h3>
+    <div class="field field--not-empty">
+      <div class="field__label">Button - default color</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/button.html title="Keep me in for 2 weeks" %}
+        </div>
+      </div>
+    </div>
     <div class="field field--not-empty">
       <div class="field__label">Button - go</div>
       <div class="field__data">
@@ -112,8 +120,6 @@ permalink: /buttons
         </div>
       </div>
     </div>
-
-    {% comment %} Field {% endcomment %}
     <div class="field field--not-empty">
       <div class="field__label">Button - naked</div>
       <div class="field__data">
@@ -122,8 +128,6 @@ permalink: /buttons
         </div>
       </div>
     </div>
-
-    {% comment %} Field {% endcomment %}
     <div class="field field--not-empty">
       <div class="field__label">Button - drop</div>
       <div class="field__data">
@@ -133,7 +137,17 @@ permalink: /buttons
       </div>
     </div>
 
-    {% comment %} Field {% endcomment %}
+    <h3 class="mb-4 mt-8">Button alignment configuration</h3>
+    <div class="field field--not-empty">
+      <div class="field__label">Buttons - two next to each other, there has to be a separator between them</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/button.html title="Keep me in for 2 weeks" go="true"%}
+          {% include components/button-aligned-text.html title="•" %}
+          {% include components/button.html title="forget me tomorrow"%}
+        </div>
+      </div>
+    </div>
     <div class="field field--not-empty">
       <div class="field__label">Buttons - aligned text in the middle</div>
       <div class="field__data">
@@ -144,8 +158,6 @@ permalink: /buttons
         </div>
       </div>
     </div>
-
-    {% comment %} Field {% endcomment %}
     <div class="field field--not-empty">
       <div class="field__label">Buttons - aligned text in the middle 2</div>
       <div class="field__data">
@@ -156,31 +168,36 @@ permalink: /buttons
         </div>
       </div>
     </div>
-
-
   </div>
   <div class="sm:w-1/2 p-8 overflow-hidden">
-    <h2 class="mb-8">Push configurations - looks like a button, but it's a link</h2>
-
-    {% comment %} Field {% endcomment %}
+    <h2 class="mb-4">Push configurations - looks like a button, but it's an anchor</h2>
+    <h3 class="mb-4">Text configuration</h3>
     <div class="field field--not-empty">
-      <div class="field__label">Push</div>
+      <div class="field__label">Push - default text configuration</div>
       <div class="field__data">
         <div class="field__value">
           {% include components/push.html title="Present" href="present" %}
         </div>
       </div>
     </div>
-    {% comment %} Field {% endcomment %}
     <div class="field field--not-empty">
-      <div class="field__label">Push - small capital (possible with any color)</div>
+      <div class="field__label">Push - small capital </div>
       <div class="field__data">
         <div class="field__value">
           {% include components/push.html title="Present" href="present" smallCaps="true" %}
         </div>
       </div>
     </div>
-    {% comment %} Field {% endcomment %}
+
+  <h3 class="mb-4 mt-8">Push color configuration</h3>
+    <div class="field field--not-empty">
+      <div class="field__label">Push - default color</div>
+      <div class="field__data">
+        <div class="field__value">
+          {% include components/push.html title="Present" href="present" %}
+        </div>
+      </div>
+    </div>
     <div class="field field--not-empty">
       <div class="field__label">Push - go</div>
       <div class="field__data">
@@ -189,8 +206,6 @@ permalink: /buttons
         </div>
       </div>
     </div>
-
-    {% comment %} Field {% endcomment %}
     <div class="field field--not-empty">
       <div class="field__label">Push - naked</div>
       <div class="field__data">
@@ -199,8 +214,6 @@ permalink: /buttons
         </div>
       </div>
     </div>
-
-    {% comment %} Field {% endcomment %}
     <div class="field field--not-empty">
       <div class="field__label">Push - drop</div>
       <div class="field__data">
@@ -209,6 +222,5 @@ permalink: /buttons
         </div>
       </div>
     </div>
-
   </div>
 </div>
