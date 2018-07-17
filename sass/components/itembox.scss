@@ -170,6 +170,14 @@
       }
     }
 
+    &--action {
+      .itemBox__cell {
+        &::before {
+          background-color: var(--color-gold);
+        }
+      }
+    }
+
     &--custom {
       height: auto;
 
