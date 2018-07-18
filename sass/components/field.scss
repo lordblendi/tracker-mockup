@@ -160,35 +160,3 @@
     }
   }
 }
-
-
-
-.itemBox__cellInner {
-  .field {
-    margin: 0;
-    padding: 0;
-
-    &__label {
-      top: 0;
-    }
-
-    &__data {
-      min-height: 25px;
-      height: 25px;
-      top: 15px;
-    }
-
-    &--not-empty,
-    &--focus {
-      .field__label {
-        top: -15px;
-      }
-    }
-
-      &--focus {
-        .field__input {
-          padding: 5px 10px;
-        }
-      }
-  }
-}
