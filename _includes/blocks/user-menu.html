@@ -7,24 +7,24 @@
 
 <div class="p-2">
   {% for itemgroup in site.data.user-menu.itemgroups %}
-    <div class="itemBox">
+    <div class="toolbox-table">
       {% for item in itemgroup %}
-        <div class="itemBox__row">
-          <ul class="itemBox__rowInner itemBox__rowInner--item itemBox__rowInner--permalink" tabindex="0">
-            <li class="itemBox__cell flex-grow-0 itemBox__cell--permalink" tabindex="0">
-              <div class="itemBox__cellInner">
-                <div class="itemBox__value">{{item.icon}}</div>
+        <div class="toolbox-table__row">
+          <ul class="toolbox-table__rowInner toolbox-table__rowInner--item toolbox-table__rowInner--permalink" tabindex="0">
+            <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--permalink" tabindex="0">
+              <div class="toolbox-table__cellInner">
+                <div class="toolbox-table__value">{{item.icon}}</div>
               </div>
             </li>
-            <li class="itemBox__cell itemBox__cell--permalink" tabindex="0">
-              <div class="itemBox__cellInner">
-                <div class="itemBox__value">{{item.name}}</div>
+            <li class="toolbox-table__cell toolbox-table__cell--permalink" tabindex="0">
+              <div class="toolbox-table__cellInner">
+                <div class="toolbox-table__value">{{item.name}}</div>
               </div>
             </li>
           </ul>
         </div>
       {% endfor %}
     </div>
-    {% comment %} /.itemBox {% endcomment %}
+    {% comment %} /.toolbox-table {% endcomment %}
   {% endfor %}
 </div>

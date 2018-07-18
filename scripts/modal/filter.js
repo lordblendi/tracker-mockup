@@ -7,7 +7,7 @@ function resetFilterActions() {
     var modal = $(input).closest(".modal");
     filterResults(input, '.JS_selectionChildren .JS_filterableCell, .JS_optionsChildren .JS_filterableCell');
 
-    checkGroups(modal, '.JS_itemBox  .itemBox__rowInner:not(.JS_filterableCell)');
+    checkGroups(modal, '.JS_toolbox-table  .toolbox-table__rowInner:not(.JS_filterableCell)');
 
     reInitActions(modal);
   });
@@ -18,7 +18,7 @@ function resetFilterActions() {
     filterResults(input, '.JS_appNavBox .JS_filterableCell');
     var modal = $(input).closest(".modal, .tabs-panels__panel");
 
-    checkGroups(modal, '.JS_appNavBox  .itemBox__rowInner:not(.JS_filterableCell)');
+    checkGroups(modal, '.JS_appNavBox  .toolbox-table__rowInner:not(.JS_filterableCell)');
 
     reInitActions(modal);
 
@@ -58,9 +58,9 @@ function filterResults(input, listItemSelector) {
   // and there is a suggestion block, display it
   // otherwise hide it.
   if (filter.length > 0) {
-    $(modal).find('.JS_itemBox--suggestions').css('display', 'block');
+    $(modal).find('.JS_toolbox-table--suggestions').css('display', 'block');
   } else {
-    $(modal).find('.JS_itemBox--suggestions').css('display', 'none');
+    $(modal).find('.JS_toolbox-table--suggestions').css('display', 'none');
   }
 
   // Loop through all list items, and hide those who don't match the search query
@@ -92,7 +92,7 @@ function checkGroups(modal, possibleChildren) {
   for (i = 0; i < groups.length; i++) {
     var currentGroup = $(groups[i]);
     var possibleChild = currentGroup.next();
-    if (possibleChild.hasClass('JS_itemBox--children') && !possibleChild.hasClass('JS_itemBox--suggestions') && !possibleChild.hasClass('JS_itemBox--sublist')) {
+    if (possibleChild.hasClass('JS_toolbox-table--children') && !possibleChild.hasClass('JS_toolbox-table--suggestions') && !possibleChild.hasClass('JS_toolbox-table--sublist')) {
       // find all not hidden children
       var filterableCells = $(possibleChild).find('ul.JS_filterableCell');
       // if there are some, don't hide the group
@@ -127,7 +127,7 @@ function checkGroups(modal, possibleChildren) {
 // where the input field is
 function reInitActions(modal) {
   // normal + x actions
-  $(modal).find('.JS_itemBox .JS_itemBox__action').on('click', function() {
+  $(modal).find('.JS_toolbox-table .JS_toolbox-table__action').on('click', function() {
     const action = $(this);
     handleActionOnclick(action);
   });
@@ -135,8 +135,8 @@ function reInitActions(modal) {
   // expand-collapse
   $(modal).find('.JS_toggle').unbind('click');
   $(modal).find('.JS_toggle').on('click', function() {
-    const itemBox__row = $(this).closest('.itemBox__rowInner');
-    expandCloseRow(itemBox__row);
+    const toolbox-table__row = $(this).closest('.toolbox-table__rowInner');
+    expandCloseRow(toolbox-table__row);
   });
 
   // color picker trigger
@@ -146,7 +146,7 @@ function reInitActions(modal) {
   });
 
   // simple modal-1
-  $('#modal-1 .itemBox__rowInner').on('click', function() {
+  $('#modal-1 .toolbox-table__rowInner').on('click', function() {
     const row = $(this);
     selectNewSingleItem(row);
   })

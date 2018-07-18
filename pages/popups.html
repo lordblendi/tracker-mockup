@@ -13,7 +13,7 @@ permalink: /popups
       <li>If this way the popup would be too wide to fit fully on the screen, then it is aligned to the right: bottom right of the trigger touches the top right of the popup.</li>
       <li>The width of the popup is always the same size as the trigger, but has a min-width 300px. So if the trigger is 50% of your screen, the popup will be 50% wide too. Wider example lower under with filters.</li>
       <h4 class="py-2">Actions</h4>
-      <li>Action can be applied to the whole row, then the underline is the primary gold color (itemBox__rowInner--action). In this case no actions can be applied on cells.</li>
+      <li>Action can be applied to the whole row, then the underline is the primary gold color (toolbox-table__rowInner--action). In this case no actions can be applied on cells.</li>
       <li>If the row doesn't have an action, you can apply actions on each cell. An action is not mandatory, you can have cells without actions.</li>
       <h4 class="py-2">Overlay</h4>
       <li>First child of the body</li>
@@ -43,25 +43,25 @@ permalink: /popups
         </div>
       </div>
       <div class="note">
-        <li>Single select popup, simply having an itemBox in it with the elements. The already selected item has a  in an extra column.</li>
+        <li>Single select popup, simply having an toolbox-table in it with the elements. The already selected item has a  in an extra column.</li>
         <li>Error animation example: try to change status, then click on error icon or selector field again.</li>
-        <li>Upon having an error, there is a new itemBox with a note inside the cellInner, that is an error description.</li>
-        <li>The error icon is also clickable with one single note in it (wrapped in an itemBox).</li>
+        <li>Upon having an error, there is a new toolbox-table with a note inside the cellInner, that is an error description.</li>
+        <li>The error icon is also clickable with one single note in it (wrapped in an toolbox-table).</li>
         <li>A normal description follows the same structure.</li>
         <li>Clicking on the row selects the new element and closes the popup.</li>
         <h4 class="py-2">Optional elements</h4>
         <li>Grouping, like in the multselector popup / ALL. No add or remove actions.</li>
-        <li>Filter is on top of the selected/all groups in a it's own itemBox, but under error and tooltip notes </li>
+        <li>Filter is on top of the selected/all groups in a it's own toolbox-table, but under error and tooltip notes </li>
       </div>
     </div>
 
     {% comment %} Popup {% endcomment %}
     <div class="modal" id="ms-error">
-      <div class="itemBox">
-        <div class="itemBox__row">
-          <ul class="itemBox__rowInner itemBox__rowInner--custom">
-            <li class="itemBox__cell">
-              <div class="itemBox__cellInner">
+      <div class="toolbox-table">
+        <div class="toolbox-table__row">
+          <ul class="toolbox-table__rowInner toolbox-table__rowInner--custom">
+            <li class="toolbox-table__cell">
+              <div class="toolbox-table__cellInner">
                 <div class="note note--error">
                   <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
                 </div>
@@ -74,11 +74,11 @@ permalink: /popups
 
     {% comment %} Popup {% endcomment %}
     <div class="modal animate-popup" id="ms-status">
-      <div class="itemBox">
-        <div class="itemBox__row">
-          <ul class="itemBox__rowInner itemBox__rowInner--custom JS_itemBoxRow--error" style="display: none;">
-            <li class="itemBox__cell">
-              <div class="itemBox__cellInner">
+      <div class="toolbox-table">
+        <div class="toolbox-table__row">
+          <ul class="toolbox-table__rowInner toolbox-table__rowInner--custom JS_toolbox-tableRow--error" style="display: none;">
+            <li class="toolbox-table__cell">
+              <div class="toolbox-table__cellInner">
                 <div class="note note--error">
                   <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
                 </div>
@@ -87,13 +87,13 @@ permalink: /popups
           </ul>
         </div>
       </div>
-      <div class="itemBox JS_optionsChildren">
+      <div class="toolbox-table JS_optionsChildren">
         {% for item in site.data.modal-status.items %}
-        <div class="itemBox__row">
-          <ul class="itemBox__rowInner itemBox__rowInner--item itemBox__rowInner--action JS_filterableCell JS_error-popupRow">
-            <li class="itemBox__cell">
-              <div class="itemBox__cellInner">
-                <div class="itemBox__value">
+        <div class="toolbox-table__row">
+          <ul class="toolbox-table__rowInner toolbox-table__rowInner--item toolbox-table__rowInner--action JS_filterableCell JS_error-popupRow">
+            <li class="toolbox-table__cell">
+              <div class="toolbox-table__cellInner">
+                <div class="toolbox-table__value">
                   <div class="selector selector--expanded">
                     <div class="selector__item JS_selectorItem--active selector__item--selected">
                       <div class="selector__block">
@@ -129,11 +129,11 @@ permalink: /popups
     </div>
     {% comment %} Popup {% endcomment %}
     <div class="modal" id="ms-privacy">
-      <div class="itemBox">
-        <div class="itemBox__row">
-          <ul class="itemBox__rowInner itemBox__rowInner--custom">
-            <li class="itemBox__cell">
-              <div class="itemBox__cellInner">
+      <div class="toolbox-table">
+        <div class="toolbox-table__row">
+          <ul class="toolbox-table__rowInner toolbox-table__rowInner--custom">
+            <li class="toolbox-table__cell">
+              <div class="toolbox-table__cellInner">
 
                 <div class="note note--tooltip">
                   <p>By selecting 'Agree' you have read and accepted TenForce's <a href="#" class="link link--primary">Privacy Policy</a>, concerning your personal data and how it is used.</p>
@@ -163,7 +163,7 @@ permalink: /popups
     {% include popups/modal-tags-colors.html %}
 
     <div class="note">
-      <li>Multiselect popup, has Selected and All groupings ine ONE itemBox. Both of the groups have collapseable function</li>
+      <li>Multiselect popup, has Selected and All groupings ine ONE toolbox-table. Both of the groups have collapseable function</li>
       <li>Selected: on the top, has remove actions  only. Removing on the Selected makes the whole group be unselected. If nothing is selected, the group doesn't exists. If more than 4 are selected, there is a counter. No subgroups for Selected in normal popups.</li>
       <li>In the filter example there are subgroups (include/exclude).  (not implemented in the mockup).</li>
       <li>Every action has primary color (gold), excapt the remove action (secondary color, red).</li>
@@ -182,7 +182,7 @@ permalink: /popups
       <li>Another example is the color changer for the tagpicker.</li>
 
       <h4 class="py-2">Optional filtering</h4>
-      <li>Filter is on top of the selected/all groups in a it's own itemBox, but under error and tooltip notes.</li>
+      <li>Filter is on top of the selected/all groups in a it's own toolbox-table, but under error and tooltip notes.</li>
       <li>Upon filtering if something doesn't match the filter, it's gone. This effects the row coloring too, so display:none is not enough. Either remove it from the dom or change the tagName.</li>
       <li>If a group has nothing to show upon filtering, the group is also hidden. This can end up hiding both All and Selected groups.</li>
       <li>Suggestions should be under the filter option in a sublist, see tagpicker + filtering in it.</li>
@@ -193,7 +193,7 @@ permalink: /popups
       <li>This is a drag-n-drop action.</li>
       <li>Sublists should close (not implemented in the mockup).</li>
       <li>In the filter example you should be able to drop between the subgroups: from the Include group to the Exclude group (not implemented in the mockup).</li>
-      <li>The icon in the mockup is in a div, because it doesn't trigger with a button. But by default, itemBox__action should be a button if possible.</li>
+      <li>The icon in the mockup is in a div, because it doesn't trigger with a button. But by default, toolbox-table__action should be a button if possible.</li>
 
       <h4 class="py-2">Optional elements in columnpicker</h4>
       <li>Reset to default/previous upon changing ANYTHING</li>
@@ -205,7 +205,7 @@ permalink: /popups
 <script>
   $("#ms-status .JS_error-popupRow").on('click', function() {
     closeOverlay();
-    $("#ms-status .JS_itemBoxRow--error").css('display', 'flex');
+    $("#ms-status .JS_toolbox-tableRow--error").css('display', 'flex');
     $('.JS_field--error').each(function() {
       const errorField = $(this);
       errorField.addClass('field--error');

@@ -83,10 +83,10 @@ function handleSelector(selector, selectorValue) {
     //  new multiselect
     else {
       if(selectorValue.hasClass('JS_selector__item--exclude') && selectorValue.hasClass('selector__item--selected')) {
-        selectorValue.closest('.JS_itemBox').addClass('JS_exclude');
+        selectorValue.closest('.JS_toolbox-table').addClass('JS_exclude');
       }
       else {
-        selectorValue.closest('.JS_itemBox').removeClass('JS_exclude');
+        selectorValue.closest('.JS_toolbox-table').removeClass('JS_exclude');
       }
     }
   }

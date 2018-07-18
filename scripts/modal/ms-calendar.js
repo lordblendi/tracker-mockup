@@ -10,21 +10,21 @@ $('.JS_toggle--calendar').on('click', function() {
 // toggle active class depending on expanding/collapsing
 function toggleCalendarSelector(toggle) {
   // if there is a color box, expand/collapse it
-  const itemBox__row = toggle.closest('.itemBox__rowInner');
-  const possibleChildren = itemBox__row.nextAll('.JS_itemBox--calendar:first');
+  const toolbox-table__row = toggle.closest('.toolbox-table__rowInner');
+  const possibleChildren = toolbox-table__row.nextAll('.JS_toolbox-table--calendar:first');
 
   // only toggle, if they actually exists;
   if(possibleChildren.length > 0) {
   // TODO when we need to show what is selected
 
-  const bodyCell = toggle.closest('.itemBox__cell');
-  if (bodyCell.hasClass('itemBox__cell--active')) {
-    bodyCell.removeClass('itemBox__cell--active');
+  const bodyCell = toggle.closest('.toolbox-table__cell');
+  if (bodyCell.hasClass('toolbox-table__cell--active')) {
+    bodyCell.removeClass('toolbox-table__cell--active');
   }
   else {
-    bodyCell.addClass('itemBox__cell--active');
+    bodyCell.addClass('toolbox-table__cell--active');
   }
 
-    expandCloseRow(itemBox__row, undefined, possibleChildren);
+    expandCloseRow(toolbox-table__row, undefined, possibleChildren);
   }
 }

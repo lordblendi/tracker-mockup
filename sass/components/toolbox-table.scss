@@ -1,14 +1,14 @@
 ---
 ---
 
-.itemBox {
+.toolbox-table {
   font-size: 16px;
 
-  .itemBox {
+  .toolbox-table {
     padding: 5px 0 5px 15px;
   }
 
-  + .itemBox {
+  + .toolbox-table {
     padding-top: 10px;
   }
 
@@ -18,7 +18,7 @@
   }
 
   &--gdpr {
-    .itemBox {
+    .toolbox-table {
       padding: 20px;
     }
   }
@@ -36,22 +36,22 @@
     }
 
     &:nth-of-type(odd) {
-      &.itemBox__row--placeholder {
+      &.toolbox-table__row--placeholder {
         background-color: var(--color-grey-lightest);
       }
 
-      >.itemBox__rowInner--item {
+      >.toolbox-table__rowInner--item {
         background-color: var(--color-grey-lightest);
 
-        .itemBox__cell:not(.flex-grow-0)::after {
+        .toolbox-table__cell:not(.flex-grow-0)::after {
           background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(242,242,242,.5) 50%, var(--color-grey-lightest) 80%, var(--color-grey-lightest) 100%);
         }
       }
     }
 
     &:nth-of-type(even) {
-      >.itemBox__rowInner--item {
-        .itemBox__cell:not(.flex-grow-0)::after {
+      >.toolbox-table__rowInner--item {
+        .toolbox-table__cell:not(.flex-grow-0)::after {
           background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, #FFF 80%, #FFF 100%);
         }
       }
@@ -75,7 +75,7 @@
       border-radius: 5px 5px 0 0;
       font-style: italic;
 
-      .itemBox__cell {
+      .toolbox-table__cell {
         min-width: 40px;
 
         &Inner {
@@ -97,14 +97,14 @@
       background: #d9d9d9;
       border-radius: 0 0 5px 5px;
 
-      .itemBox__cellInner {
+      .toolbox-table__cellInner {
         color: #808080;
         text-align: right;
       }
     }
 
     &--item {
-      .itemBox {
+      .toolbox-table {
         &__cell {
           &::before {
             content: '';
@@ -154,7 +154,7 @@
       }
 
       &:hover, &:focus, &:focus-within {
-        .itemBox__cell {
+        .toolbox-table__cell {
           &::before {
             height: 2px;
             opacity: 1;
@@ -173,7 +173,7 @@
           }
         }
 
-        .itemBox__action {
+        .toolbox-table__action {
           &--hidden {
             opacity: 1;
           }
@@ -182,7 +182,7 @@
     }
 
     &--action {
-      .itemBox__cell {
+      .toolbox-table__cell {
         &::before {
           background-color: var(--color-gold);
         }
@@ -192,7 +192,7 @@
     &--custom {
       height: auto;
 
-      .itemBox__cellInner {
+      .toolbox-table__cellInner {
         position: relative;
         line-height: normal;
         height: auto;
@@ -204,7 +204,7 @@
 
     &--permalink {
       &:hover, &:focus {
-        .itemBox__cell {
+        .toolbox-table__cell {
           &--permalink {
             &::before {
               opacity: 1;
@@ -226,14 +226,14 @@
       text-align: center;
 
       &:first-child {
-        + .itemBox__cell {
-          .itemBox__cellInner {
+        + .toolbox-table__cell {
+          .toolbox-table__cellInner {
             padding-left: 0;
           }
         }
       }
 
-      .itemBox__cellInner {
+      .toolbox-table__cellInner {
         padding: 5px;
 
         .inline {

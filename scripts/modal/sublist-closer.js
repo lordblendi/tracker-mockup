@@ -1,25 +1,25 @@
 function closeAllOtherSublists(toggle) {
 
-  const itemBox__row = toggle.closest('.itemBox__rowInner');
+  const toolbox-table__row = toggle.closest('.toolbox-table__rowInner');
 
   if(!toggle.hasClass('JS_toggle--InclExcl')) {
-    closeInclExclOptions(itemBox__row);
+    closeInclExclOptions(toolbox-table__row);
   }
   if(!toggle.hasClass('JS_toggle--color')) {
-    closeColorOptions(itemBox__row);
+    closeColorOptions(toolbox-table__row);
   }
   if(!toggle.hasClass('JS_toggle--calendar')) {
-    closeCalendarOptions(itemBox__row);
+    closeCalendarOptions(toolbox-table__row);
   }
   if(!toggle.hasClass('JS_toggle--columnpickerOptions')) {
-    closeColumnpickerOptions(itemBox__row);
+    closeColumnpickerOptions(toolbox-table__row);
   }
 }
 
 // close incl-exlToggle if open
 // used by Toggle
-function closeInclExclOptions(itemBox__row) {
-  const activeTrigger = $(itemBox__row).find('.itemBox__cell--active .JS_toggle--InclExcl');
+function closeInclExclOptions(toolbox-table__row) {
+  const activeTrigger = $(toolbox-table__row).find('.toolbox-table__cell--active .JS_toggle--InclExcl');
 
   // if there is an active color trigger in this bodyRow
   if(activeTrigger.length > 0) {
@@ -29,8 +29,8 @@ function closeInclExclOptions(itemBox__row) {
 
 // close colorToggle if open
 // used by incl-exlToggle
-function closeColorOptions(itemBox__row) {
-  const activeTrigger = $(itemBox__row).find('.itemBox__cell--active .JS_toggle--color');
+function closeColorOptions(toolbox-table__row) {
+  const activeTrigger = $(toolbox-table__row).find('.toolbox-table__cell--active .JS_toggle--color');
 
   // if there is an active color trigger in this bodyRow
   if(activeTrigger.length > 0) {
@@ -39,8 +39,8 @@ function closeColorOptions(itemBox__row) {
 }
 
 // close calendar if open
-function closeCalendarOptions(itemBox__row) {
-  const activeTrigger = $(itemBox__row).find('.itemBox__cell--active .JS_toggle--calendar');
+function closeCalendarOptions(toolbox-table__row) {
+  const activeTrigger = $(toolbox-table__row).find('.toolbox-table__cell--active .JS_toggle--calendar');
 
   // if there is an active color trigger in this bodyRow
   if(activeTrigger.length > 0) {
@@ -49,8 +49,8 @@ function closeCalendarOptions(itemBox__row) {
 }
 
 // close columnpicker options if open
-function closeColumnpickerOptions(itemBox__row) {
-  const activeTrigger = $(itemBox__row).find('.itemBox__cell--active .JS_toggle--optionsColumnpicker');
+function closeColumnpickerOptions(toolbox-table__row) {
+  const activeTrigger = $(toolbox-table__row).find('.toolbox-table__cell--active .JS_toggle--optionsColumnpicker');
 
   // if there is an active color trigger in this bodyRow
   if(activeTrigger.length > 0) {

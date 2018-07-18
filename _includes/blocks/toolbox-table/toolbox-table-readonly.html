@@ -1,6 +1,6 @@
 <header class="header header--table">
   <div class="header__title">
-    <h2>table section header above itemBox</h2>
+    <h2>table section header above toolbox-table</h2>
   </div>
   {% comment %} header actions {% endcomment %}
   <div class="header__actions">
@@ -8,28 +8,28 @@
     <button class="block-action"></button>
   </div>
 </header>
-{% comment %} ItemBox Div {% endcomment %}
-<div class="itemBox">
+{% comment %} toolbox-table Div {% endcomment %}
+<div class="toolbox-table">
   {% comment %} group for row and possible children {% endcomment %}
-  <div class="itemBox__row">
+  <div class="toolbox-table__row">
     {% comment %} row itself {% endcomment %}
     {% comment %} this is a thead row {% endcomment %}
-    <ul class="itemBox__rowInner itemBox__rowInner--thead">
+    <ul class="toolbox-table__rowInner toolbox-table__rowInner--thead">
       {% comment %} cell, that contains only one icon is always flex-grow-0 {% endcomment %}
       {% comment %} if NO action, then empty cell, but the cell is still visible {% endcomment %}
       {% comment %} if there is an action in it, then it contans a button, otherwise only cellInner {% endcomment %}
       {% comment %} every header has the title as placeholder and can be used as filter {% endcomment %}
 
-      {% comment %} expands and collapses current itemBox's children {% endcomment %}
+      {% comment %} expands and collapses current toolbox-table's children {% endcomment %}
       {% comment %} if nothing is expanded -> expand all children {% endcomment %}
       {% comment %} otherwise collapse all children {% endcomment %}
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_expand_header">
-        <div class="itemBox__cellInner">
-          <button class="itemBox__action"></button>
+      <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_expand_header">
+        <div class="toolbox-table__cellInner">
+          <button class="toolbox-table__action"></button>
         </div>
       </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
+      <li class="toolbox-table__cell">
+        <div class="toolbox-table__cellInner">
           <div class="field">
             <div class="field__label">header cell 1</div>
             <div class="field__data">
@@ -40,8 +40,8 @@
           </div>
         </div>
       </li>
-      <li class="itemBox__cell flex-grow-2">
-        <div class="itemBox__cellInner">
+      <li class="toolbox-table__cell flex-grow-2">
+        <div class="toolbox-table__cellInner">
           <div class="field">
             <div class="field__label">header cell 2 with flex-grow-2</div>
             <div class="field__data">
@@ -56,75 +56,75 @@
   </div>
 
   {% comment %} group for row and possible children {% endcomment %}
-  <div class="itemBox__row">
+  <div class="toolbox-table__row">
     {% comment %} item row itself, this is an itemrow, a simple row{% endcomment %}
-    <ul class="itemBox__rowInner itemBox__rowInner--item">
+    <ul class="toolbox-table__rowInner toolbox-table__rowInner--item">
       {% comment %} cell, that contains only one icon is always flex-grow-0 {% endcomment %}
       {% comment %} if NO action, then empty cell, but the cell is still visible {% endcomment %}
       {% comment %} if there is an action in it, then it contans a button, otherwise only cellInner {% endcomment %}
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
-        <div class="itemBox__cellInner"></div>
+      <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action">
+        <div class="toolbox-table__cellInner"></div>
       </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
+      <li class="toolbox-table__cell">
+        <div class="toolbox-table__cellInner">
           {% include components/selector.html selectorData=",,,395415" readonly="true" singleselect="true" expanded="true" selectedIndexes="1" %}
         </div>
       </li>
-      <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink" tabindex="0">
-        <div class="itemBox__cellInner">Permalink cell</div>
+      <li class="toolbox-table__cell flex-grow-2 toolbox-table__cell--permalink" tabindex="0">
+        <div class="toolbox-table__cellInner">Permalink cell</div>
       </li>
     </ul>
   </div>
 
   {% comment %} item row {% endcomment %}
-  <div class="itemBox__row">
-    <ul class="itemBox__rowInner itemBox__rowInner--item">
+  <div class="toolbox-table__row">
+    <ul class="toolbox-table__rowInner toolbox-table__rowInner--item">
       {% comment %} cell, that contains only one icon is always flex-grow-0 {% endcomment %}
       {% comment %} if NO action, then empty cell, but the cell is still visible {% endcomment %}
       {% comment %} if there is an action in it, then it contans a button, otherwise only cellInner {% endcomment %}
 
       {% comment %} expands and collapses current row's children {% endcomment %}
-      <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_expand">
-        <div class="itemBox__cellInner">
-          <button class="itemBox__action"></button>
+      <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_expand">
+        <div class="toolbox-table__cellInner">
+          <button class="toolbox-table__action"></button>
         </div>
       </li>
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
+      <li class="toolbox-table__cell">
+        <div class="toolbox-table__cellInner">
           {% comment %} a cell can contain any kind of data {% endcomment %}
           readonly cell with any kind of data in it
         </div>
       </li>
-      <li class="itemBox__cell flex-grow-2 itemBox__cell--permalink" tabindex="0">
-        <div class="itemBox__cellInner">Permalink cell</div>
+      <li class="toolbox-table__cell flex-grow-2 toolbox-table__cell--permalink" tabindex="0">
+        <div class="toolbox-table__cellInner">Permalink cell</div>
       </li>
     </ul>
 
-    {% comment %} if you want to add children, just include a new itembox{% endcomment %}
-    {% comment %} children are itembox inside itembox with transparent background{% endcomment %}
+    {% comment %} if you want to add children, just include a new toolbox-table{% endcomment %}
+    {% comment %} children are toolbox-table inside toolbox-table with transparent background{% endcomment %}
 
     {% comment %} special type of children is a sublist (belongs to a cell of the row not to the full row){% endcomment %}
     {% comment %} that has a gray background, see columnpicker options, child table, |||| action{% endcomment %}
     {% comment %} there the cell, what the sublist belongs to, gets an underline{% endcomment %}
-    {% include blocks/itembox/itembox-inner.html %}
+    {% include blocks/toolbox-table/toolbox-table-inner.html %}
   </div>
 
   {% comment %} load more row if needed with smart text in it {% endcomment %}
-  <div class="itemBox__row">
-    <ul class="itemBox__rowInner itemBox__rowInner--item itemBox__rowInner--action JS_loadMoreButton">
-      <li class="itemBox__cell itemBox__cell--action">
-        <div class="itemBox__cellInner">
-          <button class="itemBox__action">Load <span>25</span> more out of 75</button>
+  <div class="toolbox-table__row">
+    <ul class="toolbox-table__rowInner toolbox-table__rowInner--item toolbox-table__rowInner--action JS_loadMoreButton">
+      <li class="toolbox-table__cell toolbox-table__cell--action">
+        <div class="toolbox-table__cellInner">
+          <button class="toolbox-table__action">Load <span>25</span> more out of 75</button>
         </div>
       </li>
     </ul>
   </div>
 
   {% comment %} itemrow tfoot {% endcomment %}
-  <div class="itemBox__row">
-    <ul class="itemBox__rowInner itemBox__rowInner--tfoot">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner text-xs">All <span>423</span> items loaded</div>
+  <div class="toolbox-table__row">
+    <ul class="toolbox-table__rowInner toolbox-table__rowInner--tfoot">
+      <li class="toolbox-table__cell">
+        <div class="toolbox-table__cellInner text-xs">All <span>423</span> items loaded</div>
       </li>
     </ul>
   </div>

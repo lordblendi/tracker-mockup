@@ -2,7 +2,7 @@
 ---
 
 // SELECT INCL/EXCL
-$('.JS_itemBox--filterInclExcl .itemBox__rowInner').on('click', function() {
+$('.JS_toolbox-table--filterInclExcl .toolbox-table__rowInner').on('click', function() {
   const incleExclBodyRow = $(this);
   selectNewFilterOption(incleExclBodyRow);
 });
@@ -12,11 +12,11 @@ $('.JS_itemBox--filterInclExcl .itemBox__rowInner').on('click', function() {
 // then close the pallette
 function selectNewFilterOption(incleExclBodyRow) {
   // get new option
-  const newOption = incleExclBodyRow.find('.JS_itemBox__cellInner--inclExcl').attr('data-filter');
+  const newOption = incleExclBodyRow.find('.JS_toolbox-table__cellInner--inclExcl').attr('data-filter');
 
   // find the bodyRow related to this toggle
-  const itemBox = incleExclBodyRow.closest('.JS_itemBox--filterInclExcl');
-  const bodyRow = $(itemBox).prevAll('ul.itemBox__rowInner.JS_filterableCell:first:not(".JS_createNewTag")');
+  const toolbox-table = incleExclBodyRow.closest('.JS_toolbox-table--filterInclExcl');
+  const bodyRow = $(toolbox-table).prevAll('ul.toolbox-table__rowInner.JS_filterableCell:first:not(".JS_createNewTag")');
 
   // find toggle and replace text and data-filter
   const toggle = $(bodyRow).find('.JS_inclExl');
@@ -52,7 +52,7 @@ function selectNewFilterOption(incleExclBodyRow) {
     const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
 
     const oldItemTextBlock = selectedItems[positionOfItemInSelected];
-    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.itemBox__rowInner.JS_filterableCell');
+    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.toolbox-table__rowInner.JS_filterableCell');
     // append to newSelectedBlock
     // cloning includes eventhandlers too
     // remove from oldSelectedBlock
@@ -62,17 +62,17 @@ function selectNewFilterOption(incleExclBodyRow) {
   }
 
   // remove active cell from bodyRow as we are closing the selector
-  $(bodyRow).find('.itemBox__cell--active').removeClass('itemBox__cell--active');
+  $(bodyRow).find('.toolbox-table__cell--active').removeClass('toolbox-table__cell--active');
 
   // close options
-  $.Velocity.animate(itemBox, 'slideUp').then(function() {
-    $(itemBox).addClass('JS_children-closed');
+  $.Velocity.animate(toolbox-table, 'slideUp').then(function() {
+    $(toolbox-table).addClass('JS_children-closed');
   });
 }
 
 // SELECT INCL/EXCL - TOGGLE
 // ONLY IF IT'S NOT SELECTED YET
-$('.JS_itemBox__cellInner--inclExcl.JS_selectorItem').on('click', function() {
+$('.JS_toolbox-table__cellInner--inclExcl.JS_selectorItem').on('click', function() {
   // get new option
   const newOption = $(this).attr('data-filter');
 
@@ -113,7 +113,7 @@ $('.JS_itemBox__cellInner--inclExcl.JS_selectorItem').on('click', function() {
     const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
 
     const oldItemTextBlock = selectedItems[positionOfItemInSelected];
-    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.itemBox__rowInner.JS_filterableCell');
+    const oldItemBodyRow = $(oldItemTextBlock).closest('ul.toolbox-table__rowInner.JS_filterableCell');
     // append to newSelectedBlock
     // cloning includes eventhandlers too
     // remove from oldSelectedBlock
@@ -134,8 +134,8 @@ $('.JS_toggle--InclExcl').on('click', function() {
 // toggle active class depending on expanding/collapsing
 function toggleInclExclSelector(toggle) {
   // if there is a  box, expand/collapse it
-  const itemBox__row = toggle.closest('.itemBox__rowInner');
-  const possibleChildren = itemBox__row.nextAll('.JS_itemBox--filterInclExcl:first');
+  const toolbox-table__row = toggle.closest('.toolbox-table__rowInner');
+  const possibleChildren = toolbox-table__row.nextAll('.JS_toolbox-table--filterInclExcl:first');
 
   // only toggle, if they actually exists;
   if(possibleChildren.length > 0) {
@@ -148,20 +148,20 @@ function toggleInclExclSelector(toggle) {
   // // add selection to new incl-excl (can be changed by other tags)
   // // only if opening
 
-  const selectedFilter = possibleChildren.find(`.JS_itemBox__cellInner--inclExcl[data-filter='${actualFilter}']`);
-  const selectedFilterBodyRow = $(selectedFilter).closest('.itemBox__rowInner');
+  const selectedFilter = possibleChildren.find(`.JS_toolbox-table__cellInner--inclExcl[data-filter='${actualFilter}']`);
+  const selectedFilterBodyRow = $(selectedFilter).closest('.toolbox-table__rowInner');
   selectedFilterBodyRow.append(`{% include javascript/itemSelected.html %}`);
 
 
 
-  const bodyCell = toggle.closest('.itemBox__cell');
-  if (bodyCell.hasClass('itemBox__cell--active')) {
-    bodyCell.removeClass('itemBox__cell--active');
+  const bodyCell = toggle.closest('.toolbox-table__cell');
+  if (bodyCell.hasClass('toolbox-table__cell--active')) {
+    bodyCell.removeClass('toolbox-table__cell--active');
   }
   else {
-    bodyCell.addClass('itemBox__cell--active');
+    bodyCell.addClass('toolbox-table__cell--active');
   }
 
-    expandCloseRow(itemBox__row, undefined, possibleChildren);
+    expandCloseRow(toolbox-table__row, undefined, possibleChildren);
   }
 }

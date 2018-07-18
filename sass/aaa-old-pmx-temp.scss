@@ -61,13 +61,13 @@ body {
 
 
 
-.databox.itembox {
+.databox.toolbox-table {
   * {
     box-sizing: border-box;
   }
 
   ul {
-    &.itembox li {
+    &.toolbox-table li {
       background-color: inherit;
     }
   }

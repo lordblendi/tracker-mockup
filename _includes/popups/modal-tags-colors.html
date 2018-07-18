@@ -1,12 +1,12 @@
 <div class="modal JS_modal--withColors" id="modal-tagpicker">
 
-  <div class="itemBox JS_itemBox ">
-    <div class="itemBox__row">
-      <ul class="itemBox__rowInner">
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">
+  <div class="toolbox-table JS_toolbox-table ">
+    <div class="toolbox-table__row">
+      <ul class="toolbox-table__rowInner">
+        <li class="toolbox-table__cell">
+          <div class="toolbox-table__cellInner">
 
-            <input type="search" class="itemBox__input itemBox__input--fluid JS_modal__filterInput" placeholder="filter through tags">
+            <input type="search" class="toolbox-table__input toolbox-table__input--fluid JS_modal__filterInput" placeholder="filter through tags">
 
           </div>
         </li>
@@ -15,43 +15,43 @@
     </div>
   </div>
 
-  <div class="itemBox JS_itemBox">
-    <div class="itemBox__row">
-      <ul class="itemBox__rowInner itemBox__rowInner--item JS_selectionTitle">
-        <li class="itemBox__cell itemBox__cell--action JS_toggle">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action JS_selectedText"> Selected</div>
+  <div class="toolbox-table JS_toolbox-table">
+    <div class="toolbox-table__row">
+      <ul class="toolbox-table__rowInner toolbox-table__rowInner--item JS_selectionTitle">
+        <li class="toolbox-table__cell toolbox-table__cell--action JS_toggle">
+          <div class="toolbox-table__cellInner">
+            <div class="toolbox-table__action JS_selectedText"> Selected</div>
           </div>
         </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
+        <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_toolbox-table__cell--remove JS_toolbox-table__cell--removeAll JS_toolbox-table__action">
+          <div class="toolbox-table__cellInner">
+            <div class="toolbox-table__action toolbox-table__action--secondary JS_toolbox-table__action--remove JS_toolbox-table__action--removeAll JS_toolbox-table__action--removeAllSelected"></div>
           </div>
         </li>
       </ul>
 
-      <div class="itemBox JS_itemBox--children JS_selectionChildren">
+      <div class="toolbox-table JS_toolbox-table--children JS_selectionChildren">
         <div class="JS_sortable ui-sortable">
           {% for item in site.data.tag-picker-color.selected %}
-          <div class="itemBox__row">
-            <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
-              <li class="itemBox__cell">
-                <div class="itemBox__cellInner JS_toggle--color">
-                  <div class="itemBox__value">
+          <div class="toolbox-table__row">
+            <ul class="toolbox-table__rowInner toolbox-table__rowInner--item JS_filterableCell">
+              <li class="toolbox-table__cell">
+                <div class="toolbox-table__cellInner JS_toggle--color">
+                  <div class="toolbox-table__value">
 
                     {% include javascript/colorToggle.html color=item.color %} {% assign selectorData = ",,," | append: item.name %} {% include components/selector.html selectorData=selectorData expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
 
                   </div>
                 </div>
               </li>
-              <li class="itemBox__cell flex-grow-0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__action itemBox__action--hidden">އ</div>
+              <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action ui-sortable-handle JS_toolbox-table__cell--draggable">
+                <div class="toolbox-table__cellInner">
+                  <div class="toolbox-table__action toolbox-table__action--hidden">އ</div>
                 </div>
               </li>
-              <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
-                <div class="itemBox__cellInner">
-                  <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+              <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_toolbox-table__cell--remove JS_toolbox-table__action">
+                <div class="toolbox-table__cellInner">
+                  <div class="toolbox-table__action toolbox-table__action--secondary JS_toolbox-table__action--remove"></div>
                 </div>
               </li>
             </ul>
@@ -60,34 +60,34 @@
           {% endfor %}
         </div>
       </div>
-      {% comment %} /.itemBox {% endcomment %}
+      {% comment %} /.toolbox-table {% endcomment %}
     </div>
-    <div class="itemBox__row">
-      <ul class="itemBox__rowInner itemBox__rowInner--item JS_optionsTitle">
-        <li class="itemBox__cell itemBox__cell--toggle JS_toggle">
-          <div class="itemBox__cellInner">
-            <button class="itemBox__action"> All</button>
+    <div class="toolbox-table__row">
+      <ul class="toolbox-table__rowInner toolbox-table__rowInner--item JS_optionsTitle">
+        <li class="toolbox-table__cell toolbox-table__cell--toggle JS_toggle">
+          <div class="toolbox-table__cellInner">
+            <button class="toolbox-table__action"> All</button>
           </div>
         </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--remove"></div>
+        <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_toolbox-table__cell--remove JS_toolbox-table__cell--removeAll JS_toolbox-table__action">
+          <div class="toolbox-table__cellInner">
+            <div class="toolbox-table__action toolbox-table__action--secondary JS_toolbox-table__action--removeAll JS_toolbox-table__action--remove"></div>
           </div>
         </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__cell--addAll JS_itemBox__action">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action JS_itemBox__action--add JS_itemBox__action--addAll"></div>
+        <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_toolbox-table__cell--add JS_toolbox-table__cell--addAll JS_toolbox-table__action">
+          <div class="toolbox-table__cellInner">
+            <div class="toolbox-table__action JS_toolbox-table__action--add JS_toolbox-table__action--addAll"></div>
           </div>
         </li>
       </ul>
 
-      <div class="itemBox JS_itemBox--children JS_optionsChildren">
+      <div class="toolbox-table JS_toolbox-table--children JS_optionsChildren">
         {% for item in site.data.tag-picker-color.options %}
-        <div class="itemBox__row">
-          <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
-            <li class="itemBox__cell ">
-              <div class="itemBox__cellInner JS_toggle--color">
-                <div class="itemBox__value">
+        <div class="toolbox-table__row">
+          <ul class="toolbox-table__rowInner toolbox-table__rowInner--item JS_filterableCell">
+            <li class="toolbox-table__cell ">
+              <div class="toolbox-table__cellInner JS_toggle--color">
+                <div class="toolbox-table__value">
                   {% include javascript/colorToggle.html color=item.color %}
                   {% assign selectorData = ",,," | append: item.name %}
                   {% include components/selector.html selectorData=selectorData expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
@@ -95,15 +95,15 @@
               </div>
             </li>
             {% if item.selected == "true" %}
-            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__action">
-              <div class="itemBox__cellInner">
-                <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--remove"></div>
+            <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_toolbox-table__cell--remove JS_toolbox-table__action">
+              <div class="toolbox-table__cellInner">
+                <div class="toolbox-table__action toolbox-table__action--secondary JS_toolbox-table__action--remove"></div>
               </div>
             </li>
             {% else %}
-            <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--add JS_itemBox__action">
-              <div class="itemBox__cellInner">
-                <div class="itemBox__action JS_itemBox__action--add"></div>
+            <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_toolbox-table__cell--add JS_toolbox-table__action">
+              <div class="toolbox-table__cellInner">
+                <div class="toolbox-table__action JS_toolbox-table__action--add"></div>
               </div>
             </li>
             {% endif %}
@@ -112,10 +112,10 @@
          </div>
       {% endfor %}
       </div>
-      {% comment %} /.itemBox {% endcomment %}
+      {% comment %} /.toolbox-table {% endcomment %}
     </div>
   </div>
-  {% comment %} /.itemBox {% endcomment %}
+  {% comment %} /.toolbox-table {% endcomment %}
 
 </div>
 {% comment %} /.modal {% endcomment %}

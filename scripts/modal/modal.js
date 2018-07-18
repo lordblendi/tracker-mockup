@@ -4,25 +4,25 @@
 
 // COMPLEX modal
 // set actions for + and X
-$('.modal .JS_itemBox .JS_itemBox__action').on('click', function(){
+$('.modal .JS_toolbox-table .JS_toolbox-table__action').on('click', function(){
   const action = $(this);
   handleActionOnclick(action);
 });+
-$('.modal .JS_itemBox .JS_textAction').on('click', function(){
+$('.modal .JS_toolbox-table .JS_textAction').on('click', function(){
   handleTextAction($(this));
 });
 
 // handles onclick on text
 function handleTextAction(text) {
-  const bodyRow = text.closest('.itemBox__rowInner');
+  const bodyRow = text.closest('.toolbox-table__rowInner');
   // find the first add/remove action close to the text
-  $(bodyRow).find('.JS_itemBox__action:not(.itemBox__action--drag)').trigger('click');
+  $(bodyRow).find('.JS_toolbox-table__action:not(.toolbox-table__action--drag)').trigger('click');
 
 }
 
 // handles onclick`
 function handleActionOnclick(action) {
-  action = $(action).find('.itemBox__action');
+  action = $(action).find('.toolbox-table__action');
   // if this just shows selected, don't do anything (has same design css class)
   if(action.hasClass('JS_showSelected')) {
     return;
@@ -63,16 +63,16 @@ function handleActionOnclick(action) {
 
   // if removeAll, then we call the groupRemove
   // with a parameter depending if it's removing all from selected or not
-  if(action.hasClass('JS_itemBox__action--removeAll')){
-    const children = action.closest('.itemBox__rowInner').next();
-    if(children.hasClass('JS_itemBox--children')) {
-      handleComplexGroupRemove(action, children, action.hasClass('JS_itemBox__action--removeAllSelected'), selectedBlockClass);
+  if(action.hasClass('JS_toolbox-table__action--removeAll')){
+    const children = action.closest('.toolbox-table__rowInner').next();
+    if(children.hasClass('JS_toolbox-table--children')) {
+      handleComplexGroupRemove(action, children, action.hasClass('JS_toolbox-table__action--removeAllSelected'), selectedBlockClass);
     }
   }
   // if it's addAll, then we call the groupAdd
-  else if(action.hasClass('JS_itemBox__action--addAll')){
-    const children = action.closest('.itemBox__rowInner').next();
-    if(children.hasClass('JS_itemBox--children')) {
+  else if(action.hasClass('JS_toolbox-table__action--addAll')){
+    const children = action.closest('.toolbox-table__rowInner').next();
+    if(children.hasClass('JS_toolbox-table--children')) {
       handleComplexGroupAdd(action, children, exclude);
     }
   }
@@ -124,8 +124,8 @@ function addSelectedBlock(modal, selectedBlockClass){
     var andOrSelector = '';
     if(modal.hasClass('JS_modal--withFilter')) {
       selectedFilters = `{% include javascript/selectedBlock-Include.html %}{% include javascript/selectedBlock-Exclude.html %}`;
-      andOrSelector = `<li class="itemBox__cell flex-grow-0 itemBox__cell--action align-right">
-        <div class="itemBox__cellInner">
+      andOrSelector = `<li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action align-right">
+        <div class="toolbox-table__cellInner">
           {% include javascript/and-or-selector.html %}
         </div>
       </li>`;
@@ -135,8 +135,8 @@ function addSelectedBlock(modal, selectedBlockClass){
     const selectionTitle = modal.find('.JS_selectionTitle');
     // enable toggle again
     $(selectionTitle.find('.JS_toggle')).on('click', function() {
-      const itemBox__row = $(this).closest('.itemBox__rowInner');
-      expandCloseRow(itemBox__row);
+      const toolbox-table__row = $(this).closest('.toolbox-table__rowInner');
+      expandCloseRow(toolbox-table__row);
     });
   }
 
@@ -147,12 +147,12 @@ function getNewItem(item, exclude) {
   // check if it has to be excluded or not (design difference)
   var excludeClass = "";
   if (exclude === true) {
-    excludeClass = "itemBox__cellInner--excluded";
+    excludeClass = "toolbox-table__cellInner--excluded";
   }
 
   // check for multiple options/sublists.
   var textOfActionItem = $(item).html().trim();
-  var bodyRow = $(item).closest('.itemBox__rowInner');
+  var bodyRow = $(item).closest('.toolbox-table__rowInner');
   var colorPrefix = $(bodyRow).find('.JS_Color--prefix');
   var colorSelectorToggle = $(bodyRow).find('.JS_toggle--color');
   var simpleText = $(item).closest('.JS_modal--simpleText');
@@ -215,7 +215,7 @@ function handleComplexGroupAdd(action, children, exclude) {
 
   // finding all the already selected items
   const optionItems = children.find('ul .JS_text');
-  const itemBoxBody = selection.find('.JS_sortable');
+  const toolbox-tableBody = selection.find('.JS_sortable');
   const selectedItems = selection.find('.JS_text');
   const selectedItemTexts = $.map(selectedItems, function(item){
     return $(item).html().trim();
@@ -225,22 +225,22 @@ function handleComplexGroupAdd(action, children, exclude) {
   // if not, add them and change their action to remove
   $.each(optionItems, function(index, item){
     const textOfActionItem = $(item).html().trim();
-    const bodyRow = $(item).closest('.itemBox__rowInner');
+    const bodyRow = $(item).closest('.toolbox-table__rowInner');
     // there should be only ONE for an item. either add or remove
-    const itemInOptionsAction = $(item).find('.JS_itemBox__cell--add, .JS_itemBox__cell--remove')[0];
+    const itemInOptionsAction = $(item).find('.JS_toolbox-table__cell--add, .JS_toolbox-table__cell--remove')[0];
 
     const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
     if (positionOfItemInSelected < 0) {
-      var neededSelectedBlock = itemBoxBody;
+      var neededSelectedBlock = toolbox-tableBody;
       // if there is a filter, choose the good selected Block
       const JS_filterableCell = $(item).closest('.JS_filterableCell');
       const filter = $(JS_filterableCell).find('.JS_inclExl');
       if(filter.length > 0) {
         const filteredSelectedBlockSelector = selectedBlockClass + filter.attr('data-filter') + " JS_sortable";
-        neededSelectedBlock = $(itemBoxBody).find(filteredSelectedBlockSelector);
+        neededSelectedBlock = $(toolbox-tableBody).find(filteredSelectedBlockSelector);
       }
       neededSelectedBlock.append(getNewItem(item, exclude));
-      const newItem = $(neededSelectedBlock).find('> .itemBox__rowInner').last();
+      const newItem = $(neededSelectedBlock).find('> .toolbox-table__rowInner').last();
       animateNewItem(newItem, () => {
         if($(newItem).find('.JS_toggle--color').length > 0 ){
           resetColorToggle(newItem);
@@ -278,7 +278,7 @@ function handleComplexGroupRemove(action, children, fromSelectedAction, selected
   }
   // otherwise find each selected item from a group and remove it from selected
   else {
-    const childrenToRemove = children.find('ul li.JS_itemBox__cell--remove').closest('.itemBox__rowInner').find('.JS_text');
+    const childrenToRemove = children.find('ul li.JS_toolbox-table__cell--remove').closest('.toolbox-table__rowInner').find('.JS_text');
     const selectedItems = selection.find('.JS_text');
     const selectedItemTexts = $.map(selectedItems, function(item){
       return $(item).html().trim();
@@ -288,7 +288,7 @@ function handleComplexGroupRemove(action, children, fromSelectedAction, selected
       const textOfActionItem = $(child).html().trim();
       const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
       if(positionOfItemInSelected >= 0) {
-        const itemToRemove = selectedItems[positionOfItemInSelected].closest('ul.itemBox__rowInner');
+        const itemToRemove = selectedItems[positionOfItemInSelected].closest('ul.toolbox-table__rowInner');
         animateToBeRemovedItem(itemToRemove, () => {
           itemToRemove.remove();
           reset()
@@ -300,8 +300,8 @@ function handleComplexGroupRemove(action, children, fromSelectedAction, selected
 
 // function to handle add/remove for one item
 function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
-  const add = $(action).hasClass('JS_itemBox__action--add');
-  const remove = $(action).hasClass('JS_itemBox__action--remove');
+  const add = $(action).hasClass('JS_toolbox-table__action--add');
+  const remove = $(action).hasClass('JS_toolbox-table__action--remove');
   const toggle = $(action).hasClass('JS_toggle');
   var modal = action.closest('.modal')[0];
   exclude = $(modal).find('.JS_exclude').length > 0;
@@ -315,8 +315,8 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
 
     // check if the action item exists or not
     // if so, get the text of it
-    const itemBox__row = action.closest('.itemBox__rowInner');
-    const actionItem = itemBox__row.find('.JS_text')[0];
+    const toolbox-table__row = action.closest('.toolbox-table__rowInner');
+    const actionItem = toolbox-table__row.find('.JS_text')[0];
     if(actionItem === undefined) {
       return;
     }
@@ -358,17 +358,17 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
     // find the position of this item in the options block
     const positionOfItemInOptions = $.inArray(textOfActionItem, optionItemTexts);
     // we need this item separate, in case the action is made from the selected block
-    const itemInOptions = $(optionItems[positionOfItemInOptions]).closest('.itemBox__rowInner');
+    const itemInOptions = $(optionItems[positionOfItemInOptions]).closest('.toolbox-table__rowInner');
     // there should be only ONE for an item. either add or remove
-    const itemInOptionsAction = $(itemInOptions).find('.JS_itemBox__cell--add, .JS_itemBox__cell--remove')[0];
+    const itemInOptionsAction = $(itemInOptions).find('.JS_toolbox-table__cell--add, .JS_toolbox-table__cell--remove')[0];
 
     // if selecting and it's not selected yet
     // create a new item, add it to selected and replace action in options
     if(add && !isAlreadySelected) {
-      const itemBoxBody = selection.find('.JS_sortable');
-      itemBoxBody.append(getNewItem(actionItem, exclude));
+      const toolbox-tableBody = selection.find('.JS_sortable');
+      toolbox-tableBody.append(getNewItem(actionItem, exclude));
 
-      const newItem = $(itemBoxBody).find('> .itemBox__rowInner').last();
+      const newItem = $(toolbox-tableBody).find('> .toolbox-table__rowInner').last();
       if($(newItem).find('.JS_toggle--color').length > 0 ){
         resetColorToggle(newItem);
       }

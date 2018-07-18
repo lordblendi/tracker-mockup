@@ -1,31 +1,31 @@
 <div class="modal pin-r w-half-screen JS_semsearch">
 
-  <div class="itemBox">
-    <div class="itemBox__row">
-      <ul class="itemBox__rowInner">
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">
+  <div class="toolbox-table">
+    <div class="toolbox-table__row">
+      <ul class="toolbox-table__rowInner">
+        <li class="toolbox-table__cell">
+          <div class="toolbox-table__cellInner">
 
-            <input type="search" class="itemBox__input itemBox__input--fluid JS_modal__filterInput" placeholder="search through items">
+            <input type="search" class="toolbox-table__input toolbox-table__input--fluid JS_modal__filterInput" placeholder="search through items">
 
           </div>
         </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action">
-          <div class="itemBox__cellInner">
-            <button class="itemBox__action"></button>
+        <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action">
+          <div class="toolbox-table__cellInner">
+            <button class="toolbox-table__action"></button>
           </div>
         </li>
       </ul>
     </div>
   </div>
-  {% comment %} /.itemBox {% endcomment %}
+  {% comment %} /.toolbox-table {% endcomment %}
 
-  <div class="itemBox">
-    <div class="itemBox__row">
-      <ul class="itemBox__rowInner itemBox__rowInner--item">
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__value">
+  <div class="toolbox-table">
+    <div class="toolbox-table__row">
+      <ul class="toolbox-table__rowInner toolbox-table__rowInner--item">
+        <li class="toolbox-table__cell">
+          <div class="toolbox-table__cellInner">
+            <div class="toolbox-table__value">
               {% include components/selector.html selectorData=",,Any,Typed keyword" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
 
             </div>
@@ -33,11 +33,11 @@
         </li>
       </ul>
     </div>
-    <div class="itemBox__row">
-      <ul class="itemBox__rowInner itemBox__rowInner--item">
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__value">
+    <div class="toolbox-table__row">
+      <ul class="toolbox-table__rowInner toolbox-table__rowInner--item">
+        <li class="toolbox-table__cell">
+          <div class="toolbox-table__cellInner">
+            <div class="toolbox-table__value">
               {% include components/selector.html selectorData=",,title,Enhance login formula for listly" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
 
             </div>
@@ -45,11 +45,11 @@
         </li>
       </ul>
     </div>
-    <div class="itemBox__row">
-      <ul class="itemBox__rowInner itemBox__rowInner--item">
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__value">
+    <div class="toolbox-table__row">
+      <ul class="toolbox-table__rowInner toolbox-table__rowInner--item">
+        <li class="toolbox-table__cell">
+          <div class="toolbox-table__cellInner">
+            <div class="toolbox-table__value">
               {% include components/selector.html selectorData=",,Assigned to,Nick De Jaeger keyword" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
 
             </div>
@@ -57,11 +57,11 @@
         </li>
       </ul>
     </div>
-    <div class="itemBox__row">
-      <ul class="itemBox__rowInner itemBox__rowInner--item">
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__value">
+    <div class="toolbox-table__row">
+      <ul class="toolbox-table__rowInner toolbox-table__rowInner--item">
+        <li class="toolbox-table__cell">
+          <div class="toolbox-table__cellInner">
+            <div class="toolbox-table__value">
               {% include components/selector.html selectorData=",,Priority,Critical" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
             </div>
           </div>
@@ -69,7 +69,7 @@
       </ul>
     </div>
   </div>
-  {% comment %} /.itemBox {% endcomment %}
+  {% comment %} /.toolbox-table {% endcomment %}
 
 </div>
 {% comment %} /.modal {% endcomment %}

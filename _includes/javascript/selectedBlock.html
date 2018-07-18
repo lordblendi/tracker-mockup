@@ -1,21 +1,21 @@
-<div class="itemBox__row">
-  <ul class="itemBox__rowInner itemBox__rowInner--item JS_selectionTitle">
-    <li class="itemBox__cell itemBox__cell--action JS_toggle">
-      <div class="itemBox__cellInner">
-        <div class="itemBox__action JS_selectedText"> Selected</div>
+<div class="toolbox-table__row">
+  <ul class="toolbox-table__rowInner toolbox-table__rowInner--item JS_selectionTitle">
+    <li class="toolbox-table__cell toolbox-table__cell--action JS_toggle">
+      <div class="toolbox-table__cellInner">
+        <div class="toolbox-table__action JS_selectedText"> Selected</div>
       </div>
     </li>
     ${andOrSelector}
-    <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-      <div class="itemBox__cellInner">
-        <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
+    <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_toolbox-table__cell--remove JS_toolbox-table__cell--removeAll JS_toolbox-table__action">
+      <div class="toolbox-table__cellInner">
+        <div class="toolbox-table__action toolbox-table__action--secondary JS_toolbox-table__action--removeAll JS_toolbox-table__action--removeAllSelected"></div>
       </div>
     </li>
   </ul>
-  <div class="itemBox JS_itemBox--children JS_selectionChildren">
+  <div class="toolbox-table JS_toolbox-table--children JS_selectionChildren">
     <div class="JS_sortable">
       ${selectedFilters}
     </div>
   </div>
-  {% comment %} /.itemBox selection{% endcomment %}
+  {% comment %} /.toolbox-table selection{% endcomment %}
 </div>

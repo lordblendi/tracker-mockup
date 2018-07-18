@@ -1,38 +1,38 @@
-<div class="itemBox">
-  <div class="itemBox__row">
-    <ul class="itemBox__rowInner">
-      <li class="itemBox__cell">
-        <div class="itemBox__cellInner">
-          <input type="search" class="itemBox__input itemBox__input--fluid JS_appNav__filterInput" placeholder="filter through structure items">
+<div class="toolbox-table">
+  <div class="toolbox-table__row">
+    <ul class="toolbox-table__rowInner">
+      <li class="toolbox-table__cell">
+        <div class="toolbox-table__cellInner">
+          <input type="search" class="toolbox-table__input toolbox-table__input--fluid JS_appNav__filterInput" placeholder="filter through structure items">
         </div>
       </li>
     </ul>
   </div>
   {% include blocks/popup/ms-row-use-global-search.html%}
 </div>
-{% comment %} /.itemBox {% endcomment %}
+{% comment %} /.toolbox-table {% endcomment %}
 
-<div class="itemBox JS_appNavBox">
+<div class="toolbox-table JS_appNavBox">
   {% for group in site.data.app-nav-tab1.groups %}
-    <div class="itemBox__row">
-      <ul class="itemBox__rowInner itemBox__rowInner--item JS_children-closed">
-        <li class="itemBox__cell itemBox__cell--action JS_toggle">
-          <div class="itemBox__cellInner">
-            <button class="itemBox__action">{{group.icon}} {{group.name}}</button>
+    <div class="toolbox-table__row">
+      <ul class="toolbox-table__rowInner toolbox-table__rowInner--item JS_children-closed">
+        <li class="toolbox-table__cell toolbox-table__cell--action JS_toggle">
+          <div class="toolbox-table__cellInner">
+            <button class="toolbox-table__action">{{group.icon}} {{group.name}}</button>
           </div>
         </li>
-        <li class="itemBox__cell itemBox__cell--action flex-grow-0">
-          <div class="itemBox__cellInner">
-            <button class="itemBox__action">→</button>
+        <li class="toolbox-table__cell toolbox-table__cell--action flex-grow-0">
+          <div class="toolbox-table__cellInner">
+            <button class="toolbox-table__action">→</button>
           </div>
         </li>
       </ul>
-      <div class="itemBox JS_itemBox--children JS_children-closed" style="display:none;">
+      <div class="toolbox-table JS_toolbox-table--children JS_children-closed" style="display:none;">
         {% for item in group.items %}
-          <div class="itemBox__row">
-            <ul class="itemBox__rowInner itemBox__rowInner--item JS_filterableCell">
-              <li class="itemBox__cell itemBox__cell--permalink" tabindex="0">
-                <div class="itemBox__cellInner ">
+          <div class="toolbox-table__row">
+            <ul class="toolbox-table__rowInner toolbox-table__rowInner--item JS_filterableCell">
+              <li class="toolbox-table__cell toolbox-table__cell--permalink" tabindex="0">
+                <div class="toolbox-table__cellInner ">
                   {% assign selectorData = ",,," | append: item %}
                   {% include components/selector.html selectorData=selectorData expanded="true" singleselect="true" readonly="true" selectedIndexes="1" %}
                 </div>
@@ -44,4 +44,4 @@
     </div>
   {% endfor %}
 </div>
-{% comment %} /.itemBox {% endcomment %}
+{% comment %} /.toolbox-table {% endcomment %}

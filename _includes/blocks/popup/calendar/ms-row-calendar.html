@@ -4,8 +4,8 @@
 
 {% comment %} we make an array of it {% endcomment %}
 {% assign splittedDays = {include.days} | split: "," %}
-<div class="itemBox__row">
-  <ul class="itemBox__rowInner itemBox__rowInner--item">
+<div class="toolbox-table__row">
+  <ul class="toolbox-table__rowInner toolbox-table__rowInner--item">
 
   {% comment %} and loop through the array {% endcomment %}
   {% for splittedDay in splittedDays %}
@@ -24,8 +24,8 @@
       {% assign dayClass = {splittedDayArray.last} | prepend: "selector_date--" %}
     {% endif %}
 
-    <li class="itemBox__cell">
-      <div class="itemBox__cellInner {{ dayClass }}">
+    <li class="toolbox-table__cell">
+      <div class="toolbox-table__cellInner {{ dayClass }}">
         {{day}}
       </div>
     </li>

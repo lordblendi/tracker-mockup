@@ -1,23 +1,23 @@
-<div class="itemBox JS_itemBox--children JS_itemBox--sublist itemBox--sublist JS_itemBox--suggestions" style="display: none;">
+<div class="toolbox-table JS_toolbox-table--children JS_toolbox-table--sublist toolbox-table--sublist JS_toolbox-table--suggestions" style="display: none;">
   {% for item in site.data.tag-picker-color.suggestions %}
-    <div class="itemBox__row">
-      <ul class="itemBox__rowInner">
-        <li class="itemBox__cell">
-          <div class="itemBox__cellInner JS_toggle--color">
+    <div class="toolbox-table__row">
+      <ul class="toolbox-table__rowInner">
+        <li class="toolbox-table__cell">
+          <div class="toolbox-table__cellInner JS_toggle--color">
 
             {% include javascript/colorToggle.html color=item.color %}
             {% assign selectorData = ",,," | append: item.name %}
             {% include components/selector.html selectorData=selectorData singleselect="true" readonly="true" expanded="true" selectedIndexes="1" %}
           </div>
         </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action ui-sortable-handle JS_itemBox__cell--draggable">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action itemBox__action--hidden">އ</div>
+        <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action ui-sortable-handle JS_toolbox-table__cell--draggable">
+          <div class="toolbox-table__cellInner">
+            <div class="toolbox-table__action toolbox-table__action--hidden">އ</div>
           </div>
         </li>
-        <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove">
-          <div class="itemBox__cellInner">
-            <div class="itemBox__action JS_itemBoxTable__action--remove"></div>
+        <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_toolbox-table__cell--remove">
+          <div class="toolbox-table__cellInner">
+            <div class="toolbox-table__action JS_toolbox-tableTable__action--remove"></div>
           </div>
         </li>
       </ul>

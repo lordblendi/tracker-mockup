@@ -31,8 +31,8 @@ function resetToDefault(resetToDefaultRow) {
       selection = modal.find(selectedBlockClass);
       selectedTitleToggle = $(modal).find('.JS_selectionTitle .JS_toggle');
       selectedTitleToggle.on('click', function() {
-        const itemBox__row = $(this).closest('.itemBox__rowInner');
-        expandCloseRow(itemBox__row);
+        const toolbox-table__row = $(this).closest('.toolbox-table__rowInner');
+        expandCloseRow(toolbox-table__row);
       });
     }
 
@@ -52,7 +52,7 @@ function resetToDefault(resetToDefaultRow) {
 }
 
 function showResetToDefault(modal) {
-  const suggestion = $(modal).find('.JS_itemBox--resetSuggestion');
+  const suggestion = $(modal).find('.JS_toolbox-table--resetSuggestion');
   if (suggestion.css("display") !== 'flex') {
     $.Velocity.animate(suggestion, 'slideDown', {
       duration: 125,
@@ -62,7 +62,7 @@ function showResetToDefault(modal) {
   }
 }
 function hideResetToDefault(modal) {
-  const suggestion = $(modal).find('.JS_itemBox--resetSuggestion');
+  const suggestion = $(modal).find('.JS_toolbox-table--resetSuggestion');
   if (suggestion.css("display") === 'flex') {
     $.Velocity.animate(suggestion, 'slideUp', {
       duration: 125,

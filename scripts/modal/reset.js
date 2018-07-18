@@ -36,12 +36,12 @@ function reset(){
     }
 
     // reinitiate onclick and reorder actions in selection blocks
-    $(modal).find('.JS_itemBox .JS_itemBox__action').off('click').on('click', function(){
+    $(modal).find('.JS_toolbox-table .JS_toolbox-table__action').off('click').on('click', function(){
       const action = $(this);
       handleActionOnclick(action);
     });
     window.setTimeout( function() {
-        $(modal).find('.JS_itemBox .JS_textAction').off('click').on('click', function(){
+        $(modal).find('.JS_toolbox-table .JS_textAction').off('click').on('click', function(){
           handleTextAction($(this));
         });
     }, 250);
@@ -77,12 +77,12 @@ function reset(){
 
     // expand-collapse reset
     $(modal).find('.JS_toggle').off('click').on('click', function() {
-      const itemBox__row = $(this).closest('.itemBox__rowInner');
-      expandCloseRow(itemBox__row);
+      const toolbox-table__row = $(this).closest('.toolbox-table__rowInner');
+      expandCloseRow(toolbox-table__row);
     });
 
     // columnpicker OPTIONS
-    $(modal).find('.JS_itemBox--columnpickerOptions .JS_selectorItem').on('click', function() {
+    $(modal).find('.JS_toolbox-table--columnpickerOptions .JS_selectorItem').on('click', function() {
       handleColumnPickerOptionChange($(this));
     });
     $(modal).find('.JS_toggle--columnpickerOptions').off('click').on('click', function() {
@@ -112,16 +112,16 @@ function checkAllSelectedItems(modal) {
   // for each item we check if it's selected or not.
   $.each(optionItems, function(index, optionItem){
     const textOfActionItem = $(optionItem).html().trim();
-    const row = $(optionItem).closest('.itemBox__rowInner');
+    const row = $(optionItem).closest('.toolbox-table__rowInner');
     const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
 
     if(positionOfItemInSelected >= 0) {
       // if selected, remove --add action and replace it with --remove action
-      $(row).find('.JS_itemBox__cell--add').replaceWith(removeActionHTML);
+      $(row).find('.JS_toolbox-table__cell--add').replaceWith(removeActionHTML);
     }
     else {
       // if not selected, remove --remove action and replace it with --add action
-      $(row).find('.JS_itemBox__cell--remove').replaceWith(addActionHTML);
+      $(row).find('.JS_toolbox-table__cell--remove').replaceWith(addActionHTML);
     }
   });
 }
@@ -135,15 +135,15 @@ function checkGroupActions(modal) {
   modal = $(modal);
 
   // check on the current status group action, remove or add necessary actions
-  const childrenInOptions = modal.find('.JS_itemBox--children:not(.JS_selectionChildren):not(.JS_itemBox--sublist):not(.JS_itemBox--suggestions)');
+  const childrenInOptions = modal.find('.JS_toolbox-table--children:not(.JS_selectionChildren):not(.JS_toolbox-table--sublist):not(.JS_toolbox-table--suggestions)');
   $.each(childrenInOptions, function(index, children) {
     var children = $(children);
     const groupHeader = children.prev();
-    const groupAddAction = groupHeader.find('.JS_itemBox__cell--addAll');
-    const groupRemoveAction = groupHeader.find('.JS_itemBox__cell--removeAll');
+    const groupAddAction = groupHeader.find('.JS_toolbox-table__cell--addAll');
+    const groupRemoveAction = groupHeader.find('.JS_toolbox-table__cell--removeAll');
 
-    const removedItems = children.find('.JS_itemBox__action--add:not(.JS_itemBox__action--addAll)');
-    const addedItems = children.find('.JS_itemBox__action--remove:not(.JS_itemBox__action--removeAll)');
+    const removedItems = children.find('.JS_toolbox-table__action--add:not(.JS_toolbox-table__action--addAll)');
+    const addedItems = children.find('.JS_toolbox-table__action--remove:not(.JS_toolbox-table__action--removeAll)');
 
     // if there are no added items
     //  keep only groupAddAction
@@ -174,7 +174,7 @@ function checkGroupActions(modal) {
       //  add it before the add button
       if(groupRemoveAction.length === 0) {
         // make sure we know that there is an addAll button now
-        groupHeader.find('.JS_itemBox__cell--addAll').before(removeGroupActionHTML);
+        groupHeader.find('.JS_toolbox-table__cell--addAll').before(removeGroupActionHTML);
       }
     }
   });

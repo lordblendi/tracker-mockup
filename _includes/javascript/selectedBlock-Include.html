@@ -1,23 +1,23 @@
-<div class="itemBox__row">
-  <ul class="itemBox__rowInner itemBox__rowInner--item JS_selectionTitleInclude">
-    <li class="itemBox__cell itemBox__cell--action JS_toggle">
-      <div class="itemBox__cellInner">
-        <button class="itemBox__action"> Include</button>
+<div class="toolbox-table__row">
+  <ul class="toolbox-table__rowInner toolbox-table__rowInner--item JS_selectionTitleInclude">
+    <li class="toolbox-table__cell toolbox-table__cell--action JS_toggle">
+      <div class="toolbox-table__cellInner">
+        <button class="toolbox-table__action"> Include</button>
       </div>
     </li>
-    <li class="itemBox__cell text-right">
-      <div class="itemBox__cellInner">
+    <li class="toolbox-table__cell text-right">
+      <div class="toolbox-table__cellInner">
         {% include javascript/and-or-selector.html %}
       </div>
     </li>
-    <li class="itemBox__cell flex-grow-0 itemBox__cell--action JS_itemBox__cell--remove JS_itemBox__cell--removeAll JS_itemBox__action">
-      <div class="itemBox__cellInner">
-        <div class="itemBox__action itemBox__action--secondary JS_itemBox__action--removeAll JS_itemBox__action--removeAllSelected"></div>
+    <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_toolbox-table__cell--remove JS_toolbox-table__cell--removeAll JS_toolbox-table__action">
+      <div class="toolbox-table__cellInner">
+        <div class="toolbox-table__action toolbox-table__action--secondary JS_toolbox-table__action--removeAll JS_toolbox-table__action--removeAllSelected"></div>
       </div>
     </li>
   </ul>
 
-  <div class="itemBox JS_itemBox--children JS_selectionChildrenInclude">
-    <div class="itemBoxBody--sortableConnected itemBoxBody--sortableInclude ui-sortable"></div>
+  <div class="toolbox-table JS_toolbox-table--children JS_selectionChildrenInclude">
+    <div class="toolbox-tableBody--sortableConnected toolbox-tableBody--sortableInclude ui-sortable"></div>
   </div>
 </div>

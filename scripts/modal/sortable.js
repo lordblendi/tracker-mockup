@@ -9,17 +9,17 @@ function reinitSortable(modal) {
   var options = {};
   var sortableSelector = "";
   if ($(modal).hasClass('JS_modal--withFilter')) {
-    sortableSelector = ".itemBoxBody--sortableInclude, .itemBoxBody--sortableExclude";
+    sortableSelector = ".toolbox-tableBody--sortableInclude, .toolbox-tableBody--sortableExclude";
     options = {
-      handle: '.JS_itemBox__cell--draggable',
-      placeholder: 'itemBox__rowInner itemBox__row--item',
-      connectWith: ".itemBoxBody--sortableConnected"
+      handle: '.JS_toolbox-table__cell--draggable',
+      placeholder: 'toolbox-table__rowInner toolbox-table__row--item',
+      connectWith: ".toolbox-tableBody--sortableConnected"
     };
   } else {
     sortableSelector = ".JS_sortable";
     options = {
-      handle: '.JS_itemBox__cell--draggable',
-      placeholder: 'itemBox__row itemBox__row--placeholder'
+      handle: '.JS_toolbox-table__cell--draggable',
+      placeholder: 'toolbox-table__row toolbox-table__row--placeholder'
     };
   }
 
