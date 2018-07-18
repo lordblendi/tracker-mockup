@@ -12,6 +12,8 @@
   right: 0;
   bottom: 0;
   left: 0;
+  // this is needed bacause something overrides it in the JS toolbox
+  display: block !important;
 
   &--visible {
     pointer-events: auto;
