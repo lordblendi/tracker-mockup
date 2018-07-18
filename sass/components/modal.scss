@@ -10,6 +10,7 @@
   opacity: 0;
   pointer-events: none;
   z-index: -1;
+  background-color: transparent;
 
   /* Modiefiers */
 
@@ -24,4 +25,15 @@
     pointer-events: auto;
     z-index: 9999;
   }
+}
+
+
+// this is for the emberJS application, to make sure everything in
+// the modals are visible and in front of the overlay-body
+// makes use of a wormhole in the DOM
+.overlay-modal {
+    width: 0;
+    height: 0;
+    opacity: 100;
+    z-index: 41;
 }
