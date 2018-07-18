@@ -12,22 +12,33 @@
 <div class="itemBox">
   {% comment %} group for row and possible children {% endcomment %}
   <div class="itemBox__row">
-    {% comment %} row itself {% endcomment %}
-    {% comment %} this is a thead row {% endcomment %}
+    {% comment %} row itself {% endcomment %} {% comment %} this is a thead row {% endcomment %}
     <ul class="itemBox__rowInner itemBox__rowInner--thead">
-      {% comment %} cell, that contains only one icon is always flex-grow-0 {% endcomment %}
-      {% comment %} if NO action, then empty cell, but the cell is still visible {% endcomment %}
-      {% comment %} if there is an action in it, then it contans a button, otherwise only cellInner {% endcomment %}
-      {% comment %} every header has the title as placeholder and can be used as filter {% endcomment %}
+      {% comment %} cell, that contains only one icon is always flex-grow-0 {% endcomment %} {% comment %} if NO action, then empty cell, but the cell is still visible {% endcomment %} {% comment %} if there is an action in it, then it contans a button, otherwise
+      only cellInner {% endcomment %} {% comment %} every header has the title as placeholder and can be used as filter {% endcomment %}
 
       <li class="itemBox__cell">
         <div class="itemBox__cellInner">
-          <input class="field__input" type="text" placeholder="header cell 1">
+          <div class="field">
+            <div class="field__label">header cell 1</div>
+            <div class="field__data">
+              <div class="field__value">
+                <input class="field__input" type="text" value="">
+              </div>
+            </div>
+          </div>
         </div>
       </li>
       <li class="itemBox__cell flex-grow-2">
         <div class="itemBox__cellInner">
-          <input class="field__input" type="text" placeholder="header cell 2 with flex-grow-2">
+          <div class="field">
+            <div class="field__label">header cell 2 with flex-grow-2</div>
+            <div class="field__data">
+              <div class="field__value">
+                <input class="field__input" type="text" value="">
+              </div>
+            </div>
+          </div>
         </div>
       </li>
     </ul>

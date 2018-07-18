@@ -63,7 +63,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-/*
+    /*
     &::after {
       content: '';
       position: absolute;
@@ -75,7 +75,7 @@
       z-index: 1;
       background: linear-gradient(90deg, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 80%,rgba(255,255,255,1) 100%);
     }
-*/
+    */
     .selector {
       margin: 0 3px 0 0;
     }
@@ -158,5 +158,37 @@
     .field__value {
       z-index: 50;
     }
+  }
+}
+
+
+
+.itemBox__cellInner {
+  .field {
+    margin: 0;
+    padding: 0;
+
+    &__label {
+      top: 0;
+    }
+
+    &__data {
+      min-height: 25px;
+      height: 25px;
+      top: 15px;
+    }
+
+    &--not-empty,
+    &--focus {
+      .field__label {
+        top: -15px;
+      }
+    }
+
+      &--focus {
+        .field__input {
+          padding: 5px 10px;
+        }
+      }
   }
 }
