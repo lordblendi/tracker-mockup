@@ -221,7 +221,7 @@
   &--required {
 
     &.toolbox-selector--singleselect .toolbox-selector__item--selected,
-    .toolbox-selector__item--required {
+    &.toolbox-selector--multiselect .toolbox-selector__item--required {
       cursor: default;
       pointer-events: none;
       transform: translate(0);
