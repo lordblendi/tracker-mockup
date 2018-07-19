@@ -80,7 +80,7 @@
         {% comment %} add itemSeparator if it's multiple items {% endcomment %}
 
         {% if forloop.index > 1 %}
-          <div class="toolbox-selector__itemSeperator"></div>
+          <div class="toolbox-selector__itemSeparator"></div>
         {% endif %}
         <div class="toolbox-selector__item {{readonly}} {{selected}}" {{tabindex}} >
           {% include components/unit.html item=item %}

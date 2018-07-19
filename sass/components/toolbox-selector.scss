@@ -90,7 +90,7 @@
       }
     }
 
-    &Seperator {
+    &Separator {
       z-index: 0;
       position: relative;
       display: inline-block;
@@ -116,7 +116,7 @@
     height: 26px;
     font-size: 0;
 
-    &Seperator {
+    &Separator {
       z-index: 2;
       position: relative;
       display: inline-block;
@@ -174,7 +174,7 @@
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
 
-      &Seperator {
+      &Separator {
         background-color: transparent;
       }
     }
@@ -248,13 +248,13 @@
       cursor: default;
     }
 
-    .toolbox-selector__itemSeperator {
+    .toolbox-selector__itemSeparator {
       background-color: transparent;
     }
   }
 
   &:not(.toolbox-selector--expanded) {
-    .toolbox-selector__itemSeperator {
+    .toolbox-selector__itemSeparator {
       background-color: transparent;
     }
   }
