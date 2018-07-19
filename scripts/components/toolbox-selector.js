@@ -16,13 +16,23 @@ function setupSelectors() {
 }
 
 function checkRequiredSelected() {
-  $('.toolbox-selector--required .toolbox-selector__item').each(function (){
+  $('.toolbox-selector--required.toolbox-selector--singleselect .toolbox-selector__item').each(function (){
     const item = $(this);
     if(item.hasClass('toolbox-selector__item--selected')) {
       item.removeAttr('tabindex');
     }
     else {
       item.attr('tabindex', '0');
+    }
+  });
+
+  $('.toolbox-selector--required.toolbox-selector--multiselect').each(function (){
+    const currentlySelected = $(this).find('.toolbox-selector__item--selected');
+    if(currentlySelected.length === 1) {
+      $(currentlySelected).addClass('toolbox-selector__item--required')
+    }
+    else {
+      $('.toolbox-selector__item--required').removeClass('toolbox-selector__item--required');
     }
   });
 }
@@ -33,13 +43,13 @@ function handleSelector(selector, selectorValue) {
   const required = selector.hasClass('toolbox-selector--required');
   const expanded = selector.hasClass('toolbox-selector--expanded');
   const multiSelect = selector.hasClass('toolbox-selector--multiselect');
-  const toggleSelect = !selector.hasClass('toolbox-selector--multiselect');
+  const singleSelect = selector.hasClass('toolbox-selector--singleselect');
   const inclExcl = selector.hasClass('JS_toolbox-selector--incl-excl');
 
   const selectedValues = selector.find('.toolbox-selector__item--selected');
 
-  // toggleSelect = singleSelect
-  if (toggleSelect === true) {
+  // singleSelect = singleSelect
+  if (singleSelect === true) {
     // if required, remove all the others from being selected
     selectedValues.removeClass('toolbox-selector__item--selected JS_toolbox-selectorItem--active');
     // if required, select the one you clicked on
@@ -80,6 +90,7 @@ function handleSelector(selector, selectorValue) {
       else {
         selectorValue.toggleClass('toolbox-selector__item--selected JS_toolbox-selectorItem--active');
       }
+      checkRequiredSelected();
     }
     // otherwise just toggle
     else {

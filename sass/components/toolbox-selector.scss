@@ -219,22 +219,25 @@
   }
 
   &--required {
-    .toolbox-selector__item {
-      &--selected {
-        box-shadow: none;
-        cursor: default;
-        pointer-events: none;
+
+    &.toolbox-selector--singleselect .toolbox-selector__item--selected,
+    .toolbox-selector__item--required {
+      box-shadow: none;
+      cursor: default;
+      pointer-events: none;
+      transform: translate(0);
+      opacity: 1;
+
+      &:not(.toolbox-selector__item--required) {
+        animation: hover-up 0.5s ease forwards;
+      }
+
+      &:focus, &:hover {
         transform: translate(0);
         animation: hover-up 0.5s ease forwards;
-        opacity: 1;
-
-        &:focus, &:hover {
-          transform: translate(0);
-          animation: hover-up 0.5s ease forwards;
-        }
-        &:active {
-          transform: translate(0);
-        }
+      }
+      &:active {
+        transform: translate(0);
       }
     }
   }
