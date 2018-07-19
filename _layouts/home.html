@@ -21,7 +21,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.5.2/tailwind.min.css" />
   <link rel="stylesheet" href="{{ site.baseurl }}/sass/tailwind-extend.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/sass/components/buttons.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/sass/components/toolbox-buttons.css">
 </head>
 
 <body style="background-color: #FFF;">
@@ -29,25 +29,25 @@
 
   <section class="my-8 px-1/5 text-center">
     <h3>Tracker versions</h3>
-    {% include components/push.html href="present" title="Present" go="true" %}
-    {% include components/push.html href="future" title="Future" go="true" %}
+    {% include components/toolbox-push.html href="present" title="Present" go="true" %}
+    {% include components/toolbox-push.html href="future" title="Future" go="true" %}
   </section>
 
   <section class="my-8 px-1/5 text-center">
     <h3>Components</h3>
-    {% include components/push.html href="buttons" title="Buttons" go="true" %}
-    {% include components/push.html href="comments" title="<span class='font-normal'></span>Comments" drop="true" smallCaps='true' %}
-    {% include components/push.html href="inputs" title="Inputs" go="true" %}
-    {% include components/push.html href="toolbox-table" title="toolbox-table" go="true" %}
-    {% include components/push.html href="popups" title="Popups and overlay" go="true" %}
-    {% include components/push.html href="toolbox-selectors" title="toolbox-selectors" go="true" %}
-    {% include components/push.html href="tabs" title="Tabs" go="true" %}
+    {% include components/toolbox-push.html href="buttons" title="Buttons" go="true" %}
+    {% include components/toolbox-push.html href="comments" title="<span class='font-normal'></span>Comments" drop="true" smallCaps='true' %}
+    {% include components/toolbox-push.html href="inputs" title="Inputs" go="true" %}
+    {% include components/toolbox-push.html href="toolbox-table" title="toolbox-table" go="true" %}
+    {% include components/toolbox-push.html href="popups" title="Popups and overlay" go="true" %}
+    {% include components/toolbox-push.html href="toolbox-selectors" title="toolbox-selectors" go="true" %}
+    {% include components/toolbox-push.html href="tabs" title="Tabs" go="true" %}
   </section>
 
   <section class="my-8 px-1/5 text-center">
     <h3>Extra pages</h3>
-    {% include components/push.html href="font" title="Font config" %}
-    {% include components/push.html href="tutorial" title="Tutorial" %}
+    {% include components/toolbox-push.html href="font" title="Font config" %}
+    {% include components/toolbox-push.html href="tutorial" title="Tutorial" %}
   </section>
 
 </body>

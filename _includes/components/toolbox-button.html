@@ -2,24 +2,24 @@
 {% comment %} go class {% endcomment %}
 {% assign go = "" %}
 {% if include.go %}
-  {% assign go = "push--go" %}
+  {% assign go = "toolbox-button--go" %}
 {% endif %}
 {% comment %} drop class {% endcomment %}
 {% assign drop = "" %}
 {% if include.drop %}
-  {% assign drop = "push--drop" %}
+  {% assign drop = "toolbox-button--drop" %}
 {% endif %}
 {% comment %} naked class {% endcomment %}
 {% assign naked = "" %}
 {% if include.naked %}
-  {% assign naked = "push--naked" %}
+  {% assign naked = "toolbox-button--naked" %}
 {% endif %}
 {% comment %} smallCaps class {% endcomment %}
 {% assign smallCaps = "" %}
 {% if include.smallCaps %}
-  {% assign smallCaps = "push--small-caps" %}
+  {% assign smallCaps = "toolbox-button--small-caps" %}
 {% endif %}
 
 
 {% comment %} if it's a popup, add data-popid {% endcomment %}
-<a class="push {{go}} {{drop}} {{naked}} {{smallCaps}} mx-1 my-1" target="_blank" href="{{include.href}}"> {{include.title}}</a>
+<button class="toolbox-button {{go}} {{drop}} {{naked}} {{smallCaps}}"> {{include.title}}</button>
