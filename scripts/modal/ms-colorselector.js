@@ -16,8 +16,8 @@ function selectNewColor(colorItemBodyRow) {
   // get new color
   const color = colorItemBodyRow.find('.JS_toolbox-table__cellInner--color .JS_Color').attr('data-color');
   // find the text of the item
-  const toolbox-table = colorItemBodyRow.closest('.JS_toolbox-table--colors');
-  const bodyRow = $(toolbox-table).prevAll('ul.toolbox-table__rowInner.JS_filterableCell:first:not(".JS_createNewTag")');
+  const toolboxTable = colorItemBodyRow.closest('.JS_toolbox-table--colors');
+  const bodyRow = $(toolboxTable).prevAll('ul.toolbox-table__rowInner.JS_filterableCell:first:not(".JS_createNewTag")');
   const tagText = bodyRow.find('.JS_text').html().trim();
 
   // find all tags with the same text
@@ -56,8 +56,8 @@ function selectNewColor(colorItemBodyRow) {
   $(bodyRow).find('.toolbox-table__cell--active').removeClass('toolbox-table__cell--active');
 
   // close color options
-  $.Velocity.animate(toolbox-table, 'slideUp').then(function() {
-    $(toolbox-table).addClass('JS_children-closed');
+  $.Velocity.animate(toolboxTable, 'slideUp').then(function() {
+    $(toolboxTable).addClass('JS_children-closed');
   });
 }
 

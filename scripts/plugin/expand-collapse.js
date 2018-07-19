@@ -18,11 +18,11 @@ function initExpandCollapseActions(){
   // action for toggle in header to expand/collapse all
   $('.toolbox-table__rowInner--thead .JS_expand_header').on('click', function(){
     const toggle = $(this);
-    const toolbox-table = $(toggle).closest('.toolbox-table');
-    const siblingRowItems = $(toolbox-table).find('> .toolbox-table__row > .toolbox-table__rowInner--item');
+    const toolboxTable = $(toggle).closest('.toolbox-table');
+    const siblingRowItems = $(toolboxTable).find('> .toolbox-table__row > .toolbox-table__rowInner--item');
 
-    const closedChildren = $(toolbox-table).find('> .toolbox-table__row > .JS_toolbox-table--children.JS_children-closed');
-    const children = $(toolbox-table).find('> .toolbox-table__row > .JS_toolbox-table--children');
+    const closedChildren = $(toolboxTable).find('> .toolbox-table__row > .JS_toolbox-table--children.JS_children-closed');
+    const children = $(toolboxTable).find('> .toolbox-table__row > .JS_toolbox-table--children');
 
     // finding all toggles
     const bodyCelltoggles = $(siblingRowItems).find('> .JS_expand');
@@ -98,10 +98,10 @@ function expandCloseRow(toolbox-table__row, rowClosed, possibleChildren){
 function checkTableHeaderIcon(toolbox-table__row) {
   // check, if everything is closed, or not
   // and change it in the table
-  const toolbox-table = $(toolbox-table__row).closest('.toolbox-table');
-  const toolbox-tableHead = $(toolbox-table).find('> .toolbox-table__row > .toolbox-table__rowInner--thead');
-  const closedChildren = $(toolbox-table).find('> .toolbox-table__row >  .JS_toolbox-table--children.JS_children-closed');
-  const children = $(toolbox-table).find('> .toolbox-table__row > .JS_toolbox-table--children');
+  const toolboxTable = $(toolbox-table__row).closest('.toolbox-table');
+  const toolbox-tableHead = $(toolboxTable).find('> .toolbox-table__row > .toolbox-table__rowInner--thead');
+  const closedChildren = $(toolboxTable).find('> .toolbox-table__row >  .JS_toolbox-table--children.JS_children-closed');
+  const children = $(toolboxTable).find('> .toolbox-table__row > .JS_toolbox-table--children');
 
   var i = $(toolbox-tableHead).find('.JS_expand_header .toolbox-table__cellInner');
   if ($(i).find('.toolbox-table__action') > 0) {

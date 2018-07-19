@@ -34,9 +34,9 @@ $('.JS_toolbox-table--columnpickerOptions .JS_selectorItem').on('click', functio
 });
 
 function handleColumnPickerOptionChange(selector) {
-  const toolbox-table = $(selector).closest('.JS_toolbox-table--columnpickerOptions');
+  const toolboxTable = $(selector).closest('.JS_toolbox-table--columnpickerOptions');
 
-  const enabledOptions = $(toolbox-table).find('.JS_columnPickerOption--enabled.JS_selectorItem--active');
+  const enabledOptions = $(toolboxTable).find('.JS_columnPickerOption--enabled.JS_selectorItem--active');
 
   var columnPickerToggleContent = `{% include javascript/ms-columnpickerOption--disabled.html%}`;
 
@@ -44,7 +44,7 @@ function handleColumnPickerOptionChange(selector) {
     columnPickerToggleContent = `{% include javascript/ms-columnpickerOption--enabled.html%}`;
   }
 
-  const bodyRow = $(toolbox-table).prevAll('ul.toolbox-table__rowInner.JS_filterableCell:first');
+  const bodyRow = $(toolboxTable).prevAll('ul.toolbox-table__rowInner.JS_filterableCell:first');
   const toggle = $(bodyRow).find('.JS_toggle--columnpickerOptions');
   toggle.html(columnPickerToggleContent);
 

@@ -15,8 +15,8 @@ function selectNewFilterOption(incleExclBodyRow) {
   const newOption = incleExclBodyRow.find('.JS_toolbox-table__cellInner--inclExcl').attr('data-filter');
 
   // find the bodyRow related to this toggle
-  const toolbox-table = incleExclBodyRow.closest('.JS_toolbox-table--filterInclExcl');
-  const bodyRow = $(toolbox-table).prevAll('ul.toolbox-table__rowInner.JS_filterableCell:first:not(".JS_createNewTag")');
+  const toolboxTable = incleExclBodyRow.closest('.JS_toolbox-table--filterInclExcl');
+  const bodyRow = $(toolboxTable).prevAll('ul.toolbox-table__rowInner.JS_filterableCell:first:not(".JS_createNewTag")');
 
   // find toggle and replace text and data-filter
   const toggle = $(bodyRow).find('.JS_inclExl');
@@ -65,8 +65,8 @@ function selectNewFilterOption(incleExclBodyRow) {
   $(bodyRow).find('.toolbox-table__cell--active').removeClass('toolbox-table__cell--active');
 
   // close options
-  $.Velocity.animate(toolbox-table, 'slideUp').then(function() {
-    $(toolbox-table).addClass('JS_children-closed');
+  $.Velocity.animate(toolboxTable, 'slideUp').then(function() {
+    $(toolboxTable).addClass('JS_children-closed');
   });
 }
 
