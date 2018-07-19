@@ -54,6 +54,17 @@
     transform: translate(0, 1px);
   }
 }
+@keyframes focus-2-up-down {
+  0%, 100% {
+    transform: translate(0, 0px);
+  }
+  33% {
+    transform: translate(0, -2px);
+  }
+  66% {
+    transform: translate(0, 2px);
+  }
+}
 @keyframes hover-down {
   0% {
     transform: translate(0, 0px);
@@ -62,9 +73,25 @@
     transform: translate(0, 1px);
   }
 }
+@keyframes hover-2-down {
+  0% {
+    transform: translate(0, 0px);
+  }
+  100% {
+    transform: translate(0, 2px);
+  }
+}
 @keyframes hover-up {
   0% {
     transform: translate(0, 1px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+@keyframes hover-2-up {
+  0% {
+    transform: translate(0, 2px);
   }
   100% {
     transform: translate(0, 0px);
