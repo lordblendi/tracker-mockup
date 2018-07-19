@@ -36,11 +36,8 @@
     opacity: .4;
 
     &:focus {
+      transform: translate(0);
       animation: focus-up-down 0.5s ease forwards;
-
-      &:active {
-        opacity: .45;
-      }
     }
 
     &:hover {
@@ -49,12 +46,11 @@
 
       &:focus {
         animation: hover-down 0.5s ease forwards;
-        transform: none;
       }
+    }
 
-      &:active {
-        opacity: .45;
-      }
+    &:active {
+      opacity: .45;
     }
 
     &--selected {
@@ -233,7 +229,11 @@
         opacity: 1;
 
         &:focus, &:hover {
+          transform: translate(0);
           animation: hover-up 0.5s ease forwards;
+        }
+        &:active {
+          transform: translate(0);
         }
       }
     }
