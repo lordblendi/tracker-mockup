@@ -222,6 +222,23 @@
     }
   }
 
+  &--required {
+    .toolbox-selector__item {
+      &--selected {
+        box-shadow: none;
+        cursor: default;
+        pointer-events: none;
+        transform: translate(0);
+        animation: hover-up 0.5s ease forwards;
+        opacity: 1;
+
+        &:focus, &:hover {
+          animation: hover-up 0.5s ease forwards;
+        }
+      }
+    }
+  }
+
   &--readonly {
     .toolbox-selector__item {
       box-shadow: none;

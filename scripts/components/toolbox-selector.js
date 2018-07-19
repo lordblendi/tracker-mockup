@@ -1,14 +1,31 @@
-// toggle button actions
-$('.JS_toolbox-selectorItem').on('click', function() {
-  const selectorValue = $(this);
-  const selector = selectorValue.closest('.JS_toolbox-selector');
+setupSelectors();
 
-  // only if this is not a multiselect popup toggle
-  if(!selector.hasClass('JS_has-popup')) {
-    handleSelector(selector, selectorValue);
-  }
+function setupSelectors() {
+  // toggle button actions
+  $('.JS_toolbox-selectorItem').on('click', function() {
+    const selectorValue = $(this);
+    const selector = selectorValue.closest('.JS_toolbox-selector');
 
-});
+    // only if this is not a multiselect popup toggle
+    if(!selector.hasClass('JS_has-popup')) {
+      handleSelector(selector, selectorValue);
+    }
+  });
+
+  checkRequiredSelected();
+}
+
+function checkRequiredSelected() {
+  $('.toolbox-selector--required .toolbox-selector__item').each(function (){
+    const item = $(this);
+    if(item.hasClass('toolbox-selector__item--selected')) {
+      item.removeAttr('tabindex');
+    }
+    else {
+      item.attr('tabindex', '0');
+    }
+  });
+}
 
 function handleSelector(selector, selectorValue) {
   const isSelected = selectorValue.hasClass('toolbox-selector__item--selected');
@@ -27,6 +44,8 @@ function handleSelector(selector, selectorValue) {
     selectedValues.removeClass('toolbox-selector__item--selected JS_toolbox-selectorItem--active');
     // if required, select the one you clicked on
     if(required === true) {
+      // we have to lose focus, because this element is not focusable anymore
+      $(':focus').blur();
       selectorValue.addClass('toolbox-selector__item--selected JS_toolbox-selectorItem--active');
     }
     // otherwise if it's not selected, toggle it;
@@ -69,25 +88,7 @@ function handleSelector(selector, selectorValue) {
   }
 
 
-  // TEMPORARY FOR MULTISELECT EXAMPLES IN /pmx
-  if(inclExcl === true) {
-    // old multiselect
-    if (selector.hasClass('JS_toolbox-selector--old')) {
-      if(selectorValue.hasClass('JS_toolbox-selector__item--exclude') && selectorValue.hasClass('toolbox-selector__item--selected')) {
-        $('.old-multiselect-popup .old-multiselect-tab').addClass('JS_old-multiselect-tab-negative');
-      }
-      else {
-        $('.old-multiselect-popup .old-multiselect-tab').removeClass('JS_old-multiselect-tab-negative');
-      }
-    }
-    //  new multiselect
-    else {
-      if(selectorValue.hasClass('JS_toolbox-selector__item--exclude') && selectorValue.hasClass('toolbox-selector__item--selected')) {
-        selectorValue.closest('.JS_toolbox-table').addClass('JS_exclude');
-      }
-      else {
-        selectorValue.closest('.JS_toolbox-table').removeClass('JS_exclude');
-      }
-    }
+  if(required) {
+    checkRequiredSelected();
   }
 }
