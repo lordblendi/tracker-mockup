@@ -31,8 +31,8 @@ function resetToDefault(resetToDefaultRow) {
       selection = modal.find(selectedBlockClass);
       selectedTitleToggle = $(modal).find('.JS_selectionTitle .JS_toggle');
       selectedTitleToggle.on('click', function() {
-        const toolbox-table__row = $(this).closest('.toolbox-table__rowInner');
-        expandCloseRow(toolbox-table__row);
+        const toolboxTable__row = $(this).closest('.toolbox-table__rowInner');
+        expandCloseRow(toolboxTable__row);
       });
     }
 

@@ -11,8 +11,8 @@ initExpandCollapseActions();
 function initExpandCollapseActions(){
   // expand/collapse action listener on toggle
   $('.JS_toggle, .JS_expand').on('click', function() {
-    const toolbox-table__row = $(this).closest('.toolbox-table__rowInner');
-    expandCloseRow(toolbox-table__row);
+    const toolboxTable__row = $(this).closest('.toolbox-table__rowInner');
+    expandCloseRow(toolboxTable__row);
   });
 
   // action for toggle in header to expand/collapse all
@@ -29,34 +29,34 @@ function initExpandCollapseActions(){
 
     // finding the bodyRows from toggles
     // so these ARE parent bodyRows
-    const toolbox-table__row = $(bodyCelltoggles).closest('.toolbox-table__rowInner--item');
+    const toolboxTable__row = $(bodyCelltoggles).closest('.toolbox-table__rowInner--item');
 
     //if the children are all closed
     if(closedChildren.length !== children.length) {
-      expandCloseRow(toolbox-table__row, false);
+      expandCloseRow(toolboxTable__row, false);
     }
     else {
-      expandCloseRow(toolbox-table__row, true);
+      expandCloseRow(toolboxTable__row, true);
     }
   });
 }
 
 // function to expand or close rows
-function expandCloseRow(toolbox-table__row, rowClosed, possibleChildren){
+function expandCloseRow(toolboxTable__row, rowClosed, possibleChildren){
   if(possibleChildren === undefined) {
     // if the next one is color options, then get the one after it
     // as it should be like this:
     // toolbox-table__row
     //     [optional .JS_toolbox-table--children.JS_toolbox-table--colors]
     //     .JS_toolbox-table--children
-    possibleChildren = $(toolbox-table__row).next();
+    possibleChildren = $(toolboxTable__row).next();
     if (possibleChildren.hasClass('JS_toolbox-table--colors')) {
       possibleChildren = possibleChildren.next();
     }
   }
   // check if it's actually a children
   if ($(possibleChildren).hasClass('JS_toolbox-table--children')) {
-    const i = toolbox-table__row.find('.JS_toggle .toolbox-table__cellInner, .JS_toggle .toolbox-table__action, .JS_expand .toolbox-table__cellInner, .JS_expand .toolbox-table__action');
+    const i = toolboxTable__row.find('.JS_toggle .toolbox-table__cellInner, .JS_toggle .toolbox-table__action, .JS_expand .toolbox-table__cellInner, .JS_expand .toolbox-table__action');
     const iContent = i.html();
 
     // if the 'rowClosed' is not specified, it will become the opposite state
@@ -72,7 +72,7 @@ function expandCloseRow(toolbox-table__row, rowClosed, possibleChildren){
         if(iContent !== null && iContent !== undefined){
           i.html(iContent.replace(collapsed, expanded));
         }
-        checkTableHeaderIcon(toolbox-table__row);
+        checkTableHeaderIcon(toolboxTable__row);
       });
     }
     // otherwise close it
@@ -84,7 +84,7 @@ function expandCloseRow(toolbox-table__row, rowClosed, possibleChildren){
         if(iContent !== null && iContent !== undefined){
           i.html(iContent.replace(expanded, collapsed));
         }
-        checkTableHeaderIcon(toolbox-table__row);
+        checkTableHeaderIcon(toolboxTable__row);
       });
     }
   }
@@ -95,15 +95,15 @@ function expandCloseRow(toolbox-table__row, rowClosed, possibleChildren){
 // - everything is collapsed
 // - everything is expanded
 // - some collapsed, some expanded
-function checkTableHeaderIcon(toolbox-table__row) {
+function checkTableHeaderIcon(toolboxTable__row) {
   // check, if everything is closed, or not
   // and change it in the table
-  const toolboxTable = $(toolbox-table__row).closest('.toolbox-table');
-  const toolbox-tableHead = $(toolboxTable).find('> .toolbox-table__row > .toolbox-table__rowInner--thead');
+  const toolboxTable = $(toolboxTable__row).closest('.toolbox-table');
+  const toolboxTableHead = $(toolboxTable).find('> .toolbox-table__row > .toolbox-table__rowInner--thead');
   const closedChildren = $(toolboxTable).find('> .toolbox-table__row >  .JS_toolbox-table--children.JS_children-closed');
   const children = $(toolboxTable).find('> .toolbox-table__row > .JS_toolbox-table--children');
 
-  var i = $(toolbox-tableHead).find('.JS_expand_header .toolbox-table__cellInner');
+  var i = $(toolboxTableHead).find('.JS_expand_header .toolbox-table__cellInner');
   if ($(i).find('.toolbox-table__action') > 0) {
     i = $(i).find('.toolbox-table__action');
   }

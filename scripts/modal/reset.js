@@ -77,8 +77,8 @@ function reset(){
 
     // expand-collapse reset
     $(modal).find('.JS_toggle').off('click').on('click', function() {
-      const toolbox-table__row = $(this).closest('.toolbox-table__rowInner');
-      expandCloseRow(toolbox-table__row);
+      const toolboxTable__row = $(this).closest('.toolbox-table__rowInner');
+      expandCloseRow(toolboxTable__row);
     });
 
     // columnpicker OPTIONS

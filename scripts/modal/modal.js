@@ -135,8 +135,8 @@ function addSelectedBlock(modal, selectedBlockClass){
     const selectionTitle = modal.find('.JS_selectionTitle');
     // enable toggle again
     $(selectionTitle.find('.JS_toggle')).on('click', function() {
-      const toolbox-table__row = $(this).closest('.toolbox-table__rowInner');
-      expandCloseRow(toolbox-table__row);
+      const toolboxTable__row = $(this).closest('.toolbox-table__rowInner');
+      expandCloseRow(toolboxTable__row);
     });
   }
 
@@ -215,7 +215,7 @@ function handleComplexGroupAdd(action, children, exclude) {
 
   // finding all the already selected items
   const optionItems = children.find('ul .JS_text');
-  const toolbox-tableBody = selection.find('.JS_sortable');
+  const toolboxTableBody = selection.find('.JS_sortable');
   const selectedItems = selection.find('.JS_text');
   const selectedItemTexts = $.map(selectedItems, function(item){
     return $(item).html().trim();
@@ -231,13 +231,13 @@ function handleComplexGroupAdd(action, children, exclude) {
 
     const positionOfItemInSelected = $.inArray(textOfActionItem, selectedItemTexts);
     if (positionOfItemInSelected < 0) {
-      var neededSelectedBlock = toolbox-tableBody;
+      var neededSelectedBlock = toolboxTableBody;
       // if there is a filter, choose the good selected Block
       const JS_filterableCell = $(item).closest('.JS_filterableCell');
       const filter = $(JS_filterableCell).find('.JS_inclExl');
       if(filter.length > 0) {
         const filteredSelectedBlockSelector = selectedBlockClass + filter.attr('data-filter') + " JS_sortable";
-        neededSelectedBlock = $(toolbox-tableBody).find(filteredSelectedBlockSelector);
+        neededSelectedBlock = $(toolboxTableBody).find(filteredSelectedBlockSelector);
       }
       neededSelectedBlock.append(getNewItem(item, exclude));
       const newItem = $(neededSelectedBlock).find('> .toolbox-table__rowInner').last();
@@ -315,8 +315,8 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
 
     // check if the action item exists or not
     // if so, get the text of it
-    const toolbox-table__row = action.closest('.toolbox-table__rowInner');
-    const actionItem = toolbox-table__row.find('.JS_text')[0];
+    const toolboxTable__row = action.closest('.toolbox-table__rowInner');
+    const actionItem = toolboxTable__row.find('.JS_text')[0];
     if(actionItem === undefined) {
       return;
     }
@@ -365,10 +365,10 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
     // if selecting and it's not selected yet
     // create a new item, add it to selected and replace action in options
     if(add && !isAlreadySelected) {
-      const toolbox-tableBody = selection.find('.JS_sortable');
-      toolbox-tableBody.append(getNewItem(actionItem, exclude));
+      const toolboxTableBody = selection.find('.JS_sortable');
+      toolboxTableBody.append(getNewItem(actionItem, exclude));
 
-      const newItem = $(toolbox-tableBody).find('> .toolbox-table__rowInner').last();
+      const newItem = $(toolboxTableBody).find('> .toolbox-table__rowInner').last();
       if($(newItem).find('.JS_toggle--color').length > 0 ){
         resetColorToggle(newItem);
       }

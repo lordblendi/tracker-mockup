@@ -135,8 +135,8 @@ function reInitActions(modal) {
   // expand-collapse
   $(modal).find('.JS_toggle').unbind('click');
   $(modal).find('.JS_toggle').on('click', function() {
-    const toolbox-table__row = $(this).closest('.toolbox-table__rowInner');
-    expandCloseRow(toolbox-table__row);
+    const toolboxTable__row = $(this).closest('.toolbox-table__rowInner');
+    expandCloseRow(toolboxTable__row);
   });
 
   // color picker trigger

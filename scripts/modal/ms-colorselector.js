@@ -74,8 +74,8 @@ $('.JS_toggle--color').on('click', function() {
 // toggle active class depending on expanding/collapsing
 function toggleColorSelector(colorToggle) {
   // if there is a color box, expand/collapse it
-  const toolbox-table__row = colorToggle.closest('.toolbox-table__rowInner');
-  const possibleChildren = toolbox-table__row.nextAll('.JS_toolbox-table--colors:first');
+  const toolboxTable__row = colorToggle.closest('.toolbox-table__rowInner');
+  const possibleChildren = toolboxTable__row.nextAll('.JS_toolbox-table--colors:first');
 
   // only do the action, if the colorChildren exists
   if(possibleChildren.length > 0) {
@@ -98,7 +98,7 @@ function toggleColorSelector(colorToggle) {
       bodyCell.addClass('toolbox-table__cell--active');
     }
 
-    expandCloseRow(toolbox-table__row, undefined, possibleChildren);
+    expandCloseRow(toolboxTable__row, undefined, possibleChildren);
   }
 }
 

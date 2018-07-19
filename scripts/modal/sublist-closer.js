@@ -1,25 +1,25 @@
 function closeAllOtherSublists(toggle) {
 
-  const toolbox-table__row = toggle.closest('.toolbox-table__rowInner');
+  const toolboxTable__row = toggle.closest('.toolbox-table__rowInner');
 
   if(!toggle.hasClass('JS_toggle--InclExcl')) {
-    closeInclExclOptions(toolbox-table__row);
+    closeInclExclOptions(toolboxTable__row);
   }
   if(!toggle.hasClass('JS_toggle--color')) {
-    closeColorOptions(toolbox-table__row);
+    closeColorOptions(toolboxTable__row);
   }
   if(!toggle.hasClass('JS_toggle--calendar')) {
-    closeCalendarOptions(toolbox-table__row);
+    closeCalendarOptions(toolboxTable__row);
   }
   if(!toggle.hasClass('JS_toggle--columnpickerOptions')) {
-    closeColumnpickerOptions(toolbox-table__row);
+    closeColumnpickerOptions(toolboxTable__row);
   }
 }
 
 // close incl-exlToggle if open
 // used by Toggle
-function closeInclExclOptions(toolbox-table__row) {
-  const activeTrigger = $(toolbox-table__row).find('.toolbox-table__cell--active .JS_toggle--InclExcl');
+function closeInclExclOptions(toolboxTable__row) {
+  const activeTrigger = $(toolboxTable__row).find('.toolbox-table__cell--active .JS_toggle--InclExcl');
 
   // if there is an active color trigger in this bodyRow
   if(activeTrigger.length > 0) {
@@ -29,8 +29,8 @@ function closeInclExclOptions(toolbox-table__row) {
 
 // close colorToggle if open
 // used by incl-exlToggle
-function closeColorOptions(toolbox-table__row) {
-  const activeTrigger = $(toolbox-table__row).find('.toolbox-table__cell--active .JS_toggle--color');
+function closeColorOptions(toolboxTable__row) {
+  const activeTrigger = $(toolboxTable__row).find('.toolbox-table__cell--active .JS_toggle--color');
 
   // if there is an active color trigger in this bodyRow
   if(activeTrigger.length > 0) {
@@ -39,8 +39,8 @@ function closeColorOptions(toolbox-table__row) {
 }
 
 // close calendar if open
-function closeCalendarOptions(toolbox-table__row) {
-  const activeTrigger = $(toolbox-table__row).find('.toolbox-table__cell--active .JS_toggle--calendar');
+function closeCalendarOptions(toolboxTable__row) {
+  const activeTrigger = $(toolboxTable__row).find('.toolbox-table__cell--active .JS_toggle--calendar');
 
   // if there is an active color trigger in this bodyRow
   if(activeTrigger.length > 0) {
@@ -49,8 +49,8 @@ function closeCalendarOptions(toolbox-table__row) {
 }
 
 // close columnpicker options if open
-function closeColumnpickerOptions(toolbox-table__row) {
-  const activeTrigger = $(toolbox-table__row).find('.toolbox-table__cell--active .JS_toggle--optionsColumnpicker');
+function closeColumnpickerOptions(toolboxTable__row) {
+  const activeTrigger = $(toolboxTable__row).find('.toolbox-table__cell--active .JS_toggle--optionsColumnpicker');
 
   // if there is an active color trigger in this bodyRow
   if(activeTrigger.length > 0) {
