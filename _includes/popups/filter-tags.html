@@ -24,7 +24,7 @@
         </li>
         <li class="toolbox-table__cell text-right">
           <div class="toolbox-table__cellInner">
-            {% include javascript/and-or-selector.html %}
+            {% include javascript/and-or-toolbox-selector.html %}
           </div>
         </li>
         <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_toolbox-table__cell--remove JS_toolbox-table__cell--removeAll JS_toolbox-table__action">
@@ -44,7 +44,7 @@
             </li>
             <li class="toolbox-table__cell text-right">
               <div class="toolbox-table__cellInner">
-                {% include javascript/and-or-selector.html %}
+                {% include javascript/and-or-toolbox-selector.html %}
               </div>
             </li>
             <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_toolbox-table__cell--remove JS_toolbox-table__cell--removeAll JS_toolbox-table__action">
@@ -61,11 +61,11 @@
                   <div class="toolbox-table__cellInner">
                     <div class="toolbox-table__value">
 
-                      <div class="selector selector--expanded">
-                        <div class="selector__item JS_selectorItem--active selector__item--selected">
-                          <div class="selector__block">
-                            <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #00bfff;" data-color="#00bfff"></div>
-                            <div class="selector__blockPart selector__blockPart--field JS_text">Design</div>
+                      <div class="toolbox-selector toolbox-selector--expanded">
+                        <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                          <div class="toolbox-selector__block">
+                            <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #00bfff;" data-color="#00bfff"></div>
+                            <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_text">Design</div>
                           </div>
                         </div>
                       </div>
@@ -91,11 +91,11 @@
                   <div class="toolbox-table__cellInner">
                     <div class="toolbox-table__value">
 
-                      <div class="selector selector--expanded">
-                        <div class="selector__item JS_selectorItem--active selector__item--selected">
-                          <div class="selector__block">
-                            <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #0bda51;" data-color="#0bda51"></div>
-                            <div class="selector__blockPart selector__blockPart--field JS_text">Marketing</div>
+                      <div class="toolbox-selector toolbox-selector--expanded">
+                        <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                          <div class="toolbox-selector__block">
+                            <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #0bda51;" data-color="#0bda51"></div>
+                            <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_text">Marketing</div>
                           </div>
                         </div>
                       </div>
@@ -126,7 +126,7 @@
             </li>
             <li class="toolbox-table__cell text-right">
               <div class="toolbox-table__cellInner">
-                {% include javascript/and-or-selector.html %}
+                {% include javascript/and-or-toolbox-selector.html %}
               </div>
             </li>
             <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action JS_toolbox-table__cell--remove JS_toolbox-table__cell--removeAll JS_toolbox-table__action">
@@ -145,11 +145,11 @@
                       <div class="toolbox-table__cellInner">
                         <div class="toolbox-table__value">
 
-                          <div class="selector selector--expanded">
-                            <div class="selector__item JS_selectorItem--active selector__item--selected">
-                              <div class="selector__block">
-                                <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #f4ca16;" data-color="#f4ca16"></div>
-                                <div class="selector__blockPart selector__blockPart--field JS_text">Front-end</div>
+                          <div class="toolbox-selector toolbox-selector--expanded">
+                            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                              <div class="toolbox-selector__block">
+                                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #f4ca16;" data-color="#f4ca16"></div>
+                                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_text">Front-end</div>
                               </div>
                             </div>
                           </div>
@@ -175,11 +175,11 @@
                       <div class="toolbox-table__cellInner">
                         <div class="toolbox-table__value">
 
-                          <div class="selector selector--expanded">
-                            <div class="selector__item JS_selectorItem--active selector__item--selected">
-                              <div class="selector__block">
-                                <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #e30022;" data-color="#e30022"></div>
-                                <div class="selector__blockPart selector__blockPart--field JS_text">Back-end</div>
+                          <div class="toolbox-selector toolbox-selector--expanded">
+                            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                              <div class="toolbox-selector__block">
+                                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #e30022;" data-color="#e30022"></div>
+                                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_text">Back-end</div>
                               </div>
                             </div>
                           </div>
@@ -227,13 +227,13 @@
               <div class="toolbox-table__cellInner">
                 <div class="toolbox-table__value">
 
-                  {% include blocks/popup/selector-include-exclude.html selected="include"%}
+                  {% include blocks/popup/toolbox-selector-include-exclude.html selected="include"%}
 
-                  <div class="selector selector--expanded">
-                    <div class="selector__item JS_selectorItem--active selector__item--selected">
-                      <div class="selector__block">
-                        <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #00bfff;" data-color="#00bfff"></div>
-                        <div class="selector__blockPart selector__blockPart--field JS_text">Design</div>
+                  <div class="toolbox-selector toolbox-selector--expanded">
+                    <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                      <div class="toolbox-selector__block">
+                        <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #00bfff;" data-color="#00bfff"></div>
+                        <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_text">Design</div>
                       </div>
                     </div>
                   </div>
@@ -254,13 +254,13 @@
               <div class="toolbox-table__cellInner">
                 <div class="toolbox-table__value">
 
-                  {% include blocks/popup/selector-include-exclude.html selected="include"%}
+                  {% include blocks/popup/toolbox-selector-include-exclude.html selected="include"%}
 
-                  <div class="selector selector--expanded">
-                    <div class="selector__item JS_selectorItem--active selector__item--selected">
-                      <div class="selector__block">
-                        <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #0bda51;" data-color="#0bda51"></div>
-                        <div class="selector__blockPart selector__blockPart--field JS_text">Marketing</div>
+                  <div class="toolbox-selector toolbox-selector--expanded">
+                    <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                      <div class="toolbox-selector__block">
+                        <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #0bda51;" data-color="#0bda51"></div>
+                        <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_text">Marketing</div>
                       </div>
                     </div>
                   </div>
@@ -281,12 +281,12 @@
               <div class="toolbox-table__cellInner">
                 <div class="toolbox-table__value">
 
-                  {% include blocks/popup/selector-include-exclude.html selected="exclude"%}
-                  <div class="selector selector--expanded">
-                    <div class="selector__item JS_selectorItem--active selector__item--selected">
-                      <div class="selector__block">
-                        <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #f4ca16;" data-color="#f4ca16"></div>
-                        <div class="selector__blockPart selector__blockPart--field JS_text">Front-end</div>
+                  {% include blocks/popup/toolbox-selector-include-exclude.html selected="exclude"%}
+                  <div class="toolbox-selector toolbox-selector--expanded">
+                    <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                      <div class="toolbox-selector__block">
+                        <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #f4ca16;" data-color="#f4ca16"></div>
+                        <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_text">Front-end</div>
                       </div>
                     </div>
                   </div>
@@ -307,12 +307,12 @@
               <div class="toolbox-table__cellInner">
                 <div class="toolbox-table__value">
 
-                  {% include blocks/popup/selector-include-exclude.html selected="exclude"%}
-                  <div class="selector selector--expanded">
-                    <div class="selector__item JS_selectorItem--active selector__item--selected">
-                      <div class="selector__block">
-                        <div class="selector__blockPart selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #E30022;" data-color="#E30022"></div>
-                        <div class="selector__blockPart selector__blockPart--field JS_text">Back-end</div>
+                  {% include blocks/popup/toolbox-selector-include-exclude.html selected="exclude"%}
+                  <div class="toolbox-selector toolbox-selector--expanded">
+                    <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                      <div class="toolbox-selector__block">
+                        <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_Color JS_Color--prefix" style="background-color: #E30022;" data-color="#E30022"></div>
+                        <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_text">Back-end</div>
                       </div>
                     </div>
                   </div>

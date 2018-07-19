@@ -7,7 +7,7 @@
   }
 }
 
-.selector--draggable {
+.toolbox-selector--draggable {
   margin: 5px;
   cursor: move;
   pointer-events: all;
@@ -16,15 +16,15 @@
   background-size: 200% 200%;
   background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 5px, rgba(0, 0, 0, .1) 5px, rgba(0, 0, 0, 0.1) 10px);
 
-  .selector__block {
+  .toolbox-selector__block {
     background-color: #FFF;
   }
-  .selector__item {
+  .toolbox-selector__item {
     cursor: move;
   }
 }
 
-.ui-widget-content .selector:hover {
+.ui-widget-content .toolbox-selector:hover {
   background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 5px, rgba(0, 0, 0, .2) 5px, rgba(0, 0, 0, 0.2) 10px);
 }
 
@@ -34,14 +34,14 @@
   z-index: 2;
 }
 
-.ui-draggable .selector:active,
-.ui-draggable-dragging .selector {
+.ui-draggable .toolbox-selector:active,
+.ui-draggable-dragging .toolbox-selector {
   transform: scale(1.03);
   box-shadow: 0 0 150px rgba(0, 0, 0, .2);
   animation: dashed-border-spinner 10s linear infinite;
 }
 
-.dragging-started .selector, .dragging-started .selector:active {
+.dragging-started .toolbox-selector, .dragging-started .toolbox-selector:active {
   opacity: 0.4;
   background-image: none;
   box-shadow: none;

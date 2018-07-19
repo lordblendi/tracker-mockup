@@ -21,7 +21,7 @@
     {% if splittedDay contains "-" %}
       {% assign splittedDayArray = {splittedDay} | split: "-" %}
       {% assign day = {splittedDayArray.first} %}
-      {% assign dayClass = {splittedDayArray.last} | prepend: "selector_date--" %}
+      {% assign dayClass = {splittedDayArray.last} | prepend: "toolbox-selector_date--" %}
     {% endif %}
 
     <li class="toolbox-table__cell">

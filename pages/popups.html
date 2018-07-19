@@ -1,5 +1,5 @@
 ---
-layout: selectors
+layout: toolbox
 title: Popups
 permalink: /popups
 ---
@@ -32,11 +32,11 @@ permalink: /popups
       <div class="field__data">
         <div class="field__error JS_has-popup" data-popid="#ms-error"></div>
         <div class="field__value">
-          <div class="selector selector--singleselect JS_has-popup" data-popid="#ms-status">
-            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem" tabindex="0">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: var(--color-red);"></div>
-                <div class="selector__blockPart selector__blockPart--field JS_singleSelect--label">Not started</div>
+          <div class="toolbox-selector toolbox-selector--singleselect JS_has-popup" data-popid="#ms-status">
+            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected JS_toolbox-selectorItem" tabindex="0">
+              <div class="toolbox-selector__block">
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: var(--color-red);"></div>
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_singleSelect--label">Not started</div>
               </div>
             </div>
           </div>
@@ -94,11 +94,11 @@ permalink: /popups
             <li class="toolbox-table__cell">
               <div class="toolbox-table__cellInner">
                 <div class="toolbox-table__value">
-                  <div class="selector selector--expanded">
-                    <div class="selector__item JS_selectorItem--active selector__item--selected">
-                      <div class="selector__block">
-                        <div class="selector__blockPart selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
-                        <div class="selector__blockPart selector__blockPart--field JS_text">{{item.name}}</div>
+                  <div class="toolbox-selector toolbox-selector--expanded">
+                    <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                      <div class="toolbox-selector__block">
+                        <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
+                        <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_text">{{item.name}}</div>
                       </div>
                     </div>
                   </div>
@@ -154,7 +154,7 @@ permalink: /popups
       <div class="field__label">Tags</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,282;#F4CA16,,,2013_Maintenance;#E30022,,,workaround_available" multiselect="true" selectedIndexes="1,2,3" popupId="#modal-tagpicker" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,282;#F4CA16,,,2013_Maintenance;#E30022,,,workaround_available" multiselect="true" selectedIndexes="1,2,3" popupId="#modal-tagpicker" %}
         </div>
       </div>
     </div>
@@ -224,38 +224,38 @@ permalink: /popups
       <div class="field__label">Tags  Filter</div>
       <div class="field__data">
         <div class="field__value JS_has-popup" data-popid="#filter-tagpicker">
-          <div class="selector selector--expanded selector--readonly">
-            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
-            <div class="selector__item JS_selectorItem--active selector__item--selected">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
-                <div class="selector__blockPart selector__blockPart--field">Design</div>
+          <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly">
+            <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Include</div>
+            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+              <div class="toolbox-selector__block">
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">Design</div>
               </div>
             </div>
-            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
-            <div class="selector__item JS_selectorItem--active selector__item--selected">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
-                <div class="selector__blockPart selector__blockPart--field">Marketing</div>
+            <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">And</div>
+            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+              <div class="toolbox-selector__block">
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">Marketing</div>
               </div>
             </div>
           </div>
-          <div class="selector selector--expanded selector--readonly JS_selector">
-            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+          <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly JS_toolbox-selector">
+            <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Or</div>
           </div>
-          <div class="selector selector--expanded selector--readonly JS_selector">
-            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
-            <div class="selector__item JS_selectorItem--active selector__item--selected">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #f4ca16;"></div>
-                <div class="selector__blockPart selector__blockPart--field">front-end</div>
+          <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly JS_toolbox-selector">
+            <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Exclude</div>
+            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+              <div class="toolbox-selector__block">
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix" style="background-color: #f4ca16;"></div>
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">front-end</div>
               </div>
             </div>
-            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
-            <div class="selector__item JS_selectorItem--active selector__item--selected">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #e30022;"></div>
-                <div class="selector__blockPart selector__blockPart--field">back-end</div>
+            <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Or</div>
+            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+              <div class="toolbox-selector__block">
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix" style="background-color: #e30022;"></div>
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">back-end</div>
               </div>
             </div>
           </div>
@@ -271,34 +271,34 @@ permalink: /popups
       <div class="field__label">Date  Filter</div>
       <div class="field__data">
         <div class="field__value JS_has-popup" data-popid="#filter-datepicker">
-          <div class="selector selector--expanded selector--readonly">
-            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
-            <div class="selector__item JS_selectorItem--active selector__item--selected">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field">next 2 weeks (12/03/18-25/03/18)</div>
+          <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly">
+            <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Include</div>
+            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+              <div class="toolbox-selector__block">
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">next 2 weeks (12/03/18-25/03/18)</div>
               </div>
             </div>
-            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
-            <div class="selector__item JS_selectorItem--active selector__item--selected">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field">19/03/18-20/03/18</div>
+            <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">And</div>
+            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+              <div class="toolbox-selector__block">
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">19/03/18-20/03/18</div>
               </div>
             </div>
           </div>
-          <div class="selector selector--expanded selector--readonly">
-            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+          <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly">
+            <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Or</div>
           </div>
-          <div class="selector selector--expanded selector--readonly">
-            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
-            <div class="selector__item JS_selectorItem--active selector__item--selected">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field">today</div>
+          <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly">
+            <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Exclude</div>
+            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+              <div class="toolbox-selector__block">
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">today</div>
               </div>
             </div>
-            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
-            <div class="selector__item JS_selectorItem--active selector__item--selected">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field">18/03/18</div>
+            <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Or</div>
+            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+              <div class="toolbox-selector__block">
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">18/03/18</div>
               </div>
             </div>
           </div>

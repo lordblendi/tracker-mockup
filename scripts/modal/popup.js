@@ -42,7 +42,7 @@ function handlePopupClick(toggle, popid) {
   else if ($(toggle).hasClass('JS_breadcrumbPopup') ) {
     newTop = (top - 3) + 'px';
 
-    var selector = $(toggle).closest('.selector');
+    var selector = $(toggle).closest('.toolbox-selector');
     width = selector.outerWidth(true);
     height = selector.outerHeight(true);
 

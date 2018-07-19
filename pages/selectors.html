@@ -1,7 +1,7 @@
 ---
-layout: selectors
+layout: toolbox
 title: Selectors
-permalink: /selectors
+permalink: /toolbox-selectors
 ---
 
 <div class="relative h-32">
@@ -14,10 +14,10 @@ permalink: /selectors
       <div class="field__label">Loading</div>
       <div class="field__data">
         <div class="field__value">
-          <div class="selector selector--multiselect selector--expanded JS_selector JS_extra">
-            <div class="selector__item JS_selectorItem--active JS_selectorItem" tabindex='0'>
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field JS_load_selectors">Selectors</div>
+          <div class="toolbox-selector toolbox-selector--multiselect toolbox-selector--expanded JS_toolbox-selector JS_extra">
+            <div class="toolbox-selector__item JS_toolbox-selectorItem--active JS_toolbox-selectorItem" tabindex='0'>
+              <div class="toolbox-selector__block">
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_load_selectors">Selectors</div>
               </div>
             </div>
           </div>
@@ -29,11 +29,11 @@ permalink: /selectors
 
 <script>
   $('.JS_load_selectors').on('click', function() {
-    $('.selector').each(function() {
+    $('.toolbox-selector').each(function() {
       $(this).toggleClass('animate-loading');
     });
     // remove the loading animation from this selector
-    $(this).closest('.selector').removeClass('animate-loading');
+    $(this).closest('.toolbox-selector').removeClass('animate-loading');
     $('.JS_extra').removeClass('animate-loading');
   });
   </script>
@@ -49,7 +49,7 @@ permalink: /selectors
       <div class="field__label">Single select - expanded</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@ permalink: /selectors
       <div class="field__label">Single select - expanded and required (you cannot unselect all of them)</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" required="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" required="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
@@ -67,7 +67,7 @@ permalink: /selectors
       <div class="field__label">Single select - expanded and readonly</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@ permalink: /selectors
       <div class="field__label">Single select - not expanded (shows only one item) - no popup attached</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#F4CA16,,,Ongoing" singleselect="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#F4CA16,,,Ongoing" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
@@ -87,7 +87,7 @@ permalink: /selectors
       <div class="field__label">Single select - not expanded (shows only one item) and readonly</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#F4CA16,,,Ongoing" readonly="true" singleselect="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#F4CA16,,,Ongoing" readonly="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
@@ -100,7 +100,7 @@ permalink: /selectors
       <div class="field__label">Multi select - expanded</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" multiselect="true" selectedIndexes="1,2" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" multiselect="true" selectedIndexes="1,2" %}
         </div>
       </div>
     </div>
@@ -109,7 +109,7 @@ permalink: /selectors
       <div class="field__label">Multi select - expanded and required (at least one has to be selected)</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" multiselect="true" required="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" multiselect="true" required="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
@@ -118,7 +118,7 @@ permalink: /selectors
       <div class="field__label">Multi select - expanded and readonly</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" readonly="true" multiselect="true" selectedIndexes="1,2" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" readonly="true" multiselect="true" selectedIndexes="1,2" %}
         </div>
       </div>
     </div>
@@ -127,7 +127,7 @@ permalink: /selectors
       <div class="field__label">Multi select - not expanded</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" multiselect="true" selectedIndexes="1,2,3" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" multiselect="true" selectedIndexes="1,2,3" %}
         </div>
       </div>
     </div>
@@ -136,7 +136,7 @@ permalink: /selectors
       <div class="field__label">Multi select - not expanded and readonly</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" readonly="true" multiselect="true" selectedIndexes="1,2,3" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" readonly="true" multiselect="true" selectedIndexes="1,2,3" %}
         </div>
       </div>
     </div>
@@ -151,7 +151,7 @@ permalink: /selectors
       <div class="field__label">Panel selector</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData=",,,;,<sup>11</sup>,,;,,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData=",,,;,<sup>11</sup>,,;,,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
@@ -161,7 +161,7 @@ permalink: /selectors
       <div class="field__label">Danger level</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,Low,,;#F4CA16,Moderate,,;var(--color-red),High,," expanded="true" singleselect="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,Low,,;#F4CA16,Moderate,,;var(--color-red),High,," expanded="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
@@ -171,7 +171,7 @@ permalink: /selectors
       <div class="field__label">Status</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
@@ -181,7 +181,7 @@ permalink: /selectors
       <div class="field__label">Status</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#F4CA16,,,Not started;#00BFFF,,,Ongoing;#0BDA51,,,Done" expanded="true" singleselect="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#F4CA16,,,Not started;#00BFFF,,,Ongoing;#0BDA51,,,Done" expanded="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
@@ -191,7 +191,7 @@ permalink: /selectors
       <div class="field__label">Product contact</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#F4CA16,,,Heet;var(--color-red),,,Brandbaar;var(--color-red),,,Huidopname" expanded="true" multiselect="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#F4CA16,,,Heet;var(--color-red),,,Brandbaar;var(--color-red),,,Huidopname" expanded="true" multiselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
@@ -206,7 +206,7 @@ permalink: /selectors
       <div class="field__data">
 
         <div class="field__value">
-          {% include components/selector.html selectorData=",,,Disagree;,,,Agree" expanded="true" singleselect="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData=",,,Disagree;,,,Agree" expanded="true" singleselect="true" selectedIndexes="1" %}
           <span>with our <a href="#" class="link link--primary">Privacy Policy</a>.</span>
         </div>
 
@@ -239,11 +239,11 @@ permalink: /selectors
 
         <div class="field__error JS_has-popup" data-popid="#ms-error"></div>
         <div class="field__value">
-          <div class="selector selector--singleselect JS_has-popup" data-popid="#ms-status">
-            <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem" tabindex="0">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: var(--color-red);"></div>
-                <div class="selector__blockPart selector__blockPart--field JS_singleSelect--label">Not started</div>
+          <div class="toolbox-selector toolbox-selector--singleselect JS_has-popup" data-popid="#ms-status">
+            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected JS_toolbox-selectorItem" tabindex="0">
+              <div class="toolbox-selector__block">
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_singleSelect--prefix" style="background-color: var(--color-red);"></div>
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_singleSelect--label">Not started</div>
               </div>
             </div>
           </div>
@@ -296,11 +296,11 @@ permalink: /selectors
             <li class="toolbox-table__cell">
               <div class="toolbox-table__cellInner">
                 <div class="toolbox-table__value">
-                  <div class="selector selector--expanded">
-                    <div class="selector__item JS_selectorItem--active selector__item--selected">
-                      <div class="selector__block">
-                        <div class="selector__blockPart selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
-                        <div class="selector__blockPart selector__blockPart--field JS_text">{{item.name}}</div>
+                  <div class="toolbox-selector toolbox-selector--expanded">
+                    <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                      <div class="toolbox-selector__block">
+                        <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_color--prefix" style="background-color: {{item.color}}">{{item.icon}}</div>
+                        <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_text">{{item.name}}</div>
                       </div>
                     </div>
                   </div>
@@ -321,7 +321,7 @@ permalink: /selectors
       <div class="field__label">Checkbox</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
@@ -331,7 +331,7 @@ permalink: /selectors
       <div class="field__label">Checkbox - colored </div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,;,,," expanded="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
@@ -346,7 +346,7 @@ permalink: /selectors
     <div class="field field--not-empty">
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,Label,Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" expanded="true" singleselect="true" selectedIndexes="1" readonly="true"%}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,Label,Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" expanded="true" singleselect="true" selectedIndexes="1" readonly="true"%}
         </div>
       </div>
     </div>
@@ -361,7 +361,7 @@ permalink: /selectors
       <div class="field__label">Tags</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/selector.html selectorData="#0BDA51,,,282;#F4CA16,,,2013_Maintenance;#E30022,,,workaround_available" multiselect="true" selectedIndexes="1,2,3" popupId="#modal-tagpicker" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,282;#F4CA16,,,2013_Maintenance;#E30022,,,workaround_available" multiselect="true" selectedIndexes="1,2,3" popupId="#modal-tagpicker" %}
         </div>
       </div>
     </div>
@@ -381,22 +381,22 @@ permalink: /selectors
       <div class="field__label">Description</div>
       <div class="field__data">
         <div class="field__value">
-          <div class="selector selector--expanded">
-            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
-            <div class="selector__item JS_selectorItem--active selector__item--selected">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field">improvement</div>
+          <div class="toolbox-selector toolbox-selector--expanded">
+            <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Include</div>
+            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+              <div class="toolbox-selector__block">
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">improvement</div>
               </div>
             </div>
           </div>
-          <div class="selector selector--expanded">
-            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
+          <div class="toolbox-selector toolbox-selector--expanded">
+            <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">And</div>
           </div>
-          <div class="selector selector--expanded">
-            <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
-            <div class="selector__item JS_selectorItem--active selector__item--selected">
-              <div class="selector__block">
-                <div class="selector__blockPart selector__blockPart--field">design</div>
+          <div class="toolbox-selector toolbox-selector--expanded">
+            <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Exclude</div>
+            <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+              <div class="toolbox-selector__block">
+                <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">design</div>
               </div>
             </div>
           </div>
@@ -409,38 +409,38 @@ permalink: /selectors
         <div class="field__label">Tags  Filter with popup</div>
         <div class="field__data">
           <div class="field__value JS_has-popup" data-popid="#filter-tagpicker">
-            <div class="selector selector--expanded selector--readonly">
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
-              <div class="selector__item JS_selectorItem--active selector__item--selected">
-                <div class="selector__block">
-                  <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
-                  <div class="selector__blockPart selector__blockPart--field">Design</div>
+            <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly">
+              <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Include</div>
+              <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                <div class="toolbox-selector__block">
+                  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix" style="background-color: #00BFFF;"></div>
+                  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">Design</div>
                 </div>
               </div>
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
-              <div class="selector__item JS_selectorItem--active selector__item--selected">
-                <div class="selector__block">
-                  <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
-                  <div class="selector__blockPart selector__blockPart--field">Marketing</div>
+              <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">And</div>
+              <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                <div class="toolbox-selector__block">
+                  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix" style="background-color: #0BDA51;"></div>
+                  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">Marketing</div>
                 </div>
               </div>
             </div>
-            <div class="selector selector--expanded selector--readonly JS_selector">
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+            <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly JS_toolbox-selector">
+              <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Or</div>
             </div>
-            <div class="selector selector--expanded selector--readonly JS_selector">
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
-              <div class="selector__item JS_selectorItem--active selector__item--selected">
-                <div class="selector__block">
-                  <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #f4ca16;"></div>
-                  <div class="selector__blockPart selector__blockPart--field">front-end</div>
+            <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly JS_toolbox-selector">
+              <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Exclude</div>
+              <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                <div class="toolbox-selector__block">
+                  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix" style="background-color: #f4ca16;"></div>
+                  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">front-end</div>
                 </div>
               </div>
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
-              <div class="selector__item JS_selectorItem--active selector__item--selected">
-                <div class="selector__block">
-                  <div class="selector__blockPart selector__blockPart--prefix" style="background-color: #e30022;"></div>
-                  <div class="selector__blockPart selector__blockPart--field">back-end</div>
+              <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Or</div>
+              <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                <div class="toolbox-selector__block">
+                  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix" style="background-color: #e30022;"></div>
+                  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">back-end</div>
                 </div>
               </div>
             </div>
@@ -456,34 +456,34 @@ permalink: /selectors
         <div class="field__label">Date  Filte with popupr</div>
         <div class="field__data">
           <div class="field__value JS_has-popup" data-popid="#filter-datepicker">
-            <div class="selector selector--expanded selector--readonly">
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Include</div>
-              <div class="selector__item JS_selectorItem--active selector__item--selected">
-                <div class="selector__block">
-                  <div class="selector__blockPart selector__blockPart--field">next 2 weeks (12/03/18-25/03/18)</div>
+            <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly">
+              <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Include</div>
+              <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                <div class="toolbox-selector__block">
+                  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">next 2 weeks (12/03/18-25/03/18)</div>
                 </div>
               </div>
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">And</div>
-              <div class="selector__item JS_selectorItem--active selector__item--selected">
-                <div class="selector__block">
-                  <div class="selector__blockPart selector__blockPart--field">19/03/18-20/03/18</div>
+              <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">And</div>
+              <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                <div class="toolbox-selector__block">
+                  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">19/03/18-20/03/18</div>
                 </div>
               </div>
             </div>
-            <div class="selector selector--expanded selector--readonly">
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
+            <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly">
+              <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Or</div>
             </div>
-            <div class="selector selector--expanded selector--readonly">
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Exclude</div>
-              <div class="selector__item JS_selectorItem--active selector__item--selected">
-                <div class="selector__block">
-                  <div class="selector__blockPart selector__blockPart--field">today</div>
+            <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly">
+              <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Exclude</div>
+              <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                <div class="toolbox-selector__block">
+                  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">today</div>
                 </div>
               </div>
-              <div class="selector__itemSeperator selector__itemSeperator--hasLabel h6">Or</div>
-              <div class="selector__item JS_selectorItem--active selector__item--selected">
-                <div class="selector__block">
-                  <div class="selector__blockPart selector__blockPart--field">18/03/18</div>
+              <div class="toolbox-selector__itemSeperator toolbox-selector__itemSeperator--hasLabel h6">Or</div>
+              <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+                <div class="toolbox-selector__block">
+                  <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field">18/03/18</div>
                 </div>
               </div>
             </div>

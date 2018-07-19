@@ -1,5 +1,5 @@
 {% comment %} splitting up the data into multiple items. separator ; {% endcomment %}
-{% assign data = include.selectorData | split: ";" %}
+{% assign data = include.toolboxSelectorData | split: ";" %}
 {% comment %} selected items, starting index is 1. separator , {% endcomment %}
 {% assign selectedIndexes = include.selectedIndexes | split: "," %}
 
@@ -7,25 +7,25 @@
 {% comment %} expanded class {% endcomment %}
 {% assign expanded = "" %}
 {% if include.expanded %}
-  {% assign expanded = "selector--expanded" %}
+  {% assign expanded = "toolbox-selector--expanded" %}
 {% endif %}
 {% comment %} singlselect class {% endcomment %}
 {% assign singleselect = "" %}
 {% if include.singleselect %}
-  {% assign singleselect = "selector--singleselect" %}
+  {% assign singleselect = "toolbox-selector--singleselect" %}
 {% endif %}
 {% comment %} multiselect class {% endcomment %}
 {% assign multiselect = "" %}
 {% if include.multiselect %}
-  {% assign multiselect = "selector--multiselect" %}
+  {% assign multiselect = "toolbox-selector--multiselect" %}
 {% endif %}
 {% comment %} required class {% endcomment %}
 {% assign required = "" %}
 {% if include.required %}
-  {% assign required = "selector--required" %}
+  {% assign required = "toolbox-selector--required" %}
 {% endif %}
 {% comment %} readonly {% endcomment %}
-{% assign readonly = "JS_selectorItem" %}
+{% assign readonly = "JS_toolbox-selectorItem" %}
 {% assign readonlyClass = "" %}
 {% assign tabindex = "tabindex='0'" %}
 {% if include.readonly or expanded == "" %}
@@ -33,11 +33,11 @@
 {% endif %}
 {% if include.readonly and expanded == "" %}
   {% assign readonly = "" %}
-  {% assign expanded = "selector--expanded" %}
+  {% assign expanded = "toolbox-selector--expanded" %}
 {% endif %}
 {% if include.readonly %}
   {% assign tabindex = "" %}
-  {% assign readonlyClass = "selector--readonly" %}
+  {% assign readonlyClass = "toolbox-selector--readonly" %}
 {% endif %}
 {% comment %} has-popup class {% endcomment %}
 {% assign popupId = "" %}
@@ -47,15 +47,15 @@
 {% comment %} draggable class {% endcomment %}
 {% assign draggable = "" %}
 {% if include.draggable %}
-  {% assign draggable = "selector--draggable" %}
+  {% assign draggable = "toolbox-selector--draggable" %}
 {% endif %}
 
 {% comment %} if it's a popup, add data-popid {% endcomment %}
-<div class="selector JS_selector {{expanded}} {{singleselect}} {{multiselect}} {{popupId}} {{required}} {{readonlyClass}} {{draggable}}" {% if include.popupId %}data-popid="{{include.popupId}}"{% endif %}>
+<div class="toolbox-selector JS_toolbox-selector {{expanded}} {{singleselect}} {{multiselect}} {{popupId}} {{required}} {{readonlyClass}} {{draggable}}" {% if include.popupId %}data-popid="{{include.popupId}}"{% endif %}>
 
   {% comment %} if multiselect but not expanded {% endcomment %}
   {% if multiselect != "" and expanded == "" %}
-    <div class="selector__item {{readonly}} selector__item--selected JS_selectorItem--active" {{tabindex}} >
+    <div class="toolbox-selector__item {{readonly}} toolbox-selector__item--selected JS_toolbox-selectorItem--active" {{tabindex}} >
       {% comment %} for loop through selectorItems {% endcomment %}
       {% for item in data %}
         {% include components/unit.html item=item %}
@@ -73,16 +73,16 @@
         {% for selectedIndex in selectedIndexes %}
           {% comment %} if it's the same index, add the selected class {% endcomment %}
           {% if selectedIndex == itemIndex %}
-            {% assign selected = "selector__item--selected JS_selectorItem--active" %}
+            {% assign selected = "toolbox-selector__item--selected JS_toolbox-selectorItem--active" %}
           {% endif %}
         {% endfor %}
 
         {% comment %} add itemSeparator if it's multiple items {% endcomment %}
 
         {% if forloop.index > 1 %}
-          <div class="selector__itemSeperator"></div>
+          <div class="toolbox-selector__itemSeperator"></div>
         {% endif %}
-        <div class="selector__item {{readonly}} {{selected}}" {{tabindex}} >
+        <div class="toolbox-selector__item {{readonly}} {{selected}}" {{tabindex}} >
           {% include components/unit.html item=item %}
         </div>
     {% endfor %}

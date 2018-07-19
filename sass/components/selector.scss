@@ -1,7 +1,7 @@
 ---
 ---
 
-.selector {
+.toolbox-selector {
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -44,12 +44,12 @@
     }
 
     &:first-child {
-      .selector__block  {
+      .toolbox-selector__block  {
         &:first-child {
           border-bottom-left-radius: 15px;
           border-top-left-radius: 15px;
 
-          .selector__blockPart {
+          .toolbox-selector__blockPart {
             &:first-child {
               border-top-left-radius: 15px;
               border-bottom-left-radius: 15px;
@@ -60,12 +60,12 @@
     }
 
     &:last-child {
-      .selector__block  {
+      .toolbox-selector__block  {
         &:last-child {
           border-top-right-radius: 15px;
           border-bottom-right-radius: 15px;
 
-          .selector__blockPart {
+          .toolbox-selector__blockPart {
             &:last-child {
               border-top-right-radius: 15px;
               border-bottom-right-radius: 15px;
@@ -155,7 +155,7 @@
     background-color: #D7D7D7;
     border: 2px solid #D7D7D7;
 
-    .selector__item {
+    .toolbox-selector__item {
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
 
@@ -166,7 +166,7 @@
   }
 
   &--singleselect {
-    .selector__item {
+    .toolbox-selector__item {
       cursor: pointer;
 
       &:hover, &:focus {
@@ -185,7 +185,7 @@
   }
 
   &--multiselect {
-    .selector__item {
+    .toolbox-selector__item {
       overflow: visible;
       border-radius: 4px;
       cursor: pointer;
@@ -195,8 +195,8 @@
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px;
 
-        .selector__block:first-child {
-          .selector__blockPart:first-child {
+        .toolbox-selector__block:first-child {
+          .toolbox-selector__blockPart:first-child {
             border-top-left-radius: 15px;
             border-bottom-left-radius: 15px;
           }
@@ -207,8 +207,8 @@
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
 
-        .selector__block:last-child {
-          .selector__blockPart:last-child {
+        .toolbox-selector__block:last-child {
+          .toolbox-selector__blockPart:last-child {
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
           }
@@ -235,19 +235,19 @@
   }
 
   &--readonly {
-    .selector__item {
+    .toolbox-selector__item {
       box-shadow: none;
       pointer-events: none;
       cursor: default;
     }
 
-    .selector__itemSeperator {
+    .toolbox-selector__itemSeperator {
       background-color: transparent;
     }
   }
 
-  &:not(.selector--expanded) {
-    .selector__itemSeperator {
+  &:not(.toolbox-selector--expanded) {
+    .toolbox-selector__itemSeperator {
       background-color: transparent;
     }
   }

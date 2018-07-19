@@ -6,8 +6,8 @@
           <div class="toolbox-table__cellInner JS_toggle--color">
 
             {% include javascript/colorToggle.html color=item.color %}
-            {% assign selectorData = ",,," | append: item.name %}
-            {% include components/selector.html selectorData=selectorData singleselect="true" readonly="true" expanded="true" selectedIndexes="1" %}
+            {% assign toolboxSelectorData = ",,," | append: item.name %}
+            {% include components/toolbox-selector.html toolboxSelectorData=toolboxSelectorData singleselect="true" readonly="true" expanded="true" selectedIndexes="1" %}
           </div>
         </li>
         <li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action ui-sortable-handle JS_toolbox-table__cell--draggable">

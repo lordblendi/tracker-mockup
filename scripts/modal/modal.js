@@ -126,7 +126,7 @@ function addSelectedBlock(modal, selectedBlockClass){
       selectedFilters = `{% include javascript/selectedBlock-Include.html %}{% include javascript/selectedBlock-Exclude.html %}`;
       andOrSelector = `<li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action align-right">
         <div class="toolbox-table__cellInner">
-          {% include javascript/and-or-selector.html %}
+          {% include javascript/and-or-toolbox-selector.html %}
         </div>
       </li>`;
     }

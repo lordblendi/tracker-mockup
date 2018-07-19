@@ -1,17 +1,17 @@
 <div class="breadcrumbs breadcrumbs--overflow">
   {% for item in site.data.breadcrumbs.items %}
     <div class="breadcrumbs__item JS_breadcrumbs__item">
-      <div class="selector">
-        <div class="selector__item JS_selectorItem--active selector__item--selected">
-          <div class="selector__block">
+      <div class="toolbox-selector">
+        <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
+          <div class="toolbox-selector__block">
           {% if item.prefix  %}
-            <div class="selector__blockPart selector__blockPart--prefix JS_has-popup JS_breadcrumbPopup" data-popid="#modal-breadcrumb">{{item.prefix}}</div>
+            <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_has-popup JS_breadcrumbPopup" data-popid="#modal-breadcrumb">{{item.prefix}}</div>
           {% endif %}
           {% if item.field  %}
-            <div class="selector__blockPart selector__blockPart--field JS_has-popup JS_breadcrumbPopup" data-popid="#modal-breadcrumb">{{item.field}}</div>
+            <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_has-popup JS_breadcrumbPopup" data-popid="#modal-breadcrumb">{{item.field}}</div>
           {% endif %}
           {% if item.label  %}
-            <div class="selector__blockPart selector__blockPart--label JS_has-popup JS_breadcrumbPopup" data-popid="#modal-breadcrumb">{{item.label}}</div>
+            <div class="toolbox-selector__blockPart toolbox-selector__blockPart--label JS_has-popup JS_breadcrumbPopup" data-popid="#modal-breadcrumb">{{item.label}}</div>
           {% endif %}
           </div>
         </div>

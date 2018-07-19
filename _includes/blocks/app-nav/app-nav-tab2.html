@@ -27,8 +27,8 @@
             <ul class="toolbox-table__rowInner toolbox-table__rowInner--item JS_filterableCell">
               <li class="toolbox-table__cell toolbox-table__cell--permalink" tabindex="0">
                 <div class="toolbox-table__cellInner JS_text">
-                  {% assign selectorData = "," | append: item.prefix | append: "," | append: item.label | append: "," | append: item.name %}
-                  {% include components/selector.html selectorData=selectorData expanded="true"  singleselect="true" readonly="true" selectedIndexes="1" %}
+                  {% assign toolboxSelectorData = "," | append: item.prefix | append: "," | append: item.label | append: "," | append: item.name %}
+                  {% include components/toolbox-selector.html toolboxSelectorData=toolboxSelectorData expanded="true"  singleselect="true" readonly="true" selectedIndexes="1" %}
                 </div>
               </li>
             </ul>

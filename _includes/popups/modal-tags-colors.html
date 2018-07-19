@@ -39,7 +39,7 @@
                 <div class="toolbox-table__cellInner JS_toggle--color">
                   <div class="toolbox-table__value">
 
-                    {% include javascript/colorToggle.html color=item.color %} {% assign selectorData = ",,," | append: item.name %} {% include components/selector.html selectorData=selectorData expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
+                    {% include javascript/colorToggle.html color=item.color %} {% assign toolboxSelectorData = ",,," | append: item.name %} {% include components/toolbox-selector.html toolboxSelectorData=toolboxSelectorData expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
 
                   </div>
                 </div>
@@ -89,8 +89,8 @@
               <div class="toolbox-table__cellInner JS_toggle--color">
                 <div class="toolbox-table__value">
                   {% include javascript/colorToggle.html color=item.color %}
-                  {% assign selectorData = ",,," | append: item.name %}
-                  {% include components/selector.html selectorData=selectorData expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
+                  {% assign toolboxSelectorData = ",,," | append: item.name %}
+                  {% include components/toolbox-selector.html toolboxSelectorData=toolboxSelectorData expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
                 </div>
               </div>
             </li>

@@ -3,16 +3,16 @@
     <div class="field__label">Theme</div>
     <div class="field__data">
       <div class="field__value">
-        <div class="selector selector--singleselect selector--expanded selector--required JS_selector JS_extra">
-          <div class="selector__item JS_selectorItem--active selector__item--selected JS_selectorItem" tabindex='0'>
-            <div class="selector__block">
-              <div class="selector__blockPart selector__blockPart--field JS_theme_normal">Normal</div>
+        <div class="toolbox-selector toolbox-selector--singleselect toolbox-selector--expanded toolbox-selector--required JS_toolbox-selector JS_extra">
+          <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected JS_toolbox-selectorItem" tabindex='0'>
+            <div class="toolbox-selector__block">
+              <div class="toolbox-selector__blockPart toolbox-selector__blockPart--field JS_theme_normal">Normal</div>
             </div>
           </div>
-          <div class="selector__itemSeperator"></div>
-          <div class="selector__item JS_selectorItem" tabindex='0'>
-            <div class="selector__block">
-              <div class="selector__blockPart selector__blockPart--prefix JS_theme_invert">Invert</div>
+          <div class="toolbox-selector__itemSeperator"></div>
+          <div class="toolbox-selector__item JS_toolbox-selectorItem" tabindex='0'>
+            <div class="toolbox-selector__block">
+              <div class="toolbox-selector__blockPart toolbox-selector__blockPart--prefix JS_theme_invert">Invert</div>
             </div>
           </div>
         </div>
@@ -24,11 +24,11 @@
 <script>
   $('.JS_theme_normal').on('click', function() {
     $('.tabs').removeClass('tabs--invert');
-    $('.selector, .push, .btn').removeClass('filter-invert');
+    $('.toolbox-selector, .push, .btn').removeClass('filter-invert');
   });
   $('.JS_theme_invert').on('click', function() {
     $('.tabs').addClass('tabs--invert');
-    $('.selector, .push, .btn').addClass('filter-invert');
+    $('.toolbox-selector, .push, .btn').addClass('filter-invert');
     $('.JS_extra').removeClass('filter-invert');
   });
 </script>

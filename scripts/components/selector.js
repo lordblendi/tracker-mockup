@@ -19,7 +19,7 @@ function handleSelector(selector, selectorValue) {
   const toggleSelect = !selector.hasClass('selector--multiselect');
   const inclExcl = selector.hasClass('JS_selector--incl-excl');
 
-  const selectedValues = selector.find('.selector__item--selected');
+  const selectedValues = selector.find('.toolbox-selector__item--selected');
 
   // toggleSelect = singleSelect
   if (toggleSelect === true) {
@@ -40,12 +40,12 @@ function handleSelector(selector, selectorValue) {
     // swap between - and +
     // TEMPORARY
     if(selector.hasClass('JS_selector--changeIcons')) {
-      selectedValues.find('.selector__blockPart--prefix').html("-");
+      selectedValues.find('.toolbox-selector__blockPart--prefix').html("-");
       if(selectorValue.hasClass('selector__item--selected')) {
-        selectorValue.find('.selector__blockPart--prefix').html("+");
+        selectorValue.find('.toolbox-selector__blockPart--prefix').html("+");
       }
       else {
-        selectorValue.find('.selector__blockPart--prefix').html("-");
+        selectorValue.find('.toolbox-selector__blockPart--prefix').html("-");
       }
     }
   }
