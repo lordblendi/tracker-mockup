@@ -26,21 +26,40 @@
     overflow: hidden;
     border-radius: 15px;
     transform: translate(0);
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out, transform .5s ease;
+    transition: all .3s ease-in-out, transform .5s ease;
+    cursor: pointer;
     /* Causes unsmooth animation on hover on FireFox
     -webkit-filter: saturate(.4);
     filter: saturate(.4);
     */
     opacity: .4;
-    cursor: text;
+
+    &:focus {
+      animation: focus-up-down 0.5s ease forwards;
+
+      &:active {
+        opacity: .45;
+      }
+    }
+
+    &:hover {
+      transform: translate(0, 1px);
+      opacity: .7;
+
+      &:focus {
+        animation: hover-down 0.5s ease forwards;
+        transform: none;
+      }
+
+      &:active {
+        opacity: .45;
+      }
+    }
 
     &--selected {
-      /*
-      -webkit-filter: saturate(1);
-      filter: saturate(1);
-      */
       opacity: 1;
+      box-shadow: 0 2px 8px -2px rgba(0,0,0,.7);
     }
 
     &:first-child {
@@ -165,30 +184,10 @@
     }
   }
 
-  &--singleselect {
-    .toolbox-selector__item {
-      cursor: pointer;
-
-      &:hover, &:focus {
-        transform: translate(0, 1px);
-        opacity: .7;
-
-        &:active {
-          opacity: .45;
-        }
-      }
-
-      &--selected {
-        box-shadow: 0 2px 8px -2px rgba(0,0,0,.7);
-      }
-    }
-  }
-
   &--multiselect {
     .toolbox-selector__item {
       overflow: visible;
       border-radius: 4px;
-      cursor: pointer;
       transform: translate(0);
 
       &:first-child {
@@ -215,18 +214,7 @@
         }
       }
 
-      &:hover, &:focus {
-        transform: translate(0, 1px);
-        opacity: .7;
-
-        &:active {
-          opacity: .45;
-        }
-      }
-
       &--selected {
-        box-shadow: 0 2px 8px -2px rgba(0,0,0,.7);
-
         &:hover, &:focus {
           opacity: .85;
         }
