@@ -153,9 +153,9 @@ function reInitActions(modal) {
 
   // include-exclude selectors
 
-  $(modal).find('.JS_selectorItem').on('click', function() {
+  $(modal).find('.JS_toolbox-selectorItem').on('click', function() {
     const selectorValue = $(this);
-    const selector = selectorValue.closest('.JS_selector');
+    const selector = selectorValue.closest('.JS_toolbox-selector');
 
     // only if this is not a multiselect popup toggle
     if (!selector.hasClass('JS_has-popup')) {

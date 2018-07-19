@@ -72,7 +72,7 @@ function selectNewFilterOption(incleExclBodyRow) {
 
 // SELECT INCL/EXCL - TOGGLE
 // ONLY IF IT'S NOT SELECTED YET
-$('.JS_toolbox-table__cellInner--inclExcl.JS_selectorItem').on('click', function() {
+$('.JS_toolbox-table__cellInner--inclExcl.JS_toolbox-selectorItem').on('click', function() {
   // get new option
   const newOption = $(this).attr('data-filter');
 

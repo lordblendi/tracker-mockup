@@ -1,7 +1,7 @@
 // toggle button actions
-$('.JS_selectorItem').on('click', function() {
+$('.JS_toolbox-selectorItem').on('click', function() {
   const selectorValue = $(this);
-  const selector = selectorValue.closest('.JS_selector');
+  const selector = selectorValue.closest('.JS_toolbox-selector');
 
   // only if this is not a multiselect popup toggle
   if(!selector.hasClass('JS_has-popup')) {
@@ -11,37 +11,37 @@ $('.JS_selectorItem').on('click', function() {
 });
 
 function handleSelector(selector, selectorValue) {
-  const isSelected = selectorValue.hasClass('selector__item--selected');
+  const isSelected = selectorValue.hasClass('toolbox-selector__item--selected');
 
-  const required = selector.hasClass('selector--required');
-  const expanded = selector.hasClass('selector--expanded');
-  const multiSelect = selector.hasClass('selector--multiselect');
-  const toggleSelect = !selector.hasClass('selector--multiselect');
-  const inclExcl = selector.hasClass('JS_selector--incl-excl');
+  const required = selector.hasClass('toolbox-selector--required');
+  const expanded = selector.hasClass('toolbox-selector--expanded');
+  const multiSelect = selector.hasClass('toolbox-selector--multiselect');
+  const toggleSelect = !selector.hasClass('toolbox-selector--multiselect');
+  const inclExcl = selector.hasClass('JS_toolbox-selector--incl-excl');
 
   const selectedValues = selector.find('.toolbox-selector__item--selected');
 
   // toggleSelect = singleSelect
   if (toggleSelect === true) {
     // if required, remove all the others from being selected
-    selectedValues.removeClass('selector__item--selected JS_selectorItem--active');
+    selectedValues.removeClass('toolbox-selector__item--selected JS_toolbox-selectorItem--active');
     // if required, select the one you clicked on
     if(required === true) {
-      selectorValue.addClass('selector__item--selected JS_selectorItem--active');
+      selectorValue.addClass('toolbox-selector__item--selected JS_toolbox-selectorItem--active');
     }
     // otherwise if it's not selected, toggle it;
     else {
       if(!isSelected) {
-        selectorValue.toggleClass('selector__item--selected JS_selectorItem--active');
+        selectorValue.toggleClass('toolbox-selector__item--selected JS_toolbox-selectorItem--active');
       }
     }
 
     // if it has to change icons -> one specific toggle example
     // swap between - and +
     // TEMPORARY
-    if(selector.hasClass('JS_selector--changeIcons')) {
+    if(selector.hasClass('JS_toolbox-selector--changeIcons')) {
       selectedValues.find('.toolbox-selector__blockPart--prefix').html("-");
-      if(selectorValue.hasClass('selector__item--selected')) {
+      if(selectorValue.hasClass('toolbox-selector__item--selected')) {
         selectorValue.find('.toolbox-selector__blockPart--prefix').html("+");
       }
       else {
@@ -55,16 +55,16 @@ function handleSelector(selector, selectorValue) {
     if(required === true) {
       if(selectedValues.length === 1) {
         if (isSelected === false) {
-          selectorValue.toggleClass('selector__item--selected JS_selectorItem--active');
+          selectorValue.toggleClass('toolbox-selector__item--selected JS_toolbox-selectorItem--active');
         }
       }
       else {
-        selectorValue.toggleClass('selector__item--selected JS_selectorItem--active');
+        selectorValue.toggleClass('toolbox-selector__item--selected JS_toolbox-selectorItem--active');
       }
     }
     // otherwise just toggle
     else {
-      selectorValue.toggleClass('selector__item--selected JS_selectorItem--active');
+      selectorValue.toggleClass('toolbox-selector__item--selected JS_toolbox-selectorItem--active');
     }
   }
 
@@ -72,8 +72,8 @@ function handleSelector(selector, selectorValue) {
   // TEMPORARY FOR MULTISELECT EXAMPLES IN /pmx
   if(inclExcl === true) {
     // old multiselect
-    if (selector.hasClass('JS_selector--old')) {
-      if(selectorValue.hasClass('JS_selector__item--exclude') && selectorValue.hasClass('selector__item--selected')) {
+    if (selector.hasClass('JS_toolbox-selector--old')) {
+      if(selectorValue.hasClass('JS_toolbox-selector__item--exclude') && selectorValue.hasClass('toolbox-selector__item--selected')) {
         $('.old-multiselect-popup .old-multiselect-tab').addClass('JS_old-multiselect-tab-negative');
       }
       else {
@@ -82,7 +82,7 @@ function handleSelector(selector, selectorValue) {
     }
     //  new multiselect
     else {
-      if(selectorValue.hasClass('JS_selector__item--exclude') && selectorValue.hasClass('selector__item--selected')) {
+      if(selectorValue.hasClass('JS_toolbox-selector__item--exclude') && selectorValue.hasClass('toolbox-selector__item--selected')) {
         selectorValue.closest('.JS_toolbox-table').addClass('JS_exclude');
       }
       else {

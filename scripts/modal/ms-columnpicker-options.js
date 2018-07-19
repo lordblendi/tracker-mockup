@@ -29,14 +29,14 @@ function toggleColumnpickerOptions(toggle) {
 }
 
 
-$('.JS_toolbox-table--columnpickerOptions .JS_selectorItem').on('click', function() {
+$('.JS_toolbox-table--columnpickerOptions .JS_toolbox-selectorItem').on('click', function() {
   handleColumnPickerOptionChange($(this));
 });
 
 function handleColumnPickerOptionChange(selector) {
   const toolboxTable = $(selector).closest('.JS_toolbox-table--columnpickerOptions');
 
-  const enabledOptions = $(toolboxTable).find('.JS_columnPickerOption--enabled.JS_selectorItem--active');
+  const enabledOptions = $(toolboxTable).find('.JS_columnPickerOption--enabled.JS_toolbox-selectorItem--active');
 
   var columnPickerToggleContent = `{% include javascript/ms-columnpickerOption--disabled.html%}`;
 

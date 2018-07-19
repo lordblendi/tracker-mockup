@@ -49,9 +49,9 @@ function reset(){
     reinitSortable(modal);
 
     // reinitiate selectorItem inside modal
-    $(modal).find('.JS_selectorItem').off('click').on('click', function() {
+    $(modal).find('.JS_toolbox-selectorItem').off('click').on('click', function() {
       const selectorValue = $(this);
-      const selector = selectorValue.closest('.JS_selector');
+      const selector = selectorValue.closest('.JS_toolbox-selector');
 
       // only if this is not a multiselect popup toggle
       if(!selector.hasClass('JS_has-popup')) {
@@ -82,7 +82,7 @@ function reset(){
     });
 
     // columnpicker OPTIONS
-    $(modal).find('.JS_toolbox-table--columnpickerOptions .JS_selectorItem').on('click', function() {
+    $(modal).find('.JS_toolbox-table--columnpickerOptions .JS_toolbox-selectorItem').on('click', function() {
       handleColumnPickerOptionChange($(this));
     });
     $(modal).find('.JS_toggle--columnpickerOptions').off('click').on('click', function() {
