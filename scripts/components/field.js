@@ -39,7 +39,7 @@ function setupFieldActions(){
     closeOverlay();
   });
 
-  // for inputs outside of fields show overlay-body--text on focus
+  // for inputs outside of fields show toolbox-overlay--text on focus
   $('.field__input').on('focus', function() {
     openOverlay(true, false, false);
   }).on('focusout', function() {

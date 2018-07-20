@@ -43,7 +43,7 @@ $(document).ready(function() {
   // app overlay click action
   // to remove app-navigator or user-menu
   // and make the body scrollable again
-  $('.overlay-body').on('click', function() {
+  $('.toolbox-overlay').on('click', function() {
     if ($body.hasClass('app-navigator--visible')) {
       $body.removeClass('app-navigator--visible');
       closeOverlay();

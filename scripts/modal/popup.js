@@ -111,7 +111,7 @@ function handlePopupClick(toggle, popid) {
 }
 
 // onclick action on overlay to close popups
-$('.overlay-body').on('click', function() {
+$('.toolbox-overlay').on('click', function() {
   if($(this).closest('.app.app-navigator--visible, .app.user-menu--visible').length === 0){
     closeOverlay();
   }
