@@ -31,7 +31,7 @@ function selectNewFilterOption(incleExclBodyRow) {
     const newClass = selectedBlockClass + newOption;
 
     // find the blocks
-    const modal = $(bodyRow).closest('.modal');
+    const modal = $(bodyRow).closest('.toolbox-modal');
     const oldSelection = $(modal).find(oldClass);
     var newSelection = $(modal).find(newClass);
 
@@ -92,7 +92,7 @@ $('.JS_toolbox-table__cellInner--inclExcl.JS_toolbox-selectorItem').on('click', 
     const newClass = selectedBlockClass + newOption;
 
     // find the blocks
-    const modal = $(bodyRow).closest('.modal');
+    const modal = $(bodyRow).closest('.toolbox-modal');
     const oldSelection = $(modal).find(oldClass);
     var newSelection = $(modal).find(newClass);
 

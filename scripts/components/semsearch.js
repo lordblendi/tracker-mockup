@@ -13,7 +13,7 @@ $('.JS_toggle-semsearch').click(function() {
     left: newLeft,
     top: top
   });
-  $(popup).addClass('modal--visible');
+  $(popup).addClass('toolbox-modal--visible');
   // show overlay
   openOverlay(true, false, false);
 });

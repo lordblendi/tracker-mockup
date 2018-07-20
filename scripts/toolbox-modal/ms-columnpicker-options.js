@@ -49,6 +49,6 @@ function handleColumnPickerOptionChange(selector) {
   toggle.html(columnPickerToggleContent);
 
   // show reset to default
-  const modal = $(bodyRow).closest('.modal');
+  const modal = $(bodyRow).closest('.toolbox-modal');
   showResetToDefault(modal);
 }

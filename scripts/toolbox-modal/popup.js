@@ -73,7 +73,7 @@ function handlePopupClick(toggle, popid) {
       'top': newTop,
       'left': left,
       'width': width
-    }).addClass('modal--visible');
+    }).addClass('toolbox-modal--visible');
   }
   // toggle is right, right side of the popup is right side of toggle
   else {
@@ -82,7 +82,7 @@ function handlePopupClick(toggle, popid) {
       'top': newTop,
       'left': newLeft,
       'width': width
-    }).addClass('modal--visible');
+    }).addClass('toolbox-modal--visible');
   }
 
   if ( toggle.hasClass('JS_has-popup--error') ) {

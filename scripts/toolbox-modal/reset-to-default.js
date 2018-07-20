@@ -6,14 +6,14 @@ $('.JS_resetToDefault').on('click', function() {
 });
 
 function resetToDefault(resetToDefaultRow) {
-  const modal = resetToDefaultRow.closest('.modal');
+  const modal = resetToDefaultRow.closest('.toolbox-modal');
   const replaceFile = $(resetToDefaultRow).attr('reset-file');
 
   var newContentString = '';
 
   // if the replace file is columnpicker, use that html
   if (replaceFile === 'columnpicker') {
-    newContentString = `{% include popups/modal-columnpicker.html %}`;
+    newContentString = `{% include popups/toolbox-modal-columnpicker.html %}`;
   }
 
   // only replace it if the newContentString is not empty

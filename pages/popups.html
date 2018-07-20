@@ -56,7 +56,7 @@ permalink: /popups
     </div>
 
     {% comment %} Popup {% endcomment %}
-    <div class="modal" id="ms-error">
+    <div class="toolbox-modal" id="ms-error">
       <div class="toolbox-table">
         <div class="toolbox-table__row">
           <ul class="toolbox-table__rowInner toolbox-table__rowInner--custom">
@@ -73,7 +73,7 @@ permalink: /popups
     </div>
 
     {% comment %} Popup {% endcomment %}
-    <div class="modal animate-popup" id="ms-status">
+    <div class="toolbox-modal animate-popup" id="ms-status">
       <div class="toolbox-table">
         <div class="toolbox-table__row">
           <ul class="toolbox-table__rowInner toolbox-table__rowInner--custom JS_toolbox-tableRow--error" style="display: none;">
@@ -88,7 +88,7 @@ permalink: /popups
         </div>
       </div>
       <div class="toolbox-table JS_optionsChildren">
-        {% for item in site.data.modal-status.items %}
+        {% for item in site.data.toolbox-modal-status.items %}
         <div class="toolbox-table__row">
           <ul class="toolbox-table__rowInner toolbox-table__rowInner--item toolbox-table__rowInner--action JS_filterableCell JS_error-popupRow">
             <li class="toolbox-table__cell">
@@ -123,12 +123,12 @@ permalink: /popups
       </div>
       <div class="field__data">
         <div class="field__value">
-          <button class="block-action JS_has-popup" data-popid="#modal-columnpicker"></button>
+          <button class="block-action JS_has-popup" data-popid="#toolbox-modal-columnpicker"></button>
         </div>
       </div>
     </div>
     {% comment %} Popup {% endcomment %}
-    <div class="modal" id="ms-privacy">
+    <div class="toolbox-modal" id="ms-privacy">
       <div class="toolbox-table">
         <div class="toolbox-table__row">
           <ul class="toolbox-table__rowInner toolbox-table__rowInner--custom">
@@ -147,20 +147,20 @@ permalink: /popups
     </div>
 
     {% comment %} Popup {% endcomment %}
-    {% include popups/modal-columnpicker.html %}
+    {% include popups/toolbox-modal-columnpicker.html %}
 
     {% comment %} Field {% endcomment %}
     <div class="field field--not-empty">
       <div class="field__label">Tags</div>
       <div class="field__data">
         <div class="field__value">
-          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,282;#F4CA16,,,2013_Maintenance;#E30022,,,workaround_available" multiselect="true" selectedIndexes="1,2,3" popupId="#modal-tagpicker" %}
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,282;#F4CA16,,,2013_Maintenance;#E30022,,,workaround_available" multiselect="true" selectedIndexes="1,2,3" popupId="#toolbox-modal-tagpicker" %}
         </div>
       </div>
     </div>
 
     {% comment %} Popup {% endcomment %}
-    {% include popups/modal-tags-colors.html %}
+    {% include popups/toolbox-modal-tags-colors.html %}
 
     <div class="note">
       <li>Multiselect popup, has Selected and All groupings ine ONE toolbox-table. Both of the groups have collapseable function</li>

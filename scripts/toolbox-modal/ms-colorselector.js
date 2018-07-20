@@ -21,7 +21,7 @@ function selectNewColor(colorItemBodyRow) {
   const tagText = bodyRow.find('.JS_text').html().trim();
 
   // find all tags with the same text
-  const modal = bodyRow.closest('.modal');
+  const modal = bodyRow.closest('.toolbox-modal');
   const possibleTags = modal.find('.JS_text');
   var filteredTags = [];
 

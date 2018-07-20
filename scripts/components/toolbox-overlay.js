@@ -2,7 +2,7 @@
 function closeOverlay(){
   $(".toolbox-overlay").removeClass('toolbox-overlay--visible toolbox-overlay--error toolbox-overlay--text toolbox-overlay--tooltip');
 
-  $('.modal').removeClass('modal--visible animate-popup animate-fadein');
+  $('.toolbox-modal').removeClass('toolbox-modal--visible animate-popup animate-fadein');
 }
 
 

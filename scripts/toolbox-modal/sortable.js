@@ -1,5 +1,5 @@
 // set sortable in multiselect options
-$('.modal').each(function() {
+$('.toolbox-modal').each(function() {
   reinitSortable($(this));
 })
 
@@ -8,7 +8,7 @@ $('.modal').each(function() {
 function reinitSortable(modal) {
   var options = {};
   var sortableSelector = "";
-  if ($(modal).hasClass('JS_modal--withFilter')) {
+  if ($(modal).hasClass('JS_toolbox-modal--withFilter')) {
     sortableSelector = ".toolbox-tableBody--sortableInclude, .toolbox-tableBody--sortableExclude";
     options = {
       handle: '.JS_toolbox-table__cell--draggable',
@@ -23,10 +23,10 @@ function reinitSortable(modal) {
     };
   }
 
-  if ($(modal).hasClass('JS_modal--resetFunctionality')) {
+  if ($(modal).hasClass('JS_toolbox-modal--resetFunctionality')) {
     options['stop'] = function(event, ui) {
       const sortedItem = $(ui.item);
-      const modal = sortedItem.closest('.modal');
+      const modal = sortedItem.closest('.toolbox-modal');
       showResetToDefault(modal);
     };
   }

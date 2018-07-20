@@ -9,7 +9,7 @@ removeGroupActionHTML = `{% include javascript/removeGroupAction.html %}`;
 // checking group actions
 function reset(){
 
-  $('.modal').each(function(index, modal){
+  $('.toolbox-modal').each(function(index, modal){
     checkAllSelectedItems(modal);
     checkGroupActions(modal);
     // probably doesn't belong here, but making sure, we don't have empty selection subgroups

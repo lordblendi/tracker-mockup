@@ -26,12 +26,12 @@ function selectNewSingleItem(row) {
   // add selected to new one
   $(row).append(`{% include javascript/itemSelected.html %}`);
 
-  const selectorField = $('.JS_has-popup[data-popid="#modal-1"]');
+  const selectorField = $('.JS_has-popup[data-popid="#toolbox-modal-1"]');
   $(selectorField).find('.JS_singleSelect--label').html(newLabel);
   $(selectorField).find('.JS_singleSelect--prefix').css('background-color', newColor);
   closeOverlay();
 
   // set filter to empty, as we selected stuff
-  var modal = $(row).closest(".modal");
-  modal.find('.JS_modal__filterInput').val("").keyup();
+  var modal = $(row).closest(".toolbox-modal");
+  modal.find('.JS_toolbox-modal__filterInput').val("").keyup();
 }

@@ -4,11 +4,11 @@
 
 // COMPLEX modal
 // set actions for + and X
-$('.modal .JS_toolbox-table .JS_toolbox-table__action').on('click', function(){
+$('.toolbox-modal .JS_toolbox-table .JS_toolbox-table__action').on('click', function(){
   const action = $(this);
   handleActionOnclick(action);
 });+
-$('.modal .JS_toolbox-table .JS_textAction').on('click', function(){
+$('.toolbox-modal .JS_toolbox-table .JS_textAction').on('click', function(){
   handleTextAction($(this));
 });
 
@@ -46,8 +46,8 @@ function handleActionOnclick(action) {
   }
   // otherwise it's from the option. check if it has filter or not
   else {
-    const modal = action.closest('.modal');
-    if(modal.hasClass('JS_modal--withFilter')){
+    const modal = action.closest('.toolbox-modal');
+    if(modal.hasClass('JS_toolbox-modal--withFilter')){
       const JS_filterableCell = action.closest('.JS_filterableCell');
       const filter = $(JS_filterableCell).find('.JS_inclExl');
       if(filter.length > 0) {
@@ -58,7 +58,7 @@ function handleActionOnclick(action) {
 
   // FOR OLD INCL/EXCL
   // check if it's an include or exclude action
-  const modal = action.closest('.modal')[0];
+  const modal = action.closest('.toolbox-modal')[0];
   const exclude = $(modal).find('.JS_exclude').length > 0;
 
   // if removeAll, then we call the groupRemove
@@ -83,7 +83,7 @@ function handleActionOnclick(action) {
 
   // whatever happened, show resetSuggestions
   // if the modal has that enabled
-  if($(modal).hasClass('JS_modal--resetFunctionality')){
+  if($(modal).hasClass('JS_toolbox-modal--resetFunctionality')){
     showResetToDefault(modal);
   }
 
@@ -93,7 +93,7 @@ function handleActionOnclick(action) {
      !$(action).hasClass('JS_expand') &&
       $(action).find('.JS_toggle, .JS_expand') === 0 &&
       $(action).closest('.JS_toggle, .JS_expand') === 0){
-    $(modal).find('.JS_modal__filterInput').val("").keyup();
+    $(modal).find('.JS_toolbox-modal__filterInput').val("").keyup();
   }
 }
 
@@ -122,7 +122,7 @@ function addSelectedBlock(modal, selectedBlockClass){
   else {
     var selectedFilters = '';
     var andOrSelector = '';
-    if(modal.hasClass('JS_modal--withFilter')) {
+    if(modal.hasClass('JS_toolbox-modal--withFilter')) {
       selectedFilters = `{% include javascript/selectedBlock-Include.html %}{% include javascript/selectedBlock-Exclude.html %}`;
       andOrSelector = `<li class="toolbox-table__cell flex-grow-0 toolbox-table__cell--action align-right">
         <div class="toolbox-table__cellInner">
@@ -155,9 +155,9 @@ function getNewItem(item, exclude) {
   var bodyRow = $(item).closest('.toolbox-table__rowInner');
   var colorPrefix = $(bodyRow).find('.JS_Color--prefix');
   var colorSelectorToggle = $(bodyRow).find('.JS_toggle--color');
-  var simpleText = $(item).closest('.JS_modal--simpleText');
-  var textAction = $(item).closest('.JS_modal--textAction');
-  var columnpickerOption = $(item).closest('.JS_modal--columnpickerOptions');
+  var simpleText = $(item).closest('.JS_toolbox-modal--simpleText');
+  var textAction = $(item).closest('.JS_toolbox-modal--textAction');
+  var columnpickerOption = $(item).closest('.JS_toolbox-modal--columnpickerOptions');
 
   var textActionClass = ""
   var newSelectedItemHTML = "";
@@ -185,7 +185,7 @@ function getNewItem(item, exclude) {
     if(colorSelectorToggle.length > 0) {
       var color = $(colorPrefix).attr('data-color');
       colorToggleHTML = `{% include javascript/colorToggle.html color="${color}" %}`;
-      if($(item).closest('.modal.JS_modal--withColors').length > 0) {
+      if($(item).closest('.toolbox-modal.JS_toolbox-modal--withColors').length > 0) {
         colorToggleTriggerInnerClass = ' JS_toggle--color';
         colorChildren = `{% include blocks/popup/ms-sublist-tags-colors-color.html %}`;
       }
@@ -203,7 +203,7 @@ function getNewItem(item, exclude) {
 // action to handle ADD for a whole group
 function handleComplexGroupAdd(action, children, exclude) {
   var selectedBlockClass = '.JS_selectionChildren';
-  const modal = children.closest('.modal');
+  const modal = children.closest('.toolbox-modal');
   exclude = $(modal[0]).find('.JS_exclude').length > 0;
 
   // check if there is a selected block. if not, add it
@@ -254,7 +254,7 @@ function handleComplexGroupAdd(action, children, exclude) {
 
 // action to handle REMOVE for a whole group
 function handleComplexGroupRemove(action, children, fromSelectedAction, selectedBlockClass){
-  const modal = children.closest('.modal');
+  const modal = children.closest('.toolbox-modal');
 
   const selection = modal.find(selectedBlockClass);
   // exit if there is no selection block
@@ -303,7 +303,7 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
   const add = $(action).hasClass('JS_toolbox-table__action--add');
   const remove = $(action).hasClass('JS_toolbox-table__action--remove');
   const toggle = $(action).hasClass('JS_toggle');
-  var modal = action.closest('.modal')[0];
+  var modal = action.closest('.toolbox-modal')[0];
   exclude = $(modal).find('.JS_exclude').length > 0;
 
   // only continue if it's not a toggle button (expand/collapse)
@@ -322,7 +322,7 @@ function handleComplexItemAddRemove(action, exclude, selectedBlockClass){
     }
     var textOfActionItem = $(actionItem).html().trim();
 
-    modal = action.closest('.modal');
+    modal = action.closest('.toolbox-modal');
 
     // get selected items
     var selection = modal.find(selectedBlockClass);
