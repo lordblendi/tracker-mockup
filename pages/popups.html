@@ -7,7 +7,7 @@ permalink: /popups
 <div class="flex flex-col sm:flex-row m-8 py-4 min-h-screen border-b-2 border-dashed border-grey-dark overflow-hidden">
   <div class="sm:w-1/3 p-4 overflow-hidden">
     <h2 class="mb-8">Popup explanation</h2>
-    <div class="note">
+    <div class="toolbox-note">
       <h4 class="py-2">Position</h4>
       <li>The position of the popup is usually the bottom left of the trigger touches the top left of the popup.</li>
       <li>If this way the popup would be too wide to fit fully on the screen, then it is aligned to the right: bottom right of the trigger touches the top right of the popup.</li>
@@ -42,16 +42,16 @@ permalink: /popups
           </div>
         </div>
       </div>
-      <div class="note">
+      <div class="toolbox-note">
         <li>Single select popup, simply having an toolbox-table in it with the elements. The already selected item has a  in an extra column.</li>
         <li>Error animation example: try to change status, then click on error icon or selector field again.</li>
-        <li>Upon having an error, there is a new toolbox-table with a note inside the cellInner, that is an error description.</li>
-        <li>The error icon is also clickable with one single note in it (wrapped in an toolbox-table).</li>
+        <li>Upon having an error, there is a new toolbox-table with a toolbox-note inside the cellInner, that is an error description.</li>
+        <li>The error icon is also clickable with one single toolbox-note in it (wrapped in an toolbox-table).</li>
         <li>A normal description follows the same structure.</li>
         <li>Clicking on the row selects the new element and closes the popup.</li>
         <h4 class="py-2">Optional elements</h4>
         <li>Grouping, like in the multselector popup / ALL. No add or remove actions.</li>
-        <li>Filter is on top of the selected/all groups in a it's own toolbox-table, but under error and tooltip notes </li>
+        <li>Filter is on top of the selected/all groups in a it's own toolbox-table, but under error and tooltip toolbox-notes </li>
       </div>
     </div>
 
@@ -62,7 +62,7 @@ permalink: /popups
           <ul class="toolbox-table__rowInner toolbox-table__rowInner--custom">
             <li class="toolbox-table__cell">
               <div class="toolbox-table__cellInner">
-                <div class="note note--error">
+                <div class="toolbox-note toolbox-note--error">
                   <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
                 </div>
               </div>
@@ -79,7 +79,7 @@ permalink: /popups
           <ul class="toolbox-table__rowInner toolbox-table__rowInner--custom JS_toolbox-tableRow--error" style="display: none;">
             <li class="toolbox-table__cell">
               <div class="toolbox-table__cellInner">
-                <div class="note note--error">
+                <div class="toolbox-note toolbox-note--error">
                   <p>Item could not be selected. <a href="#" class="link link--primary">Read more</a></p>
                 </div>
               </div>
@@ -118,7 +118,7 @@ permalink: /popups
 
     {% comment %} Field {% endcomment %}
     <div class="field field--not-empty">
-      <div class="field__label">Columnpicker with tooltip example (note in popup), click icon
+      <div class="field__label">Columnpicker with tooltip example (toolbox-note in popup), click icon
         <div class="inline-action primary animate-fly-in-left JS_has-popup JS_has-popup--tooltip" data-popid="#ms-privacy"></div>
       </div>
       <div class="field__data">
@@ -135,7 +135,7 @@ permalink: /popups
             <li class="toolbox-table__cell">
               <div class="toolbox-table__cellInner">
 
-                <div class="note note--tooltip">
+                <div class="toolbox-note toolbox-note--tooltip">
                   <p>By selecting 'Agree' you have read and accepted TenForce's <a href="#" class="link link--primary">Privacy Policy</a>, concerning your personal data and how it is used.</p>
                 </div>
 
@@ -162,7 +162,7 @@ permalink: /popups
     {% comment %} Popup {% endcomment %}
     {% include popups/toolbox-modal-tags-colors.html %}
 
-    <div class="note">
+    <div class="toolbox-note">
       <li>Multiselect popup, has Selected and All groupings ine ONE toolbox-table. Both of the groups have collapseable function</li>
       <li>Selected: on the top, has remove actions  only. Removing on the Selected makes the whole group be unselected. If nothing is selected, the group doesn't exists. If more than 4 are selected, there is a counter. No subgroups for Selected in normal popups.</li>
       <li>In the filter example there are subgroups (include/exclude).  (not implemented in the mockup).</li>
@@ -182,7 +182,7 @@ permalink: /popups
       <li>Another example is the color changer for the tagpicker.</li>
 
       <h4 class="py-2">Optional filtering</h4>
-      <li>Filter is on top of the selected/all groups in a it's own toolbox-table, but under error and tooltip notes.</li>
+      <li>Filter is on top of the selected/all groups in a it's own toolbox-table, but under error and tooltip toolbox-notes.</li>
       <li>Upon filtering if something doesn't match the filter, it's gone. This effects the row coloring too, so display:none is not enough. Either remove it from the dom or change the tagName.</li>
       <li>If a group has nothing to show upon filtering, the group is also hidden. This can end up hiding both All and Selected groups.</li>
       <li>Suggestions should be under the filter option in a sublist, see tagpicker + filtering in it.</li>
