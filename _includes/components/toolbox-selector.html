@@ -58,7 +58,7 @@
     <div class="toolbox-selector__item {{readonly}} toolbox-selector__item--selected JS_toolbox-selectorItem--active" {{tabindex}} >
       {% comment %} for loop through selectorItems {% endcomment %}
       {% for item in data %}
-        {% include components/unit.html item=item %}
+        {% include components/toolbox-unit.html item=item %}
       {% endfor %}
     </div>
 
@@ -83,7 +83,7 @@
           <div class="toolbox-selector__itemSeparator"></div>
         {% endif %}
         <div class="toolbox-selector__item {{readonly}} {{selected}}" {{tabindex}} >
-          {% include components/unit.html item=item %}
+          {% include components/toolbox-unit.html item=item %}
         </div>
     {% endfor %}
   {% endif %}
