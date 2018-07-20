@@ -1,29 +1,29 @@
 setupFieldActions();
 
 function setupFieldActions(){
-  $('.field').each(function() {
+  $('.toolbox-field').each(function() {
     var field = $(this);
-    var label = $(this).find('.field__label');
-    var input = $(this).find('.field__input');
+    var label = $(this).find('.toolbox-field__label');
+    var input = $(this).find('.toolbox-field__input');
 
     if (input.val()) {
-      field.addClass('field--not-empty');
+      field.addClass('toolbox-field--not-empty');
     }
 
     input.on('focus', function() {
-      field.addClass('field--focus');
+      field.addClass('toolbox-field--focus');
       openOverlay(true, false, false);
     });
 
     input.on('focusout', function() {
-      field.removeClass('field--focus');
+      field.removeClass('toolbox-field--focus');
       closeOverlay();
 
       if (input.val()) {
-        field.addClass('field--not-empty');
+        field.addClass('toolbox-field--not-empty');
       }
       else {
-        field.removeClass('field--not-empty');
+        field.removeClass('toolbox-field--not-empty');
       }
     });
   });
@@ -40,7 +40,7 @@ function setupFieldActions(){
   });
 
   // for inputs outside of fields show toolbox-overlay--text on focus
-  $('.field__input').on('focus', function() {
+  $('.toolbox-field__input').on('focus', function() {
     openOverlay(true, false, false);
   }).on('focusout', function() {
     closeOverlay();

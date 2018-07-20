@@ -4,7 +4,7 @@
 $('.JS_has-popup').on('click', function() {
   handlePopupClick(this);
   if ($(this).hasClass('JS_movePlaceholder')) {
-    $(this).addClass('field--focus');
+    $(this).addClass('toolbox-field--focus');
   }
 })
 function handlePopupClick(toggle, popid) {

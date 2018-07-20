@@ -26,12 +26,12 @@ permalink: /popups
 
     <h2 class="mb-8">Single select example</h2>
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty JS_field--error">
-      <div class="field__label">Status - with description and error animation </div>
-      <div class="field__data">
-        <div class="field__error JS_has-popup" data-popid="#ms-error"></div>
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty JS_toolbox-field--error">
+      <div class="toolbox-field__label">Status - with description and error animation </div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__error JS_has-popup" data-popid="#ms-error"></div>
+        <div class="toolbox-field__value">
           <div class="toolbox-selector toolbox-selector--singleselect JS_has-popup" data-popid="#ms-status">
             <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected JS_toolbox-selectorItem" tabindex="0">
               <div class="toolbox-selector__block">
@@ -44,7 +44,7 @@ permalink: /popups
       </div>
       <div class="toolbox-note">
         <li>Single select popup, simply having an toolbox-table in it with the elements. The already selected item has a  in an extra column.</li>
-        <li>Error animation example: try to change status, then click on error icon or selector field again.</li>
+        <li>Error animation example: try to change status, then click on error icon or selector toolbox-field again.</li>
         <li>Upon having an error, there is a new toolbox-table with a toolbox-note inside the cellInner, that is an error description.</li>
         <li>The error icon is also clickable with one single toolbox-note in it (wrapped in an toolbox-table).</li>
         <li>A normal description follows the same structure.</li>
@@ -116,13 +116,13 @@ permalink: /popups
   <div class="sm:w-1/3 p-4 overflow-hidden">
     <h2 class="mb-8">Multiselect example</h2>
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Columnpicker with tooltip example (toolbox-note in popup), click icon
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Columnpicker with tooltip example (toolbox-note in popup), click icon
         <div class="inline-action primary animate-fly-in-left JS_has-popup JS_has-popup--tooltip" data-popid="#ms-privacy"></div>
       </div>
-      <div class="field__data">
-        <div class="field__value">
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           <button class="block-action JS_has-popup" data-popid="#toolbox-modal-columnpicker"></button>
         </div>
       </div>
@@ -149,11 +149,11 @@ permalink: /popups
     {% comment %} Popup {% endcomment %}
     {% include popups/toolbox-modal-columnpicker.html %}
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Tags</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Tags</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,282;#F4CA16,,,2013_Maintenance;#E30022,,,workaround_available" multiselect="true" selectedIndexes="1,2,3" popupId="#toolbox-modal-tagpicker" %}
         </div>
       </div>
@@ -197,7 +197,7 @@ permalink: /popups
 
       <h4 class="py-2">Optional elements in columnpicker</h4>
       <li>Reset to default/previous upon changing ANYTHING</li>
-      <li>Appears as a suggestion inder the filter field.</li>
+      <li>Appears as a suggestion inder the filter toolbox-field.</li>
     </div>
 
   </div>
@@ -206,10 +206,10 @@ permalink: /popups
   $("#ms-status .JS_error-popupRow").on('click', function() {
     closeOverlay();
     $("#ms-status .JS_toolbox-tableRow--error").css('display', 'flex');
-    $('.JS_field--error').each(function() {
-      const errorField = $(this);
-      errorField.addClass('field--error');
-      errorField.find('.JS_has-popup').addClass('JS_has-popup--error');
+    $('.JS_toolbox-field--error').each(function() {
+      const errortoolbox-field = $(this);
+      errortoolbox-field.addClass('toolbox-field--error');
+      errortoolbox-field.find('.JS_has-popup').addClass('JS_has-popup--error');
     });
   });
 </script>
@@ -219,11 +219,11 @@ permalink: /popups
 
     <h2 class="mb-8">More complex examples regarding to filters</h2>
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Tags  Filter</div>
-      <div class="field__data">
-        <div class="field__value JS_has-popup" data-popid="#filter-tagpicker">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Tags  Filter</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value JS_has-popup" data-popid="#filter-tagpicker">
           <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly">
             <div class="toolbox-selector__itemSeparator toolbox-selector__itemSeparator--hasLabel h6">Include</div>
             <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
@@ -266,11 +266,11 @@ permalink: /popups
     {% comment %} Popup {% endcomment %}
     {% include popups/filter-tags.html%}
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Date  Filter</div>
-      <div class="field__data">
-        <div class="field__value JS_has-popup" data-popid="#filter-datepicker">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Date  Filter</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value JS_has-popup" data-popid="#filter-datepicker">
           <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly">
             <div class="toolbox-selector__itemSeparator toolbox-selector__itemSeparator--hasLabel h6">Include</div>
             <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">

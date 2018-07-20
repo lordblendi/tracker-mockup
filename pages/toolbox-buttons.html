@@ -9,10 +9,10 @@ permalink: /toolbox-buttons
   {% include blocks/extra-options/background.html %}
   {% include blocks/extra-options/theme.html %}
   <div class="px-4">
-    <div class="field field--not-empty">
-      <div class="field__label">Loading</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Loading</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           <div class="toolbox-selector toolbox-selector--multiselect toolbox-selector--expanded JS_toolbox-selector JS_extra">
             <div class="toolbox-selector__item JS_toolbox-selectorItem--active JS_toolbox-selectorItem">
               <div class="toolbox-selector__block">
@@ -26,7 +26,7 @@ permalink: /toolbox-buttons
               </div>
             </div>
           </div>
-          <input class="field__input" type="text" value=", ">
+          <input class="toolbox-field__input" type="text" value=", ">
         </div>
       </div>
     </div>
@@ -54,90 +54,90 @@ permalink: /toolbox-buttons
     <h2 class="mb-4">Button configurations</h2>
 
     <h3 class="mb-4">Text configuration</h3>
-    <div class="field field--not-empty">
-      <div class="field__label">Button - default text configuration</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Button - default text configuration</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-button.html title="Keep me in for 2 weeks" %}
         </div>
       </div>
     </div>
-    <div class="field field--not-empty">
-      <div class="field__label">Button - small capital</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Button - small capital</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-button.html title="Keep me in for 2 weeks" smallCaps="true" %}
         </div>
       </div>
     </div>
-    <div class="field field--not-empty">
-      <div class="field__label">Button - no text</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Button - no text</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-button.html title="" %}
         </div>
       </div>
     </div>
 
     <h3 class="mb-4 mt-8">Button color configuration</h3>
-    <div class="field field--not-empty">
-      <div class="field__label">Button - default color</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Button - default color</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-button.html title="Keep me in for 2 weeks" %}
         </div>
       </div>
     </div>
-    <div class="field field--not-empty">
-      <div class="field__label">Button - go</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Button - go</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-button.html title="Keep me in for 2 weeks" go="true"%}
         </div>
       </div>
     </div>
-    <div class="field field--not-empty">
-      <div class="field__label">Button - naked</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Button - naked</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-button.html title="Keep me in for 2 weeks" naked="true"%}
         </div>
       </div>
     </div>
-    <div class="field field--not-empty">
-      <div class="field__label">Button - drop</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Button - drop</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-button.html title="Keep me in for 2 weeks" drop="true"%}
         </div>
       </div>
     </div>
 
     <h3 class="mb-4 mt-8">Button alignment configuration</h3>
-    <div class="field field--not-empty">
-      <div class="field__label">Buttons - two next to each other, there has to be a separator between them</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Buttons - two next to each other, there has to be a separator between them</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-button.html title="Keep me in for 2 weeks" go="true"%}
           {% include components/toolbox-button-aligned-text.html title="•" %}
           {% include components/toolbox-button.html title="forget me tomorrow"%}
         </div>
       </div>
     </div>
-    <div class="field field--not-empty">
-      <div class="field__label">Buttons - aligned text in the middle</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Buttons - aligned text in the middle</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-button.html title="Keep me in for 2 weeks" go="true"%}
           {% include components/toolbox-button-aligned-text.html title="or" %}
           {% include components/toolbox-button.html title="forget me tomorrow"%}
         </div>
       </div>
     </div>
-    <div class="field field--not-empty">
-      <div class="field__label">Buttons - aligned text in the middle 2</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Buttons - aligned text in the middle 2</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-button.html title="Keep me in for 2 weeks" go="true"%}
           {% include components/toolbox-button-aligned-text.html title="or" %}
           {% include components/toolbox-button.html title="forget me tomorrow" naked="true"%}
@@ -148,52 +148,52 @@ permalink: /toolbox-buttons
   <div class="sm:w-1/2 p-8 overflow-hidden">
     <h2 class="mb-4">Push configurations - looks like a button, but it's an anchor</h2>
     <h3 class="mb-4">Text configuration</h3>
-    <div class="field field--not-empty">
-      <div class="field__label">Push - default text configuration</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Push - default text configuration</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-push.html title="Present" href="present" %}
         </div>
       </div>
     </div>
-    <div class="field field--not-empty">
-      <div class="field__label">Push - small capital </div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Push - small capital </div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-push.html title="Present" href="present" smallCaps="true" %}
         </div>
       </div>
     </div>
 
   <h3 class="mb-4 mt-8">Push color configuration</h3>
-    <div class="field field--not-empty">
-      <div class="field__label">Push - default color</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Push - default color</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-push.html title="Present" href="present" %}
         </div>
       </div>
     </div>
-    <div class="field field--not-empty">
-      <div class="field__label">Push - go</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Push - go</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-push.html title="Present" href="present" go="true"%}
         </div>
       </div>
     </div>
-    <div class="field field--not-empty">
-      <div class="field__label">Push - naked</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Push - naked</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-push.html title="Present" href="present" naked="true"%}
         </div>
       </div>
     </div>
-    <div class="field field--not-empty">
-      <div class="field__label">Push - drop</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Push - drop</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-push.html title="Present" href="present" drop="true"%}
         </div>
       </div>

@@ -10,10 +10,10 @@ permalink: /toolbox-selectors
   {% include blocks/extra-options/background.html %}
   {% include blocks/extra-options/theme.html %}
   <div class="px-4">
-    <div class="field field--not-empty">
-      <div class="field__label">Loading</div>
-      <div class="field__data">
-        <div class="field__value">
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Loading</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           <div class="toolbox-selector toolbox-selector--multiselect toolbox-selector--expanded JS_toolbox-selector JS_extra">
             <div class="toolbox-selector__item JS_toolbox-selectorItem--active JS_toolbox-selectorItem" tabindex='0'>
               <div class="toolbox-selector__block">
@@ -44,49 +44,49 @@ permalink: /toolbox-selectors
     <h2 class="mb-8">Single select configuration examples without popup</h2>
 
     {% comment %} SingleSelects {% endcomment %}
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Single select - expanded</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Single select - expanded</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Single select - expanded and required (you cannot unselect all of them)</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Single select - expanded and required (you cannot unselect all of them)</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" required="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Single select - expanded and readonly</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Single select - expanded and readonly</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" readonly="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Single select - not expanded (shows only one item) - no popup attached</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Single select - not expanded (shows only one item) - no popup attached</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#F4CA16,,,Ongoing" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Single select - not expanded (shows only one item) and readonly</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Single select - not expanded (shows only one item) and readonly</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#F4CA16,,,Ongoing" readonly="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
@@ -95,47 +95,47 @@ permalink: /toolbox-selectors
   <div class="sm:w-1/2 p-2 overflow-hidden">
     <h2 class="mb-8">Multi select configuration examples without popup</h2>
     {% comment %} Multiselects {% endcomment %}
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Multi select - expanded</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Multi select - expanded</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" multiselect="true" selectedIndexes="1,2" %}
         </div>
       </div>
     </div>
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Multi select - expanded and required (at least one has to be selected)</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Multi select - expanded and required (at least one has to be selected)</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" multiselect="true" required="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Multi select - expanded and readonly</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Multi select - expanded and readonly</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" expanded="true" readonly="true" multiselect="true" selectedIndexes="1,2" %}
         </div>
       </div>
     </div>
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Multi select - not expanded</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Multi select - not expanded</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" multiselect="true" selectedIndexes="1,2,3" %}
         </div>
       </div>
     </div>
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Multi select - not expanded and readonly</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Multi select - not expanded and readonly</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,dev-team;#00BFFF,,,back-end;#F4CA16,,,297" readonly="true" multiselect="true" selectedIndexes="1,2,3" %}
         </div>
       </div>
@@ -147,41 +147,41 @@ permalink: /toolbox-selectors
   <div class="sm:w-1/3 p-2 overflow-hidden">
     <h2 class="my-8">Examples without popup</h2>
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Danger level</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Danger level</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,Low,,;#F4CA16,Moderate,,;var(--color-red),High,," expanded="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Status</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Status</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,Not started;#F4CA16,,,Ongoing;var(--color-red),,,Finished" expanded="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Status</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Status</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#F4CA16,,,Not started;#00BFFF,,,Ongoing;#0BDA51,,,Done" expanded="true" singleselect="true" selectedIndexes="1" %}
         </div>
       </div>
     </div>
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Product contact</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Product contact</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#F4CA16,,,Heet;var(--color-red),,,Brandbaar;var(--color-red),,,Huidopname" expanded="true" multiselect="true" selectedIndexes="1" %}
         </div>
       </div>
@@ -189,14 +189,14 @@ permalink: /toolbox-selectors
   </div>
   <div class="sm:w-1/3 p-2 overflow-hidden">
     <h2 class="my-8">Examples with popup</h2>
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Privacy Policy - tooltip example (toolbox-note in popup), click icon
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Privacy Policy - tooltip example (toolbox-note in popup), click icon
         <div class="inline-action primary animate-fly-in-left JS_has-popup JS_has-popup--tooltip" data-popid="#ms-privacy"></div>
       </div>
-      <div class="field__data">
+      <div class="toolbox-field__data">
 
-        <div class="field__value">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData=",,,Disagree;,,,Agree" expanded="true" singleselect="true" selectedIndexes="1" %}
           <span>with our <a href="#" class="link link--primary">Privacy Policy</a>.</span>
         </div>
@@ -223,13 +223,13 @@ permalink: /toolbox-selectors
       </div>
     </div>
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty JS_field--error">
-      <div class="field__label">Status - with description and error animation </div>
-      <div class="field__data">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty JS_toolbox-field--error">
+      <div class="toolbox-field__label">Status - with description and error animation </div>
+      <div class="toolbox-field__data">
 
-        <div class="field__error JS_has-popup" data-popid="#ms-error"></div>
-        <div class="field__value">
+        <div class="toolbox-field__error JS_has-popup" data-popid="#ms-error"></div>
+        <div class="toolbox-field__value">
           <div class="toolbox-selector toolbox-selector--singleselect JS_has-popup" data-popid="#ms-status">
             <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected JS_toolbox-selectorItem" tabindex="0">
               <div class="toolbox-selector__block">
@@ -244,7 +244,7 @@ permalink: /toolbox-selectors
       </div>
       <div class="toolbox-note">
         <p>This is a simple description (no <a href="#" class="link link--primary">with a link example</a>)</p>
-        <p>Error animation example: try to change status, then click on error icon or selector field again.</p>
+        <p>Error animation example: try to change status, then click on error icon or selector toolbox-field again.</p>
       </div>
     </div>
 
@@ -307,21 +307,21 @@ permalink: /toolbox-selectors
   </div>
   <div class="sm:w-1/3 p-2 overflow-hidden">
     <h2 class="mt-8">Checkboxes</h2>
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Checkbox</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Checkbox</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData=",,,;,,," expanded="true" singleselect="true" selectedIndexes="1" required="true" %}
         </div>
       </div>
     </div>
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Checkbox - colored </div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Checkbox - colored </div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,;,,," expanded="true" singleselect="true" selectedIndexes="1" required="true" %}
         </div>
       </div>
@@ -333,11 +333,11 @@ permalink: /toolbox-selectors
 <div class="flex flex-col sm:flex-row m-8 py-4 border-b-2 border-dashed border-grey-dark overflow-hidden">
   <div class="sm:w-1/2 p-8 overflow-hidden">
     <h2 class="mb-8">Read-only with ellipsis</h2>
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__data">
-        <div class="field__value">
-          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,Label,Field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" expanded="true" singleselect="true" selectedIndexes="1" readonly="true"%}
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
+          {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,Label,toolbox-field Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" expanded="true" singleselect="true" selectedIndexes="1" readonly="true"%}
         </div>
       </div>
     </div>
@@ -347,11 +347,11 @@ permalink: /toolbox-selectors
 
     <h2 class="mb-8">Tag Picker</h2>
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Tags</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Tags</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           {% include components/toolbox-selector.html toolboxSelectorData="#0BDA51,,,282;#F4CA16,,,2013_Maintenance;#E30022,,,workaround_available" multiselect="true" selectedIndexes="1,2,3" popupId="#toolbox-modal-tagpicker" %}
         </div>
       </div>
@@ -367,11 +367,11 @@ permalink: /toolbox-selectors
 
     <h2 class="mb-8">Filters</h2>
 
-    {% comment %} Field {% endcomment %}
-    <div class="field field--not-empty">
-      <div class="field__label">Description</div>
-      <div class="field__data">
-        <div class="field__value">
+    {% comment %} toolbox-field {% endcomment %}
+    <div class="toolbox-field toolbox-field--not-empty">
+      <div class="toolbox-field__label">Description</div>
+      <div class="toolbox-field__data">
+        <div class="toolbox-field__value">
           <div class="toolbox-selector toolbox-selector--expanded">
             <div class="toolbox-selector__itemSeparator toolbox-selector__itemSeparator--hasLabel h6">Include</div>
             <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
@@ -395,11 +395,11 @@ permalink: /toolbox-selectors
       </div>
     </div>
 
-      {% comment %} Field {% endcomment %}
-      <div class="field field--not-empty">
-        <div class="field__label">Tags  Filter with popup</div>
-        <div class="field__data">
-          <div class="field__value JS_has-popup" data-popid="#filter-tagpicker">
+      {% comment %} toolbox-field {% endcomment %}
+      <div class="toolbox-field toolbox-field--not-empty">
+        <div class="toolbox-field__label">Tags  Filter with popup</div>
+        <div class="toolbox-field__data">
+          <div class="toolbox-field__value JS_has-popup" data-popid="#filter-tagpicker">
             <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly">
               <div class="toolbox-selector__itemSeparator toolbox-selector__itemSeparator--hasLabel h6">Include</div>
               <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
@@ -442,11 +442,11 @@ permalink: /toolbox-selectors
       {% comment %} Popup {% endcomment %}
       {% include popups/filter-tags.html%}
 
-      {% comment %} Field {% endcomment %}
-      <div class="field field--not-empty">
-        <div class="field__label">Date  Filte with popupr</div>
-        <div class="field__data">
-          <div class="field__value JS_has-popup" data-popid="#filter-datepicker">
+      {% comment %} toolbox-field {% endcomment %}
+      <div class="toolbox-field toolbox-field--not-empty">
+        <div class="toolbox-field__label">Date  Filte with popupr</div>
+        <div class="toolbox-field__data">
+          <div class="toolbox-field__value JS_has-popup" data-popid="#filter-datepicker">
             <div class="toolbox-selector toolbox-selector--expanded toolbox-selector--readonly">
               <div class="toolbox-selector__itemSeparator toolbox-selector__itemSeparator--hasLabel h6">Include</div>
               <div class="toolbox-selector__item JS_toolbox-selectorItem--active toolbox-selector__item--selected">
@@ -490,9 +490,9 @@ permalink: /toolbox-selectors
   $("#ms-status .JS_error-popupRow").on('click', function() {
     closeOverlay();
     $("#ms-status .JS_toolbox-tableRow--error").css('display', 'flex');
-    $('.JS_field--error').each(function() {
+    $('.JS_toolbox-field--error').each(function() {
       const errorField = $(this);
-      errorField.addClass('field--error');
+      errorField.addClass('toolbox-field--error');
       errorField.find('.JS_has-popup').addClass('JS_has-popup--error');
     });
   });

@@ -1,14 +1,14 @@
 ---
 ---
 
-.field {
+.toolbox-field {
   position: relative;
   margin: 5px 0 17px 0;
   padding: 12px 0 0;
   transition: all .3s ease-in-out;
 
   &:hover {
-    .field__label {
+    .toolbox-field__label {
       opacity: 85;
     }
   }
@@ -80,7 +80,7 @@
       margin: 0 3px 0 0;
     }
 
-    .toolbox-selector ~ .field__input {
+    .toolbox-selector ~ .toolbox-field__input {
       position: absolute;
       left: 0;
       top: -5px;
@@ -111,27 +111,27 @@
   }
 
   &--tooltip {
-    .field__label {
+    .toolbox-field__label {
       cursor: pointer;
     }
   }
 
   &--error {
-    .field__error {
+    .toolbox-field__error {
       width: 26px;
       opacity: 1;
     }
-    .field__label {
+    .toolbox-field__label {
       left: 36px;
     }
-    .field__value {
+    .toolbox-field__value {
       left: 15px;
     }
   }
 
   &--not-empty,
   &--focus {
-    .field__label {
+    .toolbox-field__label {
       pointer-events: auto;
       top: -1px;
       font-size: 12px;
@@ -142,7 +142,7 @@
       opacity: 1;
     }
 
-    .field__input {
+    .toolbox-field__input {
       cursor: auto;
     }
 
@@ -155,7 +155,7 @@
   }
 
   &--focus {
-    .field__value {
+    .toolbox-field__value {
       z-index: 50;
     }
   }
