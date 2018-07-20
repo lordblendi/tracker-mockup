@@ -1,21 +1,21 @@
 ---
 ---
 
-.tabs {
+.toolbox-tabs {
   position: relative;
 
   &--invert {
-    .tabs-nav {
+    .toolbox-tabs-nav {
       filter: invert(1) hue-rotate(185deg) brightness(130%);
 
       &__slide {
         &--left {
-          .tabs-nav__slideShadow {
+          .toolbox-tabs-nav__slideShadow {
             background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #bdbdbd 100%);
           }
         }
         &--right {
-          .tabs-nav__slideShadow {
+          .toolbox-tabs-nav__slideShadow {
             background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #bdbdbd 100%);
           }
         }
@@ -65,7 +65,6 @@
       padding: 0;
       font-size: 0;
       left: 0;
-      overflow-x: hidden;
 
       li {
         position: relative;
@@ -93,7 +92,7 @@
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
 
-      &:not(.tabs-nav__link--active):hover, &:not(.tabs-nav__link--active):focus {
+      &:not(.toolbox-tabs-nav__link--active):hover, &:not(.toolbox-tabs-nav__link--active):focus {
         transform: translateY(-2px);
       }
 
@@ -134,15 +133,15 @@
       cursor: pointer;
 
       &:hover {
-        .tabs-nav__slideArrow {
+        .toolbox-tabs-nav__slideArrow {
           opacity: 1;
         }
 
-        .tabs-nav__slideCounter {
+        .toolbox-tabs-nav__slideCounter {
           opacity: 1;
         }
 
-        .tabs-nav__slideShadow {
+        .toolbox-tabs-nav__slideShadow {
           width: 150px;
           pointer-events: inherit;
         }
@@ -183,16 +182,16 @@
       &--left {
         left: 0;
 
-        .tabs-nav__slideShadow {
+        .toolbox-tabs-nav__slideShadow {
           left: 0;
           background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #FFF 100%);
         }
 
-        .tabs-nav__slideArrow {
+        .toolbox-tabs-nav__slideArrow {
           left: 10px;
         }
 
-        .tabs-nav__slideCounter {
+        .toolbox-tabs-nav__slideCounter {
           left: 26px;
         }
       }
@@ -200,16 +199,16 @@
       &--right {
         right: 0;
 
-        .tabs-nav__slideShadow {
+        .toolbox-tabs-nav__slideShadow {
           right: 0;
           background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #FFF 100%);
         }
 
-        .tabs-nav__slideArrow {
+        .toolbox-tabs-nav__slideArrow {
           right: 10px;
         }
 
-        .tabs-nav__slideCounter {
+        .toolbox-tabs-nav__slideCounter {
           right: 26px;
         }
       }

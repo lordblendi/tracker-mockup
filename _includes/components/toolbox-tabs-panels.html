@@ -1,0 +1,10 @@
+{% comment %} splitting up the data into multiple items. separator ;&&; {% endcomment %}
+{% assign tabsData = include.data | split: ";&&;" %}
+
+<div class="toolbox-tabs-panels p-2">
+    {% for tab in tabsData %}
+        <div class="toolbox-tabs-panels__panel" tabindex="{{forloop.index}}">
+          {{tab}}
+        </div>{% comment %} /.toolbox-tabs__panel {% endcomment %}
+    {% endfor %}
+  </div>{% comment %} /.toolbox-tabs__panels {% endcomment %}

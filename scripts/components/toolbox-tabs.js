@@ -2,8 +2,8 @@ var resizeTimer;
 var extraRightTabsPadding = 10;
 $(function() {
   // setup tabs for every tabs
-  if ($(".tabs-nav").length > 0) {
-    setupTabs(".tabs-nav");
+  if ($(".toolbox-tabs-nav").length > 0) {
+    setupTabs(".toolbox-tabs-nav");
   }
 
 
@@ -13,23 +13,23 @@ $(function() {
 function setupTabs(tabsSelector) {
   const tab_nav = $(tabsSelector);
 
-  const less = tab_nav.find('.tabs-nav__slide--left');
-  const more = tab_nav.find('.tabs-nav__slide--right');
+  const less = tab_nav.find('.toolbox-tabs-nav__slide--left');
+  const more = tab_nav.find('.toolbox-tabs-nav__slide--right');
 
-  const lessShadow = less.find('.tabs-nav__slideShadow');
-  const lessArrow = less.find('.tabs-nav__slideArrow');
+  const lessShadow = less.find('.toolbox-tabs-nav__slideShadow');
+  const lessArrow = less.find('.toolbox-tabs-nav__slideArrow');
 
-  const moreShadow = more.find('.tabs-nav__slideShadow');
-  const moreArrow = more.find('.tabs-nav__slideArrow');
+  const moreShadow = more.find('.toolbox-tabs-nav__slideShadow');
+  const moreArrow = more.find('.toolbox-tabs-nav__slideArrow');
 
   const ul = tab_nav.find('ul');
 
   // INIT
   // don't show less
-  $(less).addClass('tabs-nav__slide--hidden');
+  $(less).addClass('toolbox-tabs-nav__slide--hidden');
   //  if there is enough place, don't show more
   if (isThereEnoughPlace()) {
-    $(more).addClass('tabs-nav__slide--hidden');
+    $(more).addClass('toolbox-tabs-nav__slide--hidden');
   }
   // calculations on RESIZE
   $(window).on('resize', function(e) {
@@ -48,8 +48,8 @@ function setupTabs(tabsSelector) {
       if (isThereEnoughPlace()) {
         // scroll to beginning, because we have enough space
         //  and hide less and more
-        less.addClass('tabs-nav__slide--hidden');
-        more.addClass('tabs-nav__slide--hidden');
+        less.addClass('toolbox-tabs-nav__slide--hidden');
+        more.addClass('toolbox-tabs-nav__slide--hidden');
         // if we would do it in the .then, they would fire later
         scrollList(ul, 0, 1000, function() {
 
@@ -62,7 +62,7 @@ function setupTabs(tabsSelector) {
 
           // if it's zero, just show the more shadow
           if (currentTranslate == 0) {
-            more.removeClass('tabs-nav__slide--hidden');
+            more.removeClass('toolbox-tabs-nav__slide--hidden');
           }
 
           // if it's less than the current scrolling
@@ -70,14 +70,14 @@ function setupTabs(tabsSelector) {
           // we move the whole thing to the right
           if (scrollWidth >= currentTranslate) {
             scrollList(ul, scrollWidth, 1000, function() {
-              more.addClass('tabs-nav__slide--hidden');
+              more.addClass('toolbox-tabs-nav__slide--hidden');
             }, 'linear');
           } else {
-            more.removeClass('tabs-nav__slide--hidden');
+            more.removeClass('toolbox-tabs-nav__slide--hidden');
           }
         } else {
           // if there is not translate text, just show the more shadow
-          more.removeClass('tabs-nav__slide--hidden');
+          more.removeClass('toolbox-tabs-nav__slide--hidden');
         }
       }
     }, 250);
@@ -87,7 +87,7 @@ function setupTabs(tabsSelector) {
   // scroll right
   $(more).hover(function() {
     //  only when it's not hidden
-    if (!$(this).hasClass('tabs-nav__slide--hidden')) {
+    if (!$(this).hasClass('toolbox-tabs-nav__slide--hidden')) {
       // calculate scrollWidth and duration
 
       // -10 is to have some padding after the last item
@@ -97,12 +97,12 @@ function setupTabs(tabsSelector) {
 
       less.removeClass('stop');
       more.removeClass('stop');
-      less.removeClass('tabs-nav__slide--hidden');
+      less.removeClass('toolbox-tabs-nav__slide--hidden');
 
       scrollList(ul, scrollWidth, duration, function() {
         setTimeout(() => {
           if (!more.hasClass('stop')) {
-            more.addClass('tabs-nav__slide--hidden');
+            more.addClass('toolbox-tabs-nav__slide--hidden');
             more.removeClass('stop');
           }
         }, 250);
@@ -117,17 +117,17 @@ function setupTabs(tabsSelector) {
   // scroll left
   $(less).hover(function() {
     //  only when it's not hidden
-    if (!$(this).hasClass('tabs-nav__slide--hidden')) {
+    if (!$(this).hasClass('toolbox-tabs-nav__slide--hidden')) {
       let duration = calculateDuration(ul);
 
       less.removeClass('stop');
       more.removeClass('stop');
-      more.removeClass('tabs-nav__slide--hidden');
+      more.removeClass('toolbox-tabs-nav__slide--hidden');
 
       scrollList(ul, 0, duration, function() {
         setTimeout(() => {
           if (!(less.hasClass('stop'))) {
-            less.addClass('tabs-nav__slide--hidden');
+            less.addClass('toolbox-tabs-nav__slide--hidden');
             less.removeClass('stop');
           }
         }, 250);
@@ -188,7 +188,7 @@ function setupTabs(tabsSelector) {
     scrollList(ul, distance, 500, function() {
       if (distance === max) {
         if (!more.hasClass('stop')) {
-          more.addClass('tabs-nav__slide--hidden');
+          more.addClass('toolbox-tabs-nav__slide--hidden');
           more.removeClass('stop');
         }
       }
@@ -204,7 +204,7 @@ function setupTabs(tabsSelector) {
     scrollList(ul, distance, 500, function() {
       if (distance === 0) {
         if (!less.hasClass('stop')) {
-          less.addClass('tabs-nav__slide--hidden');
+          less.addClass('toolbox-tabs-nav__slide--hidden');
           less.removeClass('stop');
         }
       }
@@ -307,12 +307,12 @@ function calculateDuration(tablist) {
 function setupTabsLinkOnclick(){
     setTimeout(function(){
       // for every tabnav set the position of the line
-      $('.tabs-nav').each(function() {
-        let activeLink = $(this).find('.tabs-nav__link--active');
+      $('.toolbox-tabs-nav').each(function() {
+        let activeLink = $(this).find('.toolbox-tabs-nav__link--active');
         if (activeLink.length > 0) {
           let barWidth = activeLink.width();
           let barLeft = $(activeLink).position().left;
-          $(this).find('.tabs-nav__linkBar').css({
+          $(this).find('.toolbox-tabs-nav__linkBar').css({
             'left': barLeft + 'px',
             'width': barWidth + 'px'
           });
@@ -321,24 +321,24 @@ function setupTabsLinkOnclick(){
     }, 400);
 
     // click tab link
-    $('.tabs-nav__link').on('click', function(e) {
+    $('.toolbox-tabs-nav__link').on('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
       // getting .tabs
-      let tabs = $(this).closest('.tabs');
+      let tabs = $(this).closest('.toolbox-tabs');
       let _tabindex = $(this).attr('tabindex');
 
       // Change panel
-      tabs.find('.tabs-panels__panel').hide().removeClass('tabs-panels__panel--active');
-      tabs.find('.tabs-panels__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('tabs-panels__panel--active');
+      tabs.find('.toolbox-tabs-panels__panel').hide().removeClass('toolbox-tabs-panels__panel--active');
+      tabs.find('.toolbox-tabs-panels__panel[tabindex="' + _tabindex + '"]').fadeIn().addClass('toolbox-tabs-panels__panel--active');
 
-      tabs.find('.tabs-nav__link').removeClass('tabs-nav__link--active');
-      $(this).addClass('tabs-nav__link--active');
+      tabs.find('.toolbox-tabs-nav__link').removeClass('toolbox-tabs-nav__link--active');
+      $(this).addClass('toolbox-tabs-nav__link--active');
     });
 
     // new position for bar if clicking on link
-    $('.tabs-nav__link').on('click', function(e) {
-      let bar = $(this).closest('.tabs-nav').find('.tabs-nav__linkBar');
+    $('.toolbox-tabs-nav__link').on('click', function(e) {
+      let bar = $(this).closest('.toolbox-tabs-nav').find('.toolbox-tabs-nav__linkBar');
       let barWidth = $(this).outerWidth(true);
       let barLeft = $(this).closest('li').position().left;
 

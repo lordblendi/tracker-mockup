@@ -16,7 +16,7 @@ function resetFilterActions() {
   $('.JS_appNav__filterInput').keyup(function() {
     var input = $(this);
     filterResults(input, '.JS_appNavBox .JS_filterableCell');
-    var modal = $(input).closest(".modal, .tabs-panels__panel");
+    var modal = $(input).closest(".modal, .toolbox-tabs-panels__panel");
 
     checkGroups(modal, '.JS_appNavBox  .toolbox-table__rowInner:not(.JS_filterableCell)');
 
@@ -51,7 +51,7 @@ function filterResults(input, listItemSelector) {
   // find the listItems with the provided selector in the same modal,
   // where the input field is located at
   var filter = input[0].value.toUpperCase();
-  var modal = $(input).closest(".modal, .tabs-panels__panel");
+  var modal = $(input).closest(".modal, .toolbox-tabs-panels__panel");
   var listItems = $(modal).find(listItemSelector);
 
   // if the filter is longar than 0 characters

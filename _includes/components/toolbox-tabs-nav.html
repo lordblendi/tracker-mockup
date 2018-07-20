@@ -1,0 +1,38 @@
+{% comment %} splitting up the data into multiple items. separator ; {% endcomment %}
+{% assign tabsData = include.data | split: ";" %}
+
+{% comment %} selectedIndex can be one single ingeter starting from 1 in string {% endcomment %}
+{% comment %} default value is 1 {% endcomment %}
+{% assign selectedIndex = "1"  %}
+{% if include.selectedIndex %}
+  {% assign selectedIndex = include.selectedIndex  %}
+{% endif %}
+
+<div class="toolbox-tabs-nav">
+  <div class="toolbox-tabs-nav__slide toolbox-tabs-nav__slide--left toolbox-tabs-nav__slide--hidden">
+    <span class="toolbox-tabs-nav__slideShadow"></span>
+    <span class="toolbox-tabs-nav__slideArrow">←</span>
+    <span class="toolbox-tabs-nav__slideCounter">1</span>
+  </div>
+  <ul>
+    <span class="toolbox-tabs-nav__linkBar"></span>
+
+    {% for tab in tabsData %}
+      {% capture itemIndex %}{{forloop.index}}{% endcapture %}
+      {% assign activeTab = "" %}
+      {% if selectedIndex == itemIndex %}
+        {% assign activeTab = "toolbox-tabs-nav__link--active" %}
+      {% endif %}
+        <li>
+          <a href="#" class="toolbox-tabs-nav__link {{activeTab}}" tabindex="{{itemIndex}}"><span>{{tab}}</span></a>
+        </li>
+    {% endfor %}
+
+  </ul>
+  <div class="toolbox-tabs-nav__slide toolbox-tabs-nav__slide--right">
+    <span class="toolbox-tabs-nav__slideShadow"></span>
+    <span class="toolbox-tabs-nav__slideArrow">→</span>
+    <span class="toolbox-tabs-nav__slideCounter">9</span>
+  </div>
+</div>
+{% comment %} /.toolbox-tabs__nav {% endcomment %}

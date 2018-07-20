@@ -4,13 +4,13 @@ $(document).ready(function() {
   // app-navigator toggle action
   $('.JS_toggle-app-navigator').on('click', function() {
     // making sure, that the line is positioned
-    $('.app-navigator__nav .tabs-nav').each(function() {
-      var activeLink = $(this).find('.tabs-nav__link--active');
+    $('.app-navigator__nav .toolbox-tabs-nav').each(function() {
+      var activeLink = $(this).find('.toolbox-tabs-nav__link--active');
       var li = $(activeLink).closest('li');
       var barWidth = activeLink.width();
       var barLeft = $(activeLink).position().left + $(li).position().left;
 
-      $(this).find('.tabs-nav__linkBar').css({
+      $(this).find('.toolbox-tabs-nav__linkBar').css({
         'left': barLeft + 'px',
         'width': barWidth + 'px'
       });

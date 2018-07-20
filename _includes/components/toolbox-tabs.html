@@ -8,11 +8,11 @@
 
 {% assign invert = ""  %}
 {% if include.invert %}
-  {% assign invert = "tabs--invert"  %}
+  {% assign invert = "toolbox-tabs--invert"  %}
 {% endif %}
 
-<div class="tabs {{invert}}">
-  {% include components/tabs-nav.html data=include.tabsNavData %}
+<div class="toolbox-tabs {{invert}}">
+  {% include components/toolbox-tabs-nav.html data=include.tabsNavData %}
 
-  {% include components/tabs-panels.html data=include.panelData %}
+  {% include components/toolbox-tabs-panels.html data=include.panelData %}
 </div>
