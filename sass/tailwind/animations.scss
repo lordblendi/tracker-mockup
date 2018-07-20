@@ -43,6 +43,28 @@
   animation: multi-color 20s linear infinite;
 }
 
+.animet-action,
+.inline-action,
+.toolbox-table__action,
+.block-action {
+  &:not(.disabled) {
+    transform: translate(0);
+    transition: transform .3s ease-in-out;
+
+    &:focus {
+      animation: focus-2-down-up 0.3s ease forwards;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+
+      &:focus {
+        animation: hover--2-up 0.3s ease forwards;
+      }
+    }
+  }
+}
+
 @keyframes focus-up-down {
   0%, 100% {
     transform: translate(0, 0px);
@@ -54,6 +76,17 @@
     transform: translate(0, 1px);
   }
 }
+@keyframes focus-down-up {
+  0%, 100% {
+    transform: translate(0, 0px);
+  }
+  33% {
+    transform: translate(0, 1px);
+  }
+  66% {
+    transform: translate(0, -1px);
+  }
+}
 @keyframes focus-2-up-down {
   0%, 100% {
     transform: translate(0, 0px);
@@ -63,6 +96,17 @@
   }
   66% {
     transform: translate(0, 2px);
+  }
+}
+@keyframes focus-2-down-up {
+  0%, 100% {
+    transform: translate(0, 0px);
+  }
+  33% {
+    transform: translate(0, 2px);
+  }
+  66% {
+    transform: translate(0, -2px);
   }
 }
 @keyframes hover-down {
@@ -89,12 +133,12 @@
     transform: translate(0, 0px);
   }
 }
-@keyframes hover-2-up {
+@keyframes hover--2-up {
   0% {
-    transform: translate(0, 2px);
+    transform: translate(0, 0px);
   }
   100% {
-    transform: translate(0, 0px);
+    transform: translate(0, -2px);
   }
 }
 

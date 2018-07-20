@@ -70,13 +70,8 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
-  transition: all .3s ease-in-out;
-  transform: translateY(0);
+  transition: all .3s ease-in-out, transform .2s ease;
 
-  &:focus,
-  &:hover {
-    transform: translateY(-2px);
-  }
 }
 
 .block-action {
@@ -98,10 +93,6 @@
     color: white;
   }
 
-  &:focus,
-  &:hover {
-    transform: translateY(-2px);
-  }
 }
 
 /* Globals */
