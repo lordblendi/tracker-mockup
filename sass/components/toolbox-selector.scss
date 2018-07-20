@@ -220,16 +220,17 @@
 
   &--required {
 
+    &.toolbox-selector--singleselect .toolbox-selector__item--required,
+    &.toolbox-selector--singleselect .toolbox-selector__item--selected {
+      animation: hover-up 0.5s ease forwards;
+    }
+
     &.toolbox-selector--singleselect .toolbox-selector__item--selected,
     &.toolbox-selector--multiselect .toolbox-selector__item--required {
       cursor: default;
       pointer-events: none;
       transform: translate(0);
       opacity: 1;
-
-      &:not(.toolbox-selector__item--required) {
-        animation: hover-up 0.5s ease forwards;
-      }
 
       &:focus, &:hover {
         transform: translate(0);
