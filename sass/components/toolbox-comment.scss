@@ -1,7 +1,7 @@
 ---
 ---
 
-.comment-addNew {
+.toolbox-comment-addNew {
   position: relative;
   background-color: #FFF;
   border-bottom: 1px dashed #CCC;
@@ -36,12 +36,12 @@
   }
 }
 
-.comment-posted {
+.toolbox-comment-posted {
   position: relative;
   margin: 10px 0;
 
   &:hover {
-    .comment-posted__footer {
+    .toolbox-comment-posted__footer {
       opacity: 1;
       top: 0;
     }
@@ -126,11 +126,11 @@
         opacity: 0;
       }
 
-      .comment-posted__attachment-cover {
+      .toolbox-comment-posted__attachment-cover {
         transform: scale(1);
       }
 
-      .comment-posted__attachment-caption {
+      .toolbox-comment-posted__attachment-caption {
         opacity: 0;
       }
     }
@@ -206,7 +206,7 @@
   }
 
   &--self {
-    .comment-posted {
+    .toolbox-comment-posted {
       &__header {
         text-align: right;
       }

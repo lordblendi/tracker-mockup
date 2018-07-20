@@ -58,7 +58,7 @@
   cursor: pointer;
 }
 
-.comment-field {
+.toolbox-comment-field {
   position: relative;
   display: flex;
   align-items: center;
@@ -163,7 +163,7 @@
   &--focus {
     z-index: 100;
 
-    .comment-field__input {
+    .toolbox-comment-field__input {
       box-shadow: none;
       animation: none;
     }
@@ -201,7 +201,7 @@
 
 
 
-.comment-post {
+.toolbox-comment-post {
   margin: 15px 0;
 
   &--history {
@@ -209,18 +209,18 @@
     opacity: .65;
     font-size: 14px;
 
-    .comment-post__value {
+    .toolbox-comment-post__value {
       flex-direction: row-reverse;
     }
 
-    .comment-post__bubble {
+    .toolbox-comment-post__bubble {
       background-color: #F8F8F8;
       border-radius: 10px 0 10px 10px;
     }
   }
 
   &--self {
-    .comment-post__bubble {
+    .toolbox-comment-post__bubble {
       background-color: #DFDFDF;
     }
   }
