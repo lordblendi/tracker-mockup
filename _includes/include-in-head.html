@@ -1,0 +1,75 @@
+{% comment %} DEFAULT {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-default-css" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4010" %}
+    {% endif %}
+  {% endcomment %}
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.4/tailwind.min.css" />
+  <link rel="stylesheet" href="{{ location }}/sass/default.css" />
+
+
+{% comment %} field {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-field" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4013" %}
+    {% endif %}
+  {% endcomment %}
+  <link rel="stylesheet" href="{{ location }}/sass/toolbox-field.css">
+
+{% comment %} table {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-table" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4014" %}
+    {% endif %}
+  {% endcomment %}
+  <link rel="stylesheet" href="{{ location }}/sass/toolbox-table.css">
+
+{% comment %} button push {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-button-push" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4012" %}
+    {% endif %}
+  {% endcomment %}
+  <link rel="stylesheet" href="{{ location }}/sass/toolbox-button.css">
+
+{% comment %} modal {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-modal" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4015" %}
+    {% endif %}
+  {% endcomment %}
+  <link rel="stylesheet" href="{{ location }}/sass/toolbox-modal.css">
+
+{% comment %} selector {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-selector" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4011" %}
+    {% endif %}
+  {% endcomment %}
+  <link rel="stylesheet" href="{{ location }}/sass/toolbox-selector.css">
+  <link rel="stylesheet" href="{{ location }}/sass/toolbox-selector-draggable.css">
+
+{% comment %} tabs {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-tabs" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4016" %}
+    {% endif %}
+  {% endcomment %}
+  <link rel="stylesheet" href="{{ location }}/sass/toolbox-tabs.css">
+
+{% comment %} comments {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-comments" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4017" %}
+    {% endif %}
+  {% endcomment %}
+  <link rel="stylesheet" href="{{ location }}/sass/toolbox-comments.css">

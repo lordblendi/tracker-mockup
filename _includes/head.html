@@ -14,18 +14,7 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
-{% comment %} DEFAULT {% endcomment %}
-  {% assign location = "https://tenforce.github.io/design-toolbox-default-css" %}
-  {% comment %}
-    {% if site.url contains "localhost" %}
-      {% assign location = "http://localhost:4010" %}
-    {% endif %}
-  {% endcomment %}
-
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i&amp;subset=latin-ext" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.4/tailwind.min.css" />
-
-  <link rel="stylesheet" href="{{ location }}/sass/default.css">
+{% include include-in-head.html %}
 
 
 

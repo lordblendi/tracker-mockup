@@ -1,0 +1,75 @@
+{% comment %} DEFAULT {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-default-css" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4010" %}
+    {% endif %}
+  {% endcomment %}
+  {% comment %} jQuery {% endcomment %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% comment %} CDN OR USED PLUGINS NOT MADE BY US {% endcomment %}
+  {% comment %} cdn for animations {% endcomment %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2/velocity.ui.min.js"></script>
+  {% comment %} components {% endcomment %}
+  <script src="{{ location }}/scripts/components/toolbox-overlay.js"></script>
+  {% comment %} plugins {% endcomment %}
+  <script src="{{ location }}/scripts/plugin/expand-collapse.js"></script>
+  <script src="{{ location }}/scripts/plugin/init-expand-collapse.js"></script>
+
+{% comment %} field {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-field" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4013" %}
+    {% endif %}
+  {% endcomment %}
+  <script type="text/javascript" src="{{location}}/scripts/components/toolbox-field.js"></script>
+
+{% comment %} modal {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-modal" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4015" %}
+    {% endif %}
+  {% endcomment %}
+  <script type="text/javascript" src="{{location}}/scripts/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="{{location}}/scripts/animation.js"></script>
+  <script type="text/javascript" src="{{location}}/scripts/filter.js"></script>
+  <script type="text/javascript" src="{{location}}/scripts/incl-excl-filter.js"></script>
+  <script type="text/javascript" src="{{location}}/scripts/ms-calendar.js"></script>
+  <script type="text/javascript" src="{{location}}/scripts/ms-colorselector.js"></script>
+  <script type="text/javascript" src="{{location}}/scripts/ms-columnpicker-options.js"></script>
+  <script type="text/javascript" src="{{location}}/scripts/popup.js"></script>
+  <script type="text/javascript" src="{{location}}/scripts/reset-to-default.js"></script>
+  <script type="text/javascript" src="{{location}}/scripts/reset.js"></script>
+  <script type="text/javascript" src="{{location}}/scripts/sortable.js"></script>
+  <script type="text/javascript" src="{{location}}/scripts/sublist-closer.js"></script>
+  <script type="text/javascript" src="{{location}}/scripts/toolbox-modal.js"></script>
+
+{% comment %} selector {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-selector" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4011" %}
+    {% endif %}
+  {% endcomment %}
+  <script type="text/javascript" src="{{location}}/scripts/components/toolbox-selector.js"></script>
+
+{% comment %} tabs {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-tabs" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4016" %}
+    {% endif %}
+  {% endcomment %}
+  <script type="text/javascript" src="{{location}}/scripts/components/toolbox-tabs.js"></script>
+
+{% comment %} comments {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-comments" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4017" %}
+    {% endif %}
+  {% endcomment %}
+  <script type="text/javascript" src="{{location}}/scripts/components/toolbox-comments.js"></script>
