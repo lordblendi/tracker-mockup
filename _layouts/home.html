@@ -16,32 +16,16 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
-  <link rel="stylesheet" href="{{ site.baseurl }}/sass/app.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.5.2/tailwind.min.css" />
-  <link rel="stylesheet" href="{{ site.baseurl }}/sass/tailwind-extend.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/sass/components/toolbox-button.css">
+  {% include head.html %}
 </head>
 
 <body style="background-color: #FFF;">
-  {% include components/toolbox-overlay.html %}
+  <div class="toolbox-overlay"></div>
 
   <section class="my-8 px-1/5 text-center">
     <h3>Tracker versions</h3>
     {% include components/toolbox-push.html href="present" title="Present" go="true" %}
     {% include components/toolbox-push.html href="future" title="Future" go="true" %}
-  </section>
-
-  <section class="my-8 px-1/5 text-center">
-    <h3>Components</h3>
-    {% include components/toolbox-push.html href="toolbox-buttons" title="Buttons" go="true" %}
-    {% include components/toolbox-push.html href="comments" title="<span class='font-normal'></span>Comments" drop="true" smallCaps='true' %}
-    {% include components/toolbox-push.html href="inputs" title="Inputs" go="true" %}
-    {% include components/toolbox-push.html href="toolbox-table" title="Table" go="true" %}
-    {% include components/toolbox-push.html href="popups" title="Popups and overlay" go="true" %}
-    {% include components/toolbox-push.html href="toolbox-selectors" title="Selectors" go="true" %}
-    {% include components/toolbox-push.html href="toolbox-tabs" title="Tabs" go="true" %}
   </section>
 
   <section class="my-8 px-1/5 text-center">

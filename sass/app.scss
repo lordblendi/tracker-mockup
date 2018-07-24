@@ -7,15 +7,6 @@
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: 'tenforce';
-  src: url('../assets/fonts/tenforce.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-@import "variables.css";
 
 body {
   font-family: 'Source Sans Pro', 'tenforce', Arial, sans-serif;
@@ -29,14 +20,6 @@ body {
 
   &.fixed {
     overflow-y: hidden;
-  }
-  &.page-Drag {
-    background-color: #FFF;
-    margin: 50px 5%;
-  }
-  &.page-toolbox-table {
-    background-color: #FFF;
-    margin: 50px 5%;
   }
   &.page-Font {
     background-color: #FFF;
