@@ -3,91 +3,98 @@ layout: present
 title: Tutorial
 permalink: /tutorial
 ---
+<div class="app-navigator fixed pin-t z-50 w-1/2 h-screen transition bg-blue-dark">
+  {% include blocks/app-nav/app-nav.html %}
+</div>
 
-  <main class="container-master">
-    <header class="app-header px-4 py-2">
-      {% include blocks/app-header/app-header.html %}
-    </header>
-    {% include blocks/old-pmx/old-pmx-tabline.html %}
-    {% include blocks/old-pmx/old-pmx-listtool.html %}
+<div class="user-menu fixed pin-t z-50 w-1/4 h-screen transition bg-blue-dark z-50">
+  {% include blocks/user-menu.html %}
+</div>
 
-    <div id="ctl00_pagebody_container" class="pagebody-container">
-       <div class="pagebody">
-          <div id="dialogbox-wrapper" class="dialogbox-wrapper invisible">
-             <div class="dialogbox-wrapper-content">
-                <div id="dialogbox" class="dialogbox">
-                </div>
-             </div>
-          </div>
-          <div id="itemdetailpage" class="item-detail ">
-             <div id="ctl00_PageContentPlaceHolder_ctl00_ItemDetailContent">
-                <input name="ctl00$PageContentPlaceHolder$ctl00$OwnerPersonId" type="hidden" id="ctl00_PageContentPlaceHolder_ctl00_OwnerPersonId">
-                <input name="ctl00$PageContentPlaceHolder$ctl00$DefaultChildListId" type="hidden" id="ctl00_PageContentPlaceHolder_ctl00_DefaultChildListId">
-                <div class="tid-content-wrapper">
-                   <div id="tabs" class="tid-sidebar">
-                   </div>
-                   <div id="ctl00_PageContentPlaceHolder_ctl00_contentcontainer">
-                      <div id="OverviewTab_Content" class="tid-content">
+<main class="container-master">
+  <header class="app-header px-4 py-2">
+    {% include blocks/app-header/app-header.html %}
+  </header>
+  {% include blocks/old-pmx/old-pmx-tabline.html %}
+  {% include blocks/old-pmx/old-pmx-listtool.html %}
 
-                         <div style="margin: 40px 16%;width: auto;float: none;background-color: #F7F7F7;box-shadow: 0 10px 15px -10px #7e9bae;padding: 60px 80px;box-sizing:border-box;border-radius:3px;">
-                           <img src="./assets/images/tf_logo_full.png" alt="logo" style="max-width: 30%;margin: 0 auto 60px;display: block;">
-                            <h1 style="color:#000;padding:0;font-size:22px;float:none;">Contracting Party Tutorial</h1>
-                            <p style="margin: 10px 0;font-size:16px;">Welcome to Contractor Management, where you can manage the contractor qualification process for your company.</p>
-                            <h5 style="text-transform:uppercase;font-weight:600;margin: 20px 0 10px 0;float: none;font-size:16px;">Create templates to manage different types of qualification requests</h5>
-                            <p style="margin: 10px 0;font-size:16px;">Maintain the qualification templates for your contractor pre-qualification processes in ‘Contractor Qualification Templates’.</p>
-                            <p style="margin: 10px 0;font-size:16px;">Click ‘create new item’ to create a qualification template for a specific area of work. Open the qualification, where you can describe the work and later link the relevant documentation templates for each.</p>
-                            <h5 style="text-transform:uppercase;font-weight:600;margin: 20px 0 10px 0;float: none;font-size:16px;">Define which documents are required per template</h5>
-                            <p style="margin: 10px 0;font-size:16px;">‘Requested Documents (Templates)’ allows you to describe and manage all documentation templates needed from your contractors.</p>
-                            <p style="margin: 10px 0;font-size:16px;">Click ‘create new item’ to describe the type of document needed. When finished filling out the fields, click ‘create & open’. This navigates to the overview page where you can describe the requested document.</p>
-                            <p style="margin: 10px 0;font-size:16px;">These templates can then be linked to one or more contractor templates, so that contractors know which documents to provide for this request.</p>
-                            <h5 style="text-transform:uppercase;font-weight:600;margin: 20px 0 10px 0;float: none;font-size:16px;">Create a New Qualification Request</h5>
-                            <p style="margin: 10px 0;font-size:16px;">Once a qualification is described, you can begin sending requests to contractors in ‘Contractor Requests’.</p>
-                            <p style="margin: 10px 0;font-size:16px;">Click ‘create new item’ to describe a qualification request. Then click ‘create & open’ to navigate to the qualification and specify the work and documents needed. Click ‘send request’ to submit the request to a contractor, who will then begin working on your request.</p>
-                            <h5 style="text-transform:uppercase;font-weight:600;margin: 20px 0 10px 0;float: none;font-size:16px;">Follow-up on Existing Requests</h5>
-                            <p style="margin: 10px 0;font-size:16px;">Pending qualification requests can be monitored in ‘Pending Qualification Requests’, where you can accept or reject a contractor and follow up on the progress.</p>
-                            <p style="margin: 10px 0;font-size:16px;">Click on an item to review a contractor’s input and documents. Here you can accept a contractor or ask for additional information.</p>
-                            <h5 style="text-transform:uppercase;font-weight:600;margin: 20px 0 10px 0;float: none;font-size:16px;">Request Additional Info</h5>
-                            <p style="margin: 10px 0;font-size:16px;">At any time, you can also request extra information or documents from a contractor. Click on a qualification request to request more documents.</p>
-                            <p style="margin: 10px 0;font-size:16px;">For requests you already approved, first click ‘Re-activate request’ before adding a document. After updating the request, the contractor will be notified and begin working on it.</p>
-                         </div>
+  <div id="ctl00_pagebody_container" class="pagebody-container">
+     <div class="pagebody">
+        <div id="dialogbox-wrapper" class="dialogbox-wrapper invisible">
+           <div class="dialogbox-wrapper-content">
+              <div id="dialogbox" class="dialogbox">
+              </div>
+           </div>
+        </div>
+        <div id="itemdetailpage" class="item-detail ">
+           <div id="ctl00_PageContentPlaceHolder_ctl00_ItemDetailContent">
+              <input name="ctl00$PageContentPlaceHolder$ctl00$OwnerPersonId" type="hidden" id="ctl00_PageContentPlaceHolder_ctl00_OwnerPersonId">
+              <input name="ctl00$PageContentPlaceHolder$ctl00$DefaultChildListId" type="hidden" id="ctl00_PageContentPlaceHolder_ctl00_DefaultChildListId">
+              <div class="tid-content-wrapper">
+                 <div id="tabs" class="tid-sidebar">
+                 </div>
+                 <div id="ctl00_PageContentPlaceHolder_ctl00_contentcontainer">
+                    <div id="OverviewTab_Content" class="tid-content">
 
-                      </div>
-                   </div>
-                </div>
-                <div class="tid-footer-wrapper">
-                   <div class="tid-footer">
-                      <dl>
-                         <dt>Created on</dt>
-                         <dd data-ft-field-label="Created on"><span class="time">maandag 19 maart 2018 at 14:41</span> by <span>Sara Luysterborg</span></dd>
-                      </dl>
-                      <dl>
-                         <dt>Last update</dt>
-                         <dd data-ft-field-label="Last update">
-                            <span id="fld_685305_Item_27" ipe_id="685305" ipe_object="Item" ipe_property="27" class="hasnoipe" title="" ipe_editmodeallowed="false"><span class="time">maandag 19 maart 2018 at 16:39</span></span><script type="text/javascript">
-                               ipe.registerElement.defer("fld_685305_Item_27");
-                            </script>
-                            by <span id="fld_685305_Item_26" ipe_id="685305" ipe_object="Item" ipe_property="26" class="hasnoipe" title="" ipe_editmodeallowed="false"><span>Myriam Sprengers</span></span><script type="text/javascript">
-                               ipe.registerElement.defer("fld_685305_Item_26");
-                            </script>
-                         </dd>
-                      </dl>
-                      <dl id="FinalStateSinceContainer" class="">
-                         <dt>Final state since</dt>
-                         <dd>
-                            <span id="fld_685305_Item_39" ipe_id="685305" ipe_object="Item" ipe_property="39" class="hasnoipe" title="" ipe_editmodeallowed="false"><span class="time">maandag 19 maart 2018 at 16:39</span></span><script type="text/javascript">
-                               ipe.registerElement.defer("fld_685305_Item_39");
-                            </script>
-                         </dd>
-                      </dl>
-                   </div>
-                   <div class="tid-branching">
-                   </div>
-                </div>
-             </div>
-          </div>
-          {% comment %} content{% endcomment %}
-          <div class="clear"></div>
-       </div>
-    </div>
+                       <div style="margin: 40px 16%;width: auto;float: none;background-color: #F7F7F7;box-shadow: 0 10px 15px -10px #7e9bae;padding: 60px 80px;box-sizing:border-box;border-radius:3px;">
+                         <img src="./assets/images/tf_logo_full.png" alt="logo" style="max-width: 30%;margin: 0 auto 60px;display: block;">
+                          <h1 style="color:#000;padding:0;font-size:22px;float:none;">Contracting Party Tutorial</h1>
+                          <p style="margin: 10px 0;font-size:16px;">Welcome to Contractor Management, where you can manage the contractor qualification process for your company.</p>
+                          <h5 style="text-transform:uppercase;font-weight:600;margin: 20px 0 10px 0;float: none;font-size:16px;">Create templates to manage different types of qualification requests</h5>
+                          <p style="margin: 10px 0;font-size:16px;">Maintain the qualification templates for your contractor pre-qualification processes in ‘Contractor Qualification Templates’.</p>
+                          <p style="margin: 10px 0;font-size:16px;">Click ‘create new item’ to create a qualification template for a specific area of work. Open the qualification, where you can describe the work and later link the relevant documentation templates for each.</p>
+                          <h5 style="text-transform:uppercase;font-weight:600;margin: 20px 0 10px 0;float: none;font-size:16px;">Define which documents are required per template</h5>
+                          <p style="margin: 10px 0;font-size:16px;">‘Requested Documents (Templates)’ allows you to describe and manage all documentation templates needed from your contractors.</p>
+                          <p style="margin: 10px 0;font-size:16px;">Click ‘create new item’ to describe the type of document needed. When finished filling out the fields, click ‘create & open’. This navigates to the overview page where you can describe the requested document.</p>
+                          <p style="margin: 10px 0;font-size:16px;">These templates can then be linked to one or more contractor templates, so that contractors know which documents to provide for this request.</p>
+                          <h5 style="text-transform:uppercase;font-weight:600;margin: 20px 0 10px 0;float: none;font-size:16px;">Create a New Qualification Request</h5>
+                          <p style="margin: 10px 0;font-size:16px;">Once a qualification is described, you can begin sending requests to contractors in ‘Contractor Requests’.</p>
+                          <p style="margin: 10px 0;font-size:16px;">Click ‘create new item’ to describe a qualification request. Then click ‘create & open’ to navigate to the qualification and specify the work and documents needed. Click ‘send request’ to submit the request to a contractor, who will then begin working on your request.</p>
+                          <h5 style="text-transform:uppercase;font-weight:600;margin: 20px 0 10px 0;float: none;font-size:16px;">Follow-up on Existing Requests</h5>
+                          <p style="margin: 10px 0;font-size:16px;">Pending qualification requests can be monitored in ‘Pending Qualification Requests’, where you can accept or reject a contractor and follow up on the progress.</p>
+                          <p style="margin: 10px 0;font-size:16px;">Click on an item to review a contractor’s input and documents. Here you can accept a contractor or ask for additional information.</p>
+                          <h5 style="text-transform:uppercase;font-weight:600;margin: 20px 0 10px 0;float: none;font-size:16px;">Request Additional Info</h5>
+                          <p style="margin: 10px 0;font-size:16px;">At any time, you can also request extra information or documents from a contractor. Click on a qualification request to request more documents.</p>
+                          <p style="margin: 10px 0;font-size:16px;">For requests you already approved, first click ‘Re-activate request’ before adding a document. After updating the request, the contractor will be notified and begin working on it.</p>
+                       </div>
 
-  </main>
+                    </div>
+                 </div>
+              </div>
+              <div class="tid-footer-wrapper">
+                 <div class="tid-footer">
+                    <dl>
+                       <dt>Created on</dt>
+                       <dd data-ft-field-label="Created on"><span class="time">maandag 19 maart 2018 at 14:41</span> by <span>Sara Luysterborg</span></dd>
+                    </dl>
+                    <dl>
+                       <dt>Last update</dt>
+                       <dd data-ft-field-label="Last update">
+                          <span id="fld_685305_Item_27" ipe_id="685305" ipe_object="Item" ipe_property="27" class="hasnoipe" title="" ipe_editmodeallowed="false"><span class="time">maandag 19 maart 2018 at 16:39</span></span><script type="text/javascript">
+                             ipe.registerElement.defer("fld_685305_Item_27");
+                          </script>
+                          by <span id="fld_685305_Item_26" ipe_id="685305" ipe_object="Item" ipe_property="26" class="hasnoipe" title="" ipe_editmodeallowed="false"><span>Myriam Sprengers</span></span><script type="text/javascript">
+                             ipe.registerElement.defer("fld_685305_Item_26");
+                          </script>
+                       </dd>
+                    </dl>
+                    <dl id="FinalStateSinceContainer" class="">
+                       <dt>Final state since</dt>
+                       <dd>
+                          <span id="fld_685305_Item_39" ipe_id="685305" ipe_object="Item" ipe_property="39" class="hasnoipe" title="" ipe_editmodeallowed="false"><span class="time">maandag 19 maart 2018 at 16:39</span></span><script type="text/javascript">
+                             ipe.registerElement.defer("fld_685305_Item_39");
+                          </script>
+                       </dd>
+                    </dl>
+                 </div>
+                 <div class="tid-branching">
+                 </div>
+              </div>
+           </div>
+        </div>
+        {% comment %} content{% endcomment %}
+        <div class="clear"></div>
+     </div>
+  </div>
+
+</main>
