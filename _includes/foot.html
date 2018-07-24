@@ -78,6 +78,15 @@
   <link rel="stylesheet" href="{{ location }}/sass/toolbox-selector-draggable.css">
   <script type="text/javascript" src="{{location}}/scripts/components/toolbox-selector.js"></script>
 
+{% comment %} tabs {% endcomment %}
+  {% assign location = "https://tenforce.github.io/design-toolbox-tabs" %}
+  {% comment %}
+    {% if site.url contains "localhost" %}
+      {% assign location = "http://localhost:4016" %}
+    {% endif %}
+  {% endcomment %}
+  <link rel="stylesheet" href="{{ location }}/sass/toolbox-tabs.css">
+  <script type="text/javascript" src="{{location}}/scripts/components/toolbox-tabs.js"></script>
 
 
 
